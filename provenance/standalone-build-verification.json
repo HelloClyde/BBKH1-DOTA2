@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "production_tools_frozen": true,
+  "sdk_commit": "067fe072477861dfc8949d7b1a55279fb92d2548",
+  "python": "3.11.5",
+  "pillow": "12.3.0",
+  "pyelftools": "0.33",
+  "compiler": "mipsel-none-elf-gcc.exe (GCC) 15.2.0",
+  "source_inputs": 146,
+  "source_origin": {
+    "path": "provenance/source-curation.json",
+    "sha256": "075bfc71145b6bc0b7d59c9cbc3f8242f9fedd12eb43c26a39f7e10668a8adf3",
+    "original_bda_sha256": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d",
+    "original_metadata_sha256": "44790bf35c5f8e5f82aefde796af5c6c85ddbe2f87c000637c9203076f4a83bd",
+    "newline_policy": "Only CRLF to LF for curated text. Compare original_raw_sha256 with original source map; curated_lf_sha256 with new checkout. Exact BDA rebuilt independently."
+  },
+  "bda_sha256": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d",
+  "bda_bytes": 984928,
+  "elf_sha256": "68a7b6eb0d77e656db792549594b3a5c0d4ed1affaf9a506c3712518f6db3c08",
+  "binary": {
+    "abi": {
+      "DotaGame": 173544,
+      "DotaUnit": 240,
+      "DotaView": 96
+    },
+    "entry": "0x83c00020",
+    "stack_bytes": 65536,
+    "application_ram_end": "0x83fe7bc0",
+    "ram_limit": "0x83ff0000",
+    "ram_margin_bytes": 33856,
+    "static_bss_bytes": 3075200,
+    "payload_matches_elf": true
+  },
+  "install_zip_sha256": "687505bfff3004de9d09de974b378ac7d51df9f95ba4f3519d3c640e5cd0cdb3",
+  "install_zip_bytes": 115326638,
+  "zip_members": 28,
+  "tools_sha256": {
+    "tools/build.py": "64d03b93d9d3349c19752e7250afd12d072d3a0473f31ef987f010b66c67b1ce",
+    "tools/check_tag.py": "3f4e09fd5b33e5a187894b0ffed5ffe97dae3d0c7425fe20e002104dbb031a08",
+    "tools/common.py": "2c491b4b00a1551752e5b1927bd1ecf99d8ebcc7bdc9cbc9a2faac9ef570cb31",
+    "tools/install_toolchain.py": "e96f2a3d81e6b9ccb349654494bb5ea00a4f3edcbafcee6c07ec0082cc325986",
+    "tools/package.py": "9acc594b62f53447ce25cbc884dd84596ef3b75eb7cf4f2a7fbbcb7b52af6ec9",
+    "tools/verify.py": "7af698bd2bed286adc925c35b7e872fac0322a5d10560fe961d15c605155073c",
+    "tools/requirements-build.txt": "79917fc68a450e2b789d7884fe9b9c4cb393f20e77396e41d30e14b7572cc589",
+    ".github/workflows/build.yml": "8dc8f395ee909f14153ed89224e71b12e21dd03c2b9a6cc36966c3dd297854b4"
+  },
+  "toolchain_installer": {
+    "archive_sha256": "8ba866e25c9826ee04ab4310365d264e3e73769e3738bb58ae38fd6740b7ee8d",
+    "complete_install_from_verified_local_archive_passed": true,
+    "bad_archive_rejected_before_extraction": true,
+    "fixed_url_GET_range_status": 206,
+    "fixed_url_GET_range_bytes_read": 4,
+    "fixed_url_GET_range_signature": "504b0304",
+    "full_remote_archive_downloaded_by_this_agent": false,
+    "sdk_has_downloader": false
+  },
+  "workflow": {
+    "yaml_scope_checked": true,
+    "build_permissions": "contents:read",
+    "tag_release_only_permissions": "contents:write",
+    "official_interfaces_checked_utc_date": "2026-11-01",
+    "official_sources": [
+      "https://github.com/actions/checkout",
+      "https://github.com/actions/setup-python",
+      "https://github.com/actions/upload-artifact",
+      "https://github.com/actions/download-artifact"
+    ],
+    "remote_run_executed_by_this_agent": false
+  },
+  "clean_checkout_tested": false,
+  "physical_h1_tested": false,
+  "device_accessed": false,
+  "git_staged_or_committed_by_this_agent": false,
+  "scope": "Standalone working-tree rebuild and static artifact integrity; exact existing H1 v0.27 BDA reproduced. Parent owns clean checkout, private push, LFS and actual main CI. Original h1-dota2 remained read-only."
+}

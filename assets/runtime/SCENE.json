@@ -1,0 +1,242 @@
+{
+  "format": "HBK12",
+  "version": 12,
+  "pack": "build\\release-v023\\DOTA2\\SCENE.H1P",
+  "sha256": "c312840584571c0958b8409da729ea945ecbf557a55ab6030ff0d2d9cbef78dd",
+  "bytes": 406028212,
+  "map_tiles": 562,
+  "map_tile_bytes": 36831232,
+  "sprite_frames": 44278,
+  "sprite_groups": 5732,
+  "sprite_payload_bytes": 363679207,
+  "source_manifests": {
+    "private\\baked\\v022\\map-lit\\manifest.json": "47d005f21e80d69f29fd2cb8d45035eb7ff5d5e743863930c1f310c34a25cba8",
+    "private\\baked\\sprites\\manifest.json": "fce8bbc8e43f91a9d805105a42a1c958a5cfd0b7c70f9947ff662265b6c46298",
+    "private\\baked\\effects\\manifest.json": "83f2faf403b3c794c8c639bd5a6e6038649edebadc88e9b1878abf2fec99cbc3",
+    "private\\baked\\skills\\manifest.json": "2fd3d90c63cd7c400035cceac52b1d1d0a1fccfb2d84c45877d96c8b528b0926",
+    "private\\baked\\projectiles\\manifest.json": "989a651b99f770732fd5a208efce373faaa86143bf1f6c20ba301bad04bfe90b",
+    "private\\baked\\skill-components\\manifest.json": "5bd008bd93fa3342ccb8d8a3304ff70817b3a53938804a98cbead1419552f4d0",
+    "private\\baked\\jungle\\manifest.json": "f91114b44aa648423cc336fb388a6a9ae0c14929b547213787a491faaad4e855",
+    "private\\baked\\v022\\fountain\\manifest.json": "1ed600bfc939edf574eda8ddfb089c95241df482509164ee7657e21a634dfe96",
+    "private\\baked\\roshan\\manifest.json": "1fa703038cdd3fcce4e941b8bdb17486f43e3cc47da30598a4165a51c0879968",
+    "private\\baked\\map-completion\\manifest.json": "92b45f11189281ad1763e3acbe04fb875b0d39a58ea8400ea7e09fdc2859875d",
+    "private\\baked\\courier\\manifest.json": "efaadfc7a99a522a0bd27de88086edd0d3baa5a9b804c325a047afa45b6af82a",
+    "private\\baked\\extra-heroes\\manifest.json": "743c1a9aaebf0a76c2b20b6b7d5077d80a6ba2bd1f5fdf27842dfe110c12f927",
+    "private\\baked\\item-entities\\manifest.json": "a7470d1d00251ca3769c9bd76f9e7060b14f2a4d79eb050901eb38e9bab9b9b1",
+    "private\\items\\assets-v022\\manifest.json": "cd4f60a0640268bebd5f044f18097731996de97796bb2e3c2706c1e6ed34f6a8",
+    "private\\baked\\sprites\\skill-motion-catalog.json": "c4b5f18af3b430fb6a1cd9149c50c392965e5f1b15a687412539c3077753c2d3",
+    "private\\baked\\roster-heroes\\body-manifest.json": "acc6b21a8b87a3f53a4f3551112d4b60ccb8d72b7dec4bf4ca133934faf98393",
+    "private\\baked\\roster-fx\\manifest.json": "49f8338af1a62f1351952e85463b8f47669291df76c7c44733f5be4398de6c6e",
+    "private\\baked\\jungle-complete\\manifest.json": "219370c7301c6555b9466d526a8a783ccc49e2aa1fbc36c06eef816014a78008",
+    "private\\baked\\v022\\water-lit\\manifest.json": "e0cfe06e96400aa240aca5cc9fa2a15b9581d6425acc65d8e8a267afb18bb6e9",
+    "private\\items\\assets-v023\\manifest.json": "aa2160155737d035678ccfb38bab3aef029d2ae78e2727e0771764af1eb5167d"
+  },
+  "ground_grid_sha256": "6682339ae2e488e36b39d68e7bdae79583800a99c8936272b9fcc15bb326a299",
+  "projection": {
+    "zoom": 180,
+    "pitch": 181,
+    "origin_pixels": [
+      -512,
+      -512
+    ]
+  },
+  "source_sha256": {
+    "pack_baked.py": "33535ffcd1098c8fd63865e1b3c733c9f34e7d887faadf52f7a2cab42756efaa",
+    "refresh_baked_frames.py": "c987a4a3e11ed1d01793335f3c950863cbe9ceb3616caf60aca0996b567c0365"
+  },
+  "dedicated_skills": 40,
+  "ranged_attack_styles": 9,
+  "additional_npc_models": 4,
+  "projectile_frames": 2530,
+  "replaced_skill_models": [
+    17,
+    20,
+    23,
+    25
+  ],
+  "skill_component_frames": 416,
+  "summon_body_model": 44,
+  "shop_models": [
+    45,
+    46
+  ],
+  "tormentor_model": 47,
+  "jungle_frames": 54,
+  "shadow_frames": 36662,
+  "fountain_frames": 640,
+  "wild_frames": 6016,
+  "wild_models": 11,
+  "map_completion_frames": 26,
+  "filler_models": 14,
+  "lotus_models": 2,
+  "courier_models": 2,
+  "courier_frames": 512,
+  "hero_shadow_frames": 12544,
+  "wild_shadow_frames": 6016,
+  "extra_hero_frames": 3240,
+  "item_entity_frames": 1808,
+  "item_entity_models": 5,
+  "item_assets": {
+    "items": 407,
+    "glyphs": 1012,
+    "offsets": {
+      "catalog.hit": 405337068,
+      "heroes.uir": 405919028,
+      "catalog.fnt": 405995796
+    },
+    "files": {
+      "catalog.hit": {
+        "bytes": 581960,
+        "sha256": "e833e23e62cb381e07f422b2687a7df55d0b77e24fe455868d0d72e28d7b75a5"
+      },
+      "heroes.uir": {
+        "bytes": 76768,
+        "sha256": "b9aba52f5c2e00c5865deb8d81bb23636712fc4ddb31dfdce76f7ddcff557d12"
+      },
+      "catalog.fnt": {
+        "bytes": 32416,
+        "sha256": "5152f8bbc222c695a5709367c822c1cd50103b3b1b140f8e5ec9279622ed2c42"
+      }
+    }
+  },
+  "pack_contents": "Original body/skill/component/projectile/NPC RGB565/alpha/depth pixels; offline pose shadows, original animated fountains and water, complete external HIT1 item table, original UI and bounded glyphs; no mesh triangles or bones",
+  "heroes": 10,
+  "unique_lineup": true,
+  "ordinary_neutral_camps": 26,
+  "ordinary_neutral_species": 30,
+  "roster_body_frames": 4864,
+  "roster_effect_frames": 2608,
+  "complete_jungle_frames": 15360,
+  "water": {
+    "frame_count": 32,
+    "frame_ticks": 2,
+    "texture_bytes": 525312,
+    "mask_tiles": 160,
+    "mask_bytes": 2621440,
+    "coverage_levels": 4,
+    "shore_strength_levels": 64
+  },
+  "frame_refresh": {
+    "passed": true,
+    "before_sha256": "efdae90a09a0ae76d5b9d68baba04bd92ef27895c7cf611c60d081e67f9c5e68",
+    "after_sha256": "2f4b5cbf373f37b4067e6527bfc602d18346b693aa4c39a86906941259baf08f",
+    "baseline": "build\\release-v022\\DOTA2\\SCENE-before-refresh.H1P",
+    "modified_frames": [
+      {
+        "index": 27398,
+        "key": [
+          112,
+          1,
+          0,
+          0
+        ],
+        "old_offset": 310968452,
+        "old_size": 2875,
+        "new_offset": 404893068,
+        "new_size": 54600,
+        "source_sha256": "0ca48d3c655805e5402b3271f9171e7c58f70c890233b57b3ac8f64f56753f9f"
+      },
+      {
+        "index": 27399,
+        "key": [
+          112,
+          1,
+          0,
+          1
+        ],
+        "old_offset": 310971328,
+        "old_size": 5890,
+        "new_offset": 404947668,
+        "new_size": 55200,
+        "source_sha256": "3ce234d7101a5b1bd756aa8f757c48824ff37a4cead9ef5e1c6623b870691a69"
+      },
+      {
+        "index": 27400,
+        "key": [
+          112,
+          1,
+          0,
+          2
+        ],
+        "old_offset": 310977220,
+        "old_size": 10250,
+        "new_offset": 405002868,
+        "new_size": 55800,
+        "source_sha256": "42bbee05cb5c594570bb720b429083fb8b81483018fdb485b61b4cbeba035a78"
+      },
+      {
+        "index": 27401,
+        "key": [
+          112,
+          1,
+          0,
+          3
+        ],
+        "old_offset": 310987472,
+        "old_size": 15500,
+        "new_offset": 405058668,
+        "new_size": 55800,
+        "source_sha256": "7b42e3cef8a7adda4307f864e7bc9ae40dd63f19c373dd821faae53f28e1f773"
+      },
+      {
+        "index": 27402,
+        "key": [
+          112,
+          1,
+          0,
+          4
+        ],
+        "old_offset": 311002972,
+        "old_size": 21830,
+        "new_offset": 405114468,
+        "new_size": 55800,
+        "source_sha256": "75f13e73b17255bab0170b2b2a44e1cb20a6e7ef26a7a4fb5ff9425c985a9955"
+      },
+      {
+        "index": 27403,
+        "key": [
+          112,
+          1,
+          0,
+          5
+        ],
+        "old_offset": 311024804,
+        "old_size": 28810,
+        "new_offset": 405170268,
+        "new_size": 55800,
+        "source_sha256": "4372f777177d3418693bf81b973760ac728b8b04301e928fb8c20c324ae256ad"
+      },
+      {
+        "index": 27404,
+        "key": [
+          112,
+          1,
+          0,
+          6
+        ],
+        "old_offset": 311053616,
+        "old_size": 37500,
+        "new_offset": 405226068,
+        "new_size": 55200,
+        "source_sha256": "a7c3fb48cee43f4bc40abf54d9028d1cf39880dc07fa5d904c3eadcf67a7443f"
+      },
+      {
+        "index": 27405,
+        "key": [
+          112,
+          1,
+          0,
+          7
+        ],
+        "old_offset": 311091116,
+        "old_size": 46480,
+        "new_offset": 405281268,
+        "new_size": 55800,
+        "source_sha256": "f91b79aa9e3de22ad6f52c0d8d60aed460c98eb7a3ba699a4f7f765cb4246eec"
+      }
+    ],
+    "unchanged_payloads_checked": 44270,
+    "footer_preserved": true
+  },
+  "external_assets_refreshed_without_graphic_changes": true
+}

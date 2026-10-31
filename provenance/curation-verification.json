@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "checks": {
+    "source_curated_hashes": true,
+    "original_source_hashes_unchanged": true,
+    "pipeline_curated_hashes": true,
+    "original_pipeline_hashes_unchanged": true,
+    "standalone_dependency_closure_29_of_29": true,
+    "excluded_legacy_files_absent": true,
+    "no_plain_large_inputs_curated": true
+  },
+  "passed": true,
+  "source_summary": {
+    "translation_units": 29,
+    "curated_files": 128,
+    "original_bytes": 2228709,
+    "curated_bytes": 2203392,
+    "source_map_matches": 128,
+    "groups": {
+      "game": {
+        "files": 70,
+        "curated_bytes": 828312,
+        "original_bytes": 839681
+      },
+      "platform": {
+        "files": 44,
+        "curated_bytes": 393574,
+        "original_bytes": 398686
+      },
+      "private": {
+        "files": 14,
+        "curated_bytes": 981506,
+        "original_bytes": 990342
+      }
+    }
+  },
+  "pipeline_summary": {
+    "recipes": 86,
+    "curated_bytes": 870523,
+    "source_map_matched_recipes": 47,
+    "recipes_with_historical_absolute_paths": 46
+  },
+  "standalone_dependencies": [
+    {
+      "source": "platform/entry.S",
+      "dependencies_match": true,
+      "dependency_count": 1
+    },
+    {
+      "source": "platform/native.c",
+      "dependencies_match": true,
+      "dependency_count": 49
+    },
+    {
+      "source": "platform/render.c",
+      "dependencies_match": true,
+      "dependency_count": 44
+    },
+    {
+      "source": "platform/status_effects.c",
+      "dependencies_match": true,
+      "dependency_count": 24
+    },
+    {
+      "source": "platform/baked_scene.c",
+      "dependencies_match": true,
+      "dependency_count": 44
+    },
+    {
+      "source": "platform/baked_io.c",
+      "dependencies_match": true,
+      "dependency_count": 8
+    },
+    {
+      "source": "platform/item_assets.c",
+      "dependencies_match": true,
+      "dependency_count": 11
+    },
+    {
+      "source": "platform/shop_catalog.c",
+      "dependencies_match": true,
+      "dependency_count": 19
+    },
+    {
+      "source": "platform/dota_audio.c",
+      "dependencies_match": true,
+      "dependency_count": 29
+    },
+    {
+      "source": "platform/map_codec.c",
+      "dependencies_match": true,
+      "dependency_count": 2
+    },
+    {
+      "source": "platform/map_format.c",
+      "dependencies_match": true,
+      "dependency_count": 3
+    },
+    {
+      "source": "game/barracks.c",
+      "dependencies_match": true,
+      "dependency_count": 18
+    },
+    {
+      "source": "game/bosses.c",
+      "dependencies_match": true,
+      "dependency_count": 21
+    },
+    {
+      "source": "game/courier.c",
+      "dependencies_match": true,
+      "dependency_count": 18
+    },
+    {
+      "source": "game/extra_heroes.c",
+      "dependencies_match": true,
+      "dependency_count": 24
+    },
+    {
+      "source": "game/game.c",
+      "dependencies_match": true,
+      "dependency_count": 39
+    },
+    {
+      "source": "game/item_world.c",
+      "dependencies_match": true,
+      "dependency_count": 31
+    },
+    {
+      "source": "game/items.c",
+      "dependencies_match": true,
+      "dependency_count": 32
+    },
+    {
+      "source": "game/items_special.c",
+      "dependencies_match": true,
+      "dependency_count": 27
+    },
+    {
+      "source": "game/navigation.c",
+      "dependencies_match": true,
+      "dependency_count": 19
+    },
+    {
+      "source": "game/neutral.c",
+      "dependencies_match": true,
+      "dependency_count": 23
+    },
+    {
+      "source": "game/objectives.c",
+      "dependencies_match": true,
+      "dependency_count": 22
+    },
+    {
+      "source": "game/progression.c",
+      "dependencies_match": true,
+      "dependency_count": 21
+    },
+    {
+      "source": "game/roster_heroes.c",
+      "dependencies_match": true,
+      "dependency_count": 27
+    },
+    {
+      "source": "game/runes.c",
+      "dependencies_match": true,
+      "dependency_count": 28
+    },
+    {
+      "source": "game/sight.c",
+      "dependencies_match": true,
+      "dependency_count": 29
+    },
+    {
+      "source": "game/turbo.c",
+      "dependencies_match": true,
+      "dependency_count": 17
+    },
+    {
+      "source": "game/vision.c",
+      "dependencies_match": true,
+      "dependency_count": 4
+    },
+    {
+      "source": "game/water.c",
+      "dependencies_match": true,
+      "dependency_count": 3
+    }
+  ],
+  "limitation": "Resource archive is readable recipes only; exact rebake unavailable without original Steam assets and intermediates. This audit does not claim all archived historical tools are runnable. Standalone BDA equality is independently checked by tools/build.py build agent."
+}

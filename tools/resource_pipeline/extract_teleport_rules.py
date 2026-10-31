@@ -1,0 +1,83 @@
+"""Read-only installed Steam TP rules, native Turbo overrides and timer proof.
+
+The DLL is parsed as PE bytes and never executed. Offsets are accepted only
+for the bound SHA256. Keep this evidence separate from prior release reports.
+"""
+from pathlib import Path
+import argparse,datetime,hashlib,importlib.util,json,struct,sys
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'tools'))
+from gltf_assets import np
+from source2_vpk import VpkArchive
+import pefile
+from capstone import Cs,CS_ARCH_X86,CS_MODE_64
+from capstone.x86_const import X86_REG_RIP
+STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')
+DIGEST='af4622bd405f1a465926e20a47d97bbf9988ff0cd11b63901fff1d6dc6a4c834'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--write-header',action='store_true');args=parser.parse_args()
+    out=ROOT/'private/items/teleport-source';out.mkdir(parents=True,exist_ok=True)
+    path=STEAM/'bin/win64/server.dll';b=path.read_bytes();assert sha(path)==DIGEST
+    pe=pefile.PE(data=b,fast_load=True);base=pe.OPTIONAL_HEADER.ImageBase;md=Cs(CS_ARCH_X86,CS_MODE_64);md.detail=True
+    def off(va):return pe.get_offset_from_rva(va-base)
+    def readstr(va):return b[off(va):off(va)+180].split(b'\0')[0].decode('ascii')
+    def rip(va):
+        ins=next(md.disasm(b[off(va):off(va)+16],va));refs=[o for o in ins.operands if o.type==3 and o.mem.base==X86_REG_RIP];assert len(refs)==1
+        return ins.address+ins.size+refs[0].mem.disp
+    def floating(va,fmt='<f'):return struct.unpack_from(fmt,b,off(rip(va)))[0]
+    def code(va,size):
+        data=b[off(va):off(va)+size]
+        return dict(va=hex(va),raw=hex(off(va)),sha256=hashlib.sha256(data).hexdigest(),bytes=data.hex(),asm=[f'{i.address:x} {i.mnemonic} {i.op_str}' for i in md.disasm(data,va)])
+    # Same native mode callback and item virtual identified by original RTTI.
+    assert readstr(rip(0x1818d8074))=='item_tpscroll'
+    assert readstr(rip(0x1818d8085))=='item_travel_boots'
+    assert readstr(rip(0x1818d8091))=='item_travel_boots_2'
+    assert readstr(rip(0x1818d80ba))=='AbilityCooldown' and floating(0x1818d806c)==0.5
+    assert struct.unpack_from('<Q',b,0x3981cd8+292*8)[0]==0x18152b020
+    assert floating(0x18152b091)==40 and floating(0x18152b0a2)==20
+    mode=code(0x1819988a0,48);assert 'cmp ecx, 0x1a' in ' '.join(mode['asm'])
+    assert 'mov eax, 0x4802000' in ' '.join(mode['asm']) and (0x4802000&(1<<23))
+    assert floating(0x1815307b8)==1 # BoT2 subtracts1s from the3s base.
+    assert floating(0x18152b354)==2 and floating(0x18152b363,'<d')==0.5
+    assert floating(0x1815298d8)==25 and floating(0x18152986e)==2200
+    native=dict(server=str(path),server_sha256=DIGEST,read_only=True,image_base=hex(base),
+        turbo_item_override=code(0x1818d8050,147),scroll_cooldown_getter=code(0x18152b020,205),mode_helper=mode,
+        channel_base=code(0x181530645,17),boots2_channel=code(0x18153079e,63),
+        timer_extra=code(0x18152b280,552),timer_record=code(0x1815297b0,761),
+        boots_skip_timer=code(0x181530bec,253))
+    spec=importlib.util.spec_from_file_location('teleport_kv',ROOT/'private/passives/extract_sources.py');kv=importlib.util.module_from_spec(spec);spec.loader.exec_module(kv)
+    archive=VpkArchive(STEAM/'pak01_dir.vpk');raw=archive.read('scripts/npc/items.txt');text=raw.decode('utf-8-sig');items=kv.parse(text)['DOTAAbilities']
+    (out/'items.txt').write_bytes(raw)
+    names=['item_tpscroll','item_travel_boots','item_travel_boots_2'];selected={n:items[n] for n in names}
+    scroll=selected[names[0]];assert scroll['AbilityChannelTime']=='3.0' and scroll['AbilityCooldown']=='80.0' and scroll['AbilityManaCost']=='75'
+    assert scroll['AbilityValues']['minimum_distance']=='70' and scroll['AbilityValues']['maximum_distance']=='800'
+    assert all('PASSIVE' in selected[n]['AbilityBehavior'] for n in names[1:])
+    assert selected[names[1]]['AbilityValues']['tp_cooldown']=='40' and selected[names[2]]['AbilityValues']['tp_channel_time']=='2'
+    catalog=json.loads((ROOT/'private/items/current-source/catalog.json').read_text(encoding='utf8'))['items']
+    # Immediate/ignore-channel items may be used without cancelling TP. This
+    # preserves original BKB/ShadowBlade/Glimmer/Armlet behavior.
+    safe=[];invis_safe=[];mask=bytearray((len(catalog)+7)//8);invis_mask=bytearray(len(mask))
+    for row in catalog:
+        definition=items[row['source_name']];behavior=definition.get('AbilityBehavior','')
+        if any(flag in behavior for flag in ['BEHAVIOR_IMMEDIATE','BEHAVIOR_IGNORE_CHANNEL','BEHAVIOR_DONT_CANCEL_CHANNEL']):
+            mask[row['id']//8]|=1<<(row['id']%8);safe.append(dict(id=row['id'],name=row['name'],behavior=behavior))
+        if 'BEHAVIOR_IGNORE_INVISIBLE' in behavior:
+            invis_mask[row['id']//8]|=1<<(row['id']%8);invis_safe.append(dict(id=row['id'],name=row['name'],behavior=behavior))
+    header='/* Generated by extract_teleport_rules.py from installed Steam sources. */\n#ifndef H1_DOTA_TELEPORT_RULES_H\n#define H1_DOTA_TELEPORT_RULES_H\nstatic const unsigned char dota_item_channel_safe[] = {'+','.join(str(v) for v in mask)+'};\nstatic const unsigned char dota_item_invisible_safe[] = {'+','.join(str(v) for v in invis_mask)+'};\n#endif\n'
+    headerpath=ROOT/'game/teleport_rules.h'
+    if args.write_header:headerpath.write_text(header,encoding='utf8')
+    assert headerpath.read_text(encoding='utf8')==header
+    facts=dict(normal_scroll_channel_seconds=3,boots_channel_seconds=3,boots2_channel_seconds=2,
+        turbo_scroll_cooldown_seconds=40,turbo_boots_cooldown_seconds=20,mana_cost=75,
+        timer_seconds=25,first_prior_extra_seconds=2,each_further_extra_seconds=0.5,
+        timer_radius_source=1600,fountain_history_exclusion_source=2200,landing_min_source=70,landing_max_source=800)
+    report=dict(passed=True,observed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),read_only=True,
+        source=archive.identity('scripts/npc/items.txt'),source_sha256=hashlib.sha256(raw).hexdigest(),selected=selected,native=native,facts=facts,
+        channel_safe_items=safe,invisible_safe_items=invis_safe,header_sha256=sha(headerpath),extractor_sha256=sha(Path(__file__)),
+        limitations=['Existing allied tower/base/barracks/filler entities and read-only original fountain coordinates are anchors; no new combat unit slots. No targetable Outpost entities exist.',
+          'No claim that every engine modifier, arrival protection or outpost rule is reproduced. Original geometry/assets are unchanged.',
+          'Timer positions are quantized to H1 world scale4; original radius,25s expiry and2/0.5s increments are retained.'])
+    (out/'verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    print(json.dumps(dict(passed=True,facts=facts,channel_safe_items=len(safe),header_bytes=headerpath.stat().st_size)))
+if __name__=='__main__':main()

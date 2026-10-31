@@ -1,0 +1,127 @@
+{
+  "audit_date": "2026-11-01",
+  "method": "Read original provenance, current source-font SFNT name records (index 0), and rasterize all 646 embedded glyphs with the recorded Pillow algorithm for comparison.",
+  "fonts": [
+    {
+      "file": "msyh.ttc",
+      "collection_index": 0,
+      "bytes": 19704352,
+      "sha256": "d79c55e68b1131eea0cc1c47be4f572d964f28c682e143db2ad09c1e4cb07a3f",
+      "names": {
+        "subfamily": [
+          "Arrunta",
+          "Navadno",
+          "Normaali",
+          "Normal",
+          "Normale",
+          "Normalny",
+          "Normál",
+          "Normálne",
+          "Regular",
+          "Standaard",
+          "Standard",
+          "obyčejné",
+          "Κανονικά",
+          "Обычный"
+        ],
+        "copyright": [
+          "© 2024  Microsoft Corporation. All Rights Reserved. Portions © 2024 Beijing Founder Electronics Co. Ltd. All Rights Reserved.",
+          "© 2024 微软公司版权所有 © 2024 北京北大方正电子有限公司部分版权所有"
+        ],
+        "family": [
+          "Microsoft YaHei",
+          "微软雅黑"
+        ],
+        "version": [
+          "Version 6.31"
+        ],
+        "postscript": [
+          "MicrosoftYaHei",
+          "MicrosoftYaHeiRegular"
+        ],
+        "manufacturer": [
+          "Microsoft Corporation"
+        ],
+        "designer": [
+          "Founder",
+          "北京北大方正电子有限公司"
+        ],
+        "license": [
+          "Microsoft supplied font. You may use this font to create, display and print content as permitted by the license terms, or terms of use, of the Microsoft product, service or content in which this font was included. You may only (i) embed this font in content as permitted by the embedding restrictions included in this font; and (ii) temporarily download this font to a printer or other output device to help print content. Any other use is prohibited."
+        ],
+        "license_url": [
+          "http://www.microsoft.com/typography/fonts"
+        ]
+      }
+    },
+    {
+      "file": "consola.ttf",
+      "collection_index": 0,
+      "bytes": 459180,
+      "sha256": "c6e6ce8119fdd47ec6a5449a08e2d2ad7f41ea03143aae193068ed9fa58eaebc",
+      "names": {
+        "copyright": [
+          "© 2018 Microsoft Corporation. All rights reserved."
+        ],
+        "family": [
+          "Consolas"
+        ],
+        "subfamily": [
+          "Regular"
+        ],
+        "version": [
+          "Version 7.00"
+        ],
+        "postscript": [
+          "Consolas"
+        ],
+        "manufacturer": [
+          "Microsoft Corporation"
+        ],
+        "designer": [
+          "Luc(as) de Groot"
+        ],
+        "license": [
+          "Microsoft supplied font. You may use this font to create, display, and print content as permitted by the license terms or terms of use, of the Microsoft product, service, or content in which this font was included. You may only (i) embed this font in content as permitted by the embedding restrictions included in this font; and (ii) temporarily download this font to a printer or other output device to help print content. Any other use is prohibited."
+        ],
+        "license_url": [
+          "http://www.microsoft.com/typography/fonts/default.aspx"
+        ]
+      }
+    }
+  ],
+  "embedded_font": {
+    "path": "private/generated/dota_font.h",
+    "sha256": "a75aa3c0e2f0c17adc3ffc50fc5f99e0306f9a22b679ce5226e54bcb72323ffc",
+    "glyphs": 646,
+    "height": 14,
+    "ascii_advance": 7,
+    "cjk_advance": 12,
+    "pixel_size": 12,
+    "threshold": 90,
+    "current_font_raster_comparison_passed": true,
+    "mismatches": [],
+    "original_generation_report": {
+      "source": "private/reports/font-provenance.json",
+      "sha256": "513a16c14f388d28eede857b30e79dd8f60a41bd81551cb6d49bc980113bd0bf",
+      "font_source_sha256_recorded": false
+    }
+  },
+  "streamed_item_font": {
+    "container": "assets/runtime/SCENE.H1P",
+    "entry": "catalog.fnt",
+    "glyphs": 1012,
+    "height": 14,
+    "font_file_sha256_matches_current": true,
+    "bytes": 32416,
+    "sha256": "5152f8bbc222c695a5709367c822c1cd50103b3b1b140f8e5ec9279622ed2c42",
+    "original_manifest": {
+      "source": "private/items/assets/manifest.json",
+      "sha256": "b784b07ee6217e6d7d8297f21716ebf3298cfebe4d98d8cf7fba97cda975208b"
+    }
+  },
+  "font_files_redistributed": false,
+  "separate_bitmap_redistribution_permission_obtained": false,
+  "project_license_grant_applies_to_font_shapes": false,
+  "notice": "These are Microsoft-supplied fonts, not OFL fonts. No separate authorization to redistribute the derived bitmap subsets has been obtained or established by this project. Absence of source TTF/TTC files is not a permission grant."
+}

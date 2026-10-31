@@ -1,0 +1,1243 @@
+{
+  "schema": 1,
+  "purpose": "Read-only source archive, not a build/rebake entry point.",
+  "normal_build_dependency": false,
+  "rebake_from_compact_repository_supported": false,
+  "missing_external_inputs": [
+    "User-owned original Steam Dota 2 VPK/source assets",
+    "Extracted/converted source2 glTF, materials, animations and intermediate manifests",
+    "Original offline renderer/build environment and optional source extraction tools"
+  ],
+  "archive_path_semantics": "Recipes are unchanged except CRLF to LF. Their ROOT=parents[1] and historical paths describe their original tools/ location. They require adaptation before any separate rebake. Do not run in the archive directory.",
+  "recipes": [
+    {
+      "original_path": "tools/alpha_cards.py",
+      "archive_path": "tools/resource_pipeline/alpha_cards.py",
+      "original_raw_sha256": "5ac4d48effc4c6a33c47574668a5f76a0ba7bed12f66de4f40dbd5c72cd5b88b",
+      "curated_lf_sha256": "5ac4d48effc4c6a33c47574668a5f76a0ba7bed12f66de4f40dbd5c72cd5b88b",
+      "original_bytes": 3253,
+      "curated_bytes": 3253,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_active_layer_trees.py",
+      "archive_path": "tools/resource_pipeline/bake_active_layer_trees.py",
+      "original_raw_sha256": "8464b21319b7eef96cd7bfbb3a0a818ac3a4de4124f63b9163bed3fa624904f5",
+      "curated_lf_sha256": "8464b21319b7eef96cd7bfbb3a0a818ac3a4de4124f63b9163bed3fa624904f5",
+      "original_bytes": 5682,
+      "curated_bytes": 5682,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_complete_jungle.py",
+      "archive_path": "tools/resource_pipeline/bake_complete_jungle.py",
+      "original_raw_sha256": "737585b084f6f151d24adf329e180afafa06619c10a814e427fcc48ffc2415e1",
+      "curated_lf_sha256": "737585b084f6f151d24adf329e180afafa06619c10a814e427fcc48ffc2415e1",
+      "original_bytes": 4370,
+      "curated_bytes": 4370,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_courier.py",
+      "archive_path": "tools/resource_pipeline/bake_courier.py",
+      "original_raw_sha256": "795e1a0145fb6202913f6fd452ae2bc168dabea1f60d29260fccc3e4b8106554",
+      "curated_lf_sha256": "795e1a0145fb6202913f6fd452ae2bc168dabea1f60d29260fccc3e4b8106554",
+      "original_bytes": 11161,
+      "curated_bytes": 11161,
+      "release_source_map_sha256": "795e1a0145fb6202913f6fd452ae2bc168dabea1f60d29260fccc3e4b8106554",
+      "absolute_historical_paths": [
+        {
+          "line": 17,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/bake_effects.py",
+      "archive_path": "tools/resource_pipeline/bake_effects.py",
+      "original_raw_sha256": "ab5e4983ff6d3849981f910002915df46fdc2b9deee1ff59a4394af8a4b386c8",
+      "curated_lf_sha256": "ab5e4983ff6d3849981f910002915df46fdc2b9deee1ff59a4394af8a4b386c8",
+      "original_bytes": 12188,
+      "curated_bytes": 12188,
+      "release_source_map_sha256": "ab5e4983ff6d3849981f910002915df46fdc2b9deee1ff59a4394af8a4b386c8",
+      "absolute_historical_paths": [
+        {
+          "line": 17,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/bake_extra_heroes.py",
+      "archive_path": "tools/resource_pipeline/bake_extra_heroes.py",
+      "original_raw_sha256": "8a6a029c08c3a3a3c41c7b8e303dcd4ebc679ac2401c0658769acead40b74acf",
+      "curated_lf_sha256": "8a6a029c08c3a3a3c41c7b8e303dcd4ebc679ac2401c0658769acead40b74acf",
+      "original_bytes": 31779,
+      "curated_bytes": 31779,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 21,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/bake_fountain_v022.py",
+      "archive_path": "tools/resource_pipeline/bake_fountain_v022.py",
+      "original_raw_sha256": "218dcd9ff0207bcf690237f114fc7e60d3d0228ab15ccd15004b227bf43e3314",
+      "curated_lf_sha256": "218dcd9ff0207bcf690237f114fc7e60d3d0228ab15ccd15004b227bf43e3314",
+      "original_bytes": 31096,
+      "curated_bytes": 31096,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_fountains.py",
+      "archive_path": "tools/resource_pipeline/bake_fountains.py",
+      "original_raw_sha256": "85e0c6e16ea34c78bb71573fdec06f766ff89ede717042b9038c0b8a01730fbb",
+      "curated_lf_sha256": "85e0c6e16ea34c78bb71573fdec06f766ff89ede717042b9038c0b8a01730fbb",
+      "original_bytes": 16466,
+      "curated_bytes": 16466,
+      "release_source_map_sha256": "85e0c6e16ea34c78bb71573fdec06f766ff89ede717042b9038c0b8a01730fbb",
+      "absolute_historical_paths": [
+        {
+          "line": 17,
+          "text": "STEAM = Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/bake_hero_shadows.py",
+      "archive_path": "tools/resource_pipeline/bake_hero_shadows.py",
+      "original_raw_sha256": "4e78d8bd800ca9607a5bbb85a7d7b8b7caeee3d6ab208654f6d2c7118b67d079",
+      "curated_lf_sha256": "4e78d8bd800ca9607a5bbb85a7d7b8b7caeee3d6ab208654f6d2c7118b67d079",
+      "original_bytes": 17881,
+      "curated_bytes": 17881,
+      "release_source_map_sha256": "4e78d8bd800ca9607a5bbb85a7d7b8b7caeee3d6ab208654f6d2c7118b67d079",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_item_entities.py",
+      "archive_path": "tools/resource_pipeline/bake_item_entities.py",
+      "original_raw_sha256": "6b928ef223bd3cd932176792ea30c1a1ff2e79488d5ad618bc3397c4596826d8",
+      "curated_lf_sha256": "6b928ef223bd3cd932176792ea30c1a1ff2e79488d5ad618bc3397c4596826d8",
+      "original_bytes": 8095,
+      "curated_bytes": 8095,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 11,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota');TOOL=ROOT.parent/'.tools/dota-source2/cli-20.1/Source2Viewer-CLI.exe'"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/bake_jungle.py",
+      "archive_path": "tools/resource_pipeline/bake_jungle.py",
+      "original_raw_sha256": "1853fb28cc53ebfb846d47755eb32a6ef8a91eed45e863ee0f0fa2621023df57",
+      "curated_lf_sha256": "1853fb28cc53ebfb846d47755eb32a6ef8a91eed45e863ee0f0fa2621023df57",
+      "original_bytes": 27985,
+      "curated_bytes": 27985,
+      "release_source_map_sha256": "1853fb28cc53ebfb846d47755eb32a6ef8a91eed45e863ee0f0fa2621023df57",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_map.py",
+      "archive_path": "tools/resource_pipeline/bake_map.py",
+      "original_raw_sha256": "9f74e8086168b9a31a39520c9f89ca8c87b17661e611d4985135cabef6542ab8",
+      "curated_lf_sha256": "9f74e8086168b9a31a39520c9f89ca8c87b17661e611d4985135cabef6542ab8",
+      "original_bytes": 18856,
+      "curated_bytes": 18856,
+      "release_source_map_sha256": "9f74e8086168b9a31a39520c9f89ca8c87b17661e611d4985135cabef6542ab8",
+      "absolute_historical_paths": [
+        {
+          "line": 37,
+          "text": "cc=Path('C:/msys64/ucrt64/bin/gcc.exe');exe=self.folder/'terrain_samples.exe'"
+        },
+        {
+          "line": 145,
+          "text": "self.height_stream.close();cc=Path('C:/msys64/ucrt64/bin/gcc.exe');exe=OUT/'height_grid.exe'"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/bake_map_completion.py",
+      "archive_path": "tools/resource_pipeline/bake_map_completion.py",
+      "original_raw_sha256": "b2b9e9e1cb2cd749344494cd768ced133d651df70b34d3d7d44f45505230f0b1",
+      "curated_lf_sha256": "b2b9e9e1cb2cd749344494cd768ced133d651df70b34d3d7d44f45505230f0b1",
+      "original_bytes": 15187,
+      "curated_bytes": 15187,
+      "release_source_map_sha256": "b2b9e9e1cb2cd749344494cd768ced133d651df70b34d3d7d44f45505230f0b1",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_navigation.py",
+      "archive_path": "tools/resource_pipeline/bake_navigation.py",
+      "original_raw_sha256": "7003230e541ed0ee00931fcd8b30e40e39fde146419e9da99d7ec1dbfe162829",
+      "curated_lf_sha256": "7003230e541ed0ee00931fcd8b30e40e39fde146419e9da99d7ec1dbfe162829",
+      "original_bytes": 33207,
+      "curated_bytes": 33207,
+      "release_source_map_sha256": "7003230e541ed0ee00931fcd8b30e40e39fde146419e9da99d7ec1dbfe162829",
+      "absolute_historical_paths": [
+        {
+          "line": 17,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        },
+        {
+          "line": 339,
+          "text": "p.add_argument('--header',type=Path,default=ROOT/'private/generated/dota_nav.h');p.add_argument('--cc',type=Path,default=Path('C:/msys64/ucrt64/bin/gcc.exe'))"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/bake_projectiles.py",
+      "archive_path": "tools/resource_pipeline/bake_projectiles.py",
+      "original_raw_sha256": "c30c339ad912f1053b3d46ffc1ced06ed48d59e59f75ec214710510104a03e37",
+      "curated_lf_sha256": "c30c339ad912f1053b3d46ffc1ced06ed48d59e59f75ec214710510104a03e37",
+      "original_bytes": 23467,
+      "curated_bytes": 23467,
+      "release_source_map_sha256": "c30c339ad912f1053b3d46ffc1ced06ed48d59e59f75ec214710510104a03e37",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_roshan_ancients.py",
+      "archive_path": "tools/resource_pipeline/bake_roshan_ancients.py",
+      "original_raw_sha256": "c0ca8f56ff949d8b684303e03951ff8ac1ebb74a26091c46adc5b95cab8b2ad4",
+      "curated_lf_sha256": "c0ca8f56ff949d8b684303e03951ff8ac1ebb74a26091c46adc5b95cab8b2ad4",
+      "original_bytes": 12508,
+      "curated_bytes": 12508,
+      "release_source_map_sha256": "c0ca8f56ff949d8b684303e03951ff8ac1ebb74a26091c46adc5b95cab8b2ad4",
+      "absolute_historical_paths": [
+        {
+          "line": 19,
+          "text": "STEAM = Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/bake_roshan_visibility.py",
+      "archive_path": "tools/resource_pipeline/bake_roshan_visibility.py",
+      "original_raw_sha256": "940762a51dd547e43f3c57760d6d4208195c93f31ad7489feac36330927461ff",
+      "curated_lf_sha256": "940762a51dd547e43f3c57760d6d4208195c93f31ad7489feac36330927461ff",
+      "original_bytes": 14223,
+      "curated_bytes": 14223,
+      "release_source_map_sha256": "940762a51dd547e43f3c57760d6d4208195c93f31ad7489feac36330927461ff",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_roster_fx.py",
+      "archive_path": "tools/resource_pipeline/bake_roster_fx.py",
+      "original_raw_sha256": "70a68de777535b4378a607b03a0ace9aad21fbe230a1680af817b24a34ce820f",
+      "curated_lf_sha256": "53be5ac5499952c960bc6d696d03ed0e274fbad42a29f8e50ebbfcebbacdffa4",
+      "original_bytes": 41704,
+      "curated_bytes": 41141,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 20,
+          "text": "STEAM = Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/bake_roster_heroes.py",
+      "archive_path": "tools/resource_pipeline/bake_roster_heroes.py",
+      "original_raw_sha256": "fb297429c92ea836619f544ffaa62a290e5a9f6f5b102eae0f538ff2893cf962",
+      "curated_lf_sha256": "fb297429c92ea836619f544ffaa62a290e5a9f6f5b102eae0f538ff2893cf962",
+      "original_bytes": 4887,
+      "curated_bytes": 4887,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 8,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/bake_rune_assets.py",
+      "archive_path": "tools/resource_pipeline/bake_rune_assets.py",
+      "original_raw_sha256": "350c6ed714eef480fb8b342fb965c8164e7ff4bcc9154bdbe353a3446aaa7a06",
+      "curated_lf_sha256": "350c6ed714eef480fb8b342fb965c8164e7ff4bcc9154bdbe353a3446aaa7a06",
+      "original_bytes": 6829,
+      "curated_bytes": 6829,
+      "release_source_map_sha256": "350c6ed714eef480fb8b342fb965c8164e7ff4bcc9154bdbe353a3446aaa7a06",
+      "absolute_historical_paths": [
+        {
+          "line": 9,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/bake_skill_components.py",
+      "archive_path": "tools/resource_pipeline/bake_skill_components.py",
+      "original_raw_sha256": "576258f232a804d1115778b3abd658add59ca220391c32ed1108a77261b3abf4",
+      "curated_lf_sha256": "576258f232a804d1115778b3abd658add59ca220391c32ed1108a77261b3abf4",
+      "original_bytes": 22959,
+      "curated_bytes": 22959,
+      "release_source_map_sha256": "576258f232a804d1115778b3abd658add59ca220391c32ed1108a77261b3abf4",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_skills.py",
+      "archive_path": "tools/resource_pipeline/bake_skills.py",
+      "original_raw_sha256": "790df6525e13af47eb59cffa0fac1cf8a3a0af4ed105d3b2e4af361bba28e844",
+      "curated_lf_sha256": "790df6525e13af47eb59cffa0fac1cf8a3a0af4ed105d3b2e4af361bba28e844",
+      "original_bytes": 22398,
+      "curated_bytes": 22398,
+      "release_source_map_sha256": "790df6525e13af47eb59cffa0fac1cf8a3a0af4ed105d3b2e4af361bba28e844",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_sprite_raster.c",
+      "archive_path": "tools/resource_pipeline/bake_sprite_raster.c",
+      "original_raw_sha256": "efb4dbf17f03de1ea58811e851de1188a2e433d607dfa5c777f8fd0d246151b3",
+      "curated_lf_sha256": "efb4dbf17f03de1ea58811e851de1188a2e433d607dfa5c777f8fd0d246151b3",
+      "original_bytes": 3770,
+      "curated_bytes": 3770,
+      "release_source_map_sha256": "efb4dbf17f03de1ea58811e851de1188a2e433d607dfa5c777f8fd0d246151b3",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_sprite_raster.py",
+      "archive_path": "tools/resource_pipeline/bake_sprite_raster.py",
+      "original_raw_sha256": "26b180eb8ab670b849ab0abdec32be6bb924e32b3346979d5a27726aae7e53fd",
+      "curated_lf_sha256": "26b180eb8ab670b849ab0abdec32be6bb924e32b3346979d5a27726aae7e53fd",
+      "original_bytes": 3042,
+      "curated_bytes": 3042,
+      "release_source_map_sha256": "26b180eb8ab670b849ab0abdec32be6bb924e32b3346979d5a27726aae7e53fd",
+      "absolute_historical_paths": [
+        {
+          "line": 20,
+          "text": "cc=Path('C:/msys64/ucrt64/bin/gcc.exe');env=dict(os.environ);env['PATH']=str(cc.parent)+os.pathsep+env.get('PATH','')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/bake_sprites.py",
+      "archive_path": "tools/resource_pipeline/bake_sprites.py",
+      "original_raw_sha256": "6178507319572b2e28fd7abe7599dc23b419024124fa699f7fd193238c007358",
+      "curated_lf_sha256": "6178507319572b2e28fd7abe7599dc23b419024124fa699f7fd193238c007358",
+      "original_bytes": 15657,
+      "curated_bytes": 15657,
+      "release_source_map_sha256": "6178507319572b2e28fd7abe7599dc23b419024124fa699f7fd193238c007358",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_surface.py",
+      "archive_path": "tools/resource_pipeline/bake_surface.py",
+      "original_raw_sha256": "bf750957f604872bf1899fd189d1e5031fed8bf3c37c959c681a65b9da8061fd",
+      "curated_lf_sha256": "bf750957f604872bf1899fd189d1e5031fed8bf3c37c959c681a65b9da8061fd",
+      "original_bytes": 6684,
+      "curated_bytes": 6684,
+      "release_source_map_sha256": "bf750957f604872bf1899fd189d1e5031fed8bf3c37c959c681a65b9da8061fd",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_water.py",
+      "archive_path": "tools/resource_pipeline/bake_water.py",
+      "original_raw_sha256": "10c44097b3a5f2dd44dc85c8177fdd8dfb20f259dcd5bd756189745c761d9391",
+      "curated_lf_sha256": "10c44097b3a5f2dd44dc85c8177fdd8dfb20f259dcd5bd756189745c761d9391",
+      "original_bytes": 10979,
+      "curated_bytes": 10979,
+      "release_source_map_sha256": "10c44097b3a5f2dd44dc85c8177fdd8dfb20f259dcd5bd756189745c761d9391",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/bake_world_instances.py",
+      "archive_path": "tools/resource_pipeline/bake_world_instances.py",
+      "original_raw_sha256": "831802a67a812aa28d998238f395ec2ab3e9fed97f4796b8e21205a25bc512f5",
+      "curated_lf_sha256": "831802a67a812aa28d998238f395ec2ab3e9fed97f4796b8e21205a25bc512f5",
+      "original_bytes": 6737,
+      "curated_bytes": 6737,
+      "release_source_map_sha256": "831802a67a812aa28d998238f395ec2ab3e9fed97f4796b8e21205a25bc512f5",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/compact_skill_fx.py",
+      "archive_path": "tools/resource_pipeline/compact_skill_fx.py",
+      "original_raw_sha256": "c70e3ff38d592db78e025bd2d086ee6031673a3315f5991e7d83dc497494b8c9",
+      "curated_lf_sha256": "c70e3ff38d592db78e025bd2d086ee6031673a3315f5991e7d83dc497494b8c9",
+      "original_bytes": 4960,
+      "curated_bytes": 4960,
+      "release_source_map_sha256": "c70e3ff38d592db78e025bd2d086ee6031673a3315f5991e7d83dc497494b8c9",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/encode_barracks_patch.py",
+      "archive_path": "tools/resource_pipeline/encode_barracks_patch.py",
+      "original_raw_sha256": "0d99b1e97c2f96d2a839ac1352814d5b968b5471b6fd27be4f38214131b79b30",
+      "curated_lf_sha256": "0d99b1e97c2f96d2a839ac1352814d5b968b5471b6fd27be4f38214131b79b30",
+      "original_bytes": 10480,
+      "curated_bytes": 10480,
+      "release_source_map_sha256": "0d99b1e97c2f96d2a839ac1352814d5b968b5471b6fd27be4f38214131b79b30",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/extract_active_map_entities.py",
+      "archive_path": "tools/resource_pipeline/extract_active_map_entities.py",
+      "original_raw_sha256": "99fa9b6a67547c996889587f8483b5a95547aca10d8ed7fba7fe64f043c12ecc",
+      "curated_lf_sha256": "99fa9b6a67547c996889587f8483b5a95547aca10d8ed7fba7fe64f043c12ecc",
+      "original_bytes": 4359,
+      "curated_bytes": 4359,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 7,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_backpack_rules.py",
+      "archive_path": "tools/resource_pipeline/extract_backpack_rules.py",
+      "original_raw_sha256": "05e0409c3c4822798837a0753ced954ee3d8e64bcbae79b0b9fcc8be1eb61360",
+      "curated_lf_sha256": "05e0409c3c4822798837a0753ced954ee3d8e64bcbae79b0b9fcc8be1eb61360",
+      "original_bytes": 3041,
+      "curated_bytes": 3041,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 11,
+          "text": "v=VpkArchive(Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/pak01_dir.vpk'));entry='scripts/npc/items.txt';data=v.read(entry);doc=kv.parse(data.decode('utf-8-sig'))['DOTAAbilities']"
+        },
+        {
+          "line": 23,
+          "text": "official_primary_sources=[dict(url='https://www.dota2.com/700/gameplay/',scope='3 additional slots, inactive passives/actives,6second return penalty, half cooldown rate, nearby-shop exception; old item exclusion list superseded by installed current definitions'),dict(url='https://www.dota2.com/datafeed/patchnotes?version=7.38&language=english',scope='Major Mechanics: first backpack entry has3second no-cooldown return grace, once per item per hero')],"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_barracks_rules.py",
+      "archive_path": "tools/resource_pipeline/extract_barracks_rules.py",
+      "original_raw_sha256": "cf34c45aa8c42258dc415a26c71ce7686a44df097ad6107fc99b7053dbf160aa",
+      "curated_lf_sha256": "cf34c45aa8c42258dc415a26c71ce7686a44df097ad6107fc99b7053dbf160aa",
+      "original_bytes": 4324,
+      "curated_bytes": 4324,
+      "release_source_map_sha256": "cf34c45aa8c42258dc415a26c71ce7686a44df097ad6107fc99b7053dbf160aa",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/extract_courier_rules.py",
+      "archive_path": "tools/resource_pipeline/extract_courier_rules.py",
+      "original_raw_sha256": "aaf60936dc191110c7c8ee8fdb7093fa13906c0730eaec5964442c8943231837",
+      "curated_lf_sha256": "aaf60936dc191110c7c8ee8fdb7093fa13906c0730eaec5964442c8943231837",
+      "original_bytes": 7858,
+      "curated_bytes": 7858,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 9,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        },
+        {
+          "line": 76,
+          "text": "official_mode_description=dict(url='https://www.dota2.com/duelingfates',section='Turbo Mode',"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_extra_heroes.py",
+      "archive_path": "tools/resource_pipeline/extract_extra_heroes.py",
+      "original_raw_sha256": "22696526df100cf97ef4ecf800086e1054680743f6f02851b42074a7aac08215",
+      "curated_lf_sha256": "22696526df100cf97ef4ecf800086e1054680743f6f02851b42074a7aac08215",
+      "original_bytes": 9146,
+      "curated_bytes": 9146,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 13,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        },
+        {
+          "line": 95,
+          "text": "refresher_contract=dict(primary='https://www.dota2.com/706',"
+        },
+        {
+          "line": 98,
+          "text": "debuff_immunity_contract=dict(primary='https://www.dota2.com/newfrontiers?l=tchinese',"
+        },
+        {
+          "line": 101,
+          "text": "official_reference_urls=['https://www.dota2.com/hero/slark','https://www.dota2.com/hero/necrophos',"
+        },
+        {
+          "line": 102,
+          "text": "'https://www.dota2.com/newfrontiers',"
+        },
+        {
+          "line": 103,
+          "text": "'https://www.dota2.com/706',"
+        },
+        {
+          "line": 104,
+          "text": "'https://www.dota2.com/datafeed/herodata?language=english&hero_id=36'],"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_highground_rules.py",
+      "archive_path": "tools/resource_pipeline/extract_highground_rules.py",
+      "original_raw_sha256": "aadb41b45d3ae66fd779ca3eb775a8e7bb1b4e7fb3d21fccdf846b92a878727f",
+      "curated_lf_sha256": "aadb41b45d3ae66fd779ca3eb775a8e7bb1b4e7fb3d21fccdf846b92a878727f",
+      "original_bytes": 3828,
+      "curated_bytes": 3828,
+      "release_source_map_sha256": "aadb41b45d3ae66fd779ca3eb775a8e7bb1b4e7fb3d21fccdf846b92a878727f",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/extract_item_world_rules.py",
+      "archive_path": "tools/resource_pipeline/extract_item_world_rules.py",
+      "original_raw_sha256": "4355dad118bc1593f52170d5517ef4eea0ebeefeb6907f8c5a1140df0060bc13",
+      "curated_lf_sha256": "4355dad118bc1593f52170d5517ef4eea0ebeefeb6907f8c5a1140df0060bc13",
+      "original_bytes": 7361,
+      "curated_bytes": 7361,
+      "release_source_map_sha256": "4355dad118bc1593f52170d5517ef4eea0ebeefeb6907f8c5a1140df0060bc13",
+      "absolute_historical_paths": [
+        {
+          "line": 20,
+          "text": "vpk=VpkArchive(Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/pak01_dir.vpk'));sources={};docs={}"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_items.py",
+      "archive_path": "tools/resource_pipeline/extract_items.py",
+      "original_raw_sha256": "f5d70b1ffd084027b894716232be54ec68ce4ef3a43544e7f58feda78b72b000",
+      "curated_lf_sha256": "f5d70b1ffd084027b894716232be54ec68ce4ef3a43544e7f58feda78b72b000",
+      "original_bytes": 18254,
+      "curated_bytes": 18254,
+      "release_source_map_sha256": "f5d70b1ffd084027b894716232be54ec68ce4ef3a43544e7f58feda78b72b000",
+      "absolute_historical_paths": [
+        {
+          "line": 15,
+          "text": "ARCHIVE=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/pak01_dir.vpk')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_items_special.py",
+      "archive_path": "tools/resource_pipeline/extract_items_special.py",
+      "original_raw_sha256": "b311a31172ed8896348e19f5f87dd631907f8d29c55d2ecc024cd1715540ab1d",
+      "curated_lf_sha256": "b311a31172ed8896348e19f5f87dd631907f8d29c55d2ecc024cd1715540ab1d",
+      "original_bytes": 3550,
+      "curated_bytes": 3550,
+      "release_source_map_sha256": "b311a31172ed8896348e19f5f87dd631907f8d29c55d2ecc024cd1715540ab1d",
+      "absolute_historical_paths": [
+        {
+          "line": 16,
+          "text": "archive=VpkArchive(Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/pak01_dir.vpk'));heroes=[]"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_jungle_complete.py",
+      "archive_path": "tools/resource_pipeline/extract_jungle_complete.py",
+      "original_raw_sha256": "5493db8b041b456be607316cf8dcf5c8048c1631c593f02ceaae6926abae9918",
+      "curated_lf_sha256": "5493db8b041b456be607316cf8dcf5c8048c1631c593f02ceaae6926abae9918",
+      "original_bytes": 6014,
+      "curated_bytes": 6014,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 10,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_lane_creeps.py",
+      "archive_path": "tools/resource_pipeline/extract_lane_creeps.py",
+      "original_raw_sha256": "0600cf6aa5c78ebad7c3362966e942d10ea78066dd7f8ed3b06a96103e94627a",
+      "curated_lf_sha256": "0600cf6aa5c78ebad7c3362966e942d10ea78066dd7f8ed3b06a96103e94627a",
+      "original_bytes": 8659,
+      "curated_bytes": 8659,
+      "release_source_map_sha256": "0600cf6aa5c78ebad7c3362966e942d10ea78066dd7f8ed3b06a96103e94627a",
+      "absolute_historical_paths": [
+        {
+          "line": 13,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_objectives.py",
+      "archive_path": "tools/resource_pipeline/extract_objectives.py",
+      "original_raw_sha256": "ddac4c2ef885db310aaebc53b541dc0dee5fc08a4bc341bd413738830b5193ff",
+      "curated_lf_sha256": "ddac4c2ef885db310aaebc53b541dc0dee5fc08a4bc341bd413738830b5193ff",
+      "original_bytes": 10244,
+      "curated_bytes": 10244,
+      "release_source_map_sha256": "ddac4c2ef885db310aaebc53b541dc0dee5fc08a4bc341bd413738830b5193ff",
+      "absolute_historical_paths": [
+        {
+          "line": 11,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_progression.py",
+      "archive_path": "tools/resource_pipeline/extract_progression.py",
+      "original_raw_sha256": "943e2fe084c2a03376f0032c3939d4d5160e5ffb8d5f268dd9bd7d8fa0a8da7b",
+      "curated_lf_sha256": "5e0fff4f98b75b286fc858877e6b574e34f3974781ac077d2a66d97dddb0a7be",
+      "original_bytes": 12718,
+      "curated_bytes": 12596,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 8,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_roshan_rules.py",
+      "archive_path": "tools/resource_pipeline/extract_roshan_rules.py",
+      "original_raw_sha256": "4150e622303079ed3a6a8207d5c842f1fbb8f98eab038b601e38b6369866ec66",
+      "curated_lf_sha256": "4150e622303079ed3a6a8207d5c842f1fbb8f98eab038b601e38b6369866ec66",
+      "original_bytes": 23396,
+      "curated_bytes": 23396,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 11,
+          "text": "STEAM = Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        },
+        {
+          "line": 282,
+          "text": "save(web_evidence, {'url': 'https://www.dota2.com/datafeed/patchnotes?version=7.31&language=english',"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_roster_rules.py",
+      "archive_path": "tools/resource_pipeline/extract_roster_rules.py",
+      "original_raw_sha256": "a1b5445be9d78fe9974649d68bbc3ee684ac9bd593a792f2b362cf3b01ed45d6",
+      "curated_lf_sha256": "6b4efa53cd7f9ce259c772b1746d8c53b8f6aa91650b23771fbb32de43719571",
+      "original_bytes": 7066,
+      "curated_bytes": 7025,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 9,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_runes_rules.py",
+      "archive_path": "tools/resource_pipeline/extract_runes_rules.py",
+      "original_raw_sha256": "e52a96c947e13efea1c0c9da7250ec1d3cc2e8c355487a71f6b70462a9b9f9b7",
+      "curated_lf_sha256": "e52a96c947e13efea1c0c9da7250ec1d3cc2e8c355487a71f6b70462a9b9f9b7",
+      "original_bytes": 10536,
+      "curated_bytes": 10536,
+      "release_source_map_sha256": "e52a96c947e13efea1c0c9da7250ec1d3cc2e8c355487a71f6b70462a9b9f9b7",
+      "absolute_historical_paths": [
+        {
+          "line": 12,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_teleport_rules.py",
+      "archive_path": "tools/resource_pipeline/extract_teleport_rules.py",
+      "original_raw_sha256": "0cc107888beee6cfc1186fc807f931d4257d0dabf58b12b9bcea5391609598f4",
+      "curated_lf_sha256": "0cc107888beee6cfc1186fc807f931d4257d0dabf58b12b9bcea5391609598f4",
+      "original_bytes": 7006,
+      "curated_bytes": 7006,
+      "release_source_map_sha256": "0cc107888beee6cfc1186fc807f931d4257d0dabf58b12b9bcea5391609598f4",
+      "absolute_historical_paths": [
+        {
+          "line": 15,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_turbo_rules.py",
+      "archive_path": "tools/resource_pipeline/extract_turbo_rules.py",
+      "original_raw_sha256": "ebc9d28db946c9b2def63aa2fe117e6a7896b059f14389741c57c0f083cee0e3",
+      "curated_lf_sha256": "799fef825e23e19920d3d6f005f44fa61e5369f2a7ea8d299e80449203f491ac",
+      "original_bytes": 7715,
+      "curated_bytes": 7631,
+      "release_source_map_sha256": "ebc9d28db946c9b2def63aa2fe117e6a7896b059f14389741c57c0f083cee0e3",
+      "absolute_historical_paths": [
+        {
+          "line": 14,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        },
+        {
+          "line": 79,
+          "text": "official_primary=[dict(url='https://www.dota2.com/duelingfates',scope='Original Turbo mode: higher gold/XP, shorter respawn, weaker towers and buy-anywhere; no precise current multipliers on this page.')],"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_unit_vision.py",
+      "archive_path": "tools/resource_pipeline/extract_unit_vision.py",
+      "original_raw_sha256": "d6f39ac7c26e635a19441178f990811176c6624e31d23ae2a052a3b9f32fc685",
+      "curated_lf_sha256": "bb8753753acce17b0b43058017055f33a49463da2c6c1df52e903ad35c253ed9",
+      "original_bytes": 3211,
+      "curated_bytes": 3186,
+      "release_source_map_sha256": "d6f39ac7c26e635a19441178f990811176c6624e31d23ae2a052a3b9f32fc685",
+      "absolute_historical_paths": [
+        {
+          "line": 8,
+          "text": "v=VpkArchive(Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/pak01_dir.vpk'));entry='scripts/npc/npc_units.txt';units=kvparse(v.read(entry).decode('utf-8-sig'))['DOTAUnits'];unit_base=units['npc_dota_units_base'];he='scripts/npc/heroes/npc_dota_hero_base.txt';hero_doc=kvparse(v.read(he).decode('utf-8-sig'))['DOTAHeroes'];hero_base=hero_doc['npc_dota_hero_base'];receipts=[v.identity(entry),v.identity(he)];rows={}"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/extract_water_world.py",
+      "archive_path": "tools/resource_pipeline/extract_water_world.py",
+      "original_raw_sha256": "8b27bb8eae3c8f856a3129679ff50d712eabc0894d32bc2c8b36cb27d2232a86",
+      "curated_lf_sha256": "8b27bb8eae3c8f856a3129679ff50d712eabc0894d32bc2c8b36cb27d2232a86",
+      "original_bytes": 5740,
+      "curated_bytes": 5740,
+      "release_source_map_sha256": "8b27bb8eae3c8f856a3129679ff50d712eabc0894d32bc2c8b36cb27d2232a86",
+      "absolute_historical_paths": [
+        {
+          "line": 31,
+          "text": "compiler=Path('C:/msys64/ucrt64/bin/gcc.exe');exe=out/'height_grid.exe';env=dict(os.environ);env['PATH']=str(compiler.parent)+os.pathsep+env.get('PATH','')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/gltf_assets.py",
+      "archive_path": "tools/resource_pipeline/gltf_assets.py",
+      "original_raw_sha256": "fd2fed914dcd83e640a4c6590a3a26919700b1ac0aa87acba950958a87c771df",
+      "curated_lf_sha256": "fd2fed914dcd83e640a4c6590a3a26919700b1ac0aa87acba950958a87c771df",
+      "original_bytes": 10630,
+      "curated_bytes": 10630,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/height_grid.c",
+      "archive_path": "tools/resource_pipeline/height_grid.c",
+      "original_raw_sha256": "d6efe1d37932225fd24541d6b1f9b0ab0e62d424cd8e7da0d843baa484ebc7bc",
+      "curated_lf_sha256": "d6efe1d37932225fd24541d6b1f9b0ab0e62d424cd8e7da0d843baa484ebc7bc",
+      "original_bytes": 6367,
+      "curated_bytes": 6367,
+      "release_source_map_sha256": "d6efe1d37932225fd24541d6b1f9b0ab0e62d424cd8e7da0d843baa484ebc7bc",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/nav_collision.c",
+      "archive_path": "tools/resource_pipeline/nav_collision.c",
+      "original_raw_sha256": "7cbe5c8e321c0c670451429a539cc718ba0059022522223bab016e67234d3e9e",
+      "curated_lf_sha256": "7cbe5c8e321c0c670451429a539cc718ba0059022522223bab016e67234d3e9e",
+      "original_bytes": 4840,
+      "curated_bytes": 4840,
+      "release_source_map_sha256": "7cbe5c8e321c0c670451429a539cc718ba0059022522223bab016e67234d3e9e",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/pack_baked.py",
+      "archive_path": "tools/resource_pipeline/pack_baked.py",
+      "original_raw_sha256": "33535ffcd1098c8fd63865e1b3c733c9f34e7d887faadf52f7a2cab42756efaa",
+      "curated_lf_sha256": "a255b723a73c44ab7c1947fabfc373219b0d006fd588bb8e6bcd509360315b12",
+      "original_bytes": 18630,
+      "curated_bytes": 18452,
+      "release_source_map_sha256": "33535ffcd1098c8fd63865e1b3c733c9f34e7d887faadf52f7a2cab42756efaa",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/prepare_ability_icon_mask.py",
+      "archive_path": "tools/resource_pipeline/prepare_ability_icon_mask.py",
+      "original_raw_sha256": "6ce18e14c29ec5ab8fd83c16fd80cd826f8c81f251f9a4598e6b6e8a10ab869a",
+      "curated_lf_sha256": "6ce18e14c29ec5ab8fd83c16fd80cd826f8c81f251f9a4598e6b6e8a10ab869a",
+      "original_bytes": 800,
+      "curated_bytes": 800,
+      "release_source_map_sha256": "6ce18e14c29ec5ab8fd83c16fd80cd826f8c81f251f9a4598e6b6e8a10ab869a",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/prepare_assets.py",
+      "archive_path": "tools/resource_pipeline/prepare_assets.py",
+      "original_raw_sha256": "c11122d7725bf246c27779b0a11d7cdf19c4112d81bf05a6fefa04a75852e6da",
+      "curated_lf_sha256": "c11122d7725bf246c27779b0a11d7cdf19c4112d81bf05a6fefa04a75852e6da",
+      "original_bytes": 13328,
+      "curated_bytes": 13328,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 20,
+          "text": "CDN = \"https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/\""
+        }
+      ]
+    },
+    {
+      "original_path": "tools/prepare_audio.py",
+      "archive_path": "tools/resource_pipeline/prepare_audio.py",
+      "original_raw_sha256": "70141c76fd02d4569b6f115e0e0cd30d64c1c9558f929433eab4bfe4d4f40345",
+      "curated_lf_sha256": "b3299ebdfc9724174a45df9c6ffa7fb04c9052699cdd0fc97bbdd7abd0815383",
+      "original_bytes": 12747,
+      "curated_bytes": 12601,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 57,
+          "text": "p.add_argument('--vpk',type=Path,default=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/pak01_dir.vpk'))"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/prepare_barracks_patch.py",
+      "archive_path": "tools/resource_pipeline/prepare_barracks_patch.py",
+      "original_raw_sha256": "32ce922bf507581b31a541b7d9e18b25091e79dd81a6c6886f1af6019180c041",
+      "curated_lf_sha256": "32ce922bf507581b31a541b7d9e18b25091e79dd81a6c6886f1af6019180c041",
+      "original_bytes": 14691,
+      "curated_bytes": 14691,
+      "release_source_map_sha256": "32ce922bf507581b31a541b7d9e18b25091e79dd81a6c6886f1af6019180c041",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/prepare_complete_jungle.py",
+      "archive_path": "tools/resource_pipeline/prepare_complete_jungle.py",
+      "original_raw_sha256": "83d5594f4614d6abd9fd321ae41404f00899668fbe97e33c2ccea7ffb089b0c8",
+      "curated_lf_sha256": "83d5594f4614d6abd9fd321ae41404f00899668fbe97e33c2ccea7ffb089b0c8",
+      "original_bytes": 5309,
+      "curated_bytes": 5309,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/prepare_font.py",
+      "archive_path": "tools/resource_pipeline/prepare_font.py",
+      "original_raw_sha256": "5ef9ed87bc7d9aa6b1fa597f0a182dd97e41cbdbb3698437f2a459eabc093f18",
+      "curated_lf_sha256": "e883e7cdd9300be1d565f0d31bc4720d40ded8f9bd204b80389e01578347d704",
+      "original_bytes": 4012,
+      "curated_bytes": 3952,
+      "release_source_map_sha256": "5ef9ed87bc7d9aa6b1fa597f0a182dd97e41cbdbb3698437f2a459eabc093f18",
+      "absolute_historical_paths": [
+        {
+          "line": 19,
+          "text": "parser.add_argument('--cjk-font',type=Path,default=Path('C:/Windows/Fonts/msyh.ttc'))"
+        },
+        {
+          "line": 20,
+          "text": "parser.add_argument('--ascii-font',type=Path,default=Path('C:/Windows/Fonts/consola.ttf'))"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/prepare_item_assets.py",
+      "archive_path": "tools/resource_pipeline/prepare_item_assets.py",
+      "original_raw_sha256": "dca1d9f23e8a251b56c9ca0b43b6fcf0e8d8d985f294a1bbd705ad94482eed62",
+      "curated_lf_sha256": "dca1d9f23e8a251b56c9ca0b43b6fcf0e8d8d985f294a1bbd705ad94482eed62",
+      "original_bytes": 8527,
+      "curated_bytes": 8527,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 15,
+          "text": "ARCHIVE=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/pak01_dir.vpk')"
+        },
+        {
+          "line": 93,
+          "text": "fonts=[Path('C:/Windows/Fonts/msyh.ttc'),Path('C:/Windows/Fonts/consola.ttf')];cjk=ImageFont.truetype(str(fonts[0]),12);ascii_font=ImageFont.truetype(str(fonts[1]),12);glyphs=[]"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/prepare_items_fixtures.py",
+      "archive_path": "tools/resource_pipeline/prepare_items_fixtures.py",
+      "original_raw_sha256": "dd305003f226a22adaf6e520ea45f97069cac0d9c35828768e195ced9a0ef038",
+      "curated_lf_sha256": "fbada5876c67c1568d7c6f7958634eaf1114fd75e87e16269e17cef9d7918c60",
+      "original_bytes": 1161,
+      "curated_bytes": 1147,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 8,
+          "text": "env=os.environ.copy();env['PATH']='C:/msys64/ucrt64/bin;'+env.get('PATH','');exe=out/'items_visual_fixtures.exe'"
+        },
+        {
+          "line": 9,
+          "text": "subprocess.run(['C:/msys64/ucrt64/bin/gcc.exe','-std=c99','-O2','-Wall','-Wextra','-Werror',*[str(p) for p in sources],'-o',str(exe)],check=True,env=env)"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/prepare_map_completion.py",
+      "archive_path": "tools/resource_pipeline/prepare_map_completion.py",
+      "original_raw_sha256": "847875330f3f85d9745343d761cf010e346d09b990d9bd32d82ff0719f18100b",
+      "curated_lf_sha256": "847875330f3f85d9745343d761cf010e346d09b990d9bd32d82ff0719f18100b",
+      "original_bytes": 11222,
+      "curated_bytes": 11222,
+      "release_source_map_sha256": "847875330f3f85d9745343d761cf010e346d09b990d9bd32d82ff0719f18100b",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/prepare_map_overview.py",
+      "archive_path": "tools/resource_pipeline/prepare_map_overview.py",
+      "original_raw_sha256": "c7fa79dd5b9333ed41fb949758f9731d41d6ac8b115dc1a63a0110c11482f273",
+      "curated_lf_sha256": "c7fa79dd5b9333ed41fb949758f9731d41d6ac8b115dc1a63a0110c11482f273",
+      "original_bytes": 3075,
+      "curated_bytes": 3075,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 12,
+          "text": "GAME = Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/prepare_music_playback.py",
+      "archive_path": "tools/resource_pipeline/prepare_music_playback.py",
+      "original_raw_sha256": "0395c0dc8d4a5539a03190d0bf5420ac69090d70fbc85380da958359c155d870",
+      "curated_lf_sha256": "0395c0dc8d4a5539a03190d0bf5420ac69090d70fbc85380da958359c155d870",
+      "original_bytes": 5615,
+      "curated_bytes": 5615,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/prepare_progression_ui.py",
+      "archive_path": "tools/resource_pipeline/prepare_progression_ui.py",
+      "original_raw_sha256": "6fcebcdb0a3466125abe4f9c0e2fa896826bc0b12d683ed48bceb695ce96b072",
+      "curated_lf_sha256": "6fcebcdb0a3466125abe4f9c0e2fa896826bc0b12d683ed48bceb695ce96b072",
+      "original_bytes": 2750,
+      "curated_bytes": 2750,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/prepare_roster_ui.py",
+      "archive_path": "tools/resource_pipeline/prepare_roster_ui.py",
+      "original_raw_sha256": "415054b829c6194c1e5d013352a3f0464101bedb0e61c8152eca16bd718ea61f",
+      "curated_lf_sha256": "de79d3d5d5928af661a24a5aedf091f98474b170cde2e67c4fd1c8f7cce77ccf",
+      "original_bytes": 2907,
+      "curated_bytes": 2877,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/prepare_shadow_cull.py",
+      "archive_path": "tools/resource_pipeline/prepare_shadow_cull.py",
+      "original_raw_sha256": "6584f2fcb3829c0b3ede749782df2c2804c9f47bbceb41cb6986710c79aa1ac5",
+      "curated_lf_sha256": "6584f2fcb3829c0b3ede749782df2c2804c9f47bbceb41cb6986710c79aa1ac5",
+      "original_bytes": 12274,
+      "curated_bytes": 12274,
+      "release_source_map_sha256": "6584f2fcb3829c0b3ede749782df2c2804c9f47bbceb41cb6986710c79aa1ac5",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/prepare_shard_ui.py",
+      "archive_path": "tools/resource_pipeline/prepare_shard_ui.py",
+      "original_raw_sha256": "29c646fba7daf494c23582562a9fac34a963279fece4e2b65089002feb0239c9",
+      "curated_lf_sha256": "29c646fba7daf494c23582562a9fac34a963279fece4e2b65089002feb0239c9",
+      "original_bytes": 2821,
+      "curated_bytes": 2821,
+      "release_source_map_sha256": "29c646fba7daf494c23582562a9fac34a963279fece4e2b65089002feb0239c9",
+      "absolute_historical_paths": [
+        {
+          "line": 8,
+          "text": "VPK=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/pak01_dir.vpk')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/refresh_baked_frames.py",
+      "archive_path": "tools/resource_pipeline/refresh_baked_frames.py",
+      "original_raw_sha256": "c987a4a3e11ed1d01793335f3c950863cbe9ceb3616caf60aca0996b567c0365",
+      "curated_lf_sha256": "c987a4a3e11ed1d01793335f3c950863cbe9ceb3616caf60aca0996b567c0365",
+      "original_bytes": 3855,
+      "curated_bytes": 3855,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/skill_motion_catalog.py",
+      "archive_path": "tools/resource_pipeline/skill_motion_catalog.py",
+      "original_raw_sha256": "484705dc1e075372d41e3fa2a4d2b42bdb90f4955bf2661ad43242888076c5cf",
+      "curated_lf_sha256": "484705dc1e075372d41e3fa2a4d2b42bdb90f4955bf2661ad43242888076c5cf",
+      "original_bytes": 3765,
+      "curated_bytes": 3765,
+      "release_source_map_sha256": "484705dc1e075372d41e3fa2a4d2b42bdb90f4955bf2661ad43242888076c5cf",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/source2_bind_wearables.py",
+      "archive_path": "tools/resource_pipeline/source2_bind_wearables.py",
+      "original_raw_sha256": "e2a6b748b048ff0747f16e191324d0d495091185e753edd392f4fc3221218efc",
+      "curated_lf_sha256": "e2a6b748b048ff0747f16e191324d0d495091185e753edd392f4fc3221218efc",
+      "original_bytes": 12309,
+      "curated_bytes": 12309,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 186,
+          "text": "'references':['https://github.com/ValveResourceFormat/ValveResourceFormat/blob/master/ValveResourceFormat/Resource/ResourceTypes/ModelAnimation/Skeleton.cs',"
+        },
+        {
+          "line": 187,
+          "text": "'https://github.com/ValveResourceFormat/ValveResourceFormat/blob/master/ValveResourceFormat/Utils/StringToken.cs'],"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/source2_export.py",
+      "archive_path": "tools/resource_pipeline/source2_export.py",
+      "original_raw_sha256": "cf6c938747cdf20281ed1c849581484442f17d5722064cb331c65004956f3d15",
+      "curated_lf_sha256": "cf6c938747cdf20281ed1c849581484442f17d5722064cb331c65004956f3d15",
+      "original_bytes": 8537,
+      "curated_bytes": 8537,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 5,
+          "text": "Uses Source 2 Viewer / ValveResourceFormat: https://s2v.app"
+        },
+        {
+          "line": 21,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        },
+        {
+          "line": 118,
+          "text": "'tool_project':'https://github.com/ValveResourceFormat/ValveResourceFormat','tool_release':'20.1',"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/source2_kv3_text.py",
+      "archive_path": "tools/resource_pipeline/source2_kv3_text.py",
+      "original_raw_sha256": "2a124ffe839382ce3054f9cccbedaae7ffc1478044a355a3c6aefb3c35d1640c",
+      "curated_lf_sha256": "d292e7d2367719f017062a39ee1fdaa770441043d6f039e52dd80f74f9f52039",
+      "original_bytes": 2535,
+      "curated_bytes": 2479,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/source2_layout.py",
+      "archive_path": "tools/resource_pipeline/source2_layout.py",
+      "original_raw_sha256": "962f502c5f0be9e7741ae41d8894ce66e82bd920f5723cc72432892a470a4ac2",
+      "curated_lf_sha256": "962f502c5f0be9e7741ae41d8894ce66e82bd920f5723cc72432892a470a4ac2",
+      "original_bytes": 5000,
+      "curated_bytes": 5000,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 47,
+          "text": "archive=VpkArchive('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/maps/dota.vpk')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/source2_materials.py",
+      "archive_path": "tools/resource_pipeline/source2_materials.py",
+      "original_raw_sha256": "b3c4e72c65a90ec01ab4c18dbf14583a1d879d481ff55dd1d937e0a3dbf53413",
+      "curated_lf_sha256": "b3c4e72c65a90ec01ab4c18dbf14583a1d879d481ff55dd1d937e0a3dbf53413",
+      "original_bytes": 3549,
+      "curated_bytes": 3549,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 8,
+          "text": "STEAM=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota')"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/source2_prepare.py",
+      "archive_path": "tools/resource_pipeline/source2_prepare.py",
+      "original_raw_sha256": "c5e2c10487b13e72d899c023db330884295e28cb3bf501328bb84a3fce0aeaff",
+      "curated_lf_sha256": "c5e2c10487b13e72d899c023db330884295e28cb3bf501328bb84a3fce0aeaff",
+      "original_bytes": 7741,
+      "curated_bytes": 7741,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 5,
+          "text": "Uses Source 2 Viewer / ValveResourceFormat (https://s2v.app)."
+        },
+        {
+          "line": 47,
+          "text": "parser.add_argument('--game',type=Path,default=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota'))"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/source2_static_prepare.py",
+      "archive_path": "tools/resource_pipeline/source2_static_prepare.py",
+      "original_raw_sha256": "6c49532ca6f9b2864cfe5ec6de8e8ca178d629bd4d87e3d6d510340e305be3f3",
+      "curated_lf_sha256": "6c49532ca6f9b2864cfe5ec6de8e8ca178d629bd4d87e3d6d510340e305be3f3",
+      "original_bytes": 6574,
+      "curated_bytes": 6574,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 26,
+          "text": "parser.add_argument('--game',type=Path,default=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota'))"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/source2_vpk.py",
+      "archive_path": "tools/resource_pipeline/source2_vpk.py",
+      "original_raw_sha256": "08e96b109049aa787ae7d1c784ce98139d64413827e4361fba8de22660b4903e",
+      "curated_lf_sha256": "08e96b109049aa787ae7d1c784ce98139d64413827e4361fba8de22660b4903e",
+      "original_bytes": 6613,
+      "curated_bytes": 6613,
+      "release_source_map_sha256": "08e96b109049aa787ae7d1c784ce98139d64413827e4361fba8de22660b4903e",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/source2_water.py",
+      "archive_path": "tools/resource_pipeline/source2_water.py",
+      "original_raw_sha256": "7ed6e3a3763546fb838f43c9999c59d9d33462939dab7ef70a2d8741bf12fbcf",
+      "curated_lf_sha256": "7ed6e3a3763546fb838f43c9999c59d9d33462939dab7ef70a2d8741bf12fbcf",
+      "original_bytes": 4916,
+      "curated_bytes": 4916,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 19,
+          "text": "parser.add_argument('--game',type=Path,default=Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota'))"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/terrain_bake.py",
+      "archive_path": "tools/resource_pipeline/terrain_bake.py",
+      "original_raw_sha256": "828d2bc603d812c0383f1631d49ae27854777b924374dd16fcc04867b67bf8bd",
+      "curated_lf_sha256": "828d2bc603d812c0383f1631d49ae27854777b924374dd16fcc04867b67bf8bd",
+      "original_bytes": 10110,
+      "curated_bytes": 10110,
+      "release_source_map_sha256": "828d2bc603d812c0383f1631d49ae27854777b924374dd16fcc04867b67bf8bd",
+      "absolute_historical_paths": [
+        {
+          "line": 114,
+          "text": "compiler=Path('C:/msys64/ucrt64/bin/gcc.exe');source=ROOT/'tools/terrain_samples.c'"
+        },
+        {
+          "line": 143,
+          "text": "'shader_reference':'https://github.com/ValveResourceFormat/ValveResourceFormat/blob/master/Renderer/Shaders/multiblend.frag.slang',"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/terrain_cells.py",
+      "archive_path": "tools/resource_pipeline/terrain_cells.py",
+      "original_raw_sha256": "83b8b5df017ebddd9d96d81fa6f5a05d0548a8b985ac03b1df3f9557a7873651",
+      "curated_lf_sha256": "83b8b5df017ebddd9d96d81fa6f5a05d0548a8b985ac03b1df3f9557a7873651",
+      "original_bytes": 5806,
+      "curated_bytes": 5806,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/terrain_samples.c",
+      "archive_path": "tools/resource_pipeline/terrain_samples.c",
+      "original_raw_sha256": "3800ef3dd460c0c6cdf89eb76258d6c031aa6ba7bfa44f85d3c60b4a14ed5be4",
+      "curated_lf_sha256": "3800ef3dd460c0c6cdf89eb76258d6c031aa6ba7bfa44f85d3c60b4a14ed5be4",
+      "original_bytes": 9145,
+      "curated_bytes": 9145,
+      "release_source_map_sha256": "3800ef3dd460c0c6cdf89eb76258d6c031aa6ba7bfa44f85d3c60b4a14ed5be4",
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/terrain_simplify.py",
+      "archive_path": "tools/resource_pipeline/terrain_simplify.py",
+      "original_raw_sha256": "6edcec93dc3b8d5cd9f1d7c468e41df3d86f52d3cc087b76f3dffbd7915b5377",
+      "curated_lf_sha256": "6edcec93dc3b8d5cd9f1d7c468e41df3d86f52d3cc087b76f3dffbd7915b5377",
+      "original_bytes": 8346,
+      "curated_bytes": 8346,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/terrain_water.py",
+      "archive_path": "tools/resource_pipeline/terrain_water.py",
+      "original_raw_sha256": "1b86db0de7ccea078b3202c73b7e1cb3f709e7ec8a6de80157b48dab8a28d451",
+      "curated_lf_sha256": "1b86db0de7ccea078b3202c73b7e1cb3f709e7ec8a6de80157b48dab8a28d451",
+      "original_bytes": 10442,
+      "curated_bytes": 10442,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": []
+    },
+    {
+      "original_path": "tools/verify_extra_hero_assets.py",
+      "archive_path": "tools/resource_pipeline/verify_extra_hero_assets.py",
+      "original_raw_sha256": "7c186d6f8101c1a947e1dc0b4acc8c05dc692342c43070d7382680781aa52b05",
+      "curated_lf_sha256": "7c186d6f8101c1a947e1dc0b4acc8c05dc692342c43070d7382680781aa52b05",
+      "original_bytes": 8377,
+      "curated_bytes": 8377,
+      "release_source_map_sha256": null,
+      "absolute_historical_paths": [
+        {
+          "line": 15,
+          "text": "v=VpkArchive(Path('D:/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota/pak01_dir.vpk'));tool=ROOT.parent/'.tools/dota-source2/cli-20.1/Source2Viewer-CLI.exe';reports=ROOT/'private/source2/reports';results=[]"
+        }
+      ]
+    }
+  ],
+  "imported_modules_including_stdlib": [
+    "PIL",
+    "__future__",
+    "argparse",
+    "array",
+    "base64",
+    "bisect",
+    "capstone",
+    "collections",
+    "concurrent",
+    "csv",
+    "ctypes",
+    "dataclasses",
+    "datetime",
+    "decimal",
+    "fnmatch",
+    "hashlib",
+    "heapq",
+    "html",
+    "imageio_ffmpeg",
+    "importlib",
+    "io",
+    "json",
+    "math",
+    "numpy",
+    "os",
+    "pathlib",
+    "pefile",
+    "random",
+    "re",
+    "runpy",
+    "shutil",
+    "struct",
+    "subprocess",
+    "sys",
+    "time",
+    "urllib",
+    "winreg",
+    "zlib"
+  ],
+  "excluded_legacy_live_3d": [
+    "prepare_3d_assets.py"
+  ],
+  "excluded_historical_build_entry_points": [
+    {
+      "path": "tools/build.py",
+      "original_raw_sha256": "084e5dc0ca8656b5b9a528aa78a0cadcaa7072e4bf8d1df29c34a7616870b05f"
+    },
+    {
+      "path": "tools/build_baked.py",
+      "original_raw_sha256": "51e82045d92f0146840907a2696c26615a93ffe7bcc2a5ad050934c7f3369172"
+    }
+  ],
+  "summary": {
+    "recipes": 86,
+    "curated_bytes": 870523,
+    "source_map_matched_recipes": 47,
+    "recipes_with_historical_absolute_paths": 46
+  }
+}

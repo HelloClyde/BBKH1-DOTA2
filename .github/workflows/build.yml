@@ -1,0 +1,87 @@
+name: Build H1 DOTA2
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+          lfs: true
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Install pinned Python dependencies
+        shell: pwsh
+        run: |
+          python -m pip install -r tools/requirements-build.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Install SHA-verified GNU MIPS toolchain
+        shell: pwsh
+        run: |
+          python tools/install_toolchain.py
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Build exact standalone BDA
+        shell: pwsh
+        run: |
+          python tools/build.py --output build/native
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Verify envelope, ELF payload, ABI and reference SHA
+        shell: pwsh
+        run: |
+          python tools/verify.py --build build/native
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Package and verify explicit delivery members
+        shell: pwsh
+        run: |
+          python tools/package.py --build build/native --output dist
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          python tools/verify.py --package dist
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v7
+        with:
+          name: DOTA2-H1-${{ github.sha }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
+
+  release:
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v8
+        with:
+          name: DOTA2-H1-${{ github.sha }}
+          path: dist
+          digest-mismatch: error
+      - name: Verify downloaded files and tag, without rebuilding
+        run: |
+          python tools/verify.py --package dist
+          python tools/check_tag.py
+      - name: Publish this build only for an explicitly pushed version tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$RELEASE_TAG" dist/DOTA2.bda dist/DOTA2-H1-install.zip dist/SHA256SUMS.txt dist/PACKAGE.json --verify-tag --title "DOTA2 $RELEASE_TAG" --notes-file UPDATE-NOTES.txt

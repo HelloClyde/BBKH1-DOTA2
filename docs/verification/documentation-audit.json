@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "scope": "Local documentation/link/image/provenance checks only; no build, remote or device action by this documentation agent.",
+  "production_files_modified": false,
+  "original_workspace_files_modified": false,
+  "docs_frozen": true,
+  "local_link_targets_checked": 28,
+  "missing_local_link_targets": [],
+  "screenshots": {
+    "count": 5,
+    "width": 480,
+    "height": 272,
+    "unmodified_copies": true,
+    "physical_h1": 4,
+    "host_preview": 1,
+    "visually_reviewed": true
+  },
+  "fonts": {
+    "embedded_glyphs_raster_compared": 646,
+    "mismatches": 0,
+    "streamed_item_font_glyphs": 1012,
+    "source_font_manifest_hashes_match": true,
+    "separate_bitmap_redistribution_permission_obtained": false,
+    "source_ttf_ttc_copied": false
+  },
+  "licenses": {
+    "project_code": "GPL-2.0-or-later",
+    "sdk": "Apache-2.0",
+    "valve_assets_not_relicensed": true,
+    "font_shapes_not_relicensed": true,
+    "full_gpl_text_retained_byte_identical": true
+  },
+  "sdk_commit_read_only_checked": "067fe072477861dfc8949d7b1a55279fb92d2548",
+  "release_or_ci_success_claimed": false,
+  "files": {
+    "README.md": {
+      "bytes": 7614,
+      "sha256": "a459187b9c19d31f2e4d1218ea73468cf3815f96144f6a2055d62f3983f961d1"
+    },
+    "LICENSE": {
+      "bytes": 19349,
+      "sha256": "5213c05d0fab06ae03990bbf8c01b649afb9dcb776d463beb4d546f2a09b9845"
+    },
+    "NOTICE.md": {
+      "bytes": 2519,
+      "sha256": "0c02cd8678849a1d7dd4346e959b5ed4efed9b26b72965844891dae5c66946d2"
+    },
+    "UPDATE-NOTES.txt": {
+      "bytes": 1930,
+      "sha256": "f11f06a8f6b3a78877e99a1a05e2ced8da6e4ddbf569792d900f2c2e2cc7c7f6"
+    },
+    "assets/NOTICE.md": {
+      "bytes": 3539,
+      "sha256": "89cbbb2c03874fdf4ca9d26fd55e745c46d47dfad6bfeb34a41801a64f3ddffa"
+    },
+    "licenses/GPL-2.0.txt": {
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    "licenses/FONT-NOTICE.md": {
+      "bytes": 2481,
+      "sha256": "a46a3a843a07f49f46d9b6df9881a3064d05605f13d99568deb164bf0abe7104"
+    },
+    "docs/BUILDING.md": {
+      "bytes": 3352,
+      "sha256": "be4e78edde7cac8e2e063cc045b197b1a19eb5301a9a51e485b65649c5cb13f9"
+    },
+    "docs/CONTROLS.md": {
+      "bytes": 2906,
+      "sha256": "1903e09d01344915f6d82071d963a962ad6e0fc2ac326e7f6ba3a337bd1c8c03"
+    },
+    "docs/provenance/fonts.json": {
+      "bytes": 4882,
+      "sha256": "5159e8841aae7cfd3fc44a7d81daeef56f114ccc12cc29ffc4ece938e54df432"
+    },
+    "docs/verification/v0.27-h1.json": {
+      "bytes": 5406,
+      "sha256": "fe6ca6ddf84d92345ef579df7882b4ae85f16815d930ee107f4c9bd29b63512d"
+    },
+    "docs/screenshots/manifest.json": {
+      "bytes": 1926,
+      "sha256": "bb10d43940f11234ddecf0b06dac902d50f0e6703a5982189cea62fb4c636398"
+    },
+    "docs/screenshots/h1-gameplay.png": {
+      "bytes": 111559,
+      "sha256": "1acbea3454989b0f0e46becbe207df2687c0729d77c38aaabf4216c613de4111"
+    },
+    "docs/screenshots/h1-pause-help.png": {
+      "bytes": 20463,
+      "sha256": "7d46f7158f12b08b4168ed7b9973de112b903fcebc4de9f1bc08a6a7ec7ee95e"
+    },
+    "docs/screenshots/h1-shop-recommended.png": {
+      "bytes": 14724,
+      "sha256": "6c9ec99bd9372388ff38bc6a4458ef37381b9655697cc53e3a75e003255a5d29"
+    },
+    "docs/screenshots/h1-shop-upgrades.png": {
+      "bytes": 14318,
+      "sha256": "38d5753a8e5c708495ff11ac6f3ff2f753bd5730300d755a0c36cd3acc7ad790"
+    },
+    "docs/screenshots/host-necro-five-skills.png": {
+      "bytes": 84528,
+      "sha256": "3adb5a51702059c121f1f893ff67607247388392d3fb518978ad862b146789af"
+    }
+  }
+}

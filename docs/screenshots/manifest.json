@@ -1,0 +1,52 @@
+{
+  "version": "0.27",
+  "physical_bda_sha256": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d",
+  "images": [
+    {
+      "path": "docs/screenshots/h1-gameplay.png",
+      "source": "build/v027/physical-ui/delivered.png",
+      "kind": "physical_h1",
+      "width": 480,
+      "height": 272,
+      "sha256": "1acbea3454989b0f0e46becbe207df2687c0729d77c38aaabf4216c613de4111",
+      "unmodified_copy": true
+    },
+    {
+      "path": "docs/screenshots/h1-shop-recommended.png",
+      "source": "build/v027/physical-ui/axe-recommended.png",
+      "kind": "physical_h1",
+      "width": 480,
+      "height": 272,
+      "sha256": "6c9ec99bd9372388ff38bc6a4458ef37381b9655697cc53e3a75e003255a5d29",
+      "unmodified_copy": true
+    },
+    {
+      "path": "docs/screenshots/h1-pause-help.png",
+      "source": "build/v027/physical-ui/pause-help.png",
+      "kind": "physical_h1",
+      "width": 480,
+      "height": 272,
+      "sha256": "7d46f7158f12b08b4168ed7b9973de112b903fcebc4de9f1bc08a6a7ec7ee95e",
+      "unmodified_copy": true
+    },
+    {
+      "path": "docs/screenshots/h1-shop-upgrades.png",
+      "source": "build/v027/physical-ui/upgrade-destinations.png",
+      "kind": "physical_h1",
+      "width": 480,
+      "height": 272,
+      "sha256": "38d5753a8e5c708495ff11ac6f3ff2f753bd5730300d755a0c36cd3acc7ad790",
+      "unmodified_copy": true
+    },
+    {
+      "path": "docs/screenshots/host-necro-five-skills.png",
+      "source": "build/tests/v027-ui-shop/run-final/necro-five-skills.png",
+      "kind": "host_C_renderer_preview",
+      "width": 480,
+      "height": 272,
+      "sha256": "3adb5a51702059c121f1f893ff67607247388392d3fb518978ad862b146789af",
+      "unmodified_copy": true
+    }
+  ],
+  "rights": "Screenshots contain Valve game artwork and Microsoft-derived bitmap glyphs; the project GPL grant does not relicense these elements."
+}

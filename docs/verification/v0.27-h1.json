@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "version": "0.27",
+  "target": "BBK H1 / Y100 V1.41",
+  "evidence_kind": "Historical physical H1 acceptance from the original development workspace; not a fresh standalone-repository hardware run.",
+  "bda_sha256": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d",
+  "elf_sha256": "4d2e2a1d081b5a387603a9850b53c301a32346074023f27f58b50292d48dade9",
+  "sdk_commit": "067fe072477861dfc8949d7b1a55279fb92d2548",
+  "original_reports": [
+    {
+      "source": "build/v027/physical-ui-complete/verification.json",
+      "sha256": "5c49f0e1d346492d1d959c9f57155246d76e7556e62b35ce5f2811ad70df2ecb"
+    },
+    {
+      "source": "build/v027/perf/game-final/verification.json",
+      "sha256": "bf517118c1d6c770784b29ca51ba4b5c05ce662418eef2eacf83029ea7c3dad5"
+    },
+    {
+      "source": "build/v027/perf/comparison.json",
+      "sha256": "1095a9dcf429fc23d8c046c00cd5c748c9395d6490657161e2b8f8bdebb65e0a"
+    }
+  ],
+  "physical_h1_tested": true,
+  "normal_input_only": true,
+  "game_state_ram_writes": 0,
+  "ui": {
+    "passed": true,
+    "checks": 21,
+    "all_checks_passed": true,
+    "checks_summary": [
+      "Loaded final BDA code identity",
+      "MXU exact startup self-test selected on aligned framebuffer, no RGB table allocation",
+      "Minimap tap pans without hero orders",
+      "Minimap drag pans without hero orders",
+      "Hero panel recenters camera",
+      "BACK pauses instead of exiting",
+      "Pause freezes complete simulation",
+      "Shop opened from pause freezes complete simulation",
+      "Shop returns to pause",
+      "BACK from pause resumes",
+      "Shop opened from play freezes complete simulation",
+      "Hero recommendation tab",
+      "Recommended starting stage selected",
+      "Paused purchase deducts gold",
+      "Paid-at-fountain complete simulation remains frozen in shop",
+      "Select boots from full catalogue",
+      "Upgrade destinations tab has a purchasable recipe result",
+      "Shop returns to play and simulation resumes",
+      "Purchased fountain item present after resume (immediate local purchase)",
+      "Explicit X normal exit confirmed without repeated input",
+      "Normal exit releases audio/rendering heaps and keeps debugger healthy"
+    ],
+    "mxu_ready": 1,
+    "rgb565_table": 0,
+    "normal_exit": true,
+    "fountain_purchase_is_immediate_not_remote_delivery": true
+  },
+  "fps": {
+    "measurement": "PC monotonic elapsed seconds and completed-frame counters during one normal run per version.",
+    "player": "Axe",
+    "candidate": {
+      "opening-standing": {
+        "seconds": 19.0,
+        "frames": 337,
+        "fps": 17.736842105263158,
+        "game_tick_advance": 385,
+        "audio_underruns_added": 0
+      },
+      "diagonal-movement": {
+        "seconds": 29.030999999988126,
+        "frames": 544,
+        "fps": 18.73858978334272,
+        "game_tick_advance": 581,
+        "audio_underruns_added": 0
+      },
+      "later-standing": {
+        "seconds": 19.0,
+        "frames": 371,
+        "fps": 19.526315789473685,
+        "game_tick_advance": 378,
+        "audio_underruns_added": 0
+      }
+    },
+    "baseline": {
+      "opening-standing": {
+        "fps": 17.157894736842106,
+        "seconds": 19.0,
+        "frames": 326
+      },
+      "diagonal-movement": {
+        "fps": 18.57595809208504,
+        "seconds": 29.01600000000326,
+        "frames": 539
+      },
+      "later-standing": {
+        "fps": 19.473684210526315,
+        "seconds": 19.0,
+        "frames": 370
+      }
+    },
+    "candidate_weighted_fps": 18.677925139118045,
+    "baseline_weighted_fps": 18.428435000595975,
+    "seed_and_full_roster_controlled": false,
+    "whole_match_tested": false,
+    "all_one_second_windows_guaranteed": false,
+    "scope": "One normal physical H1 run per version with Axe and the same opening/30-second diagonal movement/later-standing key sequence. PC monotonic time and completed frame counters; 20Hz game limit. Full roster and initial random seed were not controlled, so small differences cannot establish a causal speedup. Not a whole-match or every-scene guarantee. Original scalar LUT baseline versus final guarded exact MXU and ground cache, including new game logic; no in-RAM backend flag manipulation. Remote-purchase actions occur only after all FPS windows."
+  },
+  "remote_purchase": {
+    "passed": true,
+    "after_fps_windows": true,
+    "before_position": [
+      1055,
+      3104
+    ],
+    "inventory_before": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "gold_before": 852,
+    "gold_after": 352,
+    "inventory_after_purchase": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "paused_seconds": 3,
+    "paused_game_sha256": "b192026b910a844c4277d8a2259352230b306d295beee8fdef2f64b5a1e3afeb",
+    "inventory_after_delivery": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "normal_exit": true
+  },
+  "reuse_rule": "Historical results may be reused for a new standalone build only after the exact BDA SHA-256 and runtime asset identities match. A build/CI pass is not a new physical H1 or emulator test. The small A/B FPS difference does not prove causal speedup.",
+  "screenshots": "docs/screenshots/manifest.json"
+}

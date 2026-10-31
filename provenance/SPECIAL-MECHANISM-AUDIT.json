@@ -1,0 +1,441 @@
+{
+  "complete": true,
+  "source_catalog_sha256": "7064dc0aaebf4e7d27b55cf72f68d4b68f45ed40fb57849bc153e25e7fa9a0dd",
+  "pack_sha256": "a1eac9b6a96a3a99ac979d356ac786211c03ea4878aaa576cef9e290d1d47aa9",
+  "mechanisms": [
+    {
+      "item": "item_occult_bracelet",
+      "id": 305,
+      "behavior": "Independent5-second stacks (max5),0.4 mana regen per stack; no unconditional row regen.",
+      "source_values": {
+        "bonus_all_stats": "0",
+        "mana_regen": "0.4",
+        "stack_limit": "5",
+        "stack_duration": "5",
+        "magic_resistance": "0"
+      }
+    },
+    {
+      "item": "item_weighted_dice",
+      "id": 311,
+      "behavior": "Original6-hero base-damage spans, +6 to maximum, roll twice/take maximum; actual Source creep-bounty ranges routed through core before Turbo.",
+      "source_values": {
+        "roll_count": "2",
+        "bonus_max_damage": "6"
+      }
+    },
+    {
+      "item": "item_searing_signet",
+      "id": 320,
+      "behavior": "Magic spell hit threshold60/range2000;80 total over6s at.25s intervals, nonhero burn50%; generation-safe and no recursive spell proc.",
+      "source_values": {
+        "damage_threshold": "60",
+        "burn_damage": {
+          "value": "80",
+          "apply_curio_bonus": "1"
+        },
+        "burn_duration": "6",
+        "burn_tickrate": ".25",
+        "creep_penalty": "50",
+        "max_range": {
+          "value": "2000",
+          "affected_by_aoe_increase": "1"
+        }
+      }
+    },
+    {
+      "item": "item_defiant_shell",
+      "id": 322,
+      "behavior": "5s cooldown, real instantaneous counterattack at80% regular damage within native attack reach; attack_wait is preserved.",
+      "source_values": {
+        "counter_damage": {
+          "value": "80",
+          "apply_curio_bonus": "true"
+        }
+      }
+    },
+    {
+      "item": "item_serrated_shiv",
+      "id": 326,
+      "behavior": "20% true-strike proc,1.5s cooldown,8% currentHP bonus physical or200 on Roshan.",
+      "source_values": {
+        "proc_chance": "20",
+        "hp_dmg": {
+          "value": "8",
+          "apply_curio_bonus": "1"
+        },
+        "hp_dmg_rosh": {
+          "value": "200",
+          "apply_curio_bonus": "1"
+        }
+      }
+    },
+    {
+      "item": "item_gunpowder_gauntlets",
+      "id": 327,
+      "behavior": "120 magic on ready attack and250Source splash at50% physical attack plus extra magic;10s cooldown; killing blow still splashes; no permanent120damage.",
+      "source_values": {
+        "bonus_damage": {
+          "value": "120",
+          "apply_curio_bonus": "1"
+        },
+        "splash_radius": {
+          "value": "250",
+          "affected_by_aoe_increase": "1"
+        },
+        "splash_pct": "50"
+      }
+    },
+    {
+      "item": "item_rattlecage",
+      "id": 336,
+      "behavior": "220 actual damage accumulator,7s idle reset,2 homing bolts at1000Source/s prioritized to heroes;90 physical and100% movement/AS slow for.2s.",
+      "source_values": {
+        "radius": {
+          "value": "600",
+          "affected_by_aoe_increase": "1"
+        },
+        "slow_duration": "0.2",
+        "damage_reset_interval": "7",
+        "damage_threshold": "220",
+        "slow": "100",
+        "projectile_speed": "1000",
+        "projectile_damage": {
+          "value": "90",
+          "apply_curio_bonus": "1"
+        },
+        "target_count": "2",
+        "bonus_armor": "0"
+      }
+    },
+    {
+      "item": "item_conjurers_catalyst",
+      "id": 343,
+      "behavior": "200 spell-damage accumulation per source/target,6s inactivity expiry,.1s burst ICD;300Source allied-of-victim spread of80hero/20creep magic.",
+      "source_values": {
+        "duration": "6",
+        "damage_threshold": "200",
+        "damage_aoe": {
+          "value": "300",
+          "affected_by_aoe_increase": "1"
+        },
+        "damage": {
+          "value": "80",
+          "apply_curio_bonus": "1"
+        },
+        "damage_creep": {
+          "value": "20",
+          "apply_curio_bonus": "1"
+        },
+        "cooldown": "0.1"
+      }
+    },
+    {
+      "item": "item_prophets_pendulum",
+      "id": 342,
+      "behavior": "30% final incoming damage over5s in1s installments. Mode4 bypasses repeated amp/MR/armor/barriers;64-slot full pool pays new amount immediately and never evicts old debt.",
+      "source_values": {
+        "delay_pct": {
+          "value": "30",
+          "apply_curio_bonus": "1"
+        },
+        "delay_time": "5",
+        "damage_interval": "1"
+      }
+    },
+    {
+      "item": "item_foragers_kit",
+      "id": 316,
+      "behavior": "Original new planted trees only:5s growth interval,max3,radius1200,harvest250Source/.75s stationary channel,60s cooldown,2500Source cleanup. Actual harvested benefits; explicit H1 adaptations below.",
+      "source_values": {
+        "gold_amount": "30",
+        "radius": "1200",
+        "tree_radius": "250",
+        "tree_creation_interval": "5.0",
+        "max_trees": "3",
+        "old_destroy_radius": "2500"
+      }
+    },
+    {
+      "item": "item_dormant_curio",
+      "id": 309,
+      "behavior": "Only47 original apply_curio_bonus parameter tags are amplified30%; no cooldown/mana/cast-range amplification. Real crafting hook preserves the crafted artifact ownership.",
+      "source_values": {
+        "item_potency": "30"
+      }
+    },
+    {
+      "item": "item_enchanters_bauble",
+      "id": 341,
+      "behavior": "10% positive enchantment bonuses and35% more each time the same Bauble is crafted; includes raw rows and positive non-row parameter properties; negative penalties remain unchanged.",
+      "source_values": {
+        "enchantment_bonus_base": "10",
+        "enchantment_bonus_growth": {
+          "value": "35",
+          "apply_curio_bonus": "1"
+        },
+        "current_bonus": {
+          "value": "0",
+          "dynamic_value": "true"
+        }
+      }
+    },
+    {
+      "item": "item_unrelenting_eye",
+      "id": 330,
+      "behavior": "50% slow resistance reduced10% for each enemy hero in wearer attack radius.",
+      "source_values": {
+        "max_slow_res": {
+          "value": "50",
+          "apply_curio_bonus": "1"
+        },
+        "hero_reduction": "10",
+        "status_res_pct_increase_per_hero": "0"
+      }
+    },
+    {
+      "item": "item_giant_maul",
+      "id": 335,
+      "behavior": "Ready150% critical (maximum with existing stronger crit),15s cooldown,3s move10/AS15/cast20 slows.",
+      "source_values": {
+        "crit_multiplier": {
+          "value": "150",
+          "apply_curio_bonus": "1"
+        },
+        "movespeed_slow": "10",
+        "attack_slow": "15",
+        "cast_slow": "20",
+        "debuff_duration": "3"
+      }
+    },
+    {
+      "item": "item_dandelion_amulet",
+      "id": 340,
+      "behavior": "300 magic block for instances over75;12s cooldown.",
+      "source_values": {
+        "move_speed": "0",
+        "mana": "0",
+        "magic_block": {
+          "value": "300",
+          "apply_curio_bonus": "1"
+        },
+        "min_damage": "75"
+      }
+    },
+    {
+      "item": "item_partisans_brand",
+      "id": 334,
+      "behavior": "9% outgoing spell damage to heroes or player-controlled units, applied in core source stage before defenses.",
+      "source_values": {
+        "bonus_damage_pct": {
+          "value": "9",
+          "apply_curio_bonus": "1"
+        }
+      }
+    },
+    {
+      "item": "item_dezun_bloodrite",
+      "id": 350,
+      "behavior": "20% larger real spell AoE and35% of actual mana spent as real nonlethal HP cost; flat AoE is added before percentage and item tagged radii are not doubled.",
+      "source_values": {
+        "health_pct": "35",
+        "aoe_pct": {
+          "value": "20",
+          "apply_curio_bonus": "1"
+        }
+      }
+    },
+    {
+      "item": "item_divine_regalia",
+      "id": 351,
+      "behavior": "20% outgoing damage; central real hero death disables artifact and removes enchantment, including non-damage executions; Source Aegis policy remains core-owned.",
+      "source_values": {
+        "outgoing_damage": {
+          "value": "20",
+          "apply_curio_bonus": "1"
+        }
+      }
+    },
+    {
+      "item": "item_consecrated_wraps",
+      "id": 128,
+      "behavior": "Initial3 charges; one restored every4seconds, maximum3. Charge gain grants non-stacking15% movement for5seconds. Player-controlled/Roshan damage consumes charges for120 per charge all-damage barrier for5seconds; damage resets charge restoration. Self damage and deferred/HP-loss bridge do not consume charges. Positive dispels remove barrier/movement, not passive charges. Source12% magic resistance is applied and displayed.",
+      "source_values": {
+        "bonus_spell_resist": "12",
+        "bonus_all_stats": "5",
+        "bonus_health": "250",
+        "movement_speed_pct_on_stack_gain": "15",
+        "stack_threshold_damage": "0",
+        "duration": "5",
+        "barrier_per_stack": "120",
+        "max_barrier_tooltip": "360",
+        "damage_must_be_player_owned_or_roshan": "1",
+        "ItemInitialCharges": "3",
+        "AbilityCharges": "3",
+        "AbilityChargeRestoreTime": "4",
+        "AbilityCooldown": "0",
+        "SpellDispellableType": "SPELL_DISPELLABLE_YES"
+      }
+    },
+    {
+      "item": "item_spellslinger",
+      "id": 332,
+      "behavior": "Each successful hero-ability cast refunds20% actual mana spent in five2-second pulses across10seconds. Independent casts retain independent refund schedules. Curio tagged value becomes26%; rejected casts and zero-cost casts create no refund.",
+      "source_values": {
+        "mana_pct": {
+          "value": "20",
+          "apply_curio_bonus": "1"
+        },
+        "duration": "10",
+        "restore_tickrate": "2"
+      }
+    },
+    {
+      "item": "item_polliwog_charm",
+      "id": 308,
+      "behavior": "Actual friendly recipient buff grants8 HP/second for14seconds, including basic units. Only the blessed recipient in the original geometry-derived water receives10% movement; dry land and raised surfaces receive none.",
+      "source_values": {
+        "regen_boost": "8",
+        "water_movespeed": "10",
+        "duration": "14",
+        "AbilityCooldown": "45"
+      }
+    },
+    {
+      "item": "item_mana_draught",
+      "id": 318,
+      "behavior": "Actual item cooldown recovers30% faster while its holder is in original geometry-derived water. Per-slot fractional progress preserves the extra0.3tick at20Hz; leaving water restores ordinary cooldown recovery. Enemy hero/Roshan damage cancels the existing mana-regeneration buff.",
+      "source_values": {
+        "mana_restore": "70",
+        "mana_restore_pct": {
+          "value": "3",
+          "apply_curio_bonus": "1"
+        },
+        "heal_duration": "6",
+        "water_acceleration": "30",
+        "AbilityCooldown": "60"
+      }
+    }
+  ],
+  "enchantments": [
+    "Crude: total-intellect penalty, health restoration, BAT",
+    "Nimble: HP regen penalty",
+    "Titanic: base damage percentage instead of mistaken flat damage",
+    "Hulking: maxHP percentage and maxHP-based regen",
+    "Feverish: maxmana penalty",
+    "Manic: BAT/cast speed/actual sight penalty",
+    "Vampiric and Alert: actual Source night sight bonuses; lifesteal rows remain main-engine owned",
+    "Brawny slow resistance, Tough knockback resistance, Timeless debuff duration, Audacious magic-on-hit/incoming penalty",
+    "Bauble applies to both positive raw rows and non-row enchant parameters"
+  ],
+  "h1_adaptations": [
+    "Forager harvest auto-consumes original internal health/stat/mana food instead of adding three hidden unequippable records to407. Loot deterministically rotates gold/health/stat/mana; this is an explicit H1 allocation strategy, not a recovered native probability.",
+    "Only original newly planted trees are harvested or cut. Original trees already baked into the map cannot be visually removed.",
+    "20Hz integer combat; fractional original parameters retain x100 through table/provider, with final integer HP and percentage bridge rounding.",
+    "Ordinary vision is radial team sight with strict Roshan boundaries; terrain image is lit and no complete tree/high-ground LOS is claimed.",
+    "Consecrated Wraps follows the available damage bridges: self-source and mode4 HP loss/deferred damage cannot spend charges; mode3/5 magic auras remain ordinary magical damage. The simplified combat engine has no separate native Source damage-flag mask, so no stronger HPLOSS-aura equivalence is claimed.",
+    "Fixed64 special-event pool. Promised deferred damage and mana refunds cannot be evicted by other effects. If every slot holds protected work, a new deferral is paid as immediate damage and a new Spellslinger refund is paid immediately; existing promises and total resources are conserved. This bounded saturation timing is an explicit H1 adaptation.",
+    "Water membership uses original85 Steam water resources/3905 triangles and1145009 exact panorama walk-surface triangles, not hand-drawn river regions. A1025-square offline grid rejects raised surfaces more than3world units above water; lossless8-row checkpoints/repeats/varint boundary deltas occupy6813 runtime bytes instead of12708. Exhaustive C proof preserves all1050625 grid samples and16777216 integer world coordinates, maximum nearest-sample error remains2world units (8Source units). Original panorama/ground and HBK11 payloads are unchanged."
+  ],
+  "validation": {
+    "special": {
+      "passed": true,
+      "checks": 676,
+      "failures": 0,
+      "special_state_bytes": 5236,
+      "pack_sha256": "a1eac9b6a96a3a99ac979d356ac786211c03ea4878aaa576cef9e290d1d47aa9",
+      "source_sha256": {
+        "tests\\items_special_integration_test.c": "9582bf82560e504d9e0dba6c24c22d31be5c6d4956078035d087d216aca3f584",
+        "game\\bosses.c": "9c142435786ef2ecf7e874675064235f35d5ddb12cd2f63148a73e7f9ba35460",
+        "game\\courier.c": "a3cc8b61f798e443cc39344c922c2cdb20f4b5caeb36de3614a9eb8af219591b",
+        "game\\extra_heroes.c": "19555fa89247e5cf8c5e0c977fdfc4d8c6e640aa232b337f03b964f5979f3519",
+        "game\\game.c": "38ebaf00f89cf1471ddc6acb4aa888148d568a62d5a08904931aa49deed67bf5",
+        "game\\item_world.c": "18be2cc9353d5fb43cb4c771e0ce24937b9b636a08fc68d571954def48ca58bd",
+        "game\\items.c": "81929efdce9888699c6adee715f16450363f444916cb988c078f9921abd79d21",
+        "game\\items_special.c": "15b939069a0c1b4fd3a2d4f0f4c19346bab87a952482f8cd13216b60b5072ec7",
+        "game\\navigation.c": "2a974a8764fe5a27d1231fb83faf83d75adcdc625dbe1768f946f9351e16d278",
+        "game\\neutral.c": "e0ec650c938fc1a9b6c67c75256e37d0b988e3e76cab58e023738e11e9be9848",
+        "game\\objectives.c": "32a56dbcab11738bd679189a3bb82a610d16192e81f8e9858c24d5d2e5e10458",
+        "game\\sight.c": "8eb9eeed0e78088fafa985123396827bd3cffc3d0315b941629dbfc0ca88d475",
+        "game\\turbo.c": "a5f10c86714a03c14379e1d58541c60ff2dbc468d08fd3074275a61af808121b",
+        "game\\vision.c": "6e5721eaf6563d87c53eb9835e2460239d49860e4e91b518e57d1f383554613e",
+        "game\\water.c": "b33d6cf686efb260a464a45de79796e14dcb7dd922ccd5cf19188ef3f717d9c1",
+        "platform\\item_assets.c": "53a42b9b4d4cfe0f377dd26e5e7d57182421fa22aca2341f82c3996ceae8dd7d",
+        "platform\\baked_io.c": "1056faa5679d23a38fee406266d63c1f08b25d21c712bdee6f9c22c2782d045c"
+      }
+    },
+    "integration": {
+      "passed": true,
+      "checks": 865,
+      "failures": 0,
+      "pack_sha256": "a1eac9b6a96a3a99ac979d356ac786211c03ea4878aaa576cef9e290d1d47aa9",
+      "source_sha256": {
+        "tests\\equipment_integration_test.c": "5873511c6b9fb58a3133e835aa02675124765cd8710e9f3812ee0412d9cddee0",
+        "game\\bosses.c": "9c142435786ef2ecf7e874675064235f35d5ddb12cd2f63148a73e7f9ba35460",
+        "game\\courier.c": "a3cc8b61f798e443cc39344c922c2cdb20f4b5caeb36de3614a9eb8af219591b",
+        "game\\extra_heroes.c": "19555fa89247e5cf8c5e0c977fdfc4d8c6e640aa232b337f03b964f5979f3519",
+        "game\\game.c": "38ebaf00f89cf1471ddc6acb4aa888148d568a62d5a08904931aa49deed67bf5",
+        "game\\item_world.c": "18be2cc9353d5fb43cb4c771e0ce24937b9b636a08fc68d571954def48ca58bd",
+        "game\\items.c": "81929efdce9888699c6adee715f16450363f444916cb988c078f9921abd79d21",
+        "game\\items_special.c": "15b939069a0c1b4fd3a2d4f0f4c19346bab87a952482f8cd13216b60b5072ec7",
+        "game\\navigation.c": "2a974a8764fe5a27d1231fb83faf83d75adcdc625dbe1768f946f9351e16d278",
+        "game\\neutral.c": "e0ec650c938fc1a9b6c67c75256e37d0b988e3e76cab58e023738e11e9be9848",
+        "game\\objectives.c": "32a56dbcab11738bd679189a3bb82a610d16192e81f8e9858c24d5d2e5e10458",
+        "game\\sight.c": "8eb9eeed0e78088fafa985123396827bd3cffc3d0315b941629dbfc0ca88d475",
+        "game\\turbo.c": "a5f10c86714a03c14379e1d58541c60ff2dbc468d08fd3074275a61af808121b",
+        "game\\vision.c": "6e5721eaf6563d87c53eb9835e2460239d49860e4e91b518e57d1f383554613e",
+        "game\\water.c": "b33d6cf686efb260a464a45de79796e14dcb7dd922ccd5cf19188ef3f717d9c1",
+        "platform\\item_assets.c": "53a42b9b4d4cfe0f377dd26e5e7d57182421fa22aca2341f82c3996ceae8dd7d",
+        "platform\\baked_io.c": "1056faa5679d23a38fee406266d63c1f08b25d21c712bdee6f9c22c2782d045c",
+        "platform\\shop_catalog.c": "554a46699b62a4ec79efab4cd87ca76e937c4e47da7a06073d3ffae4fc3b444e"
+      }
+    },
+    "water_lossless": {
+      "passed": true,
+      "checks": 17827845,
+      "failures": 0,
+      "original_grid_samples": 1050625,
+      "integer_world_positions": 16777216,
+      "source_sha256": {
+        "tests\\water_lossless_test.c": "18ff0a892f0321f76482dc7390a8a750582743b32c3fc02e3c695a5dbbb08ce6",
+        "game\\water.c": "b33d6cf686efb260a464a45de79796e14dcb7dd922ccd5cf19188ef3f717d9c1",
+        "game\\water.h": "c9e9669c919de5ae76970889c6f7bf911dc018ac4d391372396b138bd7c52967",
+        "game\\water_world_data.h": "f28c21ed52a869c3788cb7b92f692327d4487d3f445cae0b3c5d3ce9b3e72557",
+        "tools\\extract_water_world.py": "8b27bb8eae3c8f856a3129679ff50d712eabc0894d32bc2c8b36cb27d2232a86",
+        "tools\\verify_water_lossless.py": "9e5b06fad3dd6672fc2593e17207b07270b1713c298ccdee8af1d8fb40244201"
+      },
+      "reference_bits_sha256": "b5db61f540bf51d2dd636d7963ccb9ae43927e3fc67397b24e234d286beabd36",
+      "baseline": {
+        "grid_size": 1025,
+        "runtime_bytes": 12708,
+        "original_rle_header_sha256": "7c7bd2cd4e978388e091ee0a302e7df36d3000a89e7f8ac87358e69c3cf85d12",
+        "reference_bits_sha256": "b5db61f540bf51d2dd636d7963ccb9ae43927e3fc67397b24e234d286beabd36",
+        "reference_bytes": 131329,
+        "wet_samples": 174637
+      },
+      "compressed_runtime_bytes": 6813,
+      "saved_runtime_bytes": 5895,
+      "maximum_quantization_world": 2
+    }
+  },
+  "owned_production_sha256": {
+    "game\\items_special.c": "15b939069a0c1b4fd3a2d4f0f4c19346bab87a952482f8cd13216b60b5072ec7",
+    "game\\items_special.h": "f5c2df7933cdb8d8613f59a4385b23de4689de849926e536d5db0f6e2425038c",
+    "game\\items_special_state.h": "c0d21baef94ee4f3fb292a402f24005c9cc4e10e9e9157b194cc4464abf16264",
+    "game\\items_special_values.h": "78a58f70ab8c8f22a871668124e004326a8d16aadb5bd8b15130aff53f4f1223",
+    "game\\unit_vision_data.h": "02677c00b066091307d4ac3464d53b7667233f566f269fe5071d6659981f007e",
+    "game\\water.c": "b33d6cf686efb260a464a45de79796e14dcb7dd922ccd5cf19188ef3f717d9c1",
+    "game\\water.h": "c9e9669c919de5ae76970889c6f7bf911dc018ac4d391372396b138bd7c52967",
+    "game\\water_world_data.h": "f28c21ed52a869c3788cb7b92f692327d4487d3f445cae0b3c5d3ce9b3e72557"
+  },
+  "water_geometry": {
+    "grid_size": 1025,
+    "maximum_quantization_world": 2,
+    "runtime_bytes": 6813,
+    "water_samples": 174637,
+    "raised_surface_samples_excluded": 17292,
+    "source_water_triangles": 3905,
+    "ground_triangles_sha256": "d62c29b5a9774e56f92e50af69bb1c3fb37d0de5d9b34e73d9768c86efc6e951",
+    "manifest_sha256": "fa02796a130b2cf4fdbd9bf0e4064bd736bbe99fe78540cad65a6a72658b2540"
+  }
+}

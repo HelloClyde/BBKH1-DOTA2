@@ -1,0 +1,16 @@
+* text=auto eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.S text eol=lf
+*.ld text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+# Provenance JSON may contain hashes of other JSON files: preserve its bytes.
+*.json -text
+*.yml text eol=lf
+*.yaml text eol=lf
+*.ps1 text eol=crlf
+*.png binary
+/assets/runtime/SCENE.H1P filter=lfs diff=lfs merge=lfs -text
+/assets/runtime/SOUND.H1A filter=lfs diff=lfs merge=lfs -text
+/assets/runtime/MAP12.H1C filter=lfs diff=lfs merge=lfs -text
