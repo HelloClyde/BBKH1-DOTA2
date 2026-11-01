@@ -10,6 +10,7 @@
 #include "turbo.h"
 #include "vision.h"
 #include "extra_heroes.h"
+#include "match_time.h"
 
 const DotaPoint dota_rune_positions[DOTA_RUNE_SPOTS]={{1638,1770},{2343,2352},{1799,940},{2197,3213}};
 const short dota_rune_heights[DOTA_RUNE_SPOTS]={10,14,42,42};
@@ -30,9 +31,9 @@ static int power_type(DotaGame *g){
 }
 void dota_runes_init(DotaGame *g){
     int i;if(!g)return;clear(&g->runes,sizeof(g->runes));
-    for(i=0;i<DOTA_RUNE_SPOTS;++i)spawn(g,i,DOTA_RUNE_BOUNTY,0);
+    for(i=0;i<DOTA_RUNE_SPOTS;++i)spawn(g,i,-1,0);
     g->runes.next_power_tick=DOTA_RUNE_WATER_FIRST_SECONDS*DOTA_HZ;
-    g->runes.next_bounty_tick=DOTA_RUNE_BOUNTY_INTERVAL_SECONDS*DOTA_HZ;
+    g->runes.next_bounty_tick=0;
     g->runes.last_power_spot=g->runes.last_power_type=-1;
 }
 int dota_rune_kind(const DotaGame *g,int spot){return g && (unsigned)spot<DOTA_RUNE_SPOTS?g->runes.kind[spot]:-1;}
@@ -86,19 +87,21 @@ int dota_rune_pickup(DotaGame *g,int h,int spot){
     return 1;
 }
 void dota_runes_tick(DotaGame *g){
-    int h,kind,at,spot;if(!g || g->paused || g->state!=DOTA_PLAYING)return;
+    int h,kind,at,spot,match;if(!g || g->paused || g->state!=DOTA_PLAYING)return;match=dota_match_ticks(g);
     for(h=0;h<DOTA_HERO_COUNT;++h){DotaRuneHero *s=touch(g,h);
         if(!hero_live(g,h)){clear(s->until,sizeof(s->until));s->shield=0;continue;}
         for(kind=0;kind<DOTA_RUNE_COUNT;++kind)if(s->until[kind] && s->until[kind]<=g->tick){s->until[kind]=0;if(kind==DOTA_RUNE_SHIELD)s->shield=0;if(kind==DOTA_RUNE_AMPLIFY)dota_rules_recalc(g,h);}
         if(has(g,h,DOTA_RUNE_REGENERATION) && g->units[h].hp>=g->units[h].max_hp && g->units[h].mana>=g->units[h].max_mana)s->until[DOTA_RUNE_REGENERATION]=0;
     }
-    while(g->tick>=g->runes.next_power_tick){
+    /* Minute-zero river Bounties precede later Water/power spawns even when a
+     * restored/boundary fixture asks the scheduler to catch up in one tick. */
+    while(match>=g->runes.next_bounty_tick){at=g->runes.next_bounty_tick;if(!at){spawn(g,0,DOTA_RUNE_BOUNTY,at);spawn(g,1,DOTA_RUNE_BOUNTY,at);}spawn(g,2,DOTA_RUNE_BOUNTY,at);spawn(g,3,DOTA_RUNE_BOUNTY,at);g->runes.next_bounty_tick+=DOTA_RUNE_BOUNTY_INTERVAL_SECONDS*DOTA_HZ;}
+    while(match>=g->runes.next_power_tick){
         at=g->runes.next_power_tick;g->runes.kind[0]=g->runes.kind[1]=-1;
         if(at<DOTA_RUNE_POWER_FIRST_SECONDS*DOTA_HZ){spawn(g,0,DOTA_RUNE_WATER,at);spawn(g,1,DOTA_RUNE_WATER,at);}
         else{spot=(int)((draw(g)>>16)&1u);spawn(g,spot,power_type(g),at);g->runes.last_power_spot=spot;}
         g->runes.next_power_tick+=DOTA_RUNE_POWER_INTERVAL_SECONDS*DOTA_HZ;
     }
-    while(g->tick>=g->runes.next_bounty_tick){at=g->runes.next_bounty_tick;spawn(g,2,DOTA_RUNE_BOUNTY,at);spawn(g,3,DOTA_RUNE_BOUNTY,at);g->runes.next_bounty_tick+=DOTA_RUNE_BOUNTY_INTERVAL_SECONDS*DOTA_HZ;}
 }
 int dota_rune_status(const DotaGame *g,int h,int kind){return has(g,h,kind)?g->runes.hero[h].until[kind]-g->tick:0;}
 const char *dota_rune_name(int kind){static const char *const names[DOTA_RUNE_COUNT]={"强化伤害","急速","幻象","隐身","恢复","赏金","奥术","水符","智慧","护盾"};return (unsigned)kind<DOTA_RUNE_COUNT?names[kind]:"";}

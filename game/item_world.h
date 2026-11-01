@@ -4,13 +4,18 @@
 #include "items.h"
 typedef struct { int bat_ticks,attack_speed_x100,point_ms,projectile_speed; } DotaItemWorldAttackTraits;
 void dota_item_world_init(DotaGame *game);
+/* Map/owner legality only. Ordinary item code retains cast range, charges and
+ * cooldown checks. Do not use navigation walkability for ward-cliff placement. */
+int dota_item_world_ward_placeable(const DotaGame *game,int owner,int x,int y);
 int dota_item_world_rune_illusions(DotaGame *game,int owner,int duration_ticks);
 void dota_item_world_tick(DotaGame *game);
 void dota_item_world_update_unit(DotaGame *game,int index);
 int dota_item_world_incoming(DotaGame *game,int victim,int amount);
+int dota_item_world_incoming_from(DotaGame *game,int victim,int source,int amount,int magical,int attack);
 int dota_item_world_on_death(DotaGame *game,int victim,int source);
 /* -1: ordinary world visibility applies,0: hidden,1: item grants true sight. */
 int dota_item_world_visible(const DotaGame *game,int observer,int target);
+int dota_item_world_smoked(const DotaGame *game,int target);
 int dota_item_world_shared_vision(const DotaGame *game,int observer,int target);
 int dota_item_world_owner(const DotaGame *game,int unit);
 int dota_item_world_dominated(const DotaGame *game,int unit);

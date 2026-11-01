@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "ready": true,
+  "production_scope_frozen": true,
+  "source_sha256": {
+    "game/sight.c": "ba25554f939f425c1624f28597c1a3819cbb4f09f3929c7d98019fac9fb0f6c1",
+    "game/sight.h": "a8f36b605c28c2b63e478258e9244889b4cce6792f52a0bafcd4730399e9b0ee",
+    "game/item_world.c": "d90247e2b66eb19878856c1442fbc075c933c322ac28af970b88b612e966f8d1",
+    "game/item_world.h": "88b71071298aec66c14fcc486c152411c50673ac06ce1f3e044a986385be5402",
+    "game/extra_heroes.c": "2baaf1dc3860db636e2cdc49666bd5ddcc90be2fdc082e93f65d6cc74aa28f2a",
+    "game/extra_heroes.h": "d9a27eec6ca81c5247d0a0270d338affff3cf889bf5204a6cbe973f7c773399c",
+    "tests/vision_v028_test.c": "85be49d023f16df5f570b3c7969a98c39b82e00bc3b12ec5770a808f23121fdb",
+    "tools/verify_vision_v028.py": "b809e54e295761b9cdc114b1970852420a4946fedc060ee6df522f57122f93b4",
+    "tools/profile_vision_v028_mips.py": "802f4ad09b54c4a34a1ac1d899e3da426831c2ae76e054cdfb07e8956528242e",
+    "provenance/vision/core-source-audit.json": "7a579eca3066894a18f06ef174ec343bce57af7de1e3c9639c476bc84610bd3e",
+    "game/ward_placement_data.h": "2bc4f1646ab2e3ba8e08ecd068531de50e3771f410f5e60a31cb2418b8bda462",
+    "tests/vision_mips_fixtures.c": "fc7bec5a12403236a1fe196995dd962651045af0fdd65b8a2a51cedd49ae0ff3",
+    "tests/verify_vision_mips.py": "9030ce5fdedba1762a6d677a6b9173a719ecbc5a2b0989fd4d2a33eeda8d90a5"
+  },
+  "host_verification": {
+    "path": "build/tests/vision-v028-shared128-final/verification.json",
+    "sha256": "a80919d5b72bf0a59ae34f060c2cf93a6fd65e94b90782b2f348b9dd515ad423",
+    "checks": 24662,
+    "source_current": true,
+    "game_bytes": 173544,
+    "scope": "Fresh full production core including shared128, current item-world guard and actual item provider."
+  },
+  "mips_syntax": {
+    "passed": true,
+    "flags": [
+      "-DDOTA_BAKED",
+      "-EL",
+      "-march=mips32",
+      "-mabi=32",
+      "-msoft-float",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsyntax-only"
+    ],
+    "files": [
+      "game/sight.c",
+      "game/item_world.c",
+      "game/extra_heroes.c"
+    ]
+  },
+  "game_abi_changed": false,
+  "large_bss_added": false,
+  "sidecar_ownership": "root generates VISION.H1V and identity; UI owns startup load/free and rendering. Core only borrows pointers.",
+  "integration": "game.c init reset; movement/kill/cast invalidation; watcher ownership invalidation; items successful-use invalidation; damage_snapshot_ex attack flag and Smoke gate coordinated with root/timing agent.",
+  "physical_h1_tested": false,
+  "USB_opened": false,
+  "remote_touched": false,
+  "exact_optimization": {
+    "equivalence_path": "build/v028/perf-vision-candidate/reach-equivalence.json",
+    "equivalence_sha256": "d0c3a535c14517167a6b447655a5f5c80a6049f0b945f8fbf9e68ef47866bfa5",
+    "comparison_checks": 48,
+    "reach_math_checks": 1900,
+    "baseline_device_bda": "869296932189f5f46900a4b0d23bb478ba2f6aeef862e4eccc7ee202cb31e9b5",
+    "optimized_diag_bda": "63daaa6ba133618b1d472b23f6c3efe7fcc5d73e4607001087a2a0056a0d2d2d",
+    "physical_H1_speedup_tested": false,
+    "production_promotion_from_verified_candidate_sha256": "81d5e4f0a73501805e562dbf905282cda6177bcd5475af63217952736a855a62"
+  },
+  "final_complete_bda_verification": {
+    "path": "build/tests/vision-final-mips-candidate3/verification.json",
+    "sha256": "fd9a683a9f81d296e4ebd9b8e74d6b2d71cdd08fb2d5b3514d242a467debcf91",
+    "bda_sha256": "f25c83e1c36c430b92b17dc2bec215bddeb0179dc251368ab934ee2d6f23658b",
+    "elf_sha256": "55c606d75fb7d621887c9f02cae769fd1771d317975aa3deb16b22fa5988d79f",
+    "metadata_sha256": "14e4c1661c3d0e9a30b095d7692fc25e42d0621a5cfae039d5129f826d97f096",
+    "checks": 49,
+    "cases": 7,
+    "public_ELF_calls": 103,
+    "source_current": true,
+    "compiled_source_inputs": 159,
+    "diagnostic_only": false,
+    "entry_executed": false,
+    "physical_H1_tested": false,
+    "outcome_state_writes_after_setup": 0,
+    "workspace_bytes_mips32": 1062736,
+    "workspace_and_vision_payload_bytes": 1202000
+  },
+  "historical_pre_shared_shadow_mips_profile": {
+    "path": "build/v028/perf-vision-candidate/reach-profile/verification.json",
+    "sha256": "19200c796075eb544dfd5f5d353c644c98a7aaa894425dddc95d889f8568c3c8",
+    "workspace_bytes": 791888,
+    "scope": "Actual complete diagnostic BDA, original869 objects with verified sight override; normal ticks from actual H1 Game snapshot. Workload only, not physical H1 FPS.",
+    "historical_stage": true
+  },
+  "mips_profile": {
+    "path": "build/v028/shared-shadow-cache/equivalence-profile.json",
+    "sha256": "89269aa1842f9a8c006ca96d58edfd1106169daf196f7544b675e2ce609ace58",
+    "diagnostic_only": true,
+    "release_binary_test": false,
+    "physical_fps_claim": false,
+    "workspace_bytes": 1062736,
+    "production_source_frozen_receipt": "build/v028/shared-shadow-cache/PRODUCTION-READY.json",
+    "production_source_frozen_receipt_sha256": "f1e5f623a4f7dc28673623aec9c6b4b35bb316c63d908ebf2bb77a311c7e3e7e"
+  },
+  "ward_placement_ready": {
+    "path": "provenance/ward-placement/READY.json",
+    "sha256": "749aadbaacb2b0b6d69f0459c0eabf4f4266580c05d2b4561d320b7ddb23a315"
+  }
+}

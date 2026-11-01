@@ -3,6 +3,7 @@
 #include "objectives.h"
 #include "courier.h"
 #include "items.h"
+#include "item_world.h"
 #include "item_assets.h"
 #include "shop_catalog.h"
 #include "neutral.h"
@@ -13,6 +14,10 @@
 #include "progression.h"
 #include "ability_icon_state.h"
 #include "runes.h"
+#include "match_time.h"
+#include "items_actions.h"
+#include "items_params.h"
+#include "vision_assets.h"
 #ifdef DOTA_BAKED
 #include "baked_scene.h"
 typedef BSCamera DotaCamera;
@@ -405,8 +410,8 @@ static void title(void){
     box(22,44,436,1,EDGE);
 }
 void dota_render_asset_error(int code){
-    backdrop();title();center(20,76,440,code==13?"Old resource pack. Update BOTH folders.":"Cannot load the animation/map pack",GOLD);
-    center(20,108,440,"A:\\DOTA2\\SCENE.H1P",INK);
+    backdrop();title();center(20,76,440,code==15?"Cannot load the required terrain vision data":code==13?"Old resource pack. Update BOTH folders.":"Cannot load the animation/map pack",GOLD);
+    center(20,108,440,code==15?"B:\\DOTA2\\VISION.H1V":"A:\\DOTA2\\SCENE.H1P",INK);
     center(20,142,440,"Copy BOTH folders from the install ZIP.",DIM);
     center(20,173,440,"Error code",DIM);number(284,173,code,GOLD);
     center(20,226,440,"ENTER or BACK to exit",INK);
@@ -490,8 +495,10 @@ static void minimap(const DotaGame *g,const DotaView *v){
         regions_ready=1;
     }
     for(j=0;j<w;++j)for(i=0;i<w;++i){
-        int visible=observer_region==regions[j*w+i];
-        dota_pixels[(y+j)*480+x+i]=visible?dota_overview[j*w+i]:RGB(8,8,8);
+        int same_region=observer_region==regions[j*w+i];
+        int visible=dota_sight_fog_state(g,g->units[g->player].team,i*DOTA_WORLD/w,j*DOTA_WORLD/w)==2;
+        uint16_t color=dota_overview[j*w+i];
+        dota_pixels[(y+j)*480+x+i]=same_region?(visible?color:vision_assets_fog_color(color,3)):RGB(8,8,8);
     }
     for(i=0;i<DOTA_MAX_UNITS;++i){const DotaUnit *u=&g->units[i];int px,py;
         if(!u->active || u->hp<=0)continue;
@@ -513,10 +520,13 @@ static void minimap(const DotaGame *g,const DotaView *v){
         int sx=x+dota_tormentor_locations[location].x*w/DOTA_WORLD;
         int sy=y+dota_tormentor_locations[location].y*w/DOTA_WORLD;
         sx=clampi(sx,x+2,x+w-3);sy=clampi(sy,y+2,y+w-3);
-        if(dota_pit_same_region(g->units[g->player].x,g->units[g->player].y,dota_tormentor_locations[location].x,dota_tormentor_locations[location].y))frame(sx-2,sy-2,5,5,dota_tormentor_index(g)>=0?RGB(100,220,240):DIM);
+        if(dota_pit_same_region(g->units[g->player].x,g->units[g->player].y,dota_tormentor_locations[location].x,dota_tormentor_locations[location].y)){
+            int visible=dota_sight_position_visible(g,g->player,dota_tormentor_locations[location].x,dota_tormentor_locations[location].y);
+            frame(sx-2,sy-2,5,5,visible&&dota_tormentor_index(g)>=0?RGB(100,220,240):DIM);
+        }
     }
     for(i=0;i<DOTA_OBJECTIVES;++i){
-        const DotaPoint *p=&dota_objective_positions[i];int px,py,owner=dota_objective_owner(g,i);uint16_t c;
+        const DotaPoint *p=&dota_objective_positions[i];int px,py,visible=dota_sight_position_visible(g,g->player,p->x,p->y),owner=visible?dota_objective_owner(g,i):-1;uint16_t c;
         if(!dota_pit_same_region(g->units[g->player].x,g->units[g->player].y,p->x,p->y))continue;
         px=clampi(x+p->x*w/DOTA_WORLD,x+1,x+w-2);py=clampi(y+p->y*w/DOTA_WORLD,y+1,y+w-2);
         c=i<2?RGB(162,118,238):i<4?RGB(226,144,207):owner==0?GREEN:owner==1?RED:DIM;
@@ -543,13 +553,17 @@ static void minimap(const DotaGame *g,const DotaView *v){
     frame(x,y,w,w,GOLD);
 }
 static void topbar(const DotaGame *g,const DotaView *v){
-    const DotaUnit *p=&g->units[g->player];int seconds=g->tick/DOTA_HZ;char clock[6];
-    clock[0]=(char)('0'+(seconds/60)/10%10);clock[1]=(char)('0'+seconds/60%10);clock[2]=':';clock[3]=(char)('0'+seconds%60/10);clock[4]=(char)('0'+seconds%10);clock[5]=0;
+    const DotaUnit *p=&g->units[g->player];int seconds=dota_match_seconds(g),negative=seconds<0,at=0,night=dota_match_is_night(g);char clock[8];
+    if(negative){clock[at++]='-';seconds=-seconds;}
+    if(seconds>=600)clock[at++]=(char)('0'+(seconds/60)/10%10);
+    clock[at++]=(char)('0'+seconds/60%10);clock[at++]=':';clock[at++]=(char)('0'+seconds%60/10);clock[at++]=(char)('0'+seconds%10);clock[at]=0;
     box(0,0,480,24,PANEL);box(0,23,480,1,EDGE);
     box(DOTA_HUD_KDA_X,0,DOTA_HUD_KDA_W,23,v->scoreboard?RGB(49,54,38):RGB(28,40,36));
     text(7,5,"KDA",GOLD);kda(36,5,p->kills,p->deaths,dota_hero_assists(g,g->player),INK);
     text(117,5,v->scoreboard?"-":"+",GOLD);frame(0,0,DOTA_HUD_KDA_W,24,EDGE);
-    text(138,5,"天辉",GREEN);number(170,5,g->kills[0],INK);text(212,5,clock,INK);
+    text(138,5,"天辉",GREEN);number(170,5,g->kills[0],INK);center(202,5,58,clock,negative?GOLD:INK);
+    if(night){circle(192,11,5,RGB(166,192,227));circle(195,8,5,PANEL);}
+    else {circle(192,11,3,GOLD);line(192,4,192,6,GOLD);line(192,16,192,18,GOLD);line(185,11,187,11,GOLD);line(197,11,199,11,GOLD);}
     number(269,5,g->kills[1],INK);text(297,5,"夜魇",RED);
     center(DOTA_HUD_PAUSE_X,5,DOTA_HUD_PAUSE_W,"暂停",INK);frame(DOTA_HUD_PAUSE_X,0,DOTA_HUD_PAUSE_W,24,EDGE);
 }
@@ -587,6 +601,10 @@ static void hud(const DotaGame *g,const DotaView *v){
             else if(ward>=0)bar(x+2,237,w-4,2,g->summon_life[ward-DOTA_SUMMON_FIRST],dota_healing_ward_lifetime(g,g->player),GREEN);
         }
         if(passive&&(hero==DOTA_HERO_LINA||hero==DOTA_HERO_AXE)&&g->passive_stacks[g->player])tiny_number(x+w-11,203,g->passive_stacks[g->player],p->skill_ticks[2]?GOLD:DIM);
+        if(hero==DOTA_HERO_SLARK&&i==3&&rank){
+            uint16_t color=dota_extra_shadow_dance_passive_active(g,g->player)?GREEN:DIM;
+            line(ix+3,225,ix+6,223,color);line(ix+6,223,ix+9,225,color);line(ix+3,225,ix+6,227,color);line(ix+6,227,ix+9,225,color);pixel(ix+6,225,color);
+        }
     }
     resource_bar(DOTA_HUD_SKILLS_X+1,DOTA_HUD_HEALTH_Y,p->hp,p->max_hp,dota_rules_effective_health_regen100(g,g->player),RGB(31,102,55));
     resource_bar(DOTA_HUD_SKILLS_X+1,DOTA_HUD_MANA_Y,dota_items_available_mana(g,g->player),p->max_mana,dota_rules_mana_regen100(g,g->player),RGB(30,70,124));
@@ -599,7 +617,13 @@ static void hud(const DotaGame *g,const DotaView *v){
         else if(ghost>=0&&ghost<DOTA_ITEM_TYPES){art_small(x+4,y+2,item_assets_item_art(ghost));shade_art(x+4,y+2,20,20);frame(x+1,y+1,26,22,RGB(90,160,215));}
         if(ghost>=0){uint16_t courier_color=RGB(90,160,215);line(x+13,y+7,x+13,y+16,courier_color);line(x+9,y+12,x+13,y+16,courier_color);line(x+17,y+12,x+13,y+16,courier_color);}
         if(i<6&&item>=0&&dota_items_is_active(item))hotkey_badge(x+2,y+2,"ZXCVBN"[i],lock?DIM:INK);
-        if(lock>0)tiny_number(x+10,y+9,(lock+DOTA_HZ-1)/DOTA_HZ,GOLD);else if(cd>0)tiny_number(x+9,y+9,(cd+DOTA_HZ-1)/DOTA_HZ,INK);else if(charges>0)tiny_number(x+16,y+13,charges,INK);
+        if(lock>0)tiny_number(x+10,y+9,(lock+DOTA_HZ-1)/DOTA_HZ,GOLD);else if(cd>0)tiny_number(x+9,y+9,(cd+DOTA_HZ-1)/DOTA_HZ,INK);else if(charges>0){if(item==DOTA_ITEM_WARD_DISPENSER){
+            /* Public charge queries return the combined total. Backpack has
+             * its own instance; legacy slot6 is neutral, not backpack slot0. */
+            int observer=i<6?dota_items_ward_available(g,g->player,i,0):g->items.backpack[g->player][i-6].charges&255;
+            int sentry=i<6?dota_items_ward_available(g,g->player,i,1):g->items.backpack[g->player][i-6].charges>>8;
+            tiny_number(x+4,y+13,observer,i<6?GOLD:DIM);tiny_number(x+16,y+13,sentry,i<6?RGB(117,166,235):DIM);
+        }else tiny_number(x+16,y+13,charges,INK);}
     }}
     text(409,204,"金币",DIM);number(409,221,p->gold,GOLD);
     button(DOTA_HUD_SHOP_X,DOTA_HUD_SHOP_Y,DOTA_HUD_SHOP_W,DOTA_HUD_SHOP_H,"商店 M",1);
@@ -658,7 +682,7 @@ int dota_hit_objective(const DotaGame *g,const DotaView *v,int x,int y){
     camera=scene_camera(v);
     for(i=0;i<DOTA_OBJECTIVES;++i){
         const DotaPoint *p=&dota_objective_positions[i];const short *b=dota_fixture_pixel_bounds[i];int sx,sy,d,dx,dy,distance;
-        if(!dota_pit_same_region(g->units[g->player].x,g->units[g->player].y,p->x,p->y))continue;
+        if(!dota_sight_position_visible(g,g->player,p->x,p->y))continue;
         objective_anchor(&camera,i,0,&sx,&sy,&d);dx=x-sx-b[0];dy=y-sy-b[1];
         if(dx<-3 || dx>b[2]+3 || dy<-3 || dy>b[3]+3)continue;
         if((int)s3d_depth_buffer()[(y-24)*480+x]+2<(int)dota_fixture_min_depth[i])continue;
@@ -673,7 +697,7 @@ static void objective_overlay(const DotaGame *g,const DotaCamera *camera){
     for(i=0;i<DOTA_OBJECTIVES;++i){
         const DotaPoint *p=&dota_objective_positions[i];int x,y,d,owner,amount,progress;uint16_t color;
         const char *label=i<2?"经验祭坛":"莲花池";
-        if(!dota_pit_same_region(g->units[g->player].x,g->units[g->player].y,p->x,p->y))continue;
+        if(!dota_sight_position_visible(g,g->player,p->x,p->y))continue;
         objective_anchor(camera,i,0,&x,&y,&d);
         x+=dota_fixture_pixel_bounds[i][0]+dota_fixture_pixel_bounds[i][2]/2;
         y+=dota_fixture_pixel_bounds[i][1]-4;
@@ -764,7 +788,7 @@ static void unit_overlay(const DotaGame *g,int index,const DotaCamera *camera){
 #ifdef DOTA_BAKED
     const DotaUnit *u=&g->units[index];int height,scale=96;
     int bounds[4],x,y,width;uint16_t team=u->team==DOTA_NEUTRAL_TEAM?GOLD:u->team==DOTA_RADIANT?GREEN:RED;
-    if(!u->active || u->hp<=0 || !bs_unit_screen_bounds(index,bounds,0))return;
+    if(!u->active || u->hp<=0 || !dota_unit_visible(g,g->player,index) || !bs_unit_screen_bounds(index,bounds,0))return;
     height=bs_game_unit_height(g,index);
 #else
     const S3DAssets *assets=dota_scene_assets();
@@ -789,7 +813,7 @@ static void unit_overlay(const DotaGame *g,int index,const DotaCamera *camera){
     }
 }
 static void battlefield(const DotaGame *g,const DotaView *v){
-    int i;DotaCamera camera=scene_camera(v);
+    int i,ward_allowed=1;DotaCamera camera=scene_camera(v);
     clip_top=24;clip_bottom=215;
 #ifdef DOTA_BAKED
     bs_render_game(dota_pixels,g,&camera);bs_render_effects(dota_pixels,g,&camera);
@@ -838,6 +862,20 @@ static void battlefield(const DotaGame *g,const DotaView *v){
                 ground_ring(&camera,g->units[g->player].x,g->units[g->player].y,(range+3)/4,RGB(117,151,130));
             project_ground(&camera,g->units[g->player].x,g->units[g->player].y,2,&px,&py);line(px,py,x,y,RGB(185,170,89));
         }
+        if(v->aim_item>=0){int item=v->aim_item==6?dota_neutral_equipped(g,g->player):g->units[g->player].inventory[v->aim_item];DotaItemRecord r;
+            if(dota_items_read(item,&r)&&r.action==ITEM_ACTION_WARD){
+                int range=(r.cast_range+dota_items_range_bonus((DotaGame *)g,g->player,0)+3)/4,dx=v->target_x-g->units[g->player].x,dy=v->target_y-g->units[g->player].y;
+                int sentry=v->ward_mode,source=sentry?DOTA_ITEM_WARD_SENTRY:DOTA_ITEM_WARD_OBSERVER;
+                int sight=dota_items_parameter(source,sentry?IP_TRUE_SIGHT_RANGE:IP_OBSERVER_VISION_RANGE_TOOLTIP,-1,0)/100;
+                uint16_t c;
+                ward_allowed=dota_item_world_ward_placeable(g,g->player,v->target_x,v->target_y);
+                if(ward_allowed&&range>0&&dx*dx+dy*dy>range*range)ward_allowed=-1;
+                c=ward_allowed>0?GREEN:RED;
+                if(range>0)ground_ring(&camera,g->units[g->player].x,g->units[g->player].y,range,RGB(117,151,130));
+                if(sight>0)ground_ring(&camera,v->target_x,v->target_y,(sight+3)/4,sentry?RGB(117,166,235):RGB(206,190,98));
+                ground_ring(&camera,v->target_x,v->target_y,12,c);line(x,y-5,x,y-18,c);circle(x,y-22,4,c);
+            }
+        }
     }
     clip_top=0;clip_bottom=271;topbar(g,v);hud(g,v);minimap(g,v);status_bars(g);
     if(v->aim_skill<0 && !v->scoreboard)courier_panel(g,4,27,126);
@@ -847,7 +885,10 @@ static void battlefield(const DotaGame *g,const DotaView *v){
     if(g->last_event_ticks>0 && g->last_event==DOTA_STATUS_INFO_EVENT)status_detail(g);
     if(g->units[g->player].hp<=0){box(157,112,166,42,PANEL);frame(157,112,166,42,EDGE);center(157,117,166,"英雄阵亡，等待复活",RED);center(157,134,166,"队友仍在推进",DIM);}
     {int neutral=dota_neutral_equipped(g,g->player);if(neutral>=0){int cd=dota_items_cooldown(g,g->player,6),charges=dota_items_charges(g,g->player,6);box(416,174,28,26,PANEL);art_small(420,175,item_assets_item_art(neutral));frame(416,174,28,26,GOLD);if(cd)tiny_number(426,187,(cd+DOTA_HZ-1)/DOTA_HZ,GOLD);else if(charges>0)tiny_number(432,187,charges,INK);if(dota_items_is_active(neutral))hotkey_badge(417,175,'Y',INK);}}
-    if(v->aim_item>=0){int item=v->aim_item==6?dota_neutral_equipped(g,g->player):g->units[g->player].inventory[v->aim_item];char label[160];item_assets_text(item,0,label,sizeof(label));box(105,29,290,20,PANEL);text_fit(111,32,278,label,GOLD);}
+    if(v->aim_item>=0){int item=v->aim_item==6?dota_neutral_equipped(g,g->player):g->units[g->player].inventory[v->aim_item];char label[160];DotaItemRecord r;int ward=dota_items_read(item,&r)&&r.action==ITEM_ACTION_WARD,display=ward?(v->ward_mode?DOTA_ITEM_WARD_SENTRY:DOTA_ITEM_WARD_OBSERVER):item;
+        item_assets_text(display,0,label,sizeof(label));box(105,29,290,20,PANEL);if(ward)art_small(111,29,item_assets_item_art(display));text_fit(ward?137:111,32,ward?252:278,label,ward&&v->ward_mode?RGB(117,166,235):GOLD);
+        if(ward){box(126,53,228,item==DOTA_ITEM_WARD_DISPENSER?33:19,PANEL);center(126,55,228,ward_allowed>0?"点地放置眼；ESC取消":ward_allowed<0?"目标超出施法距离":"此处不能放置",ward_allowed>0?GOLD:RED);if(item==DOTA_ITEM_WARD_DISPENSER)center(126,69,228,"再按装备键或图标切换",DIM);}
+    }
     if(v->aim_skill>=0 && v->aim_skill<5){box(105,29,290,20,PANEL);center(105,32,290,
         v->aim_skill==4?extra_name(g->selected_hero):v->aim_skill==1 && dota_healing_ward(g,g->player)>=0?"移动治疗守卫":skill_names[g->selected_hero][v->aim_skill],GOLD);}
     if(v->inventory_mode&&!v->scoreboard){
@@ -865,7 +906,7 @@ static void pause_screen(const DotaGame *g,const DotaView *v){
     text(28,126,"M 商店 / H 战绩 / L 莲花",INK);text(250,126,"U 技能天赋 / I 换位",INK);
     text(28,146,"SHIFT+QWER 技能加点",INK);text(250,146,"ENTER 施放 / ESC 取消",INK);
     text(28,168,"点小地图切视野；点英雄状态回中；轻点战场下令。",DIM);
-    text(28,186,"技能选人或点地确认；卷轴点友方建筑；长按装备换位。",DIM);
+    text(28,186,"眼点地放置，同键切换；卷轴点友方建筑；长按装备换位。",DIM);
     button(24,208,136,33,"继续 P / ENTER",1);button(172,208,136,33,"商店 M",0);button(320,208,136,33,"技能与天赋 U",0);
     button(24,243,136,15,"重新选人 H",0);text(176,243,"BACK 返回战斗",DIM);button(344,243,112,15,"退出应用 X",0);
 }
@@ -912,6 +953,7 @@ static void shop(const DotaGame *g,const DotaView *v){
     int i,count=shop_catalog_count(v->shop_category),index=shop_catalog_index(v->shop_category,v->shop_item),selected=v->shop_item;
     const DotaUnit *p=&g->units[g->player];if(index<0){index=0;selected=shop_catalog_item(v->shop_category,0);}
     backdrop();text(12,6,"装备商店",GOLD);text(136,6,"金币",DIM);number(169,6,p->gold,GOLD);text(256,6,"已暂停 / 关闭后配送",GREEN);
+    button(216,0,37,24,"眼 L",0);
     frame(440,0,40,24,EDGE);center(440,5,40,"关闭",INK);
     for(i=0;i<SHOP_CATEGORIES;++i){box(i*48,26,48,23,i==v->shop_category?RGB(46,53,39):PANEL);frame(i*48,26,48,23,i==v->shop_category?GOLD:EDGE);center(i*48,30,48,tabs[i],i==v->shop_category?GOLD:DIM);}
     if(v->shop_category==SHOP_RECOMMENDED){text_fit(12,53,166,hero_names[p->hero_id],GOLD);for(i=0;i<SHOP_RECOMMEND_STAGES;++i)button(184+i*70,50,68,19,shop_catalog_recommend_stage_name(i),i==shop_catalog_recommend_stage());}

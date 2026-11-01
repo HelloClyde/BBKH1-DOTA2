@@ -1,0 +1,157 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	m_nFlags = 0
+	m_nRefCounter = 0
+	m_bCompoundsPacked = false
+	m_bonesHash = [  ]
+	m_boneNames = [  ]
+	m_indexNames = [  ]
+	m_indexHash = [  ]
+	m_bindPose = [  ]
+	m_parts = 
+	[
+		{
+			m_nFlags = 0
+			m_flMass = 0.0
+			m_rnShape = 
+			{
+				m_spheres = [  ]
+				m_capsules = [  ]
+				m_hulls = 
+				[
+					{
+						m_nCollisionAttributeIndex = 0
+						m_nSurfacePropertyIndex = 0
+						m_UserFriendlyName = ""
+						m_bUserFriendlyNameSealed = false
+						m_bUserFriendlyNameLong = false
+						m_nToolMaterialHash = 3488535522
+						m_Hull = 
+						{
+							m_vCentroid = [ 0.001282, 72.000488, -64.000046 ]
+							m_flMaxAngularRadius = 242.341385
+							m_flMinCentroidRadius = 68.186073
+							m_Bounds = 
+							{
+								m_vMinBounds = [ -207.99884, -143.999512, -132.186142 ]
+								m_vMaxBounds = [ 208.001526, 304.000488, 4.186142 ]
+							}
+							m_vOrthographicAreas = [ 0.999999, 0.999999, 0.497253 ]
+							m_MassProperties = 
+							[
+								125989396480.0, -14545728512.0, -18232.130859, 0.384366,
+								-14545728512.0, 111251021824.0, -29864.636719, 74.696648,
+								-18232.130859, -29864.636719, 198068486144.0, -64.000031,
+							]
+							m_flVolume = 12637888.0
+							m_flSurfaceArea = 352195.84375
+							m_nFlags = 0
+							m_pRegionSVM = 
+							{
+								m_Planes = 
+								#[
+									9C 5E 42 3F 4E 9A 26 3F CE 6F 36 B5 74 FD 51 43 E7 09 35 B2 0B 18 93 33 00 00 80 BF A6 2F 04 43
+									ED 04 35 BF F8 04 35 BF A8 96 8D B4 86 45 E2 42 17 AB 4B B4 A2 ED F8 B4 00 00 80 3F C0 F3 85 40
+									E1 A8 40 BF BE 93 28 3F 46 22 C0 B4 C5 24 3C 43 F3 04 35 3F F3 04 35 BF 22 C5 1D B5 4C 05 B5 42
+									98 48 F0 35 00 00 00 00 00 00 80 3F 70 F7 85 40 4E 9A 26 BF 9C 5E 42 3F E7 5F 9C 35 EF 3F 95 C2
+									98 48 F0 B5 00 00 00 00 00 00 80 BF 8E 2F 04 43 F4 04 35 BF F4 04 35 BF FA E7 A9 35 EF A5 4B C3
+									00 00 00 00 00 00 00 00 00 00 80 BF A5 2F 04 43 4E 9A 26 3F 9C 5E 42 BF 00 00 00 00 9E 66 5C C3
+									00 00 00 00 00 00 00 00 00 00 80 3F E0 F4 85 40 BE 93 28 BF E1 A8 40 BF 00 00 00 00 0E 52 6F C3
+									F7 04 35 3F F0 04 35 BF EA 5B 71 B3 43 05 B5 42 F0 04 35 3F F7 04 35 3F D4 04 30 33 84 45 E2 C2
+									F7 04 35 BF F0 04 35 3F EA 5B 71 33 D0 04 35 43 D5 91 1D B4 2F E7 72 B4 00 00 80 3F A4 2F 04 C3
+									4A 9A 26 BF 9F 5E 42 3F FF 22 5E 33 A1 66 5C 43 9F 5E 42 BF 4A 9A 26 BF 61 17 1D B3 6D FD 51 C3
+									4A 9A 26 3F 9F 5E 42 BF FF 22 5E B3 D2 3F 95 42 30 8D 13 35 D1 5F D8 34 00 00 80 3F 9C 2F 04 C3
+									A2 48 70 B5 00 00 00 00 00 00 80 3F 20 F5 85 40 F9 04 35 3F EE 04 35 BF 05 E8 29 35 D8 04 35 C3
+									A2 48 70 35 00 00 00 00 00 00 80 BF 9A 2F 04 43 BE 93 28 3F E1 A8 40 3F 56 3A 1E 35 2C B0 C9 C2
+									00 00 00 00 00 00 00 00 00 00 80 BF A7 2F 04 43 F9 04 35 BF EE 04 35 3F 00 00 00 00 42 05 B5 C2
+									00 00 00 00 00 00 00 00 00 00 80 3F 20 F3 85 40 F4 04 35 3F F4 04 35 3F 00 00 00 00 82 45 E2 C2
+									FB 04 35 BF EC 04 35 3F E5 5B 71 34 DA 04 35 43 EC 04 35 3F FB 04 35 3F CC 06 F8 34 86 45 E2 C2
+									FB 04 35 3F EC 04 35 BF E5 5B 71 B4 3F 05 B5 42 98 8E EC 32 95 73 B9 34 00 00 80 BF 90 F3 85 C0
+									52 9A 26 3F 98 5E 42 BF F7 22 5E B4 F7 3F 95 42 98 5E 42 BF 52 9A 26 BF 9A 51 EF B4 77 FD 51 C3
+									52 9A 26 BF 98 5E 42 3F F7 22 5E 34 9A 66 5C 43 47 A8 2E B5 A8 20 99 B4 00 00 80 BF B0 F5 85 C0
+									C1 93 28 BF E0 A8 40 BF 18 D3 F0 B4 32 B0 C9 42 FC 96 17 35 36 DF DA 33 00 00 80 BF 80 F4 85 C0
+									C1 93 28 3F E0 A8 40 3F 18 D3 F0 34 0D 52 6F 43 E0 A8 40 3F C1 93 28 BF 90 90 2E B4 C6 24 3C C3
+									BD 93 28 3F E2 A8 40 3F E2 A8 40 33 10 52 6F 43 36 74 A0 B4 4E CB 58 34 00 00 80 3F A2 2F 04 C3
+									BD 93 28 BF E2 A8 40 BF E2 A8 40 B3 22 B0 C9 42 E2 A8 40 3F BD 93 28 BF 0C C9 63 B3 C1 24 3C C3
+									F0 04 35 BF F7 04 35 BF 1A E1 4E B3 84 45 E2 42 BC D5 CC 34 FD 67 F1 B4 00 00 80 3F A3 2F 04 C3
+									F0 04 35 3F F7 04 35 3F 1A E1 4E 33 E1 A5 4B 43 F7 04 35 BF F0 04 35 3F 8D 06 70 33 47 05 B5 C2
+									F6 04 35 3F F0 04 35 3F AB 4C 01 35 F1 A5 4B 43 B8 0D A1 B3 24 FD 4A 35 00 00 80 BF 00 F4 85 C0
+									F6 04 35 BF F0 04 35 BF AB 4C 01 B5 7C 45 E2 42 F0 04 35 BF F6 04 35 3F C7 05 50 34 4D 05 B5 C2
+								]
+								m_Nodes = 
+								#[
+									00 00 01 80 01 00 0E 80 02 00 03 80 03 00 14 80 04 00 2C 80 05 00 1F 80 06 00 02 80 07 00 2E 80
+									08 00 12 80 09 00 0F 80 0A 00 12 80 0B 00 22 80 0C 00 26 80 0D 00 19 80 0E 00 07 80 05 04 00 20
+									0E 00 30 80 03 02 00 20 06 00 00 40 01 00 00 60 0C 00 10 80 0D 00 2A 80 0E 00 13 80 0F 00 35 80
+									10 00 23 80 11 00 1E 80 12 00 28 80 13 00 0D 80 14 00 17 80 15 00 00 80 16 00 05 80 00 01 00 20
+									14 00 00 40 02 05 00 20 04 00 00 40 03 02 00 20 12 00 00 40 11 00 2D 80 06 00 00 40 03 00 00 60
+									10 00 32 80 11 00 28 80 12 00 24 80 06 08 00 20 12 00 20 80 01 03 00 20 10 00 00 40 04 00 00 60
+									02 00 00 40 0F 00 1B 80 08 00 00 40 0F 00 0B 80 10 00 0D 80 11 00 09 80 00 00 00 00 01 00 00 60
+									12 00 00 40 04 00 00 20 16 00 00 40 01 03 00 20 0C 00 29 80 01 03 00 20 0E 00 00 40 07 0B 00 20
+									0C 00 00 40 02 00 00 60 0A 00 00 40 00 00 00 60 02 00 00 40 05 00 04 80 02 00 00 40 05 00 00 60
+									00 00 00 40 03 00 00 60 10 00 00 40 04 00 00 60 00 00 00 00
+								]
+							}
+							m_Vertices = #[ 15 11 13 12 16 14 10 17 ]
+							m_VertexPositions = 
+							#[
+								54 00 50 43 40 00 A0 42 A6 2F 04 C3 40 02 80 41 10 00 98 43 E0 F4 85 40 AC FF 4F C3 80 00 40 42
+								A6 2F 04 C3 40 02 80 41 10 00 98 43 A5 2F 04 C3 64 00 50 43 40 00 A0 42 60 F4 85 40 40 FA 7F C1
+								E0 FF 0F C3 A7 2F 04 C3 B4 FF 4F C3 80 00 40 42 A0 F3 85 40 40 FA 7F C1 E0 FF 0F C3 20 F3 85 40
+							]
+							m_Edges = 
+							#[
+								07 01 04 00 16 00 00 05 0F 03 03 00 12 02 01 04 13 05 05 01 0A 04 02 02 15 07 03 01 02 06 00 00
+								05 09 06 02 10 08 02 04 0D 0B 05 02 14 0A 07 05 17 0D 06 03 08 0C 07 02 11 0F 04 03 00 0E 01 00
+								03 11 06 04 0C 10 01 03 09 13 03 04 06 12 02 01 01 15 05 05 04 14 00 01 0B 17 04 05 0E 16 07 03
+							]
+							m_Faces = #[ 00 04 08 0C 10 14 ]
+							m_Planes = 
+							#[
+								9C 5E 42 3F 4E 9A 26 3F CE 6F 36 B5 75 FD 51 43 E7 09 35 B2 0B 18 93 33 00 00 80 BF A6 2F 04 43
+								ED 04 35 BF F8 04 35 BF A8 96 8D B4 87 45 E2 42 17 AB 4B B4 A2 ED F8 B4 00 00 80 3F B0 F3 85 40
+								E1 A8 40 BF BE 93 28 3F 46 22 C0 B4 C5 24 3C 43 F3 04 35 3F F3 04 35 BF 22 C5 1D B5 4E 05 B5 42
+							]
+						}
+					},
+				]
+				m_meshes = [  ]
+				m_compounds = [  ]
+				m_CollisionAttributeIndices = [  ]
+			}
+			m_nCollisionAttributeIndex = 0
+			m_nReserved = 0
+			m_flInertiaScale = 1.0
+			m_flLinearDamping = 0.0
+			m_flAngularDamping = 0.0
+			m_flLinearDrag = 1.0
+			m_flAngularDrag = 1.0
+			m_bOverrideMassCenter = false
+			m_vMassCenterOverride = [ 0.0, 0.0, 0.0 ]
+		},
+	]
+	m_shapeMarkups = [  ]
+	m_constraints2 = [  ]
+	m_joints = [  ]
+	m_pFeModel = null
+	m_boneParents = [  ]
+	m_surfacePropertyHashes = [ 1977497166 ]
+	m_collisionAttributes = 
+	[
+		{
+			m_nIncludeDetailLayerCount = 0
+			m_CollisionGroup = 1977497166
+			m_InteractAs = [  ]
+			m_InteractWith = [  ]
+			m_InteractExclude = [  ]
+			m_DetailLayers = [  ]
+			m_CollisionGroupString = "default"
+			m_InteractAsStrings = [  ]
+			m_InteractWithStrings = [  ]
+			m_InteractExcludeStrings = [  ]
+			m_DetailLayerStrings = [  ]
+		},
+	]
+	m_debugPartNames = [  ]
+	m_embeddedKeyvalues = ""
+}

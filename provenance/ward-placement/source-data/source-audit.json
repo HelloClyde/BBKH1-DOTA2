@@ -1,0 +1,2281 @@
+{
+  "format_version": 1,
+  "passed": true,
+  "read_only_original_sources": true,
+  "purpose": "Original enabled trigger_no_wards geometry for H1 ward placement",
+  "source_default_entities": {
+    "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\maps\\dota.vpk",
+    "vpk_version": 2,
+    "vpk_tree_sha256": "6f3ca95524b532e590cc2030dba10bbfb3d47e26c716022d2495be00655baada",
+    "path": "maps/dota/entities/default_ents.vents_c",
+    "crc32": "57169061",
+    "archive_index": 32767,
+    "offset": 2656678,
+    "length": 123581,
+    "preload_bytes": 0,
+    "resource_bytes": 123581,
+    "sha256": "53562fda288344f93b766e57913bfc5c16d1d9af2b513d0f221b7abd1368151e",
+    "crc32_verified": true
+  },
+  "source_inputs": {
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2-v022\\active-entities\\entities.json": "856e3b74e781420a4d48de2b4f33db2a2c4ceb836e30a707a7c4e7f4403fb812",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2-v022\\active-entities\\manifest.json": "eec1c69e51edd456e000491abfce65a317d8448837506d5a03af77a923d7888b",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2-v022\\active-entities\\default_ents-DATA.txt": "99e7131eaa5c329d81c9ec60f9ccf5cdefb600f6cf61c7f3519390434a53b2cc",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\tools\\source2_vpk.py": "08e96b109049aa787ae7d1c784ce98139d64413827e4361fba8de22660b4903e",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\.tools\\dota-source2\\cli-20.1\\Source2Viewer-CLI.exe": "ef9f6fb3943c30b73f0991bce6654128727b0807968f7997a6bb014efbec8830",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\provenance\\ward-placement\\extract_source.py": "e5b724c47ba799cc8ed13fc3275c80d2262c0ab20e77d56020804a28847c5b55"
+  },
+  "coordinate_mapping": {
+    "x": "2048 + SourceX / 4",
+    "y": "2048 - SourceY / 4",
+    "z": "SourceZ / 4",
+    "entity_rotation": "Rz(yaw), pitch=roll=0, scale=1"
+  },
+  "runtime_adaptation": "2D XY projection of each original convex PHYS hull; membership is union, not convex hull of all brushes. Q8 nearest rounding (1/256 world).",
+  "height_limitation": "Original Source Z intervals retained; H1 placement query has XY only and does not emulate arbitrary 3D flying/ward-height overlap.",
+  "activation": {
+    "active_layer": "default",
+    "StartDisabled": false,
+    "filters_parent_target_vscripts": "empty in all five records",
+    "team_field_present": false,
+    "spawnflags": [
+      4097,
+      4097,
+      64,
+      64,
+      4097
+    ],
+    "native_spawnflag_bit_semantics": "Not reverse engineered; raw values retained, not invented."
+  },
+  "scope": "All five actual default-active no-wards triggers, including the small fifth region; not fountain healing circles, walkability or FOW pit polygons.",
+  "entities": [
+    {
+      "entity": {
+        "local.scales": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vscripts": "",
+        "parentname": "",
+        "parentAttachmentName": "",
+        "local.origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "local.angles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "useLocalOffset": false,
+        "StartDisabled": false,
+        "globalname": "",
+        "spawnflags": 4097,
+        "filtername": "",
+        "source1_brushmodel_index": "40",
+        "targetname": "",
+        "classname": "trigger_no_wards",
+        "compile_source_id": 2591,
+        "origin": [
+          -7584.0,
+          -6664.0,
+          416.0
+        ],
+        "angles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scales": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "hammerUniqueId": "2699:25701",
+        "model": "resource_name:\"maps/dota/entities/unnamed_2699_25701.vmdl\"",
+        "_source_layer": "default"
+      },
+      "source_resource": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\maps\\dota.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "6f3ca95524b532e590cc2030dba10bbfb3d47e26c716022d2495be00655baada",
+        "path": "maps/dota/entities/unnamed_2699_25701.vmdl_c",
+        "crc32": "cb2544dd",
+        "archive_index": 32767,
+        "offset": 2907101,
+        "length": 5040,
+        "preload_bytes": 0,
+        "resource_bytes": 5040,
+        "sha256": "88cca3380aeeb6f8008a8c8649c134e818e9bf4b7f8603497570150d252b6aa9",
+        "crc32_verified": true
+      },
+      "compiled_snapshot": {
+        "path": "unnamed_2699_25701.vmdl_c",
+        "sha256": "88cca3380aeeb6f8008a8c8649c134e818e9bf4b7f8603497570150d252b6aa9"
+      },
+      "phys_text": {
+        "path": "unnamed_2699_25701.vmdl_c.PHYS.txt",
+        "sha256": "019cb0b1cba1ade88a86982f7cec543368217308702320f32f8951bef3d86d64"
+      },
+      "hulls": [
+        {
+          "source_entity_index": 0,
+          "source_compile_id": 2591,
+          "model_hull_index": 0,
+          "local_xyz_vertices": [
+            [
+              707.0966796875,
+              968.0,
+              130.0025634765625
+            ],
+            [
+              707.0966796875,
+              -608.0,
+              -129.9971923828125
+            ],
+            [
+              1376.0,
+              315.8623046875,
+              -129.9971923828125
+            ],
+            [
+              707.0966796875,
+              968.0,
+              -129.9971923828125
+            ],
+            [
+              707.0966796875,
+              -608.0,
+              130.0025634765625
+            ],
+            [
+              1376.0,
+              -608.0,
+              -129.99722290039062
+            ],
+            [
+              1376.0,
+              315.8623046875,
+              130.0025634765625
+            ],
+            [
+              1376.0,
+              -608.0,
+              130.0025634765625
+            ]
+          ],
+          "source_xy_polygon": [
+            [
+              -6876.9033203125,
+              -7272.0
+            ],
+            [
+              -6208.0,
+              -7272.0
+            ],
+            [
+              -6208.0,
+              -6348.1376953125
+            ],
+            [
+              -6876.9033203125,
+              -5696.0
+            ]
+          ],
+          "source_z_bounds": [
+            286.0027770996094,
+            546.0025634765625
+          ],
+          "world_xy_polygon": [
+            [
+              328.774169921875,
+              3472.0
+            ],
+            [
+              496.0,
+              3635.034423828125
+            ],
+            [
+              496.0,
+              3866.0
+            ],
+            [
+              328.774169921875,
+              3866.0
+            ]
+          ],
+          "world_q8_ccw": [
+            [
+              84166,
+              888832
+            ],
+            [
+              126976,
+              930569
+            ],
+            [
+              126976,
+              989696
+            ],
+            [
+              84166,
+              989696
+            ]
+          ],
+          "bounds_q8": [
+            84166,
+            126976,
+            888832,
+            989696
+          ],
+          "integer_xy_quantization_differences": []
+        },
+        {
+          "source_entity_index": 0,
+          "source_compile_id": 2591,
+          "model_hull_index": 1,
+          "local_xyz_vertices": [
+            [
+              707.0966796875,
+              968.0,
+              130.0025634765625
+            ],
+            [
+              -352.0,
+              968.0,
+              130.0025634765625
+            ],
+            [
+              707.0966796875,
+              -608.0,
+              130.0025634765625
+            ],
+            [
+              -352.0,
+              -608.0,
+              130.0025634765625
+            ],
+            [
+              707.0966796875,
+              968.0,
+              -129.99722290039062
+            ],
+            [
+              -352.0,
+              968.0,
+              -129.99722290039062
+            ],
+            [
+              707.0966796875,
+              -608.0,
+              -129.99722290039062
+            ],
+            [
+              -352.0,
+              -608.0,
+              -129.99722290039062
+            ]
+          ],
+          "source_xy_polygon": [
+            [
+              -7936.0,
+              -7272.0
+            ],
+            [
+              -6876.9033203125,
+              -7272.0
+            ],
+            [
+              -6876.9033203125,
+              -5696.0
+            ],
+            [
+              -7936.0,
+              -5696.0
+            ]
+          ],
+          "source_z_bounds": [
+            286.0027770996094,
+            546.0025634765625
+          ],
+          "world_xy_polygon": [
+            [
+              64.0,
+              3472.0
+            ],
+            [
+              328.774169921875,
+              3472.0
+            ],
+            [
+              328.774169921875,
+              3866.0
+            ],
+            [
+              64.0,
+              3866.0
+            ]
+          ],
+          "world_q8_ccw": [
+            [
+              16384,
+              888832
+            ],
+            [
+              84166,
+              888832
+            ],
+            [
+              84166,
+              989696
+            ],
+            [
+              16384,
+              989696
+            ]
+          ],
+          "bounds_q8": [
+            16384,
+            84166,
+            888832,
+            989696
+          ],
+          "integer_xy_quantization_differences": []
+        }
+      ]
+    },
+    {
+      "entity": {
+        "local.scales": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vscripts": "",
+        "parentname": "",
+        "parentAttachmentName": "",
+        "local.origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "local.angles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "useLocalOffset": false,
+        "StartDisabled": false,
+        "globalname": "",
+        "spawnflags": 4097,
+        "filtername": "",
+        "source1_brushmodel_index": "41",
+        "targetname": "",
+        "classname": "trigger_no_wards",
+        "compile_source_id": 2592,
+        "origin": [
+          7584.0,
+          6656.0,
+          288.0
+        ],
+        "angles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scales": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "hammerUniqueId": "2699:25707",
+        "model": "resource_name:\"maps/dota/entities/unnamed_2699_25707.vmdl\"",
+        "_source_layer": "default"
+      },
+      "source_resource": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\maps\\dota.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "6f3ca95524b532e590cc2030dba10bbfb3d47e26c716022d2495be00655baada",
+        "path": "maps/dota/entities/unnamed_2699_25707.vmdl_c",
+        "crc32": "44536b59",
+        "archive_index": 32767,
+        "offset": 2912141,
+        "length": 5008,
+        "preload_bytes": 0,
+        "resource_bytes": 5008,
+        "sha256": "3fba14483f0acedff31b44d744e3817607beaf38e228bf9b6bec15c2150c40f7",
+        "crc32_verified": true
+      },
+      "compiled_snapshot": {
+        "path": "unnamed_2699_25707.vmdl_c",
+        "sha256": "3fba14483f0acedff31b44d744e3817607beaf38e228bf9b6bec15c2150c40f7"
+      },
+      "phys_text": {
+        "path": "unnamed_2699_25707.vmdl_c.PHYS.txt",
+        "sha256": "37b669c8d245cb320bbbcaa806cada5cb2e2c056f3b54b5752b9fe419ea47b02"
+      },
+      "hulls": [
+        {
+          "source_entity_index": 1,
+          "source_compile_id": 2592,
+          "model_hull_index": 0,
+          "local_xyz_vertices": [
+            [
+              -928.0,
+              448.0,
+              -129.99722290039062
+            ],
+            [
+              -1376.0,
+              448.0,
+              258.0025634765625
+            ],
+            [
+              -1376.0,
+              -512.0,
+              -129.99722290039062
+            ],
+            [
+              -928.0,
+              -960.0,
+              -129.99722290039062
+            ],
+            [
+              -928.0,
+              448.0,
+              258.0025634765625
+            ],
+            [
+              -1376.0,
+              448.0,
+              -129.99725341796875
+            ],
+            [
+              -1376.0,
+              -512.0,
+              258.0025634765625
+            ],
+            [
+              -928.0,
+              -960.0,
+              258.0025634765625
+            ]
+          ],
+          "source_xy_polygon": [
+            [
+              6208.0,
+              6144.0
+            ],
+            [
+              6656.0,
+              5696.0
+            ],
+            [
+              6656.0,
+              7104.0
+            ],
+            [
+              6208.0,
+              7104.0
+            ]
+          ],
+          "source_z_bounds": [
+            158.00274658203125,
+            546.0025634765625
+          ],
+          "world_xy_polygon": [
+            [
+              3600.0,
+              272.0
+            ],
+            [
+              3712.0,
+              272.0
+            ],
+            [
+              3712.0,
+              624.0
+            ],
+            [
+              3600.0,
+              512.0
+            ]
+          ],
+          "world_q8_ccw": [
+            [
+              921600,
+              69632
+            ],
+            [
+              950272,
+              69632
+            ],
+            [
+              950272,
+              159744
+            ],
+            [
+              921600,
+              131072
+            ]
+          ],
+          "bounds_q8": [
+            921600,
+            950272,
+            69632,
+            159744
+          ],
+          "integer_xy_quantization_differences": []
+        },
+        {
+          "source_entity_index": 1,
+          "source_compile_id": 2592,
+          "model_hull_index": 1,
+          "local_xyz_vertices": [
+            [
+              224.00048828125,
+              448.0,
+              258.0025634765625
+            ],
+            [
+              -928.00048828125,
+              448.0,
+              258.0025634765625
+            ],
+            [
+              224.00048828125,
+              -960.0,
+              258.0025634765625
+            ],
+            [
+              -928.00048828125,
+              -960.0,
+              258.0025634765625
+            ],
+            [
+              224.00048828125,
+              448.0,
+              -129.99725341796875
+            ],
+            [
+              -928.00048828125,
+              448.0,
+              -129.99725341796875
+            ],
+            [
+              224.00048828125,
+              -960.0,
+              -129.99725341796875
+            ],
+            [
+              -928.00048828125,
+              -960.0,
+              -129.99725341796875
+            ]
+          ],
+          "source_xy_polygon": [
+            [
+              6655.99951171875,
+              5696.0
+            ],
+            [
+              7808.00048828125,
+              5696.0
+            ],
+            [
+              7808.00048828125,
+              7104.0
+            ],
+            [
+              6655.99951171875,
+              7104.0
+            ]
+          ],
+          "source_z_bounds": [
+            158.00274658203125,
+            546.0025634765625
+          ],
+          "world_xy_polygon": [
+            [
+              3711.9998779296875,
+              272.0
+            ],
+            [
+              4000.0001220703125,
+              272.0
+            ],
+            [
+              4000.0001220703125,
+              624.0
+            ],
+            [
+              3711.9998779296875,
+              624.0
+            ]
+          ],
+          "world_q8_ccw": [
+            [
+              950272,
+              69632
+            ],
+            [
+              1024000,
+              69632
+            ],
+            [
+              1024000,
+              159744
+            ],
+            [
+              950272,
+              159744
+            ]
+          ],
+          "bounds_q8": [
+            950272,
+            1024000,
+            69632,
+            159744
+          ],
+          "integer_xy_quantization_differences": []
+        }
+      ]
+    },
+    {
+      "entity": {
+        "source1_brushmodel_index": "49",
+        "filtername": "",
+        "spawnflags": 64,
+        "globalname": "",
+        "StartDisabled": false,
+        "useLocalOffset": false,
+        "local.scales": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "local.angles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "local.origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parentAttachmentName": "",
+        "parentname": "",
+        "vscripts": "",
+        "targetname": "",
+        "classname": "trigger_no_wards",
+        "compile_source_id": 2759,
+        "origin": [
+          -3212.866211,
+          2747.168457,
+          223.999878
+        ],
+        "angles": [
+          0.0,
+          335.294495,
+          0.0
+        ],
+        "scales": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "hammerUniqueId": "2699:28491",
+        "model": "resource_name:\"maps/dota/entities/unnamed_2699_28491.vmdl\"",
+        "_source_layer": "default"
+      },
+      "source_resource": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\maps\\dota.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "6f3ca95524b532e590cc2030dba10bbfb3d47e26c716022d2495be00655baada",
+        "path": "maps/dota/entities/unnamed_2699_28491.vmdl_c",
+        "crc32": "0fb6d148",
+        "archive_index": 32767,
+        "offset": 2927293,
+        "length": 5280,
+        "preload_bytes": 0,
+        "resource_bytes": 5280,
+        "sha256": "0c068d3c731fe48c847fecc4d15dbfb254774d9fdb9bfd0f5b68222df2cf08dc",
+        "crc32_verified": true
+      },
+      "compiled_snapshot": {
+        "path": "unnamed_2699_28491.vmdl_c",
+        "sha256": "0c068d3c731fe48c847fecc4d15dbfb254774d9fdb9bfd0f5b68222df2cf08dc"
+      },
+      "phys_text": {
+        "path": "unnamed_2699_28491.vmdl_c.PHYS.txt",
+        "sha256": "50a94ff532d94a5ba401c403391fe192ebee4f96c903691cdbe1d1a6d4cb3e4a"
+      },
+      "hulls": [
+        {
+          "source_entity_index": 2,
+          "source_compile_id": 2759,
+          "model_hull_index": 0,
+          "local_xyz_vertices": [
+            [
+              849.04150390625,
+              -397.0399169921875,
+              -208.0
+            ],
+            [
+              -78.865478515625,
+              -701.76416015625,
+              381.0
+            ],
+            [
+              219.229736328125,
+              144.45556640625,
+              381.0
+            ],
+            [
+              849.04150390625,
+              -397.0399169921875,
+              381.0
+            ],
+            [
+              -78.865478515625,
+              -701.76416015625,
+              -208.0
+            ],
+            [
+              219.229736328125,
+              144.45556640625,
+              -208.0
+            ],
+            [
+              544.54248046875,
+              -817.748046875,
+              -208.0
+            ],
+            [
+              -259.594482421875,
+              -167.2069091796875,
+              381.0
+            ],
+            [
+              544.54248046875,
+              -817.748046875,
+              381.0
+            ],
+            [
+              497.72265625,
+              -1.6513671875,
+              -208.0
+            ],
+            [
+              497.722900390625,
+              -1.651611328125,
+              381.0
+            ],
+            [
+              13.0283203125,
+              76.7388916015625,
+              381.0
+            ],
+            [
+              13.0283203125,
+              76.7388916015625,
+              -208.0
+            ],
+            [
+              -259.594482421875,
+              -167.2069091796875,
+              -208.0
+            ]
+          ],
+          "source_xy_polygon": [
+            [
+              -3577.818368076185,
+              2142.6003274837767
+            ],
+            [
+              -3059.948142453605,
+              1776.676599478786
+            ],
+            [
+              -2607.4837182884203,
+              2031.6097881552553
+            ],
+            [
+              -2761.3911690880855,
+              2537.642563793766
+            ],
+            [
+              -2761.391288842398,
+              2537.6428876273562
+            ],
+            [
+              -2953.327171476278,
+              2786.7736955342343
+            ],
+            [
+              -3168.95704412777,
+              2811.4380429562525
+            ],
+            [
+              -3518.5843546134906,
+              2703.764972729418
+            ]
+          ],
+          "source_z_bounds": [
+            15.999877999999995,
+            604.999878
+          ],
+          "world_xy_polygon": [
+            [
+              1153.5454079809538,
+              1512.3499181290558
+            ],
+            [
+              1168.3539113466272,
+              1372.0587568176456
+            ],
+            [
+              1255.7607389680575,
+              1345.1404892609369
+            ],
+            [
+              1309.6682071309306,
+              1351.3065761164414
+            ],
+            [
+              1357.6521777894004,
+              1413.5892780931608
+            ],
+            [
+              1357.6522077279787,
+              1413.5893590515584
+            ],
+            [
+              1396.129070427895,
+              1540.0975529611862
+            ],
+            [
+              1283.0129643865987,
+              1603.8308501303036
+            ]
+          ],
+          "world_q8_ccw": [
+            [
+              295308,
+              387162
+            ],
+            [
+              299099,
+              351247
+            ],
+            [
+              321475,
+              344356
+            ],
+            [
+              335275,
+              345934
+            ],
+            [
+              347559,
+              361879
+            ],
+            [
+              357409,
+              394265
+            ],
+            [
+              328451,
+              410581
+            ]
+          ],
+          "bounds_q8": [
+            295308,
+            357409,
+            344356,
+            410581
+          ],
+          "integer_xy_quantization_differences": [
+            [
+              1307,
+              1351
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "entity": {
+        "source1_brushmodel_index": "49",
+        "filtername": "",
+        "spawnflags": 64,
+        "globalname": "",
+        "StartDisabled": false,
+        "useLocalOffset": false,
+        "local.scales": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "local.angles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "local.origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parentAttachmentName": "",
+        "parentname": "",
+        "vscripts": "",
+        "targetname": "",
+        "classname": "trigger_no_wards",
+        "compile_source_id": 2767,
+        "origin": [
+          3169.786621,
+          -3005.845215,
+          192.0
+        ],
+        "angles": [
+          0.0,
+          184.665176,
+          0.0
+        ],
+        "scales": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "hammerUniqueId": "2699:28496",
+        "model": "resource_name:\"maps/dota/entities/unnamed_2699_28496.vmdl\"",
+        "_source_layer": "default"
+      },
+      "source_resource": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\maps\\dota.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "6f3ca95524b532e590cc2030dba10bbfb3d47e26c716022d2495be00655baada",
+        "path": "maps/dota/entities/unnamed_2699_28496.vmdl_c",
+        "crc32": "bbe511af",
+        "archive_index": 32767,
+        "offset": 2932573,
+        "length": 5168,
+        "preload_bytes": 0,
+        "resource_bytes": 5168,
+        "sha256": "0383fde42af68a92ec0b801d7d859a58047998ecf9c5c6bcfa269f33551f5be0",
+        "crc32_verified": true
+      },
+      "compiled_snapshot": {
+        "path": "unnamed_2699_28496.vmdl_c",
+        "sha256": "0383fde42af68a92ec0b801d7d859a58047998ecf9c5c6bcfa269f33551f5be0"
+      },
+      "phys_text": {
+        "path": "unnamed_2699_28496.vmdl_c.PHYS.txt",
+        "sha256": "5b5c098d31b3029620659046d23cf34e57746d5a3fe5a3b07747deb5dd40acc4"
+      },
+      "hulls": [
+        {
+          "source_entity_index": 3,
+          "source_compile_id": 2767,
+          "model_hull_index": 0,
+          "local_xyz_vertices": [
+            [
+              952.933837890625,
+              -358.33538818359375,
+              -208.0
+            ],
+            [
+              468.999755859375,
+              -784.0619506835938,
+              381.0
+            ],
+            [
+              263.007080078125,
+              186.65667724609375,
+              381.0
+            ],
+            [
+              -313.77197265625,
+              -133.19134521484375,
+              381.0
+            ],
+            [
+              952.933837890625,
+              -358.33538818359375,
+              381.0
+            ],
+            [
+              468.999755859375,
+              -784.0619506835938,
+              -208.0
+            ],
+            [
+              263.007080078125,
+              186.65667724609375,
+              -208.0
+            ],
+            [
+              -161.912109375,
+              -564.8017578125,
+              -208.0
+            ],
+            [
+              -161.912109375,
+              -564.8017578125,
+              381.0
+            ],
+            [
+              636.71533203125,
+              76.96246337890625,
+              -208.0
+            ],
+            [
+              636.71533203125,
+              76.96246337890625,
+              381.0
+            ],
+            [
+              -25.681396484375,
+              154.06280517578125,
+              -208.0
+            ],
+            [
+              -25.681396484375,
+              154.06280517578125,
+              381.0
+            ],
+            [
+              -313.77197265625,
+              -133.19134521484375,
+              -208.0
+            ]
+          ],
+          "source_xy_polygon": [
+            [
+              2190.8654483641767,
+              -2726.201714115487
+            ],
+            [
+              2541.4402923699377,
+              -3134.338507082257
+            ],
+            [
+              2922.832181933936,
+              -3213.2745869735445
+            ],
+            [
+              3207.913285801233,
+              -3157.308872341135
+            ],
+            [
+              3471.6862509342823,
+              -2847.5751966444136
+            ],
+            [
+              3285.2254395789005,
+              -2429.7458867974237
+            ],
+            [
+              2638.5707494630037,
+              -2262.5258951023498
+            ]
+          ],
+          "source_z_bounds": [
+            -16.0,
+            573.0
+          ],
+          "world_xy_polygon": [
+            [
+              2595.716362091044,
+              2729.5504285288716
+            ],
+            [
+              2707.642687365751,
+              2613.6314737755874
+            ],
+            [
+              2869.306359894725,
+              2655.436471699356
+            ],
+            [
+              2915.9215627335707,
+              2759.8937991611033
+            ],
+            [
+              2849.978321450308,
+              2837.3272180852837
+            ],
+            [
+              2778.708045483484,
+              2851.318646743386
+            ],
+            [
+              2683.3600730924845,
+              2831.5846267705642
+            ]
+          ],
+          "world_q8_ccw": [
+            [
+              664503,
+              698765
+            ],
+            [
+              693157,
+              669090
+            ],
+            [
+              734542,
+              679792
+            ],
+            [
+              746476,
+              706533
+            ],
+            [
+              729594,
+              726356
+            ],
+            [
+              711349,
+              729938
+            ],
+            [
+              686940,
+              724886
+            ]
+          ],
+          "bounds_q8": [
+            664503,
+            746476,
+            669090,
+            729938
+          ],
+          "integer_xy_quantization_differences": []
+        }
+      ]
+    },
+    {
+      "entity": {
+        "local.scales": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "filtername": "",
+        "spawnflags": 4097,
+        "globalname": "",
+        "StartDisabled": false,
+        "useLocalOffset": false,
+        "local.angles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "local.origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parentAttachmentName": "",
+        "parentname": "",
+        "targetname": "",
+        "vscripts": "",
+        "classname": "trigger_no_wards",
+        "compile_source_id": 4677,
+        "origin": [
+          4847.48584,
+          -1148.983521,
+          249.300812
+        ],
+        "angles": [
+          0.0,
+          278.999847,
+          0.0
+        ],
+        "scales": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "hammerUniqueId": "3010:4090:49",
+        "model": "resource_name:\"maps/dota/entities/unnamed_3010_4090_49.vmdl\"",
+        "_source_layer": "default"
+      },
+      "source_resource": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\maps\\dota.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "6f3ca95524b532e590cc2030dba10bbfb3d47e26c716022d2495be00655baada",
+        "path": "maps/dota/entities/unnamed_3010_4090_49.vmdl_c",
+        "crc32": "7d998ac4",
+        "archive_index": 32767,
+        "offset": 2959253,
+        "length": 4852,
+        "preload_bytes": 0,
+        "resource_bytes": 4852,
+        "sha256": "b2db1a72b8694d0bd80c2c996088c742635a687aa0fb9c6d5913bb0e98540ee7",
+        "crc32_verified": true
+      },
+      "compiled_snapshot": {
+        "path": "unnamed_3010_4090_49.vmdl_c",
+        "sha256": "b2db1a72b8694d0bd80c2c996088c742635a687aa0fb9c6d5913bb0e98540ee7"
+      },
+      "phys_text": {
+        "path": "unnamed_3010_4090_49.vmdl_c.PHYS.txt",
+        "sha256": "7d64ddd4d9450bfa5966c97c8102f7106746bc24d15c5a8be26492fba73b7147"
+      },
+      "hulls": [
+        {
+          "source_entity_index": 4,
+          "source_compile_id": 4677,
+          "model_hull_index": 0,
+          "local_xyz_vertices": [
+            [
+              208.00128173828125,
+              80.00048828125,
+              -132.18612670898438
+            ],
+            [
+              16.0010986328125,
+              304.00048828125,
+              4.1861419677734375
+            ],
+            [
+              -207.99871826171875,
+              48.00048828125,
+              -132.18612670898438
+            ],
+            [
+              16.0010986328125,
+              304.00048828125,
+              -132.1861114501953
+            ],
+            [
+              208.00152587890625,
+              80.00048828125,
+              4.1860809326171875
+            ],
+            [
+              -15.99859619140625,
+              -143.99951171875,
+              -132.18614196777344
+            ],
+            [
+              -207.99884033203125,
+              48.00048828125,
+              4.1859893798828125
+            ],
+            [
+              -15.99859619140625,
+              -143.99951171875,
+              4.1859283447265625
+            ]
+          ],
+          "source_xy_polygon": [
+            [
+              4702.756451430163,
+              -1155.7079941789932
+            ],
+            [
+              4959.039481765066,
+              -1341.9096672377332
+            ],
+            [
+              5150.2467859034405,
+              -1117.2322742788115
+            ],
+            [
+              4862.357743945597,
+              -936.0366005532812
+            ]
+          ],
+          "source_z_bounds": [
+            117.11467003222657,
+            253.48695396777345
+          ],
+          "world_xy_polygon": [
+            [
+              3223.6891128575407,
+              2336.926998544748
+            ],
+            [
+              3263.589435986399,
+              2282.0091501383204
+            ],
+            [
+              3335.56169647586,
+              2327.3080685697028
+            ],
+            [
+              3287.7598704412667,
+              2383.477416809433
+            ]
+          ],
+          "world_q8_ccw": [
+            [
+              825264,
+              598253
+            ],
+            [
+              835479,
+              584194
+            ],
+            [
+              853904,
+              595791
+            ],
+            [
+              841667,
+              610170
+            ]
+          ],
+          "bounds_q8": [
+            825264,
+            853904,
+            584194,
+            610170
+          ],
+          "integer_xy_quantization_differences": []
+        }
+      ]
+    }
+  ],
+  "hulls": [
+    {
+      "source_entity_index": 0,
+      "source_compile_id": 2591,
+      "model_hull_index": 0,
+      "local_xyz_vertices": [
+        [
+          707.0966796875,
+          968.0,
+          130.0025634765625
+        ],
+        [
+          707.0966796875,
+          -608.0,
+          -129.9971923828125
+        ],
+        [
+          1376.0,
+          315.8623046875,
+          -129.9971923828125
+        ],
+        [
+          707.0966796875,
+          968.0,
+          -129.9971923828125
+        ],
+        [
+          707.0966796875,
+          -608.0,
+          130.0025634765625
+        ],
+        [
+          1376.0,
+          -608.0,
+          -129.99722290039062
+        ],
+        [
+          1376.0,
+          315.8623046875,
+          130.0025634765625
+        ],
+        [
+          1376.0,
+          -608.0,
+          130.0025634765625
+        ]
+      ],
+      "source_xy_polygon": [
+        [
+          -6876.9033203125,
+          -7272.0
+        ],
+        [
+          -6208.0,
+          -7272.0
+        ],
+        [
+          -6208.0,
+          -6348.1376953125
+        ],
+        [
+          -6876.9033203125,
+          -5696.0
+        ]
+      ],
+      "source_z_bounds": [
+        286.0027770996094,
+        546.0025634765625
+      ],
+      "world_xy_polygon": [
+        [
+          328.774169921875,
+          3472.0
+        ],
+        [
+          496.0,
+          3635.034423828125
+        ],
+        [
+          496.0,
+          3866.0
+        ],
+        [
+          328.774169921875,
+          3866.0
+        ]
+      ],
+      "world_q8_ccw": [
+        [
+          84166,
+          888832
+        ],
+        [
+          126976,
+          930569
+        ],
+        [
+          126976,
+          989696
+        ],
+        [
+          84166,
+          989696
+        ]
+      ],
+      "bounds_q8": [
+        84166,
+        126976,
+        888832,
+        989696
+      ],
+      "integer_xy_quantization_differences": []
+    },
+    {
+      "source_entity_index": 0,
+      "source_compile_id": 2591,
+      "model_hull_index": 1,
+      "local_xyz_vertices": [
+        [
+          707.0966796875,
+          968.0,
+          130.0025634765625
+        ],
+        [
+          -352.0,
+          968.0,
+          130.0025634765625
+        ],
+        [
+          707.0966796875,
+          -608.0,
+          130.0025634765625
+        ],
+        [
+          -352.0,
+          -608.0,
+          130.0025634765625
+        ],
+        [
+          707.0966796875,
+          968.0,
+          -129.99722290039062
+        ],
+        [
+          -352.0,
+          968.0,
+          -129.99722290039062
+        ],
+        [
+          707.0966796875,
+          -608.0,
+          -129.99722290039062
+        ],
+        [
+          -352.0,
+          -608.0,
+          -129.99722290039062
+        ]
+      ],
+      "source_xy_polygon": [
+        [
+          -7936.0,
+          -7272.0
+        ],
+        [
+          -6876.9033203125,
+          -7272.0
+        ],
+        [
+          -6876.9033203125,
+          -5696.0
+        ],
+        [
+          -7936.0,
+          -5696.0
+        ]
+      ],
+      "source_z_bounds": [
+        286.0027770996094,
+        546.0025634765625
+      ],
+      "world_xy_polygon": [
+        [
+          64.0,
+          3472.0
+        ],
+        [
+          328.774169921875,
+          3472.0
+        ],
+        [
+          328.774169921875,
+          3866.0
+        ],
+        [
+          64.0,
+          3866.0
+        ]
+      ],
+      "world_q8_ccw": [
+        [
+          16384,
+          888832
+        ],
+        [
+          84166,
+          888832
+        ],
+        [
+          84166,
+          989696
+        ],
+        [
+          16384,
+          989696
+        ]
+      ],
+      "bounds_q8": [
+        16384,
+        84166,
+        888832,
+        989696
+      ],
+      "integer_xy_quantization_differences": []
+    },
+    {
+      "source_entity_index": 1,
+      "source_compile_id": 2592,
+      "model_hull_index": 0,
+      "local_xyz_vertices": [
+        [
+          -928.0,
+          448.0,
+          -129.99722290039062
+        ],
+        [
+          -1376.0,
+          448.0,
+          258.0025634765625
+        ],
+        [
+          -1376.0,
+          -512.0,
+          -129.99722290039062
+        ],
+        [
+          -928.0,
+          -960.0,
+          -129.99722290039062
+        ],
+        [
+          -928.0,
+          448.0,
+          258.0025634765625
+        ],
+        [
+          -1376.0,
+          448.0,
+          -129.99725341796875
+        ],
+        [
+          -1376.0,
+          -512.0,
+          258.0025634765625
+        ],
+        [
+          -928.0,
+          -960.0,
+          258.0025634765625
+        ]
+      ],
+      "source_xy_polygon": [
+        [
+          6208.0,
+          6144.0
+        ],
+        [
+          6656.0,
+          5696.0
+        ],
+        [
+          6656.0,
+          7104.0
+        ],
+        [
+          6208.0,
+          7104.0
+        ]
+      ],
+      "source_z_bounds": [
+        158.00274658203125,
+        546.0025634765625
+      ],
+      "world_xy_polygon": [
+        [
+          3600.0,
+          272.0
+        ],
+        [
+          3712.0,
+          272.0
+        ],
+        [
+          3712.0,
+          624.0
+        ],
+        [
+          3600.0,
+          512.0
+        ]
+      ],
+      "world_q8_ccw": [
+        [
+          921600,
+          69632
+        ],
+        [
+          950272,
+          69632
+        ],
+        [
+          950272,
+          159744
+        ],
+        [
+          921600,
+          131072
+        ]
+      ],
+      "bounds_q8": [
+        921600,
+        950272,
+        69632,
+        159744
+      ],
+      "integer_xy_quantization_differences": []
+    },
+    {
+      "source_entity_index": 1,
+      "source_compile_id": 2592,
+      "model_hull_index": 1,
+      "local_xyz_vertices": [
+        [
+          224.00048828125,
+          448.0,
+          258.0025634765625
+        ],
+        [
+          -928.00048828125,
+          448.0,
+          258.0025634765625
+        ],
+        [
+          224.00048828125,
+          -960.0,
+          258.0025634765625
+        ],
+        [
+          -928.00048828125,
+          -960.0,
+          258.0025634765625
+        ],
+        [
+          224.00048828125,
+          448.0,
+          -129.99725341796875
+        ],
+        [
+          -928.00048828125,
+          448.0,
+          -129.99725341796875
+        ],
+        [
+          224.00048828125,
+          -960.0,
+          -129.99725341796875
+        ],
+        [
+          -928.00048828125,
+          -960.0,
+          -129.99725341796875
+        ]
+      ],
+      "source_xy_polygon": [
+        [
+          6655.99951171875,
+          5696.0
+        ],
+        [
+          7808.00048828125,
+          5696.0
+        ],
+        [
+          7808.00048828125,
+          7104.0
+        ],
+        [
+          6655.99951171875,
+          7104.0
+        ]
+      ],
+      "source_z_bounds": [
+        158.00274658203125,
+        546.0025634765625
+      ],
+      "world_xy_polygon": [
+        [
+          3711.9998779296875,
+          272.0
+        ],
+        [
+          4000.0001220703125,
+          272.0
+        ],
+        [
+          4000.0001220703125,
+          624.0
+        ],
+        [
+          3711.9998779296875,
+          624.0
+        ]
+      ],
+      "world_q8_ccw": [
+        [
+          950272,
+          69632
+        ],
+        [
+          1024000,
+          69632
+        ],
+        [
+          1024000,
+          159744
+        ],
+        [
+          950272,
+          159744
+        ]
+      ],
+      "bounds_q8": [
+        950272,
+        1024000,
+        69632,
+        159744
+      ],
+      "integer_xy_quantization_differences": []
+    },
+    {
+      "source_entity_index": 2,
+      "source_compile_id": 2759,
+      "model_hull_index": 0,
+      "local_xyz_vertices": [
+        [
+          849.04150390625,
+          -397.0399169921875,
+          -208.0
+        ],
+        [
+          -78.865478515625,
+          -701.76416015625,
+          381.0
+        ],
+        [
+          219.229736328125,
+          144.45556640625,
+          381.0
+        ],
+        [
+          849.04150390625,
+          -397.0399169921875,
+          381.0
+        ],
+        [
+          -78.865478515625,
+          -701.76416015625,
+          -208.0
+        ],
+        [
+          219.229736328125,
+          144.45556640625,
+          -208.0
+        ],
+        [
+          544.54248046875,
+          -817.748046875,
+          -208.0
+        ],
+        [
+          -259.594482421875,
+          -167.2069091796875,
+          381.0
+        ],
+        [
+          544.54248046875,
+          -817.748046875,
+          381.0
+        ],
+        [
+          497.72265625,
+          -1.6513671875,
+          -208.0
+        ],
+        [
+          497.722900390625,
+          -1.651611328125,
+          381.0
+        ],
+        [
+          13.0283203125,
+          76.7388916015625,
+          381.0
+        ],
+        [
+          13.0283203125,
+          76.7388916015625,
+          -208.0
+        ],
+        [
+          -259.594482421875,
+          -167.2069091796875,
+          -208.0
+        ]
+      ],
+      "source_xy_polygon": [
+        [
+          -3577.818368076185,
+          2142.6003274837767
+        ],
+        [
+          -3059.948142453605,
+          1776.676599478786
+        ],
+        [
+          -2607.4837182884203,
+          2031.6097881552553
+        ],
+        [
+          -2761.3911690880855,
+          2537.642563793766
+        ],
+        [
+          -2761.391288842398,
+          2537.6428876273562
+        ],
+        [
+          -2953.327171476278,
+          2786.7736955342343
+        ],
+        [
+          -3168.95704412777,
+          2811.4380429562525
+        ],
+        [
+          -3518.5843546134906,
+          2703.764972729418
+        ]
+      ],
+      "source_z_bounds": [
+        15.999877999999995,
+        604.999878
+      ],
+      "world_xy_polygon": [
+        [
+          1153.5454079809538,
+          1512.3499181290558
+        ],
+        [
+          1168.3539113466272,
+          1372.0587568176456
+        ],
+        [
+          1255.7607389680575,
+          1345.1404892609369
+        ],
+        [
+          1309.6682071309306,
+          1351.3065761164414
+        ],
+        [
+          1357.6521777894004,
+          1413.5892780931608
+        ],
+        [
+          1357.6522077279787,
+          1413.5893590515584
+        ],
+        [
+          1396.129070427895,
+          1540.0975529611862
+        ],
+        [
+          1283.0129643865987,
+          1603.8308501303036
+        ]
+      ],
+      "world_q8_ccw": [
+        [
+          295308,
+          387162
+        ],
+        [
+          299099,
+          351247
+        ],
+        [
+          321475,
+          344356
+        ],
+        [
+          335275,
+          345934
+        ],
+        [
+          347559,
+          361879
+        ],
+        [
+          357409,
+          394265
+        ],
+        [
+          328451,
+          410581
+        ]
+      ],
+      "bounds_q8": [
+        295308,
+        357409,
+        344356,
+        410581
+      ],
+      "integer_xy_quantization_differences": [
+        [
+          1307,
+          1351
+        ]
+      ]
+    },
+    {
+      "source_entity_index": 3,
+      "source_compile_id": 2767,
+      "model_hull_index": 0,
+      "local_xyz_vertices": [
+        [
+          952.933837890625,
+          -358.33538818359375,
+          -208.0
+        ],
+        [
+          468.999755859375,
+          -784.0619506835938,
+          381.0
+        ],
+        [
+          263.007080078125,
+          186.65667724609375,
+          381.0
+        ],
+        [
+          -313.77197265625,
+          -133.19134521484375,
+          381.0
+        ],
+        [
+          952.933837890625,
+          -358.33538818359375,
+          381.0
+        ],
+        [
+          468.999755859375,
+          -784.0619506835938,
+          -208.0
+        ],
+        [
+          263.007080078125,
+          186.65667724609375,
+          -208.0
+        ],
+        [
+          -161.912109375,
+          -564.8017578125,
+          -208.0
+        ],
+        [
+          -161.912109375,
+          -564.8017578125,
+          381.0
+        ],
+        [
+          636.71533203125,
+          76.96246337890625,
+          -208.0
+        ],
+        [
+          636.71533203125,
+          76.96246337890625,
+          381.0
+        ],
+        [
+          -25.681396484375,
+          154.06280517578125,
+          -208.0
+        ],
+        [
+          -25.681396484375,
+          154.06280517578125,
+          381.0
+        ],
+        [
+          -313.77197265625,
+          -133.19134521484375,
+          -208.0
+        ]
+      ],
+      "source_xy_polygon": [
+        [
+          2190.8654483641767,
+          -2726.201714115487
+        ],
+        [
+          2541.4402923699377,
+          -3134.338507082257
+        ],
+        [
+          2922.832181933936,
+          -3213.2745869735445
+        ],
+        [
+          3207.913285801233,
+          -3157.308872341135
+        ],
+        [
+          3471.6862509342823,
+          -2847.5751966444136
+        ],
+        [
+          3285.2254395789005,
+          -2429.7458867974237
+        ],
+        [
+          2638.5707494630037,
+          -2262.5258951023498
+        ]
+      ],
+      "source_z_bounds": [
+        -16.0,
+        573.0
+      ],
+      "world_xy_polygon": [
+        [
+          2595.716362091044,
+          2729.5504285288716
+        ],
+        [
+          2707.642687365751,
+          2613.6314737755874
+        ],
+        [
+          2869.306359894725,
+          2655.436471699356
+        ],
+        [
+          2915.9215627335707,
+          2759.8937991611033
+        ],
+        [
+          2849.978321450308,
+          2837.3272180852837
+        ],
+        [
+          2778.708045483484,
+          2851.318646743386
+        ],
+        [
+          2683.3600730924845,
+          2831.5846267705642
+        ]
+      ],
+      "world_q8_ccw": [
+        [
+          664503,
+          698765
+        ],
+        [
+          693157,
+          669090
+        ],
+        [
+          734542,
+          679792
+        ],
+        [
+          746476,
+          706533
+        ],
+        [
+          729594,
+          726356
+        ],
+        [
+          711349,
+          729938
+        ],
+        [
+          686940,
+          724886
+        ]
+      ],
+      "bounds_q8": [
+        664503,
+        746476,
+        669090,
+        729938
+      ],
+      "integer_xy_quantization_differences": []
+    },
+    {
+      "source_entity_index": 4,
+      "source_compile_id": 4677,
+      "model_hull_index": 0,
+      "local_xyz_vertices": [
+        [
+          208.00128173828125,
+          80.00048828125,
+          -132.18612670898438
+        ],
+        [
+          16.0010986328125,
+          304.00048828125,
+          4.1861419677734375
+        ],
+        [
+          -207.99871826171875,
+          48.00048828125,
+          -132.18612670898438
+        ],
+        [
+          16.0010986328125,
+          304.00048828125,
+          -132.1861114501953
+        ],
+        [
+          208.00152587890625,
+          80.00048828125,
+          4.1860809326171875
+        ],
+        [
+          -15.99859619140625,
+          -143.99951171875,
+          -132.18614196777344
+        ],
+        [
+          -207.99884033203125,
+          48.00048828125,
+          4.1859893798828125
+        ],
+        [
+          -15.99859619140625,
+          -143.99951171875,
+          4.1859283447265625
+        ]
+      ],
+      "source_xy_polygon": [
+        [
+          4702.756451430163,
+          -1155.7079941789932
+        ],
+        [
+          4959.039481765066,
+          -1341.9096672377332
+        ],
+        [
+          5150.2467859034405,
+          -1117.2322742788115
+        ],
+        [
+          4862.357743945597,
+          -936.0366005532812
+        ]
+      ],
+      "source_z_bounds": [
+        117.11467003222657,
+        253.48695396777345
+      ],
+      "world_xy_polygon": [
+        [
+          3223.6891128575407,
+          2336.926998544748
+        ],
+        [
+          3263.589435986399,
+          2282.0091501383204
+        ],
+        [
+          3335.56169647586,
+          2327.3080685697028
+        ],
+        [
+          3287.7598704412667,
+          2383.477416809433
+        ]
+      ],
+      "world_q8_ccw": [
+        [
+          825264,
+          598253
+        ],
+        [
+          835479,
+          584194
+        ],
+        [
+          853904,
+          595791
+        ],
+        [
+          841667,
+          610170
+        ]
+      ],
+      "bounds_q8": [
+        825264,
+        853904,
+        584194,
+        610170
+      ],
+      "integer_xy_quantization_differences": []
+    }
+  ],
+  "entity_count": 5,
+  "hull_count": 7,
+  "vertex_count": 34,
+  "integer_quantization_difference_count": 1
+}

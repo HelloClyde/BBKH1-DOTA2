@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "source_audit": {
+    "path": "provenance/ward-placement/source-data/source-audit.json",
+    "sha256": "8029bab2614751b82278178918d25b2b017097418937f57c4de61e42e290e757"
+  },
+  "source_text_sha256": "99e7131eaa5c329d81c9ec60f9ccf5cdefb600f6cf61c7f3519390434a53b2cc",
+  "records": [
+    {
+      "compile_source_id": 2591,
+      "hammerUniqueId": "2699:25701",
+      "raw_data_line": 232515,
+      "outgoing_connections_empty": true,
+      "record_text": "\t\t{\n\t\t\tm_connections = [  ]\n\t\t\tm_keyValuesData = #[  ]\n\t\t\tkeyValues3Data = \n\t\t\t{\n\t\t\t\tversion = 1\n\t\t\t\tvalues = \n\t\t\t\t{\n\t\t\t\t\tlocal.scales = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tvscripts = \"\"\n\t\t\t\t\tparentname = \"\"\n\t\t\t\t\tparentAttachmentName = \"\"\n\t\t\t\t\tlocal.origin = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tlocal.angles = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tuseLocalOffset = false\n\t\t\t\t\tStartDisabled = false\n\t\t\t\t\tglobalname = \"\"\n\t\t\t\t\tspawnflags = 4097\n\t\t\t\t\tfiltername = \"\"\n\t\t\t\t\tsource1_brushmodel_index = \"40\"\n\t\t\t\t\ttargetname = \"\"\n\t\t\t\t\tclassname = \"trigger_no_wards\"\n\t\t\t\t\tcompile_source_id = 2591\n\t\t\t\t\torigin = [ -7584.0, -6664.0, 416.0 ]\n\t\t\t\t\tangles = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tscales = [ 1.0, 1.0, 1.0 ]\n\t\t\t\t\thammerUniqueId = \"2699:25701\"\n\t\t\t\t\tmodel = resource_name:\"maps/dota/entities/unnamed_2699_25701.vmdl\"\n\t\t\t\t}\n\t\t\t\tattributes = \n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t},"
+    },
+    {
+      "compile_source_id": 2592,
+      "hammerUniqueId": "2699:25707",
+      "raw_data_line": 232549,
+      "outgoing_connections_empty": true,
+      "record_text": "\t\t{\n\t\t\tm_connections = [  ]\n\t\t\tm_keyValuesData = #[  ]\n\t\t\tkeyValues3Data = \n\t\t\t{\n\t\t\t\tversion = 1\n\t\t\t\tvalues = \n\t\t\t\t{\n\t\t\t\t\tlocal.scales = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tvscripts = \"\"\n\t\t\t\t\tparentname = \"\"\n\t\t\t\t\tparentAttachmentName = \"\"\n\t\t\t\t\tlocal.origin = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tlocal.angles = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tuseLocalOffset = false\n\t\t\t\t\tStartDisabled = false\n\t\t\t\t\tglobalname = \"\"\n\t\t\t\t\tspawnflags = 4097\n\t\t\t\t\tfiltername = \"\"\n\t\t\t\t\tsource1_brushmodel_index = \"41\"\n\t\t\t\t\ttargetname = \"\"\n\t\t\t\t\tclassname = \"trigger_no_wards\"\n\t\t\t\t\tcompile_source_id = 2592\n\t\t\t\t\torigin = [ 7584.0, 6656.0, 288.0 ]\n\t\t\t\t\tangles = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tscales = [ 1.0, 1.0, 1.0 ]\n\t\t\t\t\thammerUniqueId = \"2699:25707\"\n\t\t\t\t\tmodel = resource_name:\"maps/dota/entities/unnamed_2699_25707.vmdl\"\n\t\t\t\t}\n\t\t\t\tattributes = \n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t},"
+    },
+    {
+      "compile_source_id": 2759,
+      "hammerUniqueId": "2699:28491",
+      "raw_data_line": 238155,
+      "outgoing_connections_empty": true,
+      "record_text": "\t\t{\n\t\t\tm_connections = [  ]\n\t\t\tm_keyValuesData = #[  ]\n\t\t\tkeyValues3Data = \n\t\t\t{\n\t\t\t\tversion = 1\n\t\t\t\tvalues = \n\t\t\t\t{\n\t\t\t\t\tsource1_brushmodel_index = \"49\"\n\t\t\t\t\tfiltername = \"\"\n\t\t\t\t\tspawnflags = 64\n\t\t\t\t\tglobalname = \"\"\n\t\t\t\t\tStartDisabled = false\n\t\t\t\t\tuseLocalOffset = false\n\t\t\t\t\tlocal.scales = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tlocal.angles = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tlocal.origin = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tparentAttachmentName = \"\"\n\t\t\t\t\tparentname = \"\"\n\t\t\t\t\tvscripts = \"\"\n\t\t\t\t\ttargetname = \"\"\n\t\t\t\t\tclassname = \"trigger_no_wards\"\n\t\t\t\t\tcompile_source_id = 2759\n\t\t\t\t\torigin = [ -3212.866211, 2747.168457, 223.999878 ]\n\t\t\t\t\tangles = [ 0.0, 335.294495, 0.0 ]\n\t\t\t\t\tscales = [ 1.0, 1.0, 1.0 ]\n\t\t\t\t\thammerUniqueId = \"2699:28491\"\n\t\t\t\t\tmodel = resource_name:\"maps/dota/entities/unnamed_2699_28491.vmdl\"\n\t\t\t\t}\n\t\t\t\tattributes = \n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t},"
+    },
+    {
+      "compile_source_id": 2767,
+      "hammerUniqueId": "2699:28496",
+      "raw_data_line": 238398,
+      "outgoing_connections_empty": true,
+      "record_text": "\t\t{\n\t\t\tm_connections = [  ]\n\t\t\tm_keyValuesData = #[  ]\n\t\t\tkeyValues3Data = \n\t\t\t{\n\t\t\t\tversion = 1\n\t\t\t\tvalues = \n\t\t\t\t{\n\t\t\t\t\tsource1_brushmodel_index = \"49\"\n\t\t\t\t\tfiltername = \"\"\n\t\t\t\t\tspawnflags = 64\n\t\t\t\t\tglobalname = \"\"\n\t\t\t\t\tStartDisabled = false\n\t\t\t\t\tuseLocalOffset = false\n\t\t\t\t\tlocal.scales = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tlocal.angles = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tlocal.origin = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tparentAttachmentName = \"\"\n\t\t\t\t\tparentname = \"\"\n\t\t\t\t\tvscripts = \"\"\n\t\t\t\t\ttargetname = \"\"\n\t\t\t\t\tclassname = \"trigger_no_wards\"\n\t\t\t\t\tcompile_source_id = 2767\n\t\t\t\t\torigin = [ 3169.786621, -3005.845215, 192.0 ]\n\t\t\t\t\tangles = [ 0.0, 184.665176, 0.0 ]\n\t\t\t\t\tscales = [ 1.0, 1.0, 1.0 ]\n\t\t\t\t\thammerUniqueId = \"2699:28496\"\n\t\t\t\t\tmodel = resource_name:\"maps/dota/entities/unnamed_2699_28496.vmdl\"\n\t\t\t\t}\n\t\t\t\tattributes = \n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t},"
+    },
+    {
+      "compile_source_id": 4677,
+      "hammerUniqueId": "3010:4090:49",
+      "raw_data_line": 275235,
+      "outgoing_connections_empty": true,
+      "record_text": "\t\t{\n\t\t\tm_connections = [  ]\n\t\t\tm_keyValuesData = #[  ]\n\t\t\tkeyValues3Data = \n\t\t\t{\n\t\t\t\tversion = 1\n\t\t\t\tvalues = \n\t\t\t\t{\n\t\t\t\t\tlocal.scales = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tfiltername = \"\"\n\t\t\t\t\tspawnflags = 4097\n\t\t\t\t\tglobalname = \"\"\n\t\t\t\t\tStartDisabled = false\n\t\t\t\t\tuseLocalOffset = false\n\t\t\t\t\tlocal.angles = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tlocal.origin = [ 0.0, 0.0, 0.0 ]\n\t\t\t\t\tparentAttachmentName = \"\"\n\t\t\t\t\tparentname = \"\"\n\t\t\t\t\ttargetname = \"\"\n\t\t\t\t\tvscripts = \"\"\n\t\t\t\t\tclassname = \"trigger_no_wards\"\n\t\t\t\t\tcompile_source_id = 4677\n\t\t\t\t\torigin = [ 4847.48584, -1148.983521, 249.300812 ]\n\t\t\t\t\tangles = [ 0.0, 278.999847, 0.0 ]\n\t\t\t\t\tscales = [ 1.0, 1.0, 1.0 ]\n\t\t\t\t\thammerUniqueId = \"3010:4090:49\"\n\t\t\t\t\tmodel = resource_name:\"maps/dota/entities/unnamed_3010_4090_49.vmdl\"\n\t\t\t\t}\n\t\t\t\tattributes = \n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t},"
+    }
+  ],
+  "limitation": "Empty outgoing m_connections and empty targetname/parent/filter/vscripts are source observations. Native dynamic changes by unnamed entity handles and spawnflag implementation are not reverse engineered."
+}

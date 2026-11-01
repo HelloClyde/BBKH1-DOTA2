@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "static_only": true,
+  "physical_h1_tested_by_this_check": false,
+  "raw_device_tested_build": {
+    "source": "build/v028/candidate3/DOTA2.build.json",
+    "sha256": "14e4c1661c3d0e9a30b095d7692fc25e42d0621a5cfae039d5129f826d97f096"
+  },
+  "canonical_delivery_build": {
+    "source": "build/v028/candidate3-lf/DOTA2.build.json",
+    "sha256": "f8c5f4be1bcf11e9782261fddc38081ad110bd6dab92804be243d892d3066324"
+  },
+  "line_ending_mapping": {
+    "source": "provenance/releases/v0.28-line-endings.json",
+    "sha256": "8f483e909486de01691547f87bef5c7ad11237db6b8f40af80dbe00b3387678e"
+  },
+  "input_count": 159,
+  "changed_text_inputs": [
+    "platform/baked_scene.c",
+    "platform/baked_scene.h"
+  ],
+  "all_other_157_inputs_byte_identical": true,
+  "full_bda_byte_identical": true,
+  "full_elf_byte_identical": true,
+  "bda_sha256": "f25c83e1c36c430b92b17dc2bec215bddeb0179dc251368ab934ee2d6f23658b",
+  "elf_sha256": "55c606d75fb7d621887c9f02cae769fd1771d317975aa3deb16b22fa5988d79f",
+  "scope": "LF-only source normalization followed by a fresh ordinary build. Existing physical binary evidence applies because complete BDA bytes are equal. The later driver sampling fix is not substituted into the preserved physical run."
+}

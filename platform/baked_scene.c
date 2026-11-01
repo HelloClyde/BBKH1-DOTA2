@@ -10,6 +10,7 @@
 #include "vision.h"
 #include "sight.h"
 #include "barracks.h"
+#include "vision_assets.h"
 #include "../private/generated/dota_map_fixtures.h"
 #include "../private/generated/dota_barracks_patch.h"
 
@@ -22,6 +23,24 @@
 #define META_CACHE_SLOTS 32
 #define META_BLOCK_FRAMES 16
 #define CLEAR_COLOR 0x10c3u
+#define FOG_STEP 8
+#define FOG_COLUMNS (BS_WIDTH/FOG_STEP)
+#define FOG_ROWS (BS_HEIGHT/FOG_STEP)
+static unsigned char fog_visible[FOG_COLUMNS*FOG_ROWS];
+static BSFogStats fog_stats;
+static const DotaGame *fog_game;
+static const BSCamera *fog_camera;
+static int fog_sprite_gate;
+const BSFogStats *bs_fog_stats(void){return &fog_stats;}
+#define FOG_BACKGROUND_BYTES (BS_WIDTH*BS_HEIGHT*sizeof(uint16_t))
+#define FOG_BACKGROUND_KEYS (8+DOTA_LOTUS_POOLS+1)
+static uint16_t *fog_background;
+static int fog_background_key[FOG_BACKGROUND_KEYS],fog_saved_key[FOG_BACKGROUND_KEYS];
+static unsigned char fog_saved_visible[FOG_COLUMNS*FOG_ROWS];
+static BSFogCacheStats fog_cache_stats;
+static unsigned fog_cached_dimmed,fog_cached_soft;
+const BSFogCacheStats *bs_fog_cache_stats(void){return &fog_cache_stats;}
+
 
 /* Only real groups are resident. The sorted key packs model/clip/direction;
  * selection is a binary search outside all pixel loops. */
@@ -230,8 +249,18 @@ static uint16_t mix(uint16_t fg,uint16_t bg,unsigned alpha,int additive){
 #include "map_sidecar.h"
 static void barracks_visual_reset(void);
 static unsigned barracks_visual_static_bytes(void);
+unsigned bs_reserve_fog_cache(unsigned bytes){
+    cache_memory_free(fog_background);fog_background=0;
+    clear_bytes(&fog_cache_stats,sizeof(fog_cache_stats));
+    if(bytes>=FOG_BACKGROUND_BYTES){
+        fog_background=cache_memory_alloc(FOG_BACKGROUND_BYTES);
+        if(fog_background)fog_cache_stats.heap_bytes=FOG_BACKGROUND_BYTES;
+    }
+    return fog_cache_stats.heap_bytes;
+}
 static void release_cache(void){
     unsigned i;
+    bs_reserve_fog_cache(0);
     map_sidecar_reset();
     barracks_visual_reset();
     cache_memory_free(resident_frames);resident_frames=0;ground_coordinates=0;
@@ -418,13 +447,14 @@ unsigned bs_reserve_cache(unsigned bytes){
         for(i=0;i<slots;++i)sprite_entries[i].frame=-1;
         for(i=0;i<pack.frame_count;++i)sprite_lookup[i]=0xffffu;
     }
+    if(bytes>SPRITE_CACHE_BYTES)bs_reserve_fog_cache(FOG_BACKGROUND_BYTES);
     return sprite_capacity;
 }
 unsigned bs_sprite_cache_bytes(void){return sprite_capacity;}
 unsigned bs_resident_frame_count(void){return resident_frames?pack.frame_count:0;}
-unsigned bs_dynamic_storage_bytes(void){return sprite_heap_bytes+(resident_frames?pack.frame_count*sizeof(RuntimeFrame)+DOTA_WORLD*sizeof(uint16_t):0)+water_heap_bytes+map_sidecar_stats.heap_bytes;}
+unsigned bs_dynamic_storage_bytes(void){return sprite_heap_bytes+(resident_frames?pack.frame_count*sizeof(RuntimeFrame)+DOTA_WORLD*sizeof(uint16_t):0)+water_heap_bytes+map_sidecar_stats.heap_bytes+fog_cache_stats.heap_bytes;}
 int bs_open_default(void){if(!baked_io_open_default()){ready=0;error_code=1;release_cache();release_water();return 0;}if(bs_initialize())return 1;baked_io_close();return 0;}
-void bs_close(void){ready=0;last_tick=-1;release_cache();release_water();baked_io_close();}
+void bs_close(void){ready=0;last_tick=-1;fog_game=0;fog_camera=0;fog_sprite_gate=0;release_cache();release_water();baked_io_close();}
 int bs_ready(void){return ready;}
 int bs_last_error(void){return error_code;}
 const BSPackHeader *bs_pack_header(void){return ready?&pack:0;}
@@ -445,7 +475,7 @@ unsigned bs_static_storage_bytes(void){
         sizeof(tile_cache)+sizeof(map_sidecar_memory)+sizeof(map_sidecar_stats)+sizeof(sprite_storage)+sizeof(sprite_cache)+sizeof(sprite_data)+sizeof(sprite_entries)+sizeof(sprite_lookup)+sizeof(sprite_allocation)+sizeof(sprite_capacity)+sizeof(sprite_slots)+sizeof(sprite_heap_bytes)+sizeof(depths)+sizeof(bounds)+sizeof(history)+sizeof(effect_history)+sizeof(stats)+
         sizeof(water)+sizeof(water_offsets)+sizeof(water_frames)+sizeof(water_heap_bytes)+sizeof(water_palette)+sizeof(water_masks)+sizeof(water_cache)+sizeof(water_stats)+sizeof(lighting_stats)+
         sizeof(skill_tracks)+sizeof(animations)+sizeof(skill_stats)+sizeof(observed_skill_serial)+
-        sizeof(projectile_stats)+sizeof(observed_attack_serial)+sizeof(component_stats)+sizeof(beam_geometry)+sizeof(passive_stats)+sizeof(jungle_stats)+sizeof(shop_bounds)+sizeof(omnislash_stats);
+        sizeof(projectile_stats)+sizeof(observed_attack_serial)+sizeof(component_stats)+sizeof(beam_geometry)+sizeof(passive_stats)+sizeof(jungle_stats)+sizeof(shop_bounds)+sizeof(omnislash_stats)+sizeof(fog_visible)+sizeof(fog_stats)+sizeof(fog_game)+sizeof(fog_camera)+sizeof(fog_sprite_gate)+sizeof(fog_background)+sizeof(fog_background_key)+sizeof(fog_saved_key)+sizeof(fog_saved_visible)+sizeof(fog_cache_stats)+sizeof(fog_cached_dimmed)+sizeof(fog_cached_soft);
 }
 
 int bs_project(const BSCamera *camera,int x,int y,int z,int *sx,int *sy,uint16_t *depth){
@@ -491,6 +521,106 @@ int bs_pick_ground(const BSCamera *camera,int sx,int sy,int *x,int *y){
     *x=clamp(xx,0,DOTA_WORLD-1);*y=clamp(yy,0,DOTA_WORLD-1);return 1;
 }
 const uint16_t *bs_depth_buffer(void){return depths;}
+/* Invert the same quantized oblique projection as the baked depth. A terrain
+ * sample already carries y+z, so no ray march, bilerp or unit loop is needed. */
+static int fog_world_point(const BSCamera *camera,int sx,int sy,int depth,int *x,int *y){
+    int py,flat_y;
+    if(depth<0||depth>=65535)return 0;
+    *x=floor_div((2*(global_x(camera->x)+sx-BS_WIDTH/2)+1)*256,2*BS_ZOOM);
+    py=global_y(camera->y,camera->z)+sy-BS_TOP-BS_HEIGHT/2;
+    flat_y=floor_div((2*py+1)*65536,2*BS_PITCH*BS_ZOOM);
+    *y=floor_div(flat_y+32768-depth,2);
+    return (unsigned)*x<DOTA_WORLD&&(unsigned)*y<DOTA_WORLD;
+}
+static int fog_point_visible(int x,int y){
+    return !fog_game||dota_sight_position_visible(fog_game,fog_game->player,x,y);
+}
+static void fog_light_row(int y,unsigned short *out){
+    int x,dx,dy;
+    for(x=0;x<=FOG_COLUMNS;++x){unsigned count=0,total=0;
+        for(dy=-1;dy<=0;++dy)for(dx=-1;dx<=0;++dx){int xx=x+dx,yy=y+dy;
+            if((unsigned)xx<FOG_COLUMNS&&(unsigned)yy<FOG_ROWS){count+=fog_visible[yy*FOG_COLUMNS+xx];++total;}
+        }
+        out[x]=(unsigned short)(3u*256u+count*5u*256u/total);
+    }
+}
+/* Cache only the shader output. Map/depth, animated shops, lotus, selection,
+ * actors, shadows and effects still run normally. All world queries run each
+ * frame. A stable four-frame key avoids captures during camera/vision motion. */
+typedef uint32_t FogCopyWord __attribute__((__may_alias__));
+static void fog_background_copy(uint16_t *dst,const uint16_t *src){
+    unsigned n=BS_WIDTH*BS_HEIGHT;
+    if(!(((uintptr_t)dst|(uintptr_t)src)&3u)){
+        FogCopyWord *d=(FogCopyWord *)dst;const FogCopyWord *s=(const FogCopyWord *)src;
+        while(n>=16u){d[0]=s[0];d[1]=s[1];d[2]=s[2];d[3]=s[3];d[4]=s[4];d[5]=s[5];d[6]=s[6];d[7]=s[7];d+=8;s+=8;n-=16;}
+    }else while(n--)*dst++=*src++;
+}
+static int fog_background_hit(uint16_t *pixels){
+    unsigned i;int same=fog_cache_stats.streak!=0;
+    if(!fog_background)return 0;
+    /* A failed resource read must never replace the actual fallback image
+     * with a prior successful background. The next good frame starts fresh. */
+    if(stats.read_failures||stats.missing_frames){fog_cache_stats.streak=fog_cache_stats.ready=0;return 0;}
+    for(i=0;same&&i<FOG_BACKGROUND_KEYS;++i)if(fog_saved_key[i]!=fog_background_key[i])same=0;
+    for(i=0;same&&i<sizeof(fog_saved_visible);++i)if(fog_saved_visible[i]!=fog_visible[i])same=0;
+    if(!same){
+        fog_cache_stats.streak=1;fog_cache_stats.ready=0;
+        for(i=0;i<FOG_BACKGROUND_KEYS;++i)fog_saved_key[i]=fog_background_key[i];
+        for(i=0;i<sizeof(fog_saved_visible);++i)fog_saved_visible[i]=fog_visible[i];
+    }else if(fog_cache_stats.streak<4u)++fog_cache_stats.streak;
+    if(!fog_cache_stats.ready){++fog_cache_stats.misses;return 0;}
+    fog_background_copy(pixels+BS_TOP*BS_WIDTH,fog_background);
+    fog_stats.dimmed_pixels=fog_cached_dimmed;fog_stats.soft_cells=fog_cached_soft;
+    ++fog_cache_stats.hits;return 1;
+}
+static void fog_background_capture(const uint16_t *pixels){
+    if(!fog_background||fog_cache_stats.ready||fog_cache_stats.streak<4u||stats.read_failures||stats.missing_frames)return;
+    fog_background_copy(fog_background,pixels+BS_TOP*BS_WIDTH);
+    fog_cached_dimmed=fog_stats.dimmed_pixels;fog_cached_soft=fog_stats.soft_cells;
+    fog_cache_stats.ready=1;++fog_cache_stats.captures;
+}
+static void draw_fog(uint16_t *pixels,const DotaGame *game,const BSCamera *camera){
+    int tx,ty,team=game->units[game->player].team;unsigned short top[FOG_COLUMNS+1],bottom[FOG_COLUMNS+1];
+    for(ty=0;ty<FOG_ROWS;++ty)for(tx=0;tx<FOG_COLUMNS;++tx){
+        int sx=tx*FOG_STEP+FOG_STEP/2,sy=BS_TOP+ty*FOG_STEP+FOG_STEP/2,x,y;
+        int valid=fog_world_point(camera,sx,sy,depths[(sy-BS_TOP)*BS_WIDTH+sx],&x,&y);
+        fog_visible[ty*FOG_COLUMNS+tx]=(unsigned char)(valid&&dota_sight_fog_state(game,team,x,y)==2);
+        ++fog_stats.cells;if(valid)++fog_stats.queries;
+    }
+    fog_background_key[FOG_BACKGROUND_KEYS-1]=water_stats.water_pixels?(int)water_stats.frame:-1;
+    if(fog_background_hit(pixels))return;
+    /* Bilinear vertex light makes the eight-pixel sampling grid disappear.
+     * Only two small light rows live on the stack; all per-pixel math is
+     * add/shift RGB565 shading, with no terrain or unit query in that loop. */
+    fog_light_row(0,top);
+    for(ty=0;ty<FOG_ROWS;++ty)for(tx=0;tx<FOG_COLUMNS;++tx){
+        int x,y,ta,tb,ba,bb;
+        if(tx==0)fog_light_row(ty+1,bottom);
+        ta=top[tx];tb=top[tx+1];ba=bottom[tx];bb=bottom[tx+1];
+        if(ta==2048&&tb==2048&&ba==2048&&bb==2048){if(tx==FOG_COLUMNS-1)for(x=0;x<=FOG_COLUMNS;++x)top[x]=bottom[x];continue;}
+        if(ta==768&&tb==768&&ba==768&&bb==768){
+            /* Most off-camera terrain is uniformly dim. Its old bilinear
+             * result is exactly light3: no gradient or per-pixel dispatch. */
+            for(y=0;y<FOG_STEP;++y){uint16_t *row=pixels+(BS_TOP+ty*FOG_STEP+y)*BS_WIDTH+tx*FOG_STEP;
+                row[0]=vision_assets_fog_color(row[0],3);row[1]=vision_assets_fog_color(row[1],3);
+                row[2]=vision_assets_fog_color(row[2],3);row[3]=vision_assets_fog_color(row[3],3);
+                row[4]=vision_assets_fog_color(row[4],3);row[5]=vision_assets_fog_color(row[5],3);
+                row[6]=vision_assets_fog_color(row[6],3);row[7]=vision_assets_fog_color(row[7],3);
+            }
+            fog_stats.dimmed_pixels+=FOG_STEP*FOG_STEP;
+            if(tx==FOG_COLUMNS-1)for(x=0;x<=FOG_COLUMNS;++x)top[x]=bottom[x];
+            continue;
+        }
+        if(ta!=768||tb!=768||ba!=768||bb!=768)++fog_stats.soft_cells;
+        for(y=0;y<FOG_STEP;++y){uint16_t *row=pixels+(BS_TOP+ty*FOG_STEP+y)*BS_WIDTH+tx*FOG_STEP;
+            int left=ta+(ba-ta)*y/FOG_STEP,right=tb+(bb-tb)*y/FOG_STEP,light=left*FOG_STEP,step=right-left;
+            for(x=0;x<FOG_STEP;++x,light+=step)row[x]=vision_assets_fog_color(row[x],(unsigned)(light+1024)>>11);
+        }
+        fog_stats.dimmed_pixels+=FOG_STEP*FOG_STEP;
+        if(tx==FOG_COLUMNS-1)for(x=0;x<=FOG_COLUMNS;++x)top[x]=bottom[x];
+    }
+    fog_background_capture(pixels);
+}
 int bs_unit_screen_bounds(int unit,int out[4],uint16_t *nearest){
     int i;if(unit<0 || unit>=DOTA_MAX_UNITS || !out || !bounds[unit].valid)return 0;
     for(i=0;i<4;++i)out[i]=bounds[unit].bounds[i];
@@ -789,6 +919,9 @@ static unsigned draw_sprite_opacity(uint16_t *pixels,int frame_index,int feet_x,
     const RuntimeFrame *frame;const unsigned char *data,*alpha,*relative;
     int x,y,left,top,width,height,x0,y0,x1,y1,additive,write_depth,fw,fh;unsigned drawn=0,n;
     unsigned short source_x[BS_WIDTH];UnitBounds *selection=0;
+    if(fog_sprite_gate&&fog_game&&fog_camera&&!(unit>=0&&unit<DOTA_MAX_UNITS&&fog_game->units[unit].team==fog_game->units[fog_game->player].team)){int wx,wy;
+        if(!fog_world_point(fog_camera,feet_x,feet_y,base_depth,&wx,&wy)||!fog_point_visible(wx,wy)){++fog_stats.sprites_rejected;return 0;}
+    }
     if(frame_index<0 || (unsigned)frame_index>=pack.frame_count){++stats.missing_frames;return 0;}
     frame=frame_info((unsigned)frame_index);if(!frame || scale_q8<1)return 0;
     fw=rf_width(frame);fh=rf_height(frame);
@@ -1101,6 +1234,7 @@ static int courier_frame(const DotaGame *game,int owner,UnitHistory *position,in
     if(pack.version<10u || !dota_courier_view(game,owner,&v))return -1;
     if(!game->units[owner].active || game->units[owner].type!=DOTA_HERO || (unsigned)game->units[owner].team>=2)return -1;
     if(dota_roshan_region_at(v.x,v.y)!=view_region)return -1;
+    if(game->units[owner].team!=game->units[game->player].team&&!dota_sight_position_visible(game,game->player,v.x,v.y))return -1;
     model=75+game->units[owner].team;clip=v.moving?BS_RUN:BS_IDLE;
     *yaw=direction_yaw(v.target_x-v.x,v.target_y-v.y,game->units[owner].team?12:4);
     group=exact_group(model,clip,*yaw);
@@ -1114,7 +1248,7 @@ static int courier_frame(const DotaGame *game,int owner,UnitHistory *position,in
 static void render_item_trees(uint16_t *pixels,const DotaGame *game,const BSCamera *camera,int shadow){
     int i;const ClipGroup *group=find_group(92,BS_IDLE,0,0);if(!group)return;
     for(i=0;i<DOTA_ITEM_TREES;++i){const DotaItemTree *tree=&game->item_world.tree[i];UnitHistory position;int frame,sx,sy;uint16_t depth;
-        if(tree->until<=game->tick || tree->removed || (pack.version>=8u && dota_roshan_region_at(tree->x,tree->y)!=view_region))continue;
+        if(tree->until<=game->tick || tree->removed || !dota_sight_position_visible(game,game->player,tree->x,tree->y) || (pack.version>=8u && dota_roshan_region_at(tree->x,tree->y)!=view_region))continue;
         clear_bytes(&position,sizeof(position));position.x=tree->x;position.y=tree->y;position.z=bs_ground_height(tree->x,tree->y);frame=frame_at(group,0,0);
         if(shadow){draw_hero_shadow(pixels,frame,&position,camera);continue;}
         bs_project(camera,position.x,position.y,position.z,&sx,&sy,&depth);draw_sprite(pixels,frame,sx,sy,depth,256,-1);
@@ -1124,6 +1258,7 @@ static void render_item_trees(uint16_t *pixels,const DotaGame *game,const BSCame
 #include "barracks_baked.h"
 void bs_render_game(uint16_t *pixels,const DotaGame *game,const BSCamera *camera){
     unsigned i;int selected_frames[DOTA_MAX_UNITS];clear_bytes(&stats,sizeof(stats));clear_bytes(bounds,sizeof(bounds));
+    clear_bytes(&fog_stats,sizeof(fog_stats));fog_game=game;fog_camera=camera;fog_sprite_gate=0;
     clear_bytes(&courier_stats,sizeof(courier_stats));
     for(i=0;i<DOTA_HERO_COUNT;++i)courier_animations[i].model=-1;
     clear_bytes(shop_bounds,sizeof(shop_bounds));clear_bytes(&jungle_stats,sizeof(jungle_stats));
@@ -1139,6 +1274,10 @@ void bs_render_game(uint16_t *pixels,const DotaGame *game,const BSCamera *camera
         return;
     }
     view_region=pack.version>=8u?dota_roshan_region_at(game->units[game->player].x,game->units[game->player].y):0;
+    fog_background_key[0]=camera->x;fog_background_key[1]=camera->y;fog_background_key[2]=camera->z;
+    fog_background_key[3]=view_region;fog_background_key[4]=(int)dota_barracks_alive_mask(game);
+    fog_background_key[5]=game->units[game->player].team;
+    for(i=6;i<FOG_BACKGROUND_KEYS;++i)fog_background_key[i]=-1;
     draw_map(pixels,camera,(unsigned)(game->tick<0?0:game->tick));
     draw_barracks_ground(pixels,game,camera);update_history(game);
     if(pack.version>=8u){
@@ -1162,17 +1301,19 @@ void bs_render_game(uint16_t *pixels,const DotaGame *game,const BSCamera *camera
         if(pack.version>=8u && dota_roshan_region_at(dota_secret_shops[i].x,dota_secret_shops[i].y)!=view_region)continue;
         index=frame_at(group,(unsigned)game->tick,1);
         bs_project(camera,dota_secret_shops[i].x,dota_secret_shops[i].y,31,&sx,&sy,&depth);
-        if(draw_sprite(pixels,index,sx,sy,depth,256,-2-(int)i))++jungle_stats.shop_instances;
+        if(draw_sprite(pixels,index,sx,sy,depth,256,-2-(int)i)){fog_background_key[6+i]=index;++jungle_stats.shop_instances;}
     }
     if(pack.version>=9u)for(i=0;i<DOTA_LOTUS_POOLS;++i){
         int id=DOTA_OBJECTIVE_LOTUS_FIRST+(int)i,count=clamp(game->objectives.lotus_count[i],0,6),j;
         int sx,sy;uint16_t depth;const DotaPoint *p=&dota_objective_positions[id];
-        if(dota_roshan_region_at(p->x,p->y)!=view_region)continue;
+        if(dota_roshan_region_at(p->x,p->y)!=view_region||!dota_sight_position_visible(game,game->player,p->x,p->y))continue;
+        fog_background_key[8+i]=count;
         bs_project(camera,p->x,p->y,dota_objective_heights[id],&sx,&sy,&depth);
         for(j=0;j<count;++j){const ClipGroup *group=exact_group(73+(int)i,j,0);
             if(group)draw_sprite(pixels,frame_at(group,0,0),sx,sy,depth,256,-1);
         }
     }
+    draw_fog(pixels,game,camera);fog_sprite_gate=1;
     render_item_trees(pixels,game,camera,1);
     for(i=0;i<DOTA_MAX_UNITS;++i){
         const DotaUnit *unit=&game->units[i];UnitHistory *h=&history[i];const ClipGroup *group;
@@ -1293,6 +1434,7 @@ void bs_render_game(uint16_t *pixels,const DotaGame *game,const BSCamera *camera
 }
 static int skill_fx(uint16_t *pixels,const BSCamera *camera,int model,int clip,int direction,unsigned phase,int loop,int x,int y,int radius){
     const ClipGroup *group=find_group(model,clip,direction,0);int index,sx,sy,scale=256;uint16_t depth;
+    if(!fog_point_visible(x,y))return 0;
     if(!group){++skill_stats.missing_skill_frames;return 0;}
     index=frame_at(group,phase,loop);if(index<0)return 0;
     if(radius>0 && rf_world_height(frame_info((unsigned)index)))scale=clamp(radius*256/rf_world_height(frame_info((unsigned)index)),16,2048);
@@ -1364,6 +1506,7 @@ static void original_beam(uint16_t *pixels,const BSCamera *camera,const DotaSkil
     int dir=direction_yaw(e->target_x-e->origin_x,e->target_y-e->origin_y,0),index;
     int ax,ay,bx,by,az=bs_ground_height(e->origin_x,e->origin_y)+48,bz=bs_ground_height(e->target_x,e->target_y)+40;
     int wx,wy,len2,len,vx,vy,canonical,margin=2,x0,x1,y0,y1,x,y,a,b,c,d,da,db;uint16_t ad,bd;unsigned n,drawn=0;
+    if(!fog_point_visible(e->origin_x,e->origin_y)||!fog_point_visible(e->target_x,e->target_y))return;
     group=find_group(model,clip,dir,0);if(!group){++component_stats.missing_component_frames;return;}
     if(!loop && age>=group->ticks)return;
     index=frame_at(group,age,loop);frame=frame_info((unsigned)index);data=get_sprite((unsigned)index);if(!data)return;
@@ -1508,6 +1651,7 @@ static void render_skill_effects(uint16_t *pixels,const DotaGame *game,const BSC
 static void projectile_fx(uint16_t *pixels,const BSCamera *camera,int style,int clip,int direction,unsigned phase,int x,int y,int z){
     int model=style==DOTA_ATTACK_SNIPER?116:style==DOTA_ATTACK_NECROPHOS?87:(style?31+style:39),index,sx,sy;uint16_t depth;
     const ClipGroup *group=find_group(model,clip,direction,0);
+    if(!fog_point_visible(x,y))return;
     if(!group){++projectile_stats.missing_projectile_frames;return;}
     index=frame_at(group,phase,clip==0);bs_project(camera,x,y,z,&sx,&sy,&depth);
     if(draw_sprite(pixels,index,sx,sy,depth,256,-1)){
@@ -1556,7 +1700,7 @@ static void render_projectiles(uint16_t *pixels,const DotaGame *game,const BSCam
 /* Models79..87 are baked from the original two heroes' particles, skeletons
  * and meshes. Persistent clouds/leashes follow real rule state; the skulls
  * below follow Death Pulse's actual selected targets and flight clock. */
-static int extra_fx_visible(int x,int y){return pack.version<8u || dota_roshan_region_at(x,y)==view_region;}
+static int extra_fx_visible(int x,int y){return (pack.version<8u || dota_roshan_region_at(x,y)==view_region)&&fog_point_visible(x,y);}
 static void extra_fx_sprite(uint16_t *pixels,const BSCamera *camera,int model,int clip,int dir,unsigned phase,int loop,int x,int y,int z){
     const ClipGroup *group=find_group(model,clip,dir,0);int index,sx,sy;uint16_t depth;
     if(!group){++skill_stats.missing_skill_frames;return;}index=frame_at(group,phase,loop);if(index<0)return;
@@ -1578,17 +1722,18 @@ static void render_extra_skill_effects(uint16_t *pixels,const DotaGame *game,con
     for(i=0;i<DOTA_HERO_COUNT;++i){const DotaUnit *u=&game->units[i];const DotaExtraHero *s=&game->extra.hero[i];unsigned tick=(unsigned)game->tick;
         if(!u->active || u->type!=DOTA_HERO)continue;
         if(u->hp>0 && extra_fx_visible(u->x,u->y)){
+            int actor_visible=dota_unit_visible(game,game->player,i);
             if(u->hero_id==DOTA_HERO_SLARK){
-                if(s->pact_at>0){const SkillTrack *q=&skill_tracks[i][0];unsigned age=q->valid?(unsigned)(game->tick-q->event.started_tick):0;
+                if(actor_visible&&s->pact_at>0){const SkillTrack *q=&skill_tracks[i][0];unsigned age=q->valid?(unsigned)(game->tick-q->event.started_tick):0;
                     skill_fx(pixels,camera,79,s->pact_pulse?1:0,0,age,1,u->x,u->y,(dota_skill_effect_radius_source(game,i,0)+3)/4);
                 }
-                if(s->leap_at>0){int dir=direction_yaw(s->leap_to_x-s->leap_x,s->leap_to_y-s->leap_y,history[i].yaw);
+                if(actor_visible&&s->leap_at>0){int dir=direction_yaw(s->leap_to_x-s->leap_x,s->leap_to_y-s->leap_y,history[i].yaw);
                     skill_fx(pixels,camera,80,0,dir,tick,1,u->x,u->y,0);
                 }
                 /* Detection immunity hides the body from opponents. Its
                  * original dark cloud stays visible to both teams. */
                 if(s->shadow_until>game->tick)skill_fx(pixels,camera,82,1,0,tick,1,u->x,u->y,55);
-            }else if(u->hero_id==DOTA_HERO_NECROPHOS){
+            }else if(u->hero_id==DOTA_HERO_NECROPHOS&&actor_visible){
                 skill_fx(pixels,camera,85,1,0,tick,1,u->x,u->y,48);
                 if(s->ghost_until>game->tick)skill_fx(pixels,camera,84,1,0,tick,1,u->x,u->y,60);
                 if(s->seeker_at>0 && game->tick>=s->seeker_at){int dir=direction_yaw(s->seeker_to_x-s->seeker_x,s->seeker_to_y-s->seeker_y,history[i].yaw);
@@ -1665,6 +1810,7 @@ void bs_render_effects(uint16_t *pixels,const DotaGame *game,const BSCamera *cam
 int bs_draw_menu_hero(uint16_t *pixels,int hero,int direction,unsigned tick,int x,int y,int width,int height){
     const ClipGroup *group;const RuntimeFrame *frame;const unsigned char *data,*alpha;
     int index,scale,draw_w,draw_h,left,top,xx,yy;unsigned n;
+    fog_sprite_gate=0;fog_game=0;fog_camera=0;
     if(!ready || !pixels || hero<0 || hero>=DOTA_HERO_TYPES || width<1 || height<1)return 0;
     group=find_group(hero_model(hero),BS_IDLE,direction,1);index=frame_at(group,tick,1);
     if(index<0)return 0;

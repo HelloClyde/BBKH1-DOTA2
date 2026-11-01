@@ -7,6 +7,7 @@
 #include "courier.h"
 #include "extra_heroes.h"
 #include "items.h"
+#include "item_world.h"
 #include "items_actions.h"
 #include "item_assets.h"
 #include "shop_catalog.h"
@@ -26,6 +27,7 @@
 #ifdef DOTA_BAKED
 #include "baked_scene.h"
 #include "baked_io.h"
+#include "vision_assets.h"
 #endif
 
 /* Observable state is also used by the MIPS controller tests. */
@@ -36,7 +38,7 @@ volatile DotaDebug h1_dota_debug;
 typedef struct {
     uint32_t magic,version,rgb_bytes,sprite_bytes,resident_frames,scene_heap_bytes;
     uint32_t io_bytes,io_heap_bytes,rules_bytes,total_heap_bytes,fallback_flags,released;
-    uint32_t icon_slots,icon_heap_bytes,audio_heap_bytes;
+    uint32_t icon_slots,icon_heap_bytes,audio_heap_bytes,vision_heap_bytes;
 } DotaCacheDebug;
 volatile DotaCacheDebug h1_dota_cache;
 DotaGame dota_game;
@@ -305,6 +307,12 @@ static void use_inventory(int slot){
         }
     }
     if(!dota_items_read(item,&r) || !r.action || !dota_items_is_active(item))return;
+    if(r.action==ITEM_ACTION_WARD){
+        int was_aiming=view.aim_item==slot,mode=dota_items_ward_available(&dota_game,dota_game.player,slot,0)>0?0:1;
+        if(view.aim_item==slot&&item==DOTA_ITEM_WARD_DISPENSER){mode=!view.ward_mode;if(!dota_items_ward_available(&dota_game,dota_game.player,slot,mode))mode=view.ward_mode;}
+        if(!dota_items_ward_available(&dota_game,dota_game.player,slot,mode))return;
+        view.ward_mode=mode;view.aim_item=slot;view.aim_skill=-1;target_controls_frame=1;if(!was_aiming)target_cursor_begin();return;
+    }
     if(item==DOTA_ITEM_FAMANGO||item==DOTA_ITEM_GREAT_FAMANGO||item==DOTA_ITEM_GREATER_FAMANGO){dota_use_item(&dota_game,slot);return;}
     if((r.flags&(ITEM_F_ENEMY|ITEM_F_POINT|ITEM_F_FRIENDLY)) || r.action==ITEM_ACTION_TREE || dota_items_is_teleport(item)){
         view.aim_item=slot;view.aim_skill=-1;target_controls_frame=1;target_cursor_begin();
@@ -331,6 +339,12 @@ static int item_cursor_unit(const DotaItemRecord *r){
 static void confirm_item(int x,int y,int target){
     DotaItemRecord r;int item=aimed_item(&r);
     if(item<0){view.aim_item=-1;return;}
+    if(r.action==ITEM_ACTION_WARD){
+        if(!dota_items_ward_available(&dota_game,dota_game.player,view.aim_item,view.ward_mode))return;
+        view.target_x=x;view.target_y=y;
+        if(!dota_item_world_ward_placeable(&dota_game,dota_game.player,x,y))return;
+        target=view.ward_mode?DOTA_WARD_TARGET_SENTRY:-1;
+    }
     if(!dota_items_is_teleport(item)&&!(r.flags&ITEM_F_POINT)&&r.action!=ITEM_ACTION_TREE&&target<0){invalid_target(0);return;}
     view.target_x=x;view.target_y=y;
     if(dota_use_item_at(&dota_game,view.aim_item,x,y,target))view.aim_item=-1;
@@ -418,6 +432,11 @@ static void shop_category(int category){
 static void shop_stage(int stage){
     shop_catalog_recommend_set_stage((stage+SHOP_RECOMMEND_STAGES)%SHOP_RECOMMEND_STAGES);
     view.shop_item=shop_catalog_item(SHOP_RECOMMENDED,0);view.shop_details=0;view.shop_scroll=0;
+}
+static void shop_vision(void){
+    int item=view.shop_item==DOTA_ITEM_WARD_OBSERVER?DOTA_ITEM_WARD_SENTRY:DOTA_ITEM_WARD_OBSERVER;
+    shop_category(3);
+    if(shop_catalog_index(3,item)>=0)view.shop_item=item;
 }
 static void play_touch(int x,int y) {
     int wx,wy,i;
@@ -588,6 +607,7 @@ static void process_ui(void) {
         if(pressed[H1_KEY_Q] || pressed[H1_KEY_W])shop_category((view.shop_category+(pressed[H1_KEY_Q]?SHOP_CATEGORIES-1:1))%SHOP_CATEGORIES);
         if(pressed[H1_KEY_T])shop_category(SHOP_RECOMMENDED);
         if(pressed[H1_KEY_G])shop_category(SHOP_UPGRADES);
+        if(pressed[H1_KEY_L])shop_vision();
         if(view.shop_category==SHOP_RECOMMENDED&&(pressed[H1_KEY_A]||pressed[H1_KEY_D]))shop_stage(shop_catalog_recommend_stage()+(pressed[H1_KEY_A]?-1:1));
         if(pressed[H1_KEY_LEFT])delta=-1;
         if(pressed[H1_KEY_RIGHT])delta=1;
@@ -603,6 +623,7 @@ static void process_ui(void) {
         if(escape||pressed[H1_KEY_M]){if(view.shop_details && escape&&!back)view.shop_details=0;else screen(shop_return_screen);}
         if(touch_pending){
             if(touch_y<24 && touch_x>=440)screen(shop_return_screen);
+            else if(touch_y<24&&touch_x>=216&&touch_x<253)shop_vision();
             else if(touch_y>=26 && touch_y<49)shop_category(clamp(touch_x/48,0,SHOP_CATEGORIES-1));
             else if(view.shop_category==SHOP_RECOMMENDED&&touch_y>=50&&touch_y<69&&touch_x>=184&&touch_x<462)shop_stage((touch_x-184)/70);
             else if(!view.shop_details && touch_y>=72 && touch_y<192 && touch_x>=12 && touch_x<468){int col=(touch_x-12)/230,row=(touch_y-72)/40;index=shop_catalog_index(view.shop_category,view.shop_item);index=(index<0?0:index/6*6)+row*2+col;if(index<count)view.shop_item=shop_catalog_item(view.shop_category,index);}
@@ -653,10 +674,11 @@ int h1_app_main(void) {
              * No pinning, extra heap or phase changes. A skipped low-memory
              * warmup retains the ordinary renderer; real I/O errors surface. */
             (void)bs_map_sidecar_open_default();
+            if(!vision_assets_open_default()){asset_error=15;goto assets_done;}
             (void)bs_prewarm_fountain(0,prewarm_cancel_poll);
             if(closing)goto finish;
             if(bs_last_error())asset_error=bs_last_error();
-            h1_dota_cache.magic=0x31435048u;h1_dota_cache.version=2;
+            h1_dota_cache.magic=0x31435048u;h1_dota_cache.version=3;
             h1_dota_cache.rgb_bytes=rgb565_table?65536u*sizeof(uint32_t):0;
             h1_dota_cache.sprite_bytes=bs_sprite_cache_bytes();
             h1_dota_cache.resident_frames=bs_resident_frame_count();
@@ -665,11 +687,13 @@ int h1_app_main(void) {
             h1_dota_cache.io_heap_bytes=baked_io_dynamic_storage_bytes();
             h1_dota_cache.rules_bytes=item_assets_rules_cache_bytes();
             h1_dota_cache.icon_slots=item_assets_icon_cache_slots();h1_dota_cache.icon_heap_bytes=item_assets_icon_cache_bytes();
-            h1_dota_cache.total_heap_bytes=h1_dota_cache.rgb_bytes+h1_dota_cache.scene_heap_bytes+h1_dota_cache.io_heap_bytes+h1_dota_cache.rules_bytes+h1_dota_cache.icon_heap_bytes;
-            h1_dota_cache.fallback_flags=(!rgb565_table&&!mxu_ready?1u:0u)|(sprite<12u*1024u*1024u?2u:0u)|(!bs_resident_frame_count()?4u:0u)|(baked_io_cache_bytes()<256u*1024u?8u:0u)|(!item_assets_rules_cache_bytes()?16u:0u)|(h1_dota_cache.icon_slots<64?32u:0u);
+            h1_dota_cache.vision_heap_bytes=vision_assets_stats()->heap_bytes;
+            h1_dota_cache.total_heap_bytes=h1_dota_cache.rgb_bytes+h1_dota_cache.scene_heap_bytes+h1_dota_cache.io_heap_bytes+h1_dota_cache.rules_bytes+h1_dota_cache.icon_heap_bytes+h1_dota_cache.vision_heap_bytes;
+            h1_dota_cache.fallback_flags=(!rgb565_table&&!mxu_ready?1u:0u)|(sprite<12u*1024u*1024u?2u:0u)|(!bs_resident_frame_count()?4u:0u)|(baked_io_cache_bytes()<256u*1024u?8u:0u)|(!item_assets_rules_cache_bytes()?16u:0u)|(h1_dota_cache.icon_slots<64?32u:0u)|(!vision_assets_stats()->ready?64u:0u);
             shop_catalog_reset();shop_catalog_bind(&dota_game);
         }
     }
+assets_done:
     if(asset_error){
         h1_dota_debug.error=20u+(unsigned)asset_error;
         dota_render_asset_error(asset_error);h1_dota_present(dota_pixels);
@@ -714,7 +738,7 @@ int h1_app_main(void) {
 finish:
     dota_audio_close();
 #ifdef DOTA_BAKED
-    item_assets_close();bs_close();
+    vision_assets_close();item_assets_close();bs_close();
 #endif
     cache_memory_free(rgb565_table);rgb565_table=0;
     h1_dota_cache.total_heap_bytes=0;h1_dota_cache.released=1;

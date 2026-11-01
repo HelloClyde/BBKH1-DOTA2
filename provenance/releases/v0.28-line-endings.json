@@ -1,0 +1,1611 @@
+{
+  "schema_version": 1,
+  "version": "0.28",
+  "passed": true,
+  "all_input_count": 159,
+  "changed_count": 2,
+  "changed_paths": [
+    "platform/baked_scene.c",
+    "platform/baked_scene.h"
+  ],
+  "normalization": "Only CRLF to LF via write_bytes; no JSON or binary conversion. The PNG CRLF signature is preserved.",
+  "baseline_metadata": {
+    "source": "build/v028/candidate3/DOTA2.build.json",
+    "sha256": "14e4c1661c3d0e9a30b095d7692fc25e42d0621a5cfae039d5129f826d97f096"
+  },
+  "canonical_build": "build/v028/candidate3-lf",
+  "expected_unchanged_bda_sha256": "f25c83e1c36c430b92b17dc2bec215bddeb0179dc251368ab934ee2d6f23658b",
+  "inputs": [
+    {
+      "path": "assets/runtime/manifest.json",
+      "before_bytes": 759,
+      "after_bytes": 759,
+      "before_sha256": "f8e78cfea39507feddb16252be6b0d47b7691d97f80d6988530ab5e3b34c4f00",
+      "after_sha256": "f8e78cfea39507feddb16252be6b0d47b7691d97f80d6988530ab5e3b34c4f00",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": true
+    },
+    {
+      "path": "game/backpack_data.h",
+      "before_bytes": 264,
+      "after_bytes": 264,
+      "before_sha256": "85878466f4596526fa78b63101e4ee4a781ae5c13a9b17c4e2f234f3af53f51a",
+      "after_sha256": "85878466f4596526fa78b63101e4ee4a781ae5c13a9b17c4e2f234f3af53f51a",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/barracks.c",
+      "before_bytes": 2787,
+      "after_bytes": 2787,
+      "before_sha256": "81b6489d8103dd6b1e3760c307faa20258886fdc1159b57d0d00b6ba695fc269",
+      "after_sha256": "81b6489d8103dd6b1e3760c307faa20258886fdc1159b57d0d00b6ba695fc269",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/barracks.h",
+      "before_bytes": 857,
+      "after_bytes": 857,
+      "before_sha256": "b123d4d8dd0c6bc2e3ac2870b3750d368649bbe66bc1e4058a110ab2b52e3043",
+      "after_sha256": "b123d4d8dd0c6bc2e3ac2870b3750d368649bbe66bc1e4058a110ab2b52e3043",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/bosses.c",
+      "before_bytes": 18093,
+      "after_bytes": 18093,
+      "before_sha256": "1403417454e121e46f904dbc6705e89acc36aecd625407516c7ca99a9fa6d126",
+      "after_sha256": "1403417454e121e46f904dbc6705e89acc36aecd625407516c7ca99a9fa6d126",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/bosses.h",
+      "before_bytes": 1852,
+      "after_bytes": 1852,
+      "before_sha256": "fcff4c71580688be92e640c73c9b381580f8e6a063f5fb4afd12d440498f3507",
+      "after_sha256": "fcff4c71580688be92e640c73c9b381580f8e6a063f5fb4afd12d440498f3507",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/courier.c",
+      "before_bytes": 9797,
+      "after_bytes": 9797,
+      "before_sha256": "6c25c9d33b6181813e972ce0864ebd7d74d1adc6d093ba5230f4b5b21445e31b",
+      "after_sha256": "6c25c9d33b6181813e972ce0864ebd7d74d1adc6d093ba5230f4b5b21445e31b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/courier.h",
+      "before_bytes": 1284,
+      "after_bytes": 1284,
+      "before_sha256": "281bbdf4d213b229450a970fdc5810ec3974b000215512be8562111a7d1497a2",
+      "after_sha256": "281bbdf4d213b229450a970fdc5810ec3974b000215512be8562111a7d1497a2",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/courier_data.h",
+      "before_bytes": 743,
+      "after_bytes": 743,
+      "before_sha256": "44f9f7b4646e9411b02fa2d3f1f8e4092447aac54e5fc0889383d6e7f99c8094",
+      "after_sha256": "44f9f7b4646e9411b02fa2d3f1f8e4092447aac54e5fc0889383d6e7f99c8094",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/extra_heroes.c",
+      "before_bytes": 37421,
+      "after_bytes": 37421,
+      "before_sha256": "2baaf1dc3860db636e2cdc49666bd5ddcc90be2fdc082e93f65d6cc74aa28f2a",
+      "after_sha256": "2baaf1dc3860db636e2cdc49666bd5ddcc90be2fdc082e93f65d6cc74aa28f2a",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/extra_heroes.h",
+      "before_bytes": 3316,
+      "after_bytes": 3316,
+      "before_sha256": "d9a27eec6ca81c5247d0a0270d338affff3cf889bf5204a6cbe973f7c773399c",
+      "after_sha256": "d9a27eec6ca81c5247d0a0270d338affff3cf889bf5204a6cbe973f7c773399c",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/extra_heroes_data.h",
+      "before_bytes": 1550,
+      "after_bytes": 1550,
+      "before_sha256": "500d3f538ab5b66e9c0904dbd1926d922a2c3656bec88728943e83b3d14c8629",
+      "after_sha256": "500d3f538ab5b66e9c0904dbd1926d922a2c3656bec88728943e83b3d14c8629",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/extra_heroes_state.h",
+      "before_bytes": 2146,
+      "after_bytes": 2146,
+      "before_sha256": "7db28c6e0783a0a73eddf45eaeda99f7da52f4fde577a27c2b1d944723e632f7",
+      "after_sha256": "7db28c6e0783a0a73eddf45eaeda99f7da52f4fde577a27c2b1d944723e632f7",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/game.c",
+      "before_bytes": 160745,
+      "after_bytes": 160745,
+      "before_sha256": "7da04492d0b6ee6599c71c0039d9c918fd1aa4d486a1c7711364b893bcf1182f",
+      "after_sha256": "7da04492d0b6ee6599c71c0039d9c918fd1aa4d486a1c7711364b893bcf1182f",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/game.h",
+      "before_bytes": 17109,
+      "after_bytes": 17109,
+      "before_sha256": "217ac9a5278c81f96d3b8e924adf211b4d58550bb8f13b5272151487e1374ec7",
+      "after_sha256": "217ac9a5278c81f96d3b8e924adf211b4d58550bb8f13b5272151487e1374ec7",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/highground_data.h",
+      "before_bytes": 662,
+      "after_bytes": 662,
+      "before_sha256": "ad11ca28b27eee96473f2ea8aded42d4f1ae196463829ee6ce44f527c9a8bf49",
+      "after_sha256": "ad11ca28b27eee96473f2ea8aded42d4f1ae196463829ee6ce44f527c9a8bf49",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/inventory_impl.h",
+      "before_bytes": 18155,
+      "after_bytes": 18155,
+      "before_sha256": "ad9ed4c6f75e66f1487eed5172d2282b0edcd4f5fd4ea23dac9f0dcc938bd196",
+      "after_sha256": "ad9ed4c6f75e66f1487eed5172d2282b0edcd4f5fd4ea23dac9f0dcc938bd196",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/item_npc_data.h",
+      "before_bytes": 3837,
+      "after_bytes": 3837,
+      "before_sha256": "a2126f4d9ae22b871c7976f64614cce4f9d878fa773dfa1935a4846bf5cb96b1",
+      "after_sha256": "a2126f4d9ae22b871c7976f64614cce4f9d878fa773dfa1935a4846bf5cb96b1",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/item_world.c",
+      "before_bytes": 50745,
+      "after_bytes": 50745,
+      "before_sha256": "d90247e2b66eb19878856c1442fbc075c933c322ac28af970b88b612e966f8d1",
+      "after_sha256": "d90247e2b66eb19878856c1442fbc075c933c322ac28af970b88b612e966f8d1",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/item_world.h",
+      "before_bytes": 2708,
+      "after_bytes": 2708,
+      "before_sha256": "88b71071298aec66c14fcc486c152411c50673ac06ce1f3e044a986385be5402",
+      "after_sha256": "88b71071298aec66c14fcc486c152411c50673ac06ce1f3e044a986385be5402",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/item_world_data.h",
+      "before_bytes": 1703,
+      "after_bytes": 1703,
+      "before_sha256": "7bf90ce56c91879be8de63ab627939a2a87559ef0079e4e418b145c2e9595367",
+      "after_sha256": "7bf90ce56c91879be8de63ab627939a2a87559ef0079e4e418b145c2e9595367",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/items.c",
+      "before_bytes": 97544,
+      "after_bytes": 97544,
+      "before_sha256": "59b3c66f317e5634b8a9d10f4477120eee18a14562b4430e66046121c27664fe",
+      "after_sha256": "59b3c66f317e5634b8a9d10f4477120eee18a14562b4430e66046121c27664fe",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/items.h",
+      "before_bytes": 8627,
+      "after_bytes": 8627,
+      "before_sha256": "e7995ff5e0ab87eb4ff080c78f1a858a2fe8779c4efae36528e6f31d97d70344",
+      "after_sha256": "e7995ff5e0ab87eb4ff080c78f1a858a2fe8779c4efae36528e6f31d97d70344",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/items_actions.h",
+      "before_bytes": 1510,
+      "after_bytes": 1510,
+      "before_sha256": "c5eb91133b64bbaed99301292b7c245a599ecf540feda8787190a21c87a05f98",
+      "after_sha256": "c5eb91133b64bbaed99301292b7c245a599ecf540feda8787190a21c87a05f98",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/items_data.h",
+      "before_bytes": 4522,
+      "after_bytes": 4522,
+      "before_sha256": "fd60f13fad03b29cbca0aaed4ccbdc220817b1605c0e9162dac81ed85ba1a1ed",
+      "after_sha256": "fd60f13fad03b29cbca0aaed4ccbdc220817b1605c0e9162dac81ed85ba1a1ed",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/items_ids.h",
+      "before_bytes": 15175,
+      "after_bytes": 15175,
+      "before_sha256": "89871e93086601984f208a53f8bc653b769d6770e877b42ebc04e2b0f8fe6608",
+      "after_sha256": "89871e93086601984f208a53f8bc653b769d6770e877b42ebc04e2b0f8fe6608",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/items_internal.h",
+      "before_bytes": 1919,
+      "after_bytes": 1919,
+      "before_sha256": "bc60c03a1f0b6b5de6b3405fdcfe7952997143b14883ba2b8b567239eb6474f3",
+      "after_sha256": "bc60c03a1f0b6b5de6b3405fdcfe7952997143b14883ba2b8b567239eb6474f3",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/items_params.h",
+      "before_bytes": 17755,
+      "after_bytes": 17755,
+      "before_sha256": "e376a8728f0cd591abc679bee5b352b7223e785cc65ee03a90fd512f64a1463f",
+      "after_sha256": "e376a8728f0cd591abc679bee5b352b7223e785cc65ee03a90fd512f64a1463f",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/items_special.c",
+      "before_bytes": 36179,
+      "after_bytes": 36179,
+      "before_sha256": "f35c9e307f78272564395da02c2edd3540dbf7a4bbff0a578336448d0939b85f",
+      "after_sha256": "f35c9e307f78272564395da02c2edd3540dbf7a4bbff0a578336448d0939b85f",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/items_special.h",
+      "before_bytes": 2888,
+      "after_bytes": 2888,
+      "before_sha256": "f5c2df7933cdb8d8613f59a4385b23de4689de849926e536d5db0f6e2425038c",
+      "after_sha256": "f5c2df7933cdb8d8613f59a4385b23de4689de849926e536d5db0f6e2425038c",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/items_special_state.h",
+      "before_bytes": 1243,
+      "after_bytes": 1243,
+      "before_sha256": "c0d21baef94ee4f3fb292a402f24005c9cc4e10e9e9157b194cc4464abf16264",
+      "after_sha256": "c0d21baef94ee4f3fb292a402f24005c9cc4e10e9e9157b194cc4464abf16264",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/items_special_values.h",
+      "before_bytes": 2317,
+      "after_bytes": 2317,
+      "before_sha256": "404d9e83378264421df7c33ea05223b89ca5a74c6c7501ded93ce5efeca4e45b",
+      "after_sha256": "404d9e83378264421df7c33ea05223b89ca5a74c6c7501ded93ce5efeca4e45b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/jungle.h",
+      "before_bytes": 543,
+      "after_bytes": 543,
+      "before_sha256": "5a4e227df22d95c9654529dae92407c20bd5df58dc47a9116ced68fa0734a2ab",
+      "after_sha256": "5a4e227df22d95c9654529dae92407c20bd5df58dc47a9116ced68fa0734a2ab",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/jungle_data.h",
+      "before_bytes": 5320,
+      "after_bytes": 5320,
+      "before_sha256": "9a0f3bcd6d408ac3d77f5ac5a0444dd96a026d87a16b2afb99238784d24bed0b",
+      "after_sha256": "9a0f3bcd6d408ac3d77f5ac5a0444dd96a026d87a16b2afb99238784d24bed0b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/jungle_npc_data.h",
+      "before_bytes": 2631,
+      "after_bytes": 2631,
+      "before_sha256": "55e5edaa5aea02702d80846592c0d0fd5f270305dc05da39c94544e1a10b8dde",
+      "after_sha256": "55e5edaa5aea02702d80846592c0d0fd5f270305dc05da39c94544e1a10b8dde",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/lane_creep_data.h",
+      "before_bytes": 1297,
+      "after_bytes": 1297,
+      "before_sha256": "566b61d49ba53f0a6fa14f32f810ce34d54d6b55abe0cd62fe951440dadab99f",
+      "after_sha256": "566b61d49ba53f0a6fa14f32f810ce34d54d6b55abe0cd62fe951440dadab99f",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/match_time.c",
+      "before_bytes": 798,
+      "after_bytes": 798,
+      "before_sha256": "fff6da358adc64763197200d65752eb770b1328a3a24e67a34a6e58f99a51655",
+      "after_sha256": "fff6da358adc64763197200d65752eb770b1328a3a24e67a34a6e58f99a51655",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/match_time.h",
+      "before_bytes": 901,
+      "after_bytes": 901,
+      "before_sha256": "d1f74c363873c82c439776f14d034177d1fabf59c55323d60fb176cba7fd5a66",
+      "after_sha256": "d1f74c363873c82c439776f14d034177d1fabf59c55323d60fb176cba7fd5a66",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/navigation.c",
+      "before_bytes": 17328,
+      "after_bytes": 17328,
+      "before_sha256": "054a5eca9ca43f2b4683e8aafd866dbd8861e3db40ccdcc3eac81ddb05f98914",
+      "after_sha256": "054a5eca9ca43f2b4683e8aafd866dbd8861e3db40ccdcc3eac81ddb05f98914",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/navigation.h",
+      "before_bytes": 1860,
+      "after_bytes": 1860,
+      "before_sha256": "673a89d1019110b529ead1251d25cfdaac383be2a3af88549412e269b47c078a",
+      "after_sha256": "673a89d1019110b529ead1251d25cfdaac383be2a3af88549412e269b47c078a",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/neutral.c",
+      "before_bytes": 7176,
+      "after_bytes": 7176,
+      "before_sha256": "a4787010cab576c6eb6fc908b349af33223a05134182cb90c19db2d19001b340",
+      "after_sha256": "a4787010cab576c6eb6fc908b349af33223a05134182cb90c19db2d19001b340",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/neutral.h",
+      "before_bytes": 1004,
+      "after_bytes": 1004,
+      "before_sha256": "7856c23295d1be520e2e17cd90057602c7ea6b3651ff553d154176f139691f9c",
+      "after_sha256": "7856c23295d1be520e2e17cd90057602c7ea6b3651ff553d154176f139691f9c",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/neutral_catalog.h",
+      "before_bytes": 1093,
+      "after_bytes": 1093,
+      "before_sha256": "e8736f1b4bc743bb6e72988aa0222667ad6ad458372e0b0dd00dd4a3099a8d1a",
+      "after_sha256": "e8736f1b4bc743bb6e72988aa0222667ad6ad458372e0b0dd00dd4a3099a8d1a",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/neutral_state.h",
+      "before_bytes": 362,
+      "after_bytes": 362,
+      "before_sha256": "d5f040ad9a01880698bc3065ac814242faa49dbcaeb1ce1992cc241b54b2c6e7",
+      "after_sha256": "d5f040ad9a01880698bc3065ac814242faa49dbcaeb1ce1992cc241b54b2c6e7",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/objective_data.h",
+      "before_bytes": 1153,
+      "after_bytes": 1153,
+      "before_sha256": "bdd2836b16d91aa89d4bd008fb1dbd58702fe0e875b0a5986174b83f6983e9f3",
+      "after_sha256": "bdd2836b16d91aa89d4bd008fb1dbd58702fe0e875b0a5986174b83f6983e9f3",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/objectives.c",
+      "before_bytes": 12167,
+      "after_bytes": 12167,
+      "before_sha256": "2da784544f304aae6e7a56e6dc3ab51ccfe019e065d914b272e0f278198af295",
+      "after_sha256": "2da784544f304aae6e7a56e6dc3ab51ccfe019e065d914b272e0f278198af295",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/objectives.h",
+      "before_bytes": 1720,
+      "after_bytes": 1720,
+      "before_sha256": "27f0ce4bce312bb5c126b7f99c88da5baeebe5fc3f1bdcb0cf4132ceea1f04c1",
+      "after_sha256": "27f0ce4bce312bb5c126b7f99c88da5baeebe5fc3f1bdcb0cf4132ceea1f04c1",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/progression.c",
+      "before_bytes": 16892,
+      "after_bytes": 16892,
+      "before_sha256": "8161f414ef045ceb81f19a9be1620bf99be8308cdd7314a6a1140bca24b87ad1",
+      "after_sha256": "8161f414ef045ceb81f19a9be1620bf99be8308cdd7314a6a1140bca24b87ad1",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/progression.h",
+      "before_bytes": 3922,
+      "after_bytes": 3922,
+      "before_sha256": "88e77238dec5d06d8a7b2fb0873255b9094902f027f79c44284181ec68ec73a0",
+      "after_sha256": "88e77238dec5d06d8a7b2fb0873255b9094902f027f79c44284181ec68ec73a0",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/progression_data.h",
+      "before_bytes": 112926,
+      "after_bytes": 112926,
+      "before_sha256": "4bfce0d2435de756e3eacbde5ec048f91797dbc208c8cbb8f2e2b6609a5afb0a",
+      "after_sha256": "4bfce0d2435de756e3eacbde5ec048f91797dbc208c8cbb8f2e2b6609a5afb0a",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/progression_state.h",
+      "before_bytes": 822,
+      "after_bytes": 822,
+      "before_sha256": "79d8f74dd75fe42c8fa188370f3da3c33cc59f933a01be1eb4966be11996f53a",
+      "after_sha256": "79d8f74dd75fe42c8fa188370f3da3c33cc59f933a01be1eb4966be11996f53a",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/roshan_data.h",
+      "before_bytes": 4971,
+      "after_bytes": 4971,
+      "before_sha256": "3ef30beb6fd64ca634a40f55db1ca6e925398e688e4ad24ad329c63c2432e2fe",
+      "after_sha256": "3ef30beb6fd64ca634a40f55db1ca6e925398e688e4ad24ad329c63c2432e2fe",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/roster_heroes.c",
+      "before_bytes": 54650,
+      "after_bytes": 54650,
+      "before_sha256": "1b6dd2440f70c00281022a85e1eed91c98fccd2f8cb085486b368bd3a2b40f09",
+      "after_sha256": "1b6dd2440f70c00281022a85e1eed91c98fccd2f8cb085486b368bd3a2b40f09",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/roster_heroes.h",
+      "before_bytes": 4726,
+      "after_bytes": 4726,
+      "before_sha256": "3fed72686779b1a2fb6f729c56cc8d9e31b1f813ad67fdbca05e6e29d6bd1b12",
+      "after_sha256": "3fed72686779b1a2fb6f729c56cc8d9e31b1f813ad67fdbca05e6e29d6bd1b12",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/roster_heroes_data.h",
+      "before_bytes": 3074,
+      "after_bytes": 3074,
+      "before_sha256": "2103e670adf1139c0c9697d39c44f36fb929299e497bbd5839f1c97654328c5f",
+      "after_sha256": "2103e670adf1139c0c9697d39c44f36fb929299e497bbd5839f1c97654328c5f",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/roster_heroes_state.h",
+      "before_bytes": 2835,
+      "after_bytes": 2835,
+      "before_sha256": "3d0db6f83775e97a7431bda4e185c8846c60176786843de4c866ab9d0a157913",
+      "after_sha256": "3d0db6f83775e97a7431bda4e185c8846c60176786843de4c866ab9d0a157913",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/runes.c",
+      "before_bytes": 10019,
+      "after_bytes": 10019,
+      "before_sha256": "23dc48c32d2ef1500460e74d55c319c7a41e55e5c082a55b21d66f2753961fbb",
+      "after_sha256": "23dc48c32d2ef1500460e74d55c319c7a41e55e5c082a55b21d66f2753961fbb",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/runes.h",
+      "before_bytes": 1611,
+      "after_bytes": 1611,
+      "before_sha256": "b244a8422dbd1036ec3d5592c494c25798ab8308c055fbb79293a6b6685a33f4",
+      "after_sha256": "b244a8422dbd1036ec3d5592c494c25798ab8308c055fbb79293a6b6685a33f4",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/runes_state.h",
+      "before_bytes": 933,
+      "after_bytes": 933,
+      "before_sha256": "9e0c70840a8937007115bd3db8742c4daa3b2627827a9c55aa08d2a34450a66e",
+      "after_sha256": "9e0c70840a8937007115bd3db8742c4daa3b2627827a9c55aa08d2a34450a66e",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/sight.c",
+      "before_bytes": 19448,
+      "after_bytes": 19448,
+      "before_sha256": "ba25554f939f425c1624f28597c1a3819cbb4f09f3929c7d98019fac9fb0f6c1",
+      "after_sha256": "ba25554f939f425c1624f28597c1a3819cbb4f09f3929c7d98019fac9fb0f6c1",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/sight.h",
+      "before_bytes": 1349,
+      "after_bytes": 1349,
+      "before_sha256": "a8f36b605c28c2b63e478258e9244889b4cce6792f52a0bafcd4730399e9b0ee",
+      "after_sha256": "a8f36b605c28c2b63e478258e9244889b4cce6792f52a0bafcd4730399e9b0ee",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/teleport_rules.h",
+      "before_bytes": 494,
+      "after_bytes": 494,
+      "before_sha256": "33565e4a12b869c490b195917c2c691860fcc5afb149ac3bc9207419f834fc12",
+      "after_sha256": "33565e4a12b869c490b195917c2c691860fcc5afb149ac3bc9207419f834fc12",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/teleport_state.h",
+      "before_bytes": 473,
+      "after_bytes": 473,
+      "before_sha256": "db408a5446ff261c8996cf0534fadc420a50ebdbf683fd26610d47d8bf6f84a9",
+      "after_sha256": "db408a5446ff261c8996cf0534fadc420a50ebdbf683fd26610d47d8bf6f84a9",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/turbo.c",
+      "before_bytes": 2813,
+      "after_bytes": 2813,
+      "before_sha256": "6feb5e382011dae4c24f790108dad6d43965d43c9376cf9291363c8a99ba9930",
+      "after_sha256": "6feb5e382011dae4c24f790108dad6d43965d43c9376cf9291363c8a99ba9930",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/turbo.h",
+      "before_bytes": 381,
+      "after_bytes": 381,
+      "before_sha256": "22ebd573156ac7326621a8573c608391aefa6cc110e68901f46b0e3340edad5b",
+      "after_sha256": "22ebd573156ac7326621a8573c608391aefa6cc110e68901f46b0e3340edad5b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/turbo_data.h",
+      "before_bytes": 474,
+      "after_bytes": 474,
+      "before_sha256": "dbd583a93a74b3a78863b81a0cb3003452d647f2a7e73d61a7bb86b5e96c502f",
+      "after_sha256": "dbd583a93a74b3a78863b81a0cb3003452d647f2a7e73d61a7bb86b5e96c502f",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/unit_limits.h",
+      "before_bytes": 242,
+      "after_bytes": 242,
+      "before_sha256": "8cd28bcc1070a7f63589ebc76129b604348b425e6ddef443ead7c4ae1eb64db8",
+      "after_sha256": "8cd28bcc1070a7f63589ebc76129b604348b425e6ddef443ead7c4ae1eb64db8",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/unit_vision_data.h",
+      "before_bytes": 1356,
+      "after_bytes": 1356,
+      "before_sha256": "d55521cd55152d0a2c740adf18bf92c18daf3a26f83287128fded7395e8d8cda",
+      "after_sha256": "d55521cd55152d0a2c740adf18bf92c18daf3a26f83287128fded7395e8d8cda",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/vision.c",
+      "before_bytes": 4334,
+      "after_bytes": 4334,
+      "before_sha256": "c6d06f695e051121f4910cfae41ee112fcfc77e6b599db0e6f14e99ecb73e83b",
+      "after_sha256": "c6d06f695e051121f4910cfae41ee112fcfc77e6b599db0e6f14e99ecb73e83b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/vision.h",
+      "before_bytes": 641,
+      "after_bytes": 641,
+      "before_sha256": "b642b8b1f25d9a469026a82a4434ae9c4b911b6c053772355c8962ca50e37ddf",
+      "after_sha256": "b642b8b1f25d9a469026a82a4434ae9c4b911b6c053772355c8962ca50e37ddf",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/ward_placement_data.h",
+      "before_bytes": 2178,
+      "after_bytes": 2178,
+      "before_sha256": "2bc4f1646ab2e3ba8e08ecd068531de50e3771f410f5e60a31cb2418b8bda462",
+      "after_sha256": "2bc4f1646ab2e3ba8e08ecd068531de50e3771f410f5e60a31cb2418b8bda462",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/water.c",
+      "before_bytes": 1006,
+      "after_bytes": 1006,
+      "before_sha256": "b33d6cf686efb260a464a45de79796e14dcb7dd922ccd5cf19188ef3f717d9c1",
+      "after_sha256": "b33d6cf686efb260a464a45de79796e14dcb7dd922ccd5cf19188ef3f717d9c1",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/water.h",
+      "before_bytes": 165,
+      "after_bytes": 165,
+      "before_sha256": "c9e9669c919de5ae76970889c6f7bf911dc018ac4d391372396b138bd7c52967",
+      "after_sha256": "c9e9669c919de5ae76970889c6f7bf911dc018ac4d391372396b138bd7c52967",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "game/water_world_data.h",
+      "before_bytes": 17970,
+      "after_bytes": 17970,
+      "before_sha256": "87628b295b79ae5f72f7314fc6c5b28e3201d769dcce2eb68061c17f92b3244c",
+      "after_sha256": "87628b295b79ae5f72f7314fc6c5b28e3201d769dcce2eb68061c17f92b3244c",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/ability_icon_mask.h",
+      "before_bytes": 2381,
+      "after_bytes": 2381,
+      "before_sha256": "394001903bd7a7d4afb796359df6794e57cab9073e9c7846df1064d700b8ab2a",
+      "after_sha256": "394001903bd7a7d4afb796359df6794e57cab9073e9c7846df1064d700b8ab2a",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/ability_icon_overlay.h",
+      "before_bytes": 1348,
+      "after_bytes": 1348,
+      "before_sha256": "17d97c31bce4ba7c236b57af6f07e7fc2aa0e3a5a5bcd6c991c0d734e1d51fe3",
+      "after_sha256": "17d97c31bce4ba7c236b57af6f07e7fc2aa0e3a5a5bcd6c991c0d734e1d51fe3",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/ability_icon_state.h",
+      "before_bytes": 3124,
+      "after_bytes": 3124,
+      "before_sha256": "992235f071e9c8e1c9b9e43d9e30e330df3a4a69f4cf76b3719177be2a96e798",
+      "after_sha256": "992235f071e9c8e1c9b9e43d9e30e330df3a4a69f4cf76b3719177be2a96e798",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/art_types.h",
+      "before_bytes": 428,
+      "after_bytes": 428,
+      "before_sha256": "0bf9816017bee28d97599c23ad4ae07fbb8c5e6ea4998abe8b87d5c0cee57338",
+      "after_sha256": "0bf9816017bee28d97599c23ad4ae07fbb8c5e6ea4998abe8b87d5c0cee57338",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/audio_music_windows.h",
+      "before_bytes": 762,
+      "after_bytes": 762,
+      "before_sha256": "17c5bcdef2e8866abab6f00baa3fc69225ea19e54cd5a1eb482096b741bf0d46",
+      "after_sha256": "17c5bcdef2e8866abab6f00baa3fc69225ea19e54cd5a1eb482096b741bf0d46",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/baked_aux_io.h",
+      "before_bytes": 2607,
+      "after_bytes": 2607,
+      "before_sha256": "8c6f01fd556419088ad5656c7e942358d8f4a15bc443d4285d444847e45f9f59",
+      "after_sha256": "8c6f01fd556419088ad5656c7e942358d8f4a15bc443d4285d444847e45f9f59",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/baked_io.c",
+      "before_bytes": 7414,
+      "after_bytes": 7414,
+      "before_sha256": "8ca3bcc290d6c8fab1a0b99b5a87e28f71cb6e1f127d8af348c44482a61e1f4b",
+      "after_sha256": "8ca3bcc290d6c8fab1a0b99b5a87e28f71cb6e1f127d8af348c44482a61e1f4b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/baked_io.h",
+      "before_bytes": 2425,
+      "after_bytes": 2425,
+      "before_sha256": "1992f202fa1d8ae230ca9bd23bb833de75deb78bf77710bc2f43e9502f25a41b",
+      "after_sha256": "1992f202fa1d8ae230ca9bd23bb833de75deb78bf77710bc2f43e9502f25a41b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/baked_scene.c",
+      "before_bytes": 118700,
+      "after_bytes": 116871,
+      "before_sha256": "5fced0ff92bae88ab457ecd8cf6d36c7c4365cb5f8561cc787e7ab356110a73a",
+      "after_sha256": "1655a3de218c0bd465ccc1fb93d2eb4f4a6f056fc292208d7ec9f8d87fc16243",
+      "changed": true,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/baked_scene.h",
+      "before_bytes": 9032,
+      "after_bytes": 8851,
+      "before_sha256": "fe3e9c5c3833db2a332062e3d9b90cf0a9babc91199210cc726dc2b2f7525488",
+      "after_sha256": "d9576ffe2b2b06c50073b6d7cb16f3948fb406822dd82ed3f00950dce4a3d219",
+      "changed": true,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/barracks_baked.h",
+      "before_bytes": 4512,
+      "after_bytes": 4512,
+      "before_sha256": "aad9c5d3eb93cf88ed6bc1773bac2cdae861ea680e5181eefb5c4881afa22e2a",
+      "after_sha256": "aad9c5d3eb93cf88ed6bc1773bac2cdae861ea680e5181eefb5c4881afa22e2a",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/barracks_patch.h",
+      "before_bytes": 2842,
+      "after_bytes": 2842,
+      "before_sha256": "3bcf8cb2f546a28bdcdded90593cf2006050ecff9d2b7900d4231980d9b02a12",
+      "after_sha256": "3bcf8cb2f546a28bdcdded90593cf2006050ecff9d2b7900d4231980d9b02a12",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/battlefield_gesture.h",
+      "before_bytes": 2243,
+      "after_bytes": 2243,
+      "before_sha256": "219159bdcb0cf95d4a5a0fc5718c29013d8ed1c9f399e4b98b147d3ea0fc2cd9",
+      "after_sha256": "219159bdcb0cf95d4a5a0fc5718c29013d8ed1c9f399e4b98b147d3ea0fc2cd9",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/cache_memory.h",
+      "before_bytes": 1105,
+      "after_bytes": 1105,
+      "before_sha256": "3443a0afc2c55e440a9ab4cd6db8412ee49d6aaeb0992fe8e964095708d38777",
+      "after_sha256": "3443a0afc2c55e440a9ab4cd6db8412ee49d6aaeb0992fe8e964095708d38777",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/cache_rle.h",
+      "before_bytes": 3557,
+      "after_bytes": 3557,
+      "before_sha256": "0a30b792de9327244af6de9cf5bd7e73b9663f0a8712f8decb2d364f5a52b75b",
+      "after_sha256": "0a30b792de9327244af6de9cf5bd7e73b9663f0a8712f8decb2d364f5a52b75b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/compressed_cache.h",
+      "before_bytes": 7190,
+      "after_bytes": 7190,
+      "before_sha256": "f2f111a8ef5e52e9c724e22831b4bf815c842ee6aa7ba81b2442df44c65f5f8c",
+      "after_sha256": "f2f111a8ef5e52e9c724e22831b4bf815c842ee6aa7ba81b2442df44c65f5f8c",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/dota_audio.c",
+      "before_bytes": 29904,
+      "after_bytes": 29904,
+      "before_sha256": "947f810236ccc342ce04be3c51bcc830253cdbb450083a6ea6b6ca21b20d3169",
+      "after_sha256": "947f810236ccc342ce04be3c51bcc830253cdbb450083a6ea6b6ca21b20d3169",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/dota_audio.h",
+      "before_bytes": 2675,
+      "after_bytes": 2675,
+      "before_sha256": "2b4b05d25eed2b42a7f3c7ba97fa1390fc21bdc81c194b98019e1ab36c1dc987",
+      "after_sha256": "2b4b05d25eed2b42a7f3c7ba97fa1390fc21bdc81c194b98019e1ab36c1dc987",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/dota_mxu_exact.h",
+      "before_bytes": 4588,
+      "after_bytes": 4588,
+      "before_sha256": "7e8cac575adf9c0e72dd53b1867751cf0df826dcf1ed674d76d1da8265f789f7",
+      "after_sha256": "7e8cac575adf9c0e72dd53b1867751cf0df826dcf1ed674d76d1da8265f789f7",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/entry.S",
+      "before_bytes": 714,
+      "after_bytes": 714,
+      "before_sha256": "972db15f5837854b46726026ac475777277a62a1ba054650b48612706fc7fa94",
+      "after_sha256": "972db15f5837854b46726026ac475777277a62a1ba054650b48612706fc7fa94",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": true
+    },
+    {
+      "path": "platform/extra_ability.h",
+      "before_bytes": 1364,
+      "after_bytes": 1364,
+      "before_sha256": "0f3e6c07e0c1c10866aaec69f42cf7ab4eab0ed023b0dea5f3fc3e010581922b",
+      "after_sha256": "0f3e6c07e0c1c10866aaec69f42cf7ab4eab0ed023b0dea5f3fc3e010581922b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/fountain_baked.h",
+      "before_bytes": 2825,
+      "after_bytes": 2825,
+      "before_sha256": "441ac968e435d4c20f2e12cb433f1200938626c01a2d5bc3d1456e9f5349c33e",
+      "after_sha256": "441ac968e435d4c20f2e12cb433f1200938626c01a2d5bc3d1456e9f5349c33e",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/h1.ld",
+      "before_bytes": 615,
+      "after_bytes": 615,
+      "before_sha256": "90b453b0aa64b0145aed2ad9407f414b4eab61ac1fb5e15f0993e7a8952577d6",
+      "after_sha256": "90b453b0aa64b0145aed2ad9407f414b4eab61ac1fb5e15f0993e7a8952577d6",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/hud_layout.h",
+      "before_bytes": 5113,
+      "after_bytes": 5113,
+      "before_sha256": "28da4099729189a76bcbb63ababa1e1ab5777f87aaeba4c355424810046c2e0c",
+      "after_sha256": "28da4099729189a76bcbb63ababa1e1ab5777f87aaeba4c355424810046c2e0c",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/inventory_gesture.h",
+      "before_bytes": 1797,
+      "after_bytes": 1797,
+      "before_sha256": "3a81ed28762c30c5b80529c0f6489a4d45901d2071c6e0cb819ae43cc992a952",
+      "after_sha256": "3a81ed28762c30c5b80529c0f6489a4d45901d2071c6e0cb819ae43cc992a952",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/item_assets.c",
+      "before_bytes": 12733,
+      "after_bytes": 12733,
+      "before_sha256": "9967243d5a47d83cf2aaab449bb2852a25b64e05e3e9183dab48c4cc91695fa7",
+      "after_sha256": "9967243d5a47d83cf2aaab449bb2852a25b64e05e3e9183dab48c4cc91695fa7",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/item_assets.h",
+      "before_bytes": 1574,
+      "after_bytes": 1574,
+      "before_sha256": "968d73e12bc872a7407dacc7a5a11587641c1c5e5a30bbcc7660dece59654e56",
+      "after_sha256": "968d73e12bc872a7407dacc7a5a11587641c1c5e5a30bbcc7660dece59654e56",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/map_codec.c",
+      "before_bytes": 2283,
+      "after_bytes": 2283,
+      "before_sha256": "78a56c875363f70d0b646727f5a49eb0c0a0c4be82790479655ec9f87f1824b9",
+      "after_sha256": "78a56c875363f70d0b646727f5a49eb0c0a0c4be82790479655ec9f87f1824b9",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/map_codec.h",
+      "before_bytes": 691,
+      "after_bytes": 691,
+      "before_sha256": "4741607d7b898876bb8f38d7e76241b3fd5027c9a0731aca183f6c5754823bf9",
+      "after_sha256": "4741607d7b898876bb8f38d7e76241b3fd5027c9a0731aca183f6c5754823bf9",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/map_crc_table.h",
+      "before_bytes": 3150,
+      "after_bytes": 3150,
+      "before_sha256": "255e6461b296173918ef210157c3172ebd60e89d667f24fb18790367fcd7443d",
+      "after_sha256": "255e6461b296173918ef210157c3172ebd60e89d667f24fb18790367fcd7443d",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/map_format.c",
+      "before_bytes": 659,
+      "after_bytes": 659,
+      "before_sha256": "6f9b2690fd8f4efd225460f71a87e2641d5565cffa12432f5094ce43c3134797",
+      "after_sha256": "6f9b2690fd8f4efd225460f71a87e2641d5565cffa12432f5094ce43c3134797",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/map_sidecar.h",
+      "before_bytes": 7195,
+      "after_bytes": 7195,
+      "before_sha256": "f75c397abcfa78e19507d6814c93a949f56a1007b998b3310f934c2dcf37ed9c",
+      "after_sha256": "f75c397abcfa78e19507d6814c93a949f56a1007b998b3310f934c2dcf37ed9c",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/map_sidecar_format.h",
+      "before_bytes": 1556,
+      "after_bytes": 1556,
+      "before_sha256": "97b79860077e816ee1eb423c3f8e3bc3cd690fd468b7d9dc125fe612fef71e27",
+      "after_sha256": "97b79860077e816ee1eb423c3f8e3bc3cd690fd468b7d9dc125fe612fef71e27",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/map_sidecar_identity.h",
+      "before_bytes": 8490,
+      "after_bytes": 8490,
+      "before_sha256": "58fae496c5891fd406092a52d609d1327a7d67f854f70e0933d73c6c1dd9e78b",
+      "after_sha256": "58fae496c5891fd406092a52d609d1327a7d67f854f70e0933d73c6c1dd9e78b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/native.c",
+      "before_bytes": 45805,
+      "after_bytes": 45805,
+      "before_sha256": "e6039b11f8c9be439357093833b51462af83d1e00dfab37b29e6778e0e8d59d0",
+      "after_sha256": "e6039b11f8c9be439357093833b51462af83d1e00dfab37b29e6778e0e8d59d0",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/render.c",
+      "before_bytes": 73678,
+      "after_bytes": 73678,
+      "before_sha256": "6a1558d120059fe8775a7482a66f601aeac6739d9a7c532ac3ea54f3bf4d51f4",
+      "after_sha256": "6a1558d120059fe8775a7482a66f601aeac6739d9a7c532ac3ea54f3bf4d51f4",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/render.h",
+      "before_bytes": 2020,
+      "after_bytes": 2020,
+      "before_sha256": "2ffed2ab8dffabce948e48414f549eddb3bb56d2971587b6c395b6b3f08080eb",
+      "after_sha256": "2ffed2ab8dffabce948e48414f549eddb3bb56d2971587b6c395b6b3f08080eb",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/roster_baked.h",
+      "before_bytes": 6849,
+      "after_bytes": 6849,
+      "before_sha256": "5f92369655e9f589bf6620bfb285c41c8da2f3c9f13ac6c8320b81ce23fb083b",
+      "after_sha256": "5f92369655e9f589bf6620bfb285c41c8da2f3c9f13ac6c8320b81ce23fb083b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/shadow_cull_data.h",
+      "before_bytes": 1046,
+      "after_bytes": 1046,
+      "before_sha256": "b5a3f252d287174eb4463e1d8671e6f8008de2dfec73650aa99e5c7d006f11be",
+      "after_sha256": "b5a3f252d287174eb4463e1d8671e6f8008de2dfec73650aa99e5c7d006f11be",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/shop_catalog.c",
+      "before_bytes": 5852,
+      "after_bytes": 5852,
+      "before_sha256": "83f4c2d7ee2f11e7bf9e4a288a29da0418dbb45f30bc97f4265fedbcf5e19774",
+      "after_sha256": "83f4c2d7ee2f11e7bf9e4a288a29da0418dbb45f30bc97f4265fedbcf5e19774",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/shop_catalog.h",
+      "before_bytes": 697,
+      "after_bytes": 697,
+      "before_sha256": "a501f7dc35bbae825cb2c446b463cd2121d4f099194f7dfc0156f33b2fe88bb3",
+      "after_sha256": "a501f7dc35bbae825cb2c446b463cd2121d4f099194f7dfc0156f33b2fe88bb3",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/status_effects.c",
+      "before_bytes": 12901,
+      "after_bytes": 12901,
+      "before_sha256": "484a848d18ac465c6a03a329325153cf2b5cdb8fa56f543e85772673f07f3893",
+      "after_sha256": "484a848d18ac465c6a03a329325153cf2b5cdb8fa56f543e85772673f07f3893",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/status_effects.h",
+      "before_bytes": 1644,
+      "after_bytes": 1644,
+      "before_sha256": "ade3b7276ca692f71b5d79cfaee05f551ccef2e8d5cc0d696fe7e51d9ddbdc49",
+      "after_sha256": "ade3b7276ca692f71b5d79cfaee05f551ccef2e8d5cc0d696fe7e51d9ddbdc49",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/target_input.h",
+      "before_bytes": 2521,
+      "after_bytes": 2521,
+      "before_sha256": "b771321478bf47b12adb515b446d102776ac287a0a019193a90f11bd48e8b3f7",
+      "after_sha256": "b771321478bf47b12adb515b446d102776ac287a0a019193a90f11bd48e8b3f7",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/vision_asset_identity.h",
+      "before_bytes": 309,
+      "after_bytes": 309,
+      "before_sha256": "f05bfac959bcfbfc86a4a233dab94518140b6620671b4d841b2b2f5dfbf85947",
+      "after_sha256": "f05bfac959bcfbfc86a4a233dab94518140b6620671b4d841b2b2f5dfbf85947",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/vision_assets.c",
+      "before_bytes": 5208,
+      "after_bytes": 5208,
+      "before_sha256": "f923346d5584401c2b5ec872cf9ac3374cadc1898616270b7072099dfb84db6b",
+      "after_sha256": "f923346d5584401c2b5ec872cf9ac3374cadc1898616270b7072099dfb84db6b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "platform/vision_assets.h",
+      "before_bytes": 984,
+      "after_bytes": 984,
+      "before_sha256": "a8a1f6ebf2d4a27b5795999c9b03a245425f759c9f6ff822fd688a8653b423ad",
+      "after_sha256": "a8a1f6ebf2d4a27b5795999c9b03a245425f759c9f6ff822fd688a8653b423ad",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/audio/assets/audio_data.h",
+      "before_bytes": 2519,
+      "after_bytes": 2519,
+      "before_sha256": "3ddbf417bc8309db4419a967da1506810014db0aa64917c806ab32391abe9f32",
+      "after_sha256": "3ddbf417bc8309db4419a967da1506810014db0aa64917c806ab32391abe9f32",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/dota_art.h",
+      "before_bytes": 156248,
+      "after_bytes": 156248,
+      "before_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+      "after_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/dota_barracks_data.h",
+      "before_bytes": 795,
+      "after_bytes": 795,
+      "before_sha256": "96fc0395dd5f10372c16a4be4f9bcc07bd098fd165bffd667826c348f0ce2bee",
+      "after_sha256": "96fc0395dd5f10372c16a4be4f9bcc07bd098fd165bffd667826c348f0ce2bee",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/dota_barracks_nav.h",
+      "before_bytes": 21218,
+      "after_bytes": 21218,
+      "before_sha256": "2d813781b38e8f96b1858b36c27c8fdf96c20b4383f8f2df17efe7af8bfa935f",
+      "after_sha256": "2d813781b38e8f96b1858b36c27c8fdf96c20b4383f8f2df17efe7af8bfa935f",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/dota_barracks_patch.h",
+      "before_bytes": 381674,
+      "after_bytes": 381674,
+      "before_sha256": "929be671e40204c02590f333f945fd8144955095584d6653e9972e630dc45f69",
+      "after_sha256": "929be671e40204c02590f333f945fd8144955095584d6653e9972e630dc45f69",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/dota_font.h",
+      "before_bytes": 59133,
+      "after_bytes": 59133,
+      "before_sha256": "a75aa3c0e2f0c17adc3ffc50fc5f99e0306f9a22b679ce5226e54bcb72323ffc",
+      "after_sha256": "a75aa3c0e2f0c17adc3ffc50fc5f99e0306f9a22b679ce5226e54bcb72323ffc",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/dota_map_fixtures.h",
+      "before_bytes": 859,
+      "after_bytes": 859,
+      "before_sha256": "47136623325b50daef8c3e862f87e3fc394071e1a3cddd7b640322b21f77c245",
+      "after_sha256": "47136623325b50daef8c3e862f87e3fc394071e1a3cddd7b640322b21f77c245",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/dota_nav.h",
+      "before_bytes": 85871,
+      "after_bytes": 85871,
+      "before_sha256": "09b175c3c4c8edebfda88d9cc40f10a1c4443f6f89064ef8b212bf07339f8390",
+      "after_sha256": "09b175c3c4c8edebfda88d9cc40f10a1c4443f6f89064ef8b212bf07339f8390",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/dota_overview.h",
+      "before_bytes": 31275,
+      "after_bytes": 31275,
+      "before_sha256": "64770f66f85beacbfbe0e23fc7d35a833388c5e3471806f50bb2563906bc8b41",
+      "after_sha256": "64770f66f85beacbfbe0e23fc7d35a833388c5e3471806f50bb2563906bc8b41",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/dota_roshan_vision.h",
+      "before_bytes": 6626,
+      "after_bytes": 6626,
+      "before_sha256": "3c2da5975fed9eb4645f08690d7316cde174c4e953aae5e49f54f115c21ca366",
+      "after_sha256": "3c2da5975fed9eb4645f08690d7316cde174c4e953aae5e49f54f115c21ca366",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/dota_rune_art.h",
+      "before_bytes": 191795,
+      "after_bytes": 191795,
+      "before_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+      "after_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/dota_runes_data.h",
+      "before_bytes": 787,
+      "after_bytes": 787,
+      "before_sha256": "2a6f9d6309f4ad63ecf643f9a29704dd6ac494b1ff30e3c89c540258b53facbd",
+      "after_sha256": "2a6f9d6309f4ad63ecf643f9a29704dd6ac494b1ff30e3c89c540258b53facbd",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/dota_shard_art.h",
+      "before_bytes": 11558,
+      "after_bytes": 11558,
+      "before_sha256": "9d1aae47c7016eeca434da7c75b8cc1d379ba9da9ac2b2d7c172f303df8f31e9",
+      "after_sha256": "9d1aae47c7016eeca434da7c75b8cc1d379ba9da9ac2b2d7c172f303df8f31e9",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "private/generated/icon.png",
+      "before_bytes": 31148,
+      "after_bytes": 31148,
+      "before_sha256": "54036180adf9cbcf6e5d2bb9267b2a7bc0c6812f8a3b4e3233797b0d69c1c701",
+      "after_sha256": "54036180adf9cbcf6e5d2bb9267b2a7bc0c6812f8a3b4e3233797b0d69c1c701",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": true
+    },
+    {
+      "path": "provenance/source-curation.json",
+      "before_bytes": 89255,
+      "after_bytes": 89255,
+      "before_sha256": "075bfc71145b6bc0b7d59c9cbc3f8242f9fedd12eb43c26a39f7e10668a8adf3",
+      "after_sha256": "075bfc71145b6bc0b7d59c9cbc3f8242f9fedd12eb43c26a39f7e10668a8adf3",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": true
+    },
+    {
+      "path": "sdk/sdk/include/h1_dialogs.h",
+      "before_bytes": 580,
+      "after_bytes": 580,
+      "before_sha256": "cb8af68fd9aba7fdeebfd63e37dfc644b56e3d473ee456e667515381c7eed0c5",
+      "after_sha256": "cb8af68fd9aba7fdeebfd63e37dfc644b56e3d473ee456e667515381c7eed0c5",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "sdk/sdk/include/h1_filesystem.h",
+      "before_bytes": 2677,
+      "after_bytes": 2677,
+      "before_sha256": "939c31edfbf3461d3f8fe02073e8071317265f689445d26530e208b8811f33e2",
+      "after_sha256": "939c31edfbf3461d3f8fe02073e8071317265f689445d26530e208b8811f33e2",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "sdk/sdk/include/h1_graphics.h",
+      "before_bytes": 1506,
+      "after_bytes": 1506,
+      "before_sha256": "a14b9ad45611b675505d73bb023e33ac84d514a33f983d5d46a567301b3f4658",
+      "after_sha256": "a14b9ad45611b675505d73bb023e33ac84d514a33f983d5d46a567301b3f4658",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "sdk/sdk/include/h1_input.h",
+      "before_bytes": 2266,
+      "after_bytes": 2266,
+      "before_sha256": "0f3b1bb1c88cf09023bce74e9e078854902a5c17573a9acb256e757dc700f7c7",
+      "after_sha256": "0f3b1bb1c88cf09023bce74e9e078854902a5c17573a9acb256e757dc700f7c7",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "sdk/sdk/include/h1_memory.h",
+      "before_bytes": 3845,
+      "after_bytes": 3845,
+      "before_sha256": "c0447b7e56ad8e20bee1be12df5254d87cc9ef6274a8570143f65c9b46a8664e",
+      "after_sha256": "c0447b7e56ad8e20bee1be12df5254d87cc9ef6274a8570143f65c9b46a8664e",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "sdk/sdk/include/h1_runtime.h",
+      "before_bytes": 514,
+      "after_bytes": 514,
+      "before_sha256": "d96b1502d3a7cefc397d9a19d977e55342d116a9ca3aea54d8bdfef302fcb97b",
+      "after_sha256": "d96b1502d3a7cefc397d9a19d977e55342d116a9ca3aea54d8bdfef302fcb97b",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "sdk/sdk/include/h1_sdk.h",
+      "before_bytes": 231,
+      "after_bytes": 231,
+      "before_sha256": "3b31976112928af5bb5a4309db69883561a624e19441dd920d30f360147fc582",
+      "after_sha256": "3b31976112928af5bb5a4309db69883561a624e19441dd920d30f360147fc582",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "sdk/sdk/include/h1_time.h",
+      "before_bytes": 1286,
+      "after_bytes": 1286,
+      "before_sha256": "20be366ac00d66451c1bba34ef1ee47e8377002c4354bf613cd88d3b75570a43",
+      "after_sha256": "20be366ac00d66451c1bba34ef1ee47e8377002c4354bf613cd88d3b75570a43",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "sdk/sdk/include/h1_types.h",
+      "before_bytes": 189,
+      "after_bytes": 189,
+      "before_sha256": "cc65fa4bcf0137d0a7b61d293651a0a4d998d3b1a3370ccc8e036141e5574d1c",
+      "after_sha256": "cc65fa4bcf0137d0a7b61d293651a0a4d998d3b1a3370ccc8e036141e5574d1c",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/audit_match_time_source.py",
+      "before_bytes": 6064,
+      "after_bytes": 6064,
+      "before_sha256": "17f98543c310571922d4c55f1c9a7d5d1d02f54f10d6d8d4d05393bfedf00815",
+      "after_sha256": "17f98543c310571922d4c55f1c9a7d5d1d02f54f10d6d8d4d05393bfedf00815",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/build.py",
+      "before_bytes": 4176,
+      "after_bytes": 4176,
+      "before_sha256": "eb7e987c4930aa54233a036b11b973397e4cd0b7dbb2563787b54efd64bcf7c0",
+      "after_sha256": "eb7e987c4930aa54233a036b11b973397e4cd0b7dbb2563787b54efd64bcf7c0",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/check_tag.py",
+      "before_bytes": 429,
+      "after_bytes": 429,
+      "before_sha256": "3f4e09fd5b33e5a187894b0ffed5ffe97dae3d0c7425fe20e002104dbb031a08",
+      "after_sha256": "3f4e09fd5b33e5a187894b0ffed5ffe97dae3d0c7425fe20e002104dbb031a08",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/common.py",
+      "before_bytes": 9829,
+      "after_bytes": 9829,
+      "before_sha256": "caf398594a0063fcd9d979fde2febd29748502e2f2dcad5f99fc076b8e181f86",
+      "after_sha256": "caf398594a0063fcd9d979fde2febd29748502e2f2dcad5f99fc076b8e181f86",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/install_toolchain.py",
+      "before_bytes": 2933,
+      "after_bytes": 2933,
+      "before_sha256": "e96f2a3d81e6b9ccb349654494bb5ea00a4f3edcbafcee6c07ec0082cc325986",
+      "after_sha256": "e96f2a3d81e6b9ccb349654494bb5ea00a4f3edcbafcee6c07ec0082cc325986",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/package.py",
+      "before_bytes": 3548,
+      "after_bytes": 3548,
+      "before_sha256": "fc6bbdedb7b938ad3ecb1f6ecd2663be7451995b0b98f63ca917d2cd08860791",
+      "after_sha256": "fc6bbdedb7b938ad3ecb1f6ecd2663be7451995b0b98f63ca917d2cd08860791",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/prepare_vision.py",
+      "before_bytes": 3402,
+      "after_bytes": 3402,
+      "before_sha256": "4efba228ce08421957f21c7cebcaa3f765a486ae44e052eb395a25359b827e66",
+      "after_sha256": "4efba228ce08421957f21c7cebcaa3f765a486ae44e052eb395a25359b827e66",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/profile_vision_v028_mips.py",
+      "before_bytes": 5908,
+      "after_bytes": 5908,
+      "before_sha256": "802f4ad09b54c4a34a1ac1d899e3da426831c2ae76e054cdfb07e8956528242e",
+      "after_sha256": "802f4ad09b54c4a34a1ac1d899e3da426831c2ae76e054cdfb07e8956528242e",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/requirements-build.txt",
+      "before_bytes": 32,
+      "after_bytes": 32,
+      "before_sha256": "79917fc68a450e2b789d7884fe9b9c4cb393f20e77396e41d30e14b7572cc589",
+      "after_sha256": "79917fc68a450e2b789d7884fe9b9c4cb393f20e77396e41d30e14b7572cc589",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/verify.py",
+      "before_bytes": 4395,
+      "after_bytes": 4395,
+      "before_sha256": "6c78b00d2a416cfb7a1f4aabea8f147ff5560f3cc47b264862bbaa5795327e78",
+      "after_sha256": "6c78b00d2a416cfb7a1f4aabea8f147ff5560f3cc47b264862bbaa5795327e78",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/verify_match_time.py",
+      "before_bytes": 2926,
+      "after_bytes": 2926,
+      "before_sha256": "75263e35fa67736f2aa81d832fc04cd8accc646f75c095881f44775cbcfbd5d5",
+      "after_sha256": "75263e35fa67736f2aa81d832fc04cd8accc646f75c095881f44775cbcfbd5d5",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/verify_match_time_mips.py",
+      "before_bytes": 10137,
+      "after_bytes": 10137,
+      "before_sha256": "2dafb98ee11f8d4557669368b7591be72ea7eaff3dee1caaf3b1df90cfac43a3",
+      "after_sha256": "2dafb98ee11f8d4557669368b7591be72ea7eaff3dee1caaf3b1df90cfac43a3",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "tools/verify_vision_v028.py",
+      "before_bytes": 1671,
+      "after_bytes": 1671,
+      "before_sha256": "b809e54e295761b9cdc114b1970852420a4946fedc060ee6df522f57122f93b4",
+      "after_sha256": "b809e54e295761b9cdc114b1970852420a4946fedc060ee6df522f57122f93b4",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": false
+    },
+    {
+      "path": "VERSION",
+      "before_bytes": 5,
+      "after_bytes": 5,
+      "before_sha256": "e8ba6f3eeadc7e71baf4f28a5136ffbcf145c0b41702f07a2fa96909be76ef08",
+      "after_sha256": "e8ba6f3eeadc7e71baf4f28a5136ffbcf145c0b41702f07a2fa96909be76ef08",
+      "changed": false,
+      "line_endings_only": true,
+      "excluded_binary_or_json": true
+    }
+  ],
+  "physical_retest_condition": "No retest is inherited until the normal canonical build reproduces the complete device-tested BDA byte for byte. ELF debug identity may differ and requires newly bound narrow MIPS reports."
+}

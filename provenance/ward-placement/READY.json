@@ -1,0 +1,92 @@
+{
+  "ready": true,
+  "own_production_source_frozen": true,
+  "source_sha256": {
+    "game/item_world.c": "d90247e2b66eb19878856c1442fbc075c933c322ac28af970b88b612e966f8d1",
+    "game/item_world.h": "88b71071298aec66c14fcc486c152411c50673ac06ce1f3e044a986385be5402",
+    "game/ward_placement_data.h": "2bc4f1646ab2e3ba8e08ecd068531de50e3771f410f5e60a31cb2418b8bda462",
+    "tests/ward_placement_test.c": "a0e0f9e3d1852a1e1f3a8fcffdce6b39c37787155011b6086b971bcd86c77f27",
+    "tests/verify_ward_placement.py": "df4e541176b84ef5c9169904f11643a72b71969699accd25a52e5a535f91bec1",
+    "tests/vision_v028_test.c": "85be49d023f16df5f570b3c7969a98c39b82e00bc3b12ec5770a808f23121fdb",
+    "tests/vision_mips_fixtures.c": "fc7bec5a12403236a1fe196995dd962651045af0fdd65b8a2a51cedd49ae0ff3",
+    "tests/verify_vision_mips.py": "9030ce5fdedba1762a6d677a6b9173a719ecbc5a2b0989fd4d2a33eeda8d90a5"
+  },
+  "geometry": {
+    "entities": 5,
+    "physical_convex_hulls": 7,
+    "q16_vertices": 35,
+    "q16_integer_projection_checks": 463107,
+    "q16_differences": 0,
+    "source_audit": "provenance/ward-placement/source-data/source-audit.json",
+    "source_audit_sha256": "8029bab2614751b82278178918d25b2b017097418937f57c4de61e42e290e757",
+    "activation_audit_sha256": "6b44745348ca1235610636cbe9ecfa4a04ee36a7b7d81308646b2179eaa48e79",
+    "q16_projection_verification_sha256": "9afa169eeeb67c07f02cb53b826600822d19af84fc140cc4e780328ab896d692",
+    "height_scope": "XY projection for H1 ground-point placement; arbitrary flight altitude not modeled.",
+    "navigation_walkability_used": false,
+    "fountain_healing_radius_used": false,
+    "fow_pit_polygon_expansion_used": false
+  },
+  "api": "dota_item_world_ward_placeable(const DotaGame*,int owner,int x,int y); only owner/bounds/native forbidden hulls, ordinary item range/charges/CD remain unchanged.",
+  "atomic_gate": "new_unit rejects forbidden Observer/Sentry position before scanning/clearing a slot, generation changes, sight invalidation or success result.",
+  "host_placement": {
+    "path": "build/tests/ward-placement-host-2/verification.json",
+    "sha256": "3603b3dc2de38b78ead29db4d412b7febd12bdfb8fb5a472cddbbf89470ba938",
+    "checks": 248,
+    "source_current_at_measurement": true,
+    "historical_pre_shared_shadow": true
+  },
+  "host_vision": {
+    "path": "build/tests/vision-v028-shared128-final/verification.json",
+    "sha256": "a80919d5b72bf0a59ae34f060c2cf93a6fd65e94b90782b2f348b9dd515ad423",
+    "checks": 24662,
+    "source_current": true
+  },
+  "mips_syntax": {
+    "passed": true,
+    "file": "game/item_world.c",
+    "flags": [
+      "-march=mips32",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsyntax-only"
+    ]
+  },
+  "updated_final_mips_fixture": {
+    "cases": 7,
+    "host_precheck_passed": true,
+    "host_results_path": "build/tests/ward-placement-mips-fixture-precheck/layout-and-host-results.json",
+    "host_results_sha256": "0e226be869e63796c3b2983bb0a1f06d3f6d3c1e55fa41e664f8ddae8c342e27",
+    "cave_shared_sight_uses_legal_friendly_hero": true,
+    "forbidden_regions_both_teams": true,
+    "valid_nonwalkable_ward_cliff": [
+      2712,
+      136
+    ],
+    "requires_new_final_BDA": false,
+    "final_BDA_executed": true
+  },
+  "Game_ABI_changed": false,
+  "sight_source_changed": false,
+  "USB_opened": false,
+  "remote_touched": false,
+  "final_complete_bda_verification": {
+    "path": "build/tests/vision-final-mips-candidate3/verification.json",
+    "sha256": "fd9a683a9f81d296e4ebd9b8e74d6b2d71cdd08fb2d5b3514d242a467debcf91",
+    "bda_sha256": "f25c83e1c36c430b92b17dc2bec215bddeb0179dc251368ab934ee2d6f23658b",
+    "elf_sha256": "55c606d75fb7d621887c9f02cae769fd1771d317975aa3deb16b22fa5988d79f",
+    "metadata_sha256": "14e4c1661c3d0e9a30b095d7692fc25e42d0621a5cfae039d5129f826d97f096",
+    "checks": 49,
+    "cases": 7,
+    "public_ELF_calls": 103,
+    "source_current": true,
+    "compiled_source_inputs": 159,
+    "diagnostic_only": false,
+    "entry_executed": false,
+    "physical_H1_tested": false,
+    "outcome_state_writes_after_setup": 0,
+    "workspace_bytes_mips32": 1062736,
+    "workspace_and_vision_payload_bytes": 1202000
+  }
+}

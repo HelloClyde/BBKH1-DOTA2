@@ -21,6 +21,7 @@
 #include "lane_creep_data.h"
 #include "barracks.h"
 #include "runes.h"
+#include "match_time.h"
 
 static int effective_health_regen_with_stats(const DotaGame *,int,const DotaItemStats *);
 static int mana_regen_with_stats(const DotaGame *,int,const DotaItemStats *);
@@ -118,8 +119,9 @@ static int source_range(int squared,int source_units){return (long long)squared*
 int dota_unit_visible(const DotaGame *g,int observer,int target){
     if(!g || (unsigned)observer>=DOTA_MAX_UNITS || (unsigned)target>=DOTA_MAX_UNITS)return 0;
     if(dota_roster_swallowed_by(g,target)>=0)return 0;
-    if(!dota_pit_same_region(g->units[observer].x,g->units[observer].y,g->units[target].x,g->units[target].y) || !dota_sight_team_visible(g,observer,target))return 0;
+    if(!dota_sight_team_visible(g,observer,target))return 0;
     if(dota_extra_target_hidden(g,observer,target))return 0;
+    if(g->units[observer].team!=g->units[target].team&&dota_item_world_smoked(g,target))return 0;
     /* True sight can only change hidden wards or item invisibility here.
      * Keep the shared-sight refresh and hero concealment gates above in their
      * original order; ordinary visible units need no detector search. */
@@ -873,6 +875,7 @@ static void kill_unit(DotaGame *g,int victim,int killer,int source_team) {
         if(v->type==DOTA_CREEP)gold=dota_items_special_bounty_roll(g,killer,v->tier?43:34,v->tier?52:39);
         else if(v->type==DOTA_NEUTRAL){const DotaJungleDefinition *d=dota_jungle_definition(v);if(d)gold=dota_items_special_bounty_roll(g,killer,d->gold_min,d->gold_max);}
     }
+    if(v->active&&v->hp<=0)dota_sight_invalidate();
     if(dota_item_world_on_death(g,victim,killer))return;
     dota_neutral_on_kill(g,victim,killer);
     dota_extra_on_kill(g,victim,killer);dota_roster_on_kill(g,victim,killer);
@@ -915,10 +918,12 @@ static void kill_unit(DotaGame *g,int victim,int killer,int source_team) {
     if(v->type==DOTA_TOWER || v->type==DOTA_BUILDING)sync_navigation(g);
 }
 
-static void damage_snapshot(DotaGame *g,int victim,int amount,int source,int generation,int source_team,int magical) {
+static void damage_snapshot_ex(DotaGame *g,int victim,int amount,int source,int generation,int source_team,int magical,int attack) {
     DotaUnit *v;int armor,dealt,raw_damage=amount,is_magic=magical==1 || magical==3 || magical==5 || magical==7 || magical==9,deferred=magical==4,aura=magical==3 || magical==5;
     if(g->state!=DOTA_PLAYING || amount<=0 || victim<0 || victim>=DOTA_MAX_UNITS || !targetable(g,victim))return;
     v=&g->units[victim];
+    if(victim>=DOTA_ITEM_UNIT_FIRST){int kind=g->item_world.unit[victim-DOTA_ITEM_UNIT_FIRST].kind;
+        if((kind==ITEM_UNIT_OBSERVER||kind==ITEM_UNIT_SENTRY)&&(!attack||magical))return;}
     if(v->type==DOTA_SUMMON && v->hero_id<0){if(magical)return;amount=1;}
     if(!magical && dota_extra_physical_immune(g,victim))return;
     if(v->type==DOTA_ROSHAN && (source<0 || (unsigned)source>=DOTA_MAX_UNITS || !dota_unit_visible(g,source,victim)))return;
@@ -940,7 +945,7 @@ static void damage_snapshot(DotaGame *g,int victim,int amount,int source,int gen
     else if(!magical){int absolute=armor<0?-armor:armor;amount=(int)((long long)amount*(10000+6*absolute-(armor*6))/(10000+6*absolute));}
     if(v->type==DOTA_HERO && v->hero_id==DOTA_HERO_JUGGERNAUT && v->skill_ticks[0] && is_magic)amount/=2;
     if(amount<1)amount=1;
-    if(!deferred){amount=dota_item_world_incoming(g,victim,amount);amount=dota_items_before_damage(g,source,victim,amount,magical);amount=dota_roster_before_damage(g,source,victim,amount,magical);amount=dota_progression_before_damage(g,source,victim,amount,magical);}
+    if(!deferred){amount=dota_item_world_incoming_from(g,victim,source,amount,magical,attack);amount=dota_items_before_damage(g,source,victim,amount,magical);amount=dota_roster_before_damage(g,source,victim,amount,magical);amount=dota_progression_before_damage(g,source,victim,amount,magical);}
     if(!deferred)amount=dota_rune_before_damage(g,victim,amount);
     if(amount<=0)return;
     assist_record(g,victim,source);
@@ -978,6 +983,8 @@ static void damage_snapshot(DotaGame *g,int victim,int amount,int source,int gen
     if(!deferred)dota_roster_after_damage(g,source,victim,dealt,magical);
     if(v->hp<=0){int credited=dota_extra_kill_source(g,victim,source);if(credited!=source && (unsigned)credited<DOTA_MAX_UNITS){source=credited;source_team=g->units[source].team;}v->hp=0;kill_unit(g,victim,source,source_team);}
 }
+
+static void damage_snapshot(DotaGame *g,int victim,int amount,int source,int generation,int source_team,int magical){damage_snapshot_ex(g,victim,amount,source,generation,source_team,magical,0);}
 
 /* Only landed basic attacks call this hook. Magical pulses and reflected
  * Helix damage do not recursively count as incoming attacks. */
@@ -1112,7 +1119,7 @@ static int apply_target_skill(DotaGame *g,int caster,int target,int hero,int ski
     if(alive(v) && !dota_items_debuff_immune(g,target)){v->stun_ticks=resisted_duration(g,target,skill_time(u,1,"duration",20+10*rank));if(v->type==DOTA_HERO && v->hero_id==DOTA_HERO_CRYSTAL_MAIDEN){v->channel_ticks=0;v->skill_ticks[3]=0;}}
     return 20+10*rank;
 }
-static int cast_for(DotaGame *g,int caster,int skill,int x,int y) {
+static int cast_for_impl(DotaGame *g,int caster,int skill,int x,int y) {
     DotaUnit *u=&g->units[caster];int target=-1,range,i,ward=-1,mana_cost,rank;
     DotaSkillEvent *visual;
     int player=caster==g->player;
@@ -1244,11 +1251,14 @@ static int cast_for(DotaGame *g,int caster,int skill,int x,int y) {
     return 1;
 }
 
+static int cast_for(DotaGame *g,int caster,int skill,int x,int y){int result=cast_for_impl(g,caster,skill,x,y);if(result)dota_sight_invalidate();return result;}
+
 int dota_cast(DotaGame *g,int skill,int x,int y) {
+    int result;
     if(!g || (unsigned)skill>DOTA_SKILLS || (unsigned)g->player>=DOTA_HERO_COUNT)return 0;
     if(!g->paused && g->state==DOTA_PLAYING){dota_objective_cancel(g);dota_rune_cancel(g);}
     if(!g->paused && g->state==DOTA_PLAYING && (skill==4?g->units[g->player].hero_id!=DOTA_HERO_SVEN:!dota_skill_is_passive(g->units[g->player].hero_id,skill) && dota_progression_rank(&g->units[g->player],skill)))dota_items_cancel_teleport(g,g->player);
-    sync_navigation(g);if(skill==4)return dota_roster_is_hero(&g->units[g->player])?dota_roster_cast_extra(g,g->player,x,y):dota_extra_cast_shard(g,g->player,x,y);
+    sync_navigation(g);if(skill==4){result=dota_roster_is_hero(&g->units[g->player])?dota_roster_cast_extra(g,g->player,x,y):dota_extra_cast_shard(g,g->player,x,y);if(result)dota_sight_invalidate();return result;}
     return cast_for(g,g->player,skill,x,y);
 }
 int dota_rules_cast_target_matches(const DotaGame *g,int caster,int candidate){
@@ -1268,6 +1278,7 @@ int dota_cast_on_unit(DotaGame *g,int skill,int target,int generation){
     if(skill==4)result=dota_roster_is_hero(&g->units[g->player])?dota_roster_cast_extra(g,g->player,u->x,u->y):dota_extra_cast_shard(g,g->player,u->x,u->y);
     else result=cast_for(g,g->player,skill,u->x,u->y);
     g->cast_target_plus_one=old_target;g->cast_target_generation=old_generation;
+    if(result&&skill==4)dota_sight_invalidate();
     return result;
 }
 
@@ -1367,7 +1378,7 @@ void dota_init(DotaGame *g,int hero,unsigned seed) {
     dota_nav_set_towers(0);
     dota_nav_reset_stats();
     for(i=0;i<DOTA_MAX_SUMMONS;++i)g->summon_owner[i]=-1;
-    g->selected_hero=clamp(hero,0,DOTA_HERO_TYPES-1);g->player=0;g->spawn_wait=1;
+    g->selected_hero=clamp(hero,0,DOTA_HERO_TYPES-1);g->player=0;g->spawn_wait=dota_match_pregame_ticks();
     hero_create(g,0,g->selected_hero,0,1);
     for(i=0;i<DOTA_HERO_TYPES;++i)if(i!=g->selected_hero)roster[remaining++]=i;
     for(i=remaining-1;i>0;--i){int pick,swap;g->seed=g->seed*1664525u+1013904223u;pick=(int)((g->seed>>8)%(unsigned)(i+1));swap=roster[i];roster[i]=roster[pick];roster[pick]=swap;}
@@ -1392,8 +1403,8 @@ void dota_init(DotaGame *g,int hero,unsigned seed) {
         g->units[DOTA_FILLER_FIRST+i].hero_id=i;
     }
     for(team=0;team<2;++team)for(lane=0;lane<3;++lane)dota_barracks_create(g,team,lane,DOTA_BARRACKS_RANGED);
-    for(i=0;i<DOTA_NEUTRAL_CAMPS;++i){g->neutral_group[i]=-1;g->neutral_respawn[i]=60*DOTA_HZ;}
-    g->tormentor.spawn_tick=DOTA_TORMENTOR_FIRST_SPAWN;g->tormentor.location=1;
+    for(i=0;i<DOTA_NEUTRAL_CAMPS;++i){g->neutral_group[i]=-1;g->neutral_respawn[i]=dota_match_elapsed_tick(60*DOTA_HZ);}
+    g->tormentor.spawn_tick=dota_match_elapsed_tick(DOTA_TORMENTOR_FIRST_SPAWN);g->tormentor.location=1;
     g->tormentor.last_damage_tick=-200;g->units[DOTA_TORMENTOR_INDEX].type=DOTA_TORMENTOR;
     for(i=0;i<DOTA_HERO_COUNT;++i)g->assist_generation[i]=g->units[i].generation;
     dota_bosses_init(g);
@@ -1427,7 +1438,7 @@ static void spawn_wave(DotaGame *g) {
         u->tier=number==2;source=&dota_lane_creep_source[u->tier];
         /* Native Turbo keeps the450s upgrade clock and triples each gain.
          * Wave count never contributes stats, and there is no3min bonus. */
-        upgrades=clamp(g->tick/(DOTA_LANE_UPGRADE_TURBO_SECONDS*DOTA_HZ),0,source->max_upgrades);
+        upgrades=clamp(dota_match_game_ticks(g)/(DOTA_LANE_UPGRADE_TURBO_SECONDS*DOTA_HZ),0,source->max_upgrades);
         u->hp=u->max_hp=source->health+upgrades*source->turbo_health_upgrade;
         u->damage=(source->damage_min+source->damage_max)/2+upgrades*source->turbo_damage_upgrade;
         u->speed=source->speed;u->range=source->range;u->armor=source->armor100/100;u->level=source->level;
@@ -1518,7 +1529,7 @@ static void attack_impact(DotaGame *g,DotaProjectile *p){
     if(source>=0)amount=dota_roster_attack_damage(g,source,p->target,amount);
     raw=amount;amount-=dota_items_attack_block(g,source,p->target);if(amount<0)amount=0;
     before=g->units[p->target].hp;
-    damage_snapshot(g,p->target,amount,source,p->source_generation,p->team,0);
+    damage_snapshot_ex(g,p->target,amount,source,p->source_generation,p->team,0,1);
     dealt=before-g->units[p->target].hp;if(dealt<0)dealt=0;
     if(source>=0 && dealt>0 && !g->items.reflection_guard)dota_items_attack_hit(g,source,p->target,dealt);
     if((unsigned)source<DOTA_HERO_COUNT&&g->units[source].hero_id==DOTA_HERO_JUGGERNAUT&&blade_crit>100&&dealt>0&&!g->items.reflection_guard){int heal=dealt*skill_value(&g->units[source],2,"blade_dance_lifesteal",0)/100;if(heal>0)dota_items_restore(g,source,source,heal,0);}
@@ -1736,8 +1747,8 @@ static void neutral_bot(DotaGame *g,int index) {
 }
 
 static void neutral_camps(DotaGame *g) {
-    int camp,i,occupied,living;
-    if(g->tick<60*DOTA_HZ || g->tick%(60*DOTA_HZ))return;
+    int camp,i,occupied,living,match=dota_match_ticks(g);
+    if(match<60*DOTA_HZ || match%(60*DOTA_HZ))return;
     for(camp=0;camp<DOTA_NEUTRAL_CAMPS;++camp) {
         living=0;for(i=dota_jungle_first(camp);i<dota_jungle_end(camp);++i)if(alive(&g->units[i]))living=1;
         g->neutral_respawn[camp]=g->tick+60*DOTA_HZ;
@@ -1768,7 +1779,7 @@ static void tormentor_create(DotaGame *g,int location) {
 }
 static void tormentor_update(DotaGame *g) {
     DotaUnit *u=&g->units[DOTA_TORMENTOR_INDEX];int i,count=0,amount,location;
-    g->tormentor.growth_minutes=g->tick/(60*DOTA_HZ);
+    g->tormentor.growth_minutes=dota_match_game_ticks(g)/(60*DOTA_HZ);
     /* Reflect the accumulated shield damage after the source0.8s preview.
      * Only heroes share this wave; damage cannot recursively hit the boss. */
     if(g->tormentor.reflect_wait && --g->tormentor.reflect_wait==0) {
@@ -1785,7 +1796,7 @@ static void tormentor_update(DotaGame *g) {
         }
         g->tormentor.reflect_damage_q200=0;
     }
-    location=(g->tick/(5*60*DOTA_HZ))%2?0:1; /* Current7.41: Bottom by day. */
+    location=dota_match_is_night(g)?0:1; /* Current7.41: Bottom by day. */
     if(!alive(u)) {
         if(u->type!=DOTA_TORMENTOR)return; /* Do not overwrite controlled test actors. */
         if(u->respawn_ticks>0) {
@@ -2169,7 +2180,7 @@ void dota_tick(DotaGame *g,const DotaInput *input) {
     dota_progression_tick(g);
     for(i=0;i<DOTA_HERO_COUNT;++i){
         DotaUnit *u=&g->units[i];assist_sync(g,i);passive_sync(g,i);
-        if(u->active && u->type==DOTA_HERO)u->gold+=dota_turbo_passive_gold_at_tick(g->tick);
+        if(u->active && u->type==DOTA_HERO)u->gold+=dota_turbo_passive_gold_at_tick(dota_match_game_ticks(g));
         if(g->omnislash[i].phase && !dota_omnislash_phase(g,i))omnislash_clear(g,i);
         if(!alive(u) || u->type!=DOTA_HERO)continue;
         if(g->passive_wait[i])--g->passive_wait[i];
@@ -2178,7 +2189,9 @@ void dota_tick(DotaGame *g,const DotaInput *input) {
     }
     if(g->last_event_ticks && --g->last_event_ticks==0)g->last_event=0;
     for(i=0;i<DOTA_MAX_EFFECTS;++i)if(g->effects[i].active && --g->effects[i].ticks<=0){g->effects[i].active=0;g->skill_effect_tags[i]=0;}
-    if(--g->spawn_wait<=0){spawn_wave(g);g->spawn_wait=DOTA_LANE_WAVE_SECONDS*DOTA_HZ;}
+    {int match=dota_match_ticks(g),period=DOTA_LANE_WAVE_SECONDS*DOTA_HZ;
+     g->spawn_wait=match<0?-match:period-match%period;
+     if(match>=0&&match%period==0)spawn_wave(g);}
     neutral_camps(g);
     tormentor_update(g);
     for(i=0;i<DOTA_MAX_SUMMONS;++i)if(g->units[DOTA_SUMMON_FIRST+i].active
@@ -2236,7 +2249,7 @@ void dota_rules_skill_effect(DotaGame *g,int caster,int skill,int kind,int x,int
 void dota_rules_attack_once(DotaGame *g,int source,int target){if(g && (unsigned)source<DOTA_MAX_UNITS && (unsigned)target<DOTA_MAX_UNITS)attack(g,source,target);}
 void dota_rules_set_position(DotaGame *g,int hero,int x,int y){
     DotaUnit *u=&g->units[hero];DotaMovementState *m=&g->movement[hero];
-    dota_sight_reset();
+    dota_sight_invalidate();
     u->x=clamp(x,0,DOTA_WORLD-1);u->y=clamp(y,0,DOTA_WORLD-1);m->x_q16=u->x*DOTA_MOVE_ONE;m->y_q16=u->y*DOTA_MOVE_ONE;m->generation=u->generation;m->tick=g->tick;m->remaining_q16=0;
     g->unit_routes[hero].count=g->unit_routes[hero].index=0;
     if(hero==g->player)g->player_path_count=g->player_path_index=0;

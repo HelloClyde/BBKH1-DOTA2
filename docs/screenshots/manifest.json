@@ -1,6 +1,11 @@
 {
-  "version": "0.27",
-  "physical_bda_sha256": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d",
+  "schema_version": 2,
+  "version": "0.28",
+  "scope": "Mixed-version gallery; each image carries its own version and physical binary identity. Historical v0.27 and host previews are not v0.28 device evidence.",
+  "physical_bda_by_version": {
+    "0.27": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d",
+    "0.28": "f25c83e1c36c430b92b17dc2bec215bddeb0179dc251368ab934ee2d6f23658b"
+  },
   "images": [
     {
       "path": "docs/screenshots/h1-gameplay.png",
@@ -9,7 +14,9 @@
       "width": 480,
       "height": 272,
       "sha256": "1acbea3454989b0f0e46becbe207df2687c0729d77c38aaabf4216c613de4111",
-      "unmodified_copy": true
+      "unmodified_copy": true,
+      "version": "0.27",
+      "bda_sha256": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d"
     },
     {
       "path": "docs/screenshots/h1-shop-recommended.png",
@@ -18,7 +25,9 @@
       "width": 480,
       "height": 272,
       "sha256": "6c9ec99bd9372388ff38bc6a4458ef37381b9655697cc53e3a75e003255a5d29",
-      "unmodified_copy": true
+      "unmodified_copy": true,
+      "version": "0.27",
+      "bda_sha256": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d"
     },
     {
       "path": "docs/screenshots/h1-pause-help.png",
@@ -27,7 +36,9 @@
       "width": 480,
       "height": 272,
       "sha256": "7d46f7158f12b08b4168ed7b9973de112b903fcebc4de9f1bc08a6a7ec7ee95e",
-      "unmodified_copy": true
+      "unmodified_copy": true,
+      "version": "0.27",
+      "bda_sha256": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d"
     },
     {
       "path": "docs/screenshots/h1-shop-upgrades.png",
@@ -36,7 +47,9 @@
       "width": 480,
       "height": 272,
       "sha256": "38d5753a8e5c708495ff11ac6f3ff2f753bd5730300d755a0c36cd3acc7ad790",
-      "unmodified_copy": true
+      "unmodified_copy": true,
+      "version": "0.27",
+      "bda_sha256": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d"
     },
     {
       "path": "docs/screenshots/host-necro-five-skills.png",
@@ -45,7 +58,32 @@
       "width": 480,
       "height": 272,
       "sha256": "3adb5a51702059c121f1f893ff67607247388392d3fb518978ad862b146789af",
-      "unmodified_copy": true
+      "unmodified_copy": true,
+      "version": "0.27"
+    },
+    {
+      "path": "docs/screenshots/h1-v028-wards.png",
+      "source": "build/v028/device/acceptance-3/forbidden-ward-preview.png",
+      "version": "0.28",
+      "kind": "physical_h1",
+      "bda_sha256": "f25c83e1c36c430b92b17dc2bec215bddeb0179dc251368ab934ee2d6f23658b",
+      "width": 480,
+      "height": 272,
+      "sha256": "91861107378d58a6978a828801ab640ddd82ec9be2092186ee514be6cff23751",
+      "unmodified_copy": true,
+      "source_report_sha256": "e0cb2a2d40e027014982de3aacc049af5c72097b5e3d3671b520097015ad242d"
+    },
+    {
+      "path": "docs/screenshots/h1-v028-fog.png",
+      "source": "build/v028/device/acceptance-3/midlane-fog.png",
+      "version": "0.28",
+      "kind": "physical_h1",
+      "bda_sha256": "f25c83e1c36c430b92b17dc2bec215bddeb0179dc251368ab934ee2d6f23658b",
+      "width": 480,
+      "height": 272,
+      "sha256": "a088dd220b3d4e273efc15112b836645611eb84ce6e0ab748c57b0f8339cf16d",
+      "unmodified_copy": true,
+      "source_report_sha256": "e0cb2a2d40e027014982de3aacc049af5c72097b5e3d3671b520097015ad242d"
     }
   ],
   "rights": "Screenshots contain Valve game artwork and Microsoft-derived bitmap glyphs; the project GPL grant does not relicense these elements."

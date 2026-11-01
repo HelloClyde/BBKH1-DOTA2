@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "fixed_point_bits": 16,
+  "integer_xy_positions": 463107,
+  "hulls": [
+    {
+      "hull": 0,
+      "integer_xy_positions": 66360,
+      "different_memberships": 0
+    },
+    {
+      "hull": 1,
+      "integer_xy_positions": 104675,
+      "different_memberships": 0
+    },
+    {
+      "hull": 2,
+      "integer_xy_positions": 39889,
+      "different_memberships": 0
+    },
+    {
+      "hull": 3,
+      "integer_xy_positions": 102017,
+      "different_memberships": 0
+    },
+    {
+      "hull": 4,
+      "integer_xy_positions": 62694,
+      "different_memberships": 0
+    },
+    {
+      "hull": 5,
+      "integer_xy_positions": 76160,
+      "different_memberships": 0
+    },
+    {
+      "hull": 6,
+      "integer_xy_positions": 11312,
+      "different_memberships": 0
+    }
+  ],
+  "differences": [],
+  "original_source_audit_sha256": "8029bab2614751b82278178918d25b2b017097418937f57c4de61e42e290e757",
+  "runtime_data_sha256": "365b8348dc18db40dd877b48b849d1a2857d8b85b399bec3473dc2ab6128278a",
+  "header_sha256": "2bc4f1646ab2e3ba8e08ecd068531de50e3771f410f5e60a31cb2418b8bda462",
+  "scope": "Offline comparison of each compiled PHYS hull float XY projection versus runtime Q16 polygon at every integer position within its map-clipped bounding box; no claim about flying-height/native-engine trigger semantics."
+}

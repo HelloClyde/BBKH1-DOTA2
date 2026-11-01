@@ -31,6 +31,7 @@ int dota_extra_regen_flat100(const DotaGame *g,int hero);
 int dota_extra_additional_regen100(const DotaGame *g,int hero);
 int dota_extra_additional_mana_regen100(const DotaGame *g,int hero);
 int dota_extra_attack_speed_delta(const DotaGame *g,int hero);
+int dota_extra_shadow_dance_passive_active(const DotaGame *game,int hero);
 int dota_extra_magic_resist_delta(const DotaGame *g,int hero);
 int dota_extra_physical_immune(const DotaGame *g,int hero);
 int dota_extra_disarmed(const DotaGame *g,int hero);

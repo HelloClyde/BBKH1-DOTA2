@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "original_source_root_role": "Read-only legacy Steam extraction evidence; original VPK/DLL/firmware not copied by this task.",
+  "source_files": [
+    {
+      "original_relative_path": "private/extra-heroes/source/slark.txt",
+      "sha256": "c3bf34ff95deb386eaa918b14920ecd76b5a2a6060d7c07868ac39b8047cc752",
+      "bytes": 18345,
+      "selected_fields": {
+        "slark_shadow_dance.activation_delay_seconds": 0.5,
+        "slark_shadow_dance.neutral_disable_seconds": 2.0,
+        "slark_shadow_dance.duration_seconds": [
+          4,
+          4.25,
+          4.5
+        ],
+        "slark_shadow_dance.bonus_movement_speed_percent": [
+          20,
+          30,
+          40
+        ]
+      }
+    },
+    {
+      "original_relative_path": "private/items/current-source/items.txt",
+      "sha256": "04c432155f6c89c7277a76c8cfb72ff96a6b0d908969a03efc15f41ac1694d6e",
+      "bytes": 666552,
+      "selected_fields": {
+        "item_ward_observer.AbilityCastRange": 500,
+        "item_ward_observer.lifetime_seconds": 360,
+        "item_ward_observer.vision_range_tooltip": 1600,
+        "item_ward_observer.health": 200,
+        "item_ward_sentry.AbilityCastRange": 500,
+        "item_ward_sentry.lifetime_seconds": 420,
+        "item_ward_sentry.vision_range": 0,
+        "item_ward_sentry.true_sight_range": 1050,
+        "item_ward_sentry.health": 200,
+        "item_ward_dispenser.lifetime_observer_seconds": 360,
+        "item_ward_dispenser.lifetime_sentry_seconds": 420,
+        "item_smoke_of_deceit.visibility_radius": 1025
+      }
+    },
+    {
+      "original_relative_path": "private/items/special-source/unit-vision-data.json",
+      "sha256": "2a452c66cb09e851ec9c39912687e70e84e30950657b5aefd269ab85d33622c9",
+      "bytes": 8805,
+      "selected_fields": {
+        "hero_default_day": 1800,
+        "hero_default_night": 800,
+        "slark_day_and_night": 1800,
+        "observer_day_and_night": 1600,
+        "sentry_day_and_night": 0,
+        "watcher_day": 800,
+        "watcher_night": 450
+      }
+    }
+  ],
+  "implementation_rules": {
+    "terrain": "Use independently generated VISION.H1V int16 world heights and original tree-only bitset. No navigation clearance or walkability blocking.",
+    "grid_world": 16,
+    "grid_source": 64,
+    "height_level_world": 32,
+    "height_quantization": "nearest signed 32-world-unit level; higher levels block ground sight; unknown cells opaque.",
+    "tree_line_of_sight": "Integer octant shadowcasting, blocking tree cell is visible, cells behind are occluded. Dynamic planted tree invalidates cached masks.",
+    "shared_team_sources": "living heroes/creeps/structures/owned observer wards, fountains, captured watchers, roster area-vision fields and dropped Gem fields; sentries supply detection but no ground sight.",
+    "pit": "each sight or detection source respects cave-region boundaries; source in cave contributes to its team independently of another observer position. Renderer retains its own strict cave mask.",
+    "true_sight": "Only reveal invisible wards/item invisibility after shared ground-position visibility; does not provide ground sight or reveal Smoke/active Shadow Dance.",
+    "slark": "Enemy team position visibility, ignoring Slark target invisibility, disables only the passive; activation_delay and neutral_disable read original ability values. Active Shadow Dance concealment remains detection-immune.",
+    "ward_health": "200 from item creation AbilityValues rather than the raw NPC default health100.",
+    "ward_attack_model": "H1 fixed hit model: real hero attacks100, nonhero attacks25, skills immune; normal in-flight attack allowed after shooter death. This 100/25 callback has not been decoded from original native engine and is an adaptation, not a claim of complete native equivalence.",
+    "fog": "current and explored bitsets in borrowed heap. Row spans equal exact original center-point circle comparison; no radius widening. Take Aim entire140-degree cone constrains both base and extended radius.",
+    "failure": "Missing terrain with workspace => flat ground radial/shared fog; missing workspace => fog0 and enemy hidden while own-team units remain visible."
+  },
+  "limitations": [
+    "64-Source-unit grid and quantized height LOS are approximations, not the full Valve fog/vision engine.",
+    "Static baked map trees cannot be visually removed; their existing Tango cast remains rejected. Dynamic planted tree removal updates LOS.",
+    "Host and MIPS model tests do not establish physical H1 FPS, firmware scheduling, audio quality or full native-engine compatibility."
+  ],
+  "official_slark_reference": "https://www.dota2.com/hero/slark",
+  "exact_performance_caches": {
+    "workspace_bytes_mips32": 1062736,
+    "slope_entries_per_side": 2144,
+    "slope_precompute": "Exact original signed Q16 divisions once at terrain attach; no per-cell DIV in cast.",
+    "circle_reach": "16 lazy budget-keyed LRU entries,1041 uint16 values and33-word validity mask each. Cache key budget=radius^2>>4, value=floor(sqrt(budget-dy^2)); misses use unchanged integer root. Eviction clears only valid bits.",
+    "obstruction": "plot reuses the same pure wall result already computed by cast.",
+    "resolution_range_and_freshness_changed": false,
+    "Game_ABI_changed": false,
+    "static_large_tables_added": false,
+    "source_sha256": "ba25554f939f425c1624f28597c1a3819cbb4f09f3929c7d98019fac9fb0f6c1",
+    "evidence": "build/v028/perf-vision-candidate/reach-equivalence.json",
+    "physical_H1_speedup_validated": false,
+    "workspace_and_vision_payload_bytes": 1202000,
+    "shared_shadow_mask_entries": 128,
+    "shared_shadow_receipt": "build/v028/shared-shadow-cache/PRODUCTION-READY.json",
+    "shared_shadow_receipt_sha256": "f1e5f623a4f7dc28673623aec9c6b4b35bb316c63d908ebf2bb77a311c7e3e7e"
+  },
+  "ward_placement_guard": {
+    "ready_index": "provenance/ward-placement/READY.json",
+    "ready_index_sha256": "749aadbaacb2b0b6d69f0459c0eabf4f4266580c05d2b4561d320b7ddb23a315",
+    "native_entities": 5,
+    "native_convex_hulls": 7,
+    "fixed_point_bits": 16,
+    "query": "dota_item_world_ward_placeable",
+    "no_navigation_rule_added": true,
+    "fow_outline_not_used_for_placement": true
+  }
+}

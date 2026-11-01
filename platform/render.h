@@ -21,6 +21,7 @@ typedef struct DotaView {
     int skills_return_screen,skills_selected,skills_details,skills_scroll;
     int inventory_source,inventory_hover,inventory_mode;
     int drag_x,drag_y;
+    int ward_mode; /* Append-only: 0 observer, 1 sentry while aiming a ward. */
 } DotaView;
 
 extern uint16_t dota_pixels[480*272];

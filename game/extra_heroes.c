@@ -6,6 +6,7 @@
 #include "roster_heroes.h"
 #include "progression.h"
 #include "items_internal.h"
+#include "sight.h"
 
 static int cap(int x,int a,int b){return x<a?a:(x>b?b:x);}
 static int live(const DotaUnit *u){return u->active && u->hp>0;}
@@ -62,8 +63,9 @@ int dota_extra_attack_speed(const DotaGame *g,int i){
 static int dance_passive(const DotaGame *g,int i){
     const DotaExtraHero *s=&g->extra.hero[i];const DotaUnit *u=&g->units[i];
     return u->hero_id==4 && rank(u,3)>0 && (s->shadow_until>g->tick ||
-      (!dota_items_broken(g,i) && s->unseen_since>0 && g->tick-s->unseen_since>=10 && g->tick>=s->neutral_until));
+      (!dota_items_broken(g,i) && s->unseen_since>0 && g->tick-s->unseen_since>=ticks(u,3,"activation_delay",10) && g->tick>=s->neutral_until && !dota_sight_team_position_visible(g,!u->team,u->x,u->y)));
 }
+int dota_extra_shadow_dance_passive_active(const DotaGame *g,int i){return g && hero_index(g,i) && live(&g->units[i]) && dance_passive(g,i);}
 static int dance_rank(const DotaGame *g,int i){int j,r=0;if(dance_passive(g,i))r=rank(&g->units[i],3);
     for(j=0;j<10;++j){const DotaExtraHero *s=&g->extra.hero[j];if(g->units[j].hero_id==4 && s->shroud_until>g->tick && g->units[j].team==g->units[i].team && within(g->units[i].x,g->units[i].y,s->shroud_x,s->shroud_y,s->shroud_radius) && s->shroud_rank>r)r=s->shroud_rank;}return r;
 }
@@ -341,8 +343,7 @@ void dota_extra_tick(DotaGame *g){
         scythe_tick(g,i,&s->scythe_at,s->scythe_target,s->scythe_generation,s->scythe_rank);
         {DotaExtraScythe *saved=&g->extra.scythe_saved[i];scythe_tick(g,i,&saved->at,saved->target,saved->generation,saved->rank);}
         if(!live(u))continue;
-        if(u->hero_id==4){int seen=0;
-            for(j=0;j<DOTA_MAX_UNITS;++j)if(live(&g->units[j]) && g->units[j].team!=u->team && g->units[j].team<2 && within(u->x,u->y,g->units[j].x,g->units[j].y,dota_rules_unit_vision_source(g,j)) && dota_unit_visible(g,j,i)){seen=1;break;}
+        if(u->hero_id==4){int seen=dota_sight_team_position_visible(g,!u->team,u->x,u->y);
             if(seen)s->unseen_since=0;else if(!s->unseen_since)s->unseen_since=g->tick;
         }
         /* Saltwater Shiv's +/-flat regeneration is aggregated by the core

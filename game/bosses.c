@@ -3,6 +3,7 @@
 #include "vision.h"
 #include "roshan_data.h"
 #include "turbo.h"
+#include "match_time.h"
 
 #define CAMP_PERIOD (60*DOTA_HZ)
 #define ROSHAN_SLAM_VISUAL 20
@@ -53,7 +54,7 @@ static void spawn_camp(DotaGame *g,int camp){
 }
 static void spawn_roshan(DotaGame *g,int pit){
     DotaUnit *u=&g->units[DOTA_ROSHAN_INDEX];clear_unit(u);u->type=DOTA_ROSHAN;copy_stats(u,0);place(u,dota_roshan_pit_positions[pit][0],dota_roshan_pit_positions[pit][1]);
-    u->max_hp+=DOTA_ROSHAN_HEALTH_PER_MINUTE*(g->tick/CAMP_PERIOD);u->hp=u->max_hp;
+    u->max_hp+=DOTA_ROSHAN_HEALTH_PER_MINUTE*(dota_match_game_ticks(g)/CAMP_PERIOD);u->hp=u->max_hp;
     g->bosses.roshan_pit=pit;g->bosses.roshan_spawn_tick=0;g->bosses.roshan_slam_wait=g->bosses.roshan_roar_wait=g->bosses.roshan_spellblock_wait=0;g->bosses.roshan_regen_fraction=0;
     g->bosses.roshan_last_damage_tick=-200;u->skill_x=u->skill_y=0;
 }
@@ -61,8 +62,9 @@ void dota_bosses_init(DotaGame *g){
     int i;unsigned char *p=(unsigned char *)&g->bosses;for(i=0;i<(int)sizeof(g->bosses);++i)p[i]=0;
     g->bosses.aegis_owner=-1;g->bosses.aegis_generation=-1;
     for(i=DOTA_ANCIENT_FIRST;i<DOTA_ANCIENT_FIRST+DOTA_ANCIENT_CAMPS*3;++i)clear_unit(&g->units[i]);
-    for(i=0;i<DOTA_ANCIENT_CAMPS;++i){int j;g->bosses.ancient_group[i]=-1;g->bosses.ancient_spawn_tick[i]=CAMP_PERIOD;for(j=0;j<3;++j){DotaUnit *u=&g->units[DOTA_ANCIENT_FIRST+i*3+j];u->type=DOTA_ANCIENT;u->lane=i;}}
-    spawn_roshan(g,0);
+    for(i=0;i<DOTA_ANCIENT_CAMPS;++i){int j;g->bosses.ancient_group[i]=-1;g->bosses.ancient_spawn_tick[i]=dota_match_elapsed_tick(CAMP_PERIOD);for(j=0;j<3;++j){DotaUnit *u=&g->units[DOTA_ANCIENT_FIRST+i*3+j];u->type=DOTA_ANCIENT;u->lane=i;}}
+    clear_unit(&g->units[DOTA_ROSHAN_INDEX]);g->units[DOTA_ROSHAN_INDEX].type=DOTA_ROSHAN;
+    g->bosses.roshan_spawn_tick=dota_match_elapsed_tick(0);
 }
 static void camp_return(DotaGame *g,int camp){int i;g->bosses.ancient_state[camp]=DOTA_NEUTRAL_RETURN;for(i=DOTA_ANCIENT_FIRST+camp*3;i<DOTA_ANCIENT_FIRST+camp*3+3;++i)g->units[i].target=-1;}
 void dota_bosses_on_damage(DotaGame *g,int victim,int source){
@@ -85,7 +87,7 @@ int dota_bosses_on_killed(DotaGame *g,int victim,int source,int team){
     if((unsigned)source<DOTA_HERO_COUNT && g->units[source].type==DOTA_HERO && g->units[source].team==team)g->units[source].gold+=dota_turbo_gold_reward(gold);
     dota_rules_effect(g,DOTA_FX_DEATH,team,u->x,u->y,u->x,u->y,50,16);u->active=0;u->hp=0;u->target=-1;u->channel_ticks=0;u->skill_ticks[0]=u->skill_ticks[1]=0;
     if(u->type==DOTA_ANCIENT && (unsigned)u->lane<DOTA_ANCIENT_CAMPS){int i,live=0;for(i=DOTA_ANCIENT_FIRST+u->lane*3;i<DOTA_ANCIENT_FIRST+u->lane*3+3;++i)if(alive(&g->units[i]))live=1;
-        if(!live)g->bosses.ancient_spawn_tick[u->lane]=(g->tick/CAMP_PERIOD+1)*CAMP_PERIOD;
+        if(!live)g->bosses.ancient_spawn_tick[u->lane]=dota_match_elapsed_tick((dota_match_game_ticks(g)/CAMP_PERIOD+1)*CAMP_PERIOD);
     }else if(u->type==DOTA_ROSHAN){int i,recipient=-1,best=1500*1500;
         ++g->bosses.roshan_kills;g->bosses.roshan_spawn_tick=g->tick+DOTA_ROSHAN_RESPAWN_MIN_TICKS+(int)(next(g)%(DOTA_ROSHAN_RESPAWN_MAX_TICKS-DOTA_ROSHAN_RESPAWN_MIN_TICKS+1));
         u->respawn_ticks=g->bosses.roshan_spawn_tick-g->tick;
@@ -143,7 +145,7 @@ static void ancient_tick(DotaGame *g,int index){
     u->target=target;dota_rules_attack_or_move(g,index,target);
 }
 static void roshan_impact(DotaGame *g,int kind){
-    DotaUnit *u=&g->units[DOTA_ROSHAN_INDEX];int i,minute=g->tick/CAMP_PERIOD,radius=kind==1?DOTA_ROSHAN_SLAM_RADIUS_SOURCE:DOTA_ROSHAN_ROAR_RADIUS_SOURCE;
+    DotaUnit *u=&g->units[DOTA_ROSHAN_INDEX];int i,minute=dota_match_game_ticks(g)/CAMP_PERIOD,radius=kind==1?DOTA_ROSHAN_SLAM_RADIUS_SOURCE:DOTA_ROSHAN_ROAR_RADIUS_SOURCE;
     for(i=0;i<DOTA_MAX_UNITS;++i)if(enemy(g,DOTA_ROSHAN_INDEX,i) && within(distance(u->x,u->y,g->units[i].x,g->units[i].y),radius)){
         DotaUnit *v=&g->units[i];int amount=kind==1?DOTA_ROSHAN_SLAM_BASE_DAMAGE+minute*DOTA_ROSHAN_SLAM_DAMAGE_PER_MINUTE:DOTA_ROSHAN_ROAR_BASE_DAMAGE+minute*DOTA_ROSHAN_ROAR_DAMAGE_PER_MINUTE;
         if(kind==1){if(v->type==DOTA_CREEP)amount+=100;v->slow_ticks=DOTA_ROSHAN_SLAM_SLOW_TICKS;v->buff_ticks=DOTA_ROSHAN_SLAM_SLOW_PERCENT;}
@@ -155,7 +157,7 @@ static void roshan_impact(DotaGame *g,int kind){
 static void roshan_tick(DotaGame *g){
     DotaBossState *b=&g->bosses;DotaUnit *u=&g->units[DOTA_ROSHAN_INDEX];int target,home_x,home_y,pit=b->roshan_pit;
     if(!alive(u)){
-        if(b->roshan_spawn_tick>0){u->respawn_ticks=clamp(b->roshan_spawn_tick-g->tick,0,DOTA_ROSHAN_RESPAWN_MAX_TICKS);if(g->tick>=b->roshan_spawn_tick)spawn_roshan(g,g->tick>=DOTA_ROSHAN_FIRST_MOVE_TICKS?(g->tick/(5*CAMP_PERIOD))%2:0);}
+        if(b->roshan_spawn_tick>0){u->respawn_ticks=clamp(b->roshan_spawn_tick-g->tick,0,DOTA_ROSHAN_RESPAWN_MAX_TICKS);if(g->tick>=b->roshan_spawn_tick)spawn_roshan(g,dota_match_game_ticks(g)>=DOTA_ROSHAN_FIRST_MOVE_TICKS?dota_match_is_night(g):0);}
         return;
     }
     if(b->roshan_slam_wait)--b->roshan_slam_wait;
@@ -166,7 +168,7 @@ static void roshan_tick(DotaGame *g){
         if(u->stun_ticks || u->taunt_ticks){u->skill_ticks[0]=u->skill_ticks[1]=0;u->channel_ticks=0;}
         else if(--u->skill_ticks[1]==0)roshan_impact(g,u->skill_x);
     }
-    {int desired_hp=dota_wild_source_defs[0].hp+DOTA_ROSHAN_HEALTH_PER_MINUTE*(g->tick/CAMP_PERIOD);
+    {int desired_hp=dota_wild_source_defs[0].hp+DOTA_ROSHAN_HEALTH_PER_MINUTE*(dota_match_game_ticks(g)/CAMP_PERIOD);
      if(u->max_hp!=desired_hp && u->max_hp>0){u->hp=clamp((int)((long long)u->hp*desired_hp/u->max_hp),1,desired_hp);u->max_hp=desired_hp;}}
     b->roshan_regen_fraction+=dota_wild_source_defs[0].regen_per_sec_x100;
     if(b->roshan_regen_fraction>=2000){u->hp=clamp(u->hp+b->roshan_regen_fraction/2000,0,u->max_hp);b->roshan_regen_fraction%=2000;}
@@ -175,8 +177,8 @@ static void roshan_tick(DotaGame *g){
         if(u->target>=0 && !u->stun_ticks && !u->channel_ticks)dota_rules_attack_or_move(g,DOTA_ROSHAN_INDEX,u->target);
         return;
     }
-    if(g->tick>=DOTA_ROSHAN_FIRST_MOVE_TICKS){
-        int desired=(g->tick/(5*CAMP_PERIOD))%2;
+    if(dota_match_game_ticks(g)>=DOTA_ROSHAN_FIRST_MOVE_TICKS){
+        int desired=dota_match_is_night(g);
         if(desired!=pit){
             home_x=dota_roshan_pit_positions[desired][0];home_y=dota_roshan_pit_positions[desired][1];u->target=-1;u->speed=dota_wild_source_defs[0].speed_source;
             dota_rules_move(g,DOTA_ROSHAN_INDEX,home_x,home_y);
@@ -203,7 +205,7 @@ void dota_bosses_tick(DotaGame *g){
     if(b->aegis_owner>=0 && ((unsigned)b->aegis_owner>=10 || (!b->aegis_revive_tick && b->aegis_expire_tick<=g->tick) || g->units[b->aegis_owner].generation!=b->aegis_generation || g->units[b->aegis_owner].type!=DOTA_HERO)){b->aegis_owner=b->aegis_generation=-1;b->aegis_expire_tick=b->aegis_revive_tick=0;}
     for(camp=0;camp<DOTA_ANCIENT_CAMPS;++camp){int alive_count=0;
         for(i=DOTA_ANCIENT_FIRST+camp*3;i<DOTA_ANCIENT_FIRST+camp*3+3;++i)if(alive(&g->units[i]))++alive_count;
-        if(!alive_count && b->ancient_spawn_tick[camp]>0 && g->tick>=b->ancient_spawn_tick[camp] && g->tick%CAMP_PERIOD==0){if(!occupied(g,camp))spawn_camp(g,camp);else b->ancient_spawn_tick[camp]=g->tick+CAMP_PERIOD;}
+        if(!alive_count && b->ancient_spawn_tick[camp]>0 && g->tick>=b->ancient_spawn_tick[camp] && dota_match_ticks(g)%CAMP_PERIOD==0){if(!occupied(g,camp))spawn_camp(g,camp);else b->ancient_spawn_tick[camp]=g->tick+CAMP_PERIOD;}
         for(i=DOTA_ANCIENT_FIRST+camp*3;i<DOTA_ANCIENT_FIRST+camp*3+3;++i)ancient_tick(g,i);
     }
     roshan_tick(g);

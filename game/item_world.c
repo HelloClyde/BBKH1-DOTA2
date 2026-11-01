@@ -13,10 +13,24 @@
 #include "item_npc_data.h"
 #include "jungle_npc_data.h"
 #include "lane_creep_data.h"
+#include "sight.h"
+#include "ward_placement_data.h"
 enum { NPC_EFFECT_PURGE=1,NPC_EFFECT_ICEFIRE,NPC_EFFECT_DESECRATE,NPC_EFFECT_PETRIFY,NPC_EFFECT_SLAM,NPC_EFFECT_FRENZY };
 static void npc_tick(DotaGame *g,int index);
 static void npc_effect_tick(DotaGame *g);
 static int npc_begin(DotaGame *g,int index,int target);
+static void smoke_tick(DotaGame *g){
+    int i,j,radius=0;
+    for(i=0;i<DOTA_ITEMS_EFFECTS;++i){const DotaItemEffect *e=&g->items.effects[i];int target=e->target;
+        if(!e->ticks || e->kind!=IE_INVISIBLE || e->value!=2 || (e->tag&32767)!=DOTA_ITEM_SMOKE_OF_DECEIT || (unsigned)target>=DOTA_MAX_UNITS || !g->units[target].active || e->generation!=g->units[target].generation)continue;
+        if(!radius)radius=dota_items_parameter(DOTA_ITEM_SMOKE_OF_DECEIT,IP_VISIBILITY_RADIUS,-1,102500)/100;
+        for(j=0;j<DOTA_MAX_UNITS;++j){const DotaUnit *u=&g->units[j];long long dx,dy;
+            if(!u->active || u->hp<=0 || u->team==g->units[target].team || (unsigned)u->team>=2 || (u->type!=DOTA_HERO && u->type!=DOTA_TOWER))continue;
+            dx=u->x-g->units[target].x;dy=u->y-g->units[target].y;
+            if((dx*dx+dy*dy)*16<=(long long)radius*radius){dota_items_remove_effect(g,i);break;}
+        }
+    }
+}
 static void clear(void*p,int n){
     unsigned char*b=p;
     while(n--)*b++=0;
@@ -37,6 +51,24 @@ static int sq(int x,int y,int xx,int yy){
 static int range(int x,int y,int xx,int yy,int source){
     int w=(source+3)/4;
     return sq(x,y,xx,yy)<=w*w;
+}
+int dota_item_world_ward_placeable(const DotaGame*g,int owner,int x,int y){
+    int polygon,px,py;
+    if(!g || (unsigned)owner>=DOTA_HERO_COUNT || !live(g,owner) || g->units[owner].type!=DOTA_HERO || (unsigned)g->units[owner].team>=2 || (unsigned)x>=DOTA_WORLD || (unsigned)y>=DOTA_WORLD)return 0;
+    px=x*65536;py=y*65536;
+    for(polygon=0;polygon<DOTA_WARD_FORBIDDEN_HULLS;++polygon){
+        const int *bounds=dota_ward_forbidden_bounds_q16[polygon];
+        int first=dota_ward_forbidden_offsets[polygon],end=dota_ward_forbidden_offsets[polygon+1],i,inside=1;
+        if(px<bounds[0] || px>bounds[1] || py<bounds[2] || py>bounds[3])continue;
+        for(i=first;i<end;++i){
+            int next=i+1<end?i+1:first;
+            long long dx=dota_ward_forbidden_q16[next][0]-dota_ward_forbidden_q16[i][0];
+            long long dy=dota_ward_forbidden_q16[next][1]-dota_ward_forbidden_q16[i][1];
+            if(dx*(py-dota_ward_forbidden_q16[i][1])-dy*(px-dota_ward_forbidden_q16[i][0])<0){inside=0;break;}
+        }
+        if(inside)return 0;
+    }
+    return 1;
 }
 static int param(int id,int key,int fallback){
     return dota_items_parameter(id,key,-1,fallback*100)/100;
@@ -171,7 +203,7 @@ static int new_unit(DotaGame*g,int owner,int kind,int item,int duration,int x,in
     DotaUnit*u;
     DotaItemWorldUnit*s;
     if(kind==ITEM_UNIT_OBSERVER||kind==ITEM_UNIT_SENTRY){
-        if(x<0||y<0||x>=DOTA_WORLD||y>=DOTA_WORLD)return -1;
+        if(!dota_item_world_ward_placeable(g,owner,x,y))return -1;
         nx=x;ny=y;
     }else if(!dota_nav_nearest(x,y,160,&nx,&ny))return -1;
     for(i=DOTA_ITEM_UNIT_FIRST;i<DOTA_MAX_UNITS;i++)if(!live(g,i))break;
@@ -205,6 +237,7 @@ static int new_unit(DotaGame*g,int owner,int kind,int item,int duration,int x,in
     s->incoming_percent=100;
     s->source_item=item;
  s->source_type=0;s->source_team=g->units[owner].team;
+    dota_sight_invalidate();
     return i;
 }
 /* Original rune tooltip: two75s illusions,35% outgoing,200% melee/300%
@@ -261,27 +294,50 @@ int dota_item_world_on_death(DotaGame*g,int victim,int source){
     /* Keep the source owner for an already applied native DOT/projectile.
      * Reuse is generation guarded and new_unit clears this record. */
     s->until=0;
+    dota_sight_invalidate();
     return 1;
+}
+int dota_item_world_incoming_from(DotaGame*g,int victim,int source,int amount,int magical,int attack){
+    DotaItemWorldUnit*s=world_unit(g,victim);
+    if(s && (s->kind==ITEM_UNIT_OBSERVER || s->kind==ITEM_UNIT_SENTRY)){
+        /* The core already checks the shooter's generation. An in-flight
+         * attack remains valid after its original shooter dies. */
+        if(amount<=0 || magical || !attack || (unsigned)source>=DOTA_MAX_UNITS)return 0;
+        return g->units[source].type==DOTA_HERO?100:25;
+    }
+    return dota_item_world_incoming(g,victim,amount);
 }
 int dota_item_world_incoming(DotaGame*g,int victim,int amount){
     DotaItemWorldUnit*s=world_unit(g,victim);
     if(!s)return amount;
-    if(s->kind==ITEM_UNIT_OBSERVER||s->kind==ITEM_UNIT_SENTRY)return amount>0?50:0;
+    if(s->kind==ITEM_UNIT_OBSERVER||s->kind==ITEM_UNIT_SENTRY)return amount>0?100:0;
     return amount*s->incoming_percent/100;
+}
+int dota_item_world_smoked(const DotaGame*g,int target){
+    int word;if(!g || (unsigned)target>=DOTA_HERO_COUNT)return 0;
+    for(word=0;word<DOTA_ITEMS_EFFECT_WORDS;++word){unsigned bits=g->items.effect_active[word];int index=word*32;
+        while(bits){if(bits&1u){const DotaItemEffect *e=&g->items.effects[index];
+            if(e->ticks && e->target==target && e->generation==g->units[target].generation && e->kind==IE_INVISIBLE && e->value==2 && (e->tag&32767)==DOTA_ITEM_SMOKE_OF_DECEIT)return 1;
+        }bits>>=1;++index;}
+    }
+    return 0;
 }
 int dota_item_world_visible(const DotaGame*g,int observer,int target){
     int i,team;
     if(!live(g,observer)||!live(g,target))return -1;
     team=g->units[observer].team;
     if(team==g->units[target].team)return -1;
-    for(i=0;i<8;i++){const DotaItemTrap*t=&g->item_world.trap[i];if(t->until>g->tick&&t->item==DOTA_ITEM_GEM&&t->owner>=0&&t->owner<10&&g->units[t->owner].team==team&&range(t->x,t->y,g->units[target].x,g->units[target].y,300))return 1;}
+    /* Detection never grants ground vision or pierces Smoke of Deceit. */
+    if(!dota_sight_team_position_visible(g,team,g->units[target].x,g->units[target].y))return 0;
+    if(dota_item_world_smoked(g,target))return 0;
+    for(i=0;i<8;i++){const DotaItemTrap*t=&g->item_world.trap[i];if(t->until>g->tick&&t->item==DOTA_ITEM_GEM&&t->owner>=0&&t->owner<10&&g->units[t->owner].team==team&&range(t->x,t->y,g->units[target].x,g->units[target].y,300)&&dota_pit_same_region(t->x,t->y,g->units[target].x,g->units[target].y))return 1;}
     for(i=DOTA_ITEM_UNIT_FIRST;i<DOTA_MAX_UNITS;i++)if(live(g,i)&&g->units[i].team==team){
         const DotaItemWorldUnit*s=&g->item_world.unit[i-DOTA_ITEM_UNIT_FIRST];
-        if(s->kind==ITEM_UNIT_SENTRY&&range(g->units[i].x,g->units[i].y,g->units[target].x,g->units[target].y,1050))return 1;
+        if(s->kind==ITEM_UNIT_SENTRY&&range(g->units[i].x,g->units[i].y,g->units[target].x,g->units[target].y,1050)&&dota_pit_same_region(g->units[i].x,g->units[i].y,g->units[target].x,g->units[target].y))return 1;
     }
     for(i=0;i<10;i++)if(live(g,i)&&g->units[i].team==team){
         int j;
-        for(j=0;j<6;j++)if(dota_items_equipped_item(g,i,j)==DOTA_ITEM_GEM&&range(g->units[i].x,g->units[i].y,g->units[target].x,g->units[target].y,900))return 1;
+        for(j=0;j<6;j++)if(dota_items_equipped_item(g,i,j)==DOTA_ITEM_GEM&&range(g->units[i].x,g->units[i].y,g->units[target].x,g->units[target].y,900)&&dota_pit_same_region(g->units[i].x,g->units[i].y,g->units[target].x,g->units[target].y))return 1;
     }
     if(target>=DOTA_ITEM_UNIT_FIRST){
         const DotaItemWorldUnit*s=&g->item_world.unit[target-DOTA_ITEM_UNIT_FIRST];
@@ -291,10 +347,8 @@ int dota_item_world_visible(const DotaGame*g,int observer,int target){
     return -1;
 }
 int dota_item_world_shared_vision(const DotaGame*g,int observer,int target){
-    int i,team;if(!live(g,observer)||!live(g,target))return 0;team=g->units[observer].team;
-    for(i=DOTA_ITEM_UNIT_FIRST;i<DOTA_MAX_UNITS;i++)if(live(g,i)&&g->units[i].team==team&&g->item_world.unit[i-DOTA_ITEM_UNIT_FIRST].kind==ITEM_UNIT_OBSERVER&&range(g->units[i].x,g->units[i].y,g->units[target].x,g->units[target].y,1600)&&dota_pit_same_region(g->units[i].x,g->units[i].y,g->units[target].x,g->units[target].y))return 1;
-    for(i=0;i<8;i++){const DotaItemTrap*t=&g->item_world.trap[i];if(t->until>g->tick&&t->item==DOTA_ITEM_GEM&&t->owner>=0&&t->owner<10&&g->units[t->owner].team==team&&range(t->x,t->y,g->units[target].x,g->units[target].y,300))return 1;}
-    return 0;
+    if(!live(g,observer)||!live(g,target))return 0;
+    return dota_sight_team_position_visible(g,g->units[observer].team,g->units[target].x,g->units[target].y);
 }
 void dota_item_world_update_unit(DotaGame*g,int i){
     DotaUnit*u;
@@ -344,25 +398,29 @@ int dota_rules_item_primitive(DotaGame*g,int encoded,int h,int target,int x,int 
         g->item_world.tree[i].until=g->tick+duration;
         g->item_world.tree[i].removed=0;
         g->item_world.tree[i].source_item=id;
+        dota_sight_invalidate();
         return 1;
         case ITEM_ACTION_TREE:if(!range(u->x,u->y,x,y,id==DOTA_ITEM_TANGO?165:350))return 0;
         for(i=0;i<DOTA_ITEM_TREES;i++){
             DotaItemTree*t=&g->item_world.tree[i];
             if(t->until>g->tick&&!t->removed&&range(x,y,t->x,t->y,96)){
                 t->removed=1;
+                dota_sight_invalidate();
                 return t->source_item==DOTA_ITEM_BRANCHES?2:1;
             }
         }
         /* The map's baked source trees cannot be removed visually. Reject the cast. */return 0;
-        case ITEM_ACTION_WARD:i=new_unit(g,h,amount?ITEM_UNIT_SENTRY:ITEM_UNIT_OBSERVER,id,duration,x,y);
+        case ITEM_ACTION_WARD:if(!range(u->x,u->y,x,y,500+dota_items_range_bonus(g,h,0)))return 0;
+        i=new_unit(g,h,amount?ITEM_UNIT_SENTRY:ITEM_UNIT_OBSERVER,id,duration,x,y);
         if(i<0)return 0;
-        g->units[i].hp=g->units[i].max_hp=100;
+        g->units[i].hp=g->units[i].max_hp=200;
         g->units[i].damage=g->units[i].range=g->units[i].speed=0;
         return 1;
         case ITEM_ACTION_REVEAL:
         for(i=0;i<8;i++)if(g->item_world.trap[i].until<=g->tick)break;
         if(i==8)return 0;
         g->item_world.trap[i].until=g->tick+duration;g->item_world.trap[i].owner=h;g->item_world.trap[i].generation=u->generation;g->item_world.trap[i].item=id;g->item_world.trap[i].x=id==DOTA_ITEM_DUST?u->x:x;g->item_world.trap[i].y=id==DOTA_ITEM_DUST?u->y:y;
+        dota_sight_invalidate();
         return 1;
         case ITEM_ACTION_TELEPORT:{
             DotaItemChannel*c=&g->item_world.channel[h];
@@ -511,6 +569,7 @@ void dota_item_world_tick(DotaGame*g){
     int h,i,j;
     if(g->item_world.last_tick==g->tick)return;
     g->item_world.last_tick=g->tick;
+    smoke_tick(g);
     npc_effect_tick(g);
     for(i=0;i<16;i++)if(g->item_world.drop[i].active&&g->tick>=g->item_world.drop[i].ready_tick){DotaItemDrop*d=&g->item_world.drop[i];for(h=0;h<10;h++)if(live(g,h)&&range(d->x,d->y,g->units[h].x,g->units[h].y,100)){
       int binding=d->owner,received;if(binding>=0&&g->units[binding].team!=g->units[h].team)binding=-1;

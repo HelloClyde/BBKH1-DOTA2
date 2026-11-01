@@ -4,6 +4,8 @@
 #include "items.h"
 #include "items_params.h"
 #include "runes.h"
+#include "match_time.h"
+#include "sight.h"
 
 const DotaPoint dota_objective_positions[DOTA_OBJECTIVES]={
     {26,1856},{4090,2334},{161,996},{3924,3149},
@@ -82,6 +84,7 @@ int dota_objective_player(DotaGame *g,const DotaInput *input){
     if(++s->channel_ticks>=DOTA_HZ){
         if(s->watcher_owner[w]>=0){s->watcher_owner[w]=-2;s->watcher_until[w]=g->tick+120*DOTA_HZ;event(g,DOTA_OBJECTIVE_EVENT_WATCHER_OFF,0);}
         else{s->watcher_owner[w]=(signed char)u->team;s->watcher_until[w]=g->tick+420*DOTA_HZ;event(g,DOTA_OBJECTIVE_EVENT_WATCHER_ON,0);}
+        dota_sight_invalidate();
         dota_objective_cancel(g);
     }
     return 1;
@@ -125,20 +128,20 @@ static void lotus_tick(DotaGame *g,int j){
     if(recipient==g->player)event(g,DOTA_OBJECTIVE_EVENT_LOTUS,dota_objective_lotus_amount(g,recipient));
 }
 void dota_objectives_tick(DotaGame *g){
-    DotaObjectiveState *s;int i,cycle,delta;if(!g || g->paused || g->state!=DOTA_PLAYING)return;s=&g->objectives;
+    DotaObjectiveState *s;int i,cycle,delta,match;if(!g || g->paused || g->state!=DOTA_PLAYING)return;s=&g->objectives;match=dota_match_game_ticks(g);
     for(i=0;i<DOTA_HERO_COUNT;++i)if(s->lotus_cooldown[i])--s->lotus_cooldown[i];
     for(i=0;i<DOTA_WATCHERS;++i)if(s->watcher_owner[i]!=-1 && s->watcher_until[i]<=g->tick){s->watcher_owner[i]=-1;s->watcher_until[i]=0;}
-    cycle=g->tick/(420*DOTA_HZ);
+    cycle=match/(420*DOTA_HZ);
     if(cycle>s->wisdom_spawn_cycle){s->wisdom_spawn_cycle=cycle;for(i=0;i<2;++i){s->wisdom_cycle[i]=cycle;s->wisdom_progress[i]=0;s->wisdom_team[i]=-1;}}
-    if(s->lotus_grade<2 && g->tick>=35*60*DOTA_HZ){
+    if(s->lotus_grade<2 && match>=35*60*DOTA_HZ){
         for(i=0;i<2;++i)s->lotus_count[i]=(s->lotus_count[i]+2)/3;
         s->lotus_grade=2;
     }
-    if(s->lotus_grade<3 && g->tick>=60*60*DOTA_HZ){
+    if(s->lotus_grade<3 && match>=60*60*DOTA_HZ){
         for(i=0;i<2;++i)s->lotus_count[i]=(s->lotus_count[i]+1)/2;
         s->lotus_grade=3;
     }
-    cycle=g->tick/(DOTA_TURBO_LOTUS_SECONDS*DOTA_HZ);delta=cycle-s->lotus_spawn_cycle;
+    cycle=match/(DOTA_TURBO_LOTUS_SECONDS*DOTA_HZ);delta=cycle-s->lotus_spawn_cycle;
     if(delta>0){s->lotus_spawn_cycle=cycle;for(i=0;i<2;++i){s->lotus_count[i]+=delta;if(s->lotus_count[i]>6)s->lotus_count[i]=6;}}
     for(i=0;i<2;++i){wisdom_tick(g,i);lotus_tick(g,i);}
 }
@@ -161,7 +164,7 @@ int dota_objective_progress(const DotaGame *g,int id){
     return g->objectives.order==id+1?g->objectives.channel_ticks*1000/DOTA_HZ:0;
 }
 int dota_objective_vision(const DotaGame *g,int team,int x,int y){
-    int i,radius;if(!g || (unsigned)team>1)return 0;radius=(g->tick/(300*DOTA_HZ))%2?450:800;
+    int i,radius;if(!g || (unsigned)team>1)return 0;radius=dota_match_is_night(g)?450:800;
     for(i=0;i<DOTA_WATCHERS;++i)if(g->objectives.watcher_owner[i]==team && g->objectives.watcher_until[i]>g->tick
         && near(x,y,dota_objective_positions[i+4].x,dota_objective_positions[i+4].y,radius)
         && dota_pit_same_region(x,y,dota_objective_positions[i+4].x,dota_objective_positions[i+4].y))return 1;

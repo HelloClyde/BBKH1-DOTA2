@@ -1,6 +1,6 @@
 {
   "format_version": 1,
-  "source_version": "0.27",
+  "source_version": "0.28",
   "historical_bda_sha256": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d",
   "assets": [
     {
@@ -17,6 +17,11 @@
       "path": "MAP12.H1C",
       "bytes": 16593196,
       "sha256": "bcc35594f9d48edda2befb16fdef29f220763a7c2fc96b0c11487f6d86d9c31a"
+    },
+    {
+      "path": "VISION.H1V",
+      "bytes": 139328,
+      "sha256": "f23c061e9735e02bd098fe49adb723c56641c7ab0cc946e97b82c44ef9e7dc28"
     }
   ]
 }

@@ -1,4 +1,4 @@
-"""Build the standalone H1 v0.27 target with its original options and source order."""
+"""Build the standalone H1 target with current input hashes and release identity."""
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import argparse,os,sys
@@ -26,8 +26,9 @@ def main():
  header=HeaderFields(category=0x47,file_size_minus_4=PAYLOAD_OFFSET+len(payload)+padding-4,payload_offset=PAYLOAD_OFFSET,resource_offset=RESOURCE_OFFSET,resource_sizes=RESOURCE_SIZES)
  bda.write_bytes(encode_header(header,title='DOTA2',build_time=BUILD_DATE)+build_icon_resources(ROOT/'private/generated/icon.png')+payload+bytes(padding))
  binary=binary_check(bda,elf,len(payload));require(before==input_hashes(),'Build inputs changed during compilation')
- require(sha(bda)==REFERENCE_BDA,'Rebuilt BDA differs from the validated v0.27 reference; preserve this build for diagnosis')
- metadata=dict(title='DOTA2',version=VERSION,build_date=BUILD_DATE,bda_sha256=sha(bda),bda_bytes=bda.stat().st_size,elf_sha256=sha(elf),payload_bytes=len(payload),sdk_commit=SDK_COMMIT,compiler=compiler,compiler_optimization=dict(default='O2',size_optimized_modules=[]),translation_units=[relative(x) for x in sources],source_sha256=before,source_origin=origin,runtime_assets=assets,binary=binary,diagnostic_only=False,physical_h1_tested=False,actual_mips32=False,reference_v027_bda_matches=True,verification_scope='Recompiled standalone sources, BDA envelope, actual ELF payload/ABI/RAM and exact reference SHA. No emulator, firmware or device was executed by this tool.')
+ reference=release_reference()
+ if reference:require(sha(bda)==reference,'Rebuilt BDA differs from the pinned release; preserve this build for diagnosis')
+ metadata=dict(title='DOTA2',version=VERSION,build_date=BUILD_DATE,bda_sha256=sha(bda),bda_bytes=bda.stat().st_size,elf_sha256=sha(elf),payload_bytes=len(payload),sdk_commit=SDK_COMMIT,compiler=compiler,compiler_optimization=dict(default='O2',size_optimized_modules=[]),translation_units=[relative(x) for x in sources],source_sha256=before,source_origin=origin,runtime_assets=assets,binary=binary,diagnostic_only=False,physical_h1_tested=False,actual_mips32=False,reference_v027_bda_matches=sha(bda)==REFERENCE_BDA,release_reference=reference,verification_scope='Recompiled current sources, BDA envelope and actual ELF payload/ABI/RAM. Release SHA is checked when pinned. No emulator, firmware or device was executed by this tool.')
  write(out/'DOTA2.build.json',metadata);(out/'DOTA2.bda.sha256').write_text(sha(bda)+'  DOTA2.bda\n',encoding='ascii')
  # The command transcript uses repository-relative path placeholders for privacy.
  def portable(value):return str(value).replace(str(ROOT),'<REPO>').replace(str(Path(a.toolchain).resolve()),'<TOOLCHAIN>')

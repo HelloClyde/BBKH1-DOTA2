@@ -1,0 +1,55 @@
+{
+  "source_height_npy_sha256": "f945b90cec58366cac39ed36c8fc567306cba9e3d62c1f7f027b9b4d7b98466b",
+  "source_trees_json_sha256": "78086c108ae329be2c220d61e37f31e2ad30255d83135c4a739e86ce74c9340e",
+  "source_navigation_manifest_sha256": "a33f08b7857656eb58b2501db5834c580d2f7ed12da1de47812507b8eeb4f70e",
+  "source_resources": [
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\maps\\dota.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "6f3ca95524b532e590cc2030dba10bbfb3d47e26c716022d2495be00655baada",
+      "path": "maps/dota.gnv",
+      "crc32": "8ea75660",
+      "archive_index": 32767,
+      "offset": 0,
+      "length": 104992,
+      "preload_bytes": 0,
+      "resource_bytes": 104992,
+      "sha256": "be66c5b5ff0d87d69b376622f1161e8f4a6f61433bf0f25f5ff986d70beac77c",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\maps\\dota.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "6f3ca95524b532e590cc2030dba10bbfb3d47e26c716022d2495be00655baada",
+      "path": "maps/dota.trm",
+      "crc32": "4af67028",
+      "archive_index": 32767,
+      "offset": 104992,
+      "length": 29920,
+      "preload_bytes": 0,
+      "resource_bytes": 29920,
+      "sha256": "3c201bf89429a48b92cd82f4febfa7495e3805d0d2db1505c951e95d338c8cff",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\maps\\dota.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "6f3ca95524b532e590cc2030dba10bbfb3d47e26c716022d2495be00655baada",
+      "path": "maps/dota/world_physics.vmdl_c",
+      "crc32": "fc2e03ac",
+      "archive_index": 32767,
+      "offset": 5102398,
+      "length": 2880676,
+      "preload_bytes": 0,
+      "resource_bytes": 2880676,
+      "sha256": "61f250d75fd2bf34393d96b14e338468f42e51fe599da3fcfaecc45b87bf676e",
+      "crc32_verified": true
+    }
+  ],
+  "world_coordinate_rule": "worldX=2048+SourceX/4, worldY=2048-SourceY/4, heightWorld=SourceZ/4",
+  "height_rounding": "floor(world_z+0.5), invalid source samples map to int16 -32768",
+  "tree_radius_world": 16,
+  "unit_clearance_included": false,
+  "walkability_used_as_visibility": false,
+  "source_tree_records": 2113
+}

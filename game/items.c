@@ -1,4 +1,5 @@
 #include "items.h"
+#include "match_time.h"
 #include "items_ids.h"
 #include "items_params.h"
 #include "items_actions.h"
@@ -13,6 +14,7 @@
 #include "lane_creep_data.h"
 #include "teleport_rules.h"
 #include "runes.h"
+#include "sight.h"
 #define ITEM_RAW(g,h,s) (*((s)<6?&(g)->units[h].inventory[s]:&(g)->items.neutral_item[h]))
 #define ITEM(g,h,s) dota_items_equipped_item(g,h,s)
 /* Bounded integer rules. Provider failure rejects purchases/casts, never creates
@@ -467,7 +469,7 @@ int dota_items_mana_cost_percent(DotaGame*g,int h){
 int dota_items_mana_regen_percent(DotaGame*g,int h){int s,pct=0;if(!valid(g,h))return 100;for(s=0;s<DOTA_ITEMS_EQUIP_SLOTS;s++){int id=ITEM(g,h,s);if(id>=0)pct=imax(pct,hpar(g,h,id,IP_MANA_REGEN_MULTIPLIER,0));}return 100+pct;}
 int dota_items_health_regen_amp_percent(DotaGame*g,int h){int s,pct=0;if(!valid(g,h))return 100;for(s=0;s<DOTA_ITEMS_EQUIP_SLOTS;s++){int id=ITEM(g,h,s);if(id>=0)pct=imax(pct,hpar(g,h,id,IP_HP_REGEN_AMP,0));}return 100+pct;}
 static int stock_count(const DotaGame*g,int team,int id,DotaItemRecord*r){
-    int i,count;
+    int i,count,match_tick=dota_match_game_ticks(g);
     const DotaItemStock*s;
     int elapsed;
     if(!r->stock_max)return 9999;
@@ -480,9 +482,11 @@ static int stock_count(const DotaGame*g,int team,int id,DotaItemRecord*r){
             return imin(r->stock_max,count);
         }
     }
-    if(g->tick<r->stock_start_ticks)return 0;
+    /* Initial shop stock is available in the playable pre-game minute.
+     * Time-gated stock starts at its horn-relative match timestamp. */
+    if(match_tick<r->stock_start_ticks)return 0;
     count=r->stock_initial;
-    if(r->stock_ticks)count+=(g->tick-r->stock_start_ticks)/r->stock_ticks;
+    if(r->stock_ticks)count+=(match_tick-r->stock_start_ticks)/r->stock_ticks;
     return imin(r->stock_max,count);
 }
 typedef struct {
@@ -588,6 +592,13 @@ int dota_items_charges(const DotaGame*g,int h,int s){
     if(n>=0)return n;
     n=g->items.charges[h][s];
     return ITEM_RAW(g,h,s)==DOTA_ITEM_WARD_DISPENSER?(n&255)+(n>>8):n;
+}
+int dota_items_ward_available(const DotaGame*g,int h,int s,int kind){
+    int id,n;if(!g || (unsigned)h>=DOTA_HERO_COUNT || (unsigned)s>=DOTA_ITEMS_EQUIP_SLOTS || (unsigned)kind>1u)return 0;
+    id=dota_items_equipped_item(g,h,s);n=g->items.charges[h][s];
+    if(id==DOTA_ITEM_WARD_DISPENSER)return kind?(n>>8):(n&255);
+    if(id==(kind?DOTA_ITEM_WARD_SENTRY:DOTA_ITEM_WARD_OBSERVER))return n;
+    return 0;
 }
 int dota_items_is_active(int id){
     DotaItemRecord r;
@@ -979,12 +990,16 @@ static int resolve_item_effect(DotaGame*g,int h,int s,int id,const DotaItemRecor
         success=1;
         break;
         case ITEM_ACTION_WARD:{
-            int kind=id==DOTA_ITEM_WARD_SENTRY;
+            int kind=id==DOTA_ITEM_WARD_SENTRY,ward_source,life;
+            if(reflected)return 0;
             if(id==DOTA_ITEM_WARD_DISPENSER){
-                if(!reflected&&!g->items.charges[h][s])return 0;
-                kind=(g->items.charges[h][s]&255)?0:1;
+                if(!g->items.charges[h][s])return 0;
+                kind=target==DOTA_WARD_TARGET_SENTRY?1:((g->items.charges[h][s]&255)?0:1);
             }
-            success=primitive(g,id,action,h,-1,x,y,kind,duration?duration:(kind?8400:7200));
+            if(!dota_items_ward_available(g,h,s,kind))return 0;
+            ward_source=kind?DOTA_ITEM_WARD_SENTRY:DOTA_ITEM_WARD_OBSERVER;
+            life=hticks(g,parameter_owner,ward_source,IP_LIFETIME,kind?8400:7200);
+            success=primitive(g,ward_source,action,h,-1,x,y,kind,life);
             if(success&&id==DOTA_ITEM_WARD_DISPENSER){
                 g->items.charges[h][s]-=(uint16_t)(kind?256:1);
                 if(!g->items.charges[h][s]){
@@ -1350,6 +1365,7 @@ int dota_items_use(DotaGame*g,int h,int s,int x,int y,int target){
     if((unsigned)id>=sizeof(dota_item_invisible_safe)*8u||!(dota_item_invisible_safe[(unsigned)id/8]&(1u<<((unsigned)id%8))))dota_rune_on_action(g,h);
     dota_rules_item_recalc(g,h);
     dota_rules_item_effect(g,DOTA_FX_BURST,u->team,u->x,u->y,x,y,imax(8,r.radius/4),10);
+    dota_sight_invalidate();
     return 1;
 }
 int dota_items_reflects_spell(const DotaGame*g,int target){

@@ -47,6 +47,7 @@ static void bag_write(DotaGame*g,int h,Bag*b){
     for(s=0;s<3;s++){bag_enter_backpack(g,&b[6+s]);bag_store_backpack(&g->items.backpack[h][s],&b[6+s]);}
     dota_items_invalidate(g,h);update_auras(g);
     for(s=0;s<10;s++)if(valid(g,s))dota_rules_item_recalc(g,s);
+    dota_sight_invalidate();
 }
 /* Source ItemStackableMax3/2/3 and ItemRecipeConsumesCharges for the two free
  * lotus recipes. HIT1 max_charges is an ability-charge field, not this limit. */

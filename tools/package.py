@@ -7,8 +7,11 @@ from verify import verify_build,verify_package
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--build',type=Path,default=ROOT/'build/native');p.add_argument('--output',type=Path,default=ROOT/'dist');a=p.parse_args()
  build=local(a.build);m=verify_build(build);out=local(a.output);require(not out.exists(),'Existing package directory preserved; choose a new --output')
+ reference=release_reference();require(reference is not None and reference==m['bda_sha256'],'Pin this verified release before packaging')
+ pin=release_pin_identity()
  members={'应用/程序/DOTA2.bda':build/'DOTA2.bda','DOTA2/SCENE.H1P':ROOT/'assets/runtime/SCENE.H1P','DOTA2/SCENE.json':ROOT/'assets/runtime/SCENE.json','DOTA2/SOUND.H1A':ROOT/'assets/runtime/SOUND.H1A','DOTA2/MAP12.H1C':ROOT/'assets/runtime/MAP12.H1C','DOTA2.build.json':build/'DOTA2.build.json','README.md':ROOT/'README.md','NOTICE.md':ROOT/'NOTICE.md','UPDATE-NOTES.txt':ROOT/'UPDATE-NOTES.txt','licenses/GPL-2.0.txt':ROOT/'licenses/GPL-2.0.txt','EQUIPMENT-MECHANISM-AUDIT.json':ROOT/'provenance/EQUIPMENT-MECHANISM-AUDIT.json','SPECIAL-MECHANISM-AUDIT.json':ROOT/'provenance/SPECIAL-MECHANISM-AUDIT.json'}
  members.update({'LICENSE':ROOT/'LICENSE','licenses/FONT-NOTICE.md':ROOT/'licenses/FONT-NOTICE.md'})
+ members.update({'DOTA2/'+name:ROOT/'assets/runtime'/name for name in ASSETS})
  members.update({name:ROOT/name for name in PACKAGE_DOCS})
  for path in members.values():require(path.is_file(),'Missing explicit package input: '+relative(path))
  hashes={name:sha(path) for name,path in members.items()};out.mkdir(parents=True)
@@ -23,6 +26,7 @@ def main():
  files={name:sha(out/name) for name in (*app_names,'DOTA2-H1-install.zip')}
  (out/'SHA256SUMS.txt').write_text(''.join(wanted+'  '+name+'\n' for name,wanted in sorted(files.items())),encoding='utf8');files['SHA256SUMS.txt']=sha(out/'SHA256SUMS.txt')
  require(hashes=={name:sha(path) for name,path in members.items()},'Package inputs changed during compression')
- write(out/'PACKAGE.json',dict(version=VERSION,bda_sha256=REFERENCE_BDA,sdk_commit=SDK_COMMIT,files=files,members=hashes,physical_h1_tested=False,scope='Explicit install ZIP and standalone files from this exact successful build. Reference BDA identity reuses historical v0.27 validation; no new device or emulator execution.'))
- verify_package(out);print(json.dumps(dict(passed=True,bda_sha256=REFERENCE_BDA,install_zip_sha256=files['DOTA2-H1-install.zip'],zip_members=len(members)+1,output=relative(out),device_accessed=False)))
+ require(release_pin_identity()==pin,'Release identity changed during packaging')
+ write(out/'PACKAGE.json',dict(version=VERSION,bda_sha256=reference,release_pin=pin,sdk_commit=SDK_COMMIT,files=files,members=hashes,physical_h1_tested=False,scope='Explicit install ZIP and standalone files from the current pinned build. Functional/device evidence is separate; this packaging tool executes no device or emulator.'))
+ verify_package(out);print(json.dumps(dict(passed=True,bda_sha256=reference,install_zip_sha256=files['DOTA2-H1-install.zip'],zip_members=len(members)+1,output=relative(out),device_accessed=False)))
 if __name__=='__main__':main()

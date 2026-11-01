@@ -101,6 +101,12 @@ typedef struct {
     uint32_t shadow_instances,shadow_pixels,shadow_depth_rejects;
     uint32_t fountain_instances,fountain_pixels,fountain_frame[2],missing_lighting_frames;
 } BSLightingStats;
+typedef struct { uint32_t cells,queries,dimmed_pixels,soft_cells,sprites_rejected; } BSFogStats;
+const BSFogStats *bs_fog_stats(void);
+/* Optional exact RGB-only fog result cache; depth and scenery stay fresh. */
+typedef struct { uint32_t heap_bytes,hits,misses,captures,streak,ready; } BSFogCacheStats;
+const BSFogCacheStats *bs_fog_cache_stats(void);
+unsigned bs_reserve_fog_cache(unsigned bytes);
 
 /* The native wrapper opens A:\DOTA2\SCENE.H1P. Hosts can instead call
  * baked_io_open(path) followed by bs_initialize(). Static fallback is always

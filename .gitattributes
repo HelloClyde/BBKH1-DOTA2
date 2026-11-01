@@ -11,6 +11,11 @@
 *.yaml text eol=lf
 *.ps1 text eol=crlf
 *.png binary
+*.i16 binary
+*.H1V binary
+provenance/ward-placement/source-data/** -text
+# Verification receipts bind probe bytes, including their original line endings.
+tests/** -text
 /assets/runtime/SCENE.H1P filter=lfs diff=lfs merge=lfs -text
 /assets/runtime/SOUND.H1A filter=lfs diff=lfs merge=lfs -text
 /assets/runtime/MAP12.H1C filter=lfs diff=lfs merge=lfs -text

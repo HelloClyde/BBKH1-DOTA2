@@ -1,0 +1,3 @@
+# Optional offline host/MIPS tests. Ordinary build CI uses requirements-build.txt only.
+-r requirements-build.txt
+unicorn==2.1.4

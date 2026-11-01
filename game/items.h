@@ -47,6 +47,10 @@ int dota_items_disassemble(DotaGame *game,int hero,int slot);
 int dota_items_use(DotaGame *game,int hero,int slot,int x,int y,int target);
 int dota_items_cooldown(const DotaGame *game,int hero,int slot);
 int dota_items_charges(const DotaGame *game,int hero,int slot);
+/* Point-only combined-ward selector; ordinary target=-1 prefers Observer.
+ * The selector is not a unit index and never enables implicit targeting. */
+#define DOTA_WARD_TARGET_SENTRY (-2)
+int dota_items_ward_available(const DotaGame *game,int hero,int legacy_slot,int kind);
 int dota_items_is_active(int item);
 #define DOTA_TELEPORT_FOUNTAIN_TARGET(team) (DOTA_MAX_UNITS+(team))
 /* Travel Boots are passive upgrades to the scroll, never a second active.
