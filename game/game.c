@@ -22,6 +22,7 @@
 #include "barracks.h"
 #include "runes.h"
 #include "match_time.h"
+#include "trees.h"
 
 static int effective_health_regen_with_stats(const DotaGame *,int,const DotaItemStats *);
 static int mana_regen_with_stats(const DotaGame *,int,const DotaItemStats *);
@@ -569,6 +570,7 @@ static void legal_position(DotaUnit *u,int x,int y){
 static void sync_navigation(const DotaGame *g){
     unsigned mask=0,fillers=0;int team,lane,tier,index;
     dota_nav_set_item_trees(g->item_world.tree,DOTA_ITEM_TREES);
+    dota_nav_set_static_trees(g);
     for(team=0;team<2;++team)for(lane=0;lane<3;++lane)for(tier=0;tier<2;++tier){
         index=g->towers[team][lane][tier];
         if((unsigned)index<DOTA_MAX_UNITS && g->units[index].type==DOTA_TOWER && alive(&g->units[index]))mask|=1u<<((team*3+lane)*2+tier);
@@ -1224,7 +1226,7 @@ static int cast_for_impl(DotaGame *g,int caster,int skill,int x,int y) {
                     if(source_range(dist2(xx,yy,g->units[i].x,g->units[i].y),dota_rules_aoe_radius(g,caster,275-75*clamp(t,0,256)/256)))dota_progression_ability_damage(g,caster,i,skill_value(u,0,"dragon_slave_damage",5+60*rank),1);
                 }
                 skill_effect(g,caster,skill,DOTA_FX_LINE,u->x,u->y,x,y,69,18);
-            }else if(skill==1)area_damage(g,caster,x,y,skill_value(u,1,"light_strike_array_aoe",250),skill_value(u,1,"light_strike_array_damage",35+45*rank),skill_time(u,1,"light_strike_array_stun_duration",16+8*rank),0);
+            }else if(skill==1){dota_trees_cut_radius(g,x,y,dota_rules_aoe_radius(g,caster,skill_value(u,1,"light_strike_array_aoe",250)));area_damage(g,caster,x,y,skill_value(u,1,"light_strike_array_aoe",250),skill_value(u,1,"light_strike_array_damage",35+45*rank),skill_time(u,1,"light_strike_array_stun_duration",16+8*rank),0);}
             else {dota_progression_ability_damage(g,caster,target,skill_value(u,3,"damage",220+180*rank),1);skill_effect(g,caster,skill,DOTA_FX_LINE,u->x,u->y,g->units[target].x,g->units[target].y,25,16);}
             break;
         case DOTA_HERO_JUGGERNAUT:
@@ -1374,6 +1376,7 @@ void dota_init(DotaGame *g,int hero,unsigned seed) {
     int i,team,lane,tier,index=10,roster[9],remaining=0;
     zero_bytes(g,(unsigned)sizeof(*g));g->seed=seed?seed:0x48414432u;
     dota_sight_reset();
+    dota_nav_reset_static_trees(g);
     dota_items_init(g);
     dota_nav_set_towers(0);
     dota_nav_reset_stats();

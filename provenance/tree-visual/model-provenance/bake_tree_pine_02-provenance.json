@@ -1,0 +1,340 @@
+{
+  "recorded_utc": "2026-10-29T14:03:13.438902+00:00",
+  "owner": "Valve Corporation",
+  "source": {
+    "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+    "vpk_version": 2,
+    "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+    "path": "models/props_tree/tree_pine_02.vmdl_c",
+    "crc32": "b45f0b30",
+    "archive_index": 62,
+    "offset": 57386336,
+    "length": 49613,
+    "preload_bytes": 0,
+    "resource_bytes": 49613,
+    "sha256": "c96698afae4979c2354e220248d8be4d7c029fa36de8964f7f509cba8b3daaed",
+    "crc32_verified": true
+  },
+  "source_archive_sha256": "eaee44204cdb97c0c7d04be107c38b5bc5e2fcb4425b0e7003c61ffe36d2f5b6",
+  "source_raw_file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2\\raw\\bake_tree_pine_02\\tree_pine_02.vmdl_c",
+  "tool": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\.tools\\dota-source2\\cli-20.1\\Source2Viewer-CLI.exe",
+  "tool_sha256": "ef9f6fb3943c30b73f0991bce6654128727b0807968f7997a6bb014efbec8830",
+  "tool_project": "https://github.com/ValveResourceFormat/ValveResourceFormat",
+  "tool_release": "20.1",
+  "reproduction_command": [
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\.tools\\dota-source2\\cli-20.1\\Source2Viewer-CLI.exe",
+    "-d",
+    "-i",
+    "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+    "-f",
+    "models/props_tree/tree_pine_02.vmdl_c",
+    "-o",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2\\exports\\bake-trees\\tree_pine_02\\tree_pine_02.gltf",
+    "--game",
+    "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\gameinfo.gi",
+    "--gltf_export_format",
+    "gltf",
+    "--gltf_export_extras",
+    "--gltf_export_materials",
+    "--gltf_textures_adapt"
+  ],
+  "command_executed_this_invocation": true,
+  "log": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2\\reports\\bake_tree_pine_02-export.log",
+  "dependencies": [
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/dev/two_channel_noise_psd_93f8d443.vtex_c",
+      "crc32": "b702c3dc",
+      "archive_index": 440,
+      "offset": 105662816,
+      "length": 12668,
+      "preload_bytes": 0,
+      "resource_bytes": 12668,
+      "sha256": "ef53284f7e2ef50638bf68ea8114735f7db75f75988fc15afc6800f151103a2a",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_00_mask_psd_52cca3c8.vtex_c",
+      "crc32": "984e1269",
+      "archive_index": 471,
+      "offset": 73826448,
+      "length": 23620,
+      "preload_bytes": 0,
+      "resource_bytes": 23620,
+      "sha256": "05016347f8a39cd84a4ec1622563a0c6d8aed37f8d985bef8fb6dce8ed6895dc",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_pine_frond_00.vmat_c",
+      "crc32": "03675438",
+      "archive_index": 227,
+      "offset": 65747088,
+      "length": 8296,
+      "preload_bytes": 0,
+      "resource_bytes": 8296,
+      "sha256": "eba1248f527446eaa7f340329d0fe1f0333295372765087da012299cbcae0147",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_pine_frond_00_color_psd_cad45fc8.vtex_c",
+      "crc32": "b56d1fc8",
+      "archive_index": 261,
+      "offset": 83057360,
+      "length": 701252,
+      "preload_bytes": 0,
+      "resource_bytes": 701252,
+      "sha256": "535ce583042d759c5aa172ae95a6380e8c473dd2fe24c68f53c053e407d29bc5",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_pine_frond_00_normal_psd_b1d333a2.vtex_c",
+      "crc32": "5126fbe2",
+      "archive_index": 261,
+      "offset": 83758624,
+      "length": 701012,
+      "preload_bytes": 0,
+      "resource_bytes": 701012,
+      "sha256": "6fa35e2cc026fc349d71b918fcfb9e82a4dd7ed5188e3dcfb1430ff3431611a0",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_pine_frond_00_refl_psd_8760ac51.vtex_c",
+      "crc32": "5c63c14e",
+      "archive_index": 261,
+      "offset": 84459648,
+      "length": 351348,
+      "preload_bytes": 0,
+      "resource_bytes": 351348,
+      "sha256": "518b53d9d83fa74ece89a550d2d14889e7ffeab0cc34246acf9ac8433dc4589e",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_pine_frond_00_wind_psd_22261904.vtex_c",
+      "crc32": "e95e61a7",
+      "archive_index": 261,
+      "offset": 83033680,
+      "length": 23668,
+      "preload_bytes": 0,
+      "resource_bytes": 23668,
+      "sha256": "759b33715c4e352058932c07635006fc6769e5c47d6fb4d3bff56c272e570695",
+      "crc32_verified": true
+    }
+  ],
+  "gltf_file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2\\exports\\bake-trees\\tree_pine_02\\tree_pine_02.gltf",
+  "gltf_sha256": "e0703162534bc6b867fdf3a3dd4f4202fa719fe8975788ff00051ac46c64949b",
+  "gltf_bytes": 7825,
+  "mesh_count": 3,
+  "node_count": 3,
+  "skin_count": 0,
+  "material_count": 1,
+  "image_count": 3,
+  "stored_primitive_vertices_sum": 1598,
+  "unique_position_accessor_vertices_sum": 1598,
+  "stored_primitive_triangles_sum": 1451,
+  "animations": [],
+  "meshes": [
+    {
+      "index": 0,
+      "name": "models\\props_tree\\tree_pine_02.vmdl_c.tree_pine_02_model",
+      "primitives": [
+        {
+          "vertices": 611,
+          "triangles": 536,
+          "attributes": [
+            "POSITION",
+            "TEXCOORD_0",
+            "NORMAL",
+            "TANGENT",
+            "JOINTS_0",
+            "WEIGHTS_0"
+          ],
+          "material": 0,
+          "local_bounds_min": [
+            -3.2183470726013184,
+            -0.002277968917042017,
+            -2.8811376094818115
+          ],
+          "local_bounds_max": [
+            2.9456052780151367,
+            10.711546897888184,
+            2.9196879863739014
+          ]
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "name": "models\\props_tree\\tree_pine_02.vmdl_c.tree_pine_02_stump_model",
+      "primitives": [
+        {
+          "vertices": 250,
+          "triangles": 243,
+          "attributes": [
+            "POSITION",
+            "TEXCOORD_0",
+            "NORMAL",
+            "TANGENT",
+            "JOINTS_0",
+            "WEIGHTS_0"
+          ],
+          "material": 0,
+          "local_bounds_min": [
+            -1.600257158279419,
+            -2.951610803604126,
+            -0.36370617151260376
+          ],
+          "local_bounds_max": [
+            1.752280354499817,
+            1.4840515851974487,
+            1.8260825872421265
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "models\\props_tree\\tree_pine_02.vmdl_c.tree_pine_02_inspector",
+      "primitives": [
+        {
+          "vertices": 737,
+          "triangles": 672,
+          "attributes": [
+            "POSITION",
+            "TEXCOORD_0",
+            "NORMAL",
+            "TANGENT"
+          ],
+          "material": 0,
+          "local_bounds_min": [
+            -4.917915344238281,
+            -0.002268398879095912,
+            -4.414124011993408
+          ],
+          "local_bounds_max": [
+            4.521725177764893,
+            28.050853729248047,
+            4.767529010772705
+          ]
+        }
+      ]
+    }
+  ],
+  "output_files": [
+    {
+      "uri": "tree_pine_02.bin",
+      "bytes": 129444,
+      "sha256": "dca85588ea0d9128cf09341e619c658f99b8fdd4316d35c174d5a6cdc8ff3e5c"
+    },
+    {
+      "uri": "tree_pine_frond_00_color_psd_cad45fc8.png",
+      "bytes": 498104,
+      "sha256": "21343a53eb5003c4c374075380e6fb3c8797bbc2ad7b0e412ade10ef2d4bf684"
+    },
+    {
+      "uri": "tree_pine_frond_00_normal_psd_b1d333a2.png",
+      "bytes": 554219,
+      "sha256": "6e7ba9444fc9337fdb2ef5dba4d7feec4151926b1068f5b1e2c2fd09d68a1682"
+    },
+    {
+      "uri": "tree_pine_frond_00_refl_psd_8760ac51.png",
+      "bytes": 602,
+      "sha256": "6d322a2cca8eb713376598ff0895e18ae1d819d432b2dfdf0dcb7dd677b5b76c"
+    }
+  ],
+  "material_source_resources": [
+    {
+      "Name": "materials/models/props_tree/tree_pine_frond_00.vmat",
+      "ShaderName": "global_lit_simple.vfx",
+      "IntParams": {
+        "F_ENABLE_WIND": 1,
+        "F_NORMAL_MAP": 1,
+        "F_SPECULAR": 1,
+        "F_TINT_MASK": 1,
+        "F_ALPHA_TEST": 1
+      },
+      "FloatParams": {
+        "g_flBumpStrength": 1,
+        "g_flSpecularBloom": 0.4,
+        "g_flSpecularIntensity": 0.25,
+        "g_flAlphaTestReference": 0.7,
+        "g_flWindFlexibility": 0.3,
+        "g_flWindHighFrequencyEffects": 1.5,
+        "g_flWindLowFrequencyEffects": 0.66,
+        "g_flWindSpeedMultiplier": 0.5
+      },
+      "VectorParams": {
+        "g_vColorTint": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "g_vColorTint2": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "g_vTexCoordOffset": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "g_vTexCoordScale": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "TextureSelfIllumMask": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "TextureBloom": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "TextureWindMaskLow": [
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      "TextureParams": {
+        "g_tWindMask": "materials/models/props_tree/tree_pine_frond_00_wind_psd_22261904.vtex",
+        "g_tWindNoise": "materials/dev/two_channel_noise_psd_93f8d443.vtex",
+        "g_tColor": "materials/models/props_tree/tree_pine_frond_00_color_psd_cad45fc8.vtex",
+        "g_tTintMask": "materials/models/props_tree/tree_00_mask_psd_52cca3c8.vtex",
+        "g_tNormal": "materials/models/props_tree/tree_pine_frond_00_normal_psd_b1d333a2.vtex",
+        "g_tSpecular": "materials/models/props_tree/tree_pine_frond_00_refl_psd_8760ac51.vtex"
+      }
+    }
+  ],
+  "scope": "Original installed compiled asset exported by VRF to glTF/PNG. No invented mesh, animation, simplification or H1 runtime conversion is performed here."
+}

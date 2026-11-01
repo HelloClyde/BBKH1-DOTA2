@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "base_gnv_cells": 56005,
+  "tree_free_barracks_alive_cells": 55553,
+  "standing_trees_barracks_alive_cells": 47537,
+  "tower_filler_cells": 1057,
+  "barracks_restore_cells": 452,
+  "barracks_restore_edges": 1063,
+  "tree_count": 2113,
+  "inputs": {
+    "provenance\\tree-navigation\\gnv-walk.bin": "42413177ecd078e4d6bb17801a1a734cff9458caa1e3de9222ef9adc74be5e17",
+    "provenance\\tree-navigation\\physics-edges.bin": "45d188c58e20c475a0c02532f20eed0d65faaff1fd0920e06230a419bc3e5de7",
+    "provenance\\tree-navigation\\source-buildings.json": "a88386736eb14a2f0c19984e4a8eb3d9fba4766ca724d14b19c2cbda27752a51",
+    "provenance\\vision\\trees.json": "84b943d874a6f95370fb60286ce96b58512fe81e7216772b0c407356f0f005cc",
+    "provenance/tree-navigation/legacy-standing-walk.bin": "0ea5c7a7f69b4b6acc47821943efa12d235752241e35dd52dfa55bf40e38fac1"
+  },
+  "outputs": {
+    "private\\generated\\dota_nav.h": "88682b9e38747d9458aee3a8f822f5e8421ba335f4f49296e6d1002f7281c455",
+    "private\\generated\\dota_barracks_nav.h": "c4fedcb61e1c2cbf766df228155328ca2f452773a8af039e71070b77a51ad671",
+    "private\\generated\\dota_tree_nav.h": "f39c5bf79f483e83d43c32c6681f265fb2bef5f3cee83e0f8a3cfc967eaf3d83"
+  },
+  "limitations": "Preserves the original H1 swept-ray/cell approximation, original two certified passage cells and exact Q5 guards; does not claim native continuous hull equivalence.",
+  "standing_cells_byte_equal_legacy": true
+}

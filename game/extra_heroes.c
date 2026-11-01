@@ -1,4 +1,5 @@
 #include "extra_heroes.h"
+#include "trees.h"
 #include "extra_heroes_data.h"
 #include "bosses.h"
 #include "navigation.h"
@@ -207,6 +208,9 @@ static void pact_pulse(DotaGame *g,int caster,DotaExtraPact *saved){
     else if(++s->pact_pulse>=pulses)s->pact_at=0;else s->pact_at=g->tick+cap(ticks(u,0,"pulse_interval",2),1,100);
 }
 static void land(DotaGame *g,int caster){DotaUnit *u=&g->units[caster];int x=u->x,y=u->y;
+    /* Native Pounce uses its installed pounce_radius for the landing tree
+     * clear, before resolving the final navigable position. */
+    dota_trees_cut_radius(g,x,y,value(u,1,"pounce_radius",120));
     dota_nav_nearest(x,y,256,&x,&y);g->extra.hero[caster].leap_at=0;u->skill_ticks[1]=0;dota_rules_set_position(g,caster,x,y);
 }
 static void leap_tick(DotaGame *g,int caster){

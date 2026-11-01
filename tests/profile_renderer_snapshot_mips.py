@@ -23,11 +23,14 @@ def function_lines(text,name):
   i+=1
  return text.count('\n',0,m.start())+1,text.count('\n',0,i)+1
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--build',type=Path,required=True);p.add_argument('--snapshot',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--warm',type=int,default=24);p.add_argument('--frames',type=int,default=8);a=p.parse_args()
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--build',type=Path,required=True);p.add_argument('--snapshot',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--warm',type=int,default=24);p.add_argument('--frames',type=int,default=8);p.add_argument('--renderer-source',type=Path,help='Exact frozen compiled renderer for diagnostic A/B line attribution');p.add_argument('--camera-step',type=int,default=0,help='Test-only horizontal camera pan per frame; game state is not changed');a=p.parse_args()
  build=a.build.resolve();out=a.output.resolve();assert out.is_relative_to(ROOT/'build') and not out.exists();out.mkdir(parents=True);meta=json.loads((build/'DOTA2.build.json').read_text(encoding='utf8'));bda=build/'DOTA2.bda';elf=build/'DOTA2.elf';assert sha(bda)==meta['bda_sha256'] and sha(elf)==meta['elf_sha256'];snapshot=a.snapshot.resolve();snap=snapshot.read_bytes();assert len(snap)==173544
- baked=ROOT/'platform/baked_scene.c';assert sha(baked)==meta['source_sha256']['platform/baked_scene.c'],'DWARF line attribution requires exact renderer source'
+ baked=a.renderer_source or ROOT/'platform/baked_scene.c';assert sha(baked)==meta['source_sha256']['platform/baked_scene.c'],'DWARF line attribution requires exact renderer source'
  text=baked.read_text(encoding='utf8');line_groups={name:function_lines(text,name) for name in ['draw_fog','fog_light_row','fog_world_point','draw_map','copy_map_row','draw_sprite_opacity','draw_hero_shadow','update_history']}
- assets={n:ROOT/'assets/runtime'/n for n in ['SCENE.H1P','MAP12.H1C','VISION.H1V']};asset_hashes={n:sha(v) for n,v in assets.items()};m=CoreMachine(bda,elf,assets);gp=m.symbols['dota_game'];vp=m.symbols['view'];pixels=m.symbols['dota_pixels'];ip=0x81500000
+ if re.search(r'^static[^;\n]*\bfog_map_depth\(',text,re.M):line_groups['fog_map_depth']=function_lines(text,'fog_map_depth')
+ assets={n:ROOT/'assets/runtime'/n for n in ['SCENE.H1P','MAP12.H1C','VISION.H1V']}
+ if (ROOT/'assets/runtime/TREE.H1T').exists():assets['TREE.H1T']=ROOT/'assets/runtime/TREE.H1T'
+ asset_hashes={n:sha(v) for n,v in assets.items()};m=CoreMachine(bda,elf,assets);gp=m.symbols['dota_game'];vp=m.symbols['view'];pixels=m.symbols['dota_pixels'];ip=0x81500000
  with elf.open('rb') as f:
   e=ELFFile(f);functions=sorted((int(s['st_value']),int(s['st_size']),s.name) for s in e.get_section_by_name('.symtab').iter_symbols() if s['st_info']['type']=='STT_FUNC' and int(s['st_size'])>0);line_records=[]
   for cu in e.get_dwarf_info().iter_CUs():
@@ -80,20 +83,24 @@ def main():
   frame_index=i;before=Counter(phase_slots);functions_before=Counter(totals);groups_before=Counter(groups);start_tick=tick();bytes_before=m.bytes_read
   phase='normal_game_ticks';active=record
   for _ in range(1+i%2):call('dota_tick',gp,ip)
-  player,px,py=update_camera();current=call('dota_sight_is_current',gp)
+  player,px,py=update_camera();m.word(vp+12,px+i*a.camera_step);current=call('dota_sight_is_current',gp)
   phase='sight_preflight';call('dota_sight_fog_state',gp,m.integer(gp+player*240+8),px,py)
   phase='full_dota_render';call('dota_render',gp,vp);active=False
   value=dict(index=i,game_ticks=tick()-start_tick,sight_current_before_preflight=current,read_bytes=m.bytes_read-bytes_before,**stat())
   if record:value.update(slots=dict(phase_slots-before),function_slots=dict(totals-functions_before),source_groups=dict(groups-groups_before))
   return value
- report=dict(passed=False,actual_complete_bda=True,actual_mips32=True,physical_h1_tested=False,USB_opened=False,entry_or_present_or_audio_executed=False,game_outcome_writes_after_initialization=0,device_snapshot_sha256=sha(snapshot),bda_sha256=sha(bda),elf_sha256=sha(elf),metadata_sha256=sha(build/'DOTA2.build.json'),compiled_sources=meta['source_sha256'],profile_source_sha256=sha(Path(__file__)),model_source_sha256=sha(ROOT/'tests/mips_core_model.py'),assets_sha256=asset_hashes,scope=__doc__)
+ report=dict(passed=False,actual_complete_bda=True,actual_mips32=True,physical_h1_tested=False,USB_opened=False,entry_or_present_or_audio_executed=False,game_outcome_writes_after_initialization=0,camera_pan_world_units_per_frame=a.camera_step,device_snapshot_sha256=sha(snapshot),bda_sha256=sha(bda),elf_sha256=sha(elf),metadata_sha256=sha(build/'DOTA2.build.json'),compiled_sources=meta['source_sha256'],profile_source_sha256=sha(Path(__file__)),model_source_sha256=sha(ROOT/'tests/mips_core_model.py'),assets_sha256=asset_hashes,scope=__doc__)
  try:
   assert call('bs_open_default')==1 and call('item_assets_open')==1;call('baked_io_reserve_cache',256*1024);call('item_assets_reserve_rules_cache',64*1024);assert call('item_assets_reserve_icon_cache',64)==64;assert call('bs_reserve_cache',14*1024*1024)==14*1024*1024;assert call('bs_map_sidecar_open_default')==1;assert call('vision_assets_open_default')==1
+  if 'tree_visual_open_default' in m.symbols:
+   assert 'TREE.H1T' in assets and call('tree_visual_open_default')==1;report['tree_visual_initial_heap_bytes']=call('tree_visual_dynamic_bytes')
   report['fountain_prewarm_frames']=call('bs_prewarm_fountain',0,0);report['vision_stats']=words('vision_stats');report['scene_heap_bytes']=call('bs_dynamic_storage_bytes');report['io_heap_bytes']=call('baked_io_dynamic_storage_bytes')
-  m.write(gp,snap);m.write(ip,bytes(20));view=[0]*25;view[0]=1;view[1]=m.integer(gp+62084);view[6]=view[7]=view[8]=view[15]=-1;view[9]=1;view[20]=view[21]=-1;m.write(vp,struct.pack('<25i',*view));call('dota_sight_reset');call('dota_set_paused',gp,0);update_camera()
+  game_bytes=m.symbol_sizes['dota_game'];assert game_bytes>=len(snap)
+  report['snapshot_bytes']=len(snap);report['game_bytes']=game_bytes;report['new_appended_state_zero_bytes']=game_bytes-len(snap)
+  m.write(gp,snap+bytes(game_bytes-len(snap)));m.write(ip,bytes(20));view=[0]*25;view[0]=1;view[1]=m.integer(gp+62084);view[6]=view[7]=view[8]=view[15]=-1;view[9]=1;view[20]=view[21]=-1;m.write(vp,struct.pack('<25i',*view));call('dota_sight_reset');call('dota_set_paused',gp,0);update_camera()
   for i in range(a.warm):warm.append(frame(i));print('WARM '+str(i)+' '+str(warm[-1]['render'][4:7]),flush=True)
-  call('dota_set_paused',gp,1);m.word(vp,2);frozen=m.read(gp,len(snap))
-  for i in range(2):call('dota_render',gp,vp);same_tick.append(stat());assert m.read(gp,len(snap))==frozen
+  call('dota_set_paused',gp,1);m.word(vp,2);frozen=m.read(gp,game_bytes)
+  for i in range(2):call('dota_render',gp,vp);same_tick.append(stat());assert m.read(gp,game_bytes)==frozen
   call('dota_set_paused',gp,0);m.word(vp,1);hook=m.uc.hook_add(UC_HOOK_BLOCK,block)
   # Unicorn retains translated blocks from warmup. Re-translate after adding
   # the hook so hot blocks, not only newly encountered code, are counted.

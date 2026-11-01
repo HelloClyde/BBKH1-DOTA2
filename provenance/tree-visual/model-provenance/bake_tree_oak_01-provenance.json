@@ -1,0 +1,340 @@
+{
+  "recorded_utc": "2026-10-29T14:03:05.669851+00:00",
+  "owner": "Valve Corporation",
+  "source": {
+    "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+    "vpk_version": 2,
+    "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+    "path": "models/props_tree/tree_oak_01.vmdl_c",
+    "crc32": "053bbdd5",
+    "archive_index": 620,
+    "offset": 41181408,
+    "length": 74372,
+    "preload_bytes": 0,
+    "resource_bytes": 74372,
+    "sha256": "0a35e09343e020f69902874b4f9c215f1df8a78d70f6d1e9ea891063320fb9b9",
+    "crc32_verified": true
+  },
+  "source_archive_sha256": "eaee44204cdb97c0c7d04be107c38b5bc5e2fcb4425b0e7003c61ffe36d2f5b6",
+  "source_raw_file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2\\raw\\bake_tree_oak_01\\tree_oak_01.vmdl_c",
+  "tool": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\.tools\\dota-source2\\cli-20.1\\Source2Viewer-CLI.exe",
+  "tool_sha256": "ef9f6fb3943c30b73f0991bce6654128727b0807968f7997a6bb014efbec8830",
+  "tool_project": "https://github.com/ValveResourceFormat/ValveResourceFormat",
+  "tool_release": "20.1",
+  "reproduction_command": [
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\.tools\\dota-source2\\cli-20.1\\Source2Viewer-CLI.exe",
+    "-d",
+    "-i",
+    "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+    "-f",
+    "models/props_tree/tree_oak_01.vmdl_c",
+    "-o",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2\\exports\\bake-trees\\tree_oak_01\\tree_oak_01.gltf",
+    "--game",
+    "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\gameinfo.gi",
+    "--gltf_export_format",
+    "gltf",
+    "--gltf_export_extras",
+    "--gltf_export_materials",
+    "--gltf_textures_adapt"
+  ],
+  "command_executed_this_invocation": true,
+  "log": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2\\reports\\bake_tree_oak_01-export.log",
+  "dependencies": [
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/dev/two_channel_noise_psd_93f8d443.vtex_c",
+      "crc32": "b702c3dc",
+      "archive_index": 440,
+      "offset": 105662816,
+      "length": 12668,
+      "preload_bytes": 0,
+      "resource_bytes": 12668,
+      "sha256": "ef53284f7e2ef50638bf68ea8114735f7db75f75988fc15afc6800f151103a2a",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_00_mask_psd_52cca3c8.vtex_c",
+      "crc32": "984e1269",
+      "archive_index": 471,
+      "offset": 73826448,
+      "length": 23620,
+      "preload_bytes": 0,
+      "resource_bytes": 23620,
+      "sha256": "05016347f8a39cd84a4ec1622563a0c6d8aed37f8d985bef8fb6dce8ed6895dc",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_oak_leaves_00.vmat_c",
+      "crc32": "653e99e6",
+      "archive_index": 410,
+      "offset": 65264736,
+      "length": 8264,
+      "preload_bytes": 0,
+      "resource_bytes": 8264,
+      "sha256": "57bd217d2c9c6df3b7fbfdbd3e9e329cef3a767a40f07548dc3ff1406ae7589f",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_oak_leaves_00_color_psd_c6c1c88b.vtex_c",
+      "crc32": "16cd2040",
+      "archive_index": 289,
+      "offset": 5096976,
+      "length": 701252,
+      "preload_bytes": 0,
+      "resource_bytes": 701252,
+      "sha256": "6a0d44701784bf89eef6a03475cc0a7959ec7ff54054404c9dfbd652173b522d",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_oak_leaves_00_normal_psd_9cd1e3a9.vtex_c",
+      "crc32": "9ab1704a",
+      "archive_index": 289,
+      "offset": 5798240,
+      "length": 701012,
+      "preload_bytes": 0,
+      "resource_bytes": 701012,
+      "sha256": "f00d532271dc017afa4d62869568aeb8dc925289db0437e15400de9cb4ad1a5b",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_oak_leaves_00_refl_psd_e2ae2f2c.vtex_c",
+      "crc32": "eb90b993",
+      "archive_index": 289,
+      "offset": 6499264,
+      "length": 351348,
+      "preload_bytes": 0,
+      "resource_bytes": 351348,
+      "sha256": "b38469820c6ea38d255bed512685eb73eb9d31591ecf6816b110ce1b2affc25e",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_wind_00_mask_psd_6dca5082.vtex_c",
+      "crc32": "2908336f",
+      "archive_index": 440,
+      "offset": 105639168,
+      "length": 23636,
+      "preload_bytes": 0,
+      "resource_bytes": 23636,
+      "sha256": "f7ebdd2a1096d89a65396a8df8fd83e7c028093948e93a7b773c6c99bfe024e9",
+      "crc32_verified": true
+    }
+  ],
+  "gltf_file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2\\exports\\bake-trees\\tree_oak_01\\tree_oak_01.gltf",
+  "gltf_sha256": "d208bf38b91050a2ad393e2f8e2af072c9a60620e16b6c857a66b15ca7c8d9a2",
+  "gltf_bytes": 8112,
+  "mesh_count": 3,
+  "node_count": 3,
+  "skin_count": 0,
+  "material_count": 1,
+  "image_count": 3,
+  "stored_primitive_vertices_sum": 2495,
+  "unique_position_accessor_vertices_sum": 2495,
+  "stored_primitive_triangles_sum": 2223,
+  "animations": [],
+  "meshes": [
+    {
+      "index": 0,
+      "name": "models\\props_tree\\tree_oak_01.vmdl_c.tree_oak_01_model",
+      "primitives": [
+        {
+          "vertices": 828,
+          "triangles": 706,
+          "attributes": [
+            "POSITION",
+            "TEXCOORD_0",
+            "NORMAL",
+            "TANGENT",
+            "JOINTS_0",
+            "WEIGHTS_0"
+          ],
+          "material": 0,
+          "local_bounds_min": [
+            -2.963043212890625,
+            -0.015961671248078346,
+            -3.0622246265411377
+          ],
+          "local_bounds_max": [
+            2.5364513397216797,
+            7.373030185699463,
+            2.6162192821502686
+          ]
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "name": "models\\props_tree\\tree_oak_01.vmdl_c.tree_oak_01_stump_model",
+      "primitives": [
+        {
+          "vertices": 439,
+          "triangles": 522,
+          "attributes": [
+            "POSITION",
+            "TEXCOORD_0",
+            "NORMAL",
+            "TANGENT",
+            "JOINTS_0",
+            "WEIGHTS_0"
+          ],
+          "material": 0,
+          "local_bounds_min": [
+            -1.9477307796478271,
+            -2.9054973125457764,
+            -0.0508200079202652
+          ],
+          "local_bounds_max": [
+            1.5840027332305908,
+            3.336704730987549,
+            1.8694343566894531
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "models\\props_tree\\tree_oak_01.vmdl_c.tree_oak_01_inspector",
+      "primitives": [
+        {
+          "vertices": 1228,
+          "triangles": 995,
+          "attributes": [
+            "POSITION",
+            "TEXCOORD_0",
+            "NORMAL",
+            "TANGENT"
+          ],
+          "material": 0,
+          "local_bounds_min": [
+            -7.26312255859375,
+            -0.017466042190790176,
+            -7.40799617767334
+          ],
+          "local_bounds_max": [
+            7.019866466522217,
+            17.671279907226562,
+            6.191636562347412
+          ]
+        }
+      ]
+    }
+  ],
+  "output_files": [
+    {
+      "uri": "tree_oak_01.bin",
+      "bytes": 211452,
+      "sha256": "1add10ffe77285a4b8ef9867e7fd629a2e2822f1663608fd846ae006e8fb93a1"
+    },
+    {
+      "uri": "tree_oak_leaves_00_color_psd_c6c1c88b.png",
+      "bytes": 352132,
+      "sha256": "89d3e1555466eaf97e6320d96ead23d97f3113b75a6375a0c76cbfbba6ea786a"
+    },
+    {
+      "uri": "tree_oak_leaves_00_normal_psd_9cd1e3a9.png",
+      "bytes": 517664,
+      "sha256": "bb09ec750850da96e669c6db7c0dccfa1c73798a39caa78d3e9c7f91eef696ae"
+    },
+    {
+      "uri": "tree_oak_leaves_00_refl_psd_e2ae2f2c.png",
+      "bytes": 602,
+      "sha256": "6d322a2cca8eb713376598ff0895e18ae1d819d432b2dfdf0dcb7dd677b5b76c"
+    }
+  ],
+  "material_source_resources": [
+    {
+      "Name": "materials/models/props_tree/tree_oak_leaves_00.vmat",
+      "ShaderName": "global_lit_simple.vfx",
+      "IntParams": {
+        "F_ENABLE_WIND": 1,
+        "F_NORMAL_MAP": 1,
+        "F_SPECULAR": 1,
+        "F_TINT_MASK": 1,
+        "F_ALPHA_TEST": 1
+      },
+      "FloatParams": {
+        "g_flBumpStrength": 1,
+        "g_flSpecularBloom": 0.5,
+        "g_flSpecularIntensity": 0.5,
+        "g_flAlphaTestReference": 0.7,
+        "g_flWindFlexibility": 0.3,
+        "g_flWindHighFrequencyEffects": 1,
+        "g_flWindLowFrequencyEffects": 0.5,
+        "g_flWindSpeedMultiplier": 0.5
+      },
+      "VectorParams": {
+        "g_vColorTint": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "g_vColorTint2": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "g_vTexCoordOffset": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "g_vTexCoordScale": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "TextureSelfIllumMask": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "TextureBloom": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "TextureWindMaskLow": [
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      "TextureParams": {
+        "g_tWindMask": "materials/models/props_tree/tree_wind_00_mask_psd_6dca5082.vtex",
+        "g_tWindNoise": "materials/dev/two_channel_noise_psd_93f8d443.vtex",
+        "g_tColor": "materials/models/props_tree/tree_oak_leaves_00_color_psd_c6c1c88b.vtex",
+        "g_tTintMask": "materials/models/props_tree/tree_00_mask_psd_52cca3c8.vtex",
+        "g_tNormal": "materials/models/props_tree/tree_oak_leaves_00_normal_psd_9cd1e3a9.vtex",
+        "g_tSpecular": "materials/models/props_tree/tree_oak_leaves_00_refl_psd_e2ae2f2c.vtex"
+      }
+    }
+  ],
+  "scope": "Original installed compiled asset exported by VRF to glTF/PNG. No invented mesh, animation, simplification or H1 runtime conversion is performed here."
+}

@@ -25,7 +25,7 @@ def main():
         obj=out/'objects'/(source.stem+'.o');run([cc,'-std=c99','-O2','-Wall','-Wextra','-Werror','-DBAKED_IO_HOST','-I',ROOT/'game','-I',ROOT/'platform','-c',source,'-o',obj]);return obj
     with ThreadPoolExecutor(max_workers=4)as pool:objects=list(pool.map(compile_one,sources))
     generator=out/'fixtures.exe';run([cc,*objects,'-o',generator]);layout=json.loads(run([generator,out/'fixtures',pack]));(out/'layout.json').write_text(json.dumps(layout,indent=2)+'\n',encoding='utf8');(out/'host-compile.txt').write_text(''.join(logs),encoding='utf8')
-    assert(layout['game_size'],layout['unit_size'],layout['input_size'])==(173544,240,20)
+    assert(layout['game_size'],layout['unit_size'],layout['input_size'])==(178044,240,20)
     dependencies=ROOT.parent/'.tools/dota3d-deps'
     if dependencies.is_dir():sys.path.insert(0,str(dependencies))
     sys.path.insert(0,str(ROOT/'tests'));from mips_core_model import CoreMachine
@@ -34,7 +34,7 @@ def main():
     asset_hashes={name:sha(path)for name,path in assets.items()}
     for name,receipt in meta.get('runtime_assets',{}).items():
         if name in assets and isinstance(receipt,dict)and 'sha256'in receipt:assert asset_hashes[name]==receipt['sha256'],('Runtime asset differs from final build',name)
-    machine=CoreMachine(bda,elf,assets);gptr=machine.symbols['dota_game'];input_ptr=0x81500000;checks=setup_writes=0;records=[]
+    machine=CoreMachine(bda,elf,assets);assert machine.symbol_sizes['view']==112;gptr=machine.symbols['dota_game'];input_ptr=0x81500000;checks=setup_writes=0;records=[]
     def check(condition,label):
         nonlocal checks;checks+=1
         if not condition:raise AssertionError((label,records[-1:]))

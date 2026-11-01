@@ -1,0 +1,20 @@
+{
+  "read_only_source": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\navigation-v022",
+  "source_sha256": {
+    "source-flags.npy": "193b4925c22067970ce02c0f60cc86a679ddf33cdc3eb51e2be4f9e56bf27e28",
+    "physics-triangles.f32": "abede6f452745d062de8775b70d33f3642c735366bcc529d7b968e0b9e9157a3",
+    "height.f32": "b709bd313209948a17e21ea3ddb6d9e9df848fa2e187e2a08132eb3a70376a90",
+    "buildings.json": "a88386736eb14a2f0c19984e4a8eb3d9fba4766ca724d14b19c2cbda27752a51",
+    "physics-edges.csv": "f73df23151f239ac9c52f584c4b855a0904e631c98af5cc4c496c9b538ae69cc",
+    "source-walk.u8": "1c190fabbf39dbdeceb36b7552b17f86cc4517027183169cbd28759461c13d5d"
+  },
+  "collision_converter_sha256": "7cbe5c8e321c0c670451429a539cc718ba0059022522223bab016e67234d3e9e",
+  "new_full_gnv_physics": {
+    "source_triangles": 289236,
+    "wall_triangles": 22796,
+    "physics_right_edges_added": 24,
+    "physics_down_edges_added": 25
+  },
+  "previously_legal_edge_count": 88220,
+  "previously_legal_edges_equal": true
+}

@@ -1,0 +1,70 @@
+{
+  "primary_source": "Read-only local installed Steam Dota2 server.dll and original item/localisation text",
+  "server_sha256": "af4622bd405f1a465926e20a47d97bbf9988ff0cd11b63901fff1d6dc6a4c834",
+  "server_bytes": 88194712,
+  "native_snippets": {
+    "cvar_load": {
+      "va": "0x180273cba",
+      "bytes": "f30f1015ee02c502488d154ffb8f03"
+    },
+    "default_override": {
+      "va": "0x18177ab24",
+      "bytes": "41c78678040000000080bf"
+    },
+    "getter": {
+      "va": "0x1817d8bc0",
+      "bytes": "f30f1081780400000f57c90f2fc1730c488d0d51a28603e954c0c9fec3"
+    }
+  },
+  "native_default_regrow_seconds": 180,
+  "native_default_constant": {
+    "va": "0x182ec3fb0",
+    "bytes": "00003443"
+  },
+  "reasoning": "Rules constructor sets override +0x478 to -1. Getter returns nonnegative override, otherwise the dota_tree_regrow_time ConVar. Its registration default is 180. Generic MapInfo TreeRegrowTime parser has a separate 120-second fallback; it is not used as the standard default here. Audited Turbo initializer does not write +0x478.",
+  "turbo_audit_sha256": "c339645f0d69cb6057e316218cf579128baa38a6fa9cda14b02de65f66b411ac",
+  "items_text_sha256": "04c432155f6c89c7277a76c8cfb72ff96a6b0d908969a03efc15f41ac1694d6e",
+  "item_fields": {
+    "item_tango": {
+      "block_sha256_utf8": "1ea4bfbd25886c2c2be98e843bb8d887a5dbae52c6142f6a34449b23328b2910",
+      "fields": {
+        "AbilityCastRange": "165",
+        "health_regen": "7.0",
+        "buff_duration": "16.0"
+      }
+    },
+    "item_quelling_blade": {
+      "block_sha256_utf8": "333409edebc208980b921b46203460da71fe5cbc6406381738aa557c34a255ae",
+      "fields": {
+        "AbilityCastRange": "350",
+        "AbilityCooldown": "4.0"
+      }
+    },
+    "item_bfury": {
+      "block_sha256_utf8": "cde5e7ca7c355cd8d11bf86936ca9824d9af96989d3cae4b6190e51ddc40499a",
+      "fields": {
+        "AbilityCastRange": "350",
+        "AbilityCooldown": "3.0"
+      }
+    },
+    "item_branches": {
+      "block_sha256_utf8": "a176a9140572cc7641a9aec512d83c5b9486a6766ac9c07e8d3f8e57203eedc4",
+      "fields": {
+        "AbilityCastRange": "400",
+        "AbilityCooldown": "0.0",
+        "tree_duration": "20"
+      }
+    }
+  },
+  "localisation_sha256": "8668b3945eff0ac07500c08cf9ecd4f677e8557de7709b755e4e2dbd2ab85889",
+  "implemented_skill_tree_action": "Lina Light Strike Array cuts its actual AoE; Slark Pounce clears the original120-Source landing circle on natural expiry or hero impact.",
+  "geometry": {
+    "tree_count": 2113,
+    "id_order": "provenance/vision/trees.json order, not sorted",
+    "sha256": "84b943d874a6f95370fb60286ce96b58512fe81e7216772b0c407356f0f005cc",
+    "tree_radius_world": 16,
+    "navigation_extra_unit_clearance_world": 6
+  },
+  "scope_limits": "Native timer/default and item values are verified; the fixed-grid H1 navigation/LOS and tree regrowth placement are not claimed to reproduce every continuous Source2 hull interaction.",
+  "pounce_audit_sha256": "a62d2ecda45f5541f802b0ac6533e31aa8a6f7289a06af6aa21786748bea3ef8"
+}

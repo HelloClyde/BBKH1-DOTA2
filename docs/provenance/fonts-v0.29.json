@@ -1,0 +1,54 @@
+{
+  "glyphs": 672,
+  "added": [
+    20110,
+    20171,
+    20195,
+    20445,
+    20687,
+    21508,
+    22411,
+    23383,
+    23448,
+    24418,
+    25103,
+    25171,
+    26412,
+    26435,
+    29256,
+    30011,
+    30041,
+    30721,
+    31532,
+    32032,
+    32461,
+    36866,
+    38750,
+    38899,
+    39057,
+    65306
+  ],
+  "added_text": "于介代保像各型字官形戏打本权版画留码第素绍适非音频：",
+  "existing_glyph_records_unchanged": true,
+  "old_header_sha256": "a75aa3c0e2f0c17adc3ffc50fc5f99e0306f9a22b679ce5226e54bcb72323ffc",
+  "header_sha256": "fdf5222062c0837ca58971aaf9566744b3e32123105686676cd5e8a3fa95c305",
+  "glyph_height": 14,
+  "source_sha256": {
+    "platform/render.c": "ff145b877c49d7a0e680678f6828f335cb2aa586bccc652eaa5c08040507d734",
+    "platform/status_effects.c": "484a848d18ac465c6a03a329325153cf2b5cdb8fa56f543e85772673f07f3893",
+    "platform/extra_ability.h": "0f3e6c07e0c1c10866aaec69f42cf7ab4eab0ed023b0dea5f3fc3e010581922b",
+    "game/progression_data.h": "4bfce0d2435de756e3eacbde5ec048f91797dbc208c8cbb8f2e2b6609a5afb0a"
+  },
+  "font_files_redistributed": false,
+  "local_font_sources": [
+    {
+      "name": "msyh.ttc",
+      "sha256": "d79c55e68b1131eea0cc1c47be4f572d964f28c682e143db2ad09c1e4cb07a3f"
+    },
+    {
+      "name": "consola.ttf",
+      "sha256": "c6e6ce8119fdd47ec6a5449a08e2d2ad7f41ea03143aae193068ed9fa58eaebc"
+    }
+  ],
+  "ownership": "Generated bitmap subset from locally installed Microsoft fonts; no new font license is asserted."
+}

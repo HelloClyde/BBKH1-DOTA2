@@ -15,6 +15,7 @@
 #include "lane_creep_data.h"
 #include "sight.h"
 #include "ward_placement_data.h"
+#include "trees.h"
 enum { NPC_EFFECT_PURGE=1,NPC_EFFECT_ICEFIRE,NPC_EFFECT_DESECRATE,NPC_EFFECT_PETRIFY,NPC_EFFECT_SLAM,NPC_EFFECT_FRENZY };
 static void npc_tick(DotaGame *g,int index);
 static void npc_effect_tick(DotaGame *g);
@@ -400,16 +401,19 @@ int dota_rules_item_primitive(DotaGame*g,int encoded,int h,int target,int x,int 
         g->item_world.tree[i].source_item=id;
         dota_sight_invalidate();
         return 1;
-        case ITEM_ACTION_TREE:if(!range(u->x,u->y,x,y,id==DOTA_ITEM_TANGO?165:350))return 0;
-        for(i=0;i<DOTA_ITEM_TREES;i++){
-            DotaItemTree*t=&g->item_world.tree[i];
-            if(t->until>g->tick&&!t->removed&&range(x,y,t->x,t->y,96)){
-                t->removed=1;
-                dota_sight_invalidate();
-                return t->source_item==DOTA_ITEM_BRANCHES?2:1;
+        case ITEM_ACTION_TREE:{
+            int index=dota_trees_pick(g,x,y,96),dynamic=-1,best=24*24+1,tx=0,ty=0;
+            int cast_range=dota_items_parameter(id,IP_ABILITYCASTRANGE,-1,(id==DOTA_ITEM_TANGO?165:350)*100)/100+dota_items_range_bonus(g,h,0);
+            if((unsigned)(x|y)>=DOTA_WORLD)return 0;
+            if(index>=0){int dx,dy;dota_trees_position((unsigned)index,&tx,&ty);dx=x-tx;dy=y-ty;best=dx*dx+dy*dy;}
+            for(i=0;i<DOTA_ITEM_TREES;i++){
+                DotaItemTree*t=&g->item_world.tree[i];int dx=x-t->x,dy=y-t->y,d=dx*dx+dy*dy;
+                if(t->until>g->tick && !t->removed && d<=24*24 && d<best){best=d;dynamic=i;tx=t->x;ty=t->y;}
             }
+            if((index<0 && dynamic<0) || !range(u->x,u->y,tx,ty,cast_range))return 0;
+            if(dynamic>=0){DotaItemTree*t=&g->item_world.tree[dynamic];t->removed=1;dota_sight_invalidate();return t->source_item==DOTA_ITEM_BRANCHES?2:1;}
+            return dota_trees_cut(g,(unsigned)index);
         }
-        /* The map's baked source trees cannot be removed visually. Reject the cast. */return 0;
         case ITEM_ACTION_WARD:if(!range(u->x,u->y,x,y,500+dota_items_range_bonus(g,h,0)))return 0;
         i=new_unit(g,h,amount?ITEM_UNIT_SENTRY:ITEM_UNIT_OBSERVER,id,duration,x,y);
         if(i<0)return 0;
@@ -567,6 +571,7 @@ int dota_rules_item_primitive(DotaGame*g,int encoded,int h,int target,int x,int 
 }
 void dota_item_world_tick(DotaGame*g){
     int h,i,j;
+    dota_trees_tick(g);
     if(g->item_world.last_tick==g->tick)return;
     g->item_world.last_tick=g->tick;
     smoke_tick(g);

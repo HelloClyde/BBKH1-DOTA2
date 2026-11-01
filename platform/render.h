@@ -22,11 +22,14 @@ typedef struct DotaView {
     int inventory_source,inventory_hover,inventory_mode;
     int drag_x,drag_y;
     int ward_mode; /* Append-only: 0 observer, 1 sentry while aiming a ward. */
+    int help_return_screen,help_page,pause_selected;
 } DotaView;
 
 extern uint16_t dota_pixels[480*272];
 void dota_render(const DotaGame *game,const DotaView *view);
 void dota_render_asset_error(int code);
+/* Shared pause-button hit areas match the renderer's three-column grid. */
+int dota_pause_button_at(int x,int y);
 /* Pick actual 3D terrain with the battlefield's oblique camera and height grid. */
 int dota_screen_to_world(const DotaView *view,int sx,int sy,int *wx,int *wy);
 /* Hit visible enemy model bounds, resolving overlapping models by nearest depth.

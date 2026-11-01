@@ -1,0 +1,46 @@
+{
+  "ready": true,
+  "scope": "Frozen game tree state, item actions, navigation and LOS; no USB/remote/Git operations",
+  "source_sha256": {
+    "game/trees.c": "ecde00b888b6bdc370fec7252f3b8515cd3d1032b8b83c47ca949239dd7d23ba",
+    "game/trees.h": "0ebbd7d4cbf9721856199358c44f3d4c7741597a1c72b226a31c0b0d4072e79c",
+    "game/trees_state.h": "e0284c41b560b4a4f8653326af934d291c4ed960e430d36cdf763784b13de5f8",
+    "game/game.c": "f761c5fea2604ed91671a4c84a8f7c1571287b92adfe15309d0ec112b1541a81",
+    "game/game.h": "06e0d4baeca3ffb48948caa4a58962ed05114f33ee463d8637cb9567946fcb87",
+    "game/item_world.c": "6e4f8fed1482ba78da5f17616e5d898c55b9ae3287e87a5ac5d06ffcc7d64d69",
+    "game/navigation.c": "c5edcf32428f02f3faae6d6fa478d778ce1de5494e4c965c412f08cec3937d1a",
+    "game/navigation.h": "38865d13a170a3b401d19f3353e1aee29978b60b6f11efe7c3a5d3af3a91962e",
+    "game/sight.c": "a2bdb365fc9602f22b904eed0e2611e851b1046340db7a34c04c13f7e8ac6e93",
+    "private/generated/dota_nav.h": "88682b9e38747d9458aee3a8f822f5e8421ba335f4f49296e6d1002f7281c455",
+    "private/generated/dota_barracks_nav.h": "c4fedcb61e1c2cbf766df228155328ca2f452773a8af039e71070b77a51ad671",
+    "private/generated/dota_tree_nav.h": "f39c5bf79f483e83d43c32c6681f265fb2bef5f3cee83e0f8a3cfc967eaf3d83",
+    "tools/generate_tree_navigation.py": "fd0173d43bedd01499218617a62893611ae64d8fd46ac34e6e59a9fdcf7f5e53",
+    "game/extra_heroes.c": "7f9633346034c3a9adea43eb75643791fd892b4cdd106ca5d90abb1eef043449"
+  },
+  "game_bytes_o32": 178044,
+  "unit_bytes_o32": 240,
+  "view_bytes_o32": 100,
+  "tree_state_bytes_o32": 4500,
+  "sight_workspace_bytes_o32": 1062756,
+  "sight_workspace_bytes_host": 1062768,
+  "static_trees": 2113,
+  "regrow_seconds": 180,
+  "regrow_ticks": 3600,
+  "geometry_borrowed": true,
+  "tests": {
+    "build/tests/trees-pounce-final-1/verification.json": "2cac44915cc6601f2c9b5cb007c6a2cdc423bb6a43a4ad4d52a5144c6e72951c",
+    "build/tests/tree-pounce-vision-final-1/verification.json": "03da73846dffed4a47d4c250f7589a44a566cfa880ffd0c9d94239a70cda9ed1",
+    "build/tests/tree-wards-final-1/verification.json": "119cef365cbfe2d7114bd0a36ce6c40fd86a4cf9cf07fed3ccf872a69311fcc8"
+  },
+  "primary_source_audit_sha256": "0a5979c874ee3840037c3ef91f9f8f04f84a02f938032af3dfe3e92010bc8b76",
+  "navigation_audit_sha256": "59d8914f357d32834b8ebaa3cbe926fc03a0df6f0b28d415b46f53cf1025c4c1",
+  "navigation_generation_sha256": "6bdfe37798f386cc88478a6c8bf30556e0cca4ecb544afe44c7ddf7c800205a9",
+  "actual_final_BDA_tested": false,
+  "physical_H1_tested": false,
+  "physical_FPS_measured": false,
+  "pounce_source_audit_sha256": "a62d2ecda45f5541f802b0ac6533e31aa8a6f7289a06af6aa21786748bea3ef8",
+  "skill_tree_actions": [
+    "Lina Light Strike Array actual AoE",
+    "Slark Pounce installed120Source landing radius; natural and impact"
+  ]
+}

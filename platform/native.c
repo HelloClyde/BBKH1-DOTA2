@@ -21,6 +21,7 @@
 #include "battlefield_gesture.h"
 #include "target_input.h"
 #include "runes.h"
+#include "trees.h"
 #if defined(__mips__)
 #include "dota_mxu_exact.h"
 #endif
@@ -28,6 +29,7 @@
 #include "baked_scene.h"
 #include "baked_io.h"
 #include "vision_assets.h"
+#include "tree_visual.h"
 #endif
 
 /* Observable state is also used by the MIPS controller tests. */
@@ -226,6 +228,8 @@ __attribute__((noinline)) void h1_dota_present(const uint16_t *pixels) {
 }
 static void screen(int value) {
     if(value==DOTA_SCREEN_SHOP&&view.screen!=DOTA_SCREEN_SHOP)shop_return_screen=view.screen==DOTA_SCREEN_PAUSE?DOTA_SCREEN_PAUSE:DOTA_SCREEN_PLAY;
+    if(value==DOTA_SCREEN_HELP&&view.screen!=DOTA_SCREEN_HELP){view.help_return_screen=view.screen==DOTA_SCREEN_PAUSE?DOTA_SCREEN_PAUSE:DOTA_SCREEN_MENU;view.help_page=0;}
+    if(value==DOTA_SCREEN_PAUSE&&view.screen==DOTA_SCREEN_PLAY)view.pause_selected=0;
     view.screen=value;
     /* Shop browsing and transactions pause simulation; delivery resumes later. */
     dota_set_paused(&dota_game,value==DOTA_SCREEN_SKILLS?view.skills_return_screen==DOTA_SCREEN_PAUSE:value!=DOTA_SCREEN_PLAY);
@@ -356,6 +360,14 @@ static void confirm_cursor(void){
 static void open_progression(void){
     view.skills_return_screen=view.screen==DOTA_SCREEN_PAUSE?DOTA_SCREEN_PAUSE:DOTA_SCREEN_PLAY;
     view.skills_details=view.skills_scroll=0;screen(DOTA_SCREEN_SKILLS);
+}
+static void pause_action(int action){
+    if(action==0)screen(DOTA_SCREEN_PLAY);
+    else if(action==1)screen(DOTA_SCREEN_SHOP);
+    else if(action==2)open_progression();
+    else if(action==3)screen(DOTA_SCREEN_HELP);
+    else if(action==4)screen(DOTA_SCREEN_MENU);
+    else if(action==5)closing=1;
 }
 static void progression_apply(int cell){
     int result=0;view.skills_selected=cell;
@@ -503,6 +515,14 @@ static void play_touch(int x,int y) {
     }
     if(view.aim_item>=0){
         DotaItemRecord r;int item=aimed_item(&r);if(item<0){view.aim_item=-1;return;}
+#ifdef DOTA_BAKED
+        if(r.action==ITEM_ACTION_TREE){
+            BSCamera camera={view.camera_x,view.camera_y,bs_ground_height(view.camera_x,view.camera_y)};int ox,oy,tree;
+            (void)bs_project(&camera,0,0,0,&ox,&oy,0);
+            tree=tree_visual_pick(&dota_game,x-ox,y-oy);
+            if(tree>=0&&dota_trees_position((unsigned)tree,&wx,&wy)){confirm_item(wx,wy,-1);return;}
+        }
+#endif
         i=dota_hit_unit(&dota_game,&view,x,y,dota_items_is_teleport(item)?DOTA_HIT_FRIENDLY:item_target_relation(&r),0);
         if(!dota_screen_to_world(&view,x,y,&wx,&wy))return;
         if(i>=0&&!(r.flags&ITEM_F_POINT)){wx=dota_game.units[i].x;wy=dota_game.units[i].y;}
@@ -525,11 +545,11 @@ static void process_ui(void) {
         if(pressed[H1_KEY_RIGHT])view.hero=(view.hero+1)%DOTA_HERO_TYPES;
         if(pressed[H1_KEY_UP]||pressed[H1_KEY_DOWN])view.hero=(view.hero+5)%DOTA_HERO_TYPES;
         if(pressed[H1_KEY_H])screen(DOTA_SCREEN_HELP);
-        if(enter)start_game();
+        else if(enter)start_game();
         if(touch_pending) {
             if(touch_y>=70 && touch_y<212 && touch_x>=12 && touch_x<468){int row=(touch_y-70)/74,col=(touch_x-12)/92;if((touch_y-70)%74<68 && (touch_x-12)%92<88)view.hero=clamp(row*5+col,0,DOTA_HERO_TYPES-1);}
             else if(touch_x>=142 && touch_x<=338 && touch_y>=236 && touch_y<=266)start_game();
-            else if(touch_x>=360 && touch_y>=236)screen(DOTA_SCREEN_HELP);
+            else if(touch_x>=360 && touch_x<462 && touch_y>=236 && touch_y<266)screen(DOTA_SCREEN_HELP);
         }
     } else if(view.screen==DOTA_SCREEN_PLAY) {
         if(pressed[H1_KEY_P]||back)screen(DOTA_SCREEN_PAUSE);
@@ -565,17 +585,21 @@ static void process_ui(void) {
             if(touch_pending)play_touch(touch_x,touch_y);
         }
     } else if(view.screen==DOTA_SCREEN_PAUSE) {
-        if(enter||escape||pressed[H1_KEY_P])screen(DOTA_SCREEN_PLAY);
-        if(pressed[H1_KEY_M])screen(DOTA_SCREEN_SHOP);
-        if(pressed[H1_KEY_H])screen(DOTA_SCREEN_MENU);
-        if(pressed[H1_KEY_X])closing=1;
-        if(pressed[H1_KEY_U])open_progression();
-        if(touch_pending&&touch_y>=208&&touch_y<241){
-            if(touch_x>=24&&touch_x<160)screen(DOTA_SCREEN_PLAY);
-            else if(touch_x>=172&&touch_x<308)screen(DOTA_SCREEN_SHOP);
-            else if(touch_x>=320&&touch_x<456)open_progression();
+        if(escape||pressed[H1_KEY_P])pause_action(0);
+        else if(pressed[H1_KEY_M])pause_action(1);
+        else if(pressed[H1_KEY_U])pause_action(2);
+        else if(pressed[H1_KEY_H])pause_action(3);
+        else if(pressed[H1_KEY_C])pause_action(4);
+        else if(pressed[H1_KEY_X])pause_action(5);
+        else{
+            int selected=clamp(view.pause_selected,0,5),row=selected/3,column=selected%3;
+            if(pressed[H1_KEY_LEFT])column=(column+2)%3;
+            if(pressed[H1_KEY_RIGHT])column=(column+1)%3;
+            if(pressed[H1_KEY_UP]||pressed[H1_KEY_DOWN])row=1-row;
+            view.pause_selected=row*3+column;
+            if(enter)pause_action(view.pause_selected);
+            else if(touch_pending){int action=dota_pause_button_at(touch_x,touch_y);if(action>=0){view.pause_selected=action;pause_action(action);}}
         }
-        if(touch_pending&&touch_y>=243&&touch_y<259){if(touch_x>=24&&touch_x<160)screen(DOTA_SCREEN_MENU);else if(touch_x>=344&&touch_x<456)closing=1;}
     } else if(view.screen==DOTA_SCREEN_SKILLS){
         int selected=view.skills_selected;
         if(escape||pressed[H1_KEY_U]){if(escape&&view.skills_details)view.skills_details=0;else screen(view.skills_return_screen);}
@@ -634,7 +658,14 @@ static void process_ui(void) {
         if(enter)start_game();else if(escape)screen(DOTA_SCREEN_MENU);
         if(touch_pending){if(touch_y>=190 && touch_y<=226)start_game();else if(touch_y>=240)screen(DOTA_SCREEN_MENU);}
     } else if(view.screen==DOTA_SCREEN_HELP) {
-        if(enter||escape||touch_pending)screen(DOTA_SCREEN_MENU);
+        if(enter||escape||pressed[H1_KEY_H])screen(view.help_return_screen==DOTA_SCREEN_PAUSE?DOTA_SCREEN_PAUSE:DOTA_SCREEN_MENU);
+        else{
+            if(pressed[H1_KEY_LEFT]||pressed[H1_KEY_RIGHT]||pressed[H1_KEY_A]||pressed[H1_KEY_D])view.help_page=1-view.help_page;
+            if(touch_pending){
+                if(touch_x>=432&&touch_y<26)screen(view.help_return_screen==DOTA_SCREEN_PAUSE?DOTA_SCREEN_PAUSE:DOTA_SCREEN_MENU);
+                else if(touch_y>=34&&touch_y<60){if(touch_x>=16&&touch_x<156)view.help_page=0;else if(touch_x>=164&&touch_x<304)view.help_page=1;}
+            }
+        }
     }
     memset(pressed,0,sizeof pressed);touch_pending=0;
 }
@@ -645,6 +676,10 @@ static void play_input(DotaInput *input){
     input->target_x=view.target_x;input->target_y=view.target_y;input->actions=view.screen==DOTA_SCREEN_PLAY?pending_actions:0;
 }
 static int prewarm_cancel_poll(void){pump();return closing;}
+static void resource_error_wait(int code){
+    dota_render_asset_error(code);h1_dota_present(dota_pixels);
+    while(!closing){pump();if(pressed[H1_KEY_ENTER]||pressed[H1_KEY_CONFIRM]||pressed[H1_KEY_ESCAPE]||pressed[H1_KEY_BACK])closing=1;}
+}
 int h1_app_main(void) {
     uint32_t last,accumulator=0,frame_phase=0;int i;
     h1_dota_debug.magic=0x31415444u;
@@ -675,6 +710,7 @@ int h1_app_main(void) {
              * warmup retains the ordinary renderer; real I/O errors surface. */
             (void)bs_map_sidecar_open_default();
             if(!vision_assets_open_default()){asset_error=15;goto assets_done;}
+            if(!tree_visual_open_default()){asset_error=16;goto assets_done;}
             (void)bs_prewarm_fountain(0,prewarm_cancel_poll);
             if(closing)goto finish;
             if(bs_last_error())asset_error=bs_last_error();
@@ -696,8 +732,7 @@ int h1_app_main(void) {
 assets_done:
     if(asset_error){
         h1_dota_debug.error=20u+(unsigned)asset_error;
-        dota_render_asset_error(asset_error);h1_dota_present(dota_pixels);
-        while(!closing){pump();if(pressed[H1_KEY_ENTER]||pressed[H1_KEY_CONFIRM]||pressed[H1_KEY_ESCAPE])closing=1;}
+        resource_error_wait(asset_error);
         goto finish;
     }}
 #endif
@@ -733,12 +768,22 @@ assets_done:
         view.camera_x=clamp(view.camera_x,0,4095);view.camera_y=clamp(view.camera_y,0,4095);
         h1_dota_debug.screen=view.screen;h1_dota_debug.hero=view.hero;
         h1_dota_debug.shop_item=view.shop_item;h1_dota_debug.ticks=dota_game.tick;
-        view.frames=h1_dota_debug.frames;dota_render(&dota_game,&view);h1_dota_present(dota_pixels);
+        view.frames=h1_dota_debug.frames;dota_render(&dota_game,&view);
+#ifdef DOTA_BAKED
+        h1_dota_cache.scene_heap_bytes=bs_dynamic_storage_bytes();
+        h1_dota_cache.total_heap_bytes=h1_dota_cache.rgb_bytes+h1_dota_cache.scene_heap_bytes+h1_dota_cache.io_heap_bytes+h1_dota_cache.rules_bytes+h1_dota_cache.icon_heap_bytes+h1_dota_cache.vision_heap_bytes+h1_dota_cache.audio_heap_bytes;
+        if(tree_visual_error()){
+            h1_dota_debug.error=36;dota_set_paused(&dota_game,1);
+            resource_error_wait(16);
+            break;
+        }
+#endif
+        h1_dota_present(dota_pixels);
     }
 finish:
     dota_audio_close();
 #ifdef DOTA_BAKED
-    vision_assets_close();item_assets_close();bs_close();
+    tree_visual_close();vision_assets_close();item_assets_close();bs_close();
 #endif
     cache_memory_free(rgb565_table);rgb565_table=0;
     h1_dota_cache.total_heap_bytes=0;h1_dota_cache.released=1;

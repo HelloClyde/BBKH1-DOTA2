@@ -1,0 +1,40 @@
+{
+  "operation": "file_put",
+  "source": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\assets\\runtime\\TREE.H1T",
+  "target": "B:\\DOTA2\\TREE.H1T",
+  "target_gbk_hex": "423a5c444f5441325c545245452e483154",
+  "phase": "done",
+  "completed": true,
+  "size": 17539264,
+  "crc32": 1680717513,
+  "sha256": "cb665855d9b4d8c20f2e0603492ed4425cb11a2c3763f51eadf30c5d9162aa80",
+  "token": 9,
+  "received": 17539264,
+  "status": {
+    "version": 1,
+    "state": 5,
+    "token": 9,
+    "size": 17539264,
+    "received": 17539264,
+    "expected_crc": 1680717513,
+    "actual_crc": 1680717513,
+    "verify_offset": 17539264,
+    "error": 0,
+    "fs_errno": 0,
+    "flags": 8,
+    "old_size": 0,
+    "old_crc": 0,
+    "last_activity_tick": 1949138,
+    "step_count": 8574,
+    "reserved": 0,
+    "state_name": "done",
+    "error_name": "ok"
+  },
+  "paths": {
+    "target": "B:\\DOTA2\\TREE.H1T",
+    "temporary": "B:\\DOTA2\\H1D00000009.TMP",
+    "backup": "B:\\DOTA2\\H1D00000009.BAK"
+  },
+  "device_crc_verified": true,
+  "elapsed_seconds": 1184.0
+}

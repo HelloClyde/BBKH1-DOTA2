@@ -6,6 +6,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);a=p.parse_args();out=a.output.resolve();assert out.is_relative_to(ROOT/'build') and not out.exists();out.mkdir(parents=True)
  sources=[ROOT/'tests/fog_cache_ui.c',*[ROOT/'platform'/n for n in ['render.c','baked_scene.c','baked_io.c','item_assets.c','shop_catalog.c','status_effects.c','map_codec.c','map_format.c','vision_assets.c']],*sorted((ROOT/'game').glob('*.c'))]
+ if (ROOT/'platform/tree_visual.c').exists():sources.append(ROOT/'platform/tree_visual.c')
  inputs=[*sources,ROOT/'tests/vision_ui.c',ROOT/'platform/native.c',Path(__file__),*sorted((ROOT/'game').glob('*.h')),*sorted((ROOT/'platform').glob('*.h')),*sorted((ROOT/'private/generated').glob('*.h'))]
  identities=lambda:{p.relative_to(ROOT).as_posix():sha(p) for p in sorted(set(inputs))};before=identities();report=dict(passed=False,source_sha256=before,physical_h1_tested=False,actual_mips32=False,scope=__doc__)
  exe=out/'fog-cache.exe';env=dict(os.environ);env['PATH']='C:/msys64/ucrt64/bin'+os.pathsep+env.get('PATH','')

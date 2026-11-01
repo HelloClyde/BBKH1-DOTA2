@@ -1,0 +1,206 @@
+{
+  "recorded_utc": "2026-10-30T03:33:16.263476+00:00",
+  "owner": "Valve Corporation",
+  "source": {
+    "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\maps\\dota.vpk",
+    "vpk_version": 2,
+    "vpk_tree_sha256": "6f3ca95524b532e590cc2030dba10bbfb3d47e26c716022d2495be00655baada",
+    "path": "maps/dota/worldnodes/n0_lr0_agg_prop_tree_gnarly001_0.vmdl_c",
+    "crc32": "f63737bc",
+    "archive_index": 32767,
+    "offset": 18600225,
+    "length": 34726,
+    "preload_bytes": 0,
+    "resource_bytes": 34726,
+    "sha256": "0cbcaf7de44fa9e11cc27978a97c7a517867e126a1db766fe0a2d190d49fed2a",
+    "crc32_verified": true
+  },
+  "source_archive_sha256": "8543569c3c661f69694a341603041bd32fde3599072d35a9301e68406d152a0f",
+  "source_raw_file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2\\raw\\complete_n0_lr0_agg_prop_tree_gnarly001_0\\n0_lr0_agg_prop_tree_gnarly001_0.vmdl_c",
+  "tool": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\.tools\\dota-source2\\cli-20.1\\Source2Viewer-CLI.exe",
+  "tool_sha256": "ef9f6fb3943c30b73f0991bce6654128727b0807968f7997a6bb014efbec8830",
+  "tool_project": "https://github.com/ValveResourceFormat/ValveResourceFormat",
+  "tool_release": "20.1",
+  "reproduction_command": [
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\.tools\\dota-source2\\cli-20.1\\Source2Viewer-CLI.exe",
+    "-d",
+    "-i",
+    "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\maps\\dota.vpk",
+    "-f",
+    "maps/dota/worldnodes/n0_lr0_agg_prop_tree_gnarly001_0.vmdl_c",
+    "-o",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2\\exports\\map-completion\\n0_lr0_agg_prop_tree_gnarly001_0\\n0_lr0_agg_prop_tree_gnarly001_0.gltf",
+    "--game",
+    "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\gameinfo.gi",
+    "--gltf_export_format",
+    "gltf",
+    "--gltf_export_extras",
+    "--gltf_export_materials",
+    "--gltf_textures_adapt"
+  ],
+  "command_executed_this_invocation": false,
+  "log": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2\\reports\\complete_n0_lr0_agg_prop_tree_gnarly001_0-export.log",
+  "dependencies": [
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_gnarly001.vmat_c",
+      "crc32": "993e05d6",
+      "archive_index": 246,
+      "offset": 78495584,
+      "length": 6536,
+      "preload_bytes": 0,
+      "resource_bytes": 6536,
+      "sha256": "ab548ade4bd86c3867ff2a100d500af154221af00d9334dabcd2811e216e2cd4",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_gnarly001_color_psd_7b2bcf.vtex_c",
+      "crc32": "1fc79e9b",
+      "archive_index": 441,
+      "offset": 107551344,
+      "length": 176572,
+      "preload_bytes": 0,
+      "resource_bytes": 176572,
+      "sha256": "28f8af995d20a904bffe9d4af961cd395fec9a99b4543e388fc0dd4247b8d45d",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_gnarly001_normal_psd_944b4a20.vtex_c",
+      "crc32": "094b53a7",
+      "archive_index": 441,
+      "offset": 107904992,
+      "length": 1400052,
+      "preload_bytes": 0,
+      "resource_bytes": 1400052,
+      "sha256": "baeee05893786029a434cdd7a801e72528606127a355f81de924e7bfea064320",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "materials/models/props_tree/tree_gnarly001_refl_psd_a700deda.vtex_c",
+      "crc32": "c0724928",
+      "archive_index": 441,
+      "offset": 107727920,
+      "length": 177068,
+      "preload_bytes": 0,
+      "resource_bytes": 177068,
+      "sha256": "527b235dbb6bedb6a25cba3334fa6914a5de29b2afcd093b0f4daa201004938a",
+      "crc32_verified": true
+    }
+  ],
+  "gltf_file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\h1-dota2\\private\\source2\\exports\\map-completion\\n0_lr0_agg_prop_tree_gnarly001_0\\n0_lr0_agg_prop_tree_gnarly001_0.gltf",
+  "gltf_sha256": "91b375b91dff79bfad6edf33c806bfe2356eb972ddbdf912adad05fbb5957241",
+  "gltf_bytes": 3156,
+  "mesh_count": 1,
+  "node_count": 1,
+  "skin_count": 0,
+  "material_count": 1,
+  "image_count": 3,
+  "stored_primitive_vertices_sum": 1710,
+  "unique_position_accessor_vertices_sum": 1710,
+  "stored_primitive_triangles_sum": 2698,
+  "animations": [],
+  "meshes": [
+    {
+      "index": 0,
+      "name": "maps\\dota\\worldnodes\\n0_lr0_agg_prop_tree_gnarly001_0.vmdl_c.meshset_0",
+      "primitives": [
+        {
+          "vertices": 1710,
+          "triangles": 2698,
+          "attributes": [
+            "POSITION",
+            "TEXCOORD_0",
+            "NORMAL",
+            "TANGENT"
+          ],
+          "material": 0,
+          "local_bounds_min": [
+            -10.335683822631836,
+            -0.058084044605493546,
+            -9.27663803100586
+          ],
+          "local_bounds_max": [
+            0.9445187449455261,
+            11.261215209960938,
+            1.492121934890747
+          ]
+        }
+      ]
+    }
+  ],
+  "output_files": [
+    {
+      "uri": "n0_lr0_agg_prop_tree_gnarly001_0.bin",
+      "bytes": 114456,
+      "sha256": "5ecd40c583a28c4843cbd8f144302f86897f5daedcc6135724f728db922bbe20"
+    },
+    {
+      "uri": "tree_gnarly001_color_psd_7b2bcf.png",
+      "bytes": 254908,
+      "sha256": "82df11d0878e5cbb5f1cce678359182b32198f68d30d01d0fd4dc238d4617681"
+    },
+    {
+      "uri": "tree_gnarly001_normal_psd_944b4a20.png",
+      "bytes": 854405,
+      "sha256": "cf78d0975fc1ede4d26a63cfeddb4f5f266b24b023205cb42827d24cb10e2f4f"
+    },
+    {
+      "uri": "tree_gnarly001_refl_psd_a700deda.png",
+      "bytes": 347,
+      "sha256": "168a41631d7179d1bae3e32c2701fd5ab06b4a3146336cb4522a12466a70a286"
+    }
+  ],
+  "material_source_resources": [
+    {
+      "Name": "materials/models/props_tree/tree_gnarly001.vmat",
+      "ShaderName": "global_lit_simple.vfx",
+      "IntParams": {
+        "F_MODULATE_SPECULAR_BY_ALPHA": 1,
+        "F_NORMAL_MAP": 1,
+        "F_SPECULAR": 1
+      },
+      "FloatParams": {
+        "g_flBumpStrength": 1,
+        "g_flSpecularBloom": 0,
+        "g_flSpecularIntensity": 1
+      },
+      "VectorParams": {
+        "g_vColorTint": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "g_vTexCoordOffset": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "g_vTexCoordScale": [
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      "TextureParams": {
+        "g_tColor": "materials/models/props_tree/tree_gnarly001_color_psd_7b2bcf.vtex",
+        "g_tNormal": "materials/models/props_tree/tree_gnarly001_normal_psd_944b4a20.vtex",
+        "g_tSpecular": "materials/models/props_tree/tree_gnarly001_refl_psd_a700deda.vtex"
+      }
+    }
+  ],
+  "scope": "Original installed compiled asset exported by VRF to glTF/PNG. No invented mesh, animation, simplification or H1 runtime conversion is performed here."
+}

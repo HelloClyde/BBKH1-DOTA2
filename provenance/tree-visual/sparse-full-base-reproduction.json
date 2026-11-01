@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "complete_file_byte_identical": true,
+  "old_pack_sha256": "81cc4839bc016445a36cd5157e978189d11fea8c1ada2386e7c16d3a5f3b8f47",
+  "new_tool_full_base_pack_sha256": "81cc4839bc016445a36cd5157e978189d11fea8c1ada2386e7c16d3a5f3b8f47",
+  "bytes": 23621716,
+  "original_producer_snapshot": {
+    "path": "provenance/tree-visual/source-data/bake_tree_layers-full-base-original.py",
+    "sha256": "e9f96b519ee968fadbe94acaf46c60f6d47d1ae35f4826c90492689c5d7a5b65"
+  },
+  "current_producer": {
+    "path": "tools/bake_tree_layers.py",
+    "sha256": "2abd781b8b861b914fd44092cec188f34a3125969d9747a2389547bfd0f833d0"
+  },
+  "mode": "--stage pack --full-base",
+  "physical_h1_tested": false
+}

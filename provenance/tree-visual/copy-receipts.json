@@ -1,0 +1,229 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "source": "build\\v029\\tree-bake\\frames\\manifest.json",
+      "destination": "provenance/tree-visual/frame-manifest.json",
+      "source_raw_sha256": "4284dd55e00fe12a88f83e1911688d62423564a4cd3bc4cd19a08e170f210f80",
+      "committed_lf_sha256": "4284dd55e00fe12a88f83e1911688d62423564a4cd3bc4cd19a08e170f210f80",
+      "source_raw_bytes": 1622874,
+      "committed_bytes": 1622874,
+      "json_values_preserved": true
+    },
+    {
+      "source": "build\\v029\\tree-bake\\no-trees\\manifest.json",
+      "destination": "provenance/tree-visual/background-manifest.json",
+      "source_raw_sha256": "3af68c2daf6c405177e2a30d1c1ff075107ff1b1610c11d23728aadac17ac77c",
+      "committed_lf_sha256": "3af68c2daf6c405177e2a30d1c1ff075107ff1b1610c11d23728aadac17ac77c",
+      "source_raw_bytes": 432382,
+      "committed_bytes": 432382,
+      "json_values_preserved": true
+    },
+    {
+      "source": "build\\v029\\tree-bake\\frames\\association-audit.json",
+      "destination": "provenance/tree-visual/association-audit.json",
+      "source_raw_sha256": "36cbd84aba3626258a5bbc97997fe3c521a21fbe4951ca256383cf794e380f3a",
+      "committed_lf_sha256": "36cbd84aba3626258a5bbc97997fe3c521a21fbe4951ca256383cf794e380f3a",
+      "source_raw_bytes": 2536,
+      "committed_bytes": 2536,
+      "json_values_preserved": true
+    },
+    {
+      "source": "build\\v029\\tree-bake\\frames\\materials.json",
+      "destination": "provenance/tree-visual/material-receipts.json",
+      "source_raw_sha256": "849c9c5ddff5ebed808c79a1c13ad921aeee7beb9be5a2e9cb4d86dd448ea02d",
+      "committed_lf_sha256": "849c9c5ddff5ebed808c79a1c13ad921aeee7beb9be5a2e9cb4d86dd448ea02d",
+      "source_raw_bytes": 30552,
+      "committed_bytes": 30552,
+      "json_values_preserved": true
+    },
+    {
+      "source": "build\\v029\\tree-bake\\pack\\manifest.json",
+      "destination": "provenance/tree-visual/pack-manifest.json",
+      "source_raw_sha256": "879cc237a63ee6e70735e6da53fffa13f94c1ffe7d553888874670237e13cb4b",
+      "committed_lf_sha256": "879cc237a63ee6e70735e6da53fffa13f94c1ffe7d553888874670237e13cb4b",
+      "source_raw_bytes": 1638,
+      "committed_bytes": 1638,
+      "json_values_preserved": true
+    },
+    {
+      "source": "build\\v029\\tree-bake\\pack\\qa-verification.json",
+      "destination": "provenance/tree-visual/qa-verification.json",
+      "source_raw_sha256": "6f32ebc029229320b7958d7f151a78c3673729f30b75408a1a5e5aaa5b5c1946",
+      "committed_lf_sha256": "55fca39bd83875952154f6ce69818317839b293b13441de7c8b27bfa846abbf8",
+      "source_raw_bytes": 2410,
+      "committed_bytes": 2343,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/bake_tree_oak_02-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/bake_tree_oak_02-provenance.json",
+      "source_raw_sha256": "a83880937d92cf3c2e723369a6a5e8d89b1381072ab92d910e53c16ae8d27c17",
+      "committed_lf_sha256": "93c2d8ebf8fed87850a460d20b893e5ea76ee8d05ba72bbc63a2b0411ad95bf6",
+      "source_raw_bytes": 11879,
+      "committed_bytes": 11539,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/bake_tree_pine_02-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/bake_tree_pine_02-provenance.json",
+      "source_raw_sha256": "41c67e645bf23cf96fbb4aa4b1335007e1223c73345590a3afcdcd7f2490bb21",
+      "committed_lf_sha256": "28d5559643df612f521edfdca3743a9cb31597555ce9c78bcd63830e51ddea12",
+      "source_raw_bytes": 11913,
+      "committed_bytes": 11573,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/bake_tree_pine_01-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/bake_tree_pine_01-provenance.json",
+      "source_raw_sha256": "c116204949949eb2ef185f511436e65af4a320069e9c6348d93038abbc52df73",
+      "committed_lf_sha256": "9f5f3f238ed508cb52906bfc2c04407cfdb9f17665b0dc8377c92fba22ad1997",
+      "source_raw_bytes": 11912,
+      "committed_bytes": 11572,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/bake_tree_bamboo_02-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/bake_tree_bamboo_02-provenance.json",
+      "source_raw_sha256": "33238ff260dc31aecf7e2ab4431601ce5cef025997b5be3775fa92fcae045af8",
+      "committed_lf_sha256": "a761c8d09bfd79ecd4898314f82ad2ee046245672a6c3da72a87d6c61d5f1139",
+      "source_raw_bytes": 11953,
+      "committed_bytes": 11613,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/bake_tree_oak_01b-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/bake_tree_oak_01b-provenance.json",
+      "source_raw_sha256": "ec75bc3941355019931111a718a2c786a28d0ac8b52c4fe2699c909ff56e18d5",
+      "committed_lf_sha256": "0a4a6a6212c2800aab18e07337e496fb8e8a99927cd8c0fcfd2739fa289ed9ca",
+      "source_raw_bytes": 11895,
+      "committed_bytes": 11555,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/bake_tree_pine_03b-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/bake_tree_pine_03b-provenance.json",
+      "source_raw_sha256": "8b23f84fd1b36d83a9db600b0f49fb5c477cbd60fc931067bf62f0311b3a708e",
+      "committed_lf_sha256": "8417f31c0d7c2c7fd6294c92fff42257287e07bd591d5381a05407da7249bb5c",
+      "source_raw_bytes": 11929,
+      "committed_bytes": 11589,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/bake_tree_bamboo_01-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/bake_tree_bamboo_01-provenance.json",
+      "source_raw_sha256": "8330b9431ac7b0c266c4ff36fc87e4c46740bcf40c11daca926018c90ea0001e",
+      "committed_lf_sha256": "abcf9abfed192f08c3f8524d57c3c5e76cf2bdafd5589960101aa58db4fd70a7",
+      "source_raw_bytes": 11951,
+      "committed_bytes": 11611,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/bake_tree_oak_01-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/bake_tree_oak_01-provenance.json",
+      "source_raw_sha256": "4b214b3ed78d32ef18eba63c74c4474675b3ba805e526328a50890fb6b517cc0",
+      "committed_lf_sha256": "a631d2362153a02f5169a813a9f5bbe14cbbaa17bb8a6dc56f8261db96674cbf",
+      "source_raw_bytes": 11878,
+      "committed_bytes": 11538,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/complete_tree_cine_02_low-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/complete_tree_cine_02_low-provenance.json",
+      "source_raw_sha256": "5cfa9f28f1efd30a47f38d90f45dd023bb84dba1752eb7ec7fac3d3e6a8dbec4",
+      "committed_lf_sha256": "8a2e9fe87bf3aa8fe7cb8ef481d04a0134621b623ea8ab827f94581add23df4a",
+      "source_raw_bytes": 10377,
+      "committed_bytes": 10086,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/bake_dire_tree008-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/bake_dire_tree008-provenance.json",
+      "source_raw_sha256": "3a8453a9a32810499bb8b4da8dab78bf220c6a5be860263164faf48600e9d8a0",
+      "committed_lf_sha256": "ef33a58f8926113c8a306812dd1edaa249bdc32ebd5a053e57e458c08174eedc",
+      "source_raw_bytes": 10918,
+      "committed_bytes": 10605,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/bake_dire_tree004b-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/bake_dire_tree004b-provenance.json",
+      "source_raw_sha256": "0c2df9eae07e52c1a0c4ea9bb7a56f438e5348eea8b4caf6ea79c234167aedff",
+      "committed_lf_sha256": "e15d0401fe4af8e802ee6ba8ecb1d6358a9243ce1c0d9c7133c817d98a115607",
+      "source_raw_bytes": 10007,
+      "committed_bytes": 9718,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/bake_dire_tree004-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/bake_dire_tree004-provenance.json",
+      "source_raw_sha256": "de1f7c84154e38ddfbf6ba4ea8011d7592b7b2ad73e91b4f77a870be86a1c3d1",
+      "committed_lf_sha256": "2c1bb2d2136ce8ee3b71dccb19abea0d351733ab737ec70d06fe41fd24b7bf82",
+      "source_raw_bytes": 9985,
+      "committed_bytes": 9696,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/bake_dire_tree007-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/bake_dire_tree007-provenance.json",
+      "source_raw_sha256": "7c22616bf065e2a1724bdeaeb62688be20d7e2716db157ef753fcc5e015f0bdc",
+      "committed_lf_sha256": "d891f7ae0771191c346064b48177c738c1c80c6b0b94283cedf09af01528bf5b",
+      "source_raw_bytes": 10917,
+      "committed_bytes": 10604,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/complete_n0_lr0_agg_prop_tree_gnarly001_0-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/complete_n0_lr0_agg_prop_tree_gnarly001_0-provenance.json",
+      "source_raw_sha256": "1e94071eb7bdc9a7c20e8904841c67d6bf11f145c22d422cc3e5d8c1cd414a29",
+      "committed_lf_sha256": "815160981864fd8ecba928258de5d58db028b345539765076a1678b1c05af8c3",
+      "source_raw_bytes": 7928,
+      "committed_bytes": 7722,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/complete_n0_lr0_agg_prop_tree_oak_leaves_05_0-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/complete_n0_lr0_agg_prop_tree_oak_leaves_05_0-provenance.json",
+      "source_raw_sha256": "bcad6134ecea9a557ddc0d4f252c493a310d32038db7d5ab77bc81687d1f0529",
+      "committed_lf_sha256": "0841c8bcc9b6c37f7dbea196678200922979896969c50ae60f0dab144e67c0ff",
+      "source_raw_bytes": 12351,
+      "committed_bytes": 12005,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/complete_n0_lr0_agg_prop_tree_oak_leaves_08_0-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/complete_n0_lr0_agg_prop_tree_oak_leaves_08_0-provenance.json",
+      "source_raw_sha256": "3179cc12c510d8de03325e4efa7af4f8d1dcd1e34bbcd4c653ecfb8ed2e1c792",
+      "committed_lf_sha256": "33aca6329d3460a03d42643286119d18840d050771be0818288a025699cd459d",
+      "source_raw_bytes": 10472,
+      "committed_bytes": 10191,
+      "json_values_preserved": true
+    },
+    {
+      "source": "historical:private/source2/reports/complete_n0_lr0_agg_prop_tree_oak_leaves_blank_0-provenance.json",
+      "destination": "provenance/tree-visual/model-provenance/complete_n0_lr0_agg_prop_tree_oak_leaves_blank_0-provenance.json",
+      "source_raw_sha256": "553c0bcb67c0c0388f895127a1498c6f4ea57eb97bb3493f0bb425a1158aa911",
+      "committed_lf_sha256": "c002ab5a796f261158d65a2967a29947c72e5074ef91b79607bd5d978d1e33df",
+      "source_raw_bytes": 8877,
+      "committed_bytes": 8639,
+      "json_values_preserved": true
+    },
+    {
+      "source": "build/v029/tree-bake/qa_pack.py",
+      "destination": "provenance/tree-visual/source-data/qa_pack.py",
+      "source_raw_sha256": "30bf1f87b34b1f346227a91df4480f454f7c7515ca634b079bf9af0cc55db855",
+      "committed_lf_sha256": "30bf1f87b34b1f346227a91df4480f454f7c7515ca634b079bf9af0cc55db855",
+      "source_raw_bytes": 8523,
+      "committed_bytes": 8523,
+      "verbatim_source_snapshot": true
+    }
+  ],
+  "newline_policy": "JSON copied with identical parsed values and LF line endings. Original raw and committed byte hashes are separate. Source-data QA snapshot is verbatim.",
+  "preview": {
+    "path": "docs/screenshots/host-v029-tree-overlap.png",
+    "sha256": "bb08aa1fe2536e15d63adc393a01d0e05a8208902434430c8a9ea4bec3106493",
+    "kind": "host_reference_composition",
+    "physical_h1_tested": false,
+    "unmodified_copy": true
+  }
+}

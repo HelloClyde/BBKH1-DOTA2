@@ -1,6 +1,6 @@
 # Microsoft 位图字形来源与授权缺项
 
-当前项目没有使用 OFL 字体。基础 UI 的 `private/generated/dota_font.h` 包含 646 个位图字形；`assets/runtime/SCENE.H1P` 的 `catalog.fnt` 包含 1,012 个装备/说明字形。它们由本机 Windows 字体通过 Pillow 离线栅格化，H1 运行时不加载 TTF/TTC。
+当前项目没有使用OFL字体。基础UI的 `private/generated/dota_font.h` 现包含672个位图字形（原646个保持，v0.29追加26个）；`assets/runtime/SCENE.H1P`的 `catalog.fnt` 包含1,012个装备/说明字形。它们由本机Windows字体通过Pillow离线栅格化，H1运行时不加载TTF/TTC。本轮追加记录见 `docs/provenance/fonts-v0.29.json`。
 
 | 原字体 | 版本 / face | 字体文件内版权记录 |
 | --- | --- | --- |

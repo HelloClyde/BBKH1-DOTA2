@@ -101,6 +101,8 @@ typedef struct {
     uint32_t shadow_instances,shadow_pixels,shadow_depth_rejects;
     uint32_t fountain_instances,fountain_pixels,fountain_frame[2],missing_lighting_frames;
 } BSLightingStats;
+/* 63x27 world-anchored controls include the complete offscreen halo. Fresh
+ * current-sight queries are bounded by1701 per render, including cache hits. */
 typedef struct { uint32_t cells,queries,dimmed_pixels,soft_cells,sprites_rejected; } BSFogStats;
 const BSFogStats *bs_fog_stats(void);
 /* Optional exact RGB-only fog result cache; depth and scenery stay fresh. */

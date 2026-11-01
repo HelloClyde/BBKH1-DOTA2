@@ -1,0 +1,22 @@
+{
+  "format_version": 1,
+  "version": "0.29",
+  "bda_sha256": "fe492e687875ec31168778f266d5010e4479b89a0ae901acc061b8722d95bcca",
+  "bda_bytes": 1024140,
+  "elf_sha256": "56c8d9f169c379223b2b0040a999840d34613ec51833586f45d35e249130efa7",
+  "build_metadata": {
+    "source": "build/v029/candidate4/DOTA2.build.json",
+    "sha256": "ff043b37ea46661d205f548e63dc2c3ccfc42607cfc9a093d09d9a774e6970c3"
+  },
+  "functional_passed": true,
+  "automated_run_passed": false,
+  "continuation_passed": true,
+  "physical_h1_tested": true,
+  "game_state_ram_writes": 0,
+  "device_verification": {
+    "source": "docs/verification/v0.29-h1.json",
+    "sha256": "540a70f42dac949fd82e4892fb794d5c563701202a83f985ba7ad72f24d9c7b2"
+  },
+  "source_scope": "169 canonical LF current compile inputs; actual bundle bound in metadata. BDA/ELF byte-identical to candidate3; exact current sparse resource tested on H1.",
+  "github_release_created": false
+}

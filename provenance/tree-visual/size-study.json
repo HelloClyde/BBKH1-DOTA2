@@ -1,0 +1,5639 @@
+{
+  "passed": true,
+  "read_only_inputs_unchanged": true,
+  "physical_h1_tested": false,
+  "source_sha256": "e3ca45193e9932ddece1dd1b4317f5cfae73aaf91f4f8b3b0e54215bdf532f87",
+  "pack_sha256": "cb665855d9b4d8c20f2e0603492ed4425cb11a2c3763f51eadf30c5d9162aa80",
+  "file_bytes": 17539264,
+  "global_header_tables": 41324,
+  "tile_payload_bytes": 17497382,
+  "alignment_padding": 558,
+  "storage_by_plane_bytes": {
+    "tile_header": 3640,
+    "base_rgb": 2402132,
+    "base_depth": 1527160,
+    "layer_owner": 3036994,
+    "layer_rgb": 4606966,
+    "layer_depth": 3700631,
+    "layer_alpha": 2219859
+  },
+  "storage_by_plane_percent_file": {
+    "tile_header": 0.020753436404172945,
+    "base_rgb": 13.69574002649142,
+    "base_depth": 8.707092840383725,
+    "layer_owner": 17.315401604080993,
+    "layer_rgb": 26.266586784941488,
+    "layer_depth": 21.099123657640366,
+    "layer_alpha": 12.656511698552459
+  },
+  "decoded_by_plane_bytes": {
+    "tile_header": 5824,
+    "base_rgb": 11927552,
+    "base_depth": 11927552,
+    "layer_owner": 45875200,
+    "layer_rgb": 45875200,
+    "layer_depth": 45875200,
+    "layer_alpha": 22937600
+  },
+  "literal_payload_by_plane_bytes": {
+    "tile_header": 2184,
+    "base_rgb": 1583003,
+    "base_depth": 779716,
+    "layer_owner": 1419258,
+    "layer_rgb": 3305565,
+    "layer_depth": 2311616,
+    "layer_alpha": 1711738
+  },
+  "rle_control_bytes": 6384302,
+  "rle_packets_crossing_plane_boundaries": 3382,
+  "attribution_rule": "Literal bytes assigned to their exact output plane; each RLE control byte assigned to the plane where that packet starts. Padding/tables separate. Sums equal actual file bytes.",
+  "codecs": {
+    "1": 364
+  },
+  "layers_histogram": {
+    "3": 80,
+    "6": 40,
+    "5": 58,
+    "4": 125,
+    "2": 43,
+    "1": 14,
+    "7": 2,
+    "8": 2
+  },
+  "appearance": {
+    "models": {
+      "tree_oak_02": 131,
+      "tree_pine_02": 111,
+      "tree_pine_01": 408,
+      "tree_bamboo_02": 55,
+      "tree_oak_01b": 211,
+      "tree_pine_03b": 41,
+      "tree_bamboo_01": 30,
+      "tree_oak_01": 143,
+      "tree_cine_02_low": 4,
+      "dire_tree008": 210,
+      "dire_tree004b": 260,
+      "dire_tree004": 330,
+      "dire_tree007": 179
+    },
+    "model_count": 13,
+    "model_skin_pairs": 36,
+    "unique_tints": 12,
+    "tint_counts": {
+      "[255, 255, 255]": 1264,
+      "[180, 188, 198]": 560,
+      "[255, 235, 235]": 15,
+      "[201, 201, 201]": 75,
+      "[217, 245, 255]": 108,
+      "[217, 234, 222]": 12,
+      "[171, 210, 204]": 23,
+      "[202, 219, 181]": 6,
+      "[203, 218, 181]": 11,
+      "[228, 224, 196]": 10,
+      "[233, 225, 201]": 8,
+      "[255, 254, 254]": 21
+    },
+    "unique_scales": 5,
+    "scale_counts": {
+      "[1.0, 1.0, 1.0]": 1751,
+      "[0.7597, 0.7597, 0.7597]": 328,
+      "[0.9, 0.9, 0.9]": 30,
+      "[0.653342, 0.653342, 0.653342]": 3,
+      "[0.977734, 0.977734, 0.977734]": 1
+    },
+    "exact_euler_angle_triples": 183,
+    "rounded_0_001deg_angle_triples": 183,
+    "full_matrices": 2113,
+    "linear_matrices_rounded_1e_6": 332,
+    "model_skin_tint_scale_angle_combinations": 1266
+  },
+  "frame_exact_repetition": {
+    "alive": {
+      "instances": 2113,
+      "unique_cropped_rgba": 2108,
+      "unique_rgba_and_anchor_relative_depth": 2108,
+      "raw_frame_bytes": 19912722,
+      "largest_exact_repeat": 2
+    },
+    "stump": {
+      "instances": 2113,
+      "unique_cropped_rgba": 2105,
+      "unique_rgba_and_anchor_relative_depth": 2105,
+      "raw_frame_bytes": 7192728,
+      "largest_exact_repeat": 4
+    }
+  },
+  "exact_canonical_plane_duplicate_counts": {
+    "tile_header": {
+      "planes": 364,
+      "unique": 8,
+      "extra_equal_planes": 356
+    },
+    "base_rgb": {
+      "planes": 364,
+      "unique": 364,
+      "extra_equal_planes": 0
+    },
+    "base_depth": {
+      "planes": 364,
+      "unique": 364,
+      "extra_equal_planes": 0
+    },
+    "layer_owner": {
+      "planes": 1400,
+      "unique": 1400,
+      "extra_equal_planes": 0
+    },
+    "layer_rgb": {
+      "planes": 1400,
+      "unique": 1399,
+      "extra_equal_planes": 1
+    },
+    "layer_depth": {
+      "planes": 1400,
+      "unique": 1397,
+      "extra_equal_planes": 3
+    },
+    "layer_alpha": {
+      "planes": 1400,
+      "unique": 1395,
+      "extra_equal_planes": 5
+    }
+  },
+  "global_rgb565_value_counts": {
+    "base_rgb": 870,
+    "layer_rgb": 2451
+  },
+  "alternate_estimated_file_bytes": {
+    "rle_bitplanes": 30079140,
+    "rle_nibbles": 21431596,
+    "rle_vertical": 17421556,
+    "zlib_transform_l1": 12998512,
+    "zlib_transform_l6": 10720288,
+    "zlib_on_current_rle_l6": 10440612
+  },
+  "alternate_scope": "Offline sizes only. Alternate transforms/deflate require explicit format version and new decoder; no current pack, producer, runtime or upload changed.",
+  "seconds": 20.125,
+  "tiles": [
+    {
+      "tile": 93,
+      "layers": 3,
+      "stored": 11565,
+      "decoded": 409616,
+      "coverage": 359,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 20925,
+        "rle_nibbles": 14398,
+        "rle_vertical": 11885,
+        "zlib_transform_l1": 9030,
+        "zlib_transform_l6": 6360,
+        "zlib_on_current_rle_l6": 5466
+      }
+    },
+    {
+      "tile": 94,
+      "layers": 6,
+      "stored": 129597,
+      "decoded": 753680,
+      "coverage": 6568,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 192102,
+        "rle_nibbles": 150027,
+        "rle_vertical": 123741,
+        "zlib_transform_l1": 87896,
+        "zlib_transform_l6": 75901,
+        "zlib_on_current_rle_l6": 78704
+      }
+    },
+    {
+      "tile": 95,
+      "layers": 6,
+      "stored": 94780,
+      "decoded": 753680,
+      "coverage": 5381,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 150680,
+        "rle_nibbles": 113224,
+        "rle_vertical": 88589,
+        "zlib_transform_l1": 64982,
+        "zlib_transform_l6": 54719,
+        "zlib_on_current_rle_l6": 56044
+      }
+    },
+    {
+      "tile": 96,
+      "layers": 5,
+      "stored": 86370,
+      "decoded": 638992,
+      "coverage": 4414,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 147373,
+        "rle_nibbles": 103768,
+        "rle_vertical": 88112,
+        "zlib_transform_l1": 61837,
+        "zlib_transform_l6": 52346,
+        "zlib_on_current_rle_l6": 52543
+      }
+    },
+    {
+      "tile": 97,
+      "layers": 4,
+      "stored": 25960,
+      "decoded": 524304,
+      "coverage": 1193,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 52930,
+        "rle_nibbles": 32665,
+        "rle_vertical": 26617,
+        "zlib_transform_l1": 21282,
+        "zlib_transform_l6": 16662,
+        "zlib_on_current_rle_l6": 14976
+      }
+    },
+    {
+      "tile": 98,
+      "layers": 5,
+      "stored": 41444,
+      "decoded": 638992,
+      "coverage": 1410,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 80377,
+        "rle_nibbles": 52959,
+        "rle_vertical": 41006,
+        "zlib_transform_l1": 30908,
+        "zlib_transform_l6": 24726,
+        "zlib_on_current_rle_l6": 21700
+      }
+    },
+    {
+      "tile": 99,
+      "layers": 4,
+      "stored": 12248,
+      "decoded": 524304,
+      "coverage": 300,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 23564,
+        "rle_nibbles": 14719,
+        "rle_vertical": 11831,
+        "zlib_transform_l1": 9492,
+        "zlib_transform_l6": 6775,
+        "zlib_on_current_rle_l6": 5419
+      }
+    },
+    {
+      "tile": 100,
+      "layers": 2,
+      "stored": 13758,
+      "decoded": 294928,
+      "coverage": 733,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 19551,
+        "rle_nibbles": 15688,
+        "rle_vertical": 14507,
+        "zlib_transform_l1": 9703,
+        "zlib_transform_l6": 8050,
+        "zlib_on_current_rle_l6": 7627
+      }
+    },
+    {
+      "tile": 101,
+      "layers": 3,
+      "stored": 15119,
+      "decoded": 409616,
+      "coverage": 785,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 25397,
+        "rle_nibbles": 18831,
+        "rle_vertical": 13078,
+        "zlib_transform_l1": 10574,
+        "zlib_transform_l6": 7941,
+        "zlib_on_current_rle_l6": 7213
+      }
+    },
+    {
+      "tile": 102,
+      "layers": 2,
+      "stored": 14929,
+      "decoded": 294928,
+      "coverage": 871,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 28822,
+        "rle_nibbles": 18769,
+        "rle_vertical": 12833,
+        "zlib_transform_l1": 11016,
+        "zlib_transform_l6": 8644,
+        "zlib_on_current_rle_l6": 7759
+      }
+    },
+    {
+      "tile": 103,
+      "layers": 3,
+      "stored": 21206,
+      "decoded": 409616,
+      "coverage": 1039,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 40665,
+        "rle_nibbles": 26899,
+        "rle_vertical": 18136,
+        "zlib_transform_l1": 15775,
+        "zlib_transform_l6": 12057,
+        "zlib_on_current_rle_l6": 10647
+      }
+    },
+    {
+      "tile": 104,
+      "layers": 4,
+      "stored": 28446,
+      "decoded": 524304,
+      "coverage": 1418,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 55021,
+        "rle_nibbles": 35442,
+        "rle_vertical": 31019,
+        "zlib_transform_l1": 22633,
+        "zlib_transform_l6": 17847,
+        "zlib_on_current_rle_l6": 15546
+      }
+    },
+    {
+      "tile": 105,
+      "layers": 5,
+      "stored": 48863,
+      "decoded": 638992,
+      "coverage": 2676,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 91984,
+        "rle_nibbles": 61534,
+        "rle_vertical": 46925,
+        "zlib_transform_l1": 35618,
+        "zlib_transform_l6": 28047,
+        "zlib_on_current_rle_l6": 26873
+      }
+    },
+    {
+      "tile": 106,
+      "layers": 4,
+      "stored": 40688,
+      "decoded": 524304,
+      "coverage": 2151,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 66331,
+        "rle_nibbles": 48279,
+        "rle_vertical": 39630,
+        "zlib_transform_l1": 29204,
+        "zlib_transform_l6": 24439,
+        "zlib_on_current_rle_l6": 24038
+      }
+    },
+    {
+      "tile": 107,
+      "layers": 5,
+      "stored": 49322,
+      "decoded": 638992,
+      "coverage": 2209,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 92354,
+        "rle_nibbles": 63217,
+        "rle_vertical": 46550,
+        "zlib_transform_l1": 36180,
+        "zlib_transform_l6": 28897,
+        "zlib_on_current_rle_l6": 27373
+      }
+    },
+    {
+      "tile": 108,
+      "layers": 4,
+      "stored": 50207,
+      "decoded": 524304,
+      "coverage": 2855,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 80806,
+        "rle_nibbles": 59207,
+        "rle_vertical": 49364,
+        "zlib_transform_l1": 36031,
+        "zlib_transform_l6": 30169,
+        "zlib_on_current_rle_l6": 29405
+      }
+    },
+    {
+      "tile": 109,
+      "layers": 1,
+      "stored": 1486,
+      "decoded": 180240,
+      "coverage": 2,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 1643,
+        "rle_nibbles": 1516,
+        "rle_vertical": 1760,
+        "zlib_transform_l1": 966,
+        "zlib_transform_l6": 320,
+        "zlib_on_current_rle_l6": 126
+      }
+    },
+    {
+      "tile": 123,
+      "layers": 6,
+      "stored": 37374,
+      "decoded": 753680,
+      "coverage": 1446,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 84939,
+        "rle_nibbles": 48603,
+        "rle_vertical": 34834,
+        "zlib_transform_l1": 29225,
+        "zlib_transform_l6": 23726,
+        "zlib_on_current_rle_l6": 21619
+      }
+    },
+    {
+      "tile": 124,
+      "layers": 7,
+      "stored": 210843,
+      "decoded": 868368,
+      "coverage": 9769,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 330737,
+        "rle_nibbles": 249809,
+        "rle_vertical": 205814,
+        "zlib_transform_l1": 147458,
+        "zlib_transform_l6": 128512,
+        "zlib_on_current_rle_l6": 132618
+      }
+    },
+    {
+      "tile": 125,
+      "layers": 6,
+      "stored": 71752,
+      "decoded": 753680,
+      "coverage": 3570,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 140004,
+        "rle_nibbles": 90630,
+        "rle_vertical": 70186,
+        "zlib_transform_l1": 55282,
+        "zlib_transform_l6": 45366,
+        "zlib_on_current_rle_l6": 42833
+      }
+    },
+    {
+      "tile": 126,
+      "layers": 4,
+      "stored": 32520,
+      "decoded": 524304,
+      "coverage": 1711,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 63285,
+        "rle_nibbles": 41050,
+        "rle_vertical": 32161,
+        "zlib_transform_l1": 26172,
+        "zlib_transform_l6": 21088,
+        "zlib_on_current_rle_l6": 18921
+      }
+    },
+    {
+      "tile": 127,
+      "layers": 4,
+      "stored": 62787,
+      "decoded": 524304,
+      "coverage": 3377,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 113920,
+        "rle_nibbles": 79965,
+        "rle_vertical": 59917,
+        "zlib_transform_l1": 46542,
+        "zlib_transform_l6": 38088,
+        "zlib_on_current_rle_l6": 36710
+      }
+    },
+    {
+      "tile": 128,
+      "layers": 5,
+      "stored": 62605,
+      "decoded": 638992,
+      "coverage": 2987,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 114054,
+        "rle_nibbles": 80125,
+        "rle_vertical": 57965,
+        "zlib_transform_l1": 46985,
+        "zlib_transform_l6": 37562,
+        "zlib_on_current_rle_l6": 36188
+      }
+    },
+    {
+      "tile": 129,
+      "layers": 4,
+      "stored": 36907,
+      "decoded": 524304,
+      "coverage": 1639,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 69274,
+        "rle_nibbles": 46972,
+        "rle_vertical": 32324,
+        "zlib_transform_l1": 27687,
+        "zlib_transform_l6": 22109,
+        "zlib_on_current_rle_l6": 20606
+      }
+    },
+    {
+      "tile": 130,
+      "layers": 5,
+      "stored": 81648,
+      "decoded": 638992,
+      "coverage": 3994,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 135764,
+        "rle_nibbles": 102058,
+        "rle_vertical": 78040,
+        "zlib_transform_l1": 58420,
+        "zlib_transform_l6": 49203,
+        "zlib_on_current_rle_l6": 48405
+      }
+    },
+    {
+      "tile": 131,
+      "layers": 5,
+      "stored": 67683,
+      "decoded": 638992,
+      "coverage": 3777,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 120777,
+        "rle_nibbles": 86386,
+        "rle_vertical": 64242,
+        "zlib_transform_l1": 49506,
+        "zlib_transform_l6": 40206,
+        "zlib_on_current_rle_l6": 39572
+      }
+    },
+    {
+      "tile": 132,
+      "layers": 2,
+      "stored": 8515,
+      "decoded": 294928,
+      "coverage": 391,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 18195,
+        "rle_nibbles": 10953,
+        "rle_vertical": 8275,
+        "zlib_transform_l1": 6851,
+        "zlib_transform_l6": 4848,
+        "zlib_on_current_rle_l6": 4044
+      }
+    },
+    {
+      "tile": 133,
+      "layers": 3,
+      "stored": 29618,
+      "decoded": 409616,
+      "coverage": 1773,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 50037,
+        "rle_nibbles": 36256,
+        "rle_vertical": 30329,
+        "zlib_transform_l1": 22328,
+        "zlib_transform_l6": 18067,
+        "zlib_on_current_rle_l6": 17131
+      }
+    },
+    {
+      "tile": 134,
+      "layers": 3,
+      "stored": 16847,
+      "decoded": 409616,
+      "coverage": 893,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 31498,
+        "rle_nibbles": 21201,
+        "rle_vertical": 16468,
+        "zlib_transform_l1": 13140,
+        "zlib_transform_l6": 10295,
+        "zlib_on_current_rle_l6": 9415
+      }
+    },
+    {
+      "tile": 135,
+      "layers": 4,
+      "stored": 35592,
+      "decoded": 524304,
+      "coverage": 2125,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 63945,
+        "rle_nibbles": 45902,
+        "rle_vertical": 31187,
+        "zlib_transform_l1": 25893,
+        "zlib_transform_l6": 20129,
+        "zlib_on_current_rle_l6": 18667
+      }
+    },
+    {
+      "tile": 136,
+      "layers": 6,
+      "stored": 83226,
+      "decoded": 753680,
+      "coverage": 4535,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 144416,
+        "rle_nibbles": 102513,
+        "rle_vertical": 78719,
+        "zlib_transform_l1": 60886,
+        "zlib_transform_l6": 50451,
+        "zlib_on_current_rle_l6": 49699
+      }
+    },
+    {
+      "tile": 137,
+      "layers": 3,
+      "stored": 58064,
+      "decoded": 409616,
+      "coverage": 3164,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 104376,
+        "rle_nibbles": 72529,
+        "rle_vertical": 54896,
+        "zlib_transform_l1": 43350,
+        "zlib_transform_l6": 36278,
+        "zlib_on_current_rle_l6": 35809
+      }
+    },
+    {
+      "tile": 138,
+      "layers": 5,
+      "stored": 60158,
+      "decoded": 638992,
+      "coverage": 3086,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 112185,
+        "rle_nibbles": 74880,
+        "rle_vertical": 57600,
+        "zlib_transform_l1": 45799,
+        "zlib_transform_l6": 37566,
+        "zlib_on_current_rle_l6": 35839
+      }
+    },
+    {
+      "tile": 139,
+      "layers": 6,
+      "stored": 70399,
+      "decoded": 753680,
+      "coverage": 3809,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 115411,
+        "rle_nibbles": 86296,
+        "rle_vertical": 64699,
+        "zlib_transform_l1": 49922,
+        "zlib_transform_l6": 41283,
+        "zlib_on_current_rle_l6": 40870
+      }
+    },
+    {
+      "tile": 140,
+      "layers": 2,
+      "stored": 30134,
+      "decoded": 294928,
+      "coverage": 1780,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 61024,
+        "rle_nibbles": 39522,
+        "rle_vertical": 26922,
+        "zlib_transform_l1": 23444,
+        "zlib_transform_l6": 18554,
+        "zlib_on_current_rle_l6": 17684
+      }
+    },
+    {
+      "tile": 141,
+      "layers": 3,
+      "stored": 29631,
+      "decoded": 409616,
+      "coverage": 1473,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 43303,
+        "rle_nibbles": 35511,
+        "rle_vertical": 26256,
+        "zlib_transform_l1": 19871,
+        "zlib_transform_l6": 16358,
+        "zlib_on_current_rle_l6": 16537
+      }
+    },
+    {
+      "tile": 142,
+      "layers": 3,
+      "stored": 35393,
+      "decoded": 409616,
+      "coverage": 1957,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 51672,
+        "rle_nibbles": 42527,
+        "rle_vertical": 29938,
+        "zlib_transform_l1": 23507,
+        "zlib_transform_l6": 19380,
+        "zlib_on_current_rle_l6": 19865
+      }
+    },
+    {
+      "tile": 143,
+      "layers": 5,
+      "stored": 48160,
+      "decoded": 638992,
+      "coverage": 2591,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 67288,
+        "rle_nibbles": 55529,
+        "rle_vertical": 47052,
+        "zlib_transform_l1": 33940,
+        "zlib_transform_l6": 28389,
+        "zlib_on_current_rle_l6": 28527
+      }
+    },
+    {
+      "tile": 153,
+      "layers": 4,
+      "stored": 9344,
+      "decoded": 524304,
+      "coverage": 202,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 21882,
+        "rle_nibbles": 12240,
+        "rle_vertical": 8687,
+        "zlib_transform_l1": 7001,
+        "zlib_transform_l6": 4690,
+        "zlib_on_current_rle_l6": 3454
+      }
+    },
+    {
+      "tile": 154,
+      "layers": 6,
+      "stored": 116563,
+      "decoded": 753680,
+      "coverage": 6041,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 193635,
+        "rle_nibbles": 140145,
+        "rle_vertical": 115600,
+        "zlib_transform_l1": 83832,
+        "zlib_transform_l6": 71415,
+        "zlib_on_current_rle_l6": 71279
+      }
+    },
+    {
+      "tile": 155,
+      "layers": 3,
+      "stored": 31322,
+      "decoded": 409616,
+      "coverage": 1755,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 60282,
+        "rle_nibbles": 39838,
+        "rle_vertical": 29562,
+        "zlib_transform_l1": 24433,
+        "zlib_transform_l6": 19694,
+        "zlib_on_current_rle_l6": 18227
+      }
+    },
+    {
+      "tile": 156,
+      "layers": 3,
+      "stored": 37770,
+      "decoded": 409616,
+      "coverage": 2243,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 71874,
+        "rle_nibbles": 47314,
+        "rle_vertical": 37778,
+        "zlib_transform_l1": 29776,
+        "zlib_transform_l6": 24205,
+        "zlib_on_current_rle_l6": 22494
+      }
+    },
+    {
+      "tile": 157,
+      "layers": 4,
+      "stored": 48662,
+      "decoded": 524304,
+      "coverage": 2786,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 93863,
+        "rle_nibbles": 62649,
+        "rle_vertical": 47243,
+        "zlib_transform_l1": 37060,
+        "zlib_transform_l6": 29318,
+        "zlib_on_current_rle_l6": 28172
+      }
+    },
+    {
+      "tile": 158,
+      "layers": 4,
+      "stored": 69620,
+      "decoded": 524304,
+      "coverage": 3974,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 117818,
+        "rle_nibbles": 86761,
+        "rle_vertical": 69050,
+        "zlib_transform_l1": 49795,
+        "zlib_transform_l6": 41452,
+        "zlib_on_current_rle_l6": 41126
+      }
+    },
+    {
+      "tile": 159,
+      "layers": 4,
+      "stored": 73041,
+      "decoded": 524304,
+      "coverage": 4480,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 130294,
+        "rle_nibbles": 90540,
+        "rle_vertical": 72588,
+        "zlib_transform_l1": 53308,
+        "zlib_transform_l6": 44447,
+        "zlib_on_current_rle_l6": 42638
+      }
+    },
+    {
+      "tile": 160,
+      "layers": 4,
+      "stored": 58067,
+      "decoded": 524304,
+      "coverage": 3268,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 100228,
+        "rle_nibbles": 72473,
+        "rle_vertical": 57115,
+        "zlib_transform_l1": 42492,
+        "zlib_transform_l6": 34746,
+        "zlib_on_current_rle_l6": 33927
+      }
+    },
+    {
+      "tile": 161,
+      "layers": 5,
+      "stored": 55263,
+      "decoded": 638992,
+      "coverage": 2713,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 101239,
+        "rle_nibbles": 71179,
+        "rle_vertical": 53715,
+        "zlib_transform_l1": 41985,
+        "zlib_transform_l6": 33624,
+        "zlib_on_current_rle_l6": 31899
+      }
+    },
+    {
+      "tile": 162,
+      "layers": 2,
+      "stored": 8854,
+      "decoded": 294928,
+      "coverage": 387,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 18061,
+        "rle_nibbles": 11482,
+        "rle_vertical": 7975,
+        "zlib_transform_l1": 6937,
+        "zlib_transform_l6": 5053,
+        "zlib_on_current_rle_l6": 4183
+      }
+    },
+    {
+      "tile": 163,
+      "layers": 3,
+      "stored": 43545,
+      "decoded": 409616,
+      "coverage": 2266,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 79877,
+        "rle_nibbles": 56351,
+        "rle_vertical": 41093,
+        "zlib_transform_l1": 32097,
+        "zlib_transform_l6": 25904,
+        "zlib_on_current_rle_l6": 24782
+      }
+    },
+    {
+      "tile": 164,
+      "layers": 3,
+      "stored": 44542,
+      "decoded": 409616,
+      "coverage": 2510,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 76382,
+        "rle_nibbles": 54996,
+        "rle_vertical": 43405,
+        "zlib_transform_l1": 32844,
+        "zlib_transform_l6": 27038,
+        "zlib_on_current_rle_l6": 26250
+      }
+    },
+    {
+      "tile": 165,
+      "layers": 5,
+      "stored": 78270,
+      "decoded": 638992,
+      "coverage": 4312,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 133677,
+        "rle_nibbles": 97494,
+        "rle_vertical": 74640,
+        "zlib_transform_l1": 54769,
+        "zlib_transform_l6": 45352,
+        "zlib_on_current_rle_l6": 44407
+      }
+    },
+    {
+      "tile": 166,
+      "layers": 5,
+      "stored": 91379,
+      "decoded": 638992,
+      "coverage": 4625,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 162836,
+        "rle_nibbles": 115365,
+        "rle_vertical": 86179,
+        "zlib_transform_l1": 64830,
+        "zlib_transform_l6": 53108,
+        "zlib_on_current_rle_l6": 52995
+      }
+    },
+    {
+      "tile": 167,
+      "layers": 4,
+      "stored": 60599,
+      "decoded": 524304,
+      "coverage": 2997,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 110390,
+        "rle_nibbles": 77962,
+        "rle_vertical": 55922,
+        "zlib_transform_l1": 44829,
+        "zlib_transform_l6": 36518,
+        "zlib_on_current_rle_l6": 35543
+      }
+    },
+    {
+      "tile": 168,
+      "layers": 4,
+      "stored": 69913,
+      "decoded": 524304,
+      "coverage": 3338,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 121966,
+        "rle_nibbles": 87822,
+        "rle_vertical": 63745,
+        "zlib_transform_l1": 51337,
+        "zlib_transform_l6": 42970,
+        "zlib_on_current_rle_l6": 41626
+      }
+    },
+    {
+      "tile": 169,
+      "layers": 5,
+      "stored": 40084,
+      "decoded": 638992,
+      "coverage": 2132,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 71614,
+        "rle_nibbles": 49492,
+        "rle_vertical": 41682,
+        "zlib_transform_l1": 30274,
+        "zlib_transform_l6": 24431,
+        "zlib_on_current_rle_l6": 22007
+      }
+    },
+    {
+      "tile": 170,
+      "layers": 3,
+      "stored": 22333,
+      "decoded": 409616,
+      "coverage": 1423,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 42666,
+        "rle_nibbles": 27656,
+        "rle_vertical": 23485,
+        "zlib_transform_l1": 18117,
+        "zlib_transform_l6": 14415,
+        "zlib_on_current_rle_l6": 12603
+      }
+    },
+    {
+      "tile": 171,
+      "layers": 4,
+      "stored": 50669,
+      "decoded": 524304,
+      "coverage": 2878,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 87327,
+        "rle_nibbles": 62842,
+        "rle_vertical": 50119,
+        "zlib_transform_l1": 35593,
+        "zlib_transform_l6": 28804,
+        "zlib_on_current_rle_l6": 27486
+      }
+    },
+    {
+      "tile": 172,
+      "layers": 5,
+      "stored": 67334,
+      "decoded": 638992,
+      "coverage": 3946,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 106339,
+        "rle_nibbles": 81007,
+        "rle_vertical": 67438,
+        "zlib_transform_l1": 45547,
+        "zlib_transform_l6": 37805,
+        "zlib_on_current_rle_l6": 37087
+      }
+    },
+    {
+      "tile": 173,
+      "layers": 6,
+      "stored": 55775,
+      "decoded": 753680,
+      "coverage": 2600,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 89313,
+        "rle_nibbles": 66083,
+        "rle_vertical": 58136,
+        "zlib_transform_l1": 41255,
+        "zlib_transform_l6": 34281,
+        "zlib_on_current_rle_l6": 32714
+      }
+    },
+    {
+      "tile": 174,
+      "layers": 2,
+      "stored": 7147,
+      "decoded": 294928,
+      "coverage": 346,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 10271,
+        "rle_nibbles": 8324,
+        "rle_vertical": 7020,
+        "zlib_transform_l1": 5166,
+        "zlib_transform_l6": 3684,
+        "zlib_on_current_rle_l6": 3182
+      }
+    },
+    {
+      "tile": 175,
+      "layers": 1,
+      "stored": 1510,
+      "decoded": 180240,
+      "coverage": 3,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 1703,
+        "rle_nibbles": 1552,
+        "rle_vertical": 1742,
+        "zlib_transform_l1": 967,
+        "zlib_transform_l6": 322,
+        "zlib_on_current_rle_l6": 146
+      }
+    },
+    {
+      "tile": 184,
+      "layers": 5,
+      "stored": 77306,
+      "decoded": 638992,
+      "coverage": 4096,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 137151,
+        "rle_nibbles": 96174,
+        "rle_vertical": 75718,
+        "zlib_transform_l1": 57177,
+        "zlib_transform_l6": 47881,
+        "zlib_on_current_rle_l6": 47068
+      }
+    },
+    {
+      "tile": 185,
+      "layers": 6,
+      "stored": 153895,
+      "decoded": 753680,
+      "coverage": 8643,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 244005,
+        "rle_nibbles": 187228,
+        "rle_vertical": 148107,
+        "zlib_transform_l1": 104161,
+        "zlib_transform_l6": 89084,
+        "zlib_on_current_rle_l6": 92431
+      }
+    },
+    {
+      "tile": 186,
+      "layers": 5,
+      "stored": 70160,
+      "decoded": 638992,
+      "coverage": 4069,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 115995,
+        "rle_nibbles": 86424,
+        "rle_vertical": 67904,
+        "zlib_transform_l1": 51657,
+        "zlib_transform_l6": 43029,
+        "zlib_on_current_rle_l6": 41864
+      }
+    },
+    {
+      "tile": 187,
+      "layers": 6,
+      "stored": 50202,
+      "decoded": 753680,
+      "coverage": 2409,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 87216,
+        "rle_nibbles": 62393,
+        "rle_vertical": 48858,
+        "zlib_transform_l1": 38231,
+        "zlib_transform_l6": 30523,
+        "zlib_on_current_rle_l6": 28997
+      }
+    },
+    {
+      "tile": 188,
+      "layers": 5,
+      "stored": 99304,
+      "decoded": 638992,
+      "coverage": 5262,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 161829,
+        "rle_nibbles": 123606,
+        "rle_vertical": 96244,
+        "zlib_transform_l1": 69741,
+        "zlib_transform_l6": 57784,
+        "zlib_on_current_rle_l6": 59264
+      }
+    },
+    {
+      "tile": 189,
+      "layers": 4,
+      "stored": 56117,
+      "decoded": 524304,
+      "coverage": 3105,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 93972,
+        "rle_nibbles": 68488,
+        "rle_vertical": 53689,
+        "zlib_transform_l1": 41676,
+        "zlib_transform_l6": 34638,
+        "zlib_on_current_rle_l6": 33731
+      }
+    },
+    {
+      "tile": 190,
+      "layers": 6,
+      "stored": 154538,
+      "decoded": 753680,
+      "coverage": 7396,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 240185,
+        "rle_nibbles": 185309,
+        "rle_vertical": 149021,
+        "zlib_transform_l1": 109081,
+        "zlib_transform_l6": 93742,
+        "zlib_on_current_rle_l6": 96873
+      }
+    },
+    {
+      "tile": 191,
+      "layers": 5,
+      "stored": 38313,
+      "decoded": 638992,
+      "coverage": 2002,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 68332,
+        "rle_nibbles": 46726,
+        "rle_vertical": 39103,
+        "zlib_transform_l1": 29816,
+        "zlib_transform_l6": 24571,
+        "zlib_on_current_rle_l6": 23185
+      }
+    },
+    {
+      "tile": 192,
+      "layers": 4,
+      "stored": 29798,
+      "decoded": 524304,
+      "coverage": 1304,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 52460,
+        "rle_nibbles": 35572,
+        "rle_vertical": 31546,
+        "zlib_transform_l1": 23451,
+        "zlib_transform_l6": 19651,
+        "zlib_on_current_rle_l6": 18315
+      }
+    },
+    {
+      "tile": 193,
+      "layers": 3,
+      "stored": 33481,
+      "decoded": 409616,
+      "coverage": 1924,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 68690,
+        "rle_nibbles": 44547,
+        "rle_vertical": 31489,
+        "zlib_transform_l1": 27354,
+        "zlib_transform_l6": 21405,
+        "zlib_on_current_rle_l6": 19750
+      }
+    },
+    {
+      "tile": 194,
+      "layers": 4,
+      "stored": 57951,
+      "decoded": 524304,
+      "coverage": 2895,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 108306,
+        "rle_nibbles": 73790,
+        "rle_vertical": 52348,
+        "zlib_transform_l1": 43264,
+        "zlib_transform_l6": 35211,
+        "zlib_on_current_rle_l6": 34414
+      }
+    },
+    {
+      "tile": 195,
+      "layers": 5,
+      "stored": 88224,
+      "decoded": 638992,
+      "coverage": 5235,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 155149,
+        "rle_nibbles": 109312,
+        "rle_vertical": 85125,
+        "zlib_transform_l1": 63110,
+        "zlib_transform_l6": 51999,
+        "zlib_on_current_rle_l6": 52420
+      }
+    },
+    {
+      "tile": 196,
+      "layers": 4,
+      "stored": 28782,
+      "decoded": 524304,
+      "coverage": 1413,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 52169,
+        "rle_nibbles": 36549,
+        "rle_vertical": 27374,
+        "zlib_transform_l1": 22193,
+        "zlib_transform_l6": 17410,
+        "zlib_on_current_rle_l6": 16372
+      }
+    },
+    {
+      "tile": 197,
+      "layers": 5,
+      "stored": 65201,
+      "decoded": 638992,
+      "coverage": 3544,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 110130,
+        "rle_nibbles": 81514,
+        "rle_vertical": 64838,
+        "zlib_transform_l1": 47052,
+        "zlib_transform_l6": 38752,
+        "zlib_on_current_rle_l6": 37920
+      }
+    },
+    {
+      "tile": 198,
+      "layers": 2,
+      "stored": 5424,
+      "decoded": 294928,
+      "coverage": 151,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 11264,
+        "rle_nibbles": 6839,
+        "rle_vertical": 5288,
+        "zlib_transform_l1": 4351,
+        "zlib_transform_l6": 2962,
+        "zlib_on_current_rle_l6": 2282
+      }
+    },
+    {
+      "tile": 199,
+      "layers": 4,
+      "stored": 20294,
+      "decoded": 524304,
+      "coverage": 912,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 34197,
+        "rle_nibbles": 24373,
+        "rle_vertical": 19225,
+        "zlib_transform_l1": 15697,
+        "zlib_transform_l6": 12205,
+        "zlib_on_current_rle_l6": 11113
+      }
+    },
+    {
+      "tile": 200,
+      "layers": 1,
+      "stored": 4752,
+      "decoded": 180240,
+      "coverage": 306,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 7829,
+        "rle_nibbles": 5588,
+        "rle_vertical": 5129,
+        "zlib_transform_l1": 3730,
+        "zlib_transform_l6": 2758,
+        "zlib_on_current_rle_l6": 2436
+      }
+    },
+    {
+      "tile": 204,
+      "layers": 4,
+      "stored": 20858,
+      "decoded": 524304,
+      "coverage": 932,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 36492,
+        "rle_nibbles": 25578,
+        "rle_vertical": 20989,
+        "zlib_transform_l1": 16141,
+        "zlib_transform_l6": 12865,
+        "zlib_on_current_rle_l6": 11304
+      }
+    },
+    {
+      "tile": 205,
+      "layers": 6,
+      "stored": 100214,
+      "decoded": 753680,
+      "coverage": 5541,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 165370,
+        "rle_nibbles": 119965,
+        "rle_vertical": 96179,
+        "zlib_transform_l1": 73143,
+        "zlib_transform_l6": 61633,
+        "zlib_on_current_rle_l6": 61719
+      }
+    },
+    {
+      "tile": 214,
+      "layers": 1,
+      "stored": 1834,
+      "decoded": 180240,
+      "coverage": 18,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 3035,
+        "rle_nibbles": 2077,
+        "rle_vertical": 1981,
+        "zlib_transform_l1": 1352,
+        "zlib_transform_l6": 647,
+        "zlib_on_current_rle_l6": 397
+      }
+    },
+    {
+      "tile": 215,
+      "layers": 5,
+      "stored": 38718,
+      "decoded": 638992,
+      "coverage": 1749,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 62852,
+        "rle_nibbles": 45856,
+        "rle_vertical": 39597,
+        "zlib_transform_l1": 29047,
+        "zlib_transform_l6": 24314,
+        "zlib_on_current_rle_l6": 23245
+      }
+    },
+    {
+      "tile": 216,
+      "layers": 4,
+      "stored": 37129,
+      "decoded": 524304,
+      "coverage": 1904,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 66858,
+        "rle_nibbles": 47658,
+        "rle_vertical": 34480,
+        "zlib_transform_l1": 28190,
+        "zlib_transform_l6": 22893,
+        "zlib_on_current_rle_l6": 21431
+      }
+    },
+    {
+      "tile": 217,
+      "layers": 4,
+      "stored": 83827,
+      "decoded": 524304,
+      "coverage": 4310,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 146326,
+        "rle_nibbles": 103254,
+        "rle_vertical": 80972,
+        "zlib_transform_l1": 62584,
+        "zlib_transform_l6": 52738,
+        "zlib_on_current_rle_l6": 53018
+      }
+    },
+    {
+      "tile": 218,
+      "layers": 4,
+      "stored": 73059,
+      "decoded": 524304,
+      "coverage": 3786,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 115747,
+        "rle_nibbles": 89348,
+        "rle_vertical": 70461,
+        "zlib_transform_l1": 53526,
+        "zlib_transform_l6": 45924,
+        "zlib_on_current_rle_l6": 45207
+      }
+    },
+    {
+      "tile": 219,
+      "layers": 5,
+      "stored": 59821,
+      "decoded": 638992,
+      "coverage": 3031,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 97670,
+        "rle_nibbles": 73222,
+        "rle_vertical": 58379,
+        "zlib_transform_l1": 45139,
+        "zlib_transform_l6": 37353,
+        "zlib_on_current_rle_l6": 35982
+      }
+    },
+    {
+      "tile": 220,
+      "layers": 6,
+      "stored": 84964,
+      "decoded": 753680,
+      "coverage": 4040,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 151674,
+        "rle_nibbles": 106334,
+        "rle_vertical": 80535,
+        "zlib_transform_l1": 64094,
+        "zlib_transform_l6": 53119,
+        "zlib_on_current_rle_l6": 51556
+      }
+    },
+    {
+      "tile": 221,
+      "layers": 6,
+      "stored": 69474,
+      "decoded": 753680,
+      "coverage": 3808,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 111979,
+        "rle_nibbles": 84796,
+        "rle_vertical": 67118,
+        "zlib_transform_l1": 50449,
+        "zlib_transform_l6": 42606,
+        "zlib_on_current_rle_l6": 42022
+      }
+    },
+    {
+      "tile": 222,
+      "layers": 4,
+      "stored": 37137,
+      "decoded": 524304,
+      "coverage": 1744,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 60948,
+        "rle_nibbles": 45292,
+        "rle_vertical": 36710,
+        "zlib_transform_l1": 28208,
+        "zlib_transform_l6": 23737,
+        "zlib_on_current_rle_l6": 22606
+      }
+    },
+    {
+      "tile": 223,
+      "layers": 3,
+      "stored": 23322,
+      "decoded": 409616,
+      "coverage": 1276,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 45963,
+        "rle_nibbles": 30037,
+        "rle_vertical": 20367,
+        "zlib_transform_l1": 17718,
+        "zlib_transform_l6": 13826,
+        "zlib_on_current_rle_l6": 12549
+      }
+    },
+    {
+      "tile": 224,
+      "layers": 4,
+      "stored": 23917,
+      "decoded": 524304,
+      "coverage": 1082,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 50055,
+        "rle_nibbles": 31603,
+        "rle_vertical": 22443,
+        "zlib_transform_l1": 19436,
+        "zlib_transform_l6": 14741,
+        "zlib_on_current_rle_l6": 12998
+      }
+    },
+    {
+      "tile": 225,
+      "layers": 3,
+      "stored": 19204,
+      "decoded": 409616,
+      "coverage": 993,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 37804,
+        "rle_nibbles": 25162,
+        "rle_vertical": 18966,
+        "zlib_transform_l1": 15873,
+        "zlib_transform_l6": 11917,
+        "zlib_on_current_rle_l6": 10217
+      }
+    },
+    {
+      "tile": 226,
+      "layers": 4,
+      "stored": 50693,
+      "decoded": 524304,
+      "coverage": 2803,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 88688,
+        "rle_nibbles": 61274,
+        "rle_vertical": 51516,
+        "zlib_transform_l1": 39172,
+        "zlib_transform_l6": 32518,
+        "zlib_on_current_rle_l6": 30981
+      }
+    },
+    {
+      "tile": 227,
+      "layers": 5,
+      "stored": 110732,
+      "decoded": 638992,
+      "coverage": 6275,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 181125,
+        "rle_nibbles": 135574,
+        "rle_vertical": 106833,
+        "zlib_transform_l1": 77746,
+        "zlib_transform_l6": 65669,
+        "zlib_on_current_rle_l6": 66845
+      }
+    },
+    {
+      "tile": 228,
+      "layers": 3,
+      "stored": 19963,
+      "decoded": 409616,
+      "coverage": 1008,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 36535,
+        "rle_nibbles": 24754,
+        "rle_vertical": 18790,
+        "zlib_transform_l1": 15511,
+        "zlib_transform_l6": 12314,
+        "zlib_on_current_rle_l6": 11298
+      }
+    },
+    {
+      "tile": 229,
+      "layers": 4,
+      "stored": 41496,
+      "decoded": 524304,
+      "coverage": 2116,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 80168,
+        "rle_nibbles": 53258,
+        "rle_vertical": 36867,
+        "zlib_transform_l1": 32215,
+        "zlib_transform_l6": 25887,
+        "zlib_on_current_rle_l6": 24107
+      }
+    },
+    {
+      "tile": 230,
+      "layers": 4,
+      "stored": 37678,
+      "decoded": 524304,
+      "coverage": 1989,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 69928,
+        "rle_nibbles": 46468,
+        "rle_vertical": 36304,
+        "zlib_transform_l1": 28477,
+        "zlib_transform_l6": 22836,
+        "zlib_on_current_rle_l6": 21303
+      }
+    },
+    {
+      "tile": 232,
+      "layers": 1,
+      "stored": 4938,
+      "decoded": 180240,
+      "coverage": 147,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 7523,
+        "rle_nibbles": 5932,
+        "rle_vertical": 4199,
+        "zlib_transform_l1": 3503,
+        "zlib_transform_l6": 2548,
+        "zlib_on_current_rle_l6": 2268
+      }
+    },
+    {
+      "tile": 234,
+      "layers": 2,
+      "stored": 5452,
+      "decoded": 294928,
+      "coverage": 159,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 12587,
+        "rle_nibbles": 7060,
+        "rle_vertical": 4982,
+        "zlib_transform_l1": 3967,
+        "zlib_transform_l6": 2723,
+        "zlib_on_current_rle_l6": 2167
+      }
+    },
+    {
+      "tile": 235,
+      "layers": 4,
+      "stored": 73615,
+      "decoded": 524304,
+      "coverage": 4220,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 127327,
+        "rle_nibbles": 91358,
+        "rle_vertical": 68935,
+        "zlib_transform_l1": 52765,
+        "zlib_transform_l6": 43762,
+        "zlib_on_current_rle_l6": 43216
+      }
+    },
+    {
+      "tile": 244,
+      "layers": 4,
+      "stored": 56538,
+      "decoded": 524304,
+      "coverage": 4191,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 102394,
+        "rle_nibbles": 70408,
+        "rle_vertical": 56487,
+        "zlib_transform_l1": 42230,
+        "zlib_transform_l6": 34289,
+        "zlib_on_current_rle_l6": 33131
+      }
+    },
+    {
+      "tile": 245,
+      "layers": 3,
+      "stored": 41596,
+      "decoded": 409616,
+      "coverage": 2486,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 79280,
+        "rle_nibbles": 52695,
+        "rle_vertical": 40081,
+        "zlib_transform_l1": 31061,
+        "zlib_transform_l6": 25068,
+        "zlib_on_current_rle_l6": 24177
+      }
+    },
+    {
+      "tile": 246,
+      "layers": 3,
+      "stored": 10010,
+      "decoded": 409616,
+      "coverage": 360,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 19776,
+        "rle_nibbles": 12425,
+        "rle_vertical": 9699,
+        "zlib_transform_l1": 7791,
+        "zlib_transform_l6": 5536,
+        "zlib_on_current_rle_l6": 4379
+      }
+    },
+    {
+      "tile": 247,
+      "layers": 2,
+      "stored": 20193,
+      "decoded": 294928,
+      "coverage": 1166,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 37308,
+        "rle_nibbles": 24728,
+        "rle_vertical": 20490,
+        "zlib_transform_l1": 15685,
+        "zlib_transform_l6": 12724,
+        "zlib_on_current_rle_l6": 11701
+      }
+    },
+    {
+      "tile": 248,
+      "layers": 3,
+      "stored": 74445,
+      "decoded": 409616,
+      "coverage": 3966,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 125050,
+        "rle_nibbles": 93588,
+        "rle_vertical": 69982,
+        "zlib_transform_l1": 53219,
+        "zlib_transform_l6": 44492,
+        "zlib_on_current_rle_l6": 44209
+      }
+    },
+    {
+      "tile": 249,
+      "layers": 3,
+      "stored": 31745,
+      "decoded": 409616,
+      "coverage": 1620,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 54057,
+        "rle_nibbles": 39226,
+        "rle_vertical": 30911,
+        "zlib_transform_l1": 24320,
+        "zlib_transform_l6": 19891,
+        "zlib_on_current_rle_l6": 18587
+      }
+    },
+    {
+      "tile": 250,
+      "layers": 4,
+      "stored": 37965,
+      "decoded": 524304,
+      "coverage": 2243,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 64542,
+        "rle_nibbles": 48093,
+        "rle_vertical": 34538,
+        "zlib_transform_l1": 27625,
+        "zlib_transform_l6": 22366,
+        "zlib_on_current_rle_l6": 20390
+      }
+    },
+    {
+      "tile": 251,
+      "layers": 5,
+      "stored": 60278,
+      "decoded": 638992,
+      "coverage": 3495,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 106925,
+        "rle_nibbles": 77960,
+        "rle_vertical": 60500,
+        "zlib_transform_l1": 44019,
+        "zlib_transform_l6": 35531,
+        "zlib_on_current_rle_l6": 33381
+      }
+    },
+    {
+      "tile": 252,
+      "layers": 4,
+      "stored": 41780,
+      "decoded": 524304,
+      "coverage": 2031,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 87434,
+        "rle_nibbles": 55308,
+        "rle_vertical": 39725,
+        "zlib_transform_l1": 34028,
+        "zlib_transform_l6": 26914,
+        "zlib_on_current_rle_l6": 24959
+      }
+    },
+    {
+      "tile": 253,
+      "layers": 3,
+      "stored": 23701,
+      "decoded": 409616,
+      "coverage": 1178,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 44484,
+        "rle_nibbles": 30674,
+        "rle_vertical": 22407,
+        "zlib_transform_l1": 18426,
+        "zlib_transform_l6": 14522,
+        "zlib_on_current_rle_l6": 13313
+      }
+    },
+    {
+      "tile": 254,
+      "layers": 4,
+      "stored": 33162,
+      "decoded": 524304,
+      "coverage": 1470,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 64670,
+        "rle_nibbles": 42825,
+        "rle_vertical": 30035,
+        "zlib_transform_l1": 26513,
+        "zlib_transform_l6": 20527,
+        "zlib_on_current_rle_l6": 18451
+      }
+    },
+    {
+      "tile": 255,
+      "layers": 3,
+      "stored": 31131,
+      "decoded": 409616,
+      "coverage": 1839,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 56438,
+        "rle_nibbles": 40616,
+        "rle_vertical": 28184,
+        "zlib_transform_l1": 23448,
+        "zlib_transform_l6": 18534,
+        "zlib_on_current_rle_l6": 17676
+      }
+    },
+    {
+      "tile": 256,
+      "layers": 2,
+      "stored": 14398,
+      "decoded": 294928,
+      "coverage": 765,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 26720,
+        "rle_nibbles": 18221,
+        "rle_vertical": 13931,
+        "zlib_transform_l1": 11634,
+        "zlib_transform_l6": 9131,
+        "zlib_on_current_rle_l6": 8161
+      }
+    },
+    {
+      "tile": 257,
+      "layers": 5,
+      "stored": 55195,
+      "decoded": 638992,
+      "coverage": 2715,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 99643,
+        "rle_nibbles": 70269,
+        "rle_vertical": 52775,
+        "zlib_transform_l1": 41301,
+        "zlib_transform_l6": 33703,
+        "zlib_on_current_rle_l6": 32555
+      }
+    },
+    {
+      "tile": 258,
+      "layers": 4,
+      "stored": 98455,
+      "decoded": 524304,
+      "coverage": 5465,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 170430,
+        "rle_nibbles": 124342,
+        "rle_vertical": 92837,
+        "zlib_transform_l1": 69421,
+        "zlib_transform_l6": 57889,
+        "zlib_on_current_rle_l6": 59411
+      }
+    },
+    {
+      "tile": 259,
+      "layers": 4,
+      "stored": 45451,
+      "decoded": 524304,
+      "coverage": 2409,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 83213,
+        "rle_nibbles": 57488,
+        "rle_vertical": 42810,
+        "zlib_transform_l1": 34425,
+        "zlib_transform_l6": 27605,
+        "zlib_on_current_rle_l6": 26409
+      }
+    },
+    {
+      "tile": 261,
+      "layers": 2,
+      "stored": 22509,
+      "decoded": 294928,
+      "coverage": 1624,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 37290,
+        "rle_nibbles": 27880,
+        "rle_vertical": 22306,
+        "zlib_transform_l1": 16532,
+        "zlib_transform_l6": 13317,
+        "zlib_on_current_rle_l6": 12752
+      }
+    },
+    {
+      "tile": 262,
+      "layers": 2,
+      "stored": 23931,
+      "decoded": 294928,
+      "coverage": 1398,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 40888,
+        "rle_nibbles": 30862,
+        "rle_vertical": 20809,
+        "zlib_transform_l1": 17635,
+        "zlib_transform_l6": 14309,
+        "zlib_on_current_rle_l6": 13535
+      }
+    },
+    {
+      "tile": 263,
+      "layers": 1,
+      "stored": 6031,
+      "decoded": 180240,
+      "coverage": 354,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 9978,
+        "rle_nibbles": 7240,
+        "rle_vertical": 5915,
+        "zlib_transform_l1": 4665,
+        "zlib_transform_l6": 3513,
+        "zlib_on_current_rle_l6": 3154
+      }
+    },
+    {
+      "tile": 264,
+      "layers": 6,
+      "stored": 70529,
+      "decoded": 753680,
+      "coverage": 3367,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 122464,
+        "rle_nibbles": 84040,
+        "rle_vertical": 68525,
+        "zlib_transform_l1": 53742,
+        "zlib_transform_l6": 45292,
+        "zlib_on_current_rle_l6": 43996
+      }
+    },
+    {
+      "tile": 265,
+      "layers": 6,
+      "stored": 77848,
+      "decoded": 753680,
+      "coverage": 3876,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 148001,
+        "rle_nibbles": 97105,
+        "rle_vertical": 72447,
+        "zlib_transform_l1": 59745,
+        "zlib_transform_l6": 49026,
+        "zlib_on_current_rle_l6": 47171
+      }
+    },
+    {
+      "tile": 274,
+      "layers": 3,
+      "stored": 26768,
+      "decoded": 409616,
+      "coverage": 2568,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 53710,
+        "rle_nibbles": 34604,
+        "rle_vertical": 27658,
+        "zlib_transform_l1": 21312,
+        "zlib_transform_l6": 16573,
+        "zlib_on_current_rle_l6": 15380
+      }
+    },
+    {
+      "tile": 275,
+      "layers": 4,
+      "stored": 56201,
+      "decoded": 524304,
+      "coverage": 5371,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 92990,
+        "rle_nibbles": 67129,
+        "rle_vertical": 59441,
+        "zlib_transform_l1": 40557,
+        "zlib_transform_l6": 33452,
+        "zlib_on_current_rle_l6": 33287
+      }
+    },
+    {
+      "tile": 276,
+      "layers": 2,
+      "stored": 6043,
+      "decoded": 294928,
+      "coverage": 239,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 11772,
+        "rle_nibbles": 7530,
+        "rle_vertical": 5990,
+        "zlib_transform_l1": 4790,
+        "zlib_transform_l6": 3232,
+        "zlib_on_current_rle_l6": 2684
+      }
+    },
+    {
+      "tile": 277,
+      "layers": 6,
+      "stored": 112222,
+      "decoded": 753680,
+      "coverage": 8202,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 177156,
+        "rle_nibbles": 130330,
+        "rle_vertical": 118141,
+        "zlib_transform_l1": 79466,
+        "zlib_transform_l6": 68750,
+        "zlib_on_current_rle_l6": 69570
+      }
+    },
+    {
+      "tile": 278,
+      "layers": 3,
+      "stored": 31451,
+      "decoded": 409616,
+      "coverage": 2287,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 52128,
+        "rle_nibbles": 37396,
+        "rle_vertical": 32688,
+        "zlib_transform_l1": 24148,
+        "zlib_transform_l6": 19680,
+        "zlib_on_current_rle_l6": 18781
+      }
+    },
+    {
+      "tile": 279,
+      "layers": 2,
+      "stored": 6093,
+      "decoded": 294928,
+      "coverage": 320,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 11348,
+        "rle_nibbles": 7623,
+        "rle_vertical": 6401,
+        "zlib_transform_l1": 4850,
+        "zlib_transform_l6": 3308,
+        "zlib_on_current_rle_l6": 2748
+      }
+    },
+    {
+      "tile": 280,
+      "layers": 3,
+      "stored": 8187,
+      "decoded": 409616,
+      "coverage": 279,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 16968,
+        "rle_nibbles": 10571,
+        "rle_vertical": 8245,
+        "zlib_transform_l1": 6836,
+        "zlib_transform_l6": 4424,
+        "zlib_on_current_rle_l6": 3580
+      }
+    },
+    {
+      "tile": 281,
+      "layers": 3,
+      "stored": 7941,
+      "decoded": 409616,
+      "coverage": 260,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 14950,
+        "rle_nibbles": 10050,
+        "rle_vertical": 8102,
+        "zlib_transform_l1": 5962,
+        "zlib_transform_l6": 3992,
+        "zlib_on_current_rle_l6": 3210
+      }
+    },
+    {
+      "tile": 282,
+      "layers": 2,
+      "stored": 3055,
+      "decoded": 294928,
+      "coverage": 54,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 4322,
+        "rle_nibbles": 3380,
+        "rle_vertical": 3620,
+        "zlib_transform_l1": 2050,
+        "zlib_transform_l6": 872,
+        "zlib_on_current_rle_l6": 444
+      }
+    },
+    {
+      "tile": 283,
+      "layers": 5,
+      "stored": 92701,
+      "decoded": 638992,
+      "coverage": 4122,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 166264,
+        "rle_nibbles": 116713,
+        "rle_vertical": 87672,
+        "zlib_transform_l1": 69699,
+        "zlib_transform_l6": 58065,
+        "zlib_on_current_rle_l6": 57324
+      }
+    },
+    {
+      "tile": 284,
+      "layers": 5,
+      "stored": 18239,
+      "decoded": 638992,
+      "coverage": 623,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 36443,
+        "rle_nibbles": 23043,
+        "rle_vertical": 18911,
+        "zlib_transform_l1": 15055,
+        "zlib_transform_l6": 10841,
+        "zlib_on_current_rle_l6": 8992
+      }
+    },
+    {
+      "tile": 285,
+      "layers": 4,
+      "stored": 54590,
+      "decoded": 524304,
+      "coverage": 2610,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 97230,
+        "rle_nibbles": 68703,
+        "rle_vertical": 48184,
+        "zlib_transform_l1": 40379,
+        "zlib_transform_l6": 32822,
+        "zlib_on_current_rle_l6": 32008
+      }
+    },
+    {
+      "tile": 286,
+      "layers": 6,
+      "stored": 128053,
+      "decoded": 753680,
+      "coverage": 5908,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 210839,
+        "rle_nibbles": 158827,
+        "rle_vertical": 120404,
+        "zlib_transform_l1": 89403,
+        "zlib_transform_l6": 75453,
+        "zlib_on_current_rle_l6": 77160
+      }
+    },
+    {
+      "tile": 287,
+      "layers": 4,
+      "stored": 75430,
+      "decoded": 524304,
+      "coverage": 3638,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 142289,
+        "rle_nibbles": 96610,
+        "rle_vertical": 70168,
+        "zlib_transform_l1": 57362,
+        "zlib_transform_l6": 47391,
+        "zlib_on_current_rle_l6": 46063
+      }
+    },
+    {
+      "tile": 288,
+      "layers": 5,
+      "stored": 57231,
+      "decoded": 638992,
+      "coverage": 3198,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 94133,
+        "rle_nibbles": 70108,
+        "rle_vertical": 57357,
+        "zlib_transform_l1": 41882,
+        "zlib_transform_l6": 34806,
+        "zlib_on_current_rle_l6": 33570
+      }
+    },
+    {
+      "tile": 289,
+      "layers": 4,
+      "stored": 53779,
+      "decoded": 524304,
+      "coverage": 3222,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 87769,
+        "rle_nibbles": 65458,
+        "rle_vertical": 52413,
+        "zlib_transform_l1": 39975,
+        "zlib_transform_l6": 33552,
+        "zlib_on_current_rle_l6": 32520
+      }
+    },
+    {
+      "tile": 290,
+      "layers": 4,
+      "stored": 81289,
+      "decoded": 524304,
+      "coverage": 3970,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 134215,
+        "rle_nibbles": 100084,
+        "rle_vertical": 76840,
+        "zlib_transform_l1": 58097,
+        "zlib_transform_l6": 48979,
+        "zlib_on_current_rle_l6": 48889
+      }
+    },
+    {
+      "tile": 291,
+      "layers": 4,
+      "stored": 64480,
+      "decoded": 524304,
+      "coverage": 3706,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 112316,
+        "rle_nibbles": 80790,
+        "rle_vertical": 57817,
+        "zlib_transform_l1": 45315,
+        "zlib_transform_l6": 37116,
+        "zlib_on_current_rle_l6": 36601
+      }
+    },
+    {
+      "tile": 292,
+      "layers": 4,
+      "stored": 23448,
+      "decoded": 524304,
+      "coverage": 1203,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 45911,
+        "rle_nibbles": 30132,
+        "rle_vertical": 22164,
+        "zlib_transform_l1": 19108,
+        "zlib_transform_l6": 14546,
+        "zlib_on_current_rle_l6": 12624
+      }
+    },
+    {
+      "tile": 293,
+      "layers": 3,
+      "stored": 29981,
+      "decoded": 409616,
+      "coverage": 1733,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 53989,
+        "rle_nibbles": 37654,
+        "rle_vertical": 30605,
+        "zlib_transform_l1": 23378,
+        "zlib_transform_l6": 18640,
+        "zlib_on_current_rle_l6": 17425
+      }
+    },
+    {
+      "tile": 294,
+      "layers": 5,
+      "stored": 56076,
+      "decoded": 638992,
+      "coverage": 2646,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 91592,
+        "rle_nibbles": 67992,
+        "rle_vertical": 52910,
+        "zlib_transform_l1": 41845,
+        "zlib_transform_l6": 34604,
+        "zlib_on_current_rle_l6": 33511
+      }
+    },
+    {
+      "tile": 295,
+      "layers": 6,
+      "stored": 82566,
+      "decoded": 753680,
+      "coverage": 4262,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 141477,
+        "rle_nibbles": 102123,
+        "rle_vertical": 79999,
+        "zlib_transform_l1": 60131,
+        "zlib_transform_l6": 50133,
+        "zlib_on_current_rle_l6": 48920
+      }
+    },
+    {
+      "tile": 296,
+      "layers": 6,
+      "stored": 75380,
+      "decoded": 753680,
+      "coverage": 3650,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 134385,
+        "rle_nibbles": 95926,
+        "rle_vertical": 77684,
+        "zlib_transform_l1": 54842,
+        "zlib_transform_l6": 45623,
+        "zlib_on_current_rle_l6": 43857
+      }
+    },
+    {
+      "tile": 303,
+      "layers": 2,
+      "stored": 9002,
+      "decoded": 294928,
+      "coverage": 480,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 20123,
+        "rle_nibbles": 12261,
+        "rle_vertical": 8737,
+        "zlib_transform_l1": 7150,
+        "zlib_transform_l6": 5015,
+        "zlib_on_current_rle_l6": 4154
+      }
+    },
+    {
+      "tile": 304,
+      "layers": 3,
+      "stored": 20255,
+      "decoded": 409616,
+      "coverage": 1812,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 40927,
+        "rle_nibbles": 25910,
+        "rle_vertical": 19446,
+        "zlib_transform_l1": 15443,
+        "zlib_transform_l6": 11674,
+        "zlib_on_current_rle_l6": 10684
+      }
+    },
+    {
+      "tile": 305,
+      "layers": 6,
+      "stored": 61481,
+      "decoded": 753680,
+      "coverage": 4719,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 108882,
+        "rle_nibbles": 74194,
+        "rle_vertical": 63224,
+        "zlib_transform_l1": 45409,
+        "zlib_transform_l6": 36409,
+        "zlib_on_current_rle_l6": 35168
+      }
+    },
+    {
+      "tile": 306,
+      "layers": 2,
+      "stored": 5768,
+      "decoded": 294928,
+      "coverage": 267,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 10906,
+        "rle_nibbles": 7144,
+        "rle_vertical": 5706,
+        "zlib_transform_l1": 4555,
+        "zlib_transform_l6": 3202,
+        "zlib_on_current_rle_l6": 2623
+      }
+    },
+    {
+      "tile": 307,
+      "layers": 4,
+      "stored": 104330,
+      "decoded": 524304,
+      "coverage": 7237,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 155866,
+        "rle_nibbles": 122446,
+        "rle_vertical": 109528,
+        "zlib_transform_l1": 74484,
+        "zlib_transform_l6": 65003,
+        "zlib_on_current_rle_l6": 65996
+      }
+    },
+    {
+      "tile": 308,
+      "layers": 4,
+      "stored": 33802,
+      "decoded": 524304,
+      "coverage": 2865,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 57672,
+        "rle_nibbles": 40518,
+        "rle_vertical": 35115,
+        "zlib_transform_l1": 25643,
+        "zlib_transform_l6": 21149,
+        "zlib_on_current_rle_l6": 19760
+      }
+    },
+    {
+      "tile": 309,
+      "layers": 6,
+      "stored": 123596,
+      "decoded": 753680,
+      "coverage": 6975,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 179050,
+        "rle_nibbles": 141751,
+        "rle_vertical": 129514,
+        "zlib_transform_l1": 86893,
+        "zlib_transform_l6": 75076,
+        "zlib_on_current_rle_l6": 76636
+      }
+    },
+    {
+      "tile": 310,
+      "layers": 4,
+      "stored": 27123,
+      "decoded": 524304,
+      "coverage": 2207,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 47786,
+        "rle_nibbles": 32495,
+        "rle_vertical": 28180,
+        "zlib_transform_l1": 20981,
+        "zlib_transform_l6": 16872,
+        "zlib_on_current_rle_l6": 15652
+      }
+    },
+    {
+      "tile": 311,
+      "layers": 2,
+      "stored": 6795,
+      "decoded": 294928,
+      "coverage": 579,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 9546,
+        "rle_nibbles": 7800,
+        "rle_vertical": 7695,
+        "zlib_transform_l1": 5081,
+        "zlib_transform_l6": 3546,
+        "zlib_on_current_rle_l6": 3141
+      }
+    },
+    {
+      "tile": 312,
+      "layers": 2,
+      "stored": 20405,
+      "decoded": 294928,
+      "coverage": 1449,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 38453,
+        "rle_nibbles": 27488,
+        "rle_vertical": 18680,
+        "zlib_transform_l1": 15445,
+        "zlib_transform_l6": 11641,
+        "zlib_on_current_rle_l6": 10753
+      }
+    },
+    {
+      "tile": 313,
+      "layers": 4,
+      "stored": 19110,
+      "decoded": 524304,
+      "coverage": 918,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 34516,
+        "rle_nibbles": 24240,
+        "rle_vertical": 17990,
+        "zlib_transform_l1": 15255,
+        "zlib_transform_l6": 11438,
+        "zlib_on_current_rle_l6": 9720
+      }
+    },
+    {
+      "tile": 314,
+      "layers": 4,
+      "stored": 47027,
+      "decoded": 524304,
+      "coverage": 2493,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 82882,
+        "rle_nibbles": 60232,
+        "rle_vertical": 43666,
+        "zlib_transform_l1": 35585,
+        "zlib_transform_l6": 28777,
+        "zlib_on_current_rle_l6": 27476
+      }
+    },
+    {
+      "tile": 315,
+      "layers": 5,
+      "stored": 74946,
+      "decoded": 638992,
+      "coverage": 4154,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 131230,
+        "rle_nibbles": 93645,
+        "rle_vertical": 71752,
+        "zlib_transform_l1": 53687,
+        "zlib_transform_l6": 44414,
+        "zlib_on_current_rle_l6": 43103
+      }
+    },
+    {
+      "tile": 316,
+      "layers": 4,
+      "stored": 43039,
+      "decoded": 524304,
+      "coverage": 2166,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 80596,
+        "rle_nibbles": 55584,
+        "rle_vertical": 38001,
+        "zlib_transform_l1": 32136,
+        "zlib_transform_l6": 25714,
+        "zlib_on_current_rle_l6": 23833
+      }
+    },
+    {
+      "tile": 317,
+      "layers": 4,
+      "stored": 20459,
+      "decoded": 524304,
+      "coverage": 881,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 33766,
+        "rle_nibbles": 24823,
+        "rle_vertical": 19588,
+        "zlib_transform_l1": 15703,
+        "zlib_transform_l6": 11884,
+        "zlib_on_current_rle_l6": 10363
+      }
+    },
+    {
+      "tile": 318,
+      "layers": 4,
+      "stored": 86478,
+      "decoded": 524304,
+      "coverage": 4679,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 138664,
+        "rle_nibbles": 106352,
+        "rle_vertical": 81594,
+        "zlib_transform_l1": 61886,
+        "zlib_transform_l6": 51798,
+        "zlib_on_current_rle_l6": 53057
+      }
+    },
+    {
+      "tile": 319,
+      "layers": 8,
+      "stored": 121212,
+      "decoded": 983056,
+      "coverage": 5885,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 198837,
+        "rle_nibbles": 147291,
+        "rle_vertical": 113976,
+        "zlib_transform_l1": 86450,
+        "zlib_transform_l6": 72286,
+        "zlib_on_current_rle_l6": 72504
+      }
+    },
+    {
+      "tile": 320,
+      "layers": 3,
+      "stored": 28898,
+      "decoded": 409616,
+      "coverage": 1538,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 55453,
+        "rle_nibbles": 36675,
+        "rle_vertical": 29030,
+        "zlib_transform_l1": 23757,
+        "zlib_transform_l6": 19048,
+        "zlib_on_current_rle_l6": 17199
+      }
+    },
+    {
+      "tile": 321,
+      "layers": 4,
+      "stored": 66142,
+      "decoded": 524304,
+      "coverage": 3292,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 119205,
+        "rle_nibbles": 81266,
+        "rle_vertical": 60097,
+        "zlib_transform_l1": 49990,
+        "zlib_transform_l6": 41561,
+        "zlib_on_current_rle_l6": 40588
+      }
+    },
+    {
+      "tile": 322,
+      "layers": 6,
+      "stored": 84237,
+      "decoded": 753680,
+      "coverage": 4128,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 142208,
+        "rle_nibbles": 102826,
+        "rle_vertical": 78075,
+        "zlib_transform_l1": 63196,
+        "zlib_transform_l6": 52131,
+        "zlib_on_current_rle_l6": 51806
+      }
+    },
+    {
+      "tile": 323,
+      "layers": 5,
+      "stored": 50285,
+      "decoded": 638992,
+      "coverage": 2562,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 79030,
+        "rle_nibbles": 60819,
+        "rle_vertical": 46972,
+        "zlib_transform_l1": 37469,
+        "zlib_transform_l6": 30718,
+        "zlib_on_current_rle_l6": 30212
+      }
+    },
+    {
+      "tile": 324,
+      "layers": 6,
+      "stored": 70825,
+      "decoded": 753680,
+      "coverage": 3458,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 125947,
+        "rle_nibbles": 89269,
+        "rle_vertical": 67198,
+        "zlib_transform_l1": 53313,
+        "zlib_transform_l6": 43919,
+        "zlib_on_current_rle_l6": 41978
+      }
+    },
+    {
+      "tile": 325,
+      "layers": 6,
+      "stored": 155503,
+      "decoded": 753680,
+      "coverage": 6869,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 244776,
+        "rle_nibbles": 189024,
+        "rle_vertical": 152556,
+        "zlib_transform_l1": 110261,
+        "zlib_transform_l6": 94315,
+        "zlib_on_current_rle_l6": 96532
+      }
+    },
+    {
+      "tile": 326,
+      "layers": 5,
+      "stored": 33191,
+      "decoded": 638992,
+      "coverage": 1114,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 67540,
+        "rle_nibbles": 43077,
+        "rle_vertical": 37606,
+        "zlib_transform_l1": 27802,
+        "zlib_transform_l6": 21626,
+        "zlib_on_current_rle_l6": 18570
+      }
+    },
+    {
+      "tile": 333,
+      "layers": 2,
+      "stored": 27588,
+      "decoded": 294928,
+      "coverage": 1032,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 54206,
+        "rle_nibbles": 37453,
+        "rle_vertical": 31609,
+        "zlib_transform_l1": 20946,
+        "zlib_transform_l6": 16737,
+        "zlib_on_current_rle_l6": 15030
+      }
+    },
+    {
+      "tile": 334,
+      "layers": 3,
+      "stored": 22362,
+      "decoded": 409616,
+      "coverage": 1627,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 45421,
+        "rle_nibbles": 27934,
+        "rle_vertical": 21999,
+        "zlib_transform_l1": 17854,
+        "zlib_transform_l6": 14414,
+        "zlib_on_current_rle_l6": 13253
+      }
+    },
+    {
+      "tile": 335,
+      "layers": 5,
+      "stored": 81847,
+      "decoded": 638992,
+      "coverage": 6373,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 137561,
+        "rle_nibbles": 95693,
+        "rle_vertical": 84471,
+        "zlib_transform_l1": 59475,
+        "zlib_transform_l6": 49963,
+        "zlib_on_current_rle_l6": 50038
+      }
+    },
+    {
+      "tile": 336,
+      "layers": 1,
+      "stored": 1562,
+      "decoded": 180240,
+      "coverage": 7,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 1860,
+        "rle_nibbles": 1597,
+        "rle_vertical": 1759,
+        "zlib_transform_l1": 997,
+        "zlib_transform_l6": 374,
+        "zlib_on_current_rle_l6": 193
+      }
+    },
+    {
+      "tile": 337,
+      "layers": 5,
+      "stored": 83022,
+      "decoded": 638992,
+      "coverage": 4673,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 135174,
+        "rle_nibbles": 95973,
+        "rle_vertical": 86242,
+        "zlib_transform_l1": 61252,
+        "zlib_transform_l6": 53228,
+        "zlib_on_current_rle_l6": 52825
+      }
+    },
+    {
+      "tile": 338,
+      "layers": 5,
+      "stored": 88656,
+      "decoded": 638992,
+      "coverage": 5044,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 145633,
+        "rle_nibbles": 102467,
+        "rle_vertical": 92604,
+        "zlib_transform_l1": 66329,
+        "zlib_transform_l6": 57024,
+        "zlib_on_current_rle_l6": 56523
+      }
+    },
+    {
+      "tile": 339,
+      "layers": 3,
+      "stored": 19874,
+      "decoded": 409616,
+      "coverage": 1515,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 43153,
+        "rle_nibbles": 24635,
+        "rle_vertical": 20593,
+        "zlib_transform_l1": 16633,
+        "zlib_transform_l6": 13021,
+        "zlib_on_current_rle_l6": 11796
+      }
+    },
+    {
+      "tile": 340,
+      "layers": 4,
+      "stored": 31981,
+      "decoded": 524304,
+      "coverage": 2166,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 62179,
+        "rle_nibbles": 38707,
+        "rle_vertical": 32268,
+        "zlib_transform_l1": 25020,
+        "zlib_transform_l6": 19948,
+        "zlib_on_current_rle_l6": 18472
+      }
+    },
+    {
+      "tile": 341,
+      "layers": 4,
+      "stored": 79864,
+      "decoded": 524304,
+      "coverage": 5689,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 132958,
+        "rle_nibbles": 92948,
+        "rle_vertical": 83976,
+        "zlib_transform_l1": 60145,
+        "zlib_transform_l6": 50842,
+        "zlib_on_current_rle_l6": 50911
+      }
+    },
+    {
+      "tile": 342,
+      "layers": 3,
+      "stored": 29338,
+      "decoded": 409616,
+      "coverage": 2423,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 48707,
+        "rle_nibbles": 34619,
+        "rle_vertical": 30627,
+        "zlib_transform_l1": 22136,
+        "zlib_transform_l6": 18479,
+        "zlib_on_current_rle_l6": 17921
+      }
+    },
+    {
+      "tile": 343,
+      "layers": 2,
+      "stored": 13504,
+      "decoded": 294928,
+      "coverage": 1535,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 27784,
+        "rle_nibbles": 16747,
+        "rle_vertical": 13800,
+        "zlib_transform_l1": 10498,
+        "zlib_transform_l6": 7788,
+        "zlib_on_current_rle_l6": 6955
+      }
+    },
+    {
+      "tile": 344,
+      "layers": 4,
+      "stored": 20145,
+      "decoded": 524304,
+      "coverage": 854,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 33409,
+        "rle_nibbles": 25155,
+        "rle_vertical": 19364,
+        "zlib_transform_l1": 15452,
+        "zlib_transform_l6": 11671,
+        "zlib_on_current_rle_l6": 10200
+      }
+    },
+    {
+      "tile": 346,
+      "layers": 4,
+      "stored": 45550,
+      "decoded": 524304,
+      "coverage": 2117,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 82328,
+        "rle_nibbles": 54831,
+        "rle_vertical": 43441,
+        "zlib_transform_l1": 35211,
+        "zlib_transform_l6": 28845,
+        "zlib_on_current_rle_l6": 27692
+      }
+    },
+    {
+      "tile": 347,
+      "layers": 4,
+      "stored": 118113,
+      "decoded": 524304,
+      "coverage": 6129,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 191031,
+        "rle_nibbles": 141238,
+        "rle_vertical": 111212,
+        "zlib_transform_l1": 82721,
+        "zlib_transform_l6": 70565,
+        "zlib_on_current_rle_l6": 73111
+      }
+    },
+    {
+      "tile": 348,
+      "layers": 4,
+      "stored": 93683,
+      "decoded": 524304,
+      "coverage": 4860,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 152621,
+        "rle_nibbles": 110697,
+        "rle_vertical": 91782,
+        "zlib_transform_l1": 68534,
+        "zlib_transform_l6": 58069,
+        "zlib_on_current_rle_l6": 58866
+      }
+    },
+    {
+      "tile": 349,
+      "layers": 6,
+      "stored": 55303,
+      "decoded": 753680,
+      "coverage": 2251,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 92263,
+        "rle_nibbles": 64099,
+        "rle_vertical": 54986,
+        "zlib_transform_l1": 42317,
+        "zlib_transform_l6": 34600,
+        "zlib_on_current_rle_l6": 32939
+      }
+    },
+    {
+      "tile": 350,
+      "layers": 3,
+      "stored": 34938,
+      "decoded": 409616,
+      "coverage": 2061,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 62760,
+        "rle_nibbles": 42882,
+        "rle_vertical": 35475,
+        "zlib_transform_l1": 27131,
+        "zlib_transform_l6": 22613,
+        "zlib_on_current_rle_l6": 21591
+      }
+    },
+    {
+      "tile": 351,
+      "layers": 6,
+      "stored": 140213,
+      "decoded": 753680,
+      "coverage": 6529,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 219297,
+        "rle_nibbles": 165188,
+        "rle_vertical": 136321,
+        "zlib_transform_l1": 99257,
+        "zlib_transform_l6": 85289,
+        "zlib_on_current_rle_l6": 87036
+      }
+    },
+    {
+      "tile": 352,
+      "layers": 6,
+      "stored": 92393,
+      "decoded": 753680,
+      "coverage": 4656,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 153486,
+        "rle_nibbles": 107268,
+        "rle_vertical": 91155,
+        "zlib_transform_l1": 69309,
+        "zlib_transform_l6": 58332,
+        "zlib_on_current_rle_l6": 57273
+      }
+    },
+    {
+      "tile": 353,
+      "layers": 4,
+      "stored": 60655,
+      "decoded": 524304,
+      "coverage": 3417,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 102477,
+        "rle_nibbles": 71276,
+        "rle_vertical": 61546,
+        "zlib_transform_l1": 46117,
+        "zlib_transform_l6": 38771,
+        "zlib_on_current_rle_l6": 37197
+      }
+    },
+    {
+      "tile": 354,
+      "layers": 4,
+      "stored": 37902,
+      "decoded": 524304,
+      "coverage": 1912,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 64481,
+        "rle_nibbles": 45803,
+        "rle_vertical": 35641,
+        "zlib_transform_l1": 28337,
+        "zlib_transform_l6": 23757,
+        "zlib_on_current_rle_l6": 22732
+      }
+    },
+    {
+      "tile": 355,
+      "layers": 6,
+      "stored": 141554,
+      "decoded": 753680,
+      "coverage": 6295,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 217728,
+        "rle_nibbles": 166406,
+        "rle_vertical": 136165,
+        "zlib_transform_l1": 98707,
+        "zlib_transform_l6": 85395,
+        "zlib_on_current_rle_l6": 88573
+      }
+    },
+    {
+      "tile": 356,
+      "layers": 4,
+      "stored": 56794,
+      "decoded": 524304,
+      "coverage": 2896,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 94244,
+        "rle_nibbles": 67348,
+        "rle_vertical": 57856,
+        "zlib_transform_l1": 43080,
+        "zlib_transform_l6": 36548,
+        "zlib_on_current_rle_l6": 35813
+      }
+    },
+    {
+      "tile": 363,
+      "layers": 2,
+      "stored": 18881,
+      "decoded": 294928,
+      "coverage": 648,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 41395,
+        "rle_nibbles": 25695,
+        "rle_vertical": 21008,
+        "zlib_transform_l1": 15058,
+        "zlib_transform_l6": 11675,
+        "zlib_on_current_rle_l6": 10191
+      }
+    },
+    {
+      "tile": 364,
+      "layers": 4,
+      "stored": 52057,
+      "decoded": 524304,
+      "coverage": 3391,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 94188,
+        "rle_nibbles": 63109,
+        "rle_vertical": 53451,
+        "zlib_transform_l1": 40169,
+        "zlib_transform_l6": 33451,
+        "zlib_on_current_rle_l6": 32182
+      }
+    },
+    {
+      "tile": 365,
+      "layers": 5,
+      "stored": 87916,
+      "decoded": 638992,
+      "coverage": 5612,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 146374,
+        "rle_nibbles": 103704,
+        "rle_vertical": 92133,
+        "zlib_transform_l1": 65327,
+        "zlib_transform_l6": 55526,
+        "zlib_on_current_rle_l6": 55134
+      }
+    },
+    {
+      "tile": 366,
+      "layers": 3,
+      "stored": 15863,
+      "decoded": 409616,
+      "coverage": 865,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 37824,
+        "rle_nibbles": 21166,
+        "rle_vertical": 14897,
+        "zlib_transform_l1": 12726,
+        "zlib_transform_l6": 10315,
+        "zlib_on_current_rle_l6": 9124
+      }
+    },
+    {
+      "tile": 367,
+      "layers": 5,
+      "stored": 110892,
+      "decoded": 638992,
+      "coverage": 7045,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 186773,
+        "rle_nibbles": 131883,
+        "rle_vertical": 113674,
+        "zlib_transform_l1": 81250,
+        "zlib_transform_l6": 69600,
+        "zlib_on_current_rle_l6": 69851
+      }
+    },
+    {
+      "tile": 368,
+      "layers": 4,
+      "stored": 37452,
+      "decoded": 524304,
+      "coverage": 2750,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 64256,
+        "rle_nibbles": 44789,
+        "rle_vertical": 39054,
+        "zlib_transform_l1": 29851,
+        "zlib_transform_l6": 24666,
+        "zlib_on_current_rle_l6": 23390
+      }
+    },
+    {
+      "tile": 369,
+      "layers": 3,
+      "stored": 49337,
+      "decoded": 409616,
+      "coverage": 4318,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 93921,
+        "rle_nibbles": 61492,
+        "rle_vertical": 49353,
+        "zlib_transform_l1": 37427,
+        "zlib_transform_l6": 30535,
+        "zlib_on_current_rle_l6": 30047
+      }
+    },
+    {
+      "tile": 370,
+      "layers": 4,
+      "stored": 24737,
+      "decoded": 524304,
+      "coverage": 1687,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 51372,
+        "rle_nibbles": 31488,
+        "rle_vertical": 24315,
+        "zlib_transform_l1": 20533,
+        "zlib_transform_l6": 15687,
+        "zlib_on_current_rle_l6": 14146
+      }
+    },
+    {
+      "tile": 371,
+      "layers": 4,
+      "stored": 60872,
+      "decoded": 524304,
+      "coverage": 4250,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 113209,
+        "rle_nibbles": 74123,
+        "rle_vertical": 61786,
+        "zlib_transform_l1": 47088,
+        "zlib_transform_l6": 39132,
+        "zlib_on_current_rle_l6": 38079
+      }
+    },
+    {
+      "tile": 372,
+      "layers": 4,
+      "stored": 116376,
+      "decoded": 524304,
+      "coverage": 9179,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 187635,
+        "rle_nibbles": 138044,
+        "rle_vertical": 121977,
+        "zlib_transform_l1": 81750,
+        "zlib_transform_l6": 70293,
+        "zlib_on_current_rle_l6": 71950
+      }
+    },
+    {
+      "tile": 373,
+      "layers": 2,
+      "stored": 6331,
+      "decoded": 294928,
+      "coverage": 247,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 12432,
+        "rle_nibbles": 7769,
+        "rle_vertical": 6304,
+        "zlib_transform_l1": 5067,
+        "zlib_transform_l6": 3710,
+        "zlib_on_current_rle_l6": 3196
+      }
+    },
+    {
+      "tile": 375,
+      "layers": 1,
+      "stored": 5156,
+      "decoded": 180240,
+      "coverage": 366,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 10652,
+        "rle_nibbles": 6949,
+        "rle_vertical": 5047,
+        "zlib_transform_l1": 4322,
+        "zlib_transform_l6": 3127,
+        "zlib_on_current_rle_l6": 2728
+      }
+    },
+    {
+      "tile": 376,
+      "layers": 3,
+      "stored": 26959,
+      "decoded": 409616,
+      "coverage": 1670,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 48015,
+        "rle_nibbles": 33520,
+        "rle_vertical": 24896,
+        "zlib_transform_l1": 20936,
+        "zlib_transform_l6": 16500,
+        "zlib_on_current_rle_l6": 14985
+      }
+    },
+    {
+      "tile": 377,
+      "layers": 4,
+      "stored": 86137,
+      "decoded": 524304,
+      "coverage": 4862,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 150196,
+        "rle_nibbles": 105393,
+        "rle_vertical": 85044,
+        "zlib_transform_l1": 64302,
+        "zlib_transform_l6": 54125,
+        "zlib_on_current_rle_l6": 54044
+      }
+    },
+    {
+      "tile": 378,
+      "layers": 7,
+      "stored": 114483,
+      "decoded": 868368,
+      "coverage": 5606,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 181230,
+        "rle_nibbles": 137585,
+        "rle_vertical": 111526,
+        "zlib_transform_l1": 80729,
+        "zlib_transform_l6": 68838,
+        "zlib_on_current_rle_l6": 69378
+      }
+    },
+    {
+      "tile": 379,
+      "layers": 4,
+      "stored": 38997,
+      "decoded": 524304,
+      "coverage": 2132,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 58946,
+        "rle_nibbles": 46449,
+        "rle_vertical": 37341,
+        "zlib_transform_l1": 28371,
+        "zlib_transform_l6": 23639,
+        "zlib_on_current_rle_l6": 23026
+      }
+    },
+    {
+      "tile": 380,
+      "layers": 5,
+      "stored": 50893,
+      "decoded": 638992,
+      "coverage": 2815,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 87393,
+        "rle_nibbles": 61655,
+        "rle_vertical": 49967,
+        "zlib_transform_l1": 38350,
+        "zlib_transform_l6": 31666,
+        "zlib_on_current_rle_l6": 30698
+      }
+    },
+    {
+      "tile": 381,
+      "layers": 4,
+      "stored": 103282,
+      "decoded": 524304,
+      "coverage": 5901,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 169724,
+        "rle_nibbles": 128194,
+        "rle_vertical": 97852,
+        "zlib_transform_l1": 72442,
+        "zlib_transform_l6": 61070,
+        "zlib_on_current_rle_l6": 62816
+      }
+    },
+    {
+      "tile": 382,
+      "layers": 6,
+      "stored": 135195,
+      "decoded": 753680,
+      "coverage": 6602,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 214847,
+        "rle_nibbles": 164553,
+        "rle_vertical": 124863,
+        "zlib_transform_l1": 93631,
+        "zlib_transform_l6": 79529,
+        "zlib_on_current_rle_l6": 81824
+      }
+    },
+    {
+      "tile": 383,
+      "layers": 3,
+      "stored": 32149,
+      "decoded": 409616,
+      "coverage": 1940,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 57931,
+        "rle_nibbles": 39313,
+        "rle_vertical": 31616,
+        "zlib_transform_l1": 25005,
+        "zlib_transform_l6": 20465,
+        "zlib_on_current_rle_l6": 19255
+      }
+    },
+    {
+      "tile": 384,
+      "layers": 4,
+      "stored": 57250,
+      "decoded": 524304,
+      "coverage": 3132,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 104061,
+        "rle_nibbles": 72070,
+        "rle_vertical": 55999,
+        "zlib_transform_l1": 43905,
+        "zlib_transform_l6": 36133,
+        "zlib_on_current_rle_l6": 35217
+      }
+    },
+    {
+      "tile": 385,
+      "layers": 5,
+      "stored": 99465,
+      "decoded": 638992,
+      "coverage": 5031,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 173125,
+        "rle_nibbles": 123836,
+        "rle_vertical": 93647,
+        "zlib_transform_l1": 73064,
+        "zlib_transform_l6": 61066,
+        "zlib_on_current_rle_l6": 61262
+      }
+    },
+    {
+      "tile": 386,
+      "layers": 3,
+      "stored": 16629,
+      "decoded": 409616,
+      "coverage": 863,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 28366,
+        "rle_nibbles": 19932,
+        "rle_vertical": 16261,
+        "zlib_transform_l1": 12306,
+        "zlib_transform_l6": 9575,
+        "zlib_on_current_rle_l6": 8253
+      }
+    },
+    {
+      "tile": 393,
+      "layers": 4,
+      "stored": 34187,
+      "decoded": 524304,
+      "coverage": 1394,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 73460,
+        "rle_nibbles": 45963,
+        "rle_vertical": 36926,
+        "zlib_transform_l1": 27747,
+        "zlib_transform_l6": 21691,
+        "zlib_on_current_rle_l6": 18996
+      }
+    },
+    {
+      "tile": 394,
+      "layers": 4,
+      "stored": 71863,
+      "decoded": 524304,
+      "coverage": 6114,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 128890,
+        "rle_nibbles": 88318,
+        "rle_vertical": 73085,
+        "zlib_transform_l1": 52282,
+        "zlib_transform_l6": 43924,
+        "zlib_on_current_rle_l6": 43759
+      }
+    },
+    {
+      "tile": 395,
+      "layers": 4,
+      "stored": 93228,
+      "decoded": 524304,
+      "coverage": 6342,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 163687,
+        "rle_nibbles": 112788,
+        "rle_vertical": 92763,
+        "zlib_transform_l1": 68483,
+        "zlib_transform_l6": 57220,
+        "zlib_on_current_rle_l6": 57680
+      }
+    },
+    {
+      "tile": 396,
+      "layers": 2,
+      "stored": 4901,
+      "decoded": 294928,
+      "coverage": 176,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 8490,
+        "rle_nibbles": 5978,
+        "rle_vertical": 5274,
+        "zlib_transform_l1": 3841,
+        "zlib_transform_l6": 2556,
+        "zlib_on_current_rle_l6": 1973
+      }
+    },
+    {
+      "tile": 397,
+      "layers": 3,
+      "stored": 13683,
+      "decoded": 409616,
+      "coverage": 892,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 27119,
+        "rle_nibbles": 16988,
+        "rle_vertical": 13257,
+        "zlib_transform_l1": 11158,
+        "zlib_transform_l6": 8224,
+        "zlib_on_current_rle_l6": 7136
+      }
+    },
+    {
+      "tile": 398,
+      "layers": 2,
+      "stored": 42741,
+      "decoded": 294928,
+      "coverage": 3679,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 80116,
+        "rle_nibbles": 54171,
+        "rle_vertical": 41355,
+        "zlib_transform_l1": 32435,
+        "zlib_transform_l6": 26512,
+        "zlib_on_current_rle_l6": 26141
+      }
+    },
+    {
+      "tile": 399,
+      "layers": 3,
+      "stored": 24680,
+      "decoded": 409616,
+      "coverage": 2161,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 45917,
+        "rle_nibbles": 30029,
+        "rle_vertical": 24840,
+        "zlib_transform_l1": 19818,
+        "zlib_transform_l6": 16063,
+        "zlib_on_current_rle_l6": 14693
+      }
+    },
+    {
+      "tile": 400,
+      "layers": 4,
+      "stored": 58458,
+      "decoded": 524304,
+      "coverage": 5192,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 105921,
+        "rle_nibbles": 71791,
+        "rle_vertical": 59436,
+        "zlib_transform_l1": 44528,
+        "zlib_transform_l6": 36214,
+        "zlib_on_current_rle_l6": 35668
+      }
+    },
+    {
+      "tile": 401,
+      "layers": 2,
+      "stored": 8927,
+      "decoded": 294928,
+      "coverage": 549,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 16539,
+        "rle_nibbles": 11054,
+        "rle_vertical": 9123,
+        "zlib_transform_l1": 7431,
+        "zlib_transform_l6": 5601,
+        "zlib_on_current_rle_l6": 4851
+      }
+    },
+    {
+      "tile": 402,
+      "layers": 3,
+      "stored": 34318,
+      "decoded": 409616,
+      "coverage": 2867,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 57140,
+        "rle_nibbles": 41448,
+        "rle_vertical": 35994,
+        "zlib_transform_l1": 26050,
+        "zlib_transform_l6": 21900,
+        "zlib_on_current_rle_l6": 21085
+      }
+    },
+    {
+      "tile": 403,
+      "layers": 4,
+      "stored": 46143,
+      "decoded": 524304,
+      "coverage": 4147,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 81123,
+        "rle_nibbles": 56233,
+        "rle_vertical": 47485,
+        "zlib_transform_l1": 34157,
+        "zlib_transform_l6": 27795,
+        "zlib_on_current_rle_l6": 27122
+      }
+    },
+    {
+      "tile": 404,
+      "layers": 4,
+      "stored": 52807,
+      "decoded": 524304,
+      "coverage": 4787,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 103976,
+        "rle_nibbles": 66421,
+        "rle_vertical": 54809,
+        "zlib_transform_l1": 40265,
+        "zlib_transform_l6": 31902,
+        "zlib_on_current_rle_l6": 31218
+      }
+    },
+    {
+      "tile": 405,
+      "layers": 2,
+      "stored": 14850,
+      "decoded": 294928,
+      "coverage": 1335,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 28420,
+        "rle_nibbles": 18984,
+        "rle_vertical": 14790,
+        "zlib_transform_l1": 12152,
+        "zlib_transform_l6": 9438,
+        "zlib_on_current_rle_l6": 8342
+      }
+    },
+    {
+      "tile": 406,
+      "layers": 5,
+      "stored": 44980,
+      "decoded": 638992,
+      "coverage": 3370,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 82955,
+        "rle_nibbles": 55627,
+        "rle_vertical": 45643,
+        "zlib_transform_l1": 35108,
+        "zlib_transform_l6": 27586,
+        "zlib_on_current_rle_l6": 26364
+      }
+    },
+    {
+      "tile": 407,
+      "layers": 3,
+      "stored": 15281,
+      "decoded": 409616,
+      "coverage": 1095,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 33994,
+        "rle_nibbles": 20701,
+        "rle_vertical": 15046,
+        "zlib_transform_l1": 12998,
+        "zlib_transform_l6": 9359,
+        "zlib_on_current_rle_l6": 8067
+      }
+    },
+    {
+      "tile": 408,
+      "layers": 3,
+      "stored": 4732,
+      "decoded": 409616,
+      "coverage": 51,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 7628,
+        "rle_nibbles": 5377,
+        "rle_vertical": 4955,
+        "zlib_transform_l1": 3251,
+        "zlib_transform_l6": 1634,
+        "zlib_on_current_rle_l6": 1097
+      }
+    },
+    {
+      "tile": 409,
+      "layers": 5,
+      "stored": 50316,
+      "decoded": 638992,
+      "coverage": 2570,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 88998,
+        "rle_nibbles": 64125,
+        "rle_vertical": 47690,
+        "zlib_transform_l1": 37603,
+        "zlib_transform_l6": 29681,
+        "zlib_on_current_rle_l6": 27889
+      }
+    },
+    {
+      "tile": 410,
+      "layers": 4,
+      "stored": 39179,
+      "decoded": 524304,
+      "coverage": 2376,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 71771,
+        "rle_nibbles": 49703,
+        "rle_vertical": 37632,
+        "zlib_transform_l1": 30147,
+        "zlib_transform_l6": 24423,
+        "zlib_on_current_rle_l6": 22341
+      }
+    },
+    {
+      "tile": 411,
+      "layers": 3,
+      "stored": 26172,
+      "decoded": 409616,
+      "coverage": 1467,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 53643,
+        "rle_nibbles": 34546,
+        "rle_vertical": 25548,
+        "zlib_transform_l1": 21174,
+        "zlib_transform_l6": 16671,
+        "zlib_on_current_rle_l6": 15251
+      }
+    },
+    {
+      "tile": 412,
+      "layers": 4,
+      "stored": 142855,
+      "decoded": 524304,
+      "coverage": 8044,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 210987,
+        "rle_nibbles": 170346,
+        "rle_vertical": 139530,
+        "zlib_transform_l1": 97350,
+        "zlib_transform_l6": 84212,
+        "zlib_on_current_rle_l6": 88054
+      }
+    },
+    {
+      "tile": 413,
+      "layers": 4,
+      "stored": 72810,
+      "decoded": 524304,
+      "coverage": 4000,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 117202,
+        "rle_nibbles": 88768,
+        "rle_vertical": 69953,
+        "zlib_transform_l1": 53975,
+        "zlib_transform_l6": 45710,
+        "zlib_on_current_rle_l6": 45104
+      }
+    },
+    {
+      "tile": 414,
+      "layers": 5,
+      "stored": 35201,
+      "decoded": 638992,
+      "coverage": 1812,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 65405,
+        "rle_nibbles": 44101,
+        "rle_vertical": 35127,
+        "zlib_transform_l1": 27148,
+        "zlib_transform_l6": 21972,
+        "zlib_on_current_rle_l6": 20251
+      }
+    },
+    {
+      "tile": 415,
+      "layers": 4,
+      "stored": 72015,
+      "decoded": 524304,
+      "coverage": 4057,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 116366,
+        "rle_nibbles": 87605,
+        "rle_vertical": 69875,
+        "zlib_transform_l1": 52328,
+        "zlib_transform_l6": 44341,
+        "zlib_on_current_rle_l6": 43591
+      }
+    },
+    {
+      "tile": 416,
+      "layers": 2,
+      "stored": 11892,
+      "decoded": 294928,
+      "coverage": 585,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 22809,
+        "rle_nibbles": 15755,
+        "rle_vertical": 10360,
+        "zlib_transform_l1": 8888,
+        "zlib_transform_l6": 6837,
+        "zlib_on_current_rle_l6": 6139
+      }
+    },
+    {
+      "tile": 423,
+      "layers": 1,
+      "stored": 9719,
+      "decoded": 180240,
+      "coverage": 315,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 19919,
+        "rle_nibbles": 13297,
+        "rle_vertical": 11350,
+        "zlib_transform_l1": 7948,
+        "zlib_transform_l6": 5962,
+        "zlib_on_current_rle_l6": 5091
+      }
+    },
+    {
+      "tile": 424,
+      "layers": 3,
+      "stored": 26464,
+      "decoded": 409616,
+      "coverage": 1940,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 46002,
+        "rle_nibbles": 32983,
+        "rle_vertical": 28125,
+        "zlib_transform_l1": 21201,
+        "zlib_transform_l6": 16672,
+        "zlib_on_current_rle_l6": 15627
+      }
+    },
+    {
+      "tile": 425,
+      "layers": 6,
+      "stored": 95735,
+      "decoded": 753680,
+      "coverage": 6920,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 155570,
+        "rle_nibbles": 110966,
+        "rle_vertical": 100558,
+        "zlib_transform_l1": 70598,
+        "zlib_transform_l6": 59588,
+        "zlib_on_current_rle_l6": 58365
+      }
+    },
+    {
+      "tile": 427,
+      "layers": 3,
+      "stored": 41017,
+      "decoded": 409616,
+      "coverage": 3131,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 69479,
+        "rle_nibbles": 49311,
+        "rle_vertical": 42021,
+        "zlib_transform_l1": 33181,
+        "zlib_transform_l6": 28256,
+        "zlib_on_current_rle_l6": 27256
+      }
+    },
+    {
+      "tile": 428,
+      "layers": 4,
+      "stored": 68110,
+      "decoded": 524304,
+      "coverage": 5770,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 110101,
+        "rle_nibbles": 80495,
+        "rle_vertical": 71729,
+        "zlib_transform_l1": 50782,
+        "zlib_transform_l6": 43202,
+        "zlib_on_current_rle_l6": 42480
+      }
+    },
+    {
+      "tile": 429,
+      "layers": 4,
+      "stored": 50756,
+      "decoded": 524304,
+      "coverage": 3411,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 82561,
+        "rle_nibbles": 60352,
+        "rle_vertical": 53804,
+        "zlib_transform_l1": 37695,
+        "zlib_transform_l6": 31352,
+        "zlib_on_current_rle_l6": 30693
+      }
+    },
+    {
+      "tile": 430,
+      "layers": 4,
+      "stored": 26939,
+      "decoded": 524304,
+      "coverage": 2080,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 49092,
+        "rle_nibbles": 32754,
+        "rle_vertical": 29229,
+        "zlib_transform_l1": 21458,
+        "zlib_transform_l6": 16952,
+        "zlib_on_current_rle_l6": 15464
+      }
+    },
+    {
+      "tile": 431,
+      "layers": 4,
+      "stored": 50799,
+      "decoded": 524304,
+      "coverage": 4365,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 89774,
+        "rle_nibbles": 62755,
+        "rle_vertical": 52770,
+        "zlib_transform_l1": 37770,
+        "zlib_transform_l6": 30483,
+        "zlib_on_current_rle_l6": 30046
+      }
+    },
+    {
+      "tile": 432,
+      "layers": 5,
+      "stored": 75232,
+      "decoded": 638992,
+      "coverage": 5912,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 134893,
+        "rle_nibbles": 92928,
+        "rle_vertical": 77620,
+        "zlib_transform_l1": 56068,
+        "zlib_transform_l6": 46411,
+        "zlib_on_current_rle_l6": 45168
+      }
+    },
+    {
+      "tile": 433,
+      "layers": 5,
+      "stored": 81500,
+      "decoded": 638992,
+      "coverage": 5939,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 144233,
+        "rle_nibbles": 99347,
+        "rle_vertical": 82949,
+        "zlib_transform_l1": 60494,
+        "zlib_transform_l6": 50003,
+        "zlib_on_current_rle_l6": 48917
+      }
+    },
+    {
+      "tile": 434,
+      "layers": 3,
+      "stored": 12163,
+      "decoded": 409616,
+      "coverage": 712,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 25517,
+        "rle_nibbles": 15754,
+        "rle_vertical": 12207,
+        "zlib_transform_l1": 10819,
+        "zlib_transform_l6": 7828,
+        "zlib_on_current_rle_l6": 6466
+      }
+    },
+    {
+      "tile": 435,
+      "layers": 4,
+      "stored": 48612,
+      "decoded": 524304,
+      "coverage": 3746,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 89660,
+        "rle_nibbles": 60182,
+        "rle_vertical": 49546,
+        "zlib_transform_l1": 37690,
+        "zlib_transform_l6": 30443,
+        "zlib_on_current_rle_l6": 29191
+      }
+    },
+    {
+      "tile": 436,
+      "layers": 5,
+      "stored": 34233,
+      "decoded": 638992,
+      "coverage": 2268,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 63022,
+        "rle_nibbles": 42240,
+        "rle_vertical": 35758,
+        "zlib_transform_l1": 27362,
+        "zlib_transform_l6": 21821,
+        "zlib_on_current_rle_l6": 19806
+      }
+    },
+    {
+      "tile": 437,
+      "layers": 3,
+      "stored": 22110,
+      "decoded": 409616,
+      "coverage": 2006,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 36093,
+        "rle_nibbles": 26530,
+        "rle_vertical": 23095,
+        "zlib_transform_l1": 16239,
+        "zlib_transform_l6": 12699,
+        "zlib_on_current_rle_l6": 12035
+      }
+    },
+    {
+      "tile": 438,
+      "layers": 2,
+      "stored": 20762,
+      "decoded": 294928,
+      "coverage": 1725,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 31072,
+        "rle_nibbles": 23950,
+        "rle_vertical": 21681,
+        "zlib_transform_l1": 15765,
+        "zlib_transform_l6": 13524,
+        "zlib_on_current_rle_l6": 12800
+      }
+    },
+    {
+      "tile": 439,
+      "layers": 4,
+      "stored": 31104,
+      "decoded": 524304,
+      "coverage": 2517,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 53298,
+        "rle_nibbles": 36736,
+        "rle_vertical": 32096,
+        "zlib_transform_l1": 24678,
+        "zlib_transform_l6": 20301,
+        "zlib_on_current_rle_l6": 18779
+      }
+    },
+    {
+      "tile": 440,
+      "layers": 2,
+      "stored": 7944,
+      "decoded": 294928,
+      "coverage": 452,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 15744,
+        "rle_nibbles": 10617,
+        "rle_vertical": 7098,
+        "zlib_transform_l1": 6149,
+        "zlib_transform_l6": 4516,
+        "zlib_on_current_rle_l6": 3775
+      }
+    },
+    {
+      "tile": 441,
+      "layers": 6,
+      "stored": 66092,
+      "decoded": 753680,
+      "coverage": 5269,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 107817,
+        "rle_nibbles": 79608,
+        "rle_vertical": 65917,
+        "zlib_transform_l1": 47243,
+        "zlib_transform_l6": 38292,
+        "zlib_on_current_rle_l6": 37152
+      }
+    },
+    {
+      "tile": 442,
+      "layers": 6,
+      "stored": 82796,
+      "decoded": 753680,
+      "coverage": 4686,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 127222,
+        "rle_nibbles": 98862,
+        "rle_vertical": 82858,
+        "zlib_transform_l1": 60387,
+        "zlib_transform_l6": 50840,
+        "zlib_on_current_rle_l6": 50135
+      }
+    },
+    {
+      "tile": 443,
+      "layers": 3,
+      "stored": 7853,
+      "decoded": 409616,
+      "coverage": 229,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 15563,
+        "rle_nibbles": 9742,
+        "rle_vertical": 7611,
+        "zlib_transform_l1": 6332,
+        "zlib_transform_l6": 4355,
+        "zlib_on_current_rle_l6": 3428
+      }
+    },
+    {
+      "tile": 444,
+      "layers": 3,
+      "stored": 25514,
+      "decoded": 409616,
+      "coverage": 1446,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 48244,
+        "rle_nibbles": 32778,
+        "rle_vertical": 25400,
+        "zlib_transform_l1": 20678,
+        "zlib_transform_l6": 16320,
+        "zlib_on_current_rle_l6": 14781
+      }
+    },
+    {
+      "tile": 445,
+      "layers": 4,
+      "stored": 75013,
+      "decoded": 524304,
+      "coverage": 4243,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 124342,
+        "rle_nibbles": 94667,
+        "rle_vertical": 73194,
+        "zlib_transform_l1": 54573,
+        "zlib_transform_l6": 45375,
+        "zlib_on_current_rle_l6": 44756
+      }
+    },
+    {
+      "tile": 446,
+      "layers": 2,
+      "stored": 2790,
+      "decoded": 294928,
+      "coverage": 21,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 3496,
+        "rle_nibbles": 3033,
+        "rle_vertical": 3366,
+        "zlib_transform_l1": 1843,
+        "zlib_transform_l6": 777,
+        "zlib_on_current_rle_l6": 344
+      }
+    },
+    {
+      "tile": 454,
+      "layers": 5,
+      "stored": 43419,
+      "decoded": 638992,
+      "coverage": 2451,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 82151,
+        "rle_nibbles": 53314,
+        "rle_vertical": 43686,
+        "zlib_transform_l1": 34809,
+        "zlib_transform_l6": 27600,
+        "zlib_on_current_rle_l6": 26261
+      }
+    },
+    {
+      "tile": 455,
+      "layers": 6,
+      "stored": 112812,
+      "decoded": 753680,
+      "coverage": 8104,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 176546,
+        "rle_nibbles": 128010,
+        "rle_vertical": 118614,
+        "zlib_transform_l1": 81369,
+        "zlib_transform_l6": 69868,
+        "zlib_on_current_rle_l6": 68691
+      }
+    },
+    {
+      "tile": 457,
+      "layers": 2,
+      "stored": 9451,
+      "decoded": 294928,
+      "coverage": 804,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 16464,
+        "rle_nibbles": 11312,
+        "rle_vertical": 10611,
+        "zlib_transform_l1": 7825,
+        "zlib_transform_l6": 6102,
+        "zlib_on_current_rle_l6": 5307
+      }
+    },
+    {
+      "tile": 458,
+      "layers": 2,
+      "stored": 2716,
+      "decoded": 294928,
+      "coverage": 27,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 3708,
+        "rle_nibbles": 2915,
+        "rle_vertical": 3290,
+        "zlib_transform_l1": 1809,
+        "zlib_transform_l6": 747,
+        "zlib_on_current_rle_l6": 379
+      }
+    },
+    {
+      "tile": 459,
+      "layers": 1,
+      "stored": 1535,
+      "decoded": 180240,
+      "coverage": 11,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 1650,
+        "rle_nibbles": 1564,
+        "rle_vertical": 1816,
+        "zlib_transform_l1": 986,
+        "zlib_transform_l6": 363,
+        "zlib_on_current_rle_l6": 168
+      }
+    },
+    {
+      "tile": 460,
+      "layers": 3,
+      "stored": 36926,
+      "decoded": 409616,
+      "coverage": 3053,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 66942,
+        "rle_nibbles": 45880,
+        "rle_vertical": 37826,
+        "zlib_transform_l1": 27900,
+        "zlib_transform_l6": 22861,
+        "zlib_on_current_rle_l6": 22077
+      }
+    },
+    {
+      "tile": 461,
+      "layers": 3,
+      "stored": 43369,
+      "decoded": 409616,
+      "coverage": 3235,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 82297,
+        "rle_nibbles": 54003,
+        "rle_vertical": 44494,
+        "zlib_transform_l1": 34685,
+        "zlib_transform_l6": 28539,
+        "zlib_on_current_rle_l6": 27641
+      }
+    },
+    {
+      "tile": 462,
+      "layers": 4,
+      "stored": 71128,
+      "decoded": 524304,
+      "coverage": 5271,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 113983,
+        "rle_nibbles": 85675,
+        "rle_vertical": 73311,
+        "zlib_transform_l1": 51741,
+        "zlib_transform_l6": 43801,
+        "zlib_on_current_rle_l6": 43751
+      }
+    },
+    {
+      "tile": 463,
+      "layers": 4,
+      "stored": 24691,
+      "decoded": 524304,
+      "coverage": 1907,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 46994,
+        "rle_nibbles": 29925,
+        "rle_vertical": 26336,
+        "zlib_transform_l1": 19746,
+        "zlib_transform_l6": 15247,
+        "zlib_on_current_rle_l6": 13708
+      }
+    },
+    {
+      "tile": 464,
+      "layers": 2,
+      "stored": 7602,
+      "decoded": 294928,
+      "coverage": 603,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 15750,
+        "rle_nibbles": 9874,
+        "rle_vertical": 7706,
+        "zlib_transform_l1": 6425,
+        "zlib_transform_l6": 4408,
+        "zlib_on_current_rle_l6": 3663
+      }
+    },
+    {
+      "tile": 465,
+      "layers": 2,
+      "stored": 3991,
+      "decoded": 294928,
+      "coverage": 110,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 6726,
+        "rle_nibbles": 4845,
+        "rle_vertical": 4184,
+        "zlib_transform_l1": 3040,
+        "zlib_transform_l6": 1789,
+        "zlib_on_current_rle_l6": 1299
+      }
+    },
+    {
+      "tile": 466,
+      "layers": 3,
+      "stored": 18622,
+      "decoded": 409616,
+      "coverage": 1159,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 37237,
+        "rle_nibbles": 23236,
+        "rle_vertical": 19335,
+        "zlib_transform_l1": 15151,
+        "zlib_transform_l6": 11758,
+        "zlib_on_current_rle_l6": 10740
+      }
+    },
+    {
+      "tile": 467,
+      "layers": 4,
+      "stored": 58155,
+      "decoded": 524304,
+      "coverage": 4665,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 92542,
+        "rle_nibbles": 68418,
+        "rle_vertical": 61886,
+        "zlib_transform_l1": 41716,
+        "zlib_transform_l6": 34655,
+        "zlib_on_current_rle_l6": 34354
+      }
+    },
+    {
+      "tile": 468,
+      "layers": 5,
+      "stored": 117584,
+      "decoded": 638992,
+      "coverage": 8562,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 197528,
+        "rle_nibbles": 144003,
+        "rle_vertical": 116759,
+        "zlib_transform_l1": 83027,
+        "zlib_transform_l6": 69577,
+        "zlib_on_current_rle_l6": 70603
+      }
+    },
+    {
+      "tile": 469,
+      "layers": 4,
+      "stored": 63063,
+      "decoded": 524304,
+      "coverage": 5912,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 109667,
+        "rle_nibbles": 75746,
+        "rle_vertical": 64787,
+        "zlib_transform_l1": 46614,
+        "zlib_transform_l6": 38300,
+        "zlib_on_current_rle_l6": 37913
+      }
+    },
+    {
+      "tile": 470,
+      "layers": 2,
+      "stored": 10070,
+      "decoded": 294928,
+      "coverage": 612,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 20816,
+        "rle_nibbles": 12869,
+        "rle_vertical": 9438,
+        "zlib_transform_l1": 8124,
+        "zlib_transform_l6": 6294,
+        "zlib_on_current_rle_l6": 5603
+      }
+    },
+    {
+      "tile": 471,
+      "layers": 6,
+      "stored": 72681,
+      "decoded": 753680,
+      "coverage": 4833,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 114967,
+        "rle_nibbles": 85153,
+        "rle_vertical": 76482,
+        "zlib_transform_l1": 51238,
+        "zlib_transform_l6": 42793,
+        "zlib_on_current_rle_l6": 41728
+      }
+    },
+    {
+      "tile": 472,
+      "layers": 6,
+      "stored": 71421,
+      "decoded": 753680,
+      "coverage": 4818,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 121251,
+        "rle_nibbles": 85703,
+        "rle_vertical": 73251,
+        "zlib_transform_l1": 53716,
+        "zlib_transform_l6": 44124,
+        "zlib_on_current_rle_l6": 42916
+      }
+    },
+    {
+      "tile": 473,
+      "layers": 4,
+      "stored": 55669,
+      "decoded": 524304,
+      "coverage": 4730,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 103245,
+        "rle_nibbles": 68851,
+        "rle_vertical": 56946,
+        "zlib_transform_l1": 42698,
+        "zlib_transform_l6": 34269,
+        "zlib_on_current_rle_l6": 33198
+      }
+    },
+    {
+      "tile": 474,
+      "layers": 3,
+      "stored": 30965,
+      "decoded": 409616,
+      "coverage": 2354,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 63874,
+        "rle_nibbles": 40376,
+        "rle_vertical": 30255,
+        "zlib_transform_l1": 25154,
+        "zlib_transform_l6": 19748,
+        "zlib_on_current_rle_l6": 18461
+      }
+    },
+    {
+      "tile": 475,
+      "layers": 4,
+      "stored": 36840,
+      "decoded": 524304,
+      "coverage": 2925,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 65497,
+        "rle_nibbles": 47391,
+        "rle_vertical": 37189,
+        "zlib_transform_l1": 26980,
+        "zlib_transform_l6": 21662,
+        "zlib_on_current_rle_l6": 20522
+      }
+    },
+    {
+      "tile": 476,
+      "layers": 4,
+      "stored": 20285,
+      "decoded": 524304,
+      "coverage": 1101,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 39746,
+        "rle_nibbles": 25873,
+        "rle_vertical": 22001,
+        "zlib_transform_l1": 17166,
+        "zlib_transform_l6": 12681,
+        "zlib_on_current_rle_l6": 10943
+      }
+    },
+    {
+      "tile": 484,
+      "layers": 6,
+      "stored": 49739,
+      "decoded": 753680,
+      "coverage": 3036,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 92316,
+        "rle_nibbles": 61197,
+        "rle_vertical": 51611,
+        "zlib_transform_l1": 39141,
+        "zlib_transform_l6": 30888,
+        "zlib_on_current_rle_l6": 29325
+      }
+    },
+    {
+      "tile": 485,
+      "layers": 5,
+      "stored": 106187,
+      "decoded": 638992,
+      "coverage": 7639,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 164511,
+        "rle_nibbles": 121944,
+        "rle_vertical": 111629,
+        "zlib_transform_l1": 77290,
+        "zlib_transform_l6": 66465,
+        "zlib_on_current_rle_l6": 65541
+      }
+    },
+    {
+      "tile": 489,
+      "layers": 3,
+      "stored": 29134,
+      "decoded": 409616,
+      "coverage": 2728,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 54755,
+        "rle_nibbles": 35658,
+        "rle_vertical": 31974,
+        "zlib_transform_l1": 23213,
+        "zlib_transform_l6": 18993,
+        "zlib_on_current_rle_l6": 17695
+      }
+    },
+    {
+      "tile": 490,
+      "layers": 4,
+      "stored": 90788,
+      "decoded": 524304,
+      "coverage": 6759,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 147011,
+        "rle_nibbles": 107969,
+        "rle_vertical": 95020,
+        "zlib_transform_l1": 68130,
+        "zlib_transform_l6": 58159,
+        "zlib_on_current_rle_l6": 57901
+      }
+    },
+    {
+      "tile": 491,
+      "layers": 4,
+      "stored": 63939,
+      "decoded": 524304,
+      "coverage": 4971,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 114900,
+        "rle_nibbles": 79372,
+        "rle_vertical": 64750,
+        "zlib_transform_l1": 48860,
+        "zlib_transform_l6": 39986,
+        "zlib_on_current_rle_l6": 39167
+      }
+    },
+    {
+      "tile": 492,
+      "layers": 5,
+      "stored": 105369,
+      "decoded": 638992,
+      "coverage": 7752,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 168462,
+        "rle_nibbles": 126298,
+        "rle_vertical": 109104,
+        "zlib_transform_l1": 74869,
+        "zlib_transform_l6": 63060,
+        "zlib_on_current_rle_l6": 63811
+      }
+    },
+    {
+      "tile": 493,
+      "layers": 4,
+      "stored": 28917,
+      "decoded": 524304,
+      "coverage": 2839,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 53694,
+        "rle_nibbles": 35020,
+        "rle_vertical": 30819,
+        "zlib_transform_l1": 22733,
+        "zlib_transform_l6": 17728,
+        "zlib_on_current_rle_l6": 16358
+      }
+    },
+    {
+      "tile": 494,
+      "layers": 4,
+      "stored": 47609,
+      "decoded": 524304,
+      "coverage": 3858,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 84369,
+        "rle_nibbles": 58211,
+        "rle_vertical": 48299,
+        "zlib_transform_l1": 35474,
+        "zlib_transform_l6": 28706,
+        "zlib_on_current_rle_l6": 28059
+      }
+    },
+    {
+      "tile": 495,
+      "layers": 3,
+      "stored": 17513,
+      "decoded": 409616,
+      "coverage": 1499,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 33560,
+        "rle_nibbles": 22965,
+        "rle_vertical": 16882,
+        "zlib_transform_l1": 14081,
+        "zlib_transform_l6": 10027,
+        "zlib_on_current_rle_l6": 9228
+      }
+    },
+    {
+      "tile": 496,
+      "layers": 3,
+      "stored": 9777,
+      "decoded": 409616,
+      "coverage": 459,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 18195,
+        "rle_nibbles": 12140,
+        "rle_vertical": 10191,
+        "zlib_transform_l1": 7948,
+        "zlib_transform_l6": 5315,
+        "zlib_on_current_rle_l6": 4504
+      }
+    },
+    {
+      "tile": 497,
+      "layers": 4,
+      "stored": 40388,
+      "decoded": 524304,
+      "coverage": 2449,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 68370,
+        "rle_nibbles": 48642,
+        "rle_vertical": 42253,
+        "zlib_transform_l1": 30653,
+        "zlib_transform_l6": 25446,
+        "zlib_on_current_rle_l6": 24314
+      }
+    },
+    {
+      "tile": 498,
+      "layers": 4,
+      "stored": 65523,
+      "decoded": 524304,
+      "coverage": 5138,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 108438,
+        "rle_nibbles": 78590,
+        "rle_vertical": 68493,
+        "zlib_transform_l1": 48517,
+        "zlib_transform_l6": 40547,
+        "zlib_on_current_rle_l6": 39619
+      }
+    },
+    {
+      "tile": 499,
+      "layers": 3,
+      "stored": 38698,
+      "decoded": 409616,
+      "coverage": 2927,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 74916,
+        "rle_nibbles": 49041,
+        "rle_vertical": 37674,
+        "zlib_transform_l1": 30878,
+        "zlib_transform_l6": 25008,
+        "zlib_on_current_rle_l6": 24040
+      }
+    },
+    {
+      "tile": 500,
+      "layers": 5,
+      "stored": 74941,
+      "decoded": 638992,
+      "coverage": 5077,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 127550,
+        "rle_nibbles": 89350,
+        "rle_vertical": 77167,
+        "zlib_transform_l1": 56914,
+        "zlib_transform_l6": 47919,
+        "zlib_on_current_rle_l6": 46781
+      }
+    },
+    {
+      "tile": 501,
+      "layers": 4,
+      "stored": 53017,
+      "decoded": 524304,
+      "coverage": 4709,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 99584,
+        "rle_nibbles": 65840,
+        "rle_vertical": 54411,
+        "zlib_transform_l1": 40445,
+        "zlib_transform_l6": 32690,
+        "zlib_on_current_rle_l6": 31484
+      }
+    },
+    {
+      "tile": 502,
+      "layers": 5,
+      "stored": 70855,
+      "decoded": 638992,
+      "coverage": 5573,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 117196,
+        "rle_nibbles": 85435,
+        "rle_vertical": 72569,
+        "zlib_transform_l1": 51913,
+        "zlib_transform_l6": 43878,
+        "zlib_on_current_rle_l6": 42911
+      }
+    },
+    {
+      "tile": 503,
+      "layers": 3,
+      "stored": 27356,
+      "decoded": 409616,
+      "coverage": 1936,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 45363,
+        "rle_nibbles": 32680,
+        "rle_vertical": 29490,
+        "zlib_transform_l1": 21241,
+        "zlib_transform_l6": 17586,
+        "zlib_on_current_rle_l6": 16452
+      }
+    },
+    {
+      "tile": 504,
+      "layers": 4,
+      "stored": 73610,
+      "decoded": 524304,
+      "coverage": 5799,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 121766,
+        "rle_nibbles": 87857,
+        "rle_vertical": 76707,
+        "zlib_transform_l1": 53416,
+        "zlib_transform_l6": 44953,
+        "zlib_on_current_rle_l6": 44950
+      }
+    },
+    {
+      "tile": 505,
+      "layers": 3,
+      "stored": 44921,
+      "decoded": 409616,
+      "coverage": 3724,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 73288,
+        "rle_nibbles": 54900,
+        "rle_vertical": 46347,
+        "zlib_transform_l1": 32966,
+        "zlib_transform_l6": 27474,
+        "zlib_on_current_rle_l6": 27081
+      }
+    },
+    {
+      "tile": 506,
+      "layers": 2,
+      "stored": 10163,
+      "decoded": 294928,
+      "coverage": 811,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 19231,
+        "rle_nibbles": 12709,
+        "rle_vertical": 10445,
+        "zlib_transform_l1": 8553,
+        "zlib_transform_l6": 6398,
+        "zlib_on_current_rle_l6": 5715
+      }
+    },
+    {
+      "tile": 514,
+      "layers": 1,
+      "stored": 1887,
+      "decoded": 180240,
+      "coverage": 24,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 3034,
+        "rle_nibbles": 2129,
+        "rle_vertical": 2019,
+        "zlib_transform_l1": 1276,
+        "zlib_transform_l6": 621,
+        "zlib_on_current_rle_l6": 413
+      }
+    },
+    {
+      "tile": 515,
+      "layers": 1,
+      "stored": 1915,
+      "decoded": 180240,
+      "coverage": 25,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 2861,
+        "rle_nibbles": 2151,
+        "rle_vertical": 2030,
+        "zlib_transform_l1": 1332,
+        "zlib_transform_l6": 652,
+        "zlib_on_current_rle_l6": 427
+      }
+    },
+    {
+      "tile": 516,
+      "layers": 4,
+      "stored": 21133,
+      "decoded": 524304,
+      "coverage": 1299,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 34857,
+        "rle_nibbles": 24172,
+        "rle_vertical": 22437,
+        "zlib_transform_l1": 16066,
+        "zlib_transform_l6": 12748,
+        "zlib_on_current_rle_l6": 11496
+      }
+    },
+    {
+      "tile": 517,
+      "layers": 3,
+      "stored": 14054,
+      "decoded": 409616,
+      "coverage": 1210,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 21288,
+        "rle_nibbles": 16340,
+        "rle_vertical": 15197,
+        "zlib_transform_l1": 10767,
+        "zlib_transform_l6": 8298,
+        "zlib_on_current_rle_l6": 7528
+      }
+    },
+    {
+      "tile": 519,
+      "layers": 1,
+      "stored": 2879,
+      "decoded": 180240,
+      "coverage": 167,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 4484,
+        "rle_nibbles": 3326,
+        "rle_vertical": 3082,
+        "zlib_transform_l1": 2259,
+        "zlib_transform_l6": 1546,
+        "zlib_on_current_rle_l6": 1220
+      }
+    },
+    {
+      "tile": 520,
+      "layers": 2,
+      "stored": 6527,
+      "decoded": 294928,
+      "coverage": 307,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 10999,
+        "rle_nibbles": 8003,
+        "rle_vertical": 6953,
+        "zlib_transform_l1": 5475,
+        "zlib_transform_l6": 3797,
+        "zlib_on_current_rle_l6": 3177
+      }
+    },
+    {
+      "tile": 521,
+      "layers": 4,
+      "stored": 36258,
+      "decoded": 524304,
+      "coverage": 2863,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 62150,
+        "rle_nibbles": 44096,
+        "rle_vertical": 38669,
+        "zlib_transform_l1": 28135,
+        "zlib_transform_l6": 23082,
+        "zlib_on_current_rle_l6": 21606
+      }
+    },
+    {
+      "tile": 522,
+      "layers": 3,
+      "stored": 20373,
+      "decoded": 409616,
+      "coverage": 1236,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 35161,
+        "rle_nibbles": 25335,
+        "rle_vertical": 21078,
+        "zlib_transform_l1": 16222,
+        "zlib_transform_l6": 12693,
+        "zlib_on_current_rle_l6": 11708
+      }
+    },
+    {
+      "tile": 523,
+      "layers": 3,
+      "stored": 64361,
+      "decoded": 409616,
+      "coverage": 5599,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 106613,
+        "rle_nibbles": 78797,
+        "rle_vertical": 66359,
+        "zlib_transform_l1": 46294,
+        "zlib_transform_l6": 38755,
+        "zlib_on_current_rle_l6": 38988
+      }
+    },
+    {
+      "tile": 524,
+      "layers": 4,
+      "stored": 43269,
+      "decoded": 524304,
+      "coverage": 3045,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 67651,
+        "rle_nibbles": 51470,
+        "rle_vertical": 45592,
+        "zlib_transform_l1": 33130,
+        "zlib_transform_l6": 27544,
+        "zlib_on_current_rle_l6": 26794
+      }
+    },
+    {
+      "tile": 525,
+      "layers": 3,
+      "stored": 30549,
+      "decoded": 409616,
+      "coverage": 2468,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 53892,
+        "rle_nibbles": 37932,
+        "rle_vertical": 31995,
+        "zlib_transform_l1": 23812,
+        "zlib_transform_l6": 18972,
+        "zlib_on_current_rle_l6": 18092
+      }
+    },
+    {
+      "tile": 526,
+      "layers": 4,
+      "stored": 28301,
+      "decoded": 524304,
+      "coverage": 2030,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 48706,
+        "rle_nibbles": 33926,
+        "rle_vertical": 28282,
+        "zlib_transform_l1": 21900,
+        "zlib_transform_l6": 17039,
+        "zlib_on_current_rle_l6": 15705
+      }
+    },
+    {
+      "tile": 527,
+      "layers": 4,
+      "stored": 33673,
+      "decoded": 524304,
+      "coverage": 2625,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 53687,
+        "rle_nibbles": 39260,
+        "rle_vertical": 35183,
+        "zlib_transform_l1": 25308,
+        "zlib_transform_l6": 20412,
+        "zlib_on_current_rle_l6": 18924
+      }
+    },
+    {
+      "tile": 528,
+      "layers": 2,
+      "stored": 15084,
+      "decoded": 294928,
+      "coverage": 1110,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 29352,
+        "rle_nibbles": 19658,
+        "rle_vertical": 14667,
+        "zlib_transform_l1": 12392,
+        "zlib_transform_l6": 9730,
+        "zlib_on_current_rle_l6": 8798
+      }
+    },
+    {
+      "tile": 529,
+      "layers": 3,
+      "stored": 42455,
+      "decoded": 409616,
+      "coverage": 3583,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 72093,
+        "rle_nibbles": 51390,
+        "rle_vertical": 43788,
+        "zlib_transform_l1": 32275,
+        "zlib_transform_l6": 26536,
+        "zlib_on_current_rle_l6": 25606
+      }
+    },
+    {
+      "tile": 530,
+      "layers": 4,
+      "stored": 53625,
+      "decoded": 524304,
+      "coverage": 4167,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 89771,
+        "rle_nibbles": 65084,
+        "rle_vertical": 54981,
+        "zlib_transform_l1": 38887,
+        "zlib_transform_l6": 31589,
+        "zlib_on_current_rle_l6": 31380
+      }
+    },
+    {
+      "tile": 531,
+      "layers": 3,
+      "stored": 45714,
+      "decoded": 409616,
+      "coverage": 4021,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 81794,
+        "rle_nibbles": 57518,
+        "rle_vertical": 46735,
+        "zlib_transform_l1": 34393,
+        "zlib_transform_l6": 27663,
+        "zlib_on_current_rle_l6": 27023
+      }
+    },
+    {
+      "tile": 532,
+      "layers": 5,
+      "stored": 30341,
+      "decoded": 638992,
+      "coverage": 2056,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 53926,
+        "rle_nibbles": 38189,
+        "rle_vertical": 30715,
+        "zlib_transform_l1": 24049,
+        "zlib_transform_l6": 18376,
+        "zlib_on_current_rle_l6": 16829
+      }
+    },
+    {
+      "tile": 533,
+      "layers": 3,
+      "stored": 23855,
+      "decoded": 409616,
+      "coverage": 1881,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 49616,
+        "rle_nibbles": 31145,
+        "rle_vertical": 23477,
+        "zlib_transform_l1": 19627,
+        "zlib_transform_l6": 15476,
+        "zlib_on_current_rle_l6": 14238
+      }
+    },
+    {
+      "tile": 534,
+      "layers": 4,
+      "stored": 66232,
+      "decoded": 524304,
+      "coverage": 4779,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 119983,
+        "rle_nibbles": 82113,
+        "rle_vertical": 66219,
+        "zlib_transform_l1": 50937,
+        "zlib_transform_l6": 42031,
+        "zlib_on_current_rle_l6": 40970
+      }
+    },
+    {
+      "tile": 535,
+      "layers": 3,
+      "stored": 43721,
+      "decoded": 409616,
+      "coverage": 3868,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 65736,
+        "rle_nibbles": 52070,
+        "rle_vertical": 43680,
+        "zlib_transform_l1": 30513,
+        "zlib_transform_l6": 24971,
+        "zlib_on_current_rle_l6": 24841
+      }
+    },
+    {
+      "tile": 536,
+      "layers": 2,
+      "stored": 13213,
+      "decoded": 294928,
+      "coverage": 632,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 26375,
+        "rle_nibbles": 17663,
+        "rle_vertical": 14809,
+        "zlib_transform_l1": 11071,
+        "zlib_transform_l6": 8429,
+        "zlib_on_current_rle_l6": 7320
+      }
+    },
+    {
+      "tile": 546,
+      "layers": 6,
+      "stored": 49831,
+      "decoded": 753680,
+      "coverage": 2468,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 86671,
+        "rle_nibbles": 58147,
+        "rle_vertical": 50148,
+        "zlib_transform_l1": 37732,
+        "zlib_transform_l6": 30743,
+        "zlib_on_current_rle_l6": 29007
+      }
+    },
+    {
+      "tile": 547,
+      "layers": 6,
+      "stored": 99555,
+      "decoded": 753680,
+      "coverage": 6684,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 151261,
+        "rle_nibbles": 114095,
+        "rle_vertical": 106954,
+        "zlib_transform_l1": 71756,
+        "zlib_transform_l6": 60831,
+        "zlib_on_current_rle_l6": 60504
+      }
+    },
+    {
+      "tile": 548,
+      "layers": 5,
+      "stored": 48640,
+      "decoded": 638992,
+      "coverage": 3434,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 86431,
+        "rle_nibbles": 59676,
+        "rle_vertical": 51066,
+        "zlib_transform_l1": 37548,
+        "zlib_transform_l6": 30188,
+        "zlib_on_current_rle_l6": 29005
+      }
+    },
+    {
+      "tile": 549,
+      "layers": 4,
+      "stored": 48787,
+      "decoded": 524304,
+      "coverage": 4048,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 92056,
+        "rle_nibbles": 61415,
+        "rle_vertical": 49446,
+        "zlib_transform_l1": 38391,
+        "zlib_transform_l6": 30656,
+        "zlib_on_current_rle_l6": 29387
+      }
+    },
+    {
+      "tile": 550,
+      "layers": 4,
+      "stored": 59535,
+      "decoded": 524304,
+      "coverage": 4587,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 102657,
+        "rle_nibbles": 71537,
+        "rle_vertical": 61139,
+        "zlib_transform_l1": 44468,
+        "zlib_transform_l6": 36940,
+        "zlib_on_current_rle_l6": 36173
+      }
+    },
+    {
+      "tile": 551,
+      "layers": 3,
+      "stored": 25563,
+      "decoded": 409616,
+      "coverage": 2164,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 50381,
+        "rle_nibbles": 32395,
+        "rle_vertical": 25869,
+        "zlib_transform_l1": 20405,
+        "zlib_transform_l6": 16029,
+        "zlib_on_current_rle_l6": 14854
+      }
+    },
+    {
+      "tile": 552,
+      "layers": 3,
+      "stored": 42869,
+      "decoded": 409616,
+      "coverage": 3180,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 65908,
+        "rle_nibbles": 50835,
+        "rle_vertical": 44173,
+        "zlib_transform_l1": 32112,
+        "zlib_transform_l6": 27482,
+        "zlib_on_current_rle_l6": 27019
+      }
+    },
+    {
+      "tile": 553,
+      "layers": 4,
+      "stored": 88002,
+      "decoded": 524304,
+      "coverage": 7026,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 145632,
+        "rle_nibbles": 107043,
+        "rle_vertical": 91626,
+        "zlib_transform_l1": 65346,
+        "zlib_transform_l6": 54947,
+        "zlib_on_current_rle_l6": 55202
+      }
+    },
+    {
+      "tile": 554,
+      "layers": 4,
+      "stored": 117459,
+      "decoded": 524304,
+      "coverage": 10138,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 180242,
+        "rle_nibbles": 140317,
+        "rle_vertical": 122977,
+        "zlib_transform_l1": 80375,
+        "zlib_transform_l6": 68760,
+        "zlib_on_current_rle_l6": 70889
+      }
+    },
+    {
+      "tile": 555,
+      "layers": 5,
+      "stored": 79688,
+      "decoded": 638992,
+      "coverage": 7130,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 124835,
+        "rle_nibbles": 95314,
+        "rle_vertical": 83041,
+        "zlib_transform_l1": 57141,
+        "zlib_transform_l6": 48226,
+        "zlib_on_current_rle_l6": 47936
+      }
+    },
+    {
+      "tile": 556,
+      "layers": 4,
+      "stored": 45724,
+      "decoded": 524304,
+      "coverage": 3408,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 80731,
+        "rle_nibbles": 55864,
+        "rle_vertical": 46312,
+        "zlib_transform_l1": 35017,
+        "zlib_transform_l6": 28542,
+        "zlib_on_current_rle_l6": 27698
+      }
+    },
+    {
+      "tile": 557,
+      "layers": 3,
+      "stored": 26394,
+      "decoded": 409616,
+      "coverage": 2589,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 47697,
+        "rle_nibbles": 32024,
+        "rle_vertical": 27000,
+        "zlib_transform_l1": 20515,
+        "zlib_transform_l6": 16226,
+        "zlib_on_current_rle_l6": 15209
+      }
+    },
+    {
+      "tile": 558,
+      "layers": 4,
+      "stored": 48555,
+      "decoded": 524304,
+      "coverage": 4093,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 79938,
+        "rle_nibbles": 58420,
+        "rle_vertical": 50332,
+        "zlib_transform_l1": 36246,
+        "zlib_transform_l6": 29780,
+        "zlib_on_current_rle_l6": 29479
+      }
+    },
+    {
+      "tile": 559,
+      "layers": 4,
+      "stored": 56392,
+      "decoded": 524304,
+      "coverage": 4460,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 93202,
+        "rle_nibbles": 67704,
+        "rle_vertical": 57198,
+        "zlib_transform_l1": 42572,
+        "zlib_transform_l6": 35362,
+        "zlib_on_current_rle_l6": 34631
+      }
+    },
+    {
+      "tile": 560,
+      "layers": 3,
+      "stored": 50134,
+      "decoded": 409616,
+      "coverage": 4787,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 85626,
+        "rle_nibbles": 62900,
+        "rle_vertical": 51658,
+        "zlib_transform_l1": 36752,
+        "zlib_transform_l6": 30114,
+        "zlib_on_current_rle_l6": 29855
+      }
+    },
+    {
+      "tile": 561,
+      "layers": 4,
+      "stored": 77884,
+      "decoded": 524304,
+      "coverage": 7029,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 123021,
+        "rle_nibbles": 94771,
+        "rle_vertical": 81993,
+        "zlib_transform_l1": 55510,
+        "zlib_transform_l6": 47059,
+        "zlib_on_current_rle_l6": 47309
+      }
+    },
+    {
+      "tile": 562,
+      "layers": 4,
+      "stored": 86404,
+      "decoded": 524304,
+      "coverage": 6892,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 147820,
+        "rle_nibbles": 106151,
+        "rle_vertical": 87834,
+        "zlib_transform_l1": 64793,
+        "zlib_transform_l6": 54018,
+        "zlib_on_current_rle_l6": 54312
+      }
+    },
+    {
+      "tile": 563,
+      "layers": 4,
+      "stored": 22602,
+      "decoded": 524304,
+      "coverage": 1269,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 48283,
+        "rle_nibbles": 29259,
+        "rle_vertical": 21929,
+        "zlib_transform_l1": 19762,
+        "zlib_transform_l6": 15226,
+        "zlib_on_current_rle_l6": 13492
+      }
+    },
+    {
+      "tile": 564,
+      "layers": 5,
+      "stored": 69720,
+      "decoded": 638992,
+      "coverage": 5748,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 115774,
+        "rle_nibbles": 83819,
+        "rle_vertical": 71480,
+        "zlib_transform_l1": 50394,
+        "zlib_transform_l6": 41458,
+        "zlib_on_current_rle_l6": 40861
+      }
+    },
+    {
+      "tile": 565,
+      "layers": 6,
+      "stored": 80130,
+      "decoded": 753680,
+      "coverage": 6097,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 126361,
+        "rle_nibbles": 92583,
+        "rle_vertical": 81421,
+        "zlib_transform_l1": 55167,
+        "zlib_transform_l6": 46759,
+        "zlib_on_current_rle_l6": 46318
+      }
+    },
+    {
+      "tile": 566,
+      "layers": 8,
+      "stored": 110881,
+      "decoded": 983056,
+      "coverage": 5377,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 168856,
+        "rle_nibbles": 129186,
+        "rle_vertical": 118083,
+        "zlib_transform_l1": 79921,
+        "zlib_transform_l6": 68531,
+        "zlib_on_current_rle_l6": 67180
+      }
+    },
+    {
+      "tile": 578,
+      "layers": 1,
+      "stored": 2393,
+      "decoded": 180240,
+      "coverage": 56,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 4299,
+        "rle_nibbles": 3014,
+        "rle_vertical": 2519,
+        "zlib_transform_l1": 1885,
+        "zlib_transform_l6": 1082,
+        "zlib_on_current_rle_l6": 755
+      }
+    },
+    {
+      "tile": 579,
+      "layers": 3,
+      "stored": 5930,
+      "decoded": 409616,
+      "coverage": 253,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 9881,
+        "rle_nibbles": 6742,
+        "rle_vertical": 6657,
+        "zlib_transform_l1": 4546,
+        "zlib_transform_l6": 2784,
+        "zlib_on_current_rle_l6": 2097
+      }
+    },
+    {
+      "tile": 581,
+      "layers": 3,
+      "stored": 14586,
+      "decoded": 409616,
+      "coverage": 1591,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 27281,
+        "rle_nibbles": 17794,
+        "rle_vertical": 15994,
+        "zlib_transform_l1": 11566,
+        "zlib_transform_l6": 8624,
+        "zlib_on_current_rle_l6": 7366
+      }
+    },
+    {
+      "tile": 582,
+      "layers": 2,
+      "stored": 11865,
+      "decoded": 294928,
+      "coverage": 1399,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 23094,
+        "rle_nibbles": 14660,
+        "rle_vertical": 13149,
+        "zlib_transform_l1": 9560,
+        "zlib_transform_l6": 7264,
+        "zlib_on_current_rle_l6": 6492
+      }
+    },
+    {
+      "tile": 583,
+      "layers": 2,
+      "stored": 22151,
+      "decoded": 294928,
+      "coverage": 1230,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 45610,
+        "rle_nibbles": 29441,
+        "rle_vertical": 25109,
+        "zlib_transform_l1": 17908,
+        "zlib_transform_l6": 14119,
+        "zlib_on_current_rle_l6": 12552
+      }
+    },
+    {
+      "tile": 584,
+      "layers": 3,
+      "stored": 27952,
+      "decoded": 409616,
+      "coverage": 1858,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 55181,
+        "rle_nibbles": 35449,
+        "rle_vertical": 30460,
+        "zlib_transform_l1": 22544,
+        "zlib_transform_l6": 17756,
+        "zlib_on_current_rle_l6": 16136
+      }
+    },
+    {
+      "tile": 585,
+      "layers": 4,
+      "stored": 28820,
+      "decoded": 524304,
+      "coverage": 2249,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 54900,
+        "rle_nibbles": 34954,
+        "rle_vertical": 30564,
+        "zlib_transform_l1": 23153,
+        "zlib_transform_l6": 18318,
+        "zlib_on_current_rle_l6": 16575
+      }
+    },
+    {
+      "tile": 586,
+      "layers": 4,
+      "stored": 19673,
+      "decoded": 524304,
+      "coverage": 1144,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 37475,
+        "rle_nibbles": 24707,
+        "rle_vertical": 20068,
+        "zlib_transform_l1": 16567,
+        "zlib_transform_l6": 12556,
+        "zlib_on_current_rle_l6": 10998
+      }
+    },
+    {
+      "tile": 587,
+      "layers": 4,
+      "stored": 16952,
+      "decoded": 524304,
+      "coverage": 1164,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 34219,
+        "rle_nibbles": 21206,
+        "rle_vertical": 17251,
+        "zlib_transform_l1": 13648,
+        "zlib_transform_l6": 9864,
+        "zlib_on_current_rle_l6": 8527
+      }
+    },
+    {
+      "tile": 588,
+      "layers": 3,
+      "stored": 20052,
+      "decoded": 409616,
+      "coverage": 1550,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 39467,
+        "rle_nibbles": 25182,
+        "rle_vertical": 20640,
+        "zlib_transform_l1": 15827,
+        "zlib_transform_l6": 11906,
+        "zlib_on_current_rle_l6": 10552
+      }
+    },
+    {
+      "tile": 589,
+      "layers": 3,
+      "stored": 19333,
+      "decoded": 409616,
+      "coverage": 1404,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 38986,
+        "rle_nibbles": 23847,
+        "rle_vertical": 20038,
+        "zlib_transform_l1": 15552,
+        "zlib_transform_l6": 11798,
+        "zlib_on_current_rle_l6": 10576
+      }
+    },
+    {
+      "tile": 590,
+      "layers": 3,
+      "stored": 18177,
+      "decoded": 409616,
+      "coverage": 1226,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 38283,
+        "rle_nibbles": 23569,
+        "rle_vertical": 18735,
+        "zlib_transform_l1": 14975,
+        "zlib_transform_l6": 10985,
+        "zlib_on_current_rle_l6": 9529
+      }
+    },
+    {
+      "tile": 591,
+      "layers": 3,
+      "stored": 13283,
+      "decoded": 409616,
+      "coverage": 645,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 26026,
+        "rle_nibbles": 16738,
+        "rle_vertical": 14930,
+        "zlib_transform_l1": 11356,
+        "zlib_transform_l6": 8359,
+        "zlib_on_current_rle_l6": 7021
+      }
+    },
+    {
+      "tile": 592,
+      "layers": 2,
+      "stored": 5825,
+      "decoded": 294928,
+      "coverage": 211,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 11031,
+        "rle_nibbles": 7356,
+        "rle_vertical": 6224,
+        "zlib_transform_l1": 4838,
+        "zlib_transform_l6": 3171,
+        "zlib_on_current_rle_l6": 2549
+      }
+    },
+    {
+      "tile": 593,
+      "layers": 4,
+      "stored": 14260,
+      "decoded": 524304,
+      "coverage": 546,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 32482,
+        "rle_nibbles": 18426,
+        "rle_vertical": 14381,
+        "zlib_transform_l1": 12032,
+        "zlib_transform_l6": 8967,
+        "zlib_on_current_rle_l6": 7589
+      }
+    },
+    {
+      "tile": 594,
+      "layers": 5,
+      "stored": 99379,
+      "decoded": 638992,
+      "coverage": 6886,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 156810,
+        "rle_nibbles": 116426,
+        "rle_vertical": 105985,
+        "zlib_transform_l1": 69223,
+        "zlib_transform_l6": 58291,
+        "zlib_on_current_rle_l6": 58973
+      }
+    },
+    {
+      "tile": 595,
+      "layers": 5,
+      "stored": 91777,
+      "decoded": 638992,
+      "coverage": 6288,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 145933,
+        "rle_nibbles": 106121,
+        "rle_vertical": 98690,
+        "zlib_transform_l1": 65203,
+        "zlib_transform_l6": 55640,
+        "zlib_on_current_rle_l6": 55712
+      }
+    },
+    {
+      "tile": 596,
+      "layers": 5,
+      "stored": 34500,
+      "decoded": 638992,
+      "coverage": 2075,
+      "alternate_payload_bytes": {
+        "rle_bitplanes": 57214,
+        "rle_nibbles": 39637,
+        "rle_vertical": 36562,
+        "zlib_transform_l1": 25633,
+        "zlib_transform_l6": 20623,
+        "zlib_on_current_rle_l6": 19165
+      }
+    }
+  ]
+}

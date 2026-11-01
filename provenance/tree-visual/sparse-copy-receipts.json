@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "source": "build/v029/tree-bake/pack-sparse/manifest.json",
+      "destination": "provenance/tree-visual/sparse-pack-manifest.json",
+      "original_raw_sha256": "9bdcbdc70991caa9acee8e752d3db57f826bcdd0f78c1d75c9998ab9b3cf2603",
+      "committed_lf_sha256": "9bdcbdc70991caa9acee8e752d3db57f826bcdd0f78c1d75c9998ab9b3cf2603",
+      "json_values_preserved": true
+    },
+    {
+      "source": "build/v029/tree-bake/pack-sparse/qa-verification.json",
+      "destination": "provenance/tree-visual/sparse-qa-verification.json",
+      "original_raw_sha256": "c92939f8950b6b9997ca89c70874e98ecdd625ac41269f509e9bbd91d975964f",
+      "committed_lf_sha256": "5fb0494a77c7c443f4c2cf46ab277c01a948f1debee68cdb9ec4a6ac94d6588f",
+      "json_values_preserved": true
+    },
+    {
+      "source": "build/v029/tree-bake/pack-sparse/active-pixel-equivalence.json",
+      "destination": "provenance/tree-visual/sparse-active-pixel-equivalence.json",
+      "original_raw_sha256": "933be27acd9a8c7020c16017c49b90bdf76b18b3c829074cd81c97fb2a51b7e4",
+      "committed_lf_sha256": "933be27acd9a8c7020c16017c49b90bdf76b18b3c829074cd81c97fb2a51b7e4",
+      "json_values_preserved": true
+    },
+    {
+      "source": "build/v029/tree-bake/pack-sparse/full-base-reproduction.json",
+      "destination": "provenance/tree-visual/sparse-full-base-reproduction.json",
+      "original_raw_sha256": "c7245b22d37367355d9e460654bf66994d6108ab52c5d40c54d50a579e2df743",
+      "committed_lf_sha256": "c7245b22d37367355d9e460654bf66994d6108ab52c5d40c54d50a579e2df743",
+      "json_values_preserved": true
+    },
+    {
+      "source": "build/v029/tree-bake/qa_sparse.py",
+      "destination": "provenance/tree-visual/source-data/qa_pack_sparse.py",
+      "original_raw_sha256": "0ea480a22adc926746cb691302f4324c695ab769bf832db06ca1f580b1d5d41c",
+      "committed_lf_sha256": "0ea480a22adc926746cb691302f4324c695ab769bf832db06ca1f580b1d5d41c",
+      "verbatim_source": true
+    }
+  ],
+  "scope": "New sparse records only. Original full-base files and source hashes remain preserved."
+}

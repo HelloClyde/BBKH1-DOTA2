@@ -5,6 +5,7 @@
 #include "progression.h"
 #include "baked_io.h"
 #include "item_assets.h"
+#include "../platform/render.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
@@ -13,6 +14,7 @@ static DotaGame g;static const char *outdir;
 static void setup(int match_tick){int i;dota_init(&g,DOTA_HERO_AXE,20261101);for(i=1;i<DOTA_MAX_UNITS;i++)g.units[i].active=0;g.units[0].target=-1;g.units[0].attack_wait=100000;dota_rules_set_position(&g,0,1800,2500);g.tick=dota_match_elapsed_tick(match_tick);}
 static void save(const char *name){char path[2048];FILE *file;snprintf(path,sizeof(path),"%s/%s",outdir,name);file=fopen(path,"wb");CHECK(file);CHECK(fwrite(&g,1,sizeof(g),file)==sizeof(g));CHECK(!fclose(file));}
 int main(int argc,char **argv){
+    CHECK(sizeof(DotaGame)==178044 && sizeof(DotaUnit)==240 && sizeof(DotaView)==112);
     CHECK(argc==3);outdir=argv[1];CHECK(baked_io_open(argv[2])&&item_assets_open());
     setup(-60*DOTA_HZ);CHECK(dota_progression_learn(&g,0,0));save("pregame.bin");
     setup(-1);save("horn.bin");setup(30*DOTA_HZ-1);g.wave=1;save("wave.bin");

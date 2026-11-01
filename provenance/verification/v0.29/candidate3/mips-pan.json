@@ -1,0 +1,6105 @@
+{
+  "passed": true,
+  "actual_complete_bda": true,
+  "actual_mips32": true,
+  "physical_h1_tested": false,
+  "USB_opened": false,
+  "entry_or_present_or_audio_executed": false,
+  "game_outcome_writes_after_initialization": 0,
+  "camera_pan_world_units_per_frame": 2,
+  "device_snapshot_sha256": "d3691f6ba4702beaf39eecd92e6e1235498d2035c82f2729d6f24d4f4d2c12a1",
+  "bda_sha256": "fe492e687875ec31168778f266d5010e4479b89a0ae901acc061b8722d95bcca",
+  "elf_sha256": "56c8d9f169c379223b2b0040a999840d34613ec51833586f45d35e249130efa7",
+  "metadata_sha256": "55aef80cd2f0a5181e77225567504f330c06a9d1315d29e762d1a9608f540f09",
+  "compiled_sources": {
+    "assets/runtime/manifest.json": "c8c8f84c9c079e2e3969ba3c5bb36f2deba5e1f8cc18e47d9a061bc1c3ef8479",
+    "game/backpack_data.h": "85878466f4596526fa78b63101e4ee4a781ae5c13a9b17c4e2f234f3af53f51a",
+    "game/barracks.c": "81b6489d8103dd6b1e3760c307faa20258886fdc1159b57d0d00b6ba695fc269",
+    "game/barracks.h": "b123d4d8dd0c6bc2e3ac2870b3750d368649bbe66bc1e4058a110ab2b52e3043",
+    "game/bosses.c": "1403417454e121e46f904dbc6705e89acc36aecd625407516c7ca99a9fa6d126",
+    "game/bosses.h": "fcff4c71580688be92e640c73c9b381580f8e6a063f5fb4afd12d440498f3507",
+    "game/courier.c": "6c25c9d33b6181813e972ce0864ebd7d74d1adc6d093ba5230f4b5b21445e31b",
+    "game/courier.h": "281bbdf4d213b229450a970fdc5810ec3974b000215512be8562111a7d1497a2",
+    "game/courier_data.h": "44f9f7b4646e9411b02fa2d3f1f8e4092447aac54e5fc0889383d6e7f99c8094",
+    "game/extra_heroes.c": "7f9633346034c3a9adea43eb75643791fd892b4cdd106ca5d90abb1eef043449",
+    "game/extra_heroes.h": "d9a27eec6ca81c5247d0a0270d338affff3cf889bf5204a6cbe973f7c773399c",
+    "game/extra_heroes_data.h": "500d3f538ab5b66e9c0904dbd1926d922a2c3656bec88728943e83b3d14c8629",
+    "game/extra_heroes_state.h": "7db28c6e0783a0a73eddf45eaeda99f7da52f4fde577a27c2b1d944723e632f7",
+    "game/game.c": "f761c5fea2604ed91671a4c84a8f7c1571287b92adfe15309d0ec112b1541a81",
+    "game/game.h": "06e0d4baeca3ffb48948caa4a58962ed05114f33ee463d8637cb9567946fcb87",
+    "game/highground_data.h": "ad11ca28b27eee96473f2ea8aded42d4f1ae196463829ee6ce44f527c9a8bf49",
+    "game/inventory_impl.h": "ad9ed4c6f75e66f1487eed5172d2282b0edcd4f5fd4ea23dac9f0dcc938bd196",
+    "game/item_npc_data.h": "a2126f4d9ae22b871c7976f64614cce4f9d878fa773dfa1935a4846bf5cb96b1",
+    "game/item_world.c": "6e4f8fed1482ba78da5f17616e5d898c55b9ae3287e87a5ac5d06ffcc7d64d69",
+    "game/item_world.h": "88b71071298aec66c14fcc486c152411c50673ac06ce1f3e044a986385be5402",
+    "game/item_world_data.h": "7bf90ce56c91879be8de63ab627939a2a87559ef0079e4e418b145c2e9595367",
+    "game/items.c": "59b3c66f317e5634b8a9d10f4477120eee18a14562b4430e66046121c27664fe",
+    "game/items.h": "e7995ff5e0ab87eb4ff080c78f1a858a2fe8779c4efae36528e6f31d97d70344",
+    "game/items_actions.h": "c5eb91133b64bbaed99301292b7c245a599ecf540feda8787190a21c87a05f98",
+    "game/items_data.h": "fd60f13fad03b29cbca0aaed4ccbdc220817b1605c0e9162dac81ed85ba1a1ed",
+    "game/items_ids.h": "89871e93086601984f208a53f8bc653b769d6770e877b42ebc04e2b0f8fe6608",
+    "game/items_internal.h": "bc60c03a1f0b6b5de6b3405fdcfe7952997143b14883ba2b8b567239eb6474f3",
+    "game/items_params.h": "e376a8728f0cd591abc679bee5b352b7223e785cc65ee03a90fd512f64a1463f",
+    "game/items_special.c": "f35c9e307f78272564395da02c2edd3540dbf7a4bbff0a578336448d0939b85f",
+    "game/items_special.h": "f5c2df7933cdb8d8613f59a4385b23de4689de849926e536d5db0f6e2425038c",
+    "game/items_special_state.h": "c0d21baef94ee4f3fb292a402f24005c9cc4e10e9e9157b194cc4464abf16264",
+    "game/items_special_values.h": "404d9e83378264421df7c33ea05223b89ca5a74c6c7501ded93ce5efeca4e45b",
+    "game/jungle.h": "5a4e227df22d95c9654529dae92407c20bd5df58dc47a9116ced68fa0734a2ab",
+    "game/jungle_data.h": "9a0f3bcd6d408ac3d77f5ac5a0444dd96a026d87a16b2afb99238784d24bed0b",
+    "game/jungle_npc_data.h": "55e5edaa5aea02702d80846592c0d0fd5f270305dc05da39c94544e1a10b8dde",
+    "game/lane_creep_data.h": "566b61d49ba53f0a6fa14f32f810ce34d54d6b55abe0cd62fe951440dadab99f",
+    "game/match_time.c": "fff6da358adc64763197200d65752eb770b1328a3a24e67a34a6e58f99a51655",
+    "game/match_time.h": "d1f74c363873c82c439776f14d034177d1fabf59c55323d60fb176cba7fd5a66",
+    "game/navigation.c": "c5edcf32428f02f3faae6d6fa478d778ce1de5494e4c965c412f08cec3937d1a",
+    "game/navigation.h": "38865d13a170a3b401d19f3353e1aee29978b60b6f11efe7c3a5d3af3a91962e",
+    "game/neutral.c": "a4787010cab576c6eb6fc908b349af33223a05134182cb90c19db2d19001b340",
+    "game/neutral.h": "7856c23295d1be520e2e17cd90057602c7ea6b3651ff553d154176f139691f9c",
+    "game/neutral_catalog.h": "e8736f1b4bc743bb6e72988aa0222667ad6ad458372e0b0dd00dd4a3099a8d1a",
+    "game/neutral_state.h": "d5f040ad9a01880698bc3065ac814242faa49dbcaeb1ce1992cc241b54b2c6e7",
+    "game/objective_data.h": "bdd2836b16d91aa89d4bd008fb1dbd58702fe0e875b0a5986174b83f6983e9f3",
+    "game/objectives.c": "2da784544f304aae6e7a56e6dc3ab51ccfe019e065d914b272e0f278198af295",
+    "game/objectives.h": "27f0ce4bce312bb5c126b7f99c88da5baeebe5fc3f1bdcb0cf4132ceea1f04c1",
+    "game/progression.c": "8161f414ef045ceb81f19a9be1620bf99be8308cdd7314a6a1140bca24b87ad1",
+    "game/progression.h": "88e77238dec5d06d8a7b2fb0873255b9094902f027f79c44284181ec68ec73a0",
+    "game/progression_data.h": "4bfce0d2435de756e3eacbde5ec048f91797dbc208c8cbb8f2e2b6609a5afb0a",
+    "game/progression_state.h": "79d8f74dd75fe42c8fa188370f3da3c33cc59f933a01be1eb4966be11996f53a",
+    "game/roshan_data.h": "3ef30beb6fd64ca634a40f55db1ca6e925398e688e4ad24ad329c63c2432e2fe",
+    "game/roster_heroes.c": "1b6dd2440f70c00281022a85e1eed91c98fccd2f8cb085486b368bd3a2b40f09",
+    "game/roster_heroes.h": "3fed72686779b1a2fb6f729c56cc8d9e31b1f813ad67fdbca05e6e29d6bd1b12",
+    "game/roster_heroes_data.h": "2103e670adf1139c0c9697d39c44f36fb929299e497bbd5839f1c97654328c5f",
+    "game/roster_heroes_state.h": "3d0db6f83775e97a7431bda4e185c8846c60176786843de4c866ab9d0a157913",
+    "game/runes.c": "23dc48c32d2ef1500460e74d55c319c7a41e55e5c082a55b21d66f2753961fbb",
+    "game/runes.h": "b244a8422dbd1036ec3d5592c494c25798ab8308c055fbb79293a6b6685a33f4",
+    "game/runes_state.h": "9e0c70840a8937007115bd3db8742c4daa3b2627827a9c55aa08d2a34450a66e",
+    "game/sight.c": "a2bdb365fc9602f22b904eed0e2611e851b1046340db7a34c04c13f7e8ac6e93",
+    "game/sight.h": "a8f36b605c28c2b63e478258e9244889b4cce6792f52a0bafcd4730399e9b0ee",
+    "game/teleport_rules.h": "33565e4a12b869c490b195917c2c691860fcc5afb149ac3bc9207419f834fc12",
+    "game/teleport_state.h": "db408a5446ff261c8996cf0534fadc420a50ebdbf683fd26610d47d8bf6f84a9",
+    "game/trees.c": "ecde00b888b6bdc370fec7252f3b8515cd3d1032b8b83c47ca949239dd7d23ba",
+    "game/trees.h": "0ebbd7d4cbf9721856199358c44f3d4c7741597a1c72b226a31c0b0d4072e79c",
+    "game/trees_state.h": "e0284c41b560b4a4f8653326af934d291c4ed960e430d36cdf763784b13de5f8",
+    "game/turbo.c": "6feb5e382011dae4c24f790108dad6d43965d43c9376cf9291363c8a99ba9930",
+    "game/turbo.h": "22ebd573156ac7326621a8573c608391aefa6cc110e68901f46b0e3340edad5b",
+    "game/turbo_data.h": "dbd583a93a74b3a78863b81a0cb3003452d647f2a7e73d61a7bb86b5e96c502f",
+    "game/unit_limits.h": "8cd28bcc1070a7f63589ebc76129b604348b425e6ddef443ead7c4ae1eb64db8",
+    "game/unit_vision_data.h": "d55521cd55152d0a2c740adf18bf92c18daf3a26f83287128fded7395e8d8cda",
+    "game/vision.c": "c6d06f695e051121f4910cfae41ee112fcfc77e6b599db0e6f14e99ecb73e83b",
+    "game/vision.h": "b642b8b1f25d9a469026a82a4434ae9c4b911b6c053772355c8962ca50e37ddf",
+    "game/ward_placement_data.h": "2bc4f1646ab2e3ba8e08ecd068531de50e3771f410f5e60a31cb2418b8bda462",
+    "game/water.c": "b33d6cf686efb260a464a45de79796e14dcb7dd922ccd5cf19188ef3f717d9c1",
+    "game/water.h": "c9e9669c919de5ae76970889c6f7bf911dc018ac4d391372396b138bd7c52967",
+    "game/water_world_data.h": "87628b295b79ae5f72f7314fc6c5b28e3201d769dcce2eb68061c17f92b3244c",
+    "platform/ability_icon_mask.h": "394001903bd7a7d4afb796359df6794e57cab9073e9c7846df1064d700b8ab2a",
+    "platform/ability_icon_overlay.h": "17d97c31bce4ba7c236b57af6f07e7fc2aa0e3a5a5bcd6c991c0d734e1d51fe3",
+    "platform/ability_icon_state.h": "992235f071e9c8e1c9b9e43d9e30e330df3a4a69f4cf76b3719177be2a96e798",
+    "platform/art_types.h": "0bf9816017bee28d97599c23ad4ae07fbb8c5e6ea4998abe8b87d5c0cee57338",
+    "platform/audio_music_windows.h": "17c5bcdef2e8866abab6f00baa3fc69225ea19e54cd5a1eb482096b741bf0d46",
+    "platform/baked_aux_io.h": "8c6f01fd556419088ad5656c7e942358d8f4a15bc443d4285d444847e45f9f59",
+    "platform/baked_io.c": "8ca3bcc290d6c8fab1a0b99b5a87e28f71cb6e1f127d8af348c44482a61e1f4b",
+    "platform/baked_io.h": "1992f202fa1d8ae230ca9bd23bb833de75deb78bf77710bc2f43e9502f25a41b",
+    "platform/baked_scene.c": "3a70870fd172bebba2ea07400fe3aa353cbee78cb8dacc211c580a92eded9c2c",
+    "platform/baked_scene.h": "2c2395d2fc819c3ca381c627a8584b9c9010539f7fa64cb4fee8e7f293bf8fe9",
+    "platform/barracks_baked.h": "aad9c5d3eb93cf88ed6bc1773bac2cdae861ea680e5181eefb5c4881afa22e2a",
+    "platform/barracks_patch.h": "3bcf8cb2f546a28bdcdded90593cf2006050ecff9d2b7900d4231980d9b02a12",
+    "platform/battlefield_gesture.h": "219159bdcb0cf95d4a5a0fc5718c29013d8ed1c9f399e4b98b147d3ea0fc2cd9",
+    "platform/cache_memory.h": "3443a0afc2c55e440a9ab4cd6db8412ee49d6aaeb0992fe8e964095708d38777",
+    "platform/cache_rle.h": "0a30b792de9327244af6de9cf5bd7e73b9663f0a8712f8decb2d364f5a52b75b",
+    "platform/compressed_cache.h": "f2f111a8ef5e52e9c724e22831b4bf815c842ee6aa7ba81b2442df44c65f5f8c",
+    "platform/dota_audio.c": "947f810236ccc342ce04be3c51bcc830253cdbb450083a6ea6b6ca21b20d3169",
+    "platform/dota_audio.h": "2b4b05d25eed2b42a7f3c7ba97fa1390fc21bdc81c194b98019e1ab36c1dc987",
+    "platform/dota_mxu_exact.h": "7e8cac575adf9c0e72dd53b1867751cf0df826dcf1ed674d76d1da8265f789f7",
+    "platform/entry.S": "972db15f5837854b46726026ac475777277a62a1ba054650b48612706fc7fa94",
+    "platform/extra_ability.h": "0f3e6c07e0c1c10866aaec69f42cf7ab4eab0ed023b0dea5f3fc3e010581922b",
+    "platform/fountain_baked.h": "441ac968e435d4c20f2e12cb433f1200938626c01a2d5bc3d1456e9f5349c33e",
+    "platform/h1.ld": "90b453b0aa64b0145aed2ad9407f414b4eab61ac1fb5e15f0993e7a8952577d6",
+    "platform/hud_layout.h": "28da4099729189a76bcbb63ababa1e1ab5777f87aaeba4c355424810046c2e0c",
+    "platform/inventory_gesture.h": "3a81ed28762c30c5b80529c0f6489a4d45901d2071c6e0cb819ae43cc992a952",
+    "platform/item_assets.c": "9967243d5a47d83cf2aaab449bb2852a25b64e05e3e9183dab48c4cc91695fa7",
+    "platform/item_assets.h": "968d73e12bc872a7407dacc7a5a11587641c1c5e5a30bbcc7660dece59654e56",
+    "platform/map_codec.c": "78a56c875363f70d0b646727f5a49eb0c0a0c4be82790479655ec9f87f1824b9",
+    "platform/map_codec.h": "4741607d7b898876bb8f38d7e76241b3fd5027c9a0731aca183f6c5754823bf9",
+    "platform/map_crc_table.h": "255e6461b296173918ef210157c3172ebd60e89d667f24fb18790367fcd7443d",
+    "platform/map_format.c": "6f9b2690fd8f4efd225460f71a87e2641d5565cffa12432f5094ce43c3134797",
+    "platform/map_sidecar.h": "f75c397abcfa78e19507d6814c93a949f56a1007b998b3310f934c2dcf37ed9c",
+    "platform/map_sidecar_format.h": "97b79860077e816ee1eb423c3f8e3bc3cd690fd468b7d9dc125fe612fef71e27",
+    "platform/map_sidecar_identity.h": "58fae496c5891fd406092a52d609d1327a7d67f854f70e0933d73c6c1dd9e78b",
+    "platform/native.c": "6c26c0b7709d1ff9fae038610f44ad3b1aeceb24dae3eb781c875c2fc60a370e",
+    "platform/render.c": "d20d182ba0506c945e5ed27fdf6f99d886f92f3b195a6103d2460300cd8c81b2",
+    "platform/render.h": "2239e42b9d786f08b7e7dec48ac6f3ba572a87b78e80ab9042c6797ce0dbbbee",
+    "platform/roster_baked.h": "5f92369655e9f589bf6620bfb285c41c8da2f3c9f13ac6c8320b81ce23fb083b",
+    "platform/shadow_cull_data.h": "b5a3f252d287174eb4463e1d8671e6f8008de2dfec73650aa99e5c7d006f11be",
+    "platform/shop_catalog.c": "83f4c2d7ee2f11e7bf9e4a288a29da0418dbb45f30bc97f4265fedbcf5e19774",
+    "platform/shop_catalog.h": "a501f7dc35bbae825cb2c446b463cd2121d4f099194f7dfc0156f33b2fe88bb3",
+    "platform/status_effects.c": "484a848d18ac465c6a03a329325153cf2b5cdb8fa56f543e85772673f07f3893",
+    "platform/status_effects.h": "ade3b7276ca692f71b5d79cfaee05f551ccef2e8d5cc0d696fe7e51d9ddbdc49",
+    "platform/target_input.h": "b771321478bf47b12adb515b446d102776ac287a0a019193a90f11bd48e8b3f7",
+    "platform/tree_visual.c": "68e12dd8b34d47b27a5aa62e20e821e5eb1a8e0605f215a1643f221a130fb8fd",
+    "platform/tree_visual.h": "fd84a22b85b0fe5743056a023054c6ff321df78f4abe35d72135a55adcbc1945",
+    "platform/vision_asset_identity.h": "f05bfac959bcfbfc86a4a233dab94518140b6620671b4d841b2b2f5dfbf85947",
+    "platform/vision_assets.c": "f923346d5584401c2b5ec872cf9ac3374cadc1898616270b7072099dfb84db6b",
+    "platform/vision_assets.h": "a8a1f6ebf2d4a27b5795999c9b03a245425f759c9f6ff822fd688a8653b423ad",
+    "private/audio/assets/audio_data.h": "3ddbf417bc8309db4419a967da1506810014db0aa64917c806ab32391abe9f32",
+    "private/generated/dota_art.h": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+    "private/generated/dota_barracks_data.h": "96fc0395dd5f10372c16a4be4f9bcc07bd098fd165bffd667826c348f0ce2bee",
+    "private/generated/dota_barracks_nav.h": "c4fedcb61e1c2cbf766df228155328ca2f452773a8af039e71070b77a51ad671",
+    "private/generated/dota_barracks_patch.h": "929be671e40204c02590f333f945fd8144955095584d6653e9972e630dc45f69",
+    "private/generated/dota_font.h": "fdf5222062c0837ca58971aaf9566744b3e32123105686676cd5e8a3fa95c305",
+    "private/generated/dota_map_fixtures.h": "47136623325b50daef8c3e862f87e3fc394071e1a3cddd7b640322b21f77c245",
+    "private/generated/dota_nav.h": "88682b9e38747d9458aee3a8f822f5e8421ba335f4f49296e6d1002f7281c455",
+    "private/generated/dota_overview.h": "64770f66f85beacbfbe0e23fc7d35a833388c5e3471806f50bb2563906bc8b41",
+    "private/generated/dota_roshan_vision.h": "3c2da5975fed9eb4645f08690d7316cde174c4e953aae5e49f54f115c21ca366",
+    "private/generated/dota_rune_art.h": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+    "private/generated/dota_runes_data.h": "2a6f9d6309f4ad63ecf643f9a29704dd6ac494b1ff30e3c89c540258b53facbd",
+    "private/generated/dota_shard_art.h": "9d1aae47c7016eeca434da7c75b8cc1d379ba9da9ac2b2d7c172f303df8f31e9",
+    "private/generated/dota_tree_nav.h": "f39c5bf79f483e83d43c32c6681f265fb2bef5f3cee83e0f8a3cfc967eaf3d83",
+    "private/generated/icon.png": "54036180adf9cbcf6e5d2bb9267b2a7bc0c6812f8a3b4e3233797b0d69c1c701",
+    "provenance/source-curation.json": "075bfc71145b6bc0b7d59c9cbc3f8242f9fedd12eb43c26a39f7e10668a8adf3",
+    "sdk/sdk/include/h1_dialogs.h": "cb8af68fd9aba7fdeebfd63e37dfc644b56e3d473ee456e667515381c7eed0c5",
+    "sdk/sdk/include/h1_filesystem.h": "939c31edfbf3461d3f8fe02073e8071317265f689445d26530e208b8811f33e2",
+    "sdk/sdk/include/h1_graphics.h": "a14b9ad45611b675505d73bb023e33ac84d514a33f983d5d46a567301b3f4658",
+    "sdk/sdk/include/h1_input.h": "0f3b1bb1c88cf09023bce74e9e078854902a5c17573a9acb256e757dc700f7c7",
+    "sdk/sdk/include/h1_memory.h": "c0447b7e56ad8e20bee1be12df5254d87cc9ef6274a8570143f65c9b46a8664e",
+    "sdk/sdk/include/h1_runtime.h": "d96b1502d3a7cefc397d9a19d977e55342d116a9ca3aea54d8bdfef302fcb97b",
+    "sdk/sdk/include/h1_sdk.h": "3b31976112928af5bb5a4309db69883561a624e19441dd920d30f360147fc582",
+    "sdk/sdk/include/h1_time.h": "20be366ac00d66451c1bba34ef1ee47e8377002c4354bf613cd88d3b75570a43",
+    "sdk/sdk/include/h1_types.h": "cc65fa4bcf0137d0a7b61d293651a0a4d998d3b1a3370ccc8e036141e5574d1c",
+    "tools/audit_match_time_source.py": "17f98543c310571922d4c55f1c9a7d5d1d02f54f10d6d8d4d05393bfedf00815",
+    "tools/bake_tree_background.py": "07ba938924bea2d696c875cb7320ce6e2b478be7585d99d2d402f7e98816821d",
+    "tools/bake_tree_layers.py": "e9f96b519ee968fadbe94acaf46c60f6d47d1ae35f4826c90492689c5d7a5b65",
+    "tools/build.py": "eb7e987c4930aa54233a036b11b973397e4cd0b7dbb2563787b54efd64bcf7c0",
+    "tools/check_tag.py": "3f4e09fd5b33e5a187894b0ffed5ffe97dae3d0c7425fe20e002104dbb031a08",
+    "tools/common.py": "92101b9a5d028023de09154f4f944a99bfe741c1380da0c267c4974c095dfcb3",
+    "tools/extend_font_subset.py": "9707a035837e18e62175dd8d74c67088001c1183afdd2d678b6c2059f5b6c568",
+    "tools/generate_tree_navigation.py": "fd0173d43bedd01499218617a62893611ae64d8fd46ac34e6e59a9fdcf7f5e53",
+    "tools/install_toolchain.py": "e96f2a3d81e6b9ccb349654494bb5ea00a4f3edcbafcee6c07ec0082cc325986",
+    "tools/package.py": "fc6bbdedb7b938ad3ecb1f6ecd2663be7451995b0b98f63ca917d2cd08860791",
+    "tools/prepare_vision.py": "4efba228ce08421957f21c7cebcaa3f765a486ae44e052eb395a25359b827e66",
+    "tools/profile_vision_v028_mips.py": "802f4ad09b54c4a34a1ac1d899e3da426831c2ae76e054cdfb07e8956528242e",
+    "tools/requirements-build.txt": "79917fc68a450e2b789d7884fe9b9c4cb393f20e77396e41d30e14b7572cc589",
+    "tools/verify.py": "6c78b00d2a416cfb7a1f4aabea8f147ff5560f3cc47b264862bbaa5795327e78",
+    "tools/verify_match_time.py": "75263e35fa67736f2aa81d832fc04cd8accc646f75c095881f44775cbcfbd5d5",
+    "tools/verify_match_time_mips.py": "efe97d9fe60df585c1d06a6aa12cc3964e633548ba33d57d898e4e28b75bfcea",
+    "tools/verify_vision_v028.py": "b809e54e295761b9cdc114b1970852420a4946fedc060ee6df522f57122f93b4",
+    "VERSION": "1cd5735a5db72de5519e0294346cd756e9206abf1d2d6cf60a0b91da07a543d1"
+  },
+  "profile_source_sha256": "f6f179803b8fa053b62243e41bf987694cc56d9324cdc6f1eb5018872c2e642b",
+  "model_source_sha256": "483e06020612116a1716d77db5dd0c6f69ed2184e9d914cb0d01f61e2a14a03c",
+  "assets_sha256": {
+    "SCENE.H1P": "c312840584571c0958b8409da729ea945ecbf557a55ab6030ff0d2d9cbef78dd",
+    "MAP12.H1C": "bcc35594f9d48edda2befb16fdef29f220763a7c2fc96b0c11487f6d86d9c31a",
+    "VISION.H1V": "f23c061e9735e02bd098fe49adb723c56641c7ab0cc946e97b82c44ef9e7dc28",
+    "TREE.H1T": "81cc4839bc016445a36cd5157e978189d11fea8c1ada2386e7c16d3a5f3b8f47"
+  },
+  "scope": "Full-BDA MIPS CPU-renderer workload, not physical display/FPS timing.\n\nInitial Game comes from a read-only physical snapshot. Modeled read-only FS\nand heap serve the original assets. Normal ticks warm animation/history/cache\nstate before measurements. No game outcomes, pixels or visibility are patched.\n",
+  "tree_visual_initial_heap_bytes": 41196,
+  "fountain_prewarm_frames": 624,
+  "vision_stats": [
+    1,
+    1,
+    1202020,
+    4,
+    139328,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1062756,
+    139264,
+    3035385295,
+    1270,
+    0,
+    0
+  ],
+  "scene_heap_bytes": 16339832,
+  "io_heap_bytes": 262912,
+  "snapshot_bytes": 173544,
+  "game_bytes": 178044,
+  "new_appended_state_zero_bytes": 4500,
+  "initial_game_tick": 1511,
+  "warm_frames": [
+    {
+      "index": 0,
+      "game_ticks": 1,
+      "sight_current_before_preflight": 1,
+      "read_bytes": 440440,
+      "render": [
+        108,
+        8,
+        16,
+        8,
+        16,
+        435192,
+        0,
+        92160,
+        10431,
+        8578,
+        9402,
+        4,
+        0,
+        39,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        56434,
+        276,
+        1
+      ],
+      "io_bytes": 14840898,
+      "framebuffer_sha256": "73514acd0245609593fd2214c8e67bd3a04950aab8d4ba99f147d92dbeec231c"
+    },
+    {
+      "index": 1,
+      "game_ticks": 2,
+      "sight_current_before_preflight": 1,
+      "read_bytes": 5966,
+      "render": [
+        116,
+        0,
+        22,
+        2,
+        2,
+        5966,
+        0,
+        92160,
+        10511,
+        8647,
+        10075,
+        4,
+        0,
+        39,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        56333,
+        276,
+        1
+      ],
+      "io_bytes": 14846864,
+      "framebuffer_sha256": "8905a76eaea39a9250d03d342c4164198bb21881ede45928085ccdf399d848ea"
+    },
+    {
+      "index": 2,
+      "game_ticks": 1,
+      "sight_current_before_preflight": 1,
+      "read_bytes": 63664,
+      "render": [
+        141,
+        2,
+        24,
+        0,
+        2,
+        63664,
+        0,
+        92160,
+        10576,
+        8686,
+        10439,
+        4,
+        0,
+        39,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        56131,
+        280,
+        1
+      ],
+      "io_bytes": 14910528,
+      "framebuffer_sha256": "3ba532627664548ff115f4b5a6ccdf1d0b303c18191c7fa0eb49ad5df183864a"
+    },
+    {
+      "index": 3,
+      "game_ticks": 2,
+      "sight_current_before_preflight": 1,
+      "read_bytes": 17435,
+      "render": [
+        143,
+        0,
+        22,
+        2,
+        2,
+        17435,
+        0,
+        92160,
+        10664,
+        8736,
+        10279,
+        4,
+        0,
+        38,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        56030,
+        280,
+        1
+      ],
+      "io_bytes": 14927963,
+      "framebuffer_sha256": "6d62e3b4f771974a9ebfb6ff2810718fb99df16a9bbf24bf0072c2c0d185274a"
+    },
+    {
+      "index": 4,
+      "game_ticks": 1,
+      "sight_current_before_preflight": 1,
+      "read_bytes": 3708,
+      "render": [
+        143,
+        0,
+        23,
+        1,
+        1,
+        3708,
+        0,
+        92160,
+        10712,
+        8771,
+        9973,
+        4,
+        0,
+        38,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        55929,
+        280,
+        1
+      ],
+      "io_bytes": 14931671,
+      "framebuffer_sha256": "10d0439a549952d59f75f0d5e75708018cb33041f5840d9687ec9e1e654790e2"
+    },
+    {
+      "index": 5,
+      "game_ticks": 2,
+      "sight_current_before_preflight": 1,
+      "read_bytes": 0,
+      "render": [
+        143,
+        0,
+        24,
+        0,
+        0,
+        0,
+        0,
+        92160,
+        10610,
+        8660,
+        10054,
+        4,
+        0,
+        39,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        55727,
+        280,
+        1
+      ],
+      "io_bytes": 14931671,
+      "framebuffer_sha256": "b3e0d4d2d3017478b83f02847b88f9605795bd394eea54ba4491bb0457189349"
+    },
+    {
+      "index": 6,
+      "game_ticks": 1,
+      "sight_current_before_preflight": 1,
+      "read_bytes": 15992,
+      "render": [
+        143,
+        0,
+        23,
+        1,
+        1,
+        15992,
+        0,
+        92160,
+        10605,
+        8689,
+        9915,
+        4,
+        0,
+        39,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        55626,
+        280,
+        1
+      ],
+      "io_bytes": 14947663,
+      "framebuffer_sha256": "1e5746863c137a7211448acb3a304d10db3e910921445dc0363743ea7285278e"
+    },
+    {
+      "index": 7,
+      "game_ticks": 2,
+      "sight_current_before_preflight": 1,
+      "read_bytes": 5536,
+      "render": [
+        143,
+        0,
+        22,
+        2,
+        2,
+        5536,
+        0,
+        92160,
+        10639,
+        8725,
+        9960,
+        4,
+        0,
+        38,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        55424,
+        280,
+        1
+      ],
+      "io_bytes": 14953199,
+      "framebuffer_sha256": "4e3e8f1b75b250a372a3db215420dfc4e69db1a3401e31ee5cf5c6a47ae7d78a"
+    }
+  ],
+  "same_tick_paused_frames": [
+    {
+      "render": [
+        143,
+        0,
+        24,
+        0,
+        0,
+        0,
+        0,
+        92160,
+        10639,
+        8725,
+        9960,
+        4,
+        0,
+        38,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        55424,
+        280,
+        1
+      ],
+      "io_bytes": 14953199,
+      "framebuffer_sha256": "c7f4a83c96f35b3fab5a4b4ca6cb61152799920381c9f590648d9977ede92409"
+    },
+    {
+      "render": [
+        143,
+        0,
+        24,
+        0,
+        0,
+        0,
+        0,
+        92160,
+        10639,
+        8725,
+        9960,
+        4,
+        0,
+        38,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        55424,
+        280,
+        1
+      ],
+      "io_bytes": 14953199,
+      "framebuffer_sha256": "c7f4a83c96f35b3fab5a4b4ca6cb61152799920381c9f590648d9977ede92409"
+    }
+  ],
+  "measured_frames": [
+    {
+      "index": 8,
+      "game_ticks": 1,
+      "sight_current_before_preflight": 1,
+      "read_bytes": 0,
+      "render": [
+        145,
+        0,
+        24,
+        0,
+        0,
+        0,
+        0,
+        92160,
+        10524,
+        8600,
+        10394,
+        4,
+        0,
+        38,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        55315,
+        283,
+        1
+      ],
+      "io_bytes": 14953199,
+      "framebuffer_sha256": "77b0ed41b2f940cea6e7ec1562df0a09493b5b8767e548111fc18efb29308107",
+      "slots": {
+        "normal_game_ticks": 2583270,
+        "sight_preflight": 35,
+        "full_dota_render": 5219603
+      },
+      "function_slots": {
+        "dota_tick": 84695,
+        "dota_barracks_commit_tower_deaths": 155,
+        "dota_high_tower_index": 420,
+        "sync_navigation": 769,
+        "dota_nav_set_item_trees": 8,
+        "dota_nav_set_static_trees": 3,
+        "dota_barracks_alive_mask": 1896,
+        "dota_nav_set_all_structures": 17,
+        "dota_progression_tick": 1004,
+        "touch": 198,
+        "axe_update": 320,
+        "dota_progression_value100": 6547,
+        "dota_items_broken": 407,
+        "estatus.part.0": 37776,
+        "dota_rules_armor100": 7,
+        "dota_rules_armor100.part.0": 231,
+        "dota_item_world_armor_delta": 921,
+        "npc_aura": 2952,
+        "dota_roster_armor": 78,
+        "__divdi3": 4337,
+        "dota_rules_item_damage": 48,
+        "damage_snapshot_ex": 419,
+        "targetable": 183,
+        "dota_unit_invulnerable": 172,
+        "dota_extra_invulnerable": 76,
+        "dota_roster_invulnerable": 1084,
+        "dota_roster_swallowed_by": 3081,
+        "dota_roster_swallowed": 456,
+        "hero_state": 588,
+        "dota_items_invulnerable": 20,
+        "dota_barracks_kind": 5672,
+        "dota_turbo_tower_damage": 9,
+        "dota_items_capture_incoming": 193,
+        "sync.part.0": 7008,
+        "dota_bosses_incoming_damage_percent": 12,
+        "dota_item_world_magic_resist": 36,
+        "dota_extra_magic_resist_delta": 18,
+        "dota_item_world_incoming_from": 6,
+        "dota_items_before_damage": 1170,
+        "dota_items_special_damage_percent": 52,
+        "dota_items_parameter": 4159,
+        "dota_items_stats": 67679,
+        "dota_progression_stat_bonus": 23270,
+        "has": 13806,
+        "dota_progression_primary": 360,
+        "dota_items_special_parameter": 23253,
+        "scaled": 3537,
+        "dota_items_status_percent": 19584,
+        "dota_items_special_stats": 7668,
+        "occurrences": 34572,
+        "dota_items_equipped_item": 80094,
+        "dota_item_world_apply_stats": 16468,
+        "compose_defense": 20320,
+        "dota_items_read": 8742,
+        "item_slot": 121,
+        "dota_items_special_before_damage": 85,
+        "wrap_sync.part.0": 1628,
+        "dota_roster_before_damage": 34,
+        "dota_progression_before_damage": 8,
+        "dota_rune_before_damage": 38,
+        "assist_record": 60,
+        "assist_sync": 192,
+        "dota_bosses_on_damage": 26,
+        "enemy": 73,
+        "dota_pit_same_region": 378,
+        "dota_roshan_region_at.part.0": 32890,
+        "dota_extra_on_damage": 17,
+        "dota_rune_on_damage": 39,
+        "dota_progression_on_damage": 45,
+        "dota_roster_after_damage": 33,
+        "dota_progression_rank": 682,
+        "passive_sync": 469,
+        "passive_clear": 112,
+        "dota_match_game_ticks": 135,
+        "dota_turbo_passive_gold_at_tick": 490,
+        "dota_roster_passive": 144,
+        "dota_match_ticks": 21,
+        "dota_match_is_night": 1140,
+        "statuses": 8807,
+        "dota_progression_base": 369,
+        "npc_effect_valid": 2592,
+        "recalc_with_stats": 2853,
+        "dota_progression_base_attributes100": 1280,
+        "hero_stat_delta100": 1798,
+        "dota_extra_stat_delta": 1631,
+        "dota_roster_stat_delta": 663,
+        "dota_progression_stat_delta100": 2024,
+        "dota_roster_max_health_bonus": 195,
+        "dota_rune_base_damage_percent": 333,
+        "dota_roster_is_hero": 330,
+        "dota_roster_attack_range_bonus": 307,
+        "dota_items_special_max_hp_percent": 945,
+        "dota_item_world_max_health_percent": 81,
+        "dota_items_special_max_mana_percent": 1062,
+        "raw_health_regen_with_stats": 950,
+        "dota_items_timed_regen100": 7900,
+        "dota_extra_regen_flat100": 90,
+        "dota_extra_move_flat": 5389,
+        "dota_extra_additional_regen100": 439,
+        "dance_rank": 1729,
+        "dance_passive": 233,
+        "dota_rune_hp_regen100": 390,
+        "dota_items_health_regen_amp_percent": 1470,
+        "dota_items_regen_percent": 140,
+        "dota_items_heal_amount_with_stats": 966,
+        "dota_extra_heal_amount": 4450,
+        "active_ghost": 952,
+        "dota_roster_heal_percent": 260,
+        "mana_regen_with_stats": 2488,
+        "dota_items_timed_mana_regen100": 7900,
+        "dota_extra_additional_mana_regen100": 278,
+        "dota_rune_mana_regen100": 390,
+        "dota_items_mana_regen_percent": 1470,
+        "dota_extra_mana_restore_amount": 196,
+        "dota_roster_stun": 1950,
+        "dota_roster_moving": 1924,
+        "dota_omnislash_phase": 1044,
+        "omnislash_update": 234,
+        "dota_roster_controls_aux": 532,
+        "dota_items_wind_move_source": 3600,
+        "dota_objective_player": 13,
+        "dota_rune_player": 8,
+        "roster_busy": 476,
+        "enemy_source": 81293,
+        "dota_sight_is_current": 23101,
+        "dota_unit_visible": 10353,
+        "dota_sight_team_visible": 9810,
+        "refresh": 84005,
+        "dota_trees_revision": 660,
+        "dota_trees_geometry_revision": 327,
+        "dota_rules_unit_vision_source.part.0": 4415,
+        "dota_items_special_vision_percent": 945,
+        "dota_roster_vision_bonus": 235,
+        "source_add": 482375,
+        "dota_roshan_region_at": 22140,
+        "cast": 844671,
+        "team_point": 179553,
+        "source_point": 74982,
+        "dota_roster_base_damage_percent": 134,
+        "dota_roster_bonus_damage": 110,
+        "move_towards": 2765,
+        "dota_items_free_path": 1829,
+        "dota_nav_nearest": 864,
+        "refresh_item_trees": 26028,
+        "nearest_current": 39700,
+        "walkable_current": 4031,
+        "open_cell": 81811,
+        "cell_has_exit": 1951,
+        "cell_has_exit_raw": 6074,
+        "neighbor": 55328,
+        "dota_nav_segment": 826,
+        "segment_current": 21866,
+        "passage_segment": 861,
+        "dota_nav_cell_center": 96,
+        "move_step_direction": 22824,
+        "move_speed_q16": 9591,
+        "dota_items_slow_resistance": 1705,
+        "dota_items_special_slow_resistance": 477,
+        "dota_roster_slow_resist": 361,
+        "dota_extra_move_percent": 2151,
+        "dota_items_debuff_immune": 990,
+        "dota_roster_move_percent": 706,
+        "target_state": 754,
+        "dota_items_special_move_bonus": 1187,
+        "dota_rules_unit_in_water": 405,
+        "dota_water_world": 11731,
+        "dota_items_rooted": 648,
+        "dota_item_world_rooted": 5562,
+        "dota_progression_move_percent": 228,
+        "dota_roster_move_cap_source": 702,
+        "dota_rune_haste_speed": 441,
+        "move_commit": 19336,
+        "dota_extra_allow_move": 406,
+        "dota_roster_allow_move": 52,
+        "dota_items_total_attribute": 19,
+        "attribute": 81,
+        "follow_lane": 2096,
+        "dota_courier_pending_count": 2706,
+        "dota_courier_buy": 57,
+        "dota_items_purchase_plan": 652,
+        "plan_need": 67,
+        "dota_items_recipes_count": 8,
+        "stock_count": 17,
+        "dota_extra_target_hidden": 1931,
+        "dota_item_world_smoked": 276,
+        "dota_items_invisible": 2261,
+        "dota_rune_invisible": 1671,
+        "cast_for_impl": 350,
+        "dota_items_silenced": 34,
+        "dota_extra_is_hero": 40,
+        "dota_skill_cast_range_source": 75,
+        "dota_items_range_bonus": 16,
+        "dota_items_attack_range_for": 1588,
+        "dota_unit_hull_source": 11937,
+        "move_for_attack": 202,
+        "lane_progress": 2624,
+        "dota_nav_stats": 6,
+        "dota_nav_find_path": 49047,
+        "locate.constprop.0": 5976,
+        "earlier": 8706,
+        "dota_nav_cell_at": 16,
+        "dota_item_world_update_unit": 134,
+        "dota_extra_tick": 5963,
+        "scythe_tick": 320,
+        "dota_sight_team_position_visible": 29,
+        "dota_roster_tick": 736,
+        "sync_hero": 150,
+        "fields_tick": 7,
+        "dota_items_tick": 6286,
+        "dota_neutral_tick": 106,
+        "dota_items_special_tick": 2696,
+        "dota_turbo_gold_reward": 40,
+        "dota_item_world_tick": 5964,
+        "dota_trees_tick": 8,
+        "projectiles": 322,
+        "dota_bosses_tick": 487,
+        "dota_rules_find_enemy": 2,
+        "dota_objectives_tick": 242,
+        "dota_runes_tick": 1258,
+        "dota_couriers_tick": 2212,
+        "dota_sight_fog_state": 249972,
+        "dota_render": 49,
+        "battlefield": 163588,
+        "bs_ground_height": 156,
+        "bs_ground_height.part.0": 194747,
+        "bs_render_game": 529611,
+        "get_tile": 19610,
+        "tree_visual_apply": 41,
+        "prepare": 22,
+        "game_unit_model": 746,
+        "unit_model": 2227,
+        "dota_attack_style": 270,
+        "dota_boss_species": 7,
+        "dota_roshan_mask_pixels": 60,
+        "find_group": 2360,
+        "exact_group": 23354,
+        "frame_at": 2081,
+        "bs_project": 6875,
+        "draw_sprite_opacity": 1118336,
+        "frame_info": 5084,
+        "dota_sight_position_visible": 2376,
+        "draw_fog": 874195,
+        "tree_visual_revision": 33,
+        "fog_light_row": 24388,
+        "render_item_trees": 604,
+        "skill_body": 1104,
+        "draw_hero_shadow": 480624,
+        "get_sprite": 332150,
+        "dota_item_world_visible": 192,
+        "courier_frame": 1850,
+        "dota_courier_view": 3800,
+        "dota_courier_eta_ticks.part.0": 1340,
+        "travel_ticks": 6540,
+        "mix": 350477,
+        "fountain_track_v022": 224,
+        "cache_payload_valid": 28,
+        "bs_render_effects": 8825,
+        "render_skill_effects": 1589,
+        "dota_skill_effect_radius_source": 170,
+        "dota_items_special_aoe_percent": 11,
+        "skill_fx": 102,
+        "dota_get_skill_event": 1914,
+        "extra_fx_visible": 252,
+        "roster_fx_visible": 630,
+        "dota_get_attack_event": 1408,
+        "bs_unit_screen_bounds": 621,
+        "bs_game_unit_height": 144,
+        "ground_ring": 776,
+        "line": 3182,
+        "box": 158988,
+        "dota_items_available_mana": 44,
+        "bs_depth_buffer": 3,
+        "dota_rune_kind": 88,
+        "dota_items_teleport_channel": 270,
+        "dota_match_seconds": 15,
+        "text": 149156,
+        "utf8": 1851,
+        "dota_hero_assists": 16,
+        "number": 756,
+        "frame": 952,
+        "circle": 378,
+        "hud": 62752,
+        "dota_progression_points": 175,
+        "dota_progression_talent_points": 79,
+        "dota_effective_armor": 19,
+        "dota_next_level_xp": 2,
+        "dota_turbo_level_xp": 10,
+        "dota_rules_attributes": 135,
+        "text_fit": 838,
+        "tiny_char.part.0": 7155,
+        "tiny_number": 65,
+        "tiny_digit": 9609,
+        "art_small.part.0": 12340,
+        "tiny_unsigned": 378,
+        "dota_move_speed_source": 24,
+        "dota_attack_speed_percent": 14,
+        "attack_speed_x100": 23,
+        "item_attack_traits": 100,
+        "dota_roster_attack_speed_delta": 23,
+        "dota_extra_attack_speed_delta": 108,
+        "dota_skill_is_passive": 40,
+        "dota_progression_skill_max": 52,
+        "dota_progression_can_learn": 208,
+        "dota_progression_skill_required": 136,
+        "ability_icon.part.0": 65428,
+        "hotkey_badge": 66,
+        "dota_healing_ward": 462,
+        "dota_rules_effective_health_regen100": 29,
+        "dota_rules_item_raw_regen100": 27,
+        "dota_items_heal_amount": 8,
+        "resource_bar.constprop.0": 554,
+        "dota_rules_mana_regen100": 27,
+        "dota_inventory_item": 180,
+        "dota_courier_pending_item": 1242,
+        "button": 93,
+        "bs_pick_ground": 664,
+        "bs_unproject_at_z": 2880,
+        "status_bars": 236,
+        "dota_status_effects": 13923,
+        "dota_rune_status": 450,
+        "dota_roster_statuses": 25,
+        "dota_items_statuses": 911,
+        "dota_items_special_statuses": 1206,
+        "dota_item_world_statuses": 419,
+        "dota_bosses_aegis_ticks": 12,
+        "dota_hero_has_shard": 26,
+        "dota_items_has_upgrade": 20,
+        "item_assets_ability_art": 10,
+        "ui_art": 89,
+        "load_art": 39,
+        "baked_io_size": 3,
+        "art.part.0": 12873,
+        "blend": 14040,
+        "courier_panel": 23,
+        "dota_neutral_equipped": 20,
+        "item_assets_text": 12
+      },
+      "source_groups": {
+        "dota_tick": 84695,
+        "dota_barracks_commit_tower_deaths": 155,
+        "dota_high_tower_index": 420,
+        "sync_navigation": 769,
+        "dota_nav_set_item_trees": 8,
+        "dota_nav_set_static_trees": 3,
+        "dota_barracks_alive_mask": 1896,
+        "dota_nav_set_all_structures": 17,
+        "dota_progression_tick": 1004,
+        "touch": 198,
+        "axe_update": 320,
+        "dota_progression_value100": 6547,
+        "dota_items_broken": 407,
+        "estatus.part.0": 37776,
+        "dota_rules_armor100": 7,
+        "dota_rules_armor100.part.0": 231,
+        "dota_item_world_armor_delta": 921,
+        "npc_aura": 2952,
+        "dota_roster_armor": 78,
+        "__divdi3": 4337,
+        "dota_rules_item_damage": 48,
+        "damage_snapshot_ex": 419,
+        "targetable": 183,
+        "dota_unit_invulnerable": 172,
+        "dota_extra_invulnerable": 76,
+        "dota_roster_invulnerable": 1084,
+        "dota_roster_swallowed_by": 3081,
+        "dota_roster_swallowed": 456,
+        "hero_state": 588,
+        "dota_items_invulnerable": 20,
+        "dota_barracks_kind": 5672,
+        "dota_turbo_tower_damage": 9,
+        "dota_items_capture_incoming": 193,
+        "sync.part.0": 7008,
+        "dota_bosses_incoming_damage_percent": 12,
+        "dota_item_world_magic_resist": 36,
+        "dota_extra_magic_resist_delta": 18,
+        "dota_item_world_incoming_from": 6,
+        "dota_items_before_damage": 1170,
+        "dota_items_special_damage_percent": 52,
+        "dota_items_parameter": 4159,
+        "dota_items_stats": 67679,
+        "dota_progression_stat_bonus": 23270,
+        "has": 13806,
+        "dota_progression_primary": 360,
+        "dota_items_special_parameter": 23253,
+        "scaled": 3537,
+        "dota_items_status_percent": 19584,
+        "dota_items_special_stats": 7668,
+        "occurrences": 34572,
+        "dota_items_equipped_item": 80094,
+        "dota_item_world_apply_stats": 16468,
+        "compose_defense": 20320,
+        "dota_items_read": 8742,
+        "item_slot": 121,
+        "dota_items_special_before_damage": 85,
+        "wrap_sync.part.0": 1628,
+        "dota_roster_before_damage": 34,
+        "dota_progression_before_damage": 8,
+        "dota_rune_before_damage": 38,
+        "assist_record": 60,
+        "assist_sync": 192,
+        "dota_bosses_on_damage": 26,
+        "enemy": 73,
+        "dota_pit_same_region": 378,
+        "dota_roshan_region_at.part.0": 32890,
+        "dota_extra_on_damage": 17,
+        "dota_rune_on_damage": 39,
+        "dota_progression_on_damage": 45,
+        "dota_roster_after_damage": 33,
+        "dota_progression_rank": 682,
+        "passive_sync": 469,
+        "passive_clear": 112,
+        "dota_match_game_ticks": 135,
+        "dota_turbo_passive_gold_at_tick": 490,
+        "dota_roster_passive": 144,
+        "dota_match_ticks": 21,
+        "dota_match_is_night": 1140,
+        "statuses": 8807,
+        "dota_progression_base": 369,
+        "npc_effect_valid": 2592,
+        "recalc_with_stats": 2853,
+        "dota_progression_base_attributes100": 1280,
+        "hero_stat_delta100": 1798,
+        "dota_extra_stat_delta": 1631,
+        "dota_roster_stat_delta": 663,
+        "dota_progression_stat_delta100": 2024,
+        "dota_roster_max_health_bonus": 195,
+        "dota_rune_base_damage_percent": 333,
+        "dota_roster_is_hero": 330,
+        "dota_roster_attack_range_bonus": 307,
+        "dota_items_special_max_hp_percent": 945,
+        "dota_item_world_max_health_percent": 81,
+        "dota_items_special_max_mana_percent": 1062,
+        "raw_health_regen_with_stats": 950,
+        "dota_items_timed_regen100": 7900,
+        "dota_extra_regen_flat100": 90,
+        "dota_extra_move_flat": 5389,
+        "dota_extra_additional_regen100": 439,
+        "dance_rank": 1729,
+        "dance_passive": 233,
+        "dota_rune_hp_regen100": 390,
+        "dota_items_health_regen_amp_percent": 1470,
+        "dota_items_regen_percent": 140,
+        "dota_items_heal_amount_with_stats": 966,
+        "dota_extra_heal_amount": 4450,
+        "active_ghost": 952,
+        "dota_roster_heal_percent": 260,
+        "mana_regen_with_stats": 2488,
+        "dota_items_timed_mana_regen100": 7900,
+        "dota_extra_additional_mana_regen100": 278,
+        "dota_rune_mana_regen100": 390,
+        "dota_items_mana_regen_percent": 1470,
+        "dota_extra_mana_restore_amount": 196,
+        "dota_roster_stun": 1950,
+        "dota_roster_moving": 1924,
+        "dota_omnislash_phase": 1044,
+        "omnislash_update": 234,
+        "dota_roster_controls_aux": 532,
+        "dota_items_wind_move_source": 3600,
+        "dota_objective_player": 13,
+        "dota_rune_player": 8,
+        "roster_busy": 476,
+        "enemy_source": 81293,
+        "dota_sight_is_current": 23101,
+        "dota_unit_visible": 10353,
+        "dota_sight_team_visible": 9810,
+        "refresh": 84005,
+        "dota_trees_revision": 660,
+        "dota_trees_geometry_revision": 327,
+        "dota_rules_unit_vision_source.part.0": 4415,
+        "dota_items_special_vision_percent": 945,
+        "dota_roster_vision_bonus": 235,
+        "source_add": 482375,
+        "dota_roshan_region_at": 22140,
+        "cast": 844671,
+        "team_point": 179553,
+        "source_point": 74982,
+        "dota_roster_base_damage_percent": 134,
+        "dota_roster_bonus_damage": 110,
+        "move_towards": 2765,
+        "dota_items_free_path": 1829,
+        "dota_nav_nearest": 864,
+        "refresh_item_trees": 26028,
+        "nearest_current": 39700,
+        "walkable_current": 4031,
+        "open_cell": 81811,
+        "cell_has_exit": 1951,
+        "cell_has_exit_raw": 6074,
+        "neighbor": 55328,
+        "dota_nav_segment": 826,
+        "segment_current": 21866,
+        "passage_segment": 861,
+        "dota_nav_cell_center": 96,
+        "move_step_direction": 22824,
+        "move_speed_q16": 9591,
+        "dota_items_slow_resistance": 1705,
+        "dota_items_special_slow_resistance": 477,
+        "dota_roster_slow_resist": 361,
+        "dota_extra_move_percent": 2151,
+        "dota_items_debuff_immune": 990,
+        "dota_roster_move_percent": 706,
+        "target_state": 754,
+        "dota_items_special_move_bonus": 1187,
+        "dota_rules_unit_in_water": 405,
+        "dota_water_world": 11731,
+        "dota_items_rooted": 648,
+        "dota_item_world_rooted": 5562,
+        "dota_progression_move_percent": 228,
+        "dota_roster_move_cap_source": 702,
+        "dota_rune_haste_speed": 441,
+        "move_commit": 19336,
+        "dota_extra_allow_move": 406,
+        "dota_roster_allow_move": 52,
+        "dota_items_total_attribute": 19,
+        "attribute": 81,
+        "follow_lane": 2096,
+        "dota_courier_pending_count": 2706,
+        "dota_courier_buy": 57,
+        "dota_items_purchase_plan": 652,
+        "plan_need": 67,
+        "dota_items_recipes_count": 8,
+        "stock_count": 17,
+        "dota_extra_target_hidden": 1931,
+        "dota_item_world_smoked": 276,
+        "dota_items_invisible": 2261,
+        "dota_rune_invisible": 1671,
+        "cast_for_impl": 350,
+        "dota_items_silenced": 34,
+        "dota_extra_is_hero": 40,
+        "dota_skill_cast_range_source": 75,
+        "dota_items_range_bonus": 16,
+        "dota_items_attack_range_for": 1588,
+        "dota_unit_hull_source": 11937,
+        "move_for_attack": 202,
+        "lane_progress": 2624,
+        "dota_nav_stats": 6,
+        "dota_nav_find_path": 49047,
+        "locate.constprop.0": 5976,
+        "earlier": 8706,
+        "dota_nav_cell_at": 16,
+        "dota_item_world_update_unit": 134,
+        "dota_extra_tick": 5963,
+        "scythe_tick": 320,
+        "dota_sight_team_position_visible": 29,
+        "dota_roster_tick": 736,
+        "sync_hero": 150,
+        "fields_tick": 7,
+        "dota_items_tick": 6286,
+        "dota_neutral_tick": 106,
+        "dota_items_special_tick": 2696,
+        "dota_turbo_gold_reward": 40,
+        "dota_item_world_tick": 5964,
+        "dota_trees_tick": 8,
+        "projectiles": 322,
+        "dota_bosses_tick": 487,
+        "dota_rules_find_enemy": 2,
+        "dota_objectives_tick": 242,
+        "dota_runes_tick": 1258,
+        "dota_couriers_tick": 2212,
+        "dota_sight_fog_state": 249972,
+        "dota_render": 49,
+        "battlefield": 138784,
+        "bs_ground_height": 156,
+        "bs_ground_height.part.0": 194747,
+        "bs_render_game": 32144,
+        "baked:draw_map": 18911,
+        "get_tile": 19610,
+        "baked:copy_map_row": 463902,
+        "tree_visual_apply": 41,
+        "prepare": 22,
+        "baked-header:barracks_baked.h": 182,
+        "baked:update_history": 14231,
+        "game_unit_model": 746,
+        "unit_model": 2227,
+        "dota_attack_style": 270,
+        "dota_boss_species": 7,
+        "dota_roshan_mask_pixels": 60,
+        "find_group": 2360,
+        "exact_group": 23354,
+        "frame_at": 2081,
+        "bs_project": 6875,
+        "baked:draw_sprite_opacity": 1097052,
+        "frame_info": 5084,
+        "draw_sprite_opacity": 20894,
+        "dota_sight_position_visible": 2376,
+        "baked:draw_fog": 321798,
+        "draw_fog": 30779,
+        "baked:fog_map_depth": 48710,
+        "tree_visual_revision": 33,
+        "baked:fog_light_row": 24388,
+        "fog_rgb565_inline": 497712,
+        "render_item_trees": 604,
+        "skill_body": 1104,
+        "baked:draw_hero_shadow": 416277,
+        "draw_hero_shadow": 64347,
+        "get_sprite": 1584,
+        "dota_item_world_visible": 192,
+        "courier_frame": 1850,
+        "dota_courier_view": 3800,
+        "dota_courier_eta_ticks.part.0": 1340,
+        "travel_ticks": 6540,
+        "mix": 350477,
+        "baked:fog_world_point": 390,
+        "baked-header:fountain_baked.h": 395,
+        "fountain_track_v022": 70,
+        "sprite-compression-inline": 330594,
+        "bs_render_effects": 7096,
+        "render_skill_effects": 1589,
+        "dota_skill_effect_radius_source": 170,
+        "dota_items_special_aoe_percent": 11,
+        "skill_fx": 102,
+        "dota_get_skill_event": 1914,
+        "extra_fx_visible": 252,
+        "baked-header:roster_baked.h": 1927,
+        "roster_fx_visible": 432,
+        "dota_get_attack_event": 1408,
+        "bs_unit_screen_bounds": 621,
+        "bs_game_unit_height": 144,
+        "ground_ring": 776,
+        "line": 3182,
+        "box": 158988,
+        "dota_items_available_mana": 44,
+        "bs_depth_buffer": 3,
+        "dota_rune_kind": 88,
+        "dota_items_teleport_channel": 270,
+        "dota_match_seconds": 15,
+        "text": 149156,
+        "utf8": 1851,
+        "dota_hero_assists": 16,
+        "number": 756,
+        "frame": 952,
+        "circle": 378,
+        "hud": 62752,
+        "dota_progression_points": 175,
+        "dota_progression_talent_points": 79,
+        "dota_effective_armor": 19,
+        "dota_next_level_xp": 2,
+        "dota_turbo_level_xp": 10,
+        "dota_rules_attributes": 135,
+        "text_fit": 838,
+        "tiny_char.part.0": 7155,
+        "tiny_number": 65,
+        "tiny_digit": 9609,
+        "art_small.part.0": 12340,
+        "tiny_unsigned": 378,
+        "dota_move_speed_source": 24,
+        "dota_attack_speed_percent": 14,
+        "attack_speed_x100": 23,
+        "item_attack_traits": 100,
+        "dota_roster_attack_speed_delta": 23,
+        "dota_extra_attack_speed_delta": 108,
+        "dota_skill_is_passive": 40,
+        "dota_progression_skill_max": 52,
+        "dota_progression_can_learn": 208,
+        "dota_progression_skill_required": 136,
+        "ability_icon.part.0": 65428,
+        "hotkey_badge": 66,
+        "dota_healing_ward": 462,
+        "dota_rules_effective_health_regen100": 29,
+        "dota_rules_item_raw_regen100": 27,
+        "dota_items_heal_amount": 8,
+        "resource_bar.constprop.0": 554,
+        "dota_rules_mana_regen100": 27,
+        "dota_inventory_item": 180,
+        "dota_courier_pending_item": 1242,
+        "button": 93,
+        "bs_pick_ground": 664,
+        "bs_unproject_at_z": 2880,
+        "status_bars": 236,
+        "dota_status_effects": 13923,
+        "dota_rune_status": 450,
+        "dota_roster_statuses": 25,
+        "dota_items_statuses": 911,
+        "dota_items_special_statuses": 1206,
+        "dota_item_world_statuses": 419,
+        "dota_bosses_aegis_ticks": 12,
+        "dota_hero_has_shard": 26,
+        "dota_items_has_upgrade": 20,
+        "item_assets_ability_art": 10,
+        "ui_art": 89,
+        "load_art": 39,
+        "baked_io_size": 3,
+        "art.part.0": 12873,
+        "blend": 14040,
+        "courier_panel": 23,
+        "dota_neutral_equipped": 20,
+        "item_assets_text": 12
+      }
+    },
+    {
+      "index": 9,
+      "game_ticks": 2,
+      "sight_current_before_preflight": 1,
+      "read_bytes": 17618,
+      "render": [
+        145,
+        0,
+        22,
+        2,
+        2,
+        17618,
+        0,
+        92160,
+        10574,
+        8690,
+        9727,
+        4,
+        0,
+        38,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        55206,
+        283,
+        1
+      ],
+      "io_bytes": 14970817,
+      "framebuffer_sha256": "751a7ae803f68559a3d5121365bd87e36c5d0e3714288b401b847af667c29e4e",
+      "slots": {
+        "normal_game_ticks": 4276493,
+        "sight_preflight": 35,
+        "full_dota_render": 4946192
+      },
+      "function_slots": {
+        "dota_tick": 168976,
+        "dota_barracks_commit_tower_deaths": 310,
+        "dota_high_tower_index": 588,
+        "sync_navigation": 1538,
+        "dota_nav_set_item_trees": 16,
+        "dota_nav_set_static_trees": 6,
+        "dota_barracks_alive_mask": 2370,
+        "dota_nav_set_all_structures": 34,
+        "dota_progression_tick": 1960,
+        "touch": 360,
+        "axe_update": 640,
+        "dota_progression_value100": 11518,
+        "dota_items_broken": 759,
+        "estatus.part.0": 63312,
+        "dota_rules_armor100": 14,
+        "dota_rules_armor100.part.0": 234,
+        "dota_item_world_armor_delta": 1017,
+        "npc_aura": 5337,
+        "dota_roster_armor": 78,
+        "__divdi3": 8507,
+        "targetable": 244,
+        "dota_unit_invulnerable": 172,
+        "dota_extra_invulnerable": 76,
+        "dota_roster_invulnerable": 2094,
+        "dota_roster_swallowed_by": 3793,
+        "dota_roster_swallowed": 551,
+        "hero_state": 964,
+        "dota_items_invulnerable": 20,
+        "dota_barracks_kind": 11280,
+        "sync.part.0": 11826,
+        "dota_items_parameter": 8016,
+        "dota_items_stats": 117768,
+        "dota_progression_stat_bonus": 39655,
+        "has": 23400,
+        "dota_progression_primary": 610,
+        "dota_items_special_parameter": 44821,
+        "scaled": 6801,
+        "dota_items_status_percent": 35043,
+        "dota_items_special_stats": 12993,
+        "occurrences": 58996,
+        "dota_items_equipped_item": 136942,
+        "dota_item_world_apply_stats": 29022,
+        "compose_defense": 34776,
+        "dota_items_read": 15385,
+        "wrap_sync.part.0": 2960,
+        "assist_sync": 320,
+        "enemy": 20,
+        "dota_pit_same_region": 357,
+        "dota_roshan_region_at.part.0": 35325,
+        "dota_progression_rank": 902,
+        "passive_sync": 938,
+        "passive_clear": 224,
+        "dota_match_game_ticks": 252,
+        "dota_turbo_passive_gold_at_tick": 980,
+        "dota_roster_passive": 288,
+        "dota_match_ticks": 42,
+        "dota_match_is_night": 2265,
+        "statuses": 17653,
+        "dota_progression_base": 693,
+        "npc_effect_valid": 3168,
+        "recalc_with_stats": 5706,
+        "dota_progression_base_attributes100": 2400,
+        "hero_stat_delta100": 3364,
+        "dota_extra_stat_delta": 3066,
+        "dota_roster_stat_delta": 1254,
+        "dota_progression_stat_delta100": 3772,
+        "dota_roster_max_health_bonus": 390,
+        "dota_rune_base_damage_percent": 666,
+        "dota_roster_is_hero": 470,
+        "dota_roster_attack_range_bonus": 614,
+        "dota_items_special_max_hp_percent": 1890,
+        "dota_item_world_max_health_percent": 162,
+        "dota_items_special_max_mana_percent": 2124,
+        "raw_health_regen_with_stats": 1805,
+        "dota_items_timed_regen100": 15010,
+        "dota_extra_regen_flat100": 171,
+        "dota_extra_move_flat": 10224,
+        "dota_extra_additional_regen100": 837,
+        "dance_rank": 3276,
+        "dance_passive": 444,
+        "dota_rune_hp_regen100": 741,
+        "dota_items_health_regen_amp_percent": 2813,
+        "dota_items_regen_percent": 266,
+        "dota_items_heal_amount_with_stats": 1830,
+        "dota_extra_heal_amount": 8455,
+        "active_ghost": 1796,
+        "dota_roster_heal_percent": 494,
+        "mana_regen_with_stats": 4726,
+        "dota_items_timed_mana_regen100": 15010,
+        "dota_extra_additional_mana_regen100": 531,
+        "dota_rune_mana_regen100": 741,
+        "dota_items_mana_regen_percent": 2813,
+        "dota_extra_mana_restore_amount": 374,
+        "dota_roster_stun": 3848,
+        "dota_roster_moving": 3848,
+        "dota_omnislash_phase": 1271,
+        "omnislash_update": 468,
+        "dota_roster_controls_aux": 1064,
+        "dota_items_wind_move_source": 7110,
+        "dota_objective_player": 26,
+        "dota_rune_player": 16,
+        "roster_busy": 952,
+        "enemy_source": 162590,
+        "dota_sight_is_current": 46189,
+        "dota_unit_visible": 10447,
+        "dota_sight_team_visible": 9907,
+        "refresh": 168010,
+        "dota_trees_revision": 1308,
+        "dota_trees_geometry_revision": 651,
+        "dota_rules_unit_vision_source.part.0": 8830,
+        "dota_items_special_vision_percent": 1890,
+        "dota_roster_vision_bonus": 470,
+        "source_add": 964899,
+        "dota_roshan_region_at": 22692,
+        "cast": 851136,
+        "team_point": 275079,
+        "source_point": 111612,
+        "dota_roster_base_damage_percent": 268,
+        "dota_roster_bonus_damage": 220,
+        "move_towards": 5497,
+        "dota_items_free_path": 3561,
+        "dota_nav_nearest": 1710,
+        "refresh_item_trees": 51815,
+        "nearest_current": 79341,
+        "walkable_current": 8002,
+        "open_cell": 163687,
+        "cell_has_exit": 3918,
+        "cell_has_exit_raw": 13144,
+        "neighbor": 110493,
+        "dota_nav_segment": 1652,
+        "segment_current": 43518,
+        "passage_segment": 1707,
+        "dota_nav_cell_center": 204,
+        "move_step_direction": 45708,
+        "move_speed_q16": 18601,
+        "dota_items_slow_resistance": 3267,
+        "dota_items_special_slow_resistance": 901,
+        "dota_roster_slow_resist": 702,
+        "dota_extra_move_percent": 4111,
+        "dota_items_debuff_immune": 1870,
+        "dota_roster_move_percent": 1383,
+        "target_state": 1430,
+        "dota_items_special_move_bonus": 2327,
+        "dota_rules_unit_in_water": 795,
+        "dota_water_world": 22573,
+        "dota_items_rooted": 1272,
+        "dota_item_world_rooted": 10918,
+        "dota_progression_move_percent": 435,
+        "dota_roster_move_cap_source": 1378,
+        "dota_rune_haste_speed": 845,
+        "move_commit": 38788,
+        "dota_extra_allow_move": 812,
+        "dota_roster_allow_move": 104,
+        "dota_items_total_attribute": 38,
+        "attribute": 162,
+        "follow_lane": 4192,
+        "dota_courier_pending_count": 2583,
+        "dota_extra_target_hidden": 2045,
+        "dota_item_world_smoked": 322,
+        "dota_items_invisible": 2280,
+        "dota_rune_invisible": 1710,
+        "dota_extra_is_hero": 20,
+        "dota_items_attack_range_for": 3176,
+        "dota_unit_hull_source": 23874,
+        "move_for_attack": 417,
+        "lane_progress": 5212,
+        "dota_nav_stats": 12,
+        "dota_nav_find_path": 96865,
+        "locate.constprop.0": 11519,
+        "earlier": 16670,
+        "dota_nav_cell_at": 32,
+        "dota_item_world_update_unit": 268,
+        "dota_extra_tick": 11926,
+        "scythe_tick": 640,
+        "dota_sight_team_position_visible": 58,
+        "dota_roster_tick": 1472,
+        "sync_hero": 300,
+        "fields_tick": 14,
+        "dota_items_tick": 12572,
+        "dota_neutral_tick": 212,
+        "dota_items_special_tick": 5392,
+        "dota_turbo_gold_reward": 80,
+        "dota_item_world_tick": 11928,
+        "dota_trees_tick": 16,
+        "projectiles": 644,
+        "dota_bosses_tick": 974,
+        "dota_rules_find_enemy": 4,
+        "dota_objectives_tick": 484,
+        "dota_runes_tick": 2516,
+        "dota_couriers_tick": 4424,
+        "dota_sight_fog_state": 249956,
+        "dota_render": 49,
+        "battlefield": 163548,
+        "bs_ground_height": 156,
+        "bs_ground_height.part.0": 191567,
+        "bs_render_game": 370463,
+        "get_tile": 19610,
+        "tree_visual_apply": 41,
+        "prepare": 22,
+        "game_unit_model": 746,
+        "unit_model": 2227,
+        "dota_attack_style": 270,
+        "dota_boss_species": 7,
+        "dota_roshan_mask_pixels": 60,
+        "find_group": 2385,
+        "exact_group": 23568,
+        "frame_at": 2108,
+        "bs_project": 6875,
+        "draw_sprite_opacity": 1094220,
+        "frame_info": 5084,
+        "dota_sight_position_visible": 2376,
+        "draw_fog": 873440,
+        "tree_visual_revision": 33,
+        "fog_light_row": 24388,
+        "render_item_trees": 604,
+        "skill_body": 1113,
+        "draw_hero_shadow": 476395,
+        "get_sprite": 246659,
+        "dota_item_world_visible": 192,
+        "courier_frame": 1850,
+        "dota_courier_view": 3800,
+        "dota_courier_eta_ticks.part.0": 1340,
+        "travel_ticks": 6540,
+        "mix": 354296,
+        "fountain_track_v022": 224,
+        "cache_payload_valid": 28,
+        "bs_render_effects": 8825,
+        "render_skill_effects": 1589,
+        "dota_skill_effect_radius_source": 170,
+        "dota_items_special_aoe_percent": 11,
+        "skill_fx": 102,
+        "dota_get_skill_event": 1914,
+        "extra_fx_visible": 252,
+        "roster_fx_visible": 630,
+        "dota_get_attack_event": 1408,
+        "bs_unit_screen_bounds": 621,
+        "bs_game_unit_height": 144,
+        "ground_ring": 776,
+        "line": 3182,
+        "box": 158988,
+        "dota_items_available_mana": 44,
+        "bs_depth_buffer": 3,
+        "dota_rune_kind": 88,
+        "dota_items_teleport_channel": 270,
+        "dota_match_seconds": 15,
+        "text": 149156,
+        "utf8": 1851,
+        "dota_hero_assists": 16,
+        "number": 756,
+        "frame": 952,
+        "circle": 378,
+        "hud": 62752,
+        "dota_progression_points": 175,
+        "dota_progression_talent_points": 79,
+        "dota_effective_armor": 19,
+        "dota_next_level_xp": 2,
+        "dota_turbo_level_xp": 10,
+        "dota_rules_attributes": 135,
+        "text_fit": 838,
+        "tiny_char.part.0": 7155,
+        "tiny_number": 65,
+        "tiny_digit": 9609,
+        "art_small.part.0": 12340,
+        "tiny_unsigned": 378,
+        "dota_move_speed_source": 24,
+        "dota_attack_speed_percent": 14,
+        "attack_speed_x100": 23,
+        "item_attack_traits": 100,
+        "dota_roster_attack_speed_delta": 23,
+        "dota_extra_attack_speed_delta": 108,
+        "dota_skill_is_passive": 40,
+        "dota_progression_skill_max": 52,
+        "dota_progression_can_learn": 208,
+        "dota_progression_skill_required": 136,
+        "ability_icon.part.0": 65428,
+        "hotkey_badge": 66,
+        "dota_healing_ward": 462,
+        "dota_rules_effective_health_regen100": 29,
+        "dota_rules_item_raw_regen100": 27,
+        "dota_items_heal_amount": 8,
+        "resource_bar.constprop.0": 554,
+        "dota_rules_mana_regen100": 27,
+        "dota_inventory_item": 180,
+        "dota_courier_pending_item": 1242,
+        "button": 93,
+        "bs_pick_ground": 664,
+        "bs_unproject_at_z": 2880,
+        "status_bars": 236,
+        "dota_status_effects": 13923,
+        "dota_rune_status": 450,
+        "dota_roster_statuses": 25,
+        "dota_items_statuses": 911,
+        "dota_items_special_statuses": 1206,
+        "dota_item_world_statuses": 419,
+        "dota_bosses_aegis_ticks": 12,
+        "dota_hero_has_shard": 26,
+        "dota_items_has_upgrade": 20,
+        "item_assets_ability_art": 10,
+        "ui_art": 89,
+        "load_art": 39,
+        "baked_io_size": 3,
+        "art.part.0": 12873,
+        "blend": 14040,
+        "courier_panel": 23,
+        "dota_neutral_equipped": 20,
+        "item_assets_text": 12,
+        "baked_io_read_at": 108,
+        "raw_read": 174,
+        "modeled-service": 8
+      },
+      "source_groups": {
+        "dota_tick": 168976,
+        "dota_barracks_commit_tower_deaths": 310,
+        "dota_high_tower_index": 588,
+        "sync_navigation": 1538,
+        "dota_nav_set_item_trees": 16,
+        "dota_nav_set_static_trees": 6,
+        "dota_barracks_alive_mask": 2370,
+        "dota_nav_set_all_structures": 34,
+        "dota_progression_tick": 1960,
+        "touch": 360,
+        "axe_update": 640,
+        "dota_progression_value100": 11518,
+        "dota_items_broken": 759,
+        "estatus.part.0": 63312,
+        "dota_rules_armor100": 14,
+        "dota_rules_armor100.part.0": 234,
+        "dota_item_world_armor_delta": 1017,
+        "npc_aura": 5337,
+        "dota_roster_armor": 78,
+        "__divdi3": 8507,
+        "targetable": 244,
+        "dota_unit_invulnerable": 172,
+        "dota_extra_invulnerable": 76,
+        "dota_roster_invulnerable": 2094,
+        "dota_roster_swallowed_by": 3793,
+        "dota_roster_swallowed": 551,
+        "hero_state": 964,
+        "dota_items_invulnerable": 20,
+        "dota_barracks_kind": 11280,
+        "sync.part.0": 11826,
+        "dota_items_parameter": 8016,
+        "dota_items_stats": 117768,
+        "dota_progression_stat_bonus": 39655,
+        "has": 23400,
+        "dota_progression_primary": 610,
+        "dota_items_special_parameter": 44821,
+        "scaled": 6801,
+        "dota_items_status_percent": 35043,
+        "dota_items_special_stats": 12993,
+        "occurrences": 58996,
+        "dota_items_equipped_item": 136942,
+        "dota_item_world_apply_stats": 29022,
+        "compose_defense": 34776,
+        "dota_items_read": 15385,
+        "wrap_sync.part.0": 2960,
+        "assist_sync": 320,
+        "enemy": 20,
+        "dota_pit_same_region": 357,
+        "dota_roshan_region_at.part.0": 35325,
+        "dota_progression_rank": 902,
+        "passive_sync": 938,
+        "passive_clear": 224,
+        "dota_match_game_ticks": 252,
+        "dota_turbo_passive_gold_at_tick": 980,
+        "dota_roster_passive": 288,
+        "dota_match_ticks": 42,
+        "dota_match_is_night": 2265,
+        "statuses": 17653,
+        "dota_progression_base": 693,
+        "npc_effect_valid": 3168,
+        "recalc_with_stats": 5706,
+        "dota_progression_base_attributes100": 2400,
+        "hero_stat_delta100": 3364,
+        "dota_extra_stat_delta": 3066,
+        "dota_roster_stat_delta": 1254,
+        "dota_progression_stat_delta100": 3772,
+        "dota_roster_max_health_bonus": 390,
+        "dota_rune_base_damage_percent": 666,
+        "dota_roster_is_hero": 470,
+        "dota_roster_attack_range_bonus": 614,
+        "dota_items_special_max_hp_percent": 1890,
+        "dota_item_world_max_health_percent": 162,
+        "dota_items_special_max_mana_percent": 2124,
+        "raw_health_regen_with_stats": 1805,
+        "dota_items_timed_regen100": 15010,
+        "dota_extra_regen_flat100": 171,
+        "dota_extra_move_flat": 10224,
+        "dota_extra_additional_regen100": 837,
+        "dance_rank": 3276,
+        "dance_passive": 444,
+        "dota_rune_hp_regen100": 741,
+        "dota_items_health_regen_amp_percent": 2813,
+        "dota_items_regen_percent": 266,
+        "dota_items_heal_amount_with_stats": 1830,
+        "dota_extra_heal_amount": 8455,
+        "active_ghost": 1796,
+        "dota_roster_heal_percent": 494,
+        "mana_regen_with_stats": 4726,
+        "dota_items_timed_mana_regen100": 15010,
+        "dota_extra_additional_mana_regen100": 531,
+        "dota_rune_mana_regen100": 741,
+        "dota_items_mana_regen_percent": 2813,
+        "dota_extra_mana_restore_amount": 374,
+        "dota_roster_stun": 3848,
+        "dota_roster_moving": 3848,
+        "dota_omnislash_phase": 1271,
+        "omnislash_update": 468,
+        "dota_roster_controls_aux": 1064,
+        "dota_items_wind_move_source": 7110,
+        "dota_objective_player": 26,
+        "dota_rune_player": 16,
+        "roster_busy": 952,
+        "enemy_source": 162590,
+        "dota_sight_is_current": 46189,
+        "dota_unit_visible": 10447,
+        "dota_sight_team_visible": 9907,
+        "refresh": 168010,
+        "dota_trees_revision": 1308,
+        "dota_trees_geometry_revision": 651,
+        "dota_rules_unit_vision_source.part.0": 8830,
+        "dota_items_special_vision_percent": 1890,
+        "dota_roster_vision_bonus": 470,
+        "source_add": 964899,
+        "dota_roshan_region_at": 22692,
+        "cast": 851136,
+        "team_point": 275079,
+        "source_point": 111612,
+        "dota_roster_base_damage_percent": 268,
+        "dota_roster_bonus_damage": 220,
+        "move_towards": 5497,
+        "dota_items_free_path": 3561,
+        "dota_nav_nearest": 1710,
+        "refresh_item_trees": 51815,
+        "nearest_current": 79341,
+        "walkable_current": 8002,
+        "open_cell": 163687,
+        "cell_has_exit": 3918,
+        "cell_has_exit_raw": 13144,
+        "neighbor": 110493,
+        "dota_nav_segment": 1652,
+        "segment_current": 43518,
+        "passage_segment": 1707,
+        "dota_nav_cell_center": 204,
+        "move_step_direction": 45708,
+        "move_speed_q16": 18601,
+        "dota_items_slow_resistance": 3267,
+        "dota_items_special_slow_resistance": 901,
+        "dota_roster_slow_resist": 702,
+        "dota_extra_move_percent": 4111,
+        "dota_items_debuff_immune": 1870,
+        "dota_roster_move_percent": 1383,
+        "target_state": 1430,
+        "dota_items_special_move_bonus": 2327,
+        "dota_rules_unit_in_water": 795,
+        "dota_water_world": 22573,
+        "dota_items_rooted": 1272,
+        "dota_item_world_rooted": 10918,
+        "dota_progression_move_percent": 435,
+        "dota_roster_move_cap_source": 1378,
+        "dota_rune_haste_speed": 845,
+        "move_commit": 38788,
+        "dota_extra_allow_move": 812,
+        "dota_roster_allow_move": 104,
+        "dota_items_total_attribute": 38,
+        "attribute": 162,
+        "follow_lane": 4192,
+        "dota_courier_pending_count": 2583,
+        "dota_extra_target_hidden": 2045,
+        "dota_item_world_smoked": 322,
+        "dota_items_invisible": 2280,
+        "dota_rune_invisible": 1710,
+        "dota_extra_is_hero": 20,
+        "dota_items_attack_range_for": 3176,
+        "dota_unit_hull_source": 23874,
+        "move_for_attack": 417,
+        "lane_progress": 5212,
+        "dota_nav_stats": 12,
+        "dota_nav_find_path": 96865,
+        "locate.constprop.0": 11519,
+        "earlier": 16670,
+        "dota_nav_cell_at": 32,
+        "dota_item_world_update_unit": 268,
+        "dota_extra_tick": 11926,
+        "scythe_tick": 640,
+        "dota_sight_team_position_visible": 58,
+        "dota_roster_tick": 1472,
+        "sync_hero": 300,
+        "fields_tick": 14,
+        "dota_items_tick": 12572,
+        "dota_neutral_tick": 212,
+        "dota_items_special_tick": 5392,
+        "dota_turbo_gold_reward": 80,
+        "dota_item_world_tick": 11928,
+        "dota_trees_tick": 16,
+        "projectiles": 644,
+        "dota_bosses_tick": 974,
+        "dota_rules_find_enemy": 4,
+        "dota_objectives_tick": 484,
+        "dota_runes_tick": 2516,
+        "dota_couriers_tick": 4424,
+        "dota_sight_fog_state": 249956,
+        "dota_render": 49,
+        "battlefield": 138792,
+        "bs_ground_height": 156,
+        "bs_ground_height.part.0": 191567,
+        "bs_render_game": 32164,
+        "baked:draw_map": 19295,
+        "get_tile": 19610,
+        "baked:copy_map_row": 304350,
+        "tree_visual_apply": 41,
+        "prepare": 22,
+        "baked-header:barracks_baked.h": 182,
+        "baked:update_history": 14231,
+        "game_unit_model": 746,
+        "unit_model": 2227,
+        "dota_attack_style": 270,
+        "dota_boss_species": 7,
+        "dota_roshan_mask_pixels": 60,
+        "find_group": 2385,
+        "exact_group": 23568,
+        "frame_at": 2108,
+        "bs_project": 6875,
+        "baked:draw_sprite_opacity": 1072886,
+        "frame_info": 5084,
+        "draw_sprite_opacity": 20944,
+        "dota_sight_position_visible": 2376,
+        "baked:draw_fog": 321775,
+        "draw_fog": 30779,
+        "baked:fog_map_depth": 48710,
+        "tree_visual_revision": 33,
+        "baked:fog_light_row": 24388,
+        "fog_rgb565_inline": 496932,
+        "render_item_trees": 604,
+        "skill_body": 1113,
+        "baked:draw_hero_shadow": 412871,
+        "draw_hero_shadow": 63524,
+        "get_sprite": 43147,
+        "dota_item_world_visible": 192,
+        "courier_frame": 1850,
+        "dota_courier_view": 3800,
+        "dota_courier_eta_ticks.part.0": 1340,
+        "travel_ticks": 6540,
+        "mix": 354296,
+        "baked:fog_world_point": 390,
+        "baked-header:fountain_baked.h": 395,
+        "fountain_track_v022": 70,
+        "sprite-compression-inline": 203540,
+        "bs_render_effects": 7096,
+        "render_skill_effects": 1589,
+        "dota_skill_effect_radius_source": 170,
+        "dota_items_special_aoe_percent": 11,
+        "skill_fx": 102,
+        "dota_get_skill_event": 1914,
+        "extra_fx_visible": 252,
+        "baked-header:roster_baked.h": 1927,
+        "roster_fx_visible": 432,
+        "dota_get_attack_event": 1408,
+        "bs_unit_screen_bounds": 621,
+        "bs_game_unit_height": 144,
+        "ground_ring": 776,
+        "line": 3182,
+        "box": 158988,
+        "dota_items_available_mana": 44,
+        "bs_depth_buffer": 3,
+        "dota_rune_kind": 88,
+        "dota_items_teleport_channel": 270,
+        "dota_match_seconds": 15,
+        "text": 149156,
+        "utf8": 1851,
+        "dota_hero_assists": 16,
+        "number": 756,
+        "frame": 952,
+        "circle": 378,
+        "hud": 62752,
+        "dota_progression_points": 175,
+        "dota_progression_talent_points": 79,
+        "dota_effective_armor": 19,
+        "dota_next_level_xp": 2,
+        "dota_turbo_level_xp": 10,
+        "dota_rules_attributes": 135,
+        "text_fit": 838,
+        "tiny_char.part.0": 7155,
+        "tiny_number": 65,
+        "tiny_digit": 9609,
+        "art_small.part.0": 12340,
+        "tiny_unsigned": 378,
+        "dota_move_speed_source": 24,
+        "dota_attack_speed_percent": 14,
+        "attack_speed_x100": 23,
+        "item_attack_traits": 100,
+        "dota_roster_attack_speed_delta": 23,
+        "dota_extra_attack_speed_delta": 108,
+        "dota_skill_is_passive": 40,
+        "dota_progression_skill_max": 52,
+        "dota_progression_can_learn": 208,
+        "dota_progression_skill_required": 136,
+        "ability_icon.part.0": 65428,
+        "hotkey_badge": 66,
+        "dota_healing_ward": 462,
+        "dota_rules_effective_health_regen100": 29,
+        "dota_rules_item_raw_regen100": 27,
+        "dota_items_heal_amount": 8,
+        "resource_bar.constprop.0": 554,
+        "dota_rules_mana_regen100": 27,
+        "dota_inventory_item": 180,
+        "dota_courier_pending_item": 1242,
+        "button": 93,
+        "bs_pick_ground": 664,
+        "bs_unproject_at_z": 2880,
+        "status_bars": 236,
+        "dota_status_effects": 13923,
+        "dota_rune_status": 450,
+        "dota_roster_statuses": 25,
+        "dota_items_statuses": 911,
+        "dota_items_special_statuses": 1206,
+        "dota_item_world_statuses": 419,
+        "dota_bosses_aegis_ticks": 12,
+        "dota_hero_has_shard": 26,
+        "dota_items_has_upgrade": 20,
+        "item_assets_ability_art": 10,
+        "ui_art": 89,
+        "load_art": 39,
+        "baked_io_size": 3,
+        "art.part.0": 12873,
+        "blend": 14040,
+        "courier_panel": 23,
+        "dota_neutral_equipped": 20,
+        "item_assets_text": 12,
+        "baked_io_read_at": 108,
+        "raw_read": 174,
+        "modeled-service": 8
+      }
+    },
+    {
+      "index": 10,
+      "game_ticks": 1,
+      "sight_current_before_preflight": 1,
+      "read_bytes": 0,
+      "render": [
+        145,
+        0,
+        24,
+        0,
+        0,
+        0,
+        0,
+        92160,
+        10568,
+        8707,
+        9568,
+        4,
+        0,
+        37,
+        0,
+        0
+      ],
+      "fog": [
+        1701,
+        1671,
+        54988,
+        283,
+        1
+      ],
+      "io_bytes": 14970817,
+      "framebuffer_sha256": "37ce00b12b6c7b2bf7b6cdb45f00bc60fb0aaa17d0e471535b43efe07e288be0",
+      "slots": {
+        "normal_game_ticks": 2774725,
+        "sight_preflight": 35,
+        "full_dota_render": 4968253
+      },
+      "function_slots": {
+        "dota_tick": 84547,
+        "dota_barracks_commit_tower_deaths": 155,
+        "dota_high_tower_index": 420,
+        "sync_navigation": 769,
+        "dota_nav_set_item_trees": 8,
+        "dota_nav_set_static_trees": 3,
+        "dota_barracks_alive_mask": 1896,
+        "dota_nav_set_all_structures": 17,
+        "dota_progression_tick": 980,
+        "touch": 180,
+        "axe_update": 320,
+        "dota_progression_value100": 6046,
+        "dota_items_broken": 407,
+        "estatus.part.0": 36336,
+        "dota_rules_armor100": 7,
+        "dota_rules_armor100.part.0": 156,
+        "dota_item_world_armor_delta": 678,
+        "npc_aura": 2835,
+        "dota_roster_armor": 52,
+        "__divdi3": 4294,
+        "targetable": 122,
+        "dota_unit_invulnerable": 86,
+        "dota_extra_invulnerable": 38,
+        "dota_roster_invulnerable": 1047,
+        "dota_roster_swallowed_by": 3019,
+        "dota_roster_swallowed": 418,
+        "hero_state": 512,
+        "dota_items_invulnerable": 10,
+        "dota_barracks_kind": 5656,
+        "sync.part.0": 6424,
+        "dota_items_parameter": 4039,
+        "dota_items_stats": 64424,
+        "dota_progression_stat_bonus": 22046,
+        "has": 13104,
+        "dota_progression_primary": 340,
+        "dota_items_special_parameter": 22579,
+        "scaled": 3447,
+        "dota_items_status_percent": 18834,
+        "dota_items_special_stats": 7242,
+        "occurrences": 32594,
+        "dota_items_equipped_item": 75563,
+        "dota_item_world_apply_stats": 15896,
+        "compose_defense": 19148,
+        "dota_items_read": 8105,
+        "wrap_sync.part.0": 1480,
+        "assist_sync": 160,
+        "enemy": 10,
+        "dota_pit_same_region": 357,
+        "dota_roshan_region_at.part.0": 32268,
+        "dota_progression_rank": 550,
+        "passive_sync": 469,
+        "passive_clear": 112,
+        "dota_match_game_ticks": 135,
+        "dota_turbo_passive_gold_at_tick": 490,
+        "dota_roster_passive": 144,
+        "dota_match_ticks": 21,
+        "dota_match_is_night": 1140,
+        "statuses": 8834,
+        "dota_progression_base": 369,
+        "npc_effect_valid": 2592,
+        "recalc_with_stats": 2853,
+        "dota_progression_base_attributes100": 1280,
+        "hero_stat_delta100": 1798,
+        "dota_extra_stat_delta": 1631,
+        "dota_roster_stat_delta": 663,
+        "dota_progression_stat_delta100": 2024,
+        "dota_roster_max_health_bonus": 195,
+        "dota_rune_base_damage_percent": 333,
+        "dota_roster_is_hero": 290,
+        "dota_roster_attack_range_bonus": 307,
+        "dota_items_special_max_hp_percent": 945,
+        "dota_item_world_max_health_percent": 81,
+        "dota_items_special_max_mana_percent": 1062,
+        "raw_health_regen_with_stats": 950,
+        "dota_items_timed_regen100": 7900,
+        "dota_extra_regen_flat100": 90,
+        "dota_extra_move_flat": 5389,
+        "dota_extra_additional_regen100": 439,
+        "dance_rank": 1729,
+        "dance_passive": 233,
+        "dota_rune_hp_regen100": 390,
+        "dota_items_health_regen_amp_percent": 1470,
+        "dota_items_regen_percent": 140,
+        "dota_items_heal_amount_with_stats": 966,
+        "dota_extra_heal_amount": 4450,
+        "active_ghost": 952,
+        "dota_roster_heal_percent": 260,
+        "mana_regen_with_stats": 2488,
+        "dota_items_timed_mana_regen100": 7900,
+        "dota_extra_additional_mana_regen100": 278,
+        "dota_rune_mana_regen100": 390,
+        "dota_items_mana_regen_percent": 1470,
+        "dota_extra_mana_restore_amount": 196,
+        "dota_roster_stun": 1924,
+        "dota_roster_moving": 1924,
+        "dota_omnislash_phase": 1022,
+        "omnislash_update": 234,
+        "dota_roster_controls_aux": 532,
+        "dota_items_wind_move_source": 3555,
+        "dota_objective_player": 13,
+        "dota_rune_player": 8,
+        "roster_busy": 476,
+        "enemy_source": 81300,
+        "dota_sight_is_current": 23101,
+        "dota_unit_visible": 10353,
+        "dota_sight_team_visible": 9810,
+        "refresh": 84005,
+        "dota_trees_revision": 648,
+        "dota_trees_geometry_revision": 321,
+        "dota_rules_unit_vision_source.part.0": 4415,
+        "dota_items_special_vision_percent": 945,
+        "dota_roster_vision_bonus": 235,
+        "source_add": 521916,
+        "dota_roshan_region_at": 21702,
+        "cast": 1130051,
+        "team_point": 179444,
+        "source_point": 75036,
+        "dota_roster_base_damage_percent": 134,
+        "dota_roster_bonus_damage": 110,
+        "move_towards": 2581,
+        "dota_items_free_path": 1732,
+        "dota_nav_nearest": 846,
+        "refresh_item_trees": 25546,
+        "nearest_current": 39582,
+        "walkable_current": 3291,
+        "open_cell": 59455,
+        "cell_has_exit": 1926,
+        "cell_has_exit_raw": 6572,
+        "neighbor": 35331,
+        "dota_nav_segment": 826,
+        "segment_current": 16165,
+        "passage_segment": 704,
+        "dota_nav_cell_center": 96,
+        "move_step_direction": 22902,
+        "move_speed_q16": 9516,
+        "dota_items_slow_resistance": 1705,
+        "dota_items_special_slow_resistance": 477,
+        "dota_roster_slow_resist": 361,
+        "dota_extra_move_percent": 2151,
+        "dota_items_debuff_immune": 990,
+        "dota_roster_move_percent": 706,
+        "target_state": 754,
+        "dota_items_special_move_bonus": 1187,
+        "dota_rules_unit_in_water": 405,
+        "dota_water_world": 14592,
+        "dota_items_rooted": 648,
+        "dota_item_world_rooted": 5562,
+        "dota_progression_move_percent": 228,
+        "dota_roster_move_cap_source": 702,
+        "dota_rune_haste_speed": 441,
+        "move_commit": 19388,
+        "dota_extra_allow_move": 406,
+        "dota_roster_allow_move": 52,
+        "dota_items_total_attribute": 19,
+        "attribute": 81,
+        "follow_lane": 2096,
+        "dota_courier_pending_count": 2706,
+        "dota_courier_buy": 57,
+        "dota_items_purchase_plan": 652,
+        "plan_need": 67,
+        "dota_items_recipes_count": 8,
+        "stock_count": 17,
+        "dota_extra_target_hidden": 1931,
+        "dota_item_world_smoked": 276,
+        "dota_items_invisible": 2261,
+        "dota_rune_invisible": 1671,
+        "dota_extra_is_hero": 20,
+        "dota_items_attack_range_for": 1588,
+        "dota_unit_hull_source": 11937,
+        "move_for_attack": 219,
+        "lane_progress": 2598,
+        "dota_item_world_update_unit": 134,
+        "dota_extra_tick": 5963,
+        "scythe_tick": 320,
+        "dota_sight_team_position_visible": 29,
+        "dota_roster_tick": 736,
+        "sync_hero": 150,
+        "fields_tick": 7,
+        "dota_items_tick": 6286,
+        "dota_neutral_tick": 106,
+        "dota_items_special_tick": 2696,
+        "dota_turbo_gold_reward": 40,
+        "dota_item_world_tick": 5964,
+        "dota_trees_tick": 8,
+        "projectiles": 322,
+        "dota_bosses_tick": 487,
+        "dota_rules_find_enemy": 2,
+        "dota_objectives_tick": 242,
+        "dota_runes_tick": 1258,
+        "dota_couriers_tick": 2212,
+        "dota_sight_fog_state": 249954,
+        "dota_render": 49,
+        "battlefield": 163543,
+        "bs_ground_height": 156,
+        "bs_ground_height.part.0": 190784,
+        "bs_render_game": 370463,
+        "get_tile": 19610,
+        "tree_visual_apply": 41,
+        "prepare": 22,
+        "game_unit_model": 746,
+        "unit_model": 2227,
+        "dota_attack_style": 270,
+        "dota_boss_species": 7,
+        "dota_roshan_mask_pixels": 60,
+        "find_group": 2335,
+        "exact_group": 23198,
+        "frame_at": 2077,
+        "bs_project": 6794,
+        "draw_sprite_opacity": 1082300,
+        "frame_info": 5022,
+        "dota_sight_position_visible": 2352,
+        "draw_fog": 871930,
+        "tree_visual_revision": 33,
+        "fog_light_row": 24388,
+        "render_item_trees": 604,
+        "skill_body": 1066,
+        "draw_hero_shadow": 474507,
+        "get_sprite": 285393,
+        "dota_item_world_visible": 192,
+        "courier_frame": 1850,
+        "dota_courier_view": 3800,
+        "dota_courier_eta_ticks.part.0": 1340,
+        "travel_ticks": 6540,
+        "mix": 355072,
+        "fountain_track_v022": 224,
+        "cache_payload_valid": 28,
+        "bs_render_effects": 8686,
+        "render_skill_effects": 1589,
+        "dota_skill_effect_radius_source": 170,
+        "dota_items_special_aoe_percent": 11,
+        "skill_fx": 102,
+        "dota_get_skill_event": 1914,
+        "extra_fx_visible": 252,
+        "roster_fx_visible": 630,
+        "dota_get_attack_event": 1408,
+        "bs_unit_screen_bounds": 621,
+        "bs_game_unit_height": 144,
+        "ground_ring": 776,
+        "line": 3182,
+        "box": 158988,
+        "dota_items_available_mana": 44,
+        "bs_depth_buffer": 3,
+        "dota_rune_kind": 88,
+        "dota_items_teleport_channel": 270,
+        "dota_match_seconds": 15,
+        "text": 149230,
+        "utf8": 1851,
+        "dota_hero_assists": 16,
+        "number": 756,
+        "frame": 952,
+        "circle": 378,
+        "hud": 62752,
+        "dota_progression_points": 175,
+        "dota_progression_talent_points": 79,
+        "dota_effective_armor": 19,
+        "dota_next_level_xp": 2,
+        "dota_turbo_level_xp": 10,
+        "dota_rules_attributes": 135,
+        "text_fit": 838,
+        "tiny_char.part.0": 7155,
+        "tiny_number": 65,
+        "tiny_digit": 9609,
+        "art_small.part.0": 12340,
+        "tiny_unsigned": 378,
+        "dota_move_speed_source": 24,
+        "dota_attack_speed_percent": 14,
+        "attack_speed_x100": 23,
+        "item_attack_traits": 100,
+        "dota_roster_attack_speed_delta": 23,
+        "dota_extra_attack_speed_delta": 108,
+        "dota_skill_is_passive": 40,
+        "dota_progression_skill_max": 52,
+        "dota_progression_can_learn": 208,
+        "dota_progression_skill_required": 136,
+        "ability_icon.part.0": 65428,
+        "hotkey_badge": 66,
+        "dota_healing_ward": 462,
+        "dota_rules_effective_health_regen100": 29,
+        "dota_rules_item_raw_regen100": 27,
+        "dota_items_heal_amount": 8,
+        "resource_bar.constprop.0": 554,
+        "dota_rules_mana_regen100": 27,
+        "dota_inventory_item": 180,
+        "dota_courier_pending_item": 1242,
+        "button": 93,
+        "bs_pick_ground": 664,
+        "bs_unproject_at_z": 2880,
+        "status_bars": 236,
+        "dota_status_effects": 13923,
+        "dota_rune_status": 450,
+        "dota_roster_statuses": 25,
+        "dota_items_statuses": 911,
+        "dota_items_special_statuses": 1206,
+        "dota_item_world_statuses": 419,
+        "dota_bosses_aegis_ticks": 12,
+        "dota_hero_has_shard": 26,
+        "dota_items_has_upgrade": 20,
+        "item_assets_ability_art": 10,
+        "ui_art": 89,
+        "load_art": 39,
+        "baked_io_size": 3,
+        "art.part.0": 12873,
+        "blend": 14040,
+        "courier_panel": 23,
+        "dota_neutral_equipped": 20,
+        "item_assets_text": 12
+      },
+      "source_groups": {
+        "dota_tick": 84547,
+        "dota_barracks_commit_tower_deaths": 155,
+        "dota_high_tower_index": 420,
+        "sync_navigation": 769,
+        "dota_nav_set_item_trees": 8,
+        "dota_nav_set_static_trees": 3,
+        "dota_barracks_alive_mask": 1896,
+        "dota_nav_set_all_structures": 17,
+        "dota_progression_tick": 980,
+        "touch": 180,
+        "axe_update": 320,
+        "dota_progression_value100": 6046,
+        "dota_items_broken": 407,
+        "estatus.part.0": 36336,
+        "dota_rules_armor100": 7,
+        "dota_rules_armor100.part.0": 156,
+        "dota_item_world_armor_delta": 678,
+        "npc_aura": 2835,
+        "dota_roster_armor": 52,
+        "__divdi3": 4294,
+        "targetable": 122,
+        "dota_unit_invulnerable": 86,
+        "dota_extra_invulnerable": 38,
+        "dota_roster_invulnerable": 1047,
+        "dota_roster_swallowed_by": 3019,
+        "dota_roster_swallowed": 418,
+        "hero_state": 512,
+        "dota_items_invulnerable": 10,
+        "dota_barracks_kind": 5656,
+        "sync.part.0": 6424,
+        "dota_items_parameter": 4039,
+        "dota_items_stats": 64424,
+        "dota_progression_stat_bonus": 22046,
+        "has": 13104,
+        "dota_progression_primary": 340,
+        "dota_items_special_parameter": 22579,
+        "scaled": 3447,
+        "dota_items_status_percent": 18834,
+        "dota_items_special_stats": 7242,
+        "occurrences": 32594,
+        "dota_items_equipped_item": 75563,
+        "dota_item_world_apply_stats": 15896,
+        "compose_defense": 19148,
+        "dota_items_read": 8105,
+        "wrap_sync.part.0": 1480,
+        "assist_sync": 160,
+        "enemy": 10,
+        "dota_pit_same_region": 357,
+        "dota_roshan_region_at.part.0": 32268,
+        "dota_progression_rank": 550,
+        "passive_sync": 469,
+        "passive_clear": 112,
+        "dota_match_game_ticks": 135,
+        "dota_turbo_passive_gold_at_tick": 490,
+        "dota_roster_passive": 144,
+        "dota_match_ticks": 21,
+        "dota_match_is_night": 1140,
+        "statuses": 8834,
+        "dota_progression_base": 369,
+        "npc_effect_valid": 2592,
+        "recalc_with_stats": 2853,
+        "dota_progression_base_attributes100": 1280,
+        "hero_stat_delta100": 1798,
+        "dota_extra_stat_delta": 1631,
+        "dota_roster_stat_delta": 663,
+        "dota_progression_stat_delta100": 2024,
+        "dota_roster_max_health_bonus": 195,
+        "dota_rune_base_damage_percent": 333,
+        "dota_roster_is_hero": 290,
+        "dota_roster_attack_range_bonus": 307,
+        "dota_items_special_max_hp_percent": 945,
+        "dota_item_world_max_health_percent": 81,
+        "dota_items_special_max_mana_percent": 1062,
+        "raw_health_regen_with_stats": 950,
+        "dota_items_timed_regen100": 7900,
+        "dota_extra_regen_flat100": 90,
+        "dota_extra_move_flat": 5389,
+        "dota_extra_additional_regen100": 439,
+        "dance_rank": 1729,
+        "dance_passive": 233,
+        "dota_rune_hp_regen100": 390,
+        "dota_items_health_regen_amp_percent": 1470,
+        "dota_items_regen_percent": 140,
+        "dota_items_heal_amount_with_stats": 966,
+        "dota_extra_heal_amount": 4450,
+        "active_ghost": 952,
+        "dota_roster_heal_percent": 260,
+        "mana_regen_with_stats": 2488,
+        "dota_items_timed_mana_regen100": 7900,
+        "dota_extra_additional_mana_regen100": 278,
+        "dota_rune_mana_regen100": 390,
+        "dota_items_mana_regen_percent": 1470,
+        "dota_extra_mana_restore_amount": 196,
+        "dota_roster_stun": 1924,
+        "dota_roster_moving": 1924,
+        "dota_omnislash_phase": 1022,
+        "omnislash_update": 234,
+        "dota_roster_controls_aux": 532,
+        "dota_items_wind_move_source": 3555,
+        "dota_objective_player": 13,
+        "dota_rune_player": 8,
+        "roster_busy": 476,
+        "enemy_source": 81300,
+        "dota_sight_is_current": 23101,
+        "dota_unit_visible": 10353,
+        "dota_sight_team_visible": 9810,
+        "refresh": 84005,
+        "dota_trees_revision": 648,
+        "dota_trees_geometry_revision": 321,
+        "dota_rules_unit_vision_source.part.0": 4415,
+        "dota_items_special_vision_percent": 945,
+        "dota_roster_vision_bonus": 235,
+        "source_add": 521916,
+        "dota_roshan_region_at": 21702,
+        "cast": 1130051,
+        "team_point": 179444,
+        "source_point": 75036,
+        "dota_roster_base_damage_percent": 134,
+        "dota_roster_bonus_damage": 110,
+        "move_towards": 2581,
+        "dota_items_free_path": 1732,
+        "dota_nav_nearest": 846,
+        "refresh_item_trees": 25546,
+        "nearest_current": 39582,
+        "walkable_current": 3291,
+        "open_cell": 59455,
+        "cell_has_exit": 1926,
+        "cell_has_exit_raw": 6572,
+        "neighbor": 35331,
+        "dota_nav_segment": 826,
+        "segment_current": 16165,
+        "passage_segment": 704,
+        "dota_nav_cell_center": 96,
+        "move_step_direction": 22902,
+        "move_speed_q16": 9516,
+        "dota_items_slow_resistance": 1705,
+        "dota_items_special_slow_resistance": 477,
+        "dota_roster_slow_resist": 361,
+        "dota_extra_move_percent": 2151,
+        "dota_items_debuff_immune": 990,
+        "dota_roster_move_percent": 706,
+        "target_state": 754,
+        "dota_items_special_move_bonus": 1187,
+        "dota_rules_unit_in_water": 405,
+        "dota_water_world": 14592,
+        "dota_items_rooted": 648,
+        "dota_item_world_rooted": 5562,
+        "dota_progression_move_percent": 228,
+        "dota_roster_move_cap_source": 702,
+        "dota_rune_haste_speed": 441,
+        "move_commit": 19388,
+        "dota_extra_allow_move": 406,
+        "dota_roster_allow_move": 52,
+        "dota_items_total_attribute": 19,
+        "attribute": 81,
+        "follow_lane": 2096,
+        "dota_courier_pending_count": 2706,
+        "dota_courier_buy": 57,
+        "dota_items_purchase_plan": 652,
+        "plan_need": 67,
+        "dota_items_recipes_count": 8,
+        "stock_count": 17,
+        "dota_extra_target_hidden": 1931,
+        "dota_item_world_smoked": 276,
+        "dota_items_invisible": 2261,
+        "dota_rune_invisible": 1671,
+        "dota_extra_is_hero": 20,
+        "dota_items_attack_range_for": 1588,
+        "dota_unit_hull_source": 11937,
+        "move_for_attack": 219,
+        "lane_progress": 2598,
+        "dota_item_world_update_unit": 134,
+        "dota_extra_tick": 5963,
+        "scythe_tick": 320,
+        "dota_sight_team_position_visible": 29,
+        "dota_roster_tick": 736,
+        "sync_hero": 150,
+        "fields_tick": 7,
+        "dota_items_tick": 6286,
+        "dota_neutral_tick": 106,
+        "dota_items_special_tick": 2696,
+        "dota_turbo_gold_reward": 40,
+        "dota_item_world_tick": 5964,
+        "dota_trees_tick": 8,
+        "projectiles": 322,
+        "dota_bosses_tick": 487,
+        "dota_rules_find_enemy": 2,
+        "dota_objectives_tick": 242,
+        "dota_runes_tick": 1258,
+        "dota_couriers_tick": 2212,
+        "dota_sight_fog_state": 249954,
+        "dota_render": 49,
+        "battlefield": 138793,
+        "bs_ground_height": 156,
+        "bs_ground_height.part.0": 190784,
+        "bs_render_game": 32164,
+        "baked:draw_map": 19295,
+        "get_tile": 19610,
+        "baked:copy_map_row": 304350,
+        "tree_visual_apply": 41,
+        "prepare": 22,
+        "baked-header:barracks_baked.h": 182,
+        "baked:update_history": 14231,
+        "game_unit_model": 746,
+        "unit_model": 2227,
+        "dota_attack_style": 270,
+        "dota_boss_species": 7,
+        "dota_roshan_mask_pixels": 60,
+        "find_group": 2335,
+        "exact_group": 23198,
+        "frame_at": 2077,
+        "bs_project": 6794,
+        "baked:draw_sprite_opacity": 1061072,
+        "frame_info": 5022,
+        "draw_sprite_opacity": 20864,
+        "dota_sight_position_visible": 2352,
+        "baked:draw_fog": 321729,
+        "draw_fog": 30779,
+        "baked:fog_map_depth": 48710,
+        "tree_visual_revision": 33,
+        "baked:fog_light_row": 24388,
+        "fog_rgb565_inline": 495462,
+        "render_item_trees": 604,
+        "skill_body": 1066,
+        "baked:draw_hero_shadow": 411251,
+        "draw_hero_shadow": 63256,
+        "get_sprite": 1584,
+        "dota_item_world_visible": 192,
+        "courier_frame": 1850,
+        "dota_courier_view": 3800,
+        "dota_courier_eta_ticks.part.0": 1340,
+        "travel_ticks": 6540,
+        "mix": 355072,
+        "baked:fog_world_point": 364,
+        "baked-header:fountain_baked.h": 395,
+        "fountain_track_v022": 70,
+        "sprite-compression-inline": 283837,
+        "bs_render_effects": 6957,
+        "render_skill_effects": 1589,
+        "dota_skill_effect_radius_source": 170,
+        "dota_items_special_aoe_percent": 11,
+        "skill_fx": 102,
+        "dota_get_skill_event": 1914,
+        "extra_fx_visible": 252,
+        "baked-header:roster_baked.h": 1927,
+        "roster_fx_visible": 432,
+        "dota_get_attack_event": 1408,
+        "bs_unit_screen_bounds": 621,
+        "bs_game_unit_height": 144,
+        "ground_ring": 776,
+        "line": 3182,
+        "box": 158988,
+        "dota_items_available_mana": 44,
+        "bs_depth_buffer": 3,
+        "dota_rune_kind": 88,
+        "dota_items_teleport_channel": 270,
+        "dota_match_seconds": 15,
+        "text": 149230,
+        "utf8": 1851,
+        "dota_hero_assists": 16,
+        "number": 756,
+        "frame": 952,
+        "circle": 378,
+        "hud": 62752,
+        "dota_progression_points": 175,
+        "dota_progression_talent_points": 79,
+        "dota_effective_armor": 19,
+        "dota_next_level_xp": 2,
+        "dota_turbo_level_xp": 10,
+        "dota_rules_attributes": 135,
+        "text_fit": 838,
+        "tiny_char.part.0": 7155,
+        "tiny_number": 65,
+        "tiny_digit": 9609,
+        "art_small.part.0": 12340,
+        "tiny_unsigned": 378,
+        "dota_move_speed_source": 24,
+        "dota_attack_speed_percent": 14,
+        "attack_speed_x100": 23,
+        "item_attack_traits": 100,
+        "dota_roster_attack_speed_delta": 23,
+        "dota_extra_attack_speed_delta": 108,
+        "dota_skill_is_passive": 40,
+        "dota_progression_skill_max": 52,
+        "dota_progression_can_learn": 208,
+        "dota_progression_skill_required": 136,
+        "ability_icon.part.0": 65428,
+        "hotkey_badge": 66,
+        "dota_healing_ward": 462,
+        "dota_rules_effective_health_regen100": 29,
+        "dota_rules_item_raw_regen100": 27,
+        "dota_items_heal_amount": 8,
+        "resource_bar.constprop.0": 554,
+        "dota_rules_mana_regen100": 27,
+        "dota_inventory_item": 180,
+        "dota_courier_pending_item": 1242,
+        "button": 93,
+        "bs_pick_ground": 664,
+        "bs_unproject_at_z": 2880,
+        "status_bars": 236,
+        "dota_status_effects": 13923,
+        "dota_rune_status": 450,
+        "dota_roster_statuses": 25,
+        "dota_items_statuses": 911,
+        "dota_items_special_statuses": 1206,
+        "dota_item_world_statuses": 419,
+        "dota_bosses_aegis_ticks": 12,
+        "dota_hero_has_shard": 26,
+        "dota_items_has_upgrade": 20,
+        "item_assets_ability_art": 10,
+        "ui_art": 89,
+        "load_art": 39,
+        "baked_io_size": 3,
+        "art.part.0": 12873,
+        "blend": 14040,
+        "courier_panel": 23,
+        "dota_neutral_equipped": 20,
+        "item_assets_text": 12
+      }
+    }
+  ],
+  "slots": 24768641,
+  "phase_slots": {
+    "normal_game_ticks": 9634488,
+    "sight_preflight": 105,
+    "full_dota_render": 15134048
+  },
+  "function_slots": [
+    [
+      "draw_sprite_opacity",
+      3294856
+    ],
+    [
+      "cast",
+      2825858
+    ],
+    [
+      "draw_fog",
+      2619565
+    ],
+    [
+      "source_add",
+      1969190
+    ],
+    [
+      "draw_hero_shadow",
+      1431526
+    ],
+    [
+      "bs_render_game",
+      1270537
+    ],
+    [
+      "mix",
+      1059845
+    ],
+    [
+      "get_sprite",
+      864202
+    ],
+    [
+      "dota_sight_fog_state",
+      749882
+    ],
+    [
+      "team_point",
+      634076
+    ],
+    [
+      "bs_ground_height.part.0",
+      577098
+    ],
+    [
+      "battlefield",
+      490679
+    ],
+    [
+      "box",
+      476964
+    ],
+    [
+      "text",
+      447542
+    ],
+    [
+      "dota_tick",
+      338218
+    ],
+    [
+      "refresh",
+      336020
+    ],
+    [
+      "enemy_source",
+      325183
+    ],
+    [
+      "open_cell",
+      304953
+    ],
+    [
+      "dota_items_equipped_item",
+      292599
+    ],
+    [
+      "source_point",
+      261630
+    ],
+    [
+      "dota_items_stats",
+      249871
+    ],
+    [
+      "neighbor",
+      201152
+    ],
+    [
+      "ability_icon.part.0",
+      196284
+    ],
+    [
+      "hud",
+      188256
+    ],
+    [
+      "nearest_current",
+      158623
+    ],
+    [
+      "dota_nav_find_path",
+      145912
+    ],
+    [
+      "estatus.part.0",
+      137424
+    ],
+    [
+      "occurrences",
+      126162
+    ],
+    [
+      "refresh_item_trees",
+      103389
+    ],
+    [
+      "dota_roshan_region_at.part.0",
+      100483
+    ],
+    [
+      "dota_sight_is_current",
+      92391
+    ],
+    [
+      "move_step_direction",
+      91434
+    ],
+    [
+      "dota_items_special_parameter",
+      90653
+    ],
+    [
+      "dota_progression_stat_bonus",
+      84971
+    ],
+    [
+      "segment_current",
+      81549
+    ],
+    [
+      "move_commit",
+      77512
+    ],
+    [
+      "compose_defense",
+      74244
+    ],
+    [
+      "dota_items_status_percent",
+      73461
+    ],
+    [
+      "fog_light_row",
+      73164
+    ],
+    [
+      "exact_group",
+      70120
+    ],
+    [
+      "dota_roshan_region_at",
+      66534
+    ],
+    [
+      "dota_item_world_apply_stats",
+      61386
+    ],
+    [
+      "get_tile",
+      58830
+    ],
+    [
+      "has",
+      50310
+    ],
+    [
+      "dota_water_world",
+      48896
+    ],
+    [
+      "dota_unit_hull_source",
+      47748
+    ],
+    [
+      "blend",
+      42120
+    ],
+    [
+      "dota_status_effects",
+      41769
+    ],
+    [
+      "art.part.0",
+      38619
+    ],
+    [
+      "move_speed_q16",
+      37708
+    ],
+    [
+      "art_small.part.0",
+      37020
+    ],
+    [
+      "statuses",
+      35294
+    ],
+    [
+      "dota_items_read",
+      32232
+    ],
+    [
+      "dota_unit_visible",
+      31153
+    ],
+    [
+      "dota_items_timed_regen100",
+      30810
+    ],
+    [
+      "dota_items_timed_mana_regen100",
+      30810
+    ],
+    [
+      "dota_sight_team_visible",
+      29527
+    ],
+    [
+      "tiny_digit",
+      28827
+    ],
+    [
+      "dota_items_special_stats",
+      27903
+    ],
+    [
+      "bs_render_effects",
+      26336
+    ],
+    [
+      "cell_has_exit_raw",
+      25790
+    ],
+    [
+      "earlier",
+      25376
+    ],
+    [
+      "sync.part.0",
+      25258
+    ],
+    [
+      "dota_items_tick",
+      25144
+    ],
+    [
+      "dota_progression_value100",
+      24111
+    ],
+    [
+      "dota_item_world_tick",
+      23856
+    ],
+    [
+      "dota_extra_tick",
+      23852
+    ],
+    [
+      "dota_barracks_kind",
+      22608
+    ],
+    [
+      "dota_item_world_rooted",
+      22042
+    ],
+    [
+      "tiny_char.part.0",
+      21465
+    ],
+    [
+      "dota_extra_move_flat",
+      21002
+    ],
+    [
+      "bs_project",
+      20544
+    ],
+    [
+      "travel_ticks",
+      19620
+    ],
+    [
+      "dota_rules_unit_vision_source.part.0",
+      17660
+    ],
+    [
+      "locate.constprop.0",
+      17495
+    ],
+    [
+      "dota_extra_heal_amount",
+      17355
+    ],
+    [
+      "__divdi3",
+      17138
+    ],
+    [
+      "dota_items_parameter",
+      16214
+    ],
+    [
+      "walkable_current",
+      15324
+    ],
+    [
+      "frame_info",
+      15190
+    ],
+    [
+      "dota_items_wind_move_source",
+      14265
+    ],
+    [
+      "scaled",
+      13785
+    ],
+    [
+      "recalc_with_stats",
+      11412
+    ],
+    [
+      "dota_courier_view",
+      11400
+    ],
+    [
+      "npc_aura",
+      11124
+    ],
+    [
+      "move_towards",
+      10843
+    ],
+    [
+      "dota_items_special_tick",
+      10784
+    ],
+    [
+      "lane_progress",
+      10434
+    ],
+    [
+      "dota_roster_swallowed_by",
+      9893
+    ],
+    [
+      "mana_regen_with_stats",
+      9702
+    ],
+    [
+      "line",
+      9546
+    ],
+    [
+      "dota_couriers_tick",
+      8848
+    ],
+    [
+      "bs_unproject_at_z",
+      8640
+    ],
+    [
+      "dota_extra_move_percent",
+      8413
+    ],
+    [
+      "follow_lane",
+      8384
+    ],
+    [
+      "npc_effect_valid",
+      8352
+    ],
+    [
+      "dota_courier_pending_count",
+      7995
+    ],
+    [
+      "dota_progression_stat_delta100",
+      7820
+    ],
+    [
+      "cell_has_exit",
+      7795
+    ],
+    [
+      "dota_roster_stun",
+      7722
+    ],
+    [
+      "dota_roster_moving",
+      7696
+    ],
+    [
+      "dota_items_free_path",
+      7122
+    ],
+    [
+      "dota_sight_position_visible",
+      7104
+    ],
+    [
+      "find_group",
+      7080
+    ],
+    [
+      "hero_stat_delta100",
+      6960
+    ],
+    [
+      "dota_items_invisible",
+      6802
+    ],
+    [
+      "dance_rank",
+      6734
+    ],
+    [
+      "unit_model",
+      6681
+    ],
+    [
+      "dota_items_slow_resistance",
+      6677
+    ],
+    [
+      "dota_items_attack_range_for",
+      6352
+    ],
+    [
+      "dota_extra_stat_delta",
+      6328
+    ],
+    [
+      "frame_at",
+      6266
+    ],
+    [
+      "dota_barracks_alive_mask",
+      6162
+    ],
+    [
+      "wrap_sync.part.0",
+      6068
+    ],
+    [
+      "dota_extra_target_hidden",
+      5907
+    ],
+    [
+      "dota_items_health_regen_amp_percent",
+      5753
+    ],
+    [
+      "dota_items_mana_regen_percent",
+      5753
+    ],
+    [
+      "dota_get_skill_event",
+      5742
+    ],
+    [
+      "utf8",
+      5553
+    ],
+    [
+      "courier_frame",
+      5550
+    ],
+    [
+      "dota_rune_invisible",
+      5052
+    ],
+    [
+      "dota_runes_tick",
+      5032
+    ],
+    [
+      "dota_progression_base_attributes100",
+      4960
+    ],
+    [
+      "render_skill_effects",
+      4767
+    ],
+    [
+      "dota_items_special_move_bonus",
+      4701
+    ],
+    [
+      "dota_match_is_night",
+      4545
+    ],
+    [
+      "dota_items_special_max_mana_percent",
+      4248
+    ],
+    [
+      "dota_roster_invulnerable",
+      4225
+    ],
+    [
+      "dota_get_attack_event",
+      4224
+    ],
+    [
+      "dota_courier_eta_ticks.part.0",
+      4020
+    ],
+    [
+      "dota_progression_tick",
+      3944
+    ],
+    [
+      "dota_items_debuff_immune",
+      3850
+    ],
+    [
+      "dota_items_special_max_hp_percent",
+      3780
+    ],
+    [
+      "dota_items_special_vision_percent",
+      3780
+    ],
+    [
+      "dota_items_heal_amount_with_stats",
+      3762
+    ],
+    [
+      "dota_courier_pending_item",
+      3726
+    ],
+    [
+      "raw_health_regen_with_stats",
+      3705
+    ],
+    [
+      "active_ghost",
+      3700
+    ],
+    [
+      "dota_items_special_statuses",
+      3618
+    ],
+    [
+      "dota_nav_nearest",
+      3420
+    ],
+    [
+      "dota_omnislash_phase",
+      3337
+    ],
+    [
+      "dota_nav_segment",
+      3304
+    ],
+    [
+      "skill_body",
+      3283
+    ],
+    [
+      "passage_segment",
+      3272
+    ],
+    [
+      "sync_navigation",
+      3076
+    ],
+    [
+      "dota_roster_tick",
+      2944
+    ],
+    [
+      "target_state",
+      2938
+    ],
+    [
+      "frame",
+      2856
+    ],
+    [
+      "dota_roster_move_percent",
+      2795
+    ],
+    [
+      "dota_roster_move_cap_source",
+      2782
+    ],
+    [
+      "dota_items_statuses",
+      2733
+    ],
+    [
+      "dota_item_world_armor_delta",
+      2616
+    ],
+    [
+      "dota_trees_revision",
+      2616
+    ],
+    [
+      "dota_roster_stat_delta",
+      2580
+    ],
+    [
+      "dota_items_rooted",
+      2568
+    ],
+    [
+      "text_fit",
+      2514
+    ],
+    [
+      "ground_ring",
+      2328
+    ],
+    [
+      "number",
+      2268
+    ],
+    [
+      "game_unit_model",
+      2238
+    ],
+    [
+      "dota_progression_rank",
+      2134
+    ],
+    [
+      "dota_roster_controls_aux",
+      2128
+    ],
+    [
+      "hero_state",
+      2064
+    ],
+    [
+      "bs_pick_ground",
+      1992
+    ],
+    [
+      "dota_turbo_passive_gold_at_tick",
+      1960
+    ],
+    [
+      "dota_bosses_tick",
+      1948
+    ],
+    [
+      "roster_busy",
+      1904
+    ],
+    [
+      "roster_fx_visible",
+      1890
+    ],
+    [
+      "passive_sync",
+      1876
+    ],
+    [
+      "bs_unit_screen_bounds",
+      1863
+    ],
+    [
+      "dota_items_special_slow_resistance",
+      1855
+    ],
+    [
+      "render_item_trees",
+      1812
+    ],
+    [
+      "dota_rune_haste_speed",
+      1727
+    ],
+    [
+      "dota_extra_additional_regen100",
+      1715
+    ],
+    [
+      "resource_bar.constprop.0",
+      1662
+    ],
+    [
+      "dota_extra_allow_move",
+      1624
+    ],
+    [
+      "dota_rules_unit_in_water",
+      1605
+    ],
+    [
+      "dota_items_broken",
+      1573
+    ],
+    [
+      "dota_rune_hp_regen100",
+      1521
+    ],
+    [
+      "dota_rune_mana_regen100",
+      1521
+    ],
+    [
+      "dota_progression_base",
+      1431
+    ],
+    [
+      "dota_high_tower_index",
+      1428
+    ],
+    [
+      "dota_roster_swallowed",
+      1425
+    ],
+    [
+      "dota_roster_slow_resist",
+      1424
+    ],
+    [
+      "dota_healing_ward",
+      1386
+    ],
+    [
+      "dota_rune_status",
+      1350
+    ],
+    [
+      "dota_rune_base_damage_percent",
+      1332
+    ],
+    [
+      "dota_progression_primary",
+      1310
+    ],
+    [
+      "dota_items_purchase_plan",
+      1304
+    ],
+    [
+      "dota_trees_geometry_revision",
+      1299
+    ],
+    [
+      "projectiles",
+      1288
+    ],
+    [
+      "axe_update",
+      1280
+    ],
+    [
+      "scythe_tick",
+      1280
+    ],
+    [
+      "dota_item_world_statuses",
+      1257
+    ],
+    [
+      "dota_roster_attack_range_bonus",
+      1228
+    ],
+    [
+      "dota_items_before_damage",
+      1170
+    ],
+    [
+      "circle",
+      1134
+    ],
+    [
+      "tiny_unsigned",
+      1134
+    ],
+    [
+      "dota_pit_same_region",
+      1092
+    ],
+    [
+      "dota_roster_is_hero",
+      1090
+    ],
+    [
+      "dota_extra_additional_mana_regen100",
+      1087
+    ],
+    [
+      "dota_roster_heal_percent",
+      1014
+    ],
+    [
+      "dota_objectives_tick",
+      968
+    ],
+    [
+      "dota_roster_vision_bonus",
+      940
+    ],
+    [
+      "omnislash_update",
+      936
+    ],
+    [
+      "dance_passive",
+      910
+    ],
+    [
+      "dota_progression_move_percent",
+      891
+    ],
+    [
+      "dota_item_world_smoked",
+      874
+    ],
+    [
+      "move_for_attack",
+      838
+    ],
+    [
+      "dota_attack_style",
+      810
+    ],
+    [
+      "dota_items_teleport_channel",
+      810
+    ],
+    [
+      "dota_roster_max_health_bonus",
+      780
+    ],
+    [
+      "dota_extra_mana_restore_amount",
+      766
+    ],
+    [
+      "extra_fx_visible",
+      756
+    ],
+    [
+      "touch",
+      738
+    ],
+    [
+      "status_bars",
+      708
+    ],
+    [
+      "assist_sync",
+      672
+    ],
+    [
+      "fountain_track_v022",
+      672
+    ],
+    [
+      "dota_progression_can_learn",
+      624
+    ],
+    [
+      "dota_rules_armor100.part.0",
+      621
+    ],
+    [
+      "dota_barracks_commit_tower_deaths",
+      620
+    ],
+    [
+      "sync_hero",
+      600
+    ],
+    [
+      "dota_roster_passive",
+      576
+    ],
+    [
+      "dota_item_world_visible",
+      576
+    ],
+    [
+      "targetable",
+      549
+    ],
+    [
+      "dota_items_regen_percent",
+      546
+    ],
+    [
+      "dota_inventory_item",
+      540
+    ],
+    [
+      "dota_roster_base_damage_percent",
+      536
+    ],
+    [
+      "dota_item_world_update_unit",
+      536
+    ],
+    [
+      "dota_progression_points",
+      525
+    ],
+    [
+      "dota_match_game_ticks",
+      522
+    ],
+    [
+      "dota_skill_effect_radius_source",
+      510
+    ],
+    [
+      "bs_ground_height",
+      468
+    ],
+    [
+      "passive_clear",
+      448
+    ],
+    [
+      "dota_roster_bonus_damage",
+      440
+    ],
+    [
+      "bs_game_unit_height",
+      432
+    ],
+    [
+      "dota_unit_invulnerable",
+      430
+    ],
+    [
+      "dota_neutral_tick",
+      424
+    ],
+    [
+      "damage_snapshot_ex",
+      419
+    ],
+    [
+      "dota_progression_skill_required",
+      408
+    ],
+    [
+      "dota_rules_attributes",
+      405
+    ],
+    [
+      "dota_nav_cell_center",
+      396
+    ],
+    [
+      "dota_extra_regen_flat100",
+      351
+    ],
+    [
+      "cast_for_impl",
+      350
+    ],
+    [
+      "dota_item_world_max_health_percent",
+      324
+    ],
+    [
+      "attribute",
+      324
+    ],
+    [
+      "dota_extra_attack_speed_delta",
+      324
+    ],
+    [
+      "skill_fx",
+      306
+    ],
+    [
+      "item_attack_traits",
+      300
+    ],
+    [
+      "button",
+      279
+    ],
+    [
+      "ui_art",
+      267
+    ],
+    [
+      "dota_rune_kind",
+      264
+    ],
+    [
+      "dota_progression_talent_points",
+      237
+    ],
+    [
+      "dota_roster_armor",
+      208
+    ],
+    [
+      "dota_roster_allow_move",
+      208
+    ],
+    [
+      "hotkey_badge",
+      198
+    ],
+    [
+      "tiny_number",
+      195
+    ],
+    [
+      "dota_items_capture_incoming",
+      193
+    ],
+    [
+      "dota_extra_invulnerable",
+      190
+    ],
+    [
+      "dota_roshan_mask_pixels",
+      180
+    ],
+    [
+      "raw_read",
+      174
+    ],
+    [
+      "dota_turbo_gold_reward",
+      160
+    ],
+    [
+      "dota_progression_skill_max",
+      156
+    ],
+    [
+      "dota_render",
+      147
+    ],
+    [
+      "plan_need",
+      134
+    ],
+    [
+      "dota_items_available_mana",
+      132
+    ],
+    [
+      "tree_visual_apply",
+      123
+    ],
+    [
+      "item_slot",
+      121
+    ],
+    [
+      "dota_skill_is_passive",
+      120
+    ],
+    [
+      "load_art",
+      117
+    ],
+    [
+      "dota_sight_team_position_visible",
+      116
+    ],
+    [
+      "dota_courier_buy",
+      114
+    ],
+    [
+      "baked_io_read_at",
+      108
+    ],
+    [
+      "enemy",
+      103
+    ],
+    [
+      "tree_visual_revision",
+      99
+    ],
+    [
+      "dota_rules_effective_health_regen100",
+      87
+    ],
+    [
+      "dota_items_special_before_damage",
+      85
+    ],
+    [
+      "dota_match_ticks",
+      84
+    ],
+    [
+      "cache_payload_valid",
+      84
+    ],
+    [
+      "dota_rules_item_raw_regen100",
+      81
+    ],
+    [
+      "dota_rules_mana_regen100",
+      81
+    ],
+    [
+      "dota_extra_is_hero",
+      80
+    ],
+    [
+      "dota_hero_has_shard",
+      78
+    ],
+    [
+      "dota_items_total_attribute",
+      76
+    ],
+    [
+      "dota_skill_cast_range_source",
+      75
+    ],
+    [
+      "dota_roster_statuses",
+      75
+    ],
+    [
+      "dota_move_speed_source",
+      72
+    ],
+    [
+      "attack_speed_x100",
+      69
+    ],
+    [
+      "dota_roster_attack_speed_delta",
+      69
+    ],
+    [
+      "courier_panel",
+      69
+    ],
+    [
+      "dota_nav_set_all_structures",
+      68
+    ],
+    [
+      "prepare",
+      66
+    ],
+    [
+      "assist_record",
+      60
+    ],
+    [
+      "dota_items_has_upgrade",
+      60
+    ],
+    [
+      "dota_neutral_equipped",
+      60
+    ],
+    [
+      "dota_effective_armor",
+      57
+    ],
+    [
+      "dota_items_special_damage_percent",
+      52
+    ],
+    [
+      "dota_objective_player",
+      52
+    ],
+    [
+      "dota_items_invulnerable",
+      50
+    ],
+    [
+      "dota_rules_item_damage",
+      48
+    ],
+    [
+      "dota_nav_cell_at",
+      48
+    ],
+    [
+      "dota_hero_assists",
+      48
+    ],
+    [
+      "dota_progression_on_damage",
+      45
+    ],
+    [
+      "dota_match_seconds",
+      45
+    ],
+    [
+      "dota_attack_speed_percent",
+      42
+    ],
+    [
+      "dota_rune_on_damage",
+      39
+    ],
+    [
+      "dota_rune_before_damage",
+      38
+    ],
+    [
+      "dota_item_world_magic_resist",
+      36
+    ],
+    [
+      "dota_bosses_aegis_ticks",
+      36
+    ],
+    [
+      "item_assets_text",
+      36
+    ],
+    [
+      "dota_roster_before_damage",
+      34
+    ],
+    [
+      "stock_count",
+      34
+    ],
+    [
+      "dota_items_silenced",
+      34
+    ],
+    [
+      "dota_roster_after_damage",
+      33
+    ],
+    [
+      "dota_items_special_aoe_percent",
+      33
+    ],
+    [
+      "dota_nav_set_item_trees",
+      32
+    ],
+    [
+      "dota_rune_player",
+      32
+    ],
+    [
+      "dota_trees_tick",
+      32
+    ],
+    [
+      "dota_turbo_level_xp",
+      30
+    ],
+    [
+      "item_assets_ability_art",
+      30
+    ],
+    [
+      "dota_rules_armor100",
+      28
+    ],
+    [
+      "fields_tick",
+      28
+    ],
+    [
+      "dota_bosses_on_damage",
+      26
+    ],
+    [
+      "dota_items_heal_amount",
+      24
+    ],
+    [
+      "dota_boss_species",
+      21
+    ],
+    [
+      "dota_extra_magic_resist_delta",
+      18
+    ],
+    [
+      "dota_nav_stats",
+      18
+    ],
+    [
+      "dota_extra_on_damage",
+      17
+    ],
+    [
+      "dota_items_recipes_count",
+      16
+    ],
+    [
+      "dota_items_range_bonus",
+      16
+    ],
+    [
+      "dota_nav_set_static_trees",
+      12
+    ],
+    [
+      "dota_bosses_incoming_damage_percent",
+      12
+    ],
+    [
+      "dota_turbo_tower_damage",
+      9
+    ],
+    [
+      "bs_depth_buffer",
+      9
+    ],
+    [
+      "baked_io_size",
+      9
+    ],
+    [
+      "dota_progression_before_damage",
+      8
+    ],
+    [
+      "dota_rules_find_enemy",
+      8
+    ],
+    [
+      "modeled-service",
+      8
+    ],
+    [
+      "dota_item_world_incoming_from",
+      6
+    ],
+    [
+      "dota_next_level_xp",
+      6
+    ]
+  ],
+  "source_group_slots": [
+    [
+      "baked:draw_sprite_opacity",
+      3231010
+    ],
+    [
+      "cast",
+      2825858
+    ],
+    [
+      "source_add",
+      1969190
+    ],
+    [
+      "fog_rgb565_inline",
+      1490106
+    ],
+    [
+      "baked:draw_hero_shadow",
+      1240399
+    ],
+    [
+      "baked:copy_map_row",
+      1072602
+    ],
+    [
+      "mix",
+      1059845
+    ],
+    [
+      "baked:draw_fog",
+      965302
+    ],
+    [
+      "sprite-compression-inline",
+      817971
+    ],
+    [
+      "dota_sight_fog_state",
+      749882
+    ],
+    [
+      "team_point",
+      634076
+    ],
+    [
+      "bs_ground_height.part.0",
+      577098
+    ],
+    [
+      "box",
+      476964
+    ],
+    [
+      "text",
+      447542
+    ],
+    [
+      "battlefield",
+      416369
+    ],
+    [
+      "dota_tick",
+      338218
+    ],
+    [
+      "refresh",
+      336020
+    ],
+    [
+      "enemy_source",
+      325183
+    ],
+    [
+      "open_cell",
+      304953
+    ],
+    [
+      "dota_items_equipped_item",
+      292599
+    ],
+    [
+      "source_point",
+      261630
+    ],
+    [
+      "dota_items_stats",
+      249871
+    ],
+    [
+      "neighbor",
+      201152
+    ],
+    [
+      "ability_icon.part.0",
+      196284
+    ],
+    [
+      "draw_hero_shadow",
+      191127
+    ],
+    [
+      "hud",
+      188256
+    ],
+    [
+      "nearest_current",
+      158623
+    ],
+    [
+      "baked:fog_map_depth",
+      146130
+    ],
+    [
+      "dota_nav_find_path",
+      145912
+    ],
+    [
+      "estatus.part.0",
+      137424
+    ],
+    [
+      "occurrences",
+      126162
+    ],
+    [
+      "refresh_item_trees",
+      103389
+    ],
+    [
+      "dota_roshan_region_at.part.0",
+      100483
+    ],
+    [
+      "bs_render_game",
+      96472
+    ],
+    [
+      "dota_sight_is_current",
+      92391
+    ],
+    [
+      "draw_fog",
+      92337
+    ],
+    [
+      "move_step_direction",
+      91434
+    ],
+    [
+      "dota_items_special_parameter",
+      90653
+    ],
+    [
+      "dota_progression_stat_bonus",
+      84971
+    ],
+    [
+      "segment_current",
+      81549
+    ],
+    [
+      "move_commit",
+      77512
+    ],
+    [
+      "compose_defense",
+      74244
+    ],
+    [
+      "dota_items_status_percent",
+      73461
+    ],
+    [
+      "baked:fog_light_row",
+      73164
+    ],
+    [
+      "exact_group",
+      70120
+    ],
+    [
+      "dota_roshan_region_at",
+      66534
+    ],
+    [
+      "draw_sprite_opacity",
+      62702
+    ],
+    [
+      "dota_item_world_apply_stats",
+      61386
+    ],
+    [
+      "get_tile",
+      58830
+    ],
+    [
+      "baked:draw_map",
+      57501
+    ],
+    [
+      "has",
+      50310
+    ],
+    [
+      "dota_water_world",
+      48896
+    ],
+    [
+      "dota_unit_hull_source",
+      47748
+    ],
+    [
+      "get_sprite",
+      46315
+    ],
+    [
+      "baked:update_history",
+      42693
+    ],
+    [
+      "blend",
+      42120
+    ],
+    [
+      "dota_status_effects",
+      41769
+    ],
+    [
+      "art.part.0",
+      38619
+    ],
+    [
+      "move_speed_q16",
+      37708
+    ],
+    [
+      "art_small.part.0",
+      37020
+    ],
+    [
+      "statuses",
+      35294
+    ],
+    [
+      "dota_items_read",
+      32232
+    ],
+    [
+      "dota_unit_visible",
+      31153
+    ],
+    [
+      "dota_items_timed_regen100",
+      30810
+    ],
+    [
+      "dota_items_timed_mana_regen100",
+      30810
+    ],
+    [
+      "dota_sight_team_visible",
+      29527
+    ],
+    [
+      "tiny_digit",
+      28827
+    ],
+    [
+      "dota_items_special_stats",
+      27903
+    ],
+    [
+      "cell_has_exit_raw",
+      25790
+    ],
+    [
+      "earlier",
+      25376
+    ],
+    [
+      "sync.part.0",
+      25258
+    ],
+    [
+      "dota_items_tick",
+      25144
+    ],
+    [
+      "dota_progression_value100",
+      24111
+    ],
+    [
+      "dota_item_world_tick",
+      23856
+    ],
+    [
+      "dota_extra_tick",
+      23852
+    ],
+    [
+      "dota_barracks_kind",
+      22608
+    ],
+    [
+      "dota_item_world_rooted",
+      22042
+    ],
+    [
+      "tiny_char.part.0",
+      21465
+    ],
+    [
+      "bs_render_effects",
+      21149
+    ],
+    [
+      "dota_extra_move_flat",
+      21002
+    ],
+    [
+      "bs_project",
+      20544
+    ],
+    [
+      "travel_ticks",
+      19620
+    ],
+    [
+      "dota_rules_unit_vision_source.part.0",
+      17660
+    ],
+    [
+      "locate.constprop.0",
+      17495
+    ],
+    [
+      "dota_extra_heal_amount",
+      17355
+    ],
+    [
+      "__divdi3",
+      17138
+    ],
+    [
+      "dota_items_parameter",
+      16214
+    ],
+    [
+      "walkable_current",
+      15324
+    ],
+    [
+      "frame_info",
+      15190
+    ],
+    [
+      "dota_items_wind_move_source",
+      14265
+    ],
+    [
+      "scaled",
+      13785
+    ],
+    [
+      "recalc_with_stats",
+      11412
+    ],
+    [
+      "dota_courier_view",
+      11400
+    ],
+    [
+      "npc_aura",
+      11124
+    ],
+    [
+      "move_towards",
+      10843
+    ],
+    [
+      "dota_items_special_tick",
+      10784
+    ],
+    [
+      "lane_progress",
+      10434
+    ],
+    [
+      "dota_roster_swallowed_by",
+      9893
+    ],
+    [
+      "mana_regen_with_stats",
+      9702
+    ],
+    [
+      "line",
+      9546
+    ],
+    [
+      "dota_couriers_tick",
+      8848
+    ],
+    [
+      "bs_unproject_at_z",
+      8640
+    ],
+    [
+      "dota_extra_move_percent",
+      8413
+    ],
+    [
+      "follow_lane",
+      8384
+    ],
+    [
+      "npc_effect_valid",
+      8352
+    ],
+    [
+      "dota_courier_pending_count",
+      7995
+    ],
+    [
+      "dota_progression_stat_delta100",
+      7820
+    ],
+    [
+      "cell_has_exit",
+      7795
+    ],
+    [
+      "dota_roster_stun",
+      7722
+    ],
+    [
+      "dota_roster_moving",
+      7696
+    ],
+    [
+      "dota_items_free_path",
+      7122
+    ],
+    [
+      "dota_sight_position_visible",
+      7104
+    ],
+    [
+      "find_group",
+      7080
+    ],
+    [
+      "hero_stat_delta100",
+      6960
+    ],
+    [
+      "dota_items_invisible",
+      6802
+    ],
+    [
+      "dance_rank",
+      6734
+    ],
+    [
+      "unit_model",
+      6681
+    ],
+    [
+      "dota_items_slow_resistance",
+      6677
+    ],
+    [
+      "dota_items_attack_range_for",
+      6352
+    ],
+    [
+      "dota_extra_stat_delta",
+      6328
+    ],
+    [
+      "frame_at",
+      6266
+    ],
+    [
+      "dota_barracks_alive_mask",
+      6162
+    ],
+    [
+      "wrap_sync.part.0",
+      6068
+    ],
+    [
+      "dota_extra_target_hidden",
+      5907
+    ],
+    [
+      "baked-header:roster_baked.h",
+      5781
+    ],
+    [
+      "dota_items_health_regen_amp_percent",
+      5753
+    ],
+    [
+      "dota_items_mana_regen_percent",
+      5753
+    ],
+    [
+      "dota_get_skill_event",
+      5742
+    ],
+    [
+      "utf8",
+      5553
+    ],
+    [
+      "courier_frame",
+      5550
+    ],
+    [
+      "dota_rune_invisible",
+      5052
+    ],
+    [
+      "dota_runes_tick",
+      5032
+    ],
+    [
+      "dota_progression_base_attributes100",
+      4960
+    ],
+    [
+      "render_skill_effects",
+      4767
+    ],
+    [
+      "dota_items_special_move_bonus",
+      4701
+    ],
+    [
+      "dota_match_is_night",
+      4545
+    ],
+    [
+      "dota_items_special_max_mana_percent",
+      4248
+    ],
+    [
+      "dota_roster_invulnerable",
+      4225
+    ],
+    [
+      "dota_get_attack_event",
+      4224
+    ],
+    [
+      "dota_courier_eta_ticks.part.0",
+      4020
+    ],
+    [
+      "dota_progression_tick",
+      3944
+    ],
+    [
+      "dota_items_debuff_immune",
+      3850
+    ],
+    [
+      "dota_items_special_max_hp_percent",
+      3780
+    ],
+    [
+      "dota_items_special_vision_percent",
+      3780
+    ],
+    [
+      "dota_items_heal_amount_with_stats",
+      3762
+    ],
+    [
+      "dota_courier_pending_item",
+      3726
+    ],
+    [
+      "raw_health_regen_with_stats",
+      3705
+    ],
+    [
+      "active_ghost",
+      3700
+    ],
+    [
+      "dota_items_special_statuses",
+      3618
+    ],
+    [
+      "dota_nav_nearest",
+      3420
+    ],
+    [
+      "dota_omnislash_phase",
+      3337
+    ],
+    [
+      "dota_nav_segment",
+      3304
+    ],
+    [
+      "skill_body",
+      3283
+    ],
+    [
+      "passage_segment",
+      3272
+    ],
+    [
+      "sync_navigation",
+      3076
+    ],
+    [
+      "dota_roster_tick",
+      2944
+    ],
+    [
+      "target_state",
+      2938
+    ],
+    [
+      "frame",
+      2856
+    ],
+    [
+      "dota_roster_move_percent",
+      2795
+    ],
+    [
+      "dota_roster_move_cap_source",
+      2782
+    ],
+    [
+      "dota_items_statuses",
+      2733
+    ],
+    [
+      "dota_item_world_armor_delta",
+      2616
+    ],
+    [
+      "dota_trees_revision",
+      2616
+    ],
+    [
+      "dota_roster_stat_delta",
+      2580
+    ],
+    [
+      "dota_items_rooted",
+      2568
+    ],
+    [
+      "text_fit",
+      2514
+    ],
+    [
+      "ground_ring",
+      2328
+    ],
+    [
+      "number",
+      2268
+    ],
+    [
+      "game_unit_model",
+      2238
+    ],
+    [
+      "dota_progression_rank",
+      2134
+    ],
+    [
+      "dota_roster_controls_aux",
+      2128
+    ],
+    [
+      "hero_state",
+      2064
+    ],
+    [
+      "bs_pick_ground",
+      1992
+    ],
+    [
+      "dota_turbo_passive_gold_at_tick",
+      1960
+    ],
+    [
+      "dota_bosses_tick",
+      1948
+    ],
+    [
+      "roster_busy",
+      1904
+    ],
+    [
+      "passive_sync",
+      1876
+    ],
+    [
+      "bs_unit_screen_bounds",
+      1863
+    ],
+    [
+      "dota_items_special_slow_resistance",
+      1855
+    ],
+    [
+      "render_item_trees",
+      1812
+    ],
+    [
+      "dota_rune_haste_speed",
+      1727
+    ],
+    [
+      "dota_extra_additional_regen100",
+      1715
+    ],
+    [
+      "resource_bar.constprop.0",
+      1662
+    ],
+    [
+      "dota_extra_allow_move",
+      1624
+    ],
+    [
+      "dota_rules_unit_in_water",
+      1605
+    ],
+    [
+      "dota_items_broken",
+      1573
+    ],
+    [
+      "dota_rune_hp_regen100",
+      1521
+    ],
+    [
+      "dota_rune_mana_regen100",
+      1521
+    ],
+    [
+      "dota_progression_base",
+      1431
+    ],
+    [
+      "dota_high_tower_index",
+      1428
+    ],
+    [
+      "dota_roster_swallowed",
+      1425
+    ],
+    [
+      "dota_roster_slow_resist",
+      1424
+    ],
+    [
+      "dota_healing_ward",
+      1386
+    ],
+    [
+      "dota_rune_status",
+      1350
+    ],
+    [
+      "dota_rune_base_damage_percent",
+      1332
+    ],
+    [
+      "dota_progression_primary",
+      1310
+    ],
+    [
+      "dota_items_purchase_plan",
+      1304
+    ],
+    [
+      "dota_trees_geometry_revision",
+      1299
+    ],
+    [
+      "roster_fx_visible",
+      1296
+    ],
+    [
+      "projectiles",
+      1288
+    ],
+    [
+      "axe_update",
+      1280
+    ],
+    [
+      "scythe_tick",
+      1280
+    ],
+    [
+      "dota_item_world_statuses",
+      1257
+    ],
+    [
+      "dota_roster_attack_range_bonus",
+      1228
+    ],
+    [
+      "baked-header:fountain_baked.h",
+      1185
+    ],
+    [
+      "dota_items_before_damage",
+      1170
+    ],
+    [
+      "baked:fog_world_point",
+      1144
+    ],
+    [
+      "circle",
+      1134
+    ],
+    [
+      "tiny_unsigned",
+      1134
+    ],
+    [
+      "dota_pit_same_region",
+      1092
+    ],
+    [
+      "dota_roster_is_hero",
+      1090
+    ],
+    [
+      "dota_extra_additional_mana_regen100",
+      1087
+    ],
+    [
+      "dota_roster_heal_percent",
+      1014
+    ],
+    [
+      "dota_objectives_tick",
+      968
+    ],
+    [
+      "dota_roster_vision_bonus",
+      940
+    ],
+    [
+      "omnislash_update",
+      936
+    ],
+    [
+      "dance_passive",
+      910
+    ],
+    [
+      "dota_progression_move_percent",
+      891
+    ],
+    [
+      "dota_item_world_smoked",
+      874
+    ],
+    [
+      "move_for_attack",
+      838
+    ],
+    [
+      "dota_attack_style",
+      810
+    ],
+    [
+      "dota_items_teleport_channel",
+      810
+    ],
+    [
+      "dota_roster_max_health_bonus",
+      780
+    ],
+    [
+      "dota_extra_mana_restore_amount",
+      766
+    ],
+    [
+      "extra_fx_visible",
+      756
+    ],
+    [
+      "touch",
+      738
+    ],
+    [
+      "status_bars",
+      708
+    ],
+    [
+      "assist_sync",
+      672
+    ],
+    [
+      "dota_progression_can_learn",
+      624
+    ],
+    [
+      "dota_rules_armor100.part.0",
+      621
+    ],
+    [
+      "dota_barracks_commit_tower_deaths",
+      620
+    ],
+    [
+      "sync_hero",
+      600
+    ],
+    [
+      "dota_roster_passive",
+      576
+    ],
+    [
+      "dota_item_world_visible",
+      576
+    ],
+    [
+      "targetable",
+      549
+    ],
+    [
+      "dota_items_regen_percent",
+      546
+    ],
+    [
+      "baked-header:barracks_baked.h",
+      546
+    ],
+    [
+      "dota_inventory_item",
+      540
+    ],
+    [
+      "dota_roster_base_damage_percent",
+      536
+    ],
+    [
+      "dota_item_world_update_unit",
+      536
+    ],
+    [
+      "dota_progression_points",
+      525
+    ],
+    [
+      "dota_match_game_ticks",
+      522
+    ],
+    [
+      "dota_skill_effect_radius_source",
+      510
+    ],
+    [
+      "bs_ground_height",
+      468
+    ],
+    [
+      "passive_clear",
+      448
+    ],
+    [
+      "dota_roster_bonus_damage",
+      440
+    ],
+    [
+      "bs_game_unit_height",
+      432
+    ],
+    [
+      "dota_unit_invulnerable",
+      430
+    ],
+    [
+      "dota_neutral_tick",
+      424
+    ],
+    [
+      "damage_snapshot_ex",
+      419
+    ],
+    [
+      "dota_progression_skill_required",
+      408
+    ],
+    [
+      "dota_rules_attributes",
+      405
+    ],
+    [
+      "dota_nav_cell_center",
+      396
+    ],
+    [
+      "dota_extra_regen_flat100",
+      351
+    ],
+    [
+      "cast_for_impl",
+      350
+    ],
+    [
+      "dota_item_world_max_health_percent",
+      324
+    ],
+    [
+      "attribute",
+      324
+    ],
+    [
+      "dota_extra_attack_speed_delta",
+      324
+    ],
+    [
+      "skill_fx",
+      306
+    ],
+    [
+      "item_attack_traits",
+      300
+    ],
+    [
+      "button",
+      279
+    ],
+    [
+      "ui_art",
+      267
+    ],
+    [
+      "dota_rune_kind",
+      264
+    ],
+    [
+      "dota_progression_talent_points",
+      237
+    ],
+    [
+      "fountain_track_v022",
+      210
+    ],
+    [
+      "dota_roster_armor",
+      208
+    ],
+    [
+      "dota_roster_allow_move",
+      208
+    ],
+    [
+      "hotkey_badge",
+      198
+    ],
+    [
+      "tiny_number",
+      195
+    ],
+    [
+      "dota_items_capture_incoming",
+      193
+    ],
+    [
+      "dota_extra_invulnerable",
+      190
+    ],
+    [
+      "dota_roshan_mask_pixels",
+      180
+    ],
+    [
+      "raw_read",
+      174
+    ],
+    [
+      "dota_turbo_gold_reward",
+      160
+    ],
+    [
+      "dota_progression_skill_max",
+      156
+    ],
+    [
+      "dota_render",
+      147
+    ],
+    [
+      "plan_need",
+      134
+    ],
+    [
+      "dota_items_available_mana",
+      132
+    ],
+    [
+      "tree_visual_apply",
+      123
+    ],
+    [
+      "item_slot",
+      121
+    ],
+    [
+      "dota_skill_is_passive",
+      120
+    ],
+    [
+      "load_art",
+      117
+    ],
+    [
+      "dota_sight_team_position_visible",
+      116
+    ],
+    [
+      "dota_courier_buy",
+      114
+    ],
+    [
+      "baked_io_read_at",
+      108
+    ],
+    [
+      "enemy",
+      103
+    ],
+    [
+      "tree_visual_revision",
+      99
+    ],
+    [
+      "dota_rules_effective_health_regen100",
+      87
+    ],
+    [
+      "dota_items_special_before_damage",
+      85
+    ],
+    [
+      "dota_match_ticks",
+      84
+    ],
+    [
+      "dota_rules_item_raw_regen100",
+      81
+    ],
+    [
+      "dota_rules_mana_regen100",
+      81
+    ],
+    [
+      "dota_extra_is_hero",
+      80
+    ],
+    [
+      "dota_hero_has_shard",
+      78
+    ],
+    [
+      "dota_items_total_attribute",
+      76
+    ],
+    [
+      "dota_skill_cast_range_source",
+      75
+    ],
+    [
+      "dota_roster_statuses",
+      75
+    ],
+    [
+      "dota_move_speed_source",
+      72
+    ],
+    [
+      "attack_speed_x100",
+      69
+    ],
+    [
+      "dota_roster_attack_speed_delta",
+      69
+    ],
+    [
+      "courier_panel",
+      69
+    ],
+    [
+      "dota_nav_set_all_structures",
+      68
+    ],
+    [
+      "prepare",
+      66
+    ],
+    [
+      "assist_record",
+      60
+    ],
+    [
+      "dota_items_has_upgrade",
+      60
+    ],
+    [
+      "dota_neutral_equipped",
+      60
+    ],
+    [
+      "dota_effective_armor",
+      57
+    ],
+    [
+      "dota_items_special_damage_percent",
+      52
+    ],
+    [
+      "dota_objective_player",
+      52
+    ],
+    [
+      "dota_items_invulnerable",
+      50
+    ],
+    [
+      "dota_rules_item_damage",
+      48
+    ],
+    [
+      "dota_nav_cell_at",
+      48
+    ],
+    [
+      "dota_hero_assists",
+      48
+    ],
+    [
+      "dota_progression_on_damage",
+      45
+    ],
+    [
+      "dota_match_seconds",
+      45
+    ],
+    [
+      "dota_attack_speed_percent",
+      42
+    ],
+    [
+      "dota_rune_on_damage",
+      39
+    ],
+    [
+      "dota_rune_before_damage",
+      38
+    ],
+    [
+      "dota_item_world_magic_resist",
+      36
+    ],
+    [
+      "dota_bosses_aegis_ticks",
+      36
+    ],
+    [
+      "item_assets_text",
+      36
+    ],
+    [
+      "dota_roster_before_damage",
+      34
+    ],
+    [
+      "stock_count",
+      34
+    ],
+    [
+      "dota_items_silenced",
+      34
+    ],
+    [
+      "dota_roster_after_damage",
+      33
+    ],
+    [
+      "dota_items_special_aoe_percent",
+      33
+    ],
+    [
+      "dota_nav_set_item_trees",
+      32
+    ],
+    [
+      "dota_rune_player",
+      32
+    ],
+    [
+      "dota_trees_tick",
+      32
+    ],
+    [
+      "dota_turbo_level_xp",
+      30
+    ],
+    [
+      "item_assets_ability_art",
+      30
+    ],
+    [
+      "dota_rules_armor100",
+      28
+    ],
+    [
+      "fields_tick",
+      28
+    ],
+    [
+      "dota_bosses_on_damage",
+      26
+    ],
+    [
+      "dota_items_heal_amount",
+      24
+    ],
+    [
+      "dota_boss_species",
+      21
+    ],
+    [
+      "dota_extra_magic_resist_delta",
+      18
+    ],
+    [
+      "dota_nav_stats",
+      18
+    ],
+    [
+      "dota_extra_on_damage",
+      17
+    ],
+    [
+      "dota_items_recipes_count",
+      16
+    ],
+    [
+      "dota_items_range_bonus",
+      16
+    ],
+    [
+      "dota_nav_set_static_trees",
+      12
+    ],
+    [
+      "dota_bosses_incoming_damage_percent",
+      12
+    ],
+    [
+      "dota_turbo_tower_damage",
+      9
+    ],
+    [
+      "bs_depth_buffer",
+      9
+    ],
+    [
+      "baked_io_size",
+      9
+    ],
+    [
+      "dota_progression_before_damage",
+      8
+    ],
+    [
+      "dota_rules_find_enemy",
+      8
+    ],
+    [
+      "modeled-service",
+      8
+    ],
+    [
+      "dota_item_world_incoming_from",
+      6
+    ],
+    [
+      "dota_next_level_xp",
+      6
+    ]
+  ],
+  "function_entries": {
+    "dota_tick": 4,
+    "dota_barracks_commit_tower_deaths": 4,
+    "dota_high_tower_index": 102,
+    "sync_navigation": 4,
+    "dota_nav_set_item_trees": 4,
+    "dota_nav_set_static_trees": 4,
+    "dota_barracks_alive_mask": 13,
+    "dota_nav_set_all_structures": 4,
+    "dota_progression_tick": 4,
+    "touch": 41,
+    "axe_update": 4,
+    "dota_progression_value100": 76,
+    "dota_items_broken": 143,
+    "estatus.part.0": 2863,
+    "dota_rules_armor100": 4,
+    "dota_rules_armor100.part.0": 8,
+    "dota_item_world_armor_delta": 8,
+    "npc_aura": 1236,
+    "dota_roster_armor": 8,
+    "__divdi3": 232,
+    "dota_rules_item_damage": 1,
+    "damage_snapshot_ex": 1,
+    "targetable": 9,
+    "dota_unit_invulnerable": 10,
+    "dota_extra_invulnerable": 10,
+    "dota_roster_invulnerable": 306,
+    "dota_roster_swallowed_by": 1019,
+    "dota_roster_swallowed": 75,
+    "hero_state": 88,
+    "dota_items_invulnerable": 10,
+    "dota_barracks_kind": 1198,
+    "dota_turbo_tower_damage": 1,
+    "dota_items_capture_incoming": 1,
+    "sync.part.0": 173,
+    "dota_bosses_incoming_damage_percent": 1,
+    "dota_item_world_magic_resist": 1,
+    "dota_extra_magic_resist_delta": 1,
+    "dota_item_world_incoming_from": 1,
+    "dota_items_before_damage": 1,
+    "dota_items_special_damage_percent": 1,
+    "dota_items_parameter": 305,
+    "dota_items_stats": 203,
+    "dota_progression_stat_bonus": 3144,
+    "has": 645,
+    "dota_progression_primary": 131,
+    "dota_items_special_parameter": 269,
+    "scaled": 304,
+    "dota_items_status_percent": 4872,
+    "dota_items_special_stats": 131,
+    "occurrences": 1467,
+    "dota_items_equipped_item": 10389,
+    "dota_item_world_apply_stats": 203,
+    "compose_defense": 393,
+    "dota_items_read": 357,
+    "item_slot": 1,
+    "dota_items_special_before_damage": 1,
+    "wrap_sync.part.0": 41,
+    "dota_roster_before_damage": 1,
+    "dota_progression_before_damage": 1,
+    "dota_rune_before_damage": 1,
+    "assist_record": 1,
+    "assist_sync": 42,
+    "dota_bosses_on_damage": 1,
+    "enemy": 9,
+    "dota_pit_same_region": 52,
+    "dota_roshan_region_at.part.0": 11193,
+    "dota_extra_on_damage": 1,
+    "dota_rune_on_damage": 1,
+    "dota_progression_on_damage": 1,
+    "dota_roster_after_damage": 1,
+    "dota_progression_rank": 97,
+    "passive_sync": 40,
+    "passive_clear": 16,
+    "dota_match_game_ticks": 58,
+    "dota_turbo_passive_gold_at_tick": 40,
+    "dota_roster_passive": 96,
+    "dota_match_ticks": 12,
+    "dota_match_is_night": 303,
+    "statuses": 296,
+    "dota_progression_base": 159,
+    "npc_effect_valid": 928,
+    "recalc_with_stats": 36,
+    "dota_progression_base_attributes100": 124,
+    "hero_stat_delta100": 120,
+    "dota_extra_stat_delta": 124,
+    "dota_roster_stat_delta": 124,
+    "dota_progression_stat_delta100": 124,
+    "dota_roster_max_health_bonus": 36,
+    "dota_rune_base_damage_percent": 36,
+    "dota_roster_is_hero": 109,
+    "dota_roster_attack_range_bonus": 36,
+    "dota_items_special_max_hp_percent": 36,
+    "dota_item_world_max_health_percent": 36,
+    "dota_items_special_max_mana_percent": 36,
+    "raw_health_regen_with_stats": 39,
+    "dota_items_timed_regen100": 39,
+    "dota_extra_regen_flat100": 39,
+    "dota_extra_move_flat": 146,
+    "dota_extra_additional_regen100": 39,
+    "dance_rank": 74,
+    "dance_passive": 74,
+    "dota_rune_hp_regen100": 39,
+    "dota_items_health_regen_amp_percent": 39,
+    "dota_items_regen_percent": 39,
+    "dota_items_heal_amount_with_stats": 39,
+    "dota_extra_heal_amount": 39,
+    "active_ghost": 214,
+    "dota_roster_heal_percent": 39,
+    "mana_regen_with_stats": 39,
+    "dota_items_timed_mana_regen100": 39,
+    "dota_extra_additional_mana_regen100": 39,
+    "dota_rune_mana_regen100": 39,
+    "dota_items_mana_regen_percent": 39,
+    "dota_extra_mana_restore_amount": 39,
+    "dota_roster_stun": 297,
+    "dota_roster_moving": 296,
+    "dota_omnislash_phase": 285,
+    "omnislash_update": 36,
+    "dota_roster_controls_aux": 296,
+    "dota_items_wind_move_source": 317,
+    "dota_objective_player": 4,
+    "dota_rune_player": 4,
+    "roster_busy": 212,
+    "enemy_source": 116,
+    "dota_sight_is_current": 7107,
+    "dota_unit_visible": 713,
+    "dota_sight_team_visible": 713,
+    "refresh": 4,
+    "dota_trees_revision": 436,
+    "dota_trees_geometry_revision": 433,
+    "dota_rules_unit_vision_source.part.0": 292,
+    "dota_items_special_vision_percent": 36,
+    "dota_roster_vision_bonus": 36,
+    "source_add": 296,
+    "dota_roshan_region_at": 11089,
+    "cast": 1449,
+    "team_point": 600,
+    "source_point": 17970,
+    "dota_roster_base_damage_percent": 16,
+    "dota_roster_bonus_damage": 16,
+    "move_towards": 102,
+    "dota_items_free_path": 210,
+    "dota_nav_nearest": 190,
+    "refresh_item_trees": 429,
+    "nearest_current": 193,
+    "walkable_current": 768,
+    "open_cell": 12664,
+    "cell_has_exit": 293,
+    "cell_has_exit_raw": 71,
+    "neighbor": 3944,
+    "dota_nav_segment": 236,
+    "segment_current": 286,
+    "passage_segment": 286,
+    "dota_nav_cell_center": 33,
+    "move_step_direction": 104,
+    "move_speed_q16": 107,
+    "dota_items_slow_resistance": 107,
+    "dota_items_special_slow_resistance": 35,
+    "dota_roster_slow_resist": 107,
+    "dota_extra_move_percent": 107,
+    "dota_items_debuff_immune": 350,
+    "dota_roster_move_percent": 107,
+    "target_state": 113,
+    "dota_items_special_move_bonus": 107,
+    "dota_rules_unit_in_water": 107,
+    "dota_water_world": 107,
+    "dota_items_rooted": 107,
+    "dota_item_world_rooted": 107,
+    "dota_progression_move_percent": 35,
+    "dota_roster_move_cap_source": 107,
+    "dota_rune_haste_speed": 107,
+    "move_commit": 104,
+    "dota_extra_allow_move": 104,
+    "dota_roster_allow_move": 104,
+    "dota_items_total_attribute": 4,
+    "attribute": 4,
+    "follow_lane": 88,
+    "dota_courier_pending_count": 65,
+    "dota_courier_buy": 2,
+    "dota_items_purchase_plan": 2,
+    "plan_need": 2,
+    "dota_items_recipes_count": 2,
+    "stock_count": 2,
+    "dota_extra_target_hidden": 376,
+    "dota_item_world_smoked": 19,
+    "dota_items_invisible": 358,
+    "dota_rune_invisible": 358,
+    "cast_for_impl": 3,
+    "dota_items_silenced": 2,
+    "dota_extra_is_hero": 8,
+    "dota_skill_cast_range_source": 1,
+    "dota_items_range_bonus": 1,
+    "dota_items_attack_range_for": 8,
+    "dota_unit_hull_source": 2636,
+    "move_for_attack": 4,
+    "lane_progress": 144,
+    "dota_nav_stats": 6,
+    "dota_nav_find_path": 3,
+    "locate.constprop.0": 377,
+    "earlier": 1084,
+    "dota_nav_cell_at": 6,
+    "dota_item_world_update_unit": 8,
+    "dota_extra_tick": 4,
+    "scythe_tick": 80,
+    "dota_sight_team_position_visible": 4,
+    "dota_roster_tick": 4,
+    "sync_hero": 40,
+    "fields_tick": 4,
+    "dota_items_tick": 4,
+    "dota_neutral_tick": 4,
+    "dota_items_special_tick": 4,
+    "dota_turbo_gold_reward": 40,
+    "dota_item_world_tick": 4,
+    "dota_trees_tick": 4,
+    "projectiles": 4,
+    "dota_bosses_tick": 4,
+    "dota_rules_find_enemy": 4,
+    "dota_objectives_tick": 4,
+    "dota_runes_tick": 4,
+    "dota_couriers_tick": 4,
+    "dota_sight_fog_state": 20568,
+    "dota_render": 3,
+    "battlefield": 3,
+    "bs_ground_height": 78,
+    "bs_ground_height.part.0": 10271,
+    "bs_render_game": 3,
+    "get_tile": 435,
+    "tree_visual_apply": 3,
+    "prepare": 3,
+    "game_unit_model": 234,
+    "unit_model": 222,
+    "dota_attack_style": 54,
+    "dota_boss_species": 3,
+    "dota_roshan_mask_pixels": 3,
+    "find_group": 279,
+    "exact_group": 363,
+    "frame_at": 155,
+    "bs_project": 269,
+    "draw_sprite_opacity": 161,
+    "frame_info": 490,
+    "dota_sight_position_visible": 296,
+    "draw_fog": 3,
+    "tree_visual_revision": 3,
+    "fog_light_row": 78,
+    "render_item_trees": 6,
+    "skill_body": 108,
+    "draw_hero_shadow": 60,
+    "get_sprite": 72,
+    "dota_item_world_visible": 18,
+    "courier_frame": 60,
+    "dota_courier_view": 60,
+    "dota_courier_eta_ticks.part.0": 60,
+    "travel_ticks": 60,
+    "mix": 24746,
+    "fountain_track_v022": 21,
+    "cache_payload_valid": 12,
+    "bs_render_effects": 3,
+    "render_skill_effects": 3,
+    "dota_skill_effect_radius_source": 9,
+    "dota_items_special_aoe_percent": 3,
+    "skill_fx": 3,
+    "dota_get_skill_event": 261,
+    "extra_fx_visible": 27,
+    "roster_fx_visible": 48,
+    "dota_get_attack_event": 192,
+    "bs_unit_screen_bounds": 117,
+    "bs_game_unit_height": 12,
+    "ground_ring": 3,
+    "line": 60,
+    "box": 606,
+    "dota_items_available_mana": 6,
+    "bs_depth_buffer": 3,
+    "dota_rune_kind": 24,
+    "dota_items_teleport_channel": 30,
+    "dota_match_seconds": 3,
+    "text": 111,
+    "utf8": 339,
+    "dota_hero_assists": 3,
+    "number": 42,
+    "frame": 84,
+    "circle": 3,
+    "hud": 3,
+    "dota_progression_points": 15,
+    "dota_progression_talent_points": 3,
+    "dota_effective_armor": 3,
+    "dota_next_level_xp": 3,
+    "dota_turbo_level_xp": 3,
+    "dota_rules_attributes": 3,
+    "text_fit": 9,
+    "tiny_char.part.0": 42,
+    "tiny_number": 3,
+    "tiny_digit": 60,
+    "art_small.part.0": 3,
+    "tiny_unsigned": 21,
+    "dota_move_speed_source": 3,
+    "dota_attack_speed_percent": 3,
+    "attack_speed_x100": 3,
+    "item_attack_traits": 3,
+    "dota_roster_attack_speed_delta": 3,
+    "dota_extra_attack_speed_delta": 3,
+    "dota_skill_is_passive": 12,
+    "dota_progression_skill_max": 12,
+    "dota_progression_can_learn": 12,
+    "dota_progression_skill_required": 12,
+    "ability_icon.part.0": 12,
+    "hotkey_badge": 9,
+    "dota_healing_ward": 33,
+    "dota_rules_effective_health_regen100": 3,
+    "dota_rules_item_raw_regen100": 3,
+    "dota_items_heal_amount": 3,
+    "resource_bar.constprop.0": 6,
+    "dota_rules_mana_regen100": 3,
+    "dota_inventory_item": 27,
+    "dota_courier_pending_item": 27,
+    "button": 3,
+    "bs_pick_ground": 12,
+    "bs_unproject_at_z": 108,
+    "status_bars": 3,
+    "dota_status_effects": 3,
+    "dota_rune_status": 30,
+    "dota_roster_statuses": 3,
+    "dota_items_statuses": 3,
+    "dota_items_special_statuses": 3,
+    "dota_item_world_statuses": 3,
+    "dota_bosses_aegis_ticks": 3,
+    "dota_hero_has_shard": 3,
+    "dota_items_has_upgrade": 3,
+    "item_assets_ability_art": 3,
+    "ui_art": 3,
+    "load_art": 3,
+    "baked_io_size": 3,
+    "art.part.0": 3,
+    "blend": 1080,
+    "courier_panel": 3,
+    "dota_neutral_equipped": 3,
+    "item_assets_text": 3,
+    "baked_io_read_at": 2,
+    "raw_read": 2
+  },
+  "hardware_div_instruction_counts": {
+    "dota_tick": 2,
+    "dota_barracks_commit_tower_deaths": 0,
+    "dota_high_tower_index": 0,
+    "sync_navigation": 0,
+    "dota_nav_set_item_trees": 0,
+    "dota_nav_set_static_trees": 0,
+    "dota_barracks_alive_mask": 0,
+    "dota_nav_set_all_structures": 0,
+    "dota_progression_tick": 0,
+    "touch": 0,
+    "axe_update": 0,
+    "dota_progression_value100": 0,
+    "dota_items_broken": 0,
+    "estatus.part.0": 0,
+    "dota_rules_armor100": 0,
+    "dota_rules_armor100.part.0": 0,
+    "dota_item_world_armor_delta": 0,
+    "npc_aura": 0,
+    "dota_roster_armor": 0,
+    "__divdi3": 464,
+    "dota_rules_item_damage": 0,
+    "damage_snapshot_ex": 0,
+    "targetable": 0,
+    "dota_unit_invulnerable": 0,
+    "dota_extra_invulnerable": 0,
+    "dota_roster_invulnerable": 0,
+    "dota_roster_swallowed_by": 0,
+    "dota_roster_swallowed": 0,
+    "hero_state": 0,
+    "dota_items_invulnerable": 0,
+    "dota_barracks_kind": 0,
+    "dota_turbo_tower_damage": 0,
+    "dota_items_capture_incoming": 0,
+    "sync.part.0": 0,
+    "dota_bosses_incoming_damage_percent": 0,
+    "dota_item_world_magic_resist": 0,
+    "dota_extra_magic_resist_delta": 0,
+    "dota_item_world_incoming_from": 0,
+    "dota_items_before_damage": 0,
+    "dota_items_special_damage_percent": 0,
+    "dota_items_parameter": 0,
+    "dota_items_stats": 0,
+    "dota_progression_stat_bonus": 0,
+    "has": 0,
+    "dota_progression_primary": 0,
+    "dota_items_special_parameter": 0,
+    "scaled": 0,
+    "dota_items_status_percent": 0,
+    "dota_items_special_stats": 0,
+    "occurrences": 0,
+    "dota_items_equipped_item": 0,
+    "dota_item_world_apply_stats": 0,
+    "compose_defense": 0,
+    "dota_items_read": 0,
+    "item_slot": 0,
+    "dota_items_special_before_damage": 0,
+    "wrap_sync.part.0": 0,
+    "dota_roster_before_damage": 0,
+    "dota_progression_before_damage": 0,
+    "dota_rune_before_damage": 0,
+    "assist_record": 0,
+    "assist_sync": 0,
+    "dota_bosses_on_damage": 0,
+    "enemy": 0,
+    "dota_pit_same_region": 0,
+    "dota_roshan_region_at.part.0": 0,
+    "dota_extra_on_damage": 0,
+    "dota_rune_on_damage": 0,
+    "dota_progression_on_damage": 0,
+    "dota_roster_after_damage": 0,
+    "dota_progression_rank": 0,
+    "passive_sync": 0,
+    "passive_clear": 0,
+    "dota_match_game_ticks": 0,
+    "dota_turbo_passive_gold_at_tick": 0,
+    "dota_roster_passive": 0,
+    "dota_match_ticks": 0,
+    "dota_match_is_night": 0,
+    "statuses": 0,
+    "dota_progression_base": 0,
+    "npc_effect_valid": 0,
+    "recalc_with_stats": 0,
+    "dota_progression_base_attributes100": 0,
+    "hero_stat_delta100": 0,
+    "dota_extra_stat_delta": 0,
+    "dota_roster_stat_delta": 0,
+    "dota_progression_stat_delta100": 0,
+    "dota_roster_max_health_bonus": 0,
+    "dota_rune_base_damage_percent": 0,
+    "dota_roster_is_hero": 0,
+    "dota_roster_attack_range_bonus": 0,
+    "dota_items_special_max_hp_percent": 0,
+    "dota_item_world_max_health_percent": 0,
+    "dota_items_special_max_mana_percent": 0,
+    "raw_health_regen_with_stats": 0,
+    "dota_items_timed_regen100": 0,
+    "dota_extra_regen_flat100": 0,
+    "dota_extra_move_flat": 0,
+    "dota_extra_additional_regen100": 0,
+    "dance_rank": 0,
+    "dance_passive": 0,
+    "dota_rune_hp_regen100": 0,
+    "dota_items_health_regen_amp_percent": 0,
+    "dota_items_regen_percent": 0,
+    "dota_items_heal_amount_with_stats": 0,
+    "dota_extra_heal_amount": 0,
+    "active_ghost": 0,
+    "dota_roster_heal_percent": 0,
+    "mana_regen_with_stats": 0,
+    "dota_items_timed_mana_regen100": 0,
+    "dota_extra_additional_mana_regen100": 0,
+    "dota_rune_mana_regen100": 0,
+    "dota_items_mana_regen_percent": 0,
+    "dota_extra_mana_restore_amount": 0,
+    "dota_roster_stun": 0,
+    "dota_roster_moving": 0,
+    "dota_omnislash_phase": 0,
+    "omnislash_update": 0,
+    "dota_roster_controls_aux": 0,
+    "dota_items_wind_move_source": 0,
+    "dota_objective_player": 0,
+    "dota_rune_player": 0,
+    "roster_busy": 0,
+    "enemy_source": 0,
+    "dota_sight_is_current": 0,
+    "dota_unit_visible": 0,
+    "dota_sight_team_visible": 0,
+    "refresh": 0,
+    "dota_trees_revision": 0,
+    "dota_trees_geometry_revision": 0,
+    "dota_rules_unit_vision_source.part.0": 0,
+    "dota_items_special_vision_percent": 0,
+    "dota_roster_vision_bonus": 0,
+    "source_add": 0,
+    "dota_roshan_region_at": 0,
+    "cast": 0,
+    "team_point": 0,
+    "source_point": 0,
+    "dota_roster_base_damage_percent": 0,
+    "dota_roster_bonus_damage": 0,
+    "move_towards": 0,
+    "dota_items_free_path": 0,
+    "dota_nav_nearest": 0,
+    "refresh_item_trees": 0,
+    "nearest_current": 0,
+    "walkable_current": 0,
+    "open_cell": 0,
+    "cell_has_exit": 0,
+    "cell_has_exit_raw": 0,
+    "neighbor": 0,
+    "dota_nav_segment": 0,
+    "segment_current": 0,
+    "passage_segment": 0,
+    "dota_nav_cell_center": 0,
+    "move_step_direction": 0,
+    "move_speed_q16": 0,
+    "dota_items_slow_resistance": 0,
+    "dota_items_special_slow_resistance": 0,
+    "dota_roster_slow_resist": 0,
+    "dota_extra_move_percent": 0,
+    "dota_items_debuff_immune": 0,
+    "dota_roster_move_percent": 0,
+    "target_state": 0,
+    "dota_items_special_move_bonus": 0,
+    "dota_rules_unit_in_water": 0,
+    "dota_water_world": 0,
+    "dota_items_rooted": 0,
+    "dota_item_world_rooted": 0,
+    "dota_progression_move_percent": 0,
+    "dota_roster_move_cap_source": 0,
+    "dota_rune_haste_speed": 0,
+    "move_commit": 0,
+    "dota_extra_allow_move": 0,
+    "dota_roster_allow_move": 0,
+    "dota_items_total_attribute": 0,
+    "attribute": 0,
+    "follow_lane": 0,
+    "dota_courier_pending_count": 0,
+    "dota_courier_buy": 0,
+    "dota_items_purchase_plan": 0,
+    "plan_need": 0,
+    "dota_items_recipes_count": 0,
+    "stock_count": 0,
+    "dota_extra_target_hidden": 0,
+    "dota_item_world_smoked": 0,
+    "dota_items_invisible": 0,
+    "dota_rune_invisible": 0,
+    "cast_for_impl": 0,
+    "dota_items_silenced": 0,
+    "dota_extra_is_hero": 0,
+    "dota_skill_cast_range_source": 0,
+    "dota_items_range_bonus": 0,
+    "dota_items_attack_range_for": 0,
+    "dota_unit_hull_source": 0,
+    "move_for_attack": 0,
+    "lane_progress": 0,
+    "dota_nav_stats": 0,
+    "dota_nav_find_path": 0,
+    "locate.constprop.0": 0,
+    "earlier": 0,
+    "dota_nav_cell_at": 0,
+    "dota_item_world_update_unit": 0,
+    "dota_extra_tick": 0,
+    "scythe_tick": 0,
+    "dota_sight_team_position_visible": 0,
+    "dota_roster_tick": 0,
+    "sync_hero": 0,
+    "fields_tick": 0,
+    "dota_items_tick": 0,
+    "dota_neutral_tick": 0,
+    "dota_items_special_tick": 0,
+    "dota_turbo_gold_reward": 0,
+    "dota_item_world_tick": 0,
+    "dota_trees_tick": 0,
+    "projectiles": 0,
+    "dota_bosses_tick": 0,
+    "dota_rules_find_enemy": 0,
+    "dota_objectives_tick": 0,
+    "dota_runes_tick": 0,
+    "dota_couriers_tick": 0,
+    "dota_sight_fog_state": 0,
+    "dota_render": 0,
+    "battlefield": 15,
+    "bs_ground_height": 0,
+    "bs_ground_height.part.0": 0,
+    "bs_render_game": 6,
+    "get_tile": 0,
+    "tree_visual_apply": 0,
+    "prepare": 0,
+    "game_unit_model": 0,
+    "unit_model": 0,
+    "dota_attack_style": 0,
+    "dota_boss_species": 0,
+    "dota_roshan_mask_pixels": 0,
+    "find_group": 0,
+    "exact_group": 0,
+    "frame_at": 143,
+    "bs_project": 0,
+    "draw_sprite_opacity": 684,
+    "frame_info": 0,
+    "dota_sight_position_visible": 0,
+    "draw_fog": 0,
+    "tree_visual_revision": 0,
+    "fog_light_row": 0,
+    "render_item_trees": 0,
+    "skill_body": 0,
+    "draw_hero_shadow": 78,
+    "get_sprite": 0,
+    "dota_item_world_visible": 0,
+    "courier_frame": 0,
+    "dota_courier_view": 0,
+    "dota_courier_eta_ticks.part.0": 0,
+    "travel_ticks": 0,
+    "mix": 0,
+    "fountain_track_v022": 21,
+    "cache_payload_valid": 0,
+    "bs_render_effects": 4,
+    "render_skill_effects": 0,
+    "dota_skill_effect_radius_source": 0,
+    "dota_items_special_aoe_percent": 0,
+    "skill_fx": 3,
+    "dota_get_skill_event": 0,
+    "extra_fx_visible": 0,
+    "roster_fx_visible": 0,
+    "dota_get_attack_event": 0,
+    "bs_unit_screen_bounds": 0,
+    "bs_game_unit_height": 0,
+    "ground_ring": 0,
+    "line": 0,
+    "box": 0,
+    "dota_items_available_mana": 0,
+    "bs_depth_buffer": 0,
+    "dota_rune_kind": 0,
+    "dota_items_teleport_channel": 0,
+    "dota_match_seconds": 0,
+    "text": 0,
+    "utf8": 0,
+    "dota_hero_assists": 0,
+    "number": 0,
+    "frame": 0,
+    "circle": 0,
+    "hud": 27,
+    "dota_progression_points": 0,
+    "dota_progression_talent_points": 0,
+    "dota_effective_armor": 0,
+    "dota_next_level_xp": 0,
+    "dota_turbo_level_xp": 0,
+    "dota_rules_attributes": 0,
+    "text_fit": 0,
+    "tiny_char.part.0": 0,
+    "tiny_number": 0,
+    "tiny_digit": 0,
+    "art_small.part.0": 0,
+    "tiny_unsigned": 0,
+    "dota_move_speed_source": 0,
+    "dota_attack_speed_percent": 0,
+    "attack_speed_x100": 0,
+    "item_attack_traits": 0,
+    "dota_roster_attack_speed_delta": 0,
+    "dota_extra_attack_speed_delta": 0,
+    "dota_skill_is_passive": 0,
+    "dota_progression_skill_max": 0,
+    "dota_progression_can_learn": 0,
+    "dota_progression_skill_required": 0,
+    "ability_icon.part.0": 0,
+    "hotkey_badge": 0,
+    "dota_healing_ward": 0,
+    "dota_rules_effective_health_regen100": 0,
+    "dota_rules_item_raw_regen100": 0,
+    "dota_items_heal_amount": 0,
+    "resource_bar.constprop.0": 6,
+    "dota_rules_mana_regen100": 0,
+    "dota_inventory_item": 0,
+    "dota_courier_pending_item": 0,
+    "button": 0,
+    "bs_pick_ground": 0,
+    "bs_unproject_at_z": 0,
+    "status_bars": 0,
+    "dota_status_effects": 0,
+    "dota_rune_status": 0,
+    "dota_roster_statuses": 0,
+    "dota_items_statuses": 0,
+    "dota_items_special_statuses": 0,
+    "dota_item_world_statuses": 0,
+    "dota_bosses_aegis_ticks": 0,
+    "dota_hero_has_shard": 0,
+    "dota_items_has_upgrade": 0,
+    "item_assets_ability_art": 0,
+    "ui_art": 0,
+    "load_art": 0,
+    "baked_io_size": 0,
+    "art.part.0": 0,
+    "blend": 0,
+    "courier_panel": 0,
+    "dota_neutral_equipped": 0,
+    "item_assets_text": 0,
+    "baked_io_read_at": 0,
+    "raw_read": 0,
+    "modeled-service": 0
+  },
+  "workspace_bytes": 1062756,
+  "dwarf_fog_line_ranges": {
+    "draw_fog": [
+      604,
+      668
+    ],
+    "fog_light_row": [
+      544,
+      550
+    ],
+    "fog_world_point": [
+      532,
+      540
+    ],
+    "draw_map": [
+      733,
+      777
+    ],
+    "copy_map_row": [
+      709,
+      732
+    ],
+    "draw_sprite_opacity": [
+      963,
+      1038
+    ],
+    "draw_hero_shadow": [
+      1050,
+      1124
+    ],
+    "update_history": [
+      1181,
+      1209
+    ],
+    "fog_map_depth": [
+      557,
+      568
+    ]
+  },
+  "asset_handles_still_open": 3,
+  "limit": "Instruction slots and modeled file bytes only. No physical cache/bus/div latency, display/MXU/audio/interrupt/scheduling timing or FPS. Platform history starts new; normal warm ticks advance the captured Game, so this is a workload from a real initial state, not an exact physical frame replay.",
+  "profiled_process_heap_allocations": 10
+}

@@ -7,6 +7,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  p=argparse.ArgumentParser();p.add_argument('--output',type=Path,default=ROOT/'build/tests/vision-ui-run-1');a=p.parse_args();out=a.output.resolve();assert out.is_relative_to(ROOT/'build') and not out.exists()
  sources=[ROOT/'tests/vision_ui.c',*[ROOT/'platform'/n for n in ['render.c','baked_scene.c','baked_io.c','item_assets.c','shop_catalog.c','status_effects.c','map_codec.c','map_format.c','vision_assets.c']],*sorted((ROOT/'game').glob('*.c'))]
+ sources.append(ROOT/'platform/tree_visual.c')
  inputs=[*sources,ROOT/'platform/native.c',Path(__file__),*sorted((ROOT/'game').glob('*.h')),*sorted((ROOT/'platform').glob('*.h')),*sorted((ROOT/'private/generated').glob('*.h')),*sorted((ROOT/'sdk/sdk/include').glob('*.h')),ROOT/'platform/dota_audio.c']
  identities=lambda:{p.relative_to(ROOT).as_posix():sha(p) for p in sorted(set(inputs))};before=identities();out.mkdir(parents=True)
  sidecar=ROOT/'assets/runtime/VISION.H1V';data=bytearray(sidecar.read_bytes());bad_header=bytearray(data);bad_header[16]^=1;(out/'bad-header.H1V').write_bytes(bad_header);bad_crc=bytearray(data);bad_crc[500]^=1;(out/'bad-crc.H1V').write_bytes(bad_crc);(out/'truncated.H1V').write_bytes(data[:-1])

@@ -11,10 +11,13 @@
 #include "sight.h"
 #include "barracks.h"
 #include "vision_assets.h"
+#include "tree_visual.h"
 #include "../private/generated/dota_map_fixtures.h"
 #include "../private/generated/dota_barracks_patch.h"
 
-#define TILE_CACHE_SLOTS 16
+/* Viewport plus world-anchored fog halo spans at most five by three tiles.
+ * Both map and water caches use linear LRU, not a power-of-two index. */
+#define TILE_CACHE_SLOTS 15
 #define TILE_PIXELS (BS_TILE_SIZE*BS_TILE_SIZE)
 #define MAX_TILES 4096
 #define MAX_HEIGHT_SIZE 257
@@ -24,8 +27,11 @@
 #define META_BLOCK_FRAMES 16
 #define CLEAR_COLOR 0x10c3u
 #define FOG_STEP 8
-#define FOG_COLUMNS (BS_WIDTH/FOG_STEP)
-#define FOG_ROWS (BS_HEIGHT/FOG_STEP)
+/* One sample halo around a WORLD-anchored projected grid. A moving viewport
+ * can intersect one extra cell per axis; its light vertices still need the
+ * same four neighbours when they enter or leave the viewport. */
+#define FOG_COLUMNS (BS_WIDTH/FOG_STEP+3)
+#define FOG_ROWS (BS_HEIGHT/FOG_STEP+3)
 static unsigned char fog_visible[FOG_COLUMNS*FOG_ROWS];
 static BSFogStats fog_stats;
 static const DotaGame *fog_game;
@@ -33,7 +39,7 @@ static const BSCamera *fog_camera;
 static int fog_sprite_gate;
 const BSFogStats *bs_fog_stats(void){return &fog_stats;}
 #define FOG_BACKGROUND_BYTES (BS_WIDTH*BS_HEIGHT*sizeof(uint16_t))
-#define FOG_BACKGROUND_KEYS (8+DOTA_LOTUS_POOLS+1)
+#define FOG_BACKGROUND_KEYS (8+DOTA_LOTUS_POOLS+2)
 static uint16_t *fog_background;
 static int fog_background_key[FOG_BACKGROUND_KEYS],fog_saved_key[FOG_BACKGROUND_KEYS];
 static unsigned char fog_saved_visible[FOG_COLUMNS*FOG_ROWS];
@@ -452,7 +458,7 @@ unsigned bs_reserve_cache(unsigned bytes){
 }
 unsigned bs_sprite_cache_bytes(void){return sprite_capacity;}
 unsigned bs_resident_frame_count(void){return resident_frames?pack.frame_count:0;}
-unsigned bs_dynamic_storage_bytes(void){return sprite_heap_bytes+(resident_frames?pack.frame_count*sizeof(RuntimeFrame)+DOTA_WORLD*sizeof(uint16_t):0)+water_heap_bytes+map_sidecar_stats.heap_bytes+fog_cache_stats.heap_bytes;}
+unsigned bs_dynamic_storage_bytes(void){return sprite_heap_bytes+(resident_frames?pack.frame_count*sizeof(RuntimeFrame)+DOTA_WORLD*sizeof(uint16_t):0)+water_heap_bytes+map_sidecar_stats.heap_bytes+fog_cache_stats.heap_bytes+tree_visual_dynamic_bytes();}
 int bs_open_default(void){if(!baked_io_open_default()){ready=0;error_code=1;release_cache();release_water();return 0;}if(bs_initialize())return 1;baked_io_close();return 0;}
 void bs_close(void){ready=0;last_tick=-1;fog_game=0;fog_camera=0;fog_sprite_gate=0;release_cache();release_water();baked_io_close();}
 int bs_ready(void){return ready;}
@@ -536,13 +542,29 @@ static int fog_point_visible(int x,int y){
     return !fog_game||dota_sight_position_visible(fog_game,fog_game->player,x,y);
 }
 static void fog_light_row(int y,unsigned short *out){
-    int x,dx,dy;
-    for(x=0;x<=FOG_COLUMNS;++x){unsigned count=0,total=0;
-        for(dy=-1;dy<=0;++dy)for(dx=-1;dx<=0;++dx){int xx=x+dx,yy=y+dy;
-            if((unsigned)xx<FOG_COLUMNS&&(unsigned)yy<FOG_ROWS){count+=fog_visible[yy*FOG_COLUMNS+xx];++total;}
-        }
-        out[x]=(unsigned short)(3u*256u+count*5u*256u/total);
+    int x;const unsigned char *a=fog_visible+y*FOG_COLUMNS,*b=a+FOG_COLUMNS;
+    for(x=0;x<FOG_COLUMNS-1;++x){
+        unsigned count=a[x]+a[x+1]+b[x]+b[x+1];
+        out[x]=(unsigned short)(3u*256u+count*5u*64u);
     }
+}
+static const uint16_t *get_tile(unsigned tile);
+/* Sample original map geometry at an absolute projected pixel, including
+ * points just outside the framebuffer. Do not sample the screen-clipped
+ * depths: a shop/lotus animation or a newly exposed edge must not move the
+ * world position of a fog control point. Dynamic actors retain their exact
+ * current-sight gate after the terrain shader. */
+static int fog_map_depth(const DotaGame *game,int px,int py,int *last_tile,const uint16_t **data){
+    int mx=px-pack.origin_pixel_x,my=py-pack.origin_pixel_y,tx,ty,tile;
+    uint16_t depth;
+    if(mx<0||my<0)return 65535;
+    tx=mx/BS_TILE_SIZE;ty=my/BS_TILE_SIZE;
+    if((unsigned)tx>=pack.tile_columns||(unsigned)ty>=pack.tile_rows)return 65535;
+    tile=ty*(int)pack.tile_columns+tx;
+    if(tile!=*last_tile){*last_tile=tile;*data=get_tile((unsigned)tile);}
+    if(!*data)return 65535;
+    depth=(*data)[TILE_PIXELS+(my&(BS_TILE_SIZE-1))*BS_TILE_SIZE+(mx&(BS_TILE_SIZE-1))];
+    return game?tree_visual_depth_at(game,px,py,depth):depth;
 }
 /* Cache only the shader output. Map/depth, animated shops, lotus, selection,
  * actors, shadows and effects still run normally. All world queries run each
@@ -580,44 +602,67 @@ static void fog_background_capture(const uint16_t *pixels){
     fog_cache_stats.ready=1;++fog_cache_stats.captures;
 }
 static void draw_fog(uint16_t *pixels,const DotaGame *game,const BSCamera *camera){
-    int tx,ty,team=game->units[game->player].team;unsigned short top[FOG_COLUMNS+1],bottom[FOG_COLUMNS+1];
-    for(ty=0;ty<FOG_ROWS;++ty)for(tx=0;tx<FOG_COLUMNS;++tx){
-        int sx=tx*FOG_STEP+FOG_STEP/2,sy=BS_TOP+ty*FOG_STEP+FOG_STEP/2,x,y;
-        int valid=fog_world_point(camera,sx,sy,depths[(sy-BS_TOP)*BS_WIDTH+sx],&x,&y);
-        fog_visible[ty*FOG_COLUMNS+tx]=(unsigned char)(valid&&dota_sight_fog_state(game,team,x,y)==2);
-        ++fog_stats.cells;if(valid)++fog_stats.queries;
+    int tx,ty,team=game->units[game->player].team,world_x[FOG_COLUMNS];
+    const DotaGame *tree_depth_game=game->trees.cut_count?game:0;
+    int origin_x=global_x(camera->x)-BS_WIDTH/2,origin_y=global_y(camera->y,camera->z)-BS_HEIGHT/2;
+    int cell_x=floor_div(origin_x,FOG_STEP),cell_y=floor_div(origin_y,FOG_STEP);
+    int phase_x=origin_x-cell_x*FOG_STEP,phase_y=origin_y-cell_y*FOG_STEP;
+    unsigned short top[FOG_COLUMNS-1],bottom[FOG_COLUMNS-1];
+    for(tx=0;tx<FOG_COLUMNS;++tx){
+        int px=(cell_x+tx-1)*FOG_STEP+FOG_STEP/2;
+        world_x[tx]=floor_div((2*px+1)*256,2*BS_ZOOM);
     }
+    for(ty=0;ty<FOG_ROWS;++ty){
+        int py=(cell_y+ty-1)*FOG_STEP+FOG_STEP/2;
+        int flat_y=floor_div((2*py+1)*65536,2*BS_PITCH*BS_ZOOM),last_tile=-1;
+        const uint16_t *data=0;
+        for(tx=0;tx<FOG_COLUMNS;++tx){
+            int px=(cell_x+tx-1)*FOG_STEP+FOG_STEP/2,x=world_x[tx],y=0,valid=0;
+            if((unsigned)x<DOTA_WORLD){
+                int depth=fog_map_depth(tree_depth_game,px,py,&last_tile,&data);
+                if(depth<65535){y=floor_div(flat_y+32768-depth,2);valid=(unsigned)y<DOTA_WORLD;}
+            }
+            fog_visible[ty*FOG_COLUMNS+tx]=(unsigned char)(valid&&dota_sight_fog_state(game,team,x,y)==2);
+            ++fog_stats.cells;if(valid)++fog_stats.queries;
+        }
+    }
+    /* Different integer camera coordinates can project to the exact same
+     * backdrop. Key only the actual global crop, never its subpixel phase. */
+    fog_background_key[0]=origin_x;fog_background_key[1]=origin_y;fog_background_key[2]=0;
+    fog_background_key[FOG_BACKGROUND_KEYS-2]=(int)tree_visual_revision(game);
     fog_background_key[FOG_BACKGROUND_KEYS-1]=water_stats.water_pixels?(int)water_stats.frame:-1;
     if(fog_background_hit(pixels))return;
-    /* Bilinear vertex light makes the eight-pixel sampling grid disappear.
-     * Only two small light rows live on the stack; all per-pixel math is
-     * add/shift RGB565 shading, with no terrain or unit query in that loop. */
+    /* Interpolate the fixed world's light, then crop it. No temporal history
+     * is blended: every visibility sample above belongs to the current tick.
+     * Only two light rows live on the stack; the pixel loop remains add/shift. */
     fog_light_row(0,top);
-    for(ty=0;ty<FOG_ROWS;++ty)for(tx=0;tx<FOG_COLUMNS;++tx){
-        int x,y,ta,tb,ba,bb;
-        if(tx==0)fog_light_row(ty+1,bottom);
-        ta=top[tx];tb=top[tx+1];ba=bottom[tx];bb=bottom[tx+1];
-        if(ta==2048&&tb==2048&&ba==2048&&bb==2048){if(tx==FOG_COLUMNS-1)for(x=0;x<=FOG_COLUMNS;++x)top[x]=bottom[x];continue;}
-        if(ta==768&&tb==768&&ba==768&&bb==768){
-            /* Most off-camera terrain is uniformly dim. Its old bilinear
-             * result is exactly light3: no gradient or per-pixel dispatch. */
-            for(y=0;y<FOG_STEP;++y){uint16_t *row=pixels+(BS_TOP+ty*FOG_STEP+y)*BS_WIDTH+tx*FOG_STEP;
-                row[0]=vision_assets_fog_color(row[0],3);row[1]=vision_assets_fog_color(row[1],3);
-                row[2]=vision_assets_fog_color(row[2],3);row[3]=vision_assets_fog_color(row[3],3);
-                row[4]=vision_assets_fog_color(row[4],3);row[5]=vision_assets_fog_color(row[5],3);
-                row[6]=vision_assets_fog_color(row[6],3);row[7]=vision_assets_fog_color(row[7],3);
+    for(ty=0;ty<FOG_ROWS-2;++ty){
+        int top_y=ty*FOG_STEP-phase_y,y0=clamp(top_y,0,BS_HEIGHT),y1=clamp(top_y+FOG_STEP,0,BS_HEIGHT),x;
+        fog_light_row(ty+1,bottom);
+        for(tx=0;tx<FOG_COLUMNS-2;++tx){
+            int left_x=tx*FOG_STEP-phase_x,x0=clamp(left_x,0,BS_WIDTH),x1=clamp(left_x+FOG_STEP,0,BS_WIDTH),y;
+            int ta=top[tx],tb=top[tx+1],ba=bottom[tx],bb=bottom[tx+1];
+            if(x0>=x1||y0>=y1||(ta==2048&&tb==2048&&ba==2048&&bb==2048))continue;
+            if(ta==768&&tb==768&&ba==768&&bb==768){
+                for(y=y0;y<y1;++y){uint16_t *row=pixels+(BS_TOP+y)*BS_WIDTH+x0;
+                    if(x1-x0==FOG_STEP){
+                        row[0]=vision_assets_fog_color(row[0],3);row[1]=vision_assets_fog_color(row[1],3);
+                        row[2]=vision_assets_fog_color(row[2],3);row[3]=vision_assets_fog_color(row[3],3);
+                        row[4]=vision_assets_fog_color(row[4],3);row[5]=vision_assets_fog_color(row[5],3);
+                        row[6]=vision_assets_fog_color(row[6],3);row[7]=vision_assets_fog_color(row[7],3);
+                    }else for(x=x0;x<x1;++x,++row)*row=vision_assets_fog_color(*row,3);
+                }
+            }else{
+                ++fog_stats.soft_cells;
+                for(y=y0;y<y1;++y){uint16_t *row=pixels+(BS_TOP+y)*BS_WIDTH+x0;
+                    int local_y=y-top_y,left=ta+(ba-ta)*local_y/FOG_STEP,right=tb+(bb-tb)*local_y/FOG_STEP;
+                    int step=right-left,light=left*FOG_STEP+step*(x0-left_x);
+                    for(x=x0;x<x1;++x,light+=step,++row)*row=vision_assets_fog_color(*row,(unsigned)(light+1024)>>11);
+                }
             }
-            fog_stats.dimmed_pixels+=FOG_STEP*FOG_STEP;
-            if(tx==FOG_COLUMNS-1)for(x=0;x<=FOG_COLUMNS;++x)top[x]=bottom[x];
-            continue;
+            fog_stats.dimmed_pixels+=(unsigned)(x1-x0)*(unsigned)(y1-y0);
         }
-        if(ta!=768||tb!=768||ba!=768||bb!=768)++fog_stats.soft_cells;
-        for(y=0;y<FOG_STEP;++y){uint16_t *row=pixels+(BS_TOP+ty*FOG_STEP+y)*BS_WIDTH+tx*FOG_STEP;
-            int left=ta+(ba-ta)*y/FOG_STEP,right=tb+(bb-tb)*y/FOG_STEP,light=left*FOG_STEP,step=right-left;
-            for(x=0;x<FOG_STEP;++x,light+=step)row[x]=vision_assets_fog_color(row[x],(unsigned)(light+1024)>>11);
-        }
-        fog_stats.dimmed_pixels+=FOG_STEP*FOG_STEP;
-        if(tx==FOG_COLUMNS-1)for(x=0;x<=FOG_COLUMNS;++x)top[x]=bottom[x];
+        for(x=0;x<FOG_COLUMNS-1;++x)top[x]=bottom[x];
     }
     fog_background_capture(pixels);
 }
@@ -1279,6 +1324,7 @@ void bs_render_game(uint16_t *pixels,const DotaGame *game,const BSCamera *camera
     fog_background_key[5]=game->units[game->player].team;
     for(i=6;i<FOG_BACKGROUND_KEYS;++i)fog_background_key[i]=-1;
     draw_map(pixels,camera,(unsigned)(game->tick<0?0:game->tick));
+    tree_visual_apply(pixels+BS_TOP*BS_WIDTH,depths,game,global_x(camera->x)-BS_WIDTH/2,global_y(camera->y,camera->z)-BS_HEIGHT/2,BS_WIDTH,BS_HEIGHT);
     draw_barracks_ground(pixels,game,camera);update_history(game);
     if(pack.version>=8u){
         int gx=global_x(camera->x)-BS_WIDTH/2,gy=global_y(camera->y,camera->z)-BS_HEIGHT/2;

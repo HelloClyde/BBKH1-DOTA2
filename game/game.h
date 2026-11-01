@@ -11,6 +11,7 @@
 #include "items_ids.h"
 #include "item_world_data.h"
 #include "runes_state.h"
+#include "trees_state.h"
 
 /* Standalone C99 fixed-step arena rules. No H1 API, heap, floating point or OS. */
 #define DOTA_HZ 20
@@ -248,6 +249,7 @@ typedef struct {
      * ordinary coordinate API used by AI and point-targeted spells. */
     int cast_target_plus_one,cast_target_generation;
     DotaRuneState runes;
+    DotaTreesState trees;
 } DotaGame;
 
 extern const DotaHeroDef dota_hero_defs[DOTA_HERO_TYPES];

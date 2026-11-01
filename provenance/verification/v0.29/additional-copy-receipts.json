@@ -1,0 +1,22 @@
+[
+  {
+    "path": "tree-gameplay-mips.json",
+    "source": "build/tests/trees-mips-candidate2-final/verification.json",
+    "sha256": "da76fc6ad8d3d6c1359cdb65abdad888bbd84b055d3cb73544b270ddda12f82d"
+  },
+  {
+    "path": "vision-mips.json",
+    "source": "build/tests/vision-mips-candidate2-final/verification.json",
+    "sha256": "45445f69abcb9fa6fe448201596bc70371fbad95049a4c1e000f89a0917aee11"
+  },
+  {
+    "path": "pause-help-host.json",
+    "source": "build/tests/pause-help-v029-final/verification.json",
+    "sha256": "5a1d06f856caa18022424140d8d1ccf727c51244791cf644ca303b7914c5645d"
+  },
+  {
+    "path": "tree-visual-loader-host.json",
+    "source": "build/tests/tree-visual-3/verification.json",
+    "sha256": "e2d91c9ba5e48105e62e64957a5e3e2c74fb0606c8621521399f1a18c5368391"
+  }
+]

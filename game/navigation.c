@@ -3,6 +3,8 @@
 #include "navigation.h"
 #include "../private/generated/dota_nav.h"
 #include "../private/generated/dota_barracks_nav.h"
+#include "../private/generated/dota_tree_nav.h"
+#include "trees.h"
 
 #define HASH_SLOTS (DOTA_NAV_PATH_NODES*2)
 #define INVALID_NODE 65535u
@@ -21,11 +23,35 @@ static unsigned char active_tree_indices[DOTA_ITEM_TREES];
 static unsigned active_tree_count;
 static unsigned short exit_cache_cells[256];
 static unsigned char exit_cache_values[256];
+static const DotaGame *static_tree_game,*static_tree_cached_game;
+static unsigned static_tree_revision,static_tree_geometry,static_tree_valid;
+static unsigned char static_tree_bits[DOTA_NAV_BITMAP_BYTES];
+void dota_nav_set_static_trees(const DotaGame *g){static_tree_game=g;}
+void dota_nav_reset_static_trees(const DotaGame *g){static_tree_game=g;static_tree_valid=0;}
+static void refresh_static_trees(void){
+    unsigned i,rev=dota_trees_revision(static_tree_game),geo=dota_trees_geometry_revision();
+    if(static_tree_valid && static_tree_cached_game==static_tree_game && static_tree_revision==rev && static_tree_geometry==geo)return;
+    static_tree_valid=1;static_tree_cached_game=static_tree_game;static_tree_revision=rev;static_tree_geometry=geo;
+    for(i=0;i<256;++i)exit_cache_values[i]=0;
+    for(i=0;i<DOTA_NAV_BITMAP_BYTES;++i)static_tree_bits[i]=0;
+    if(!static_tree_game || !dota_trees_ready()){
+        for(i=0;i<DOTA_NAV_BITMAP_BYTES;++i)static_tree_bits[i]=dota_nav_source_tree_bits[i];
+        return;
+    }
+    for(i=0;i<DOTA_STATIC_TREE_COUNT;++i)if(!dota_trees_is_cut(static_tree_game,i)){
+        int x,y,xx,yy;dota_trees_position(i,&x,&y);
+        for(yy=y/DOTA_NAV_CELL-2;yy<=y/DOTA_NAV_CELL+1;++yy)for(xx=x/DOTA_NAV_CELL-2;xx<=x/DOTA_NAV_CELL+1;++xx){
+            int dx=xx*DOTA_NAV_CELL+DOTA_NAV_CELL/2-x,dy=yy*DOTA_NAV_CELL+DOTA_NAV_CELL/2-y;
+            if((unsigned)xx<DOTA_NAV_SIZE && (unsigned)yy<DOTA_NAV_SIZE && dx*dx+dy*dy<=22*22){unsigned c=(unsigned)(yy*DOTA_NAV_SIZE+xx);static_tree_bits[c>>3]|=(unsigned char)(1u<<(c&7));}
+        }
+    }
+}
 void dota_nav_set_item_trees(const DotaItemTree *trees,unsigned count){item_trees=trees;item_tree_count=count>DOTA_ITEM_TREES?DOTA_ITEM_TREES:count;}
 /* Trees may change in several item callbacks in one tick. Rebuild once at
  * each public query, never cache by tick or scan empty slots per graph edge. */
 static void refresh_item_trees(void){
     unsigned i;active_tree_count=0;
+    refresh_static_trees();
     for(i=0;i<item_tree_count;++i)if(item_trees[i].until && !item_trees[i].removed)
         active_tree_indices[active_tree_count++]=(unsigned char)i;
 }
@@ -60,7 +86,7 @@ void dota_nav_set_structures(unsigned mask,unsigned fillers){dota_nav_set_all_st
 void dota_nav_set_towers(unsigned mask){dota_nav_set_structures(mask,0);}
 static int open_cell(int x,int y){
     unsigned i;int wx=x*DOTA_NAV_CELL+DOTA_NAV_CELL/2,wy=y*DOTA_NAV_CELL+DOTA_NAV_CELL/2;
-    if(x<0 || y<0 || x>=DOTA_NAV_SIZE || y>=DOTA_NAV_SIZE || !bit(dota_nav_walk_bits,(unsigned)(y*DOTA_NAV_SIZE+x)))return 0;
+    if(x<0 || y<0 || x>=DOTA_NAV_SIZE || y>=DOTA_NAV_SIZE || !bit(dota_nav_walk_bits,(unsigned)(y*DOTA_NAV_SIZE+x)) || bit(static_tree_bits,(unsigned)(y*DOTA_NAV_SIZE+x)))return 0;
     for(i=0;i<active_tree_count;i++){const DotaItemTree *tree=&item_trees[active_tree_indices[i]];int dx=wx-tree->x,dy=wy-tree->y;if(dx*dx+dy*dy<=22*22)return 0;}
     return 1;
 }
@@ -278,4 +304,4 @@ int dota_nav_segment(int x,int y,int xx,int yy){refresh_item_trees();return segm
 int dota_nav_nearest(int x,int y,int radius,int *out_x,int *out_y){refresh_item_trees();return nearest_current(x,y,radius,out_x,out_y);}
 const DotaNavStats *dota_nav_stats(void){return &nav_stats;}
 void dota_nav_reset_stats(void){unsigned char *p=(unsigned char *)&nav_stats;unsigned n=sizeof nav_stats;while(n--)*p++=0;}
-unsigned dota_nav_static_bytes(void){return sizeof(nodes)+sizeof(lookup)+sizeof(heap)+sizeof(nav_stats)+sizeof(goal_cell_x)+sizeof(goal_cell_y)+sizeof(node_count)+sizeof(heap_count)+sizeof(dota_nav_walk_bits)+sizeof(dota_nav_right_bits)+sizeof(dota_nav_down_bits)+sizeof(dota_nav_tower_offsets)+sizeof(dota_nav_tower_cells)+sizeof(tower_mask)+sizeof(filler_mask)+sizeof(barracks_mask)+sizeof(dota_barracks_nav_cells)+sizeof(dota_barracks_nav_edges)+sizeof(dota_barracks_passage_owners)+sizeof(dota_nav_passage_cells)+sizeof(dota_nav_passage_circles)+sizeof(item_trees)+sizeof(item_tree_count)+sizeof(active_tree_indices)+sizeof(active_tree_count)+sizeof(exit_cache_cells)+sizeof(exit_cache_values);}
+unsigned dota_nav_static_bytes(void){return sizeof(nodes)+sizeof(lookup)+sizeof(heap)+sizeof(nav_stats)+sizeof(goal_cell_x)+sizeof(goal_cell_y)+sizeof(node_count)+sizeof(heap_count)+sizeof(dota_nav_walk_bits)+sizeof(dota_nav_right_bits)+sizeof(dota_nav_down_bits)+sizeof(dota_nav_tower_offsets)+sizeof(dota_nav_tower_cells)+sizeof(tower_mask)+sizeof(filler_mask)+sizeof(barracks_mask)+sizeof(dota_barracks_nav_cells)+sizeof(dota_barracks_nav_edges)+sizeof(dota_barracks_passage_owners)+sizeof(dota_nav_passage_cells)+sizeof(dota_nav_passage_circles)+sizeof(item_trees)+sizeof(item_tree_count)+sizeof(active_tree_indices)+sizeof(active_tree_count)+sizeof(exit_cache_cells)+sizeof(exit_cache_values)+sizeof(static_tree_game)+sizeof(static_tree_cached_game)+sizeof(static_tree_revision)+sizeof(static_tree_geometry)+sizeof(static_tree_valid)+sizeof(static_tree_bits)+sizeof(dota_nav_source_tree_bits);}

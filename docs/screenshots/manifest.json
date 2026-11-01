@@ -1,10 +1,11 @@
 {
   "schema_version": 2,
-  "version": "0.28",
-  "scope": "Mixed-version gallery; each image carries its own version and physical binary identity. Historical v0.27 and host previews are not v0.28 device evidence.",
+  "version": "0.29",
+  "scope": "Each image carries its own version and binary identity; host previews and historical versions are labeled.",
   "physical_bda_by_version": {
     "0.27": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d",
-    "0.28": "f25c83e1c36c430b92b17dc2bec215bddeb0179dc251368ab934ee2d6f23658b"
+    "0.28": "f25c83e1c36c430b92b17dc2bec215bddeb0179dc251368ab934ee2d6f23658b",
+    "0.29": "fe492e687875ec31168778f266d5010e4479b89a0ae901acc061b8722d95bcca"
   },
   "images": [
     {
@@ -84,6 +85,39 @@
       "sha256": "a088dd220b3d4e273efc15112b836645611eb84ce6e0ab748c57b0f8339cf16d",
       "unmodified_copy": true,
       "source_report_sha256": "e0cb2a2d40e027014982de3aacc049af5c72097b5e3d3671b520097015ad242d"
+    },
+    {
+      "path": "docs/screenshots/h1-v029-pause.png",
+      "source": "build/v029/device/acceptance1/pause-six-buttons.png",
+      "kind": "physical_h1",
+      "width": 480,
+      "height": 272,
+      "sha256": "04738f98bc124cd126fdde3c16ddf22fa2121754991ec8dd40de35e2b2f2c4b6",
+      "unmodified_copy": true,
+      "version": "0.29",
+      "bda_sha256": "fe492e687875ec31168778f266d5010e4479b89a0ae901acc061b8722d95bcca"
+    },
+    {
+      "path": "docs/screenshots/h1-v029-help.png",
+      "source": "build/v029/device/acceptance1/help-about.png",
+      "kind": "physical_h1",
+      "width": 480,
+      "height": 272,
+      "sha256": "765529a440b61ccf3a70b7c33914eb4b2b5563eaeb7aeaad776082b88441704f",
+      "unmodified_copy": true,
+      "version": "0.29",
+      "bda_sha256": "fe492e687875ec31168778f266d5010e4479b89a0ae901acc061b8722d95bcca"
+    },
+    {
+      "path": "docs/screenshots/h1-v029-trees.png",
+      "source": "build/v029/device/acceptance1/after-tree-2056.png",
+      "kind": "physical_h1",
+      "width": 480,
+      "height": 272,
+      "sha256": "69bd66263b7357aeba800032571b47a76bd8defb94b854c57a75b54a01b7a52f",
+      "unmodified_copy": true,
+      "version": "0.29",
+      "bda_sha256": "fe492e687875ec31168778f266d5010e4479b89a0ae901acc061b8722d95bcca"
     }
   ],
   "rights": "Screenshots contain Valve game artwork and Microsoft-derived bitmap glyphs; the project GPL grant does not relicense these elements."

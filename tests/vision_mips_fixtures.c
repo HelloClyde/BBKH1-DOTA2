@@ -13,6 +13,7 @@
 #include "ward_placement_data.h"
 #include "baked_io.h"
 #include "item_assets.h"
+#include "../platform/render.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -44,6 +45,7 @@ static void discover(void){int x,y,k,ok;
  for(x=0;x<DOTA_WARD_FORBIDDEN_HULLS;++x){int entity=dota_ward_forbidden_entity[x],first=dota_ward_forbidden_offsets[x],end=dota_ward_forbidden_offsets[x+1],i;if(blocked[entity][0])continue;for(i=first;i<end;++i){blocked[entity][0]+=dota_ward_forbidden_q16[i][0]/(end-first);blocked[entity][1]+=dota_ward_forbidden_q16[i][1]/(end-first);}blocked[entity][0]/=65536;blocked[entity][1]/=65536;}
 }
 int main(int argc,char **argv){FILE *f;unsigned char header[64];int a,b,c,d,e,w;int hx,hy,lx,ly;
+ CHECK(sizeof(DotaGame)==178044 && sizeof(DotaUnit)==240 && sizeof(DotaView)==112);
  CHECK(argc==4);outdir=argv[1];CHECK(baked_io_open(argv[2])&&item_assets_open());f=fopen(argv[3],"rb");CHECK(f&&fread(header,1,64,f)==64&&fread(heights,1,sizeof(heights),f)==sizeof(heights)&&fread(trees,1,sizeof(trees),f)==sizeof(trees));CHECK(!fclose(f));work=malloc(dota_sight_workspace_bytes());CHECK(work&&dota_sight_attach(heights,trees,work,dota_sight_workspace_bytes()));discover();lx=hillpair[0];ly=hillpair[1];hx=hillpair[2];hy=hillpair[3];
  printf("{\"game_size\":%u,\"unit_size\":%u,\"input_size\":%u,\"units\":%u,\"item_first\":%d,\"world_stride\":%u,\"world_first\":%u,\"world_kind\":%u,\"world_until\":%u,\"charges\":%u,\"unit_active\":%u,\"unit_hp\":%u,\"unit_inventory\":%u,\"tree_pair\":[%d,%d,%d,%d],\"hill_pair\":[%d,%d,%d,%d],",(unsigned)sizeof(g),(unsigned)sizeof(DotaUnit),(unsigned)sizeof(DotaInput),(unsigned)offsetof(DotaGame,units),DOTA_ITEM_UNIT_FIRST,(unsigned)sizeof(DotaItemWorldUnit),(unsigned)(offsetof(DotaGame,item_world)+offsetof(DotaItemWorldState,unit)),(unsigned)offsetof(DotaItemWorldUnit,kind),(unsigned)offsetof(DotaItemWorldUnit,until),(unsigned)(offsetof(DotaGame,items)+offsetof(DotaItemsState,charges)),(unsigned)offsetof(DotaUnit,active),(unsigned)offsetof(DotaUnit,hp),(unsigned)offsetof(DotaUnit,inventory),treepair[0],treepair[1],treepair[2],treepair[3],lx,ly,hx,hy);
  printf("\"unit_x\":%u,\"unit_y\":%u,\"item_cooldown\":%u,\"ward_primitive_encoded\":%d,\"blocked_positions\":[",(unsigned)offsetof(DotaUnit,x),(unsigned)offsetof(DotaUnit,y),(unsigned)(offsetof(DotaGame,items)+offsetof(DotaItemsState,cooldown)),ITEM_ACTION_WARD|(DOTA_ITEM_WARD_OBSERVER<<8));for(a=0;a<5;++a)printf("%s[%d,%d]",a?",":"",blocked[a][0],blocked[a][1]);printf("],\"cliff_pair\":[%d,%d,%d,%d],\"expected\":{",cliffpair[0],cliffpair[1],cliffpair[2],cliffpair[3]);

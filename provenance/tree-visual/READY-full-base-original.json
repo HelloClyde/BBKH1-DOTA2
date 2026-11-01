@@ -1,0 +1,149 @@
+{
+  "ready": true,
+  "assets_only": true,
+  "runtime_h1_tested": false,
+  "files": {
+    "association-audit.json": {
+      "bytes": 2536,
+      "sha256": "36cbd84aba3626258a5bbc97997fe3c521a21fbe4951ca256383cf794e380f3a"
+    },
+    "background-manifest.json": {
+      "bytes": 432382,
+      "sha256": "3af68c2daf6c405177e2a30d1c1ff075107ff1b1610c11d23728aadac17ac77c"
+    },
+    "base-rule.json": {
+      "bytes": 963,
+      "sha256": "b8d35020b40126fcf84984d29f6f26a740dc15598d9423ee0fc787debbc52635"
+    },
+    "copy-receipts.json": {
+      "bytes": 12164,
+      "sha256": "174b4b7e1c9e9ccfd091d39459e5822da9c6427da3c6c764bf93ac8f5a81092c"
+    },
+    "frame-manifest.json": {
+      "bytes": 1622874,
+      "sha256": "4284dd55e00fe12a88f83e1911688d62423564a4cd3bc4cd19a08e170f210f80"
+    },
+    "material-receipts.json": {
+      "bytes": 30552,
+      "sha256": "849c9c5ddff5ebed808c79a1c13ad921aeee7beb9be5a2e9cb4d86dd448ea02d"
+    },
+    "model-provenance/bake_dire_tree004-provenance.json": {
+      "bytes": 9696,
+      "sha256": "2c1bb2d2136ce8ee3b71dccb19abea0d351733ab737ec70d06fe41fd24b7bf82"
+    },
+    "model-provenance/bake_dire_tree004b-provenance.json": {
+      "bytes": 9718,
+      "sha256": "e15d0401fe4af8e802ee6ba8ecb1d6358a9243ce1c0d9c7133c817d98a115607"
+    },
+    "model-provenance/bake_dire_tree007-provenance.json": {
+      "bytes": 10604,
+      "sha256": "d891f7ae0771191c346064b48177c738c1c80c6b0b94283cedf09af01528bf5b"
+    },
+    "model-provenance/bake_dire_tree008-provenance.json": {
+      "bytes": 10605,
+      "sha256": "ef33a58f8926113c8a306812dd1edaa249bdc32ebd5a053e57e458c08174eedc"
+    },
+    "model-provenance/bake_tree_bamboo_01-provenance.json": {
+      "bytes": 11611,
+      "sha256": "abcf9abfed192f08c3f8524d57c3c5e76cf2bdafd5589960101aa58db4fd70a7"
+    },
+    "model-provenance/bake_tree_bamboo_02-provenance.json": {
+      "bytes": 11613,
+      "sha256": "a761c8d09bfd79ecd4898314f82ad2ee046245672a6c3da72a87d6c61d5f1139"
+    },
+    "model-provenance/bake_tree_oak_01-provenance.json": {
+      "bytes": 11538,
+      "sha256": "a631d2362153a02f5169a813a9f5bbe14cbbaa17bb8a6dc56f8261db96674cbf"
+    },
+    "model-provenance/bake_tree_oak_01b-provenance.json": {
+      "bytes": 11555,
+      "sha256": "0a4a6a6212c2800aab18e07337e496fb8e8a99927cd8c0fcfd2739fa289ed9ca"
+    },
+    "model-provenance/bake_tree_oak_02-provenance.json": {
+      "bytes": 11539,
+      "sha256": "93c2d8ebf8fed87850a460d20b893e5ea76ee8d05ba72bbc63a2b0411ad95bf6"
+    },
+    "model-provenance/bake_tree_pine_01-provenance.json": {
+      "bytes": 11572,
+      "sha256": "9f5f3f238ed508cb52906bfc2c04407cfdb9f17665b0dc8377c92fba22ad1997"
+    },
+    "model-provenance/bake_tree_pine_02-provenance.json": {
+      "bytes": 11573,
+      "sha256": "28d5559643df612f521edfdca3743a9cb31597555ce9c78bcd63830e51ddea12"
+    },
+    "model-provenance/bake_tree_pine_03b-provenance.json": {
+      "bytes": 11589,
+      "sha256": "8417f31c0d7c2c7fd6294c92fff42257287e07bd591d5381a05407da7249bb5c"
+    },
+    "model-provenance/complete_n0_lr0_agg_prop_tree_gnarly001_0-provenance.json": {
+      "bytes": 7722,
+      "sha256": "815160981864fd8ecba928258de5d58db028b345539765076a1678b1c05af8c3"
+    },
+    "model-provenance/complete_n0_lr0_agg_prop_tree_oak_leaves_05_0-provenance.json": {
+      "bytes": 12005,
+      "sha256": "0841c8bcc9b6c37f7dbea196678200922979896969c50ae60f0dab144e67c0ff"
+    },
+    "model-provenance/complete_n0_lr0_agg_prop_tree_oak_leaves_08_0-provenance.json": {
+      "bytes": 10191,
+      "sha256": "33aca6329d3460a03d42643286119d18840d050771be0818288a025699cd459d"
+    },
+    "model-provenance/complete_n0_lr0_agg_prop_tree_oak_leaves_blank_0-provenance.json": {
+      "bytes": 8639,
+      "sha256": "c002ab5a796f261158d65a2967a29947c72e5074ef91b79607bd5d978d1e33df"
+    },
+    "model-provenance/complete_tree_cine_02_low-provenance.json": {
+      "bytes": 10086,
+      "sha256": "8a2e9fe87bf3aa8fe7cb8ef481d04a0134621b623ea8ab827f94581add23df4a"
+    },
+    "model-sources.json": {
+      "bytes": 19958,
+      "sha256": "faa2d8bb62607118673e063d4a67f012ed59d4f8e77ce1c0b9c162866ade07f7"
+    },
+    "pack-manifest.json": {
+      "bytes": 1638,
+      "sha256": "879cc237a63ee6e70735e6da53fffa13f94c1ffe7d553888874670237e13cb4b"
+    },
+    "qa-verification.json": {
+      "bytes": 2343,
+      "sha256": "55fca39bd83875952154f6ce69818317839b293b13441de7c8b27bfa846abbf8"
+    },
+    "README.md": {
+      "bytes": 6150,
+      "sha256": "938e3c25b9e8f8b22b4cea5f2c7f908dd08133c1b01f71a454bc54510d2aef4b"
+    },
+    "source-data/qa_pack.py": {
+      "bytes": 8523,
+      "sha256": "30bf1f87b34b1f346227a91df4480f454f7c7515ca634b079bf9af0cc55db855"
+    }
+  },
+  "file_count": 28,
+  "metadata_total_bytes": 2321939,
+  "tree_pack": {
+    "local_path": "build/v029/tree-bake/pack/TREE.H1T",
+    "bytes": 23621716,
+    "sha256": "81cc4839bc016445a36cd5157e978189d11fea8c1ada2386e7c16d3a5f3b8f47",
+    "tree_count": 2113,
+    "max_layers": 8,
+    "max_decoded_bytes": 983056,
+    "max_stored_bytes": 214803
+  },
+  "tools_sha256": {
+    "tools/bake_tree_background.py": "07ba938924bea2d696c875cb7320ce6e2b478be7585d99d2d402f7e98816821d",
+    "tools/bake_tree_layers.py": "e9f96b519ee968fadbe94acaf46c60f6d47d1ae35f4826c90492689c5d7a5b65"
+  },
+  "host_preview": {
+    "path": "docs/screenshots/host-v029-tree-overlap.png",
+    "sha256": "bb08aa1fe2536e15d63adc393a01d0e05a8208902434430c8a9ea4bec3106493",
+    "kind": "host_reference_composition",
+    "physical_h1_tested": false
+  },
+  "four_cine_without_stump": [
+    359,
+    453,
+    566,
+    963
+  ],
+  "no_layer_cap": true,
+  "no_large_source_bodies_copied": true,
+  "freeze_scope": "Provenance metadata and unchanged offline generator sources only; runtime, emulator and hardware status remain separate."
+}

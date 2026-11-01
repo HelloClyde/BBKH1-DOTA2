@@ -1,0 +1,22 @@
+{
+  "source_generation_sha256": "e9f96b519ee968fadbe94acaf46c60f6d47d1ae35f4826c90492689c5d7a5b65",
+  "depth_match_tolerance": 1,
+  "replace_original_base_when_all": [
+    "nearest interactable alive source has alpha>0",
+    "abs(sourceDepth-originalMapDepth)<=1",
+    "sourceDepth+1<noTreesStaticDepth",
+    "constant alpha==0 OR sourceDepth+1<constantDepth"
+  ],
+  "base_on_match": "no-trees map RGB565 and depth",
+  "base_on_nonmatch": "original map-lit RGB565 and depth",
+  "layer_kept_when_all": [
+    "alpha>0",
+    "layerDepth+1<selectedBaseDepth",
+    "layerDepth+1<noTreesStaticDepth"
+  ],
+  "runtime_reference_policy": "No cut: original map fastskip. For changed tiles retain original pixel where original closest alive tree/constant remains; rebuild only original closest cut owner or newly enabled stump in front.",
+  "top_natural_pixels": 977416,
+  "coverage_pixels": 1073295,
+  "projection_only": true,
+  "no_runtime_or_H1_acceptance_claim": true
+}

@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "actual_pack_readback": true,
+  "physical_h1_tested": false,
+  "sha256": "cb665855d9b4d8c20f2e0603492ed4425cb11a2c3763f51eadf30c5d9162aa80",
+  "qa_source_sha256": "0ea480a22adc926746cb691302f4324c695ab769bf832db06ca1f580b1d5d41c",
+  "all_header_tables_crc_verified": true,
+  "all_nonempty_tiles_inverse_crc_verified": 364,
+  "max_layers": 8,
+  "constant_layer_pixels": 109163,
+  "overlap_case": {
+    "tile": 527,
+    "pixel": 2408,
+    "opaque_overlap_pixels": 670,
+    "tree_a": 242,
+    "tree_b": 264,
+    "hammer_a": "91009",
+    "hammer_b": "91369",
+    "states": [
+      {
+        "dead_ids": [],
+        "sample_visible_token": 242,
+        "rgb_sha256": "4acc385fc16aa8c807d2b08d387c2c71226bed0703cc8d55066f632d95cc89f5",
+        "depth_sha256": "089dfe40301543771182a564f7ab51ac909283e8cc95ea6863faeff3349f3844"
+      },
+      {
+        "dead_ids": [
+          242
+        ],
+        "sample_visible_token": 264,
+        "rgb_sha256": "b2f0b4aeaa7a54b06102e8f5fa89d712fa5e7a5119ed4cb64810edb4d420f348",
+        "depth_sha256": "83cc17058fd5a0545a2621269b03851e66655bdf4edf2b6c8540b3a1e49eb3e3"
+      },
+      {
+        "dead_ids": [
+          242,
+          264
+        ],
+        "sample_visible_token": 65535,
+        "rgb_sha256": "ae02403c41c9d8d5d69a42cd8a03a0b06d6851081174ec25d167d891301cb4c1",
+        "depth_sha256": "3518687fa1ec7098bedd703a7476574968b986ffc8122f431afc528d115276a2"
+      },
+      {
+        "dead_ids": [],
+        "sample_visible_token": 242,
+        "rgb_sha256": "4acc385fc16aa8c807d2b08d387c2c71226bed0703cc8d55066f632d95cc89f5",
+        "depth_sha256": "089dfe40301543771182a564f7ab51ac909283e8cc95ea6863faeff3349f3844"
+      }
+    ]
+  },
+  "constant_after_foreground_tree_cut": {
+    "tile": 93,
+    "pixel": 12542,
+    "cut_id": 1879,
+    "visible_token": 32767
+  },
+  "source_static_pixels_preserved_in_four_states": 55036,
+  "regrow_identical_to_original": true,
+  "empty_original_stump_ids": [
+    359,
+    453,
+    566,
+    963
+  ],
+  "preview_sha256": "bb08aa1fe2536e15d63adc393a01d0e05a8208902434430c8a9ea4bec3106493",
+  "scope": "Independent Python RLE/inverse/CRC parser and host composition per runtime contract. Source-static foreground and unmodified original closest-alive pixels retain original bytes. This is not the H1 provider or physical runtime validation."
+}

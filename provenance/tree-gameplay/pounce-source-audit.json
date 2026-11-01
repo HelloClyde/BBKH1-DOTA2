@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "server_sha256": "af4622bd405f1a465926e20a47d97bbf9988ff0cd11b63901fff1d6dc6a4c834",
+  "hero_source_sha256": "c3bf34ff95deb386eaa918b14920ecd76b5a2a6060d7c07868ac39b8047cc752",
+  "localisation_sha256": "8668b3945eff0ac07500c08cf9ecd4f677e8557de7709b755e4e2dbd2ab85889",
+  "native_class": "CDOTA_Modifier_Slark_Pounce",
+  "rtti_primary_vtable": "0x183709cf0",
+  "field": "0x1ae4",
+  "installed_parameter": "pounce_radius",
+  "source_units": 120,
+  "world_units": 30,
+  "native_evidence": {
+    "read_pounce_radius": {
+      "va": "0x18133d189",
+      "bytes": "488d15c814f6014533c9c64424200041b8ffffffff488bc8e8ba2996ff8986e41a0000"
+    },
+    "landing_radius_and_destroy": {
+      "va": "0x18133dfe0",
+      "bytes": "66410f6eb6e41a0000498bce0f5bf68b18e8aa433300488bc8e8d29c18ff4533c9895c24200f28d6488d542460488bcff20f10008b4008f20f1144246089442468e84ad4ca00"
+    },
+    "vscript_DestroyTreesAroundPoint_registration": {
+      "va": "0x181fcc6e7",
+      "bytes": "488d05fa85e10149895830498900488d050486e10149894008490fbe401a41c640180042c644001b0e490fbe481a8d41014188401a42c644011c01490fbe481a8d41014188401a42c644011c0641fe401a410fbe401a83e80141c64019004863d0781d32c0498d481b4803ca803920750ffec048ffc94883ea014188401979ec41c7404801000000488d0dda8e040049894840488d05ff6a010049894038"
+    },
+    "destroy_helper_shared_tree_collection": {
+      "va": "0x181feb4e0",
+      "bytes": "440fb6ce894424380f28d6488d442440f20f11442430488bcd4889442420e8bd5b00008b4424408b9c24000100000f28b424b0000000488bac24e800000085c07e15448bc0488d0d847fae028bd3e8bdebedff8b442440418bf785c07e3f4c89b424c80000004d8bf70f1f8000000000488b44244841b8ffffffff8bd3498b0c06488b01ff5050ffc74d8d7608"
+    },
+    "vscript_tree_collection_and_destroy": {
+      "va": "0x1820156b4",
+      "bytes": "440fb6cf894424380f28d6488d442440f20f11442430488bce4889442420e8e9b9fdff8b44244085c07e18448bc0488d0dc7ddab02baffffffffe8fd49ebff8b4424408bdd85c07e29488bfd488b442448baffffffff41b8ffffffff488b0c07488b01ff"
+    }
+  },
+  "reasoning": "The native initializer reads pounce_radius into integer field+1ae4. Landing converts that field to float and passes it as xmm2 to181feb470. This helper calls181ff10c0 and destroys each returned tree through vtable+0x50. The registered GridNav.DestroyTreesAroundPoint method182015650 uses the same collector and tree destruction slot. The original tooltip explicitly describes landing tree destruction. H1 performs this before nearest-point resolution at both natural landing and early hero collision.",
+  "tested_host_report": "build/tests/trees-pounce-final-1/verification.json",
+  "no_other_skills_changed": true
+}

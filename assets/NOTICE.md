@@ -22,12 +22,13 @@ Dota 2 英雄、技能、物品图像、模型、地图、动画、音乐及音�
 | `assets/runtime/SOUND.H1A` | 转换后的原音乐与音效 |
 | `assets/runtime/MAP12.H1C` | 原地图颜色与深度数据的无损压缩缓存 |
 | `assets/runtime/VISION.H1V` | v0.28由同次原地图高度和树木记录派生的139,328字节视野数据 |
+| `assets/runtime/TREE.H1T` | v0.29原树体/树桩及无树背景的独立离线颜色、透明度和深度层 |
 | `private/generated/dota_art.h`、`dota_overview.h`、`icon.png` 等 | 原图标、小地图与程序图标的转换输出 |
 | `private/generated/dota_shard_art.h` | 原 Steam 冰晶分身和喷吐图标，24×24 RGB565；来源清单记录于原 `private/shards/ui/manifest.json` |
-| `private/generated/dota_font.h` | 646 字形的 Microsoft 字体位图子集，另见下文 |
+| `private/generated/dota_font.h` | 672字形的Microsoft字体位图子集，另见下文 |
 | `docs/screenshots/` | 本项目 H1 真机截图及明确标注的 host 渲染预览；含上述第三方图像与字形 |
 
-三大素材包通过 Git LFS 存储。准确长度、SHA-256 见 [runtime/manifest.json](runtime/manifest.json)；`SCENE.json` 另记录包内数据身份。文件转换及哈希记录用于追溯来源，不是再分发许可。
+SCENE、SOUND、MAP12、TREE通过Git LFS存储。准确长度、SHA-256见 [runtime/manifest.json](runtime/manifest.json)；`SCENE.json`另记录包内数据身份。文件转换及哈希记录用于追溯来源，不是再分发许可。
 
 ## v0.28 视野数据来源
 
@@ -41,7 +42,7 @@ Dota 2 英雄、技能、物品图像、模型、地图、动画、音乐及音�
 
 ## 字体
 
-基础 UI 的 646 字形和装备 UI 的 1,012 字形使用本机 Microsoft YaHei / Consolas 离线栅格化。源字体文件没有随库或安装包复制；生成的位图字形仍不能据此认定为自由授权。本项目未另获或确立这些位图子集的再分发授权。字体不是 Noto、Unifont，也不适用 OFL。实际字体名称、版权、版本、文件哈希和比较记录见 [../docs/provenance/fonts.json](../docs/provenance/fonts.json)，许可说明见 [../licenses/FONT-NOTICE.md](../licenses/FONT-NOTICE.md)。
+基础UI现为672字形（历史646字形保持，v0.29追加26个帮助页面字形），装备UI为1,012字形，使用本机Microsoft YaHei / Consolas离线栅格化。源字体文件没有随库或安装包复制；生成的位图字形仍不能据此认定为自由授权。本项目未另获或确立这些位图子集的再分发授权。字体不是Noto、Unifont，也不适用OFL。原字体身份见 [../docs/provenance/fonts.json](../docs/provenance/fonts.json)，本轮追加身份见 [../docs/provenance/fonts-v0.29.json](../docs/provenance/fonts-v0.29.json)，许可说明见 [../licenses/FONT-NOTICE.md](../licenses/FONT-NOTICE.md)。
 
 ## 代码依赖
 

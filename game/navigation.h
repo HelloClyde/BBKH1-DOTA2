@@ -17,7 +17,8 @@ int dota_nav_find_path(int x,int y,int goal_x,int goal_y,DotaPoint *out,
 /* Tower bits0..11=(team*3+lane)*2+tier forT1/T2;12..21 are five
  * highground towers per team. Filler bits0..13 follow original entity order.
  * Call with the active game's live structure masks before navigation queries.
- * Source terrain/tree/PHYS obstacles are never restored by these APIs. */
+ * Source terrain/PHYS obstacles are never restored by these APIs. Static
+ * standing tree collision is an independent mask with the same source IDs. */
 /* Compatibility helper sets the tower mask and clears the filler mask. */
 void dota_nav_set_towers(unsigned mask);
 void dota_nav_set_structures(unsigned towers,unsigned fillers);
@@ -28,6 +29,10 @@ void dota_nav_set_all_structures(unsigned towers,unsigned fillers,unsigned barra
  * Bind the active game's array before querying. Each query observes all direct
  * same-tick edits, including planting, removal, expiration and item callbacks. */
 void dota_nav_set_item_trees(const DotaItemTree *trees,unsigned count);
+/* Bind active Game before queries; cutting/regrowth observes its revision
+ * immediately, with no stale tick interval or tree-free terrain shortcut. */
+void dota_nav_set_static_trees(const DotaGame *g);
+void dota_nav_reset_static_trees(const DotaGame *g);
 const DotaNavStats *dota_nav_stats(void);
 void dota_nav_reset_stats(void);
 unsigned dota_nav_static_bytes(void);

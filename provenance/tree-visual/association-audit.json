@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "source_catalog_sha256": "7ee7ab215fd7a713058d667e403dc448aa146b66ffa2d5b04bf712a78da7e49a",
+  "source_tree_sha256": "39c1d31c19111e72285478a19c8ef723d16874791d5a85661d95e6f7fb6d70c0",
+  "records": [
+    {
+      "asset": "n0_lr0_agg_prop_tree_gnarly001_0",
+      "kind": "aggregate",
+      "placements": 17,
+      "full_matrix_matches": 0,
+      "cuttable_placements": 0,
+      "constant_placements": 17,
+      "nearest_translation_metres": [
+        2.3405941542619404,
+        7.431944035114393,
+        20.177315738866017
+      ],
+      "classification": "constant worldnode aggregate; no natural-tree matrix identity"
+    },
+    {
+      "asset": "n0_lr0_agg_prop_tree_oak_leaves_05_0",
+      "kind": "aggregate",
+      "placements": 1305,
+      "full_matrix_matches": 0,
+      "cuttable_placements": 0,
+      "constant_placements": 1305,
+      "nearest_translation_metres": [
+        0.16127113109074387,
+        6.269254125466931,
+        64.73917598536045
+      ],
+      "classification": "constant worldnode aggregate; no natural-tree matrix identity"
+    },
+    {
+      "asset": "n0_lr0_agg_prop_tree_oak_leaves_08_0",
+      "kind": "aggregate",
+      "placements": 1087,
+      "full_matrix_matches": 0,
+      "cuttable_placements": 0,
+      "constant_placements": 1087,
+      "nearest_translation_metres": [
+        0.3454636759327984,
+        6.884293550878619,
+        44.09465392546588
+      ],
+      "classification": "constant worldnode aggregate; no natural-tree matrix identity"
+    },
+    {
+      "asset": "n0_lr0_agg_prop_tree_oak_leaves_blank_0",
+      "kind": "aggregate",
+      "placements": 8,
+      "full_matrix_matches": 0,
+      "cuttable_placements": 0,
+      "constant_placements": 8,
+      "nearest_translation_metres": [
+        14.881934775307311,
+        51.604054960685374,
+        79.44674866025433
+      ],
+      "classification": "constant worldnode aggregate; no natural-tree matrix identity"
+    },
+    {
+      "asset": "tree_cine_02_low",
+      "kind": "entity_tree",
+      "placements": 8,
+      "full_matrix_matches": 8,
+      "cuttable_placements": 4,
+      "constant_placements": 4,
+      "nearest_translation_metres": [
+        1.7093572266248573e-05,
+        3.7669446545149254e-05,
+        5.249761900874725e-05
+      ],
+      "classification": "original cine ent_dota_tree; four exact interactable IDs, four constants"
+    }
+  ],
+  "policy": "No nearest-neighbour ownership guess. Independent aggregates and trees outside exact 2113 Hammer IDs remain always alive."
+}

@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "version": 1,
+  "state": 7,
+  "token": 8,
+  "size": 23621716,
+  "received": 23621716,
+  "expected_crc": 2402617364,
+  "actual_crc": 0,
+  "verify_offset": 19582976,
+  "error": 12,
+  "fs_errno": 0,
+  "flags": 16,
+  "old_size": 0,
+  "old_crc": 0,
+  "last_activity_tick": 1890302,
+  "step_count": 4787,
+  "reserved": 0,
+  "state_name": "aborted",
+  "error_name": "transport"
+}

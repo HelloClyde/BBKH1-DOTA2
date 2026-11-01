@@ -23,11 +23,11 @@ def main():
  def compile_one(source):
   obj=out/'objects'/(source.stem+'.o');run([cc,'-std=c99','-O2','-Wall','-Wextra','-Werror','-DBAKED_IO_HOST','-I',ROOT/'game','-I',ROOT/'platform','-c',source,'-o',obj]);return obj
  with ThreadPoolExecutor(max_workers=4) as pool:objects=list(pool.map(compile_one,sources))
- generator=out/'fixtures.exe';run([cc,*objects,'-o',generator]);layout=json.loads(run([generator,out/'fixtures',assets['SCENE.H1P'],assets['VISION.H1V']]));(out/'layout-and-host-results.json').write_text(json.dumps(layout,indent=2)+'\n',encoding='utf-8');(out/'compile.txt').write_text(''.join(logs),encoding='utf-8');assert (layout['game_size'],layout['unit_size'],layout['input_size'])==(173544,240,20)
+ generator=out/'fixtures.exe';run([cc,*objects,'-o',generator]);layout=json.loads(run([generator,out/'fixtures',assets['SCENE.H1P'],assets['VISION.H1V']]));(out/'layout-and-host-results.json').write_text(json.dumps(layout,indent=2)+'\n',encoding='utf-8');(out/'compile.txt').write_text(''.join(logs),encoding='utf-8');assert (layout['game_size'],layout['unit_size'],layout['input_size'])==(178044,240,20)
  deps=ROOT.parent/'.tools/dota3d-deps'
  if deps.is_dir():sys.path.insert(0,str(deps))
  sys.path.insert(0,str(ROOT/'tests'));from mips_core_model import CoreMachine
- m=CoreMachine(bda,elf,assets);gp=m.symbols['dota_game'];ip=0x81500000;cases=[];checks=setup_writes=0;expect=layout['expected'];hx,hy=layout['hill_pair'][2:];ward=layout['item_first']
+ m=CoreMachine(bda,elf,assets);assert m.symbol_sizes['view']==112;gp=m.symbols['dota_game'];ip=0x81500000;cases=[];checks=setup_writes=0;expect=layout['expected'];hx,hy=layout['hill_pair'][2:];ward=layout['item_first']
  def check(value,label):
   nonlocal checks;checks+=1
   if not value:raise AssertionError((label,cases[-1:]))

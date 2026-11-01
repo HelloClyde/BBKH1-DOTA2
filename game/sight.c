@@ -12,6 +12,7 @@
 #include "jungle.h"
 #include "roster_heroes.h"
 #include "match_time.h"
+#include "trees.h"
 
 /* Terrain sight uses a 64-Source-unit grid, independent of navigation.
  * Cached integer shadowcasting visits cells, never pixel x unit rays. Masks
@@ -58,6 +59,8 @@ typedef struct {
     unsigned short active[SOURCE_COUNT];
     int active_count;
     unsigned tree_signature,tree_stamp;
+    const DotaGame *tree_owner;
+    unsigned static_revision,geometry_revision,trees_valid,static_trees_ready;
     int slope_left[SLOPE_COUNT],slope_right[SLOPE_COUNT];
     SightReach reach[REACH_ENTRIES];unsigned reach_age;
     SightShared shared[SHARED_ENTRIES];
@@ -92,7 +95,7 @@ unsigned dota_sight_workspace_bytes(void){return (unsigned)sizeof(SightWork);}
 void dota_sight_invalidate(void){cached_game=0;cached_tick=-1;}
 void dota_sight_reset(void){
     dota_sight_invalidate();
-    if(work){int i;work->owner=0;zero(work->current,sizeof(work->current));zero(work->explored,sizeof(work->explored));
+    if(work){int i;work->owner=0;work->trees_valid=0;zero(work->current,sizeof(work->current));zero(work->explored,sizeof(work->explored));
         for(i=0;i<SOURCE_COUNT;++i)work->source[i].valid=0;}
 }
 void dota_sight_detach(void){work=0;terrain_height=0;terrain_trees=0;dota_sight_invalidate();}
@@ -142,8 +145,19 @@ static unsigned mix(unsigned hash,unsigned value){return (hash^value)*16777619u;
 static void dynamic_trees(const DotaGame *g){
     unsigned hash=2166136261u;int i;
     for(i=0;i<DOTA_ITEM_TREES;++i){const DotaItemTree *t=&g->item_world.tree[i];if(t->until>g->tick && !t->removed){hash=mix(hash,(unsigned)t->x);hash=mix(hash,(unsigned)t->y);hash=mix(hash,(unsigned)i+1u);}}
-    if(work->tree_signature==hash)return;
+    if(work->trees_valid && work->tree_owner==g && work->static_revision==dota_trees_revision(g) && work->geometry_revision==dota_trees_geometry_revision() && work->tree_signature==hash)return;
+    work->trees_valid=1;work->tree_owner=g;work->static_revision=dota_trees_revision(g);work->geometry_revision=dota_trees_geometry_revision();
     work->tree_signature=hash;++work->tree_stamp;zero(work->dynamic_trees,sizeof(work->dynamic_trees));
+    /* Re-rasterise standing IDs, rather than clearing cut circles from the
+     * original union: overlapping living trees must keep their own shadow. */
+    work->static_trees_ready=(unsigned)dota_trees_ready();
+    if(work->static_trees_ready)for(i=0;i<DOTA_STATIC_TREE_COUNT;++i)if(!dota_trees_is_cut(g,(unsigned)i)){
+        int x,y,xx,yy;dota_trees_position((unsigned)i,&x,&y);
+        for(yy=y/CELL-1;yy<=y/CELL+1;++yy)for(xx=x/CELL-1;xx<=x/CELL+1;++xx){
+            int dx=xx*CELL+CELL/2-x,dy=yy*CELL+CELL/2-y;
+            if((unsigned)xx<GRID && (unsigned)yy<GRID && dx*dx+dy*dy<=DOTA_TREE_RADIUS_WORLD*DOTA_TREE_RADIUS_WORLD)set(work->dynamic_trees,yy*GRID+xx);
+        }
+    }
     for(i=0;i<DOTA_ITEM_TREES;++i){const DotaItemTree *t=&g->item_world.tree[i];if(t->until>g->tick && !t->removed && (unsigned)t->x<DOTA_WORLD && (unsigned)t->y<DOTA_WORLD)set(work->dynamic_trees,(t->y/CELL)*GRID+t->x/CELL);}
 }
 /* 0 clear, 1 tree (its cell may be seen), 2 higher ground/unknown/pit edge. */
@@ -155,7 +169,7 @@ static int obstruction(const SightSource *s,int x,int y){
     if(s->flying)return 0;
     if(s->height==32767)return 2;
     if(height_level(c)>s->height)return 2;
-    if((terrain_trees && ((terrain_trees[(unsigned)c>>3]>>(c&7))&1u)) || bit(work->dynamic_trees,c))return 1;
+    if((!work->static_trees_ready && terrain_trees && ((terrain_trees[(unsigned)c>>3]>>(c&7))&1u)) || bit(work->dynamic_trees,c))return 1;
     return 0;
 }
 static void plot(SightSource *s,int x,int y,int wall){

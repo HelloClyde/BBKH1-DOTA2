@@ -1,0 +1,3243 @@
+{
+  "complete": true,
+  "rasterization": "Closed16x16 world cell-square intersects source circular hull plus original24-Source hero clearance; no guessed image rectangles.",
+  "static_barracks": [
+    {
+      "kind": "static-barracks",
+      "hammer_id": "2699:25345:2",
+      "targetname": "[PR#]good_rax_melee_mid",
+      "npc_unit": "npc_dota_goodguys_melee_rax_mid",
+      "model": "models/props_structures/radiant_melee_barracks001.vmdl",
+      "source_xyz": [
+        -4671.996094,
+        -4551.998535,
+        255.999878
+      ],
+      "angles": [
+        0.0,
+        135.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        880.0009765,
+        3185.9996337499997
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_BARRACKS",
+      "radius_source": 144.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 46.0,
+      "rounding": "unrounded original entity origin",
+      "blocked_cells": 34,
+      "newly_blocked_cells": 34
+    },
+    {
+      "kind": "static-barracks",
+      "hammer_id": "2699:25346:2",
+      "targetname": "[PR#]good_rax_range_mid",
+      "npc_unit": "npc_dota_goodguys_range_rax_mid",
+      "model": "models/props_structures/radiant_ranged_barracks001.vmdl",
+      "source_xyz": [
+        -5060.000488,
+        -4199.000488,
+        255.999756
+      ],
+      "angles": [
+        0.0,
+        315.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        782.9998780000001,
+        3097.750122
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_BARRACKS",
+      "radius_source": 144.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 46.0,
+      "rounding": "unrounded original entity origin",
+      "blocked_cells": 38,
+      "newly_blocked_cells": 38
+    },
+    {
+      "kind": "static-barracks",
+      "hammer_id": "2699:25347:2",
+      "targetname": "[PR#]good_rax_melee_bot",
+      "npc_unit": "npc_dota_goodguys_melee_rax_bot",
+      "model": "models/props_structures/radiant_melee_barracks001.vmdl",
+      "source_xyz": [
+        -4279.996094,
+        -6360.001953,
+        256.0
+      ],
+      "angles": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        978.0009765,
+        3638.0004882499998
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_BARRACKS",
+      "radius_source": 144.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 46.0,
+      "rounding": "unrounded original entity origin",
+      "blocked_cells": 39,
+      "newly_blocked_cells": 39
+    },
+    {
+      "kind": "static-barracks",
+      "hammer_id": "2699:25348:2",
+      "targetname": "[PR#]good_rax_range_bot",
+      "npc_unit": "npc_dota_goodguys_range_rax_bot",
+      "model": "models/props_structures/radiant_ranged_barracks001.vmdl",
+      "source_xyz": [
+        -4279.000488,
+        -5853.0,
+        255.999878
+      ],
+      "angles": [
+        0.0,
+        270.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        978.2498780000001,
+        3511.25
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_BARRACKS",
+      "radius_source": 144.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 46.0,
+      "rounding": "unrounded original entity origin",
+      "blocked_cells": 39,
+      "newly_blocked_cells": 39
+    },
+    {
+      "kind": "static-barracks",
+      "hammer_id": "2699:25349:2",
+      "targetname": "[PR#]good_rax_melee_top",
+      "npc_unit": "npc_dota_goodguys_melee_rax_top",
+      "model": "models/props_structures/radiant_melee_barracks001.vmdl",
+      "source_xyz": [
+        -6335.998047,
+        -3757.996094,
+        255.999878
+      ],
+      "angles": [
+        0.0,
+        180.000107,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        464.00048825,
+        2987.4990235
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_BARRACKS",
+      "radius_source": 144.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 46.0,
+      "rounding": "unrounded original entity origin",
+      "blocked_cells": 36,
+      "newly_blocked_cells": 36
+    },
+    {
+      "kind": "static-barracks",
+      "hammer_id": "2699:25350:2",
+      "targetname": "[PR#]good_rax_range_top",
+      "npc_unit": "npc_dota_goodguys_range_rax_top",
+      "model": "models/props_structures/radiant_ranged_barracks001.vmdl",
+      "source_xyz": [
+        -6844.0,
+        -3759.000488,
+        255.999939
+      ],
+      "angles": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        337.0,
+        2987.750122
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_BARRACKS",
+      "radius_source": 144.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 46.0,
+      "rounding": "unrounded original entity origin",
+      "blocked_cells": 36,
+      "newly_blocked_cells": 36
+    },
+    {
+      "kind": "static-barracks",
+      "hammer_id": "2699:25351:2",
+      "targetname": "[PR#]bad_rax_melee_bot",
+      "npc_unit": "npc_dota_badguys_melee_rax_bot",
+      "model": "models/props_structures/dire_barracks_melee001.vmdl",
+      "source_xyz": [
+        6591.999023,
+        3392.016846,
+        255.999878
+      ],
+      "angles": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3695.99975575,
+        1199.9957885
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_BARRACKS",
+      "radius_source": 144.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 46.0,
+      "rounding": "unrounded original entity origin",
+      "blocked_cells": 36,
+      "newly_blocked_cells": 36
+    },
+    {
+      "kind": "static-barracks",
+      "hammer_id": "2699:25352:2",
+      "targetname": "[PR#]bad_rax_range_bot",
+      "npc_unit": "npc_dota_badguys_range_rax_bot",
+      "model": "models/props_structures/dire_barracks_ranged001.vmdl",
+      "source_xyz": [
+        6064.0,
+        3376.0,
+        256.0
+      ],
+      "angles": [
+        0.0,
+        180.000107,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3564.0,
+        1204.0
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_BARRACKS",
+      "radius_source": 144.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 46.0,
+      "rounding": "unrounded original entity origin",
+      "blocked_cells": 41,
+      "newly_blocked_cells": 41
+    },
+    {
+      "kind": "static-barracks",
+      "hammer_id": "2699:25353:2",
+      "targetname": "[PR#]bad_rax_range_mid",
+      "npc_unit": "npc_dota_badguys_range_rax_mid",
+      "model": "models/props_structures/dire_barracks_ranged001.vmdl",
+      "source_xyz": [
+        4336.0,
+        4183.0,
+        255.999756
+      ],
+      "angles": [
+        0.0,
+        135.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3132.0,
+        1002.25
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_BARRACKS",
+      "radius_source": 144.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 46.0,
+      "rounding": "unrounded original entity origin",
+      "blocked_cells": 40,
+      "newly_blocked_cells": 40
+    },
+    {
+      "kind": "static-barracks",
+      "hammer_id": "2699:25354:2",
+      "targetname": "[PR#]bad_rax_melee_mid",
+      "npc_unit": "npc_dota_badguys_melee_rax_mid",
+      "model": "models/props_structures/dire_barracks_melee001.vmdl",
+      "source_xyz": [
+        4702.01123,
+        3824.012451,
+        255.999878
+      ],
+      "angles": [
+        0.0,
+        315.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3223.5028075,
+        1091.9968872499999
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_BARRACKS",
+      "radius_source": 144.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 46.0,
+      "rounding": "unrounded original entity origin",
+      "blocked_cells": 41,
+      "newly_blocked_cells": 41
+    },
+    {
+      "kind": "static-barracks",
+      "hammer_id": "2699:25355:2",
+      "targetname": "[PR#]bad_rax_melee_top",
+      "npc_unit": "npc_dota_badguys_melee_rax_top",
+      "model": "models/props_structures/dire_barracks_melee001.vmdl",
+      "source_xyz": [
+        3898.016846,
+        5496.000977,
+        255.999878
+      ],
+      "angles": [
+        0.0,
+        270.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3022.5042115,
+        673.9997557500001
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_BARRACKS",
+      "radius_source": 144.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 46.0,
+      "rounding": "unrounded original entity origin",
+      "blocked_cells": 35,
+      "newly_blocked_cells": 35
+    },
+    {
+      "kind": "static-barracks",
+      "hammer_id": "2699:25356:2",
+      "targetname": "[PR#]bad_rax_range_top",
+      "npc_unit": "npc_dota_badguys_range_rax_top",
+      "model": "models/props_structures/dire_barracks_ranged001.vmdl",
+      "source_xyz": [
+        3894.0,
+        6025.0,
+        255.999878
+      ],
+      "angles": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3021.5,
+        541.75
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_BARRACKS",
+      "radius_source": 144.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 46.0,
+      "rounding": "unrounded original entity origin",
+      "blocked_cells": 39,
+      "newly_blocked_cells": 39
+    }
+  ],
+  "dynamic_towers": [
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25343:3",
+      "targetname": "[PR#]dota_goodguys_tower1_top",
+      "npc_unit": "npc_dota_goodguys_tower1_top",
+      "model": "models/props_structures/radiant_tower002.vmdl",
+      "source_xyz": [
+        -6336.0,
+        1856.002197,
+        128.0
+      ],
+      "angles": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        464,
+        1584
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "mask_bit": 0,
+      "base_walkable_cells": [
+        24603,
+        24604,
+        24605,
+        24606,
+        24858,
+        24859,
+        24860,
+        24861,
+        24862,
+        24863,
+        25114,
+        25115,
+        25116,
+        25117,
+        25118,
+        25119,
+        25370,
+        25371,
+        25372,
+        25373,
+        25374,
+        25375,
+        25626,
+        25627,
+        25628,
+        25629,
+        25630,
+        25631,
+        25883,
+        25884,
+        25885,
+        25886
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25342:3",
+      "targetname": "[PR#]dota_goodguys_tower2_top",
+      "npc_unit": "npc_dota_goodguys_tower2_top",
+      "model": "models/props_structures/radiant_tower002.vmdl",
+      "source_xyz": [
+        -6501.0,
+        -871.997803,
+        128.0
+      ],
+      "angles": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        423,
+        2266
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "mask_bit": 1,
+      "base_walkable_cells": [
+        35354,
+        35608,
+        35609,
+        35610,
+        35611,
+        35612,
+        35863,
+        35864,
+        35865,
+        35866,
+        35867,
+        35868,
+        36119,
+        36120,
+        36121,
+        36122,
+        36123,
+        36124,
+        36125,
+        36375,
+        36376,
+        36377,
+        36378,
+        36379,
+        36380,
+        36381,
+        36632,
+        36633,
+        36634,
+        36635,
+        36636,
+        36889,
+        36890,
+        36891
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:26399:3",
+      "targetname": "[PR#]dota_goodguys_tower1_mid",
+      "npc_unit": "npc_dota_goodguys_tower1_mid",
+      "model": "models/props_structures/radiant_tower002.vmdl",
+      "source_xyz": [
+        -1543.998535,
+        -1407.998413,
+        127.999878
+      ],
+      "angles": [
+        0.0,
+        45.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        1662,
+        2400
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "lane": 1,
+      "tier": 0,
+      "mask_bit": 2,
+      "base_walkable_cells": [
+        37734,
+        37735,
+        37736,
+        37737,
+        37989,
+        37990,
+        37991,
+        37992,
+        37993,
+        37994,
+        38245,
+        38246,
+        38247,
+        38248,
+        38249,
+        38250,
+        38501,
+        38502,
+        38503,
+        38504,
+        38505,
+        38506,
+        38757,
+        38758,
+        38759,
+        38760,
+        38761,
+        38762,
+        39014,
+        39015,
+        39016,
+        39017
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25340:3",
+      "targetname": "[PR#]dota_goodguys_tower2_mid",
+      "npc_unit": "npc_dota_goodguys_tower2_mid",
+      "model": "models/props_structures/radiant_tower002.vmdl",
+      "source_xyz": [
+        -3190.358887,
+        -2926.25,
+        128.0
+      ],
+      "angles": [
+        0.0,
+        45.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        1250,
+        2780
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "mask_bit": 3,
+      "base_walkable_cells": [
+        43852,
+        43853,
+        43854,
+        43855,
+        43856,
+        44107,
+        44108,
+        44109,
+        44110,
+        44111,
+        44112,
+        44363,
+        44364,
+        44365,
+        44366,
+        44367,
+        44368,
+        44619,
+        44620,
+        44621,
+        44622,
+        44623,
+        44624,
+        44875,
+        44876,
+        44877,
+        44878,
+        44879,
+        44880,
+        45132,
+        45133,
+        45134,
+        45135
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25339:3",
+      "targetname": "[PR#]dota_goodguys_tower1_bot",
+      "npc_unit": "npc_dota_goodguys_tower1_bot",
+      "model": "models/props_structures/radiant_tower002.vmdl",
+      "source_xyz": [
+        4859.866211,
+        -6379.263184,
+        128.0
+      ],
+      "angles": [
+        0.0,
+        30.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3263,
+        3643
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "lane": 2,
+      "tier": 0,
+      "mask_bit": 4,
+      "base_walkable_cells": [
+        57801,
+        57802,
+        57803,
+        57804,
+        57805,
+        58057,
+        58058,
+        58059,
+        58060,
+        58061,
+        58062,
+        58313,
+        58314,
+        58315,
+        58316,
+        58317,
+        58318,
+        58569,
+        58570,
+        58571,
+        58572,
+        58573,
+        58574,
+        58825,
+        58826,
+        58827,
+        58828,
+        58829,
+        58830,
+        59082,
+        59083,
+        59084,
+        59085
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25338:3",
+      "targetname": "[PR#]dota_goodguys_tower2_bot",
+      "npc_unit": "npc_dota_goodguys_tower2_bot",
+      "model": "models/props_structures/radiant_tower002.vmdl",
+      "source_xyz": [
+        -359.997803,
+        -6256.0,
+        128.0
+      ],
+      "angles": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        1958,
+        3612
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "mask_bit": 5,
+      "base_walkable_cells": [
+        57208,
+        57209,
+        57210,
+        57211,
+        57212,
+        57463,
+        57464,
+        57465,
+        57466,
+        57467,
+        57468,
+        57719,
+        57720,
+        57721,
+        57722,
+        57723,
+        57724,
+        57725,
+        57975,
+        57976,
+        57977,
+        57978,
+        57979,
+        57980,
+        58232,
+        58233,
+        58234,
+        58235,
+        58236,
+        58489,
+        58490,
+        58491
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25396:4",
+      "targetname": "[PR#]dota_badguys_tower1_top",
+      "npc_unit": "npc_dota_badguys_tower1_top",
+      "model": "models/props_structures/dire_tower002.vmdl",
+      "source_xyz": [
+        -5274.558105,
+        6036.044434,
+        128.0
+      ],
+      "angles": [
+        0.0,
+        30.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        729,
+        539
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "mask_bit": 6,
+      "base_walkable_cells": [
+        7979,
+        7980,
+        7981,
+        7982,
+        7983,
+        8235,
+        8236,
+        8237,
+        8238,
+        8239,
+        8240,
+        8490,
+        8491,
+        8492,
+        8493,
+        8494,
+        8495,
+        8496,
+        8746,
+        8747,
+        8748,
+        8749,
+        8750,
+        8751,
+        8752,
+        9003,
+        9004,
+        9005,
+        9006,
+        9007,
+        9260,
+        9261,
+        9262
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25395:4",
+      "targetname": "[PR#]dota_badguys_tower2_top",
+      "npc_unit": "npc_dota_badguys_tower2_top",
+      "model": "models/props_structures/dire_tower002.vmdl",
+      "source_xyz": [
+        -128.000305,
+        6016.0,
+        128.0
+      ],
+      "angles": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        2016,
+        544
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "mask_bit": 7,
+      "base_walkable_cells": [
+        8060,
+        8061,
+        8062,
+        8063,
+        8315,
+        8316,
+        8317,
+        8318,
+        8319,
+        8320,
+        8571,
+        8572,
+        8573,
+        8574,
+        8575,
+        8576,
+        8827,
+        8828,
+        8829,
+        8830,
+        8831,
+        8832,
+        9083,
+        9084,
+        9085,
+        9086,
+        9087,
+        9088,
+        9340,
+        9341,
+        9342,
+        9343
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25398:4",
+      "targetname": "[PR#]dota_badguys_tower1_mid",
+      "npc_unit": "npc_dota_badguys_tower1_mid",
+      "model": "models/props_structures/dire_tower002.vmdl",
+      "source_xyz": [
+        523.999756,
+        651.999817,
+        128.0
+      ],
+      "angles": [
+        0.0,
+        45.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        2179,
+        1885
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "lane": 1,
+      "tier": 0,
+      "mask_bit": 8,
+      "base_walkable_cells": [
+        29574,
+        29575,
+        29576,
+        29577,
+        29578,
+        29829,
+        29830,
+        29831,
+        29832,
+        29833,
+        29834,
+        30085,
+        30086,
+        30087,
+        30088,
+        30089,
+        30090,
+        30341,
+        30342,
+        30343,
+        30344,
+        30345,
+        30346,
+        30597,
+        30598,
+        30599,
+        30600,
+        30601,
+        30602,
+        30854,
+        30855,
+        30856,
+        30857
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25397:4",
+      "targetname": "[PR#]dota_badguys_tower2_mid",
+      "npc_unit": "npc_dota_badguys_tower2_mid",
+      "model": "models/props_structures/dire_tower002.vmdl",
+      "source_xyz": [
+        2495.999756,
+        2111.999756,
+        128.0
+      ],
+      "angles": [
+        0.0,
+        45.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        2672,
+        1520
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "mask_bit": 9,
+      "base_walkable_cells": [
+        23717,
+        23718,
+        23719,
+        23720,
+        23972,
+        23973,
+        23974,
+        23975,
+        23976,
+        23977,
+        24228,
+        24229,
+        24230,
+        24231,
+        24232,
+        24233,
+        24484,
+        24485,
+        24486,
+        24487,
+        24488,
+        24489,
+        24740,
+        24741,
+        24742,
+        24743,
+        24744,
+        24745,
+        24997,
+        24998,
+        24999,
+        25000
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:27962:4",
+      "targetname": "[PR#]dota_badguys_tower1_bot",
+      "npc_unit": "npc_dota_badguys_tower1_bot",
+      "model": "models/props_structures/dire_tower002.vmdl",
+      "source_xyz": [
+        6269.338867,
+        -2240.000244,
+        128.0
+      ],
+      "angles": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3615,
+        2608
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "lane": 2,
+      "tier": 0,
+      "mask_bit": 10,
+      "base_walkable_cells": [
+        41184,
+        41185,
+        41186,
+        41187,
+        41439,
+        41440,
+        41441,
+        41442,
+        41443,
+        41444,
+        41695,
+        41696,
+        41697,
+        41698,
+        41699,
+        41700,
+        41951,
+        41952,
+        41953,
+        41954,
+        41955,
+        41956,
+        42207,
+        42208,
+        42209,
+        42210,
+        42211,
+        42212,
+        42464,
+        42465,
+        42466,
+        42467
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25400:4",
+      "targetname": "[PR#]dota_badguys_tower2_bot",
+      "npc_unit": "npc_dota_badguys_tower2_bot",
+      "model": "models/props_structures/dire_tower002.vmdl",
+      "source_xyz": [
+        6400.0,
+        383.999695,
+        128.0
+      ],
+      "angles": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3648,
+        1952
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "mask_bit": 11,
+      "base_walkable_cells": [
+        30690,
+        30691,
+        30692,
+        30693,
+        30945,
+        30946,
+        30947,
+        30948,
+        30949,
+        30950,
+        31201,
+        31202,
+        31203,
+        31204,
+        31205,
+        31206,
+        31457,
+        31458,
+        31459,
+        31460,
+        31461,
+        31462,
+        31713,
+        31714,
+        31715,
+        31716,
+        31717,
+        31718,
+        31970,
+        31971,
+        31972,
+        31973
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25337:3",
+      "targetname": "[PR#]dota_goodguys_tower3_top",
+      "npc_unit": "npc_dota_goodguys_tower3_top",
+      "model": "models/props_structures/radiant_tower002.vmdl",
+      "source_xyz": [
+        -6592.0,
+        -3407.997803,
+        256.0
+      ],
+      "angles": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        400,
+        2900
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "mask_bit": 12,
+      "base_walkable_cells": [
+        45591,
+        45592,
+        45593,
+        45594,
+        45846,
+        45847,
+        45848,
+        45849,
+        45850,
+        45851,
+        46102,
+        46103,
+        46104,
+        46105,
+        46106,
+        46107,
+        46358,
+        46359,
+        46360,
+        46361,
+        46362,
+        46363,
+        46614,
+        46615,
+        46616,
+        46617,
+        46618,
+        46619,
+        46871,
+        46872,
+        46873,
+        46874
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25336:3",
+      "targetname": "[PR#]dota_goodguys_tower3_mid",
+      "npc_unit": "npc_dota_goodguys_tower3_mid",
+      "model": "models/props_structures/radiant_tower002.vmdl",
+      "source_xyz": [
+        -4639.998535,
+        -4143.998535,
+        256.0
+      ],
+      "angles": [
+        0.0,
+        45.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        888,
+        3084
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "mask_bit": 13,
+      "base_walkable_cells": [
+        48693,
+        48694,
+        48695,
+        48696,
+        48697,
+        48948,
+        48949,
+        48950,
+        48951,
+        48952,
+        48953,
+        48954,
+        49204,
+        49205,
+        49206,
+        49207,
+        49208,
+        49209,
+        49210,
+        49460,
+        49461,
+        49462,
+        49463,
+        49464,
+        49465,
+        49466,
+        49717,
+        49718,
+        49719,
+        49720,
+        49721,
+        49974,
+        49975,
+        49976
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25335:3",
+      "targetname": "[PR#]dota_goodguys_tower3_bot",
+      "npc_unit": "npc_dota_goodguys_tower3_bot",
+      "model": "models/props_structures/radiant_tower002.vmdl",
+      "source_xyz": [
+        -3951.997803,
+        -6112.0,
+        255.999939
+      ],
+      "angles": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        1060,
+        3576
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "mask_bit": 14,
+      "base_walkable_cells": [
+        56385,
+        56386,
+        56387,
+        56640,
+        56641,
+        56642,
+        56643,
+        56644,
+        56895,
+        56896,
+        56897,
+        56898,
+        56899,
+        56900,
+        57151,
+        57152,
+        57153,
+        57154,
+        57155,
+        57156,
+        57407,
+        57408,
+        57409,
+        57410,
+        57411,
+        57412,
+        57664,
+        57665,
+        57666,
+        57667,
+        57668,
+        57921,
+        57922,
+        57923
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25344:3",
+      "targetname": "[PR#]dota_goodguys_tower4_top",
+      "npc_unit": "npc_dota_goodguys_tower4",
+      "model": "models/props_structures/radiant_tower002.vmdl",
+      "source_xyz": [
+        -5711.998535,
+        -4863.998535,
+        255.999878
+      ],
+      "angles": [
+        0.0,
+        45.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        620,
+        3264
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "mask_bit": 15,
+      "base_walkable_cells": [
+        51493,
+        51494,
+        51495,
+        51496,
+        51748,
+        51749,
+        51750,
+        51751,
+        51752,
+        51753,
+        52004,
+        52005,
+        52006,
+        52007,
+        52008,
+        52009,
+        52260,
+        52261,
+        52262,
+        52263,
+        52264,
+        52265,
+        52516,
+        52517,
+        52518,
+        52519,
+        52520,
+        52521,
+        52773,
+        52774,
+        52775,
+        52776
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25405:3",
+      "targetname": "[PR#]dota_goodguys_tower4_bot",
+      "npc_unit": "npc_dota_goodguys_tower4",
+      "model": "models/props_structures/radiant_tower002.vmdl",
+      "source_xyz": [
+        -5391.998535,
+        -5191.998535,
+        255.999878
+      ],
+      "angles": [
+        0.0,
+        45.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        700,
+        3346
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "mask_bit": 16,
+      "base_walkable_cells": [
+        52778,
+        52779,
+        52780,
+        52781,
+        53033,
+        53034,
+        53035,
+        53036,
+        53037,
+        53038,
+        53289,
+        53290,
+        53291,
+        53292,
+        53293,
+        53294,
+        53545,
+        53546,
+        53547,
+        53548,
+        53549,
+        53550,
+        53801,
+        53802,
+        53803,
+        53804,
+        53805,
+        53806,
+        54057,
+        54058,
+        54059,
+        54060,
+        54061
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25402:4",
+      "targetname": "[PR#]dota_badguys_tower3_top",
+      "npc_unit": "npc_dota_badguys_tower3_top",
+      "model": "models/props_structures/dire_tower002.vmdl",
+      "source_xyz": [
+        3551.999756,
+        5776.0,
+        256.0
+      ],
+      "angles": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        2936,
+        604
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "mask_bit": 17,
+      "base_walkable_cells": [
+        9141,
+        9142,
+        9143,
+        9144,
+        9145,
+        9396,
+        9397,
+        9398,
+        9399,
+        9400,
+        9401,
+        9652,
+        9653,
+        9654,
+        9655,
+        9656,
+        9657,
+        9658,
+        9908,
+        9909,
+        9910,
+        9911,
+        9912,
+        9913,
+        9914,
+        10165,
+        10166,
+        10167,
+        10168,
+        10169,
+        10422,
+        10423,
+        10424
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25403:4",
+      "targetname": "[PR#]dota_badguys_tower3_mid",
+      "npc_unit": "npc_dota_badguys_tower3_mid",
+      "model": "models/props_structures/dire_tower002.vmdl",
+      "source_xyz": [
+        4272.0,
+        3758.999756,
+        256.0
+      ],
+      "angles": [
+        0.0,
+        45.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3116,
+        1108
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "mask_bit": 18,
+      "base_walkable_cells": [
+        17089,
+        17090,
+        17091,
+        17092,
+        17344,
+        17345,
+        17346,
+        17347,
+        17348,
+        17349,
+        17600,
+        17601,
+        17602,
+        17603,
+        17604,
+        17605,
+        17856,
+        17857,
+        17858,
+        17859,
+        17860,
+        17861,
+        18112,
+        18113,
+        18114,
+        18115,
+        18116,
+        18117,
+        18368,
+        18369,
+        18370,
+        18371,
+        18372
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25401:4",
+      "targetname": "[PR#]dota_badguys_tower3_bot",
+      "npc_unit": "npc_dota_badguys_tower3_bot",
+      "model": "models/props_structures/dire_tower002.vmdl",
+      "source_xyz": [
+        6336.0,
+        3031.999756,
+        255.999756
+      ],
+      "angles": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3632,
+        1290
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "mask_bit": 19,
+      "base_walkable_cells": [
+        19938,
+        19939,
+        20192,
+        20193,
+        20194,
+        20195,
+        20196,
+        20197,
+        20448,
+        20449,
+        20450,
+        20451,
+        20452,
+        20453,
+        20704,
+        20705,
+        20706,
+        20707,
+        20708,
+        20709,
+        20960,
+        20961,
+        20962,
+        20963,
+        20964,
+        20965,
+        21216,
+        21217,
+        21218,
+        21219,
+        21220,
+        21221,
+        21473,
+        21474,
+        21475,
+        21476
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25394:4",
+      "targetname": "[PR#]dota_badguys_tower4_top",
+      "npc_unit": "npc_dota_badguys_tower4",
+      "model": "models/props_structures/dire_tower002.vmdl",
+      "source_xyz": [
+        4944.0,
+        4776.0,
+        255.999878
+      ],
+      "angles": [
+        0.0,
+        42.999985,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3284,
+        854
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "mask_bit": 20,
+      "base_walkable_cells": [
+        13004,
+        13005,
+        13006,
+        13259,
+        13260,
+        13261,
+        13262,
+        13263,
+        13514,
+        13515,
+        13516,
+        13517,
+        13518,
+        13519,
+        13770,
+        13771,
+        13772,
+        13773,
+        13774,
+        13775,
+        14026,
+        14027,
+        14028,
+        14029,
+        14030,
+        14031,
+        14283,
+        14284,
+        14285,
+        14286,
+        14287,
+        14541
+      ]
+    },
+    {
+      "kind": "dynamic-tower",
+      "hammer_id": "2699:25404:4",
+      "targetname": "[PR#]dota_badguys_tower4_bot",
+      "npc_unit": "npc_dota_badguys_tower4",
+      "model": "models/props_structures/dire_tower002.vmdl",
+      "source_xyz": [
+        5279.999512,
+        4432.0,
+        255.999878
+      ],
+      "angles": [
+        0.0,
+        42.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3368,
+        940
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_TOWER",
+      "radius_source": 144.0,
+      "padding_source": 0.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 42.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "mask_bit": 21,
+      "base_walkable_cells": [
+        14544,
+        14545,
+        14546,
+        14547,
+        14548,
+        14799,
+        14800,
+        14801,
+        14802,
+        14803,
+        14804,
+        14805,
+        15055,
+        15056,
+        15057,
+        15058,
+        15059,
+        15060,
+        15061,
+        15311,
+        15312,
+        15313,
+        15314,
+        15315,
+        15316,
+        15317,
+        15568,
+        15569,
+        15570,
+        15571,
+        15572,
+        15825,
+        15826,
+        15827
+      ]
+    }
+  ],
+  "dynamic_fillers": [
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:27780:2",
+      "targetname": "[PR#]good_filler_1",
+      "npc_unit": "npc_dota_goodguys_fillers",
+      "model": "models/props_structures/radiant_statue001.vmdl",
+      "source_xyz": [
+        -6589.785645,
+        -4206.744141,
+        240.0
+      ],
+      "angles": [
+        0.0,
+        302.000092,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        401,
+        3100
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "mask_bit": 0,
+      "base_walkable_cells": [
+        48919,
+        48920,
+        48921,
+        48922,
+        49175,
+        49176,
+        49177,
+        49178,
+        49179,
+        49430,
+        49431,
+        49432,
+        49433,
+        49434,
+        49435,
+        49686,
+        49687,
+        49688,
+        49689,
+        49690,
+        49691,
+        49943,
+        49944,
+        49945,
+        49946
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:27781:2",
+      "targetname": "[PR#]good_filler_2",
+      "npc_unit": "npc_dota_goodguys_fillers",
+      "model": "models/props_structures/radiant_statue001.vmdl",
+      "source_xyz": [
+        -5838.147461,
+        -4292.375,
+        240.0
+      ],
+      "angles": [
+        0.0,
+        221.000076,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        588,
+        3121
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "mask_bit": 1,
+      "base_walkable_cells": [
+        49188,
+        49189,
+        49442,
+        49443,
+        49444,
+        49445,
+        49446,
+        49698,
+        49699,
+        49700,
+        49701,
+        49702,
+        49954,
+        49955,
+        49956,
+        49957,
+        49958,
+        50210,
+        50211,
+        50212,
+        50213,
+        50214,
+        50467,
+        50468,
+        50469
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:27872:2",
+      "targetname": "[PR#]good_filler_5",
+      "npc_unit": "npc_dota_goodguys_fillers",
+      "model": "models/props_structures/radiant_statue001.vmdl",
+      "source_xyz": [
+        -4752.088867,
+        -6080.0,
+        240.0
+      ],
+      "angles": [
+        0.0,
+        304.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        860,
+        3568
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "mask_bit": 2,
+      "base_walkable_cells": [
+        56373,
+        56374,
+        56627,
+        56628,
+        56629,
+        56630,
+        56631,
+        56883,
+        56884,
+        56885,
+        56886,
+        56887,
+        57139,
+        57140,
+        57141,
+        57142,
+        57143,
+        57395,
+        57396,
+        57397,
+        57398,
+        57399,
+        57653,
+        57654
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:27873:2",
+      "targetname": "[PR#]good_filler_3",
+      "npc_unit": "npc_dota_goodguys_fillers",
+      "model": "models/props_structures/radiant_statue001.vmdl",
+      "source_xyz": [
+        -5312.0,
+        -4800.0,
+        240.0
+      ],
+      "angles": [
+        0.0,
+        303.000031,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        720,
+        3248
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "mask_bit": 3,
+      "base_walkable_cells": [
+        51244,
+        51245,
+        51499,
+        51500,
+        51501,
+        51502,
+        51754,
+        51755,
+        51756,
+        51757,
+        51758,
+        51759,
+        52010,
+        52011,
+        52012,
+        52013,
+        52014,
+        52015,
+        52267,
+        52268,
+        52269,
+        52270,
+        52524,
+        52525
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:27874:2",
+      "targetname": "[PR#]good_filler_4",
+      "npc_unit": "npc_dota_goodguys_fillers",
+      "model": "models/props_structures/radiant_statue001.vmdl",
+      "source_xyz": [
+        -4782.147461,
+        -5268.375,
+        240.0
+      ],
+      "angles": [
+        0.0,
+        232.000046,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        852,
+        3365
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "mask_bit": 4,
+      "base_walkable_cells": [
+        53299,
+        53300,
+        53301,
+        53302,
+        53555,
+        53556,
+        53557,
+        53558,
+        53559,
+        53811,
+        53812,
+        53813,
+        53814,
+        53815,
+        54067,
+        54068,
+        54069,
+        54070,
+        54071,
+        54323,
+        54324,
+        54325,
+        54326
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:27877:2",
+      "targetname": "[PR#]bad_filler_1",
+      "npc_unit": "npc_dota_badguys_fillers",
+      "model": "models/props_structures/dire_column001.vmdl",
+      "source_xyz": [
+        6326.222168,
+        3798.050293,
+        256.038452
+      ],
+      "angles": [
+        0.0,
+        244.999985,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3630,
+        1098
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "mask_bit": 5,
+      "base_walkable_cells": [
+        17121,
+        17122,
+        17123,
+        17124,
+        17376,
+        17377,
+        17378,
+        17379,
+        17380,
+        17632,
+        17633,
+        17634,
+        17635,
+        17636,
+        17637,
+        17888,
+        17889,
+        17890,
+        17891,
+        17892,
+        18145,
+        18146,
+        18147,
+        18148
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:27878:2",
+      "targetname": "[PR#]bad_filler_2",
+      "npc_unit": "npc_dota_badguys_fillers",
+      "model": "models/props_structures/dire_column001.vmdl",
+      "source_xyz": [
+        5520.922852,
+        3949.039551,
+        256.038452
+      ],
+      "angles": [
+        0.0,
+        294.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3428,
+        1061
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "mask_bit": 6,
+      "base_walkable_cells": [
+        16596,
+        16597,
+        16598,
+        16599,
+        16852,
+        16853,
+        16854,
+        16855,
+        16856,
+        17108,
+        17109,
+        17110,
+        17111,
+        17112,
+        17364,
+        17365,
+        17366,
+        17367,
+        17368,
+        17620,
+        17621,
+        17622,
+        17623
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:27879:2",
+      "targetname": "[PR#]bad_filler_3",
+      "npc_unit": "npc_dota_badguys_fillers",
+      "model": "models/props_structures/dire_column001.vmdl",
+      "source_xyz": [
+        4894.154297,
+        4370.023926,
+        264.294067
+      ],
+      "angles": [
+        0.0,
+        46.000015,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3272,
+        955
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "mask_bit": 7,
+      "base_walkable_cells": [
+        14795,
+        14796,
+        14797,
+        15050,
+        15051,
+        15052,
+        15053,
+        15054,
+        15306,
+        15307,
+        15308,
+        15309,
+        15310,
+        15562,
+        15563,
+        15564,
+        15565,
+        15566,
+        15818,
+        15819,
+        15820,
+        15821,
+        15822
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:27880:2",
+      "targetname": "[PR#]bad_filler_4",
+      "npc_unit": "npc_dota_badguys_fillers",
+      "model": "models/props_structures/dire_column001.vmdl",
+      "source_xyz": [
+        4480.92334,
+        4989.035645,
+        256.038208
+      ],
+      "angles": [
+        0.0,
+        120.999939,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3168,
+        801
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "mask_bit": 8,
+      "base_walkable_cells": [
+        12229,
+        12230,
+        12484,
+        12485,
+        12486,
+        12487,
+        12739,
+        12740,
+        12741,
+        12742,
+        12743,
+        12744,
+        12995,
+        12996,
+        12997,
+        12998,
+        12999,
+        13000,
+        13252,
+        13253,
+        13254,
+        13255,
+        13509,
+        13510
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:27881:2",
+      "targetname": "[PR#]bad_filler_5",
+      "npc_unit": "npc_dota_badguys_fillers",
+      "model": "models/props_structures/dire_column001.vmdl",
+      "source_xyz": [
+        4411.026367,
+        5753.460938,
+        256.038208
+      ],
+      "angles": [
+        0.0,
+        64.999992,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3151,
+        610
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "mask_bit": 9,
+      "base_walkable_cells": [
+        9156,
+        9411,
+        9412,
+        9413,
+        9414,
+        9666,
+        9667,
+        9668,
+        9669,
+        9670,
+        9671,
+        9922,
+        9923,
+        9924,
+        9925,
+        9926,
+        9927,
+        10179,
+        10180,
+        10181,
+        10182,
+        10435,
+        10436,
+        10437
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:28123:2",
+      "targetname": "[PR#]bad_filler_6",
+      "npc_unit": "npc_dota_badguys_fillers",
+      "model": "models/props_structures/dire_column001.vmdl",
+      "source_xyz": [
+        5286.222168,
+        3374.048096,
+        271.130981
+      ],
+      "angles": [
+        0.0,
+        124.999916,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        3370,
+        1204
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "mask_bit": 10,
+      "base_walkable_cells": [
+        18896,
+        18897,
+        18898,
+        18899,
+        18900,
+        19152,
+        19153,
+        19154,
+        19155,
+        19156,
+        19408,
+        19409,
+        19410,
+        19411,
+        19412,
+        19664,
+        19665,
+        19666,
+        19667,
+        19668,
+        19921,
+        19922,
+        19923
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:28124:2",
+      "targetname": "[PR#]bad_filler_7",
+      "npc_unit": "npc_dota_badguys_fillers",
+      "model": "models/props_structures/dire_column001.vmdl",
+      "source_xyz": [
+        3783.575928,
+        4718.492188,
+        270.517578
+      ],
+      "angles": [
+        0.0,
+        85.999908,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        2994,
+        868
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 1,
+      "mask_bit": 11,
+      "base_walkable_cells": [
+        13497,
+        13498,
+        13499,
+        13500,
+        13753,
+        13754,
+        13755,
+        13756,
+        13757,
+        14008,
+        14009,
+        14010,
+        14011,
+        14012,
+        14013,
+        14265,
+        14266,
+        14267,
+        14268,
+        14269,
+        14521,
+        14522,
+        14523,
+        14524
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:28125:2",
+      "targetname": "[PR#]good_filler_6",
+      "npc_unit": "npc_dota_goodguys_fillers",
+      "model": "models/props_structures/radiant_statue001.vmdl",
+      "source_xyz": [
+        -5597.785156,
+        -3710.743896,
+        280.0
+      ],
+      "angles": [
+        0.0,
+        302.000092,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        649,
+        2976
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "mask_bit": 12,
+      "base_walkable_cells": [
+        46887,
+        46888,
+        46889,
+        47142,
+        47143,
+        47144,
+        47145,
+        47146,
+        47398,
+        47399,
+        47400,
+        47401,
+        47402,
+        47654,
+        47655,
+        47656,
+        47657,
+        47658,
+        47910,
+        47911,
+        47912,
+        47913,
+        47914,
+        48167,
+        48168,
+        48169
+      ]
+    },
+    {
+      "kind": "dynamic-filler",
+      "hammer_id": "2699:28126:2",
+      "targetname": "[PR#]good_filler_7",
+      "npc_unit": "npc_dota_goodguys_fillers",
+      "model": "models/props_structures/radiant_statue001.vmdl",
+      "source_xyz": [
+        -4265.335938,
+        -5161.847656,
+        256.0
+      ],
+      "angles": [
+        0.0,
+        313.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_xy": [
+        982,
+        3338
+      ],
+      "bounds_hull_name": "DOTA_HULL_SIZE_FILLER",
+      "radius_source": 96.0,
+      "padding_source": 16.0,
+      "hero_clearance_source": 24,
+      "collision_radius_world": 34.0,
+      "rounding": "nearest world unit, half upward",
+      "team": 0,
+      "mask_bit": 13,
+      "base_walkable_cells": [
+        52796,
+        52797,
+        52798,
+        53051,
+        53052,
+        53053,
+        53054,
+        53055,
+        53307,
+        53308,
+        53309,
+        53310,
+        53311,
+        53563,
+        53564,
+        53565,
+        53566,
+        53567,
+        53819,
+        53820,
+        53821,
+        53822
+      ]
+    }
+  ],
+  "excluded_dynamic_native_unknown": [
+    {
+      "classname": "npc_dota_fort",
+      "targetname": "[PR#]dota_badguys_fort",
+      "npc_unit": "npc_dota_badguys_fort",
+      "source_xyz": [
+        5527.99707,
+        4999.998047,
+        248.0
+      ],
+      "reason": "Original BUILDING parses radius0/padding16 and models have no PHYS. Native fort obstacle shape remains unproved; do not fabricate a rectangle or128 radius."
+    },
+    {
+      "classname": "npc_dota_fort",
+      "targetname": "[PR#]dota_goodguys_fort",
+      "npc_unit": "npc_dota_goodguys_fort",
+      "source_xyz": [
+        -5919.993652,
+        -5351.993652,
+        239.999878
+      ],
+      "reason": "Original BUILDING parses radius0/padding16 and models have no PHYS. Native fort obstacle shape remains unproved; do not fabricate a rectangle or128 radius."
+    }
+  ],
+  "models": {
+    "models/props_structures/radiant_melee_barracks001.vmdl": {
+      "identity": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_structures/radiant_melee_barracks001.vmdl_c",
+        "crc32": "555cd222",
+        "archive_index": 458,
+        "offset": 71565808,
+        "length": 111866,
+        "preload_bytes": 0,
+        "resource_bytes": 111866,
+        "sha256": "c58eb4fb468af75808acc318bfa309553544b79c162b969d4caaaa152fab1b15",
+        "crc32_verified": true
+      },
+      "compiled_blocks": [
+        "MDAT",
+        "MBUF",
+        "CTRL",
+        "RERL",
+        "RED2",
+        "DATA"
+      ],
+      "physics": "No PHYS block; navigation uses original NPC BoundsHullName"
+    },
+    "models/props_structures/radiant_ranged_barracks001.vmdl": {
+      "identity": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_structures/radiant_ranged_barracks001.vmdl_c",
+        "crc32": "ba1b4c03",
+        "archive_index": 458,
+        "offset": 71677680,
+        "length": 189482,
+        "preload_bytes": 0,
+        "resource_bytes": 189482,
+        "sha256": "f8c4e992cb9a1fadd530de734dcbe0122ba8127198a8d149425f4044dc7b3457",
+        "crc32_verified": true
+      },
+      "compiled_blocks": [
+        "MDAT",
+        "MBUF",
+        "CTRL",
+        "RERL",
+        "RED2",
+        "DATA"
+      ],
+      "physics": "No PHYS block; navigation uses original NPC BoundsHullName"
+    },
+    "models/props_structures/dire_barracks_melee001.vmdl": {
+      "identity": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_structures/dire_barracks_melee001.vmdl_c",
+        "crc32": "8dbe501b",
+        "archive_index": 521,
+        "offset": 80173424,
+        "length": 53082,
+        "preload_bytes": 0,
+        "resource_bytes": 53082,
+        "sha256": "ddaf512a12d0239bca3663bb8a0f972a626ecbdb4c4226f59309bdb87e53e5be",
+        "crc32_verified": true
+      },
+      "compiled_blocks": [
+        "MVTX",
+        "MIDX",
+        "MDAT",
+        "CTRL",
+        "RERL",
+        "RED2",
+        "DATA"
+      ],
+      "physics": "No PHYS block; navigation uses original NPC BoundsHullName"
+    },
+    "models/props_structures/dire_barracks_ranged001.vmdl": {
+      "identity": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_structures/dire_barracks_ranged001.vmdl_c",
+        "crc32": "cdc712c9",
+        "archive_index": 458,
+        "offset": 72056848,
+        "length": 104903,
+        "preload_bytes": 0,
+        "resource_bytes": 104903,
+        "sha256": "87cb7f7e18e03e3e6a852f39eed775fd2618faf0924ada765ce8750f5f49ffd4",
+        "crc32_verified": true
+      },
+      "compiled_blocks": [
+        "MDAT",
+        "MBUF",
+        "CTRL",
+        "RERL",
+        "RED2",
+        "DATA"
+      ],
+      "physics": "No PHYS block; navigation uses original NPC BoundsHullName"
+    },
+    "models/props_structures/radiant_tower002.vmdl": {
+      "identity": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_structures/radiant_tower002.vmdl_c",
+        "crc32": "9e279a83",
+        "archive_index": 62,
+        "offset": 43162912,
+        "length": 73855,
+        "preload_bytes": 0,
+        "resource_bytes": 73855,
+        "sha256": "74b389de0620886b762b1448f9b06ad4e0952eea8d00463b3f12212dc7b080a1",
+        "crc32_verified": true
+      },
+      "compiled_blocks": [
+        "MVTX",
+        "MIDX",
+        "MDAT",
+        "MVTX",
+        "MIDX",
+        "MDAT",
+        "ANIM",
+        "ASEQ",
+        "AGRP",
+        "CTRL",
+        "RERL",
+        "RED2",
+        "DATA"
+      ],
+      "physics": "No PHYS block; navigation uses original NPC BoundsHullName"
+    },
+    "models/props_structures/dire_tower002.vmdl": {
+      "identity": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_structures/dire_tower002.vmdl_c",
+        "crc32": "a8f47d65",
+        "archive_index": 675,
+        "offset": 78799376,
+        "length": 90907,
+        "preload_bytes": 0,
+        "resource_bytes": 90907,
+        "sha256": "2958f854b268fd3dc5069626e017cbaf6506480038a4c9b5482941cb7872b378",
+        "crc32_verified": true
+      },
+      "compiled_blocks": [
+        "MDAT",
+        "MBUF",
+        "ANIM",
+        "ASEQ",
+        "AGRP",
+        "CTRL",
+        "RERL",
+        "RED2",
+        "DATA"
+      ],
+      "physics": "No PHYS block; navigation uses original NPC BoundsHullName"
+    },
+    "models/props_structures/radiant_statue001.vmdl": {
+      "identity": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_structures/radiant_statue001.vmdl_c",
+        "crc32": "2cd0650f",
+        "archive_index": 326,
+        "offset": 68458464,
+        "length": 40603,
+        "preload_bytes": 0,
+        "resource_bytes": 40603,
+        "sha256": "131b9ea87fd9f140ca87be67ee1b939ff1dbb8daa2c7f2a5e8d7d3cf7289ef87",
+        "crc32_verified": true
+      },
+      "compiled_blocks": [
+        "MDAT",
+        "MBUF",
+        "CTRL",
+        "RERL",
+        "RED2",
+        "DATA"
+      ],
+      "physics": "No PHYS block; navigation uses original NPC BoundsHullName"
+    },
+    "models/props_structures/dire_column001.vmdl": {
+      "identity": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_structures/dire_column001.vmdl_c",
+        "crc32": "73468f6b",
+        "archive_index": 442,
+        "offset": 65916384,
+        "length": 66113,
+        "preload_bytes": 0,
+        "resource_bytes": 66113,
+        "sha256": "28c24272a6482b8c14c4684be8f139cac159ab0ca9c422eebf784abcf3212804",
+        "crc32_verified": true
+      },
+      "compiled_blocks": [
+        "MDAT",
+        "MBUF",
+        "CTRL",
+        "RERL",
+        "RED2",
+        "DATA"
+      ],
+      "physics": "No PHYS block; navigation uses original NPC BoundsHullName"
+    }
+  },
+  "static_cells_removed": 454,
+  "dynamic_tower_cell_indices": 1057,
+  "dynamic_tower_list_bytes": 2188,
+  "runtime": "Only the existing walk plane is mutable. Dynamic lists contain exclusively static-base walkable cells. Restore all listed cells, then block living towers when mask changes; no second bitmap.",
+  "source_hulls": {
+    "server_dll": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\bin\\win64\\server.dll",
+    "server_sha256": "af4622bd405f1a465926e20a47d97bbf9988ff0cd11b63901fff1d6dc6a4c834",
+    "image_base": "0x180000000",
+    "code": [
+      {
+        "name": "BARRACKS enum compare",
+        "rva": "0x18ab47d",
+        "virtual_address": "0x1818ab47d",
+        "bytes_hex": "488d15c4663002483bda7452488bcbe85f4f500185c07446"
+      },
+      {
+        "name": "TOWER enum compare",
+        "rva": "0x18ab401",
+        "virtual_address": "0x1818ab401",
+        "bytes_hex": "488d15e0663002483bda0f8422010000488bcbe8d74f500185c00f8412010000"
+      },
+      {
+        "name": "FILLER enum compare",
+        "rva": "0x18ab495",
+        "virtual_address": "0x1818ab495",
+        "bytes_hex": "488d15c4663002483bda7421488bcbe8474f500185c07415"
+      },
+      {
+        "name": "BARRACKS writes radius/padding",
+        "rva": "0x18ab4db",
+        "virtual_address": "0x1818ab4db",
+        "bytes_hex": "c787a40c000000001043c787a80c000000008041"
+      },
+      {
+        "name": "TOWER writes radius/padding",
+        "rva": "0x18ab533",
+        "virtual_address": "0x1818ab533",
+        "bytes_hex": "48c787a40c000000001043"
+      },
+      {
+        "name": "FILLER writes radius/padding",
+        "rva": "0x18ab4c2",
+        "virtual_address": "0x1818ab4c2",
+        "bytes_hex": "c787a40c00000000c042c787a80c000000008041"
+      },
+      {
+        "name": "GetHullRadius registration",
+        "rva": "0x2516447",
+        "virtual_address": "0x182516447",
+        "bytes_hex": "488d052209c10148894310488d054709c101488903488d053d09c10148894308c6431801e84059edffc744242800000000488d05417f7afe4889442420"
+      },
+      {
+        "name": "GetCollisionPadding registration",
+        "rva": "0x25164e3",
+        "virtual_address": "0x1825164e3",
+        "bytes_hex": "488d05c608c10148894310488d05fb08c101488bcb488903488d05ee08c10148894308c6431801e8a158edffc744242800000000488d059277bdff4889442420"
+      },
+      {
+        "name": "GetPaddedCollisionRadius registration",
+        "rva": "0x2516584",
+        "virtual_address": "0x182516584",
+        "bytes_hex": "48897030488d057908c10148894310488d05ae08c101488903488d05a408c10148894308c6431801e8ff57edff488d05d8cd020048894338488d0dfdeb7afe48894b40"
+      },
+      {
+        "name": "GetHullRadius getter",
+        "rva": "0xcbe3c0",
+        "virtual_address": "0x180cbe3c0",
+        "bytes_hex": "f30f1081a40c0000c3"
+      },
+      {
+        "name": "GetCollisionPadding getter",
+        "rva": "0x20edcb0",
+        "virtual_address": "0x1820edcb0",
+        "bytes_hex": "f30f1081a80c0000c3"
+      },
+      {
+        "name": "GetPaddedCollisionRadius getter",
+        "rva": "0xcc51c0",
+        "virtual_address": "0x180cc51c0",
+        "bytes_hex": "f30f1081a80c0000f30f5881a40c0000c3"
+      }
+    ],
+    "hulls": {
+      "DOTA_HULL_SIZE_BARRACKS": {
+        "radius_source": 144.0,
+        "padding_source": 16.0
+      },
+      "DOTA_HULL_SIZE_TOWER": {
+        "radius_source": 144.0,
+        "padding_source": 0.0
+      },
+      "DOTA_HULL_SIZE_FILLER": {
+        "radius_source": 96.0,
+        "padding_source": 16.0
+      }
+    },
+    "semantics": "GetHullRadius reads0xca4; GetCollisionPadding reads0xca8; GetPaddedCollisionRadius returns their sum. Exact original API registrations/getters and enum parser branches are retained.",
+    "fort_exclusion": "Original BUILDING parses radius0/padding16 and models have no PHYS. Native fort obstacle shape remains unproved; do not fabricate a rectangle or128 radius."
+  },
+  "source_passages": {
+    "raw_conservative_barracks_cells": 454,
+    "carved_cell_count": 2,
+    "cells": [
+      16582,
+      16837
+    ],
+    "source_circles": [
+      {
+        "hammer_id": "2699:25353:2",
+        "world_xy": [
+          3132.0,
+          1002.25
+        ],
+        "radius_world": 46.0,
+        "centre_q5": [
+          100224,
+          32072
+        ],
+        "radius_q5": 1475
+      },
+      {
+        "hammer_id": "2699:25354:2",
+        "world_xy": [
+          3223.5028075,
+          1091.9968872499999
+        ],
+        "radius_world": 46.0,
+        "centre_q5": [
+          103152,
+          34944
+        ],
+        "radius_q5": 1475
+      }
+    ],
+    "paths": [
+      {
+        "direction": -1,
+        "cells": [
+          16838,
+          16582,
+          16583
+        ],
+        "world_centres": [
+          [
+            3176,
+            1048
+          ],
+          [
+            3176,
+            1032
+          ],
+          [
+            3192,
+            1032
+          ]
+        ],
+        "new_cells": 1,
+        "source_gnv_tree_physics_edges_open": true,
+        "source_swept_circles_clear": true
+      },
+      {
+        "direction": 1,
+        "cells": [
+          16838,
+          16837,
+          17093
+        ],
+        "world_centres": [
+          [
+            3176,
+            1048
+          ],
+          [
+            3160,
+            1048
+          ],
+          [
+            3160,
+            1064
+          ]
+        ],
+        "new_cells": 1,
+        "source_gnv_tree_physics_edges_open": true,
+        "source_swept_circles_clear": true
+      }
+    ],
+    "point_and_segment_runtime_check": "Only local carved cells/segments use exact integer nearest-point tests against these two original circles. Other cells retain conservative rasterisation.",
+    "fixed_point": "Q5 centres generated from exact original world origin by half-up rounding; radius ceil(source_radius*32)+3. Maximum centre error sqrt(2)/64 and projection truncation sqrt(2)/32 are below3/32-world safety margin.",
+    "normal_corner_rule": "Unchanged: both orthogonal routes must be open for a diagonal. No custom diagonal shortcut."
+  },
+  "final_static_cells_removed": 452
+}

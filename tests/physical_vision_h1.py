@@ -29,7 +29,7 @@ def main():
                 if 'DW_AT_byte_size' not in d.attributes:continue
                 key=name.value.decode();sizes[key]=d.attributes['DW_AT_byte_size'].value
                 layouts[key]={x.attributes['DW_AT_name'].value.decode():x.attributes['DW_AT_data_member_location'].value for x in d.iter_children() if x.tag=='DW_TAG_member'}
-    assert set(layouts)==wanted and [sizes[k] for k in ('DotaGame','DotaUnit','DotaView')]==[173544,240,100]
+    assert set(layouts)==wanted and [sizes[k] for k in ('DotaGame','DotaUnit','DotaView')]==[178044,240,112]
     meta=json.loads((app/'DOTA2.build.json').read_text(encoding='utf8'));assert meta['bda_sha256']==sha(app/'DOTA2.bda')
     r=dict(passed=False,physical_h1_tested=True,normal_input_only=True,game_state_ram_writes=0,bda_sha256=sha(app/'DOTA2.bda'),elf_sha256=sha(app/'DOTA2.elf'),driver_sha256=sha(__file__),layouts=layouts,sizes=sizes,checks=[],actions=[],screenshots=[],profiles=[])
     def save():(out/'verification.json').write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n',encoding='utf8')

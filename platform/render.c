@@ -410,8 +410,8 @@ static void title(void){
     box(22,44,436,1,EDGE);
 }
 void dota_render_asset_error(int code){
-    backdrop();title();center(20,76,440,code==15?"Cannot load the required terrain vision data":code==13?"Old resource pack. Update BOTH folders.":"Cannot load the animation/map pack",GOLD);
-    center(20,108,440,code==15?"B:\\DOTA2\\VISION.H1V":"A:\\DOTA2\\SCENE.H1P",INK);
+    backdrop();title();center(20,76,440,code==16?"Cannot load the required interactive trees":code==15?"Cannot load the required terrain vision data":code==13?"Old resource pack. Update BOTH folders.":"Cannot load the animation/map pack",GOLD);
+    center(20,108,440,code==16?"B:\\DOTA2\\TREE.H1T":code==15?"B:\\DOTA2\\VISION.H1V":"A:\\DOTA2\\SCENE.H1P",INK);
     center(20,142,440,"Copy BOTH folders from the install ZIP.",DIM);
     center(20,173,440,"Error code",DIM);number(284,173,code,GOLD);
     center(20,226,440,"ENTER or BACK to exit",INK);
@@ -483,7 +483,7 @@ static void menu(const DotaGame *g,const DotaView *v){
     }
     text(24,216,hero_roles[hero],DIM);text(279,216,"生命",DIM);number(308,216,h->hp,INK);text(354,216,"法力",DIM);number(383,216,h->mana,INK);
     button(142,236,196,30,"开始对战  ENTER",1);
-    text(12,243,"方向键选人",DIM);button(360,236,102,30,"操作帮助",0);
+    text(12,243,"方向键选人",DIM);button(360,236,102,30,"操作帮助 H",0);
 }
 static void minimap(const DotaGame *g,const DotaView *v){
     static unsigned char regions[DOTA_HUD_MAP_W*DOTA_HUD_MAP_W];
@@ -898,17 +898,20 @@ static void battlefield(const DotaGame *g,const DotaView *v){
     if(v->scoreboard)scoreboard(g);
 }
 static void darken(void){int i;for(i=0;i<480*272;++i)dota_pixels[i]=(uint16_t)((dota_pixels[i]>>1)&0x7bef);}
+int dota_pause_button_at(int x,int y){
+    int column,row;
+    if(x<20||y<76)return -1;
+    column=(x-20)/150;row=(y-76)/70;
+    if(column>=3||row>=2||(x-20)%150>=140||(y-76)%70>=56)return -1;
+    return row*3+column;
+}
 static void pause_screen(const DotaGame *g,const DotaView *v){
-    battlefield(g,v);darken();box(16,30,448,228,PANEL);frame(16,30,448,228,GOLD);center(16,40,448,"战斗已暂停 / 操作说明",GOLD);
-    text(28,66,"方向键 移动 / 瞄准游标",INK);text(250,66,"QWER 选择主动技能",INK);
-    text(28,86,"J 普攻 / K 停止",INK);text(250,86,"ZXCVBN 装备主动",INK);
-    text(28,106,"ASDF 镜头 / SPACE跟随",INK);text(250,106,"T 额外技能 / Y 中立",INK);
-    text(28,126,"M 商店 / H 战绩 / L 莲花",INK);text(250,126,"U 技能天赋 / I 换位",INK);
-    text(28,146,"SHIFT+QWER 技能加点",INK);text(250,146,"ENTER 施放 / ESC 取消",INK);
-    text(28,168,"点小地图切视野；点英雄状态回中；轻点战场下令。",DIM);
-    text(28,186,"眼点地放置，同键切换；卷轴点友方建筑；长按装备换位。",DIM);
-    button(24,208,136,33,"继续 P / ENTER",1);button(172,208,136,33,"商店 M",0);button(320,208,136,33,"技能与天赋 U",0);
-    button(24,243,136,15,"重新选人 H",0);text(176,243,"BACK 返回战斗",DIM);button(344,243,112,15,"退出应用 X",0);
+    static const char *labels[6]={"继续 P","商店 M","技能与天赋 U","帮助 H","重新选人 C","退出应用 X"};int i;
+    battlefield(g,v);darken();box(12,30,456,228,PANEL);frame(12,30,456,228,GOLD);
+    center(12,43,456,"战斗已暂停",GOLD);
+    for(i=0;i<6;++i)button(20+(i%3)*150,76+(i/3)*70,140,56,labels[i],i==v->pause_selected);
+    center(12,215,456,"方向选择 / ENTER确认",DIM);
+    center(12,237,456,"BACK / ESC 返回战斗",GOLD);
 }
 static void progression_screen(const DotaGame *g,const DotaView *v){
     const DotaUnit *u=&g->units[g->player];int hero=u->hero_id,i,points=dota_progression_points(g,g->player),talent_points=dota_progression_talent_points(g,g->player),selected=v->skills_selected,next=dota_next_level_xp(u->level);
@@ -983,17 +986,31 @@ static void shop(const DotaGame *g,const DotaView *v){
     else {int buy=dota_courier_can_buy(g,g->player,selected);button(140,220,174,26,"购买 ENTER",buy);button(326,220,142,26,"升级去向 G",0);if(dota_items_purchase_plan(g,g->player,selected,&plan)){text(12,225,"补购",DIM);number(47,225,plan.cost,GOLD);}else text(12,225,"来源见分类",DIM);}
     text_fit(12,252,456,v->shop_category==SHOP_RECOMMENDED?"Q/W分类  A/D出装阶段  G升级  ENTER购买":"Q/W分类  T推荐  G升级  Z~N售出  SHIFT拆解",DIM);
 }
-static void help(void){
-    backdrop();title();text(24,55,"操作说明",GOLD);
-    text(24,78,"方向键 移动英雄",INK);text(254,78,"QWER 主动技能",INK);
-    text(24,99,"J 普攻 / K 停止",INK);text(254,99,"ZXCVBN 装备主动",INK);
-    text(24,120,"ASDF 镜头 / SPACE跟随",INK);text(254,120,"T 额外技能 / Y 中立",INK);
-    text(24,141,"M 商店 / H 战绩 / L 莲花",INK);text(254,141,"U 技能天赋 / I 换位",INK);
-    text(24,162,"SHIFT+QWER 技能加点",INK);text(254,162,"P 暂停 / ESC 取消",INK);
-    box(24,181,432,1,EDGE);text(24,190,"点战场移动或攻击；小地图切视野；状态栏回中。",DIM);
-    text(24,211,"长按装备拖动换位；背包三格不提供属性。",DIM);
-    text(24,232,"随处购买，信使送货；商店 I 查看物品说明。",DIM);
-    center(0,253,480,"ENTER / ESC 返回选择英雄",GOLD);
+static void help(const DotaView *v){
+    backdrop();text(16,7,"帮助说明",GOLD);button(432,0,48,26,"返回",0);
+    button(16,34,140,26,"操作",v->help_page==0);button(164,34,140,26,"版权介绍",v->help_page==1);
+    if(v->help_page==1){
+        text(24,73,"作者  HelloClyde",GOLD);
+        text(24,95,"离线复刻与 H1 适配；非官方游戏。",INK);
+        text(24,121,"Dota 2 原始版权：Valve Corporation",GOLD);
+        text(24,141,"地图、模型、动画、图像与音频属于 Valve。",INK);
+        text(24,167,"自有代码：GPL-2.0-or-later",DIM);
+        text(24,185,"H1 SDK：Apache-2.0",DIM);
+        text(24,203,"字形来源：Microsoft YaHei / Consolas",DIM);
+        text(24,225,"第三方素材与字形各自保留原有权属。",DIM);
+        text(24,241,"本项目未另获字形再分发授权。",DIM);
+    }else{
+        text(24,76,"方向键 移动 / 瞄准",INK);text(254,76,"QWER 主动技能",INK);
+        text(24,97,"J 普攻 / K 停止",INK);text(254,97,"ZXCVBN 装备主动",INK);
+        text(24,118,"ASDF 镜头 / SPACE跟随",INK);text(254,118,"T 额外技能 / Y 中立",INK);
+        text(24,139,"M 商店 / H 战绩 / L 莲花",INK);text(254,139,"U 技能天赋 / I 换位",INK);
+        text(24,160,"SHIFT+QWER 技能加点",INK);text(254,160,"ENTER施放 / ESC取消",INK);
+        box(24,184,432,1,EDGE);
+        text(24,192,"点小地图切视野；点英雄状态回中。",DIM);
+        text(24,212,"长按装备换位；眼同键切换；卷轴点友方建筑。",DIM);
+        text(24,232,"随处购买，信使送货；商店打开自动暂停。",DIM);
+    }
+    text(16,258,"左右 / A D 切页；BACK / ESC 返回",GOLD);
 }
 static void result(const DotaGame *g,const DotaView *v){
     const DotaUnit *p=&g->units[g->player];int win=g->state==DOTA_WON;(void)v;
@@ -1011,7 +1028,7 @@ void dota_render(const DotaGame *g,const DotaView *v){
     case DOTA_SCREEN_PAUSE:pause_screen(g,v);break;
     case DOTA_SCREEN_SHOP:shop(g,v);break;
     case DOTA_SCREEN_RESULT:result(g,v);break;
-    case DOTA_SCREEN_HELP:help();break;
+    case DOTA_SCREEN_HELP:help(v);break;
     case DOTA_SCREEN_SKILLS:progression_screen(g,v);break;
     default:battlefield(g,v);break;
     }

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "source_sha256": {
+    "platform/dota_audio.c": "947f810236ccc342ce04be3c51bcc830253cdbb450083a6ea6b6ca21b20d3169",
+    "platform/dota_audio.h": "2b4b05d25eed2b42a7f3c7ba97fa1390fc21bdc81c194b98019e1ab36c1dc987",
+    "platform/audio_music_windows.h": "17c5bcdef2e8866abab6f00baa3fc69225ea19e54cd5a1eb482096b741bf0d46"
+  },
+  "identical_to_version": "0.28",
+  "sound_sha256": "a2be46eb35f2a86a483d154332aeb9cf44f3a24b6427e52e7a5619df01283d30"
+}

@@ -1,0 +1,586 @@
+{
+  "receipts": {
+    "models/props_tree/tree_pine_01.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/tree_pine_01.vmdl_c",
+        "crc32": "eb348543",
+        "archive_index": 278,
+        "offset": 37268240,
+        "length": 46942,
+        "preload_bytes": 0,
+        "resource_bytes": 46942,
+        "sha256": "22f05bd58dd4ac234644081ce4ed0988c11387658aaf36c6e556288511ceed2f",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_pine_01_vmdl_c\\tree_pine_01.vmdl_c",
+      "raw_sha256": "22f05bd58dd4ac234644081ce4ed0988c11387658aaf36c6e556288511ceed2f",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_pine_01_vmdl_c\\DATA.txt",
+      "dump_sha256": "920f30f6ac4278da8b499c766a3ccab533a6ab3d381c72217d473385a4876f43"
+    },
+    "models/props_tree/tree_oak_01.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/tree_oak_01.vmdl_c",
+        "crc32": "053bbdd5",
+        "archive_index": 620,
+        "offset": 41181408,
+        "length": 74372,
+        "preload_bytes": 0,
+        "resource_bytes": 74372,
+        "sha256": "0a35e09343e020f69902874b4f9c215f1df8a78d70f6d1e9ea891063320fb9b9",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_oak_01_vmdl_c\\tree_oak_01.vmdl_c",
+      "raw_sha256": "0a35e09343e020f69902874b4f9c215f1df8a78d70f6d1e9ea891063320fb9b9",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_oak_01_vmdl_c\\DATA.txt",
+      "dump_sha256": "4a11bdb265585b0e42895df941125893d747a3b5e68c1bcc7a875b9031ad779b"
+    },
+    "models/props_tree/tree_oak_01b.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/tree_oak_01b.vmdl_c",
+        "crc32": "8cc9c280",
+        "archive_index": 396,
+        "offset": 47319456,
+        "length": 68813,
+        "preload_bytes": 0,
+        "resource_bytes": 68813,
+        "sha256": "c71d35885692e2026818b650e6dc8e387484c09b5c335f7971e54354bc426ac1",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_oak_01b_vmdl_c\\tree_oak_01b.vmdl_c",
+      "raw_sha256": "c71d35885692e2026818b650e6dc8e387484c09b5c335f7971e54354bc426ac1",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_oak_01b_vmdl_c\\DATA.txt",
+      "dump_sha256": "7ef35724c34c5baadd4285df3aa52ea2a90eaa07e5edfa2d725fbe5750615fd1"
+    },
+    "models/props_tree/tree_pine_02.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/tree_pine_02.vmdl_c",
+        "crc32": "b45f0b30",
+        "archive_index": 62,
+        "offset": 57386336,
+        "length": 49613,
+        "preload_bytes": 0,
+        "resource_bytes": 49613,
+        "sha256": "c96698afae4979c2354e220248d8be4d7c029fa36de8964f7f509cba8b3daaed",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_pine_02_vmdl_c\\tree_pine_02.vmdl_c",
+      "raw_sha256": "c96698afae4979c2354e220248d8be4d7c029fa36de8964f7f509cba8b3daaed",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_pine_02_vmdl_c\\DATA.txt",
+      "dump_sha256": "0c036683e770260df190ef01915ef3276ba80a6c810ed9c2d2372f05f9eab011"
+    },
+    "models/props_tree/tree_pine_03b.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/tree_pine_03b.vmdl_c",
+        "crc32": "2a948d0f",
+        "archive_index": 396,
+        "offset": 83233056,
+        "length": 52575,
+        "preload_bytes": 0,
+        "resource_bytes": 52575,
+        "sha256": "429841ad354b2883becdcb8cfa9b8df3ced15a01edac26d1aba9eb7177334182",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_pine_03b_vmdl_c\\tree_pine_03b.vmdl_c",
+      "raw_sha256": "429841ad354b2883becdcb8cfa9b8df3ced15a01edac26d1aba9eb7177334182",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_pine_03b_vmdl_c\\DATA.txt",
+      "dump_sha256": "2273fdf9143a95eef53ba7c17e23f74de27045c5c4bd4afe70425a8416d8ac43"
+    },
+    "models/props_tree/tree_oak_02.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/tree_oak_02.vmdl_c",
+        "crc32": "87bc113d",
+        "archive_index": 620,
+        "offset": 41098704,
+        "length": 82692,
+        "preload_bytes": 0,
+        "resource_bytes": 82692,
+        "sha256": "8c08eb101ba7f98c2f361014086109df325b8dc206d7f04482097b8c5a5412f6",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_oak_02_vmdl_c\\tree_oak_02.vmdl_c",
+      "raw_sha256": "8c08eb101ba7f98c2f361014086109df325b8dc206d7f04482097b8c5a5412f6",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_oak_02_vmdl_c\\DATA.txt",
+      "dump_sha256": "129c8470987b38924e89d6b5368bc3cfb7ccd638f33e31e5afd48f2f300eb2f5"
+    },
+    "models/props_tree/tree_cine_02_low.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/tree_cine_02_low.vmdl_c",
+        "crc32": "069f22b2",
+        "archive_index": 518,
+        "offset": 61248160,
+        "length": 94751,
+        "preload_bytes": 0,
+        "resource_bytes": 94751,
+        "sha256": "d799507c1c20e3ffcb9e47737d4b64d034a9c4a22ed83f2fc8c91427c828b63d",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_cine_02_low_vmdl_c\\tree_cine_02_low.vmdl_c",
+      "raw_sha256": "d799507c1c20e3ffcb9e47737d4b64d034a9c4a22ed83f2fc8c91427c828b63d",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_cine_02_low_vmdl_c\\DATA.txt",
+      "dump_sha256": "52103230bf4a83d4bd0757ea759d0bcc19fdef79140fcf7329e6e8dbfd25b371"
+    },
+    "models/props_tree/tree_bamboo_02.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/tree_bamboo_02.vmdl_c",
+        "crc32": "c9f64dff",
+        "archive_index": 396,
+        "offset": 17889856,
+        "length": 38691,
+        "preload_bytes": 0,
+        "resource_bytes": 38691,
+        "sha256": "f43fd3f83d725a4b0034c4431342ce926c4536554852c166265a8b3e97323972",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_bamboo_02_vmdl_c\\tree_bamboo_02.vmdl_c",
+      "raw_sha256": "f43fd3f83d725a4b0034c4431342ce926c4536554852c166265a8b3e97323972",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_bamboo_02_vmdl_c\\DATA.txt",
+      "dump_sha256": "1dbd8487d9668b7ab6c4d712645cbe5d87696cb20158ccfe51fd05e4c5643a4d"
+    },
+    "models/props_tree/tree_bamboo_01.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/tree_bamboo_01.vmdl_c",
+        "crc32": "30604b5c",
+        "archive_index": 396,
+        "offset": 19573168,
+        "length": 34197,
+        "preload_bytes": 0,
+        "resource_bytes": 34197,
+        "sha256": "5c24249f984933bd410991800ba5c0719fffe3755b092c1fdcac4ee67bb9c73e",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_bamboo_01_vmdl_c\\tree_bamboo_01.vmdl_c",
+      "raw_sha256": "5c24249f984933bd410991800ba5c0719fffe3755b092c1fdcac4ee67bb9c73e",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__tree_bamboo_01_vmdl_c\\DATA.txt",
+      "dump_sha256": "61c99d18d4149ba9578f94c6dfc5fc11726f8db33b9d035da4e54170d2d52ec1"
+    },
+    "models/props_tree/dire_tree008.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/dire_tree008.vmdl_c",
+        "crc32": "d9f007c0",
+        "archive_index": 396,
+        "offset": 85443632,
+        "length": 50293,
+        "preload_bytes": 0,
+        "resource_bytes": 50293,
+        "sha256": "e7aa26f6c22416b3acfc0218557803f5f8cec074e19c68bd5dc8178e652b4752",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__dire_tree008_vmdl_c\\dire_tree008.vmdl_c",
+      "raw_sha256": "e7aa26f6c22416b3acfc0218557803f5f8cec074e19c68bd5dc8178e652b4752",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__dire_tree008_vmdl_c\\DATA.txt",
+      "dump_sha256": "1947ce4bdb4ca9494e27d19191f03bdfebfc89cfd16515bc2108305f380e5830"
+    },
+    "models/props_tree/dire_tree004b.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/dire_tree004b.vmdl_c",
+        "crc32": "a1807e58",
+        "archive_index": 396,
+        "offset": 18699088,
+        "length": 35624,
+        "preload_bytes": 0,
+        "resource_bytes": 35624,
+        "sha256": "f63f38e7883a4d0fe483039dea98476d04872b410ec974c99764f2f9df3a8d6f",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__dire_tree004b_vmdl_c\\dire_tree004b.vmdl_c",
+      "raw_sha256": "f63f38e7883a4d0fe483039dea98476d04872b410ec974c99764f2f9df3a8d6f",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__dire_tree004b_vmdl_c\\DATA.txt",
+      "dump_sha256": "51196cafc438cd920505d7beea05388ac7f1773a1937d25d899a0ad570abec9c"
+    },
+    "models/props_tree/dire_tree004.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/dire_tree004.vmdl_c",
+        "crc32": "859ed12c",
+        "archive_index": 670,
+        "offset": 34695280,
+        "length": 35963,
+        "preload_bytes": 0,
+        "resource_bytes": 35963,
+        "sha256": "8b961ccc483f29928b7296f00dcc47c89b404e87ea5e46fa671eaf653522096b",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__dire_tree004_vmdl_c\\dire_tree004.vmdl_c",
+      "raw_sha256": "8b961ccc483f29928b7296f00dcc47c89b404e87ea5e46fa671eaf653522096b",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__dire_tree004_vmdl_c\\DATA.txt",
+      "dump_sha256": "0229396dd9973d7d510f4e55fb466b4a62774887bc52db331c367e5fafc301c5"
+    },
+    "models/props_tree/dire_tree007.vmdl_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "models/props_tree/dire_tree007.vmdl_c",
+        "crc32": "59c596c2",
+        "archive_index": 396,
+        "offset": 83495808,
+        "length": 52394,
+        "preload_bytes": 0,
+        "resource_bytes": 52394,
+        "sha256": "685391d2eff99163e9444e031b260b32aba80d4629134ab5fb2e74699b419ea5",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__dire_tree007_vmdl_c\\dire_tree007.vmdl_c",
+      "raw_sha256": "685391d2eff99163e9444e031b260b32aba80d4629134ab5fb2e74699b419ea5",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\models__props_tree__dire_tree007_vmdl_c\\DATA.txt",
+      "dump_sha256": "bcab69f6b1799cc6cdb80068dcc4f14c3bb2ffe4bee5cadd761ddf94e56a58da"
+    },
+    "materials/models/props_tree/tree_blossoms_white_00.vmat_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_blossoms_white_00.vmat_c",
+        "crc32": "cc82e7e3",
+        "archive_index": 410,
+        "offset": 70200784,
+        "length": 3878,
+        "preload_bytes": 0,
+        "resource_bytes": 3878,
+        "sha256": "15ea3886fef3293dd9934592b613127a2bac7eed121c2d72103098daef6422e9",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_blossoms_white_00_vmat_c\\tree_blossoms_white_00.vmat_c",
+      "raw_sha256": "15ea3886fef3293dd9934592b613127a2bac7eed121c2d72103098daef6422e9",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_blossoms_white_00_vmat_c\\DATA.txt",
+      "dump_sha256": "dbed54e2cef5b0d4f6edd9c6ec624e5380d22088eb341399e8dc059b9919a092"
+    },
+    "materials/models/props_tree/tree_blossoms_white_00_color_psd_dd311da7.vtex_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_blossoms_white_00_color_psd_dd311da7.vtex_c",
+        "crc32": "83704a73",
+        "archive_index": 341,
+        "offset": 5629360,
+        "length": 701268,
+        "preload_bytes": 0,
+        "resource_bytes": 701268,
+        "sha256": "21ceb187ab360e46712183664b5acffc0d928e2f7884b2cc8d5535a69726eb0a",
+        "crc32_verified": true
+      },
+      "png": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_blossoms_white_00_color_psd_dd311da7_vtex_c\\tree_blossoms_white_00_color_psd_dd311da7.png",
+      "png_sha256": "84569f8612a6671c62525371d8d8bec130dbbd77e7a20b90907e8473b37240b7",
+      "dimensions": [
+        1024,
+        512,
+        4
+      ]
+    },
+    "materials/models/props_tree/tree_oak_leaves_05.vmat_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_oak_leaves_05.vmat_c",
+        "crc32": "0559386a",
+        "archive_index": 371,
+        "offset": 82232256,
+        "length": 8056,
+        "preload_bytes": 0,
+        "resource_bytes": 8056,
+        "sha256": "be86aba16e1697bd3c036b056b9a0f10fe46136127ad2dd087c5e551397dd3fa",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_oak_leaves_05_vmat_c\\tree_oak_leaves_05.vmat_c",
+      "raw_sha256": "be86aba16e1697bd3c036b056b9a0f10fe46136127ad2dd087c5e551397dd3fa",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_oak_leaves_05_vmat_c\\DATA.txt",
+      "dump_sha256": "5f430daf744659d7256ee6397c07dc37dd0daea918c78fd4c24e6322854f9311"
+    },
+    "materials/models/props_tree/tree_oak_leaves_05_color_psd_2660fb4c.vtex_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_oak_leaves_05_color_psd_2660fb4c.vtex_c",
+        "crc32": "022e7c38",
+        "archive_index": 471,
+        "offset": 74116096,
+        "length": 701252,
+        "preload_bytes": 0,
+        "resource_bytes": 701252,
+        "sha256": "3727e551141f9c77e41ae41bbcdd0fb3ef51c16b536dcc14739f6f51c150ab73",
+        "crc32_verified": true
+      },
+      "png": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_oak_leaves_05_color_psd_2660fb4c_vtex_c\\tree_oak_leaves_05_color_psd_2660fb4c.png",
+      "png_sha256": "1aa14069b854a9ea49fcb1f2c5aefc228127143d2cdbc80594212682acc65a80",
+      "dimensions": [
+        1024,
+        512,
+        4
+      ]
+    },
+    "materials/models/props_tree/tree_magical_white_00.vmat_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_magical_white_00.vmat_c",
+        "crc32": "ca4185c3",
+        "archive_index": 410,
+        "offset": 70415792,
+        "length": 8360,
+        "preload_bytes": 0,
+        "resource_bytes": 8360,
+        "sha256": "ea0b42724b9ab78ac1cecaccb78395bf689f0824dc9bf66a3407ef50b1112256",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_magical_white_00_vmat_c\\tree_magical_white_00.vmat_c",
+      "raw_sha256": "ea0b42724b9ab78ac1cecaccb78395bf689f0824dc9bf66a3407ef50b1112256",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_magical_white_00_vmat_c\\DATA.txt",
+      "dump_sha256": "4eb8065e9d8a7fd7f9d467c2962b9eee5b2718884762c124438dfd7488026590"
+    },
+    "materials/models/props_tree/tree_magical_white_00_color_psd_40fbd314.vtex_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_magical_white_00_color_psd_40fbd314.vtex_c",
+        "crc32": "3d4dec2b",
+        "archive_index": 341,
+        "offset": 7031680,
+        "length": 701268,
+        "preload_bytes": 0,
+        "resource_bytes": 701268,
+        "sha256": "d016da3cd9d8754c670e542416ef66f88efaaabedda25dea6472bc155d76463e",
+        "crc32_verified": true
+      },
+      "png": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_magical_white_00_color_psd_40fbd314_vtex_c\\tree_magical_white_00_color_psd_40fbd314.png",
+      "png_sha256": "7cc0b71238382de4586e47c9a85a38f22fb893e74036a788b97732b388d96889",
+      "dimensions": [
+        1024,
+        512,
+        4
+      ]
+    },
+    "materials/models/props_tree/tree_plumblossom_00.vmat_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_plumblossom_00.vmat_c",
+        "crc32": "784c4f18",
+        "archive_index": 371,
+        "offset": 82697072,
+        "length": 8296,
+        "preload_bytes": 0,
+        "resource_bytes": 8296,
+        "sha256": "7157491d89a8c58cc64a7f58544725bd1999ec9cdf823fc645f3d39b9e56bca5",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_plumblossom_00_vmat_c\\tree_plumblossom_00.vmat_c",
+      "raw_sha256": "7157491d89a8c58cc64a7f58544725bd1999ec9cdf823fc645f3d39b9e56bca5",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_plumblossom_00_vmat_c\\DATA.txt",
+      "dump_sha256": "10ccabcf25d1728ff12e2352a4af4740ff749e0b2b0f91cb70ce5e13a4a7df9b"
+    },
+    "materials/models/props_tree/tree_plumblossom_00_color_psd_8f819929.vtex_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_plumblossom_00_color_psd_8f819929.vtex_c",
+        "crc32": "029eb356",
+        "archive_index": 434,
+        "offset": 64827648,
+        "length": 701268,
+        "preload_bytes": 0,
+        "resource_bytes": 701268,
+        "sha256": "c3eeb87181325321e3590952d56a0a9d112a0f2df9b1f509f6d3f38577449e55",
+        "crc32_verified": true
+      },
+      "png": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_plumblossom_00_color_psd_8f819929_vtex_c\\tree_plumblossom_00_color_psd_8f819929.png",
+      "png_sha256": "c677c39b6e6c3a5ac0047f9b553a9c89f9f50b16fbfbac4769e63610102bf13d",
+      "dimensions": [
+        1024,
+        512,
+        4
+      ]
+    },
+    "materials/models/props_tree/tree_magical_pink_00.vmat_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_magical_pink_00.vmat_c",
+        "crc32": "c5b9d58b",
+        "archive_index": 409,
+        "offset": 62540368,
+        "length": 8328,
+        "preload_bytes": 0,
+        "resource_bytes": 8328,
+        "sha256": "4391bff0d0b88c6e4628219ce0692bc72a2f76f4a1ac8bf6b943f420caf98cda",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_magical_pink_00_vmat_c\\tree_magical_pink_00.vmat_c",
+      "raw_sha256": "4391bff0d0b88c6e4628219ce0692bc72a2f76f4a1ac8bf6b943f420caf98cda",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_magical_pink_00_vmat_c\\DATA.txt",
+      "dump_sha256": "0c6558122bcb1d6440efdecb59d8269d121e2a1659addcba99b4d00cdbb08dd2"
+    },
+    "materials/models/props_tree/tree_magical_pink_00_color_psd_afbac64f.vtex_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_magical_pink_00_color_psd_afbac64f.vtex_c",
+        "crc32": "37d36f6b",
+        "archive_index": 25,
+        "offset": 10413392,
+        "length": 701268,
+        "preload_bytes": 0,
+        "resource_bytes": 701268,
+        "sha256": "3f07e0cd68e712bbee72caabccd65084b629548ac50c8d2d145426f96fd63d2d",
+        "crc32_verified": true
+      },
+      "png": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_magical_pink_00_color_psd_afbac64f_vtex_c\\tree_magical_pink_00_color_psd_afbac64f.png",
+      "png_sha256": "deccbc8a4b424e724aee16691fe8470001f505c275f0e5d5ef25fdeb011e581e",
+      "dimensions": [
+        1024,
+        512,
+        4
+      ]
+    },
+    "materials/models/props_tree/tree_oak_leaves_04.vmat_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_oak_leaves_04.vmat_c",
+        "crc32": "c261adc8",
+        "archive_index": 410,
+        "offset": 69995120,
+        "length": 8264,
+        "preload_bytes": 0,
+        "resource_bytes": 8264,
+        "sha256": "261708d9bfd47bf5103f68a7bdf633a2a597d959cda63846f346da6356cdb267",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_oak_leaves_04_vmat_c\\tree_oak_leaves_04.vmat_c",
+      "raw_sha256": "261708d9bfd47bf5103f68a7bdf633a2a597d959cda63846f346da6356cdb267",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_oak_leaves_04_vmat_c\\DATA.txt",
+      "dump_sha256": "805fe24fb258d8c92112ba3cf3f5488575b924331677c00c8a012a3af1409bdc"
+    },
+    "materials/models/props_tree/tree_oak_leaves_04_color_psd_948bcd2f.vtex_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_oak_leaves_04_color_psd_948bcd2f.vtex_c",
+        "crc32": "976ec322",
+        "archive_index": 616,
+        "offset": 6584352,
+        "length": 701252,
+        "preload_bytes": 0,
+        "resource_bytes": 701252,
+        "sha256": "bd72c937a7526db5a2f04ec57f0b9b0b3c74199ae651f2a2436925b177e10dd8",
+        "crc32_verified": true
+      },
+      "png": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_oak_leaves_04_color_psd_948bcd2f_vtex_c\\tree_oak_leaves_04_color_psd_948bcd2f.png",
+      "png_sha256": "6c157e5a3dce20dc7417db5a4ce748998b66827b806ad662815c16736d58a6a5",
+      "dimensions": [
+        1024,
+        512,
+        4
+      ]
+    },
+    "materials/models/props_tree/tree_oak_leaves_01.vmat_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_oak_leaves_01.vmat_c",
+        "crc32": "7e4dc249",
+        "archive_index": 371,
+        "offset": 82680432,
+        "length": 8264,
+        "preload_bytes": 0,
+        "resource_bytes": 8264,
+        "sha256": "aa01dec955dabd802636144adabc9b3322a393e5f38e83c29cc035007286e558",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_oak_leaves_01_vmat_c\\tree_oak_leaves_01.vmat_c",
+      "raw_sha256": "aa01dec955dabd802636144adabc9b3322a393e5f38e83c29cc035007286e558",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_oak_leaves_01_vmat_c\\DATA.txt",
+      "dump_sha256": "63d4c17a8f955d5bb15d23caeb5bf788d4a0ca09bf2e8922723a226f53d47ed0"
+    },
+    "materials/models/props_tree/tree_oak_leaves_01_color_psd_6846b73b.vtex_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_oak_leaves_01_color_psd_6846b73b.vtex_c",
+        "crc32": "7de4e5bf",
+        "archive_index": 434,
+        "offset": 62372704,
+        "length": 701252,
+        "preload_bytes": 0,
+        "resource_bytes": 701252,
+        "sha256": "f58fb58bba2519a863a6ef90469ed85522692521737df3caa59431fcd34e3121",
+        "crc32_verified": true
+      },
+      "png": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_oak_leaves_01_color_psd_6846b73b_vtex_c\\tree_oak_leaves_01_color_psd_6846b73b.png",
+      "png_sha256": "b11683f321b1d44605e52c418799ba02cd49feb4a040c4a08e8e07490536619a",
+      "dimensions": [
+        1024,
+        512,
+        4
+      ]
+    },
+    "materials/models/props_tree/tree_redblossom_00.vmat_c": {
+      "source": {
+        "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+        "vpk_version": 2,
+        "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+        "path": "materials/models/props_tree/tree_redblossom_00.vmat_c",
+        "crc32": "afb3573e",
+        "archive_index": 409,
+        "offset": 62584464,
+        "length": 8320,
+        "preload_bytes": 0,
+        "resource_bytes": 8320,
+        "sha256": "940a39f7b7ab78958c8cba84b83aef145a04ed220b6d5e0e153779af3b65f4a6",
+        "crc32_verified": true
+      },
+      "raw": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_redblossom_00_vmat_c\\tree_redblossom_00.vmat_c",
+      "raw_sha256": "940a39f7b7ab78958c8cba84b83aef145a04ed220b6d5e0e153779af3b65f4a6",
+      "dump": "build\\v029\\tree-bake\\frames\\materials\\materials__models__props_tree__tree_redblossom_00_vmat_c\\DATA.txt",
+      "dump_sha256": "34b112b368b3641d82582ce34f65de9173cd49e33dbc3c1b4f7f278f4ae522d2"
+    }
+  },
+  "helper_sha256": "b3c4e72c65a90ec01ab4c18dbf14583a1d879d481ff55dd1d937e0a3dbf53413"
+}

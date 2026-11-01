@@ -1,0 +1,13 @@
+{
+  "read_only_inputs_unchanged": true,
+  "global_sorted_palette_entries": 2612,
+  "palette_bytes": 5228,
+  "palette_rle_estimated_file_bytes": 16391384,
+  "palette_rle_saving_percent": 6.544630379017044,
+  "palette_lossless_verified": true,
+  "cropped_frame_existing_npz_bytes": 9750278,
+  "cropped_frame_same_rle_estimate_bytes_including24B_index_each": 9653100,
+  "active_base_pair_standalone_rle_bytes_including_existing_tables": 3971448,
+  "combined_cropped_frame_plus_base_estimate": 13624548,
+  "scope": "Temporary byte-count experiments only; palette requires a new color mapping flag/table and decoder lookup, cropped frames require instance placement/occlusion assembly. Not a generated or deployable resource."
+}
