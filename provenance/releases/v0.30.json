@@ -1,0 +1,28 @@
+{
+  "format_version": 1,
+  "version": "0.30",
+  "bda_sha256": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244",
+  "bda_bytes": 1083444,
+  "sdk_commit": "067fe072477861dfc8949d7b1a55279fb92d2548",
+  "prerelease": true,
+  "physical_h1_tested": true,
+  "performance_acceptance_passed": true,
+  "full_feature_acceptance_complete": false,
+  "tested_elf_sha256": "dc6ecce5c66b0f1165ec637070a3beac35c89bb23cd6b96ae95b60cc69cd3b03",
+  "tested_build_metadata": {
+    "path": "build/v030/perf-candidate8/DOTA2.build.json",
+    "sha256": "68d7c197bee8a8aad8ba5690168a941636f1c84cb69243df67ff257c08a9c923"
+  },
+  "hardware_evidence": {
+    "path": "provenance/verification/v0.30/performance/round3/hardware/INDEX.json",
+    "sha256": "0cccef6406b84bc659dbd985f39c5b9cc8800a3c860536309c2eebc73acfa20d"
+  },
+  "runtime_assets": {
+    "DOTA2.H1R": {
+      "path": "assets/runtime/DOTA2.H1R",
+      "bytes": 112861448,
+      "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153"
+    }
+  },
+  "scope": "Pins the exact C8 runtime BDA tested on physical H1. The complete install ZIP contains program and unified resources. Development prerelease with bounded physical coverage; non-loadable ELF debugging data can vary across clean build paths."
+}

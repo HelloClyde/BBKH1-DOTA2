@@ -107,9 +107,18 @@ jobs:
         run: |
           python tools/verify.py --package dist
           python tools/check_tag.py
+      - name: Read release channel
+        id: channel
+        run: |
+          python -c "import json,pathlib; v=pathlib.Path('VERSION').read_text().strip(); p=json.loads(pathlib.Path('provenance/releases/v'+v+'.json').read_text()); flag=p.get('prerelease', True); assert isinstance(flag, bool); print('prerelease='+str(flag).lower())" >> "$GITHUB_OUTPUT"
       - name: Publish this build only for an explicitly pushed version tag
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ github.ref_name }}
+          RELEASE_PRERELEASE: ${{ steps.channel.outputs.prerelease }}
         run: |
-          gh release create "$RELEASE_TAG" dist/DOTA2.bda dist/DOTA2-H1-install.zip dist/SHA256SUMS.txt dist/PACKAGE.json --verify-tag --title "DOTA2 $RELEASE_TAG" --notes-file UPDATE-NOTES.txt
+          release_options=()
+          if [ "$RELEASE_PRERELEASE" = 'true' ]; then
+            release_options+=(--prerelease)
+          fi
+          gh release create "$RELEASE_TAG" dist/DOTA2-H1-install.zip dist/DOTA2.bda dist/SHA256SUMS.txt dist/PACKAGE.json --verify-tag --title "DOTA2 $RELEASE_TAG" --notes-file RELEASE-NOTES.md "${release_options[@]}"

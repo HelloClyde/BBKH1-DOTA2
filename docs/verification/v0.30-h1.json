@@ -38,7 +38,7 @@
     "sha256": "34cdd88637f5da9031ba53297454a58515a94b9834cc6e4d9f40379ca28d98b8",
     "bytes": 3837
   },
-  "release_pin_created": false,
+  "release_pin_created": true,
   "github_updated": false,
   "physical_h1_launch_attempted": true,
   "performance_acceptance_passed": true,
@@ -152,5 +152,10 @@
       "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-restored-device/initial.json",
       "sha256": "d2952407b524aabfd1c1a645a81b63e35c05e15a6f637c2bc1414caff608f8c8"
     }
-  ]
+  ],
+  "release_identity": {
+    "path": "provenance/releases/v0.30.json",
+    "sha256": "90b2a09dea384112dc1a1787d1d4146f21779d490073627f50c65a831cc565f8"
+  },
+  "release_channel": "development-prerelease"
 }

@@ -15,14 +15,11 @@
 
 ## 安装
 
-从 [Actions](https://github.com/HelloClyde/BBKH1-DOTA2/actions) 下载成功构建的开发产物，复制两个文件：
+从 [Releases](https://github.com/HelloClyde/BBKH1-DOTA2/releases) 下载 **DOTA2-H1-install.zip**，已包含程序和全部素材。
 
-| 文件 | H1 路径 |
-| --- | --- |
-| `build/native/DOTA2.bda` | `A:\应用\程序\DOTA2.bda` |
-| `assets/runtime/DOTA2.H1R` | `B:\DOTA2\DOTA2.H1R` |
+解压到 **H1 A 盘根目录**，安全弹出后打开 **DOTA2**。A 盘空间不足时，将包内 **DOTA2 文件夹放到 B 盘根目录**，`应用/程序` 保留在 A 盘。
 
-素材包约 **113 MB**。安全弹出后，在 H1 桌面打开 **DOTA2**。更新时保留 `MATCH0.H1S`、`MATCH1.H1S` 战绩文件。仓库为私有，下载需要访问权限。
+素材约 **113 MB**；更新时保留 `MATCH0.H1S`、`MATCH1.H1S` 战绩文件。私有仓库下载需访问权限。
 
 ## 操作
 

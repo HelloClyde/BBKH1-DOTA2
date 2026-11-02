@@ -32,7 +32,7 @@ python tools/build.py --toolchain .tools/toolchain/bin --output build/native
 python tools/verify.py --build build/native
 ```
 
-脚本拒绝覆盖已有输出目录；再次执行时用新的 `--output`，并让 verify 的 `--build` 指向对应目录。生成的 `DOTA2.bda`、ELF、map、构建身份记录及校验文件保存在 `build/native/`。当前未设置v0.30发布pin，以上命令即可生成并校验开发候选，不要求正式安装ZIP。
+脚本拒绝覆盖已有输出目录；再次执行时用新的 `--output`，并让 verify 的 `--build` 指向对应目录。生成的 `DOTA2.bda`、ELF、map、构建身份记录及校验文件保存在 `build/native/`。v0.30 已固定为通过真机限定验收的 C8 BDA；构建会核对该身份。
 
 构建器使用当前版本约定的源文件顺序、编译选项、图标和BDA头日期，校验固定SDK、统一资源包及实际ELF负载、ABI和RAM。C8为37个编译单元，Game/Unit/View为179008/240/148字节，由实际ELF复核；私栈64KiB，应用须留在 `0x83ff0000` 之前。
 
@@ -47,9 +47,9 @@ python tools/package.py --build build/native --output dist
 python tools/verify.py --package dist
 ```
 
-`dist/` 包含 `DOTA2-H1-install.zip`、独立程序、构建身份和 `SHA256SUMS.txt`；已有输出目录仍保留。已pin时CI沿用这一封包和校验路径。发布身份文件独立绑定于 `PACKAGE.json`，不是编译输入，添加它不要求重编译已测试候选。上述封包命令不创建Git标签或GitHub Release；当前main开发状态无需执行。
+`dist/` 包含 `DOTA2-H1-install.zip`、独立程序、构建身份和 `SHA256SUMS.txt`；已有输出目录仍保留。已pin时CI沿用这一封包和校验路径。发布身份文件独立绑定于 `PACKAGE.json`，不是编译输入，添加它不要求重编译已测试候选。上述封包命令不创建Git标签或GitHub Release；v0.30 可按以上命令封包；推送对应版本 tag 后由 CI 自动发布。
 
-`provenance/source-curation.json` 始终保留为历史v0.27来源，当前源码哈希由每次 `DOTA2.build.json` 独立记录。源码、素材、BDA格式或ELF验证失败均不能标成功。[原真机记录](https://github.com/HelloClyde/BBKH1-DOTA2/blob/main/docs/verification/v0.27-h1.json)仅对应旧版确切BDA，不能证明v0.30通过设备验收。脚本和CI本身不运行H1或模拟器。安装方法见[主 README](../README.md#安装到-h1)。
+`provenance/source-curation.json` 始终保留为历史v0.27来源，当前源码哈希由每次 `DOTA2.build.json` 独立记录。源码、素材、BDA格式或ELF验证失败均不能标成功。[原真机记录](https://github.com/HelloClyde/BBKH1-DOTA2/blob/main/docs/verification/v0.27-h1.json)仅对应旧版确切BDA，不能证明v0.30通过设备验收。脚本和CI本身不运行H1或模拟器。安装方法见[主 README](../README.md#安装)。
 
 历史v0.28最终交付使用规范LF的源码。对159项输入的检查只转换了 `platform/baked_scene.c/.h` 的CRLF，JSON和二进制保持原样，映射见 `provenance/releases/v0.28-line-endings.json`。规范后完整重编的BDA和ELF均与当时真机版本逐字节相同，两组窄MIPS回归另绑定最终元数据。旧UI报告仍记录转换前字节哈希，通过换行映射和相同二进制继承其等价性，未将旧 `source_current` 当作当前身份。旧版设备结果见[v0.28记录](https://github.com/HelloClyde/BBKH1-DOTA2/blob/main/docs/verification/v0.28-h1.json)。
 
