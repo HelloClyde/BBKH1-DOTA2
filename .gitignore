@@ -8,6 +8,7 @@ __pycache__/
 *.elf
 *.bin
 !/provenance/tree-navigation/*.bin
+!/provenance/verification/v0.30/performance/**/*.bin
 *.bda
 *.map
 *.exe

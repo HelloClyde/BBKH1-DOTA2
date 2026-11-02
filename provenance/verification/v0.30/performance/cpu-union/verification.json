@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "actual_complete_bda": true,
+  "actual_mips32": true,
+  "physical_h1_tested": false,
+  "USB_opened": false,
+  "warm_ticks": 2,
+  "measured_ticks": 2,
+  "original_bda_sha256": "d569b2ae381441ea5af09f61d4b956c97f5077e81a65909734a9d18b43365920",
+  "union_bda_sha256": "33a650a25ef78ce16250cd3875f9be2ec6e7d831e6bd4d0ba775b5f1f83be857",
+  "original_workspace_bytes": 1062756,
+  "union_workspace_bytes": 1079224,
+  "results": [
+    {
+      "snapshot": "fountain-paused-game.bin",
+      "device_snapshot_sha256": "64bbd32c537a830133f565431f9f7126ec424d80ac1050a0eabdffd32c2d3729",
+      "original_report": "build\\v030\\perf-union-cpu\\fountain-paused-game-original\\verification.json",
+      "original_report_sha256": "56b85ec719ab18e24742115dfbecf9713777b5a00e4b846e5758482cb16d9f07",
+      "union_report": "build\\v030\\perf-union-cpu\\fountain-paused-game-union\\verification.json",
+      "union_report_sha256": "517d4991bb67c923d50d4060836a8f0a7762b53cd6e5eb3ab356a4feaae5b64b",
+      "all_game_fog_unit_visibility_byte_identical": true,
+      "compared_outputs": {
+        "end-game.bin": true,
+        "fog-000.bin": true,
+        "fog-001.bin": true,
+        "game-000.bin": true,
+        "game-001.bin": true,
+        "start-game.bin": true
+      },
+      "original_mean_slots": 1957597.5,
+      "union_mean_slots": 1630295.0,
+      "saved_mean_slots": 327302.5,
+      "slot_reduction_percent": 16.71960145024705,
+      "original_per_tick_slots": [
+        2482486,
+        1432709
+      ],
+      "union_per_tick_slots": [
+        2154984,
+        1105606
+      ]
+    },
+    {
+      "snapshot": "post-horn-paused-game.bin",
+      "device_snapshot_sha256": "638dd8a039cc510c615c1e25f59e92cadb25469c94aa054912aadce46404944a",
+      "original_report": "build\\v030\\perf-union-cpu\\post-horn-paused-game-original\\verification.json",
+      "original_report_sha256": "bd01eecccf4acb85a41a15e1b28643379ba99c8a5f13e42299cf10fb1fb44b81",
+      "union_report": "build\\v030\\perf-union-cpu\\post-horn-paused-game-union\\verification.json",
+      "union_report_sha256": "12fe2ef20b119469a63320adff376934c26635b704efdae27da5333d284d49b2",
+      "all_game_fog_unit_visibility_byte_identical": true,
+      "compared_outputs": {
+        "end-game.bin": true,
+        "fog-000.bin": true,
+        "fog-001.bin": true,
+        "game-000.bin": true,
+        "game-001.bin": true,
+        "start-game.bin": true
+      },
+      "original_mean_slots": 2618085.0,
+      "union_mean_slots": 2282139.0,
+      "saved_mean_slots": 335946.0,
+      "slot_reduction_percent": 12.831745340582907,
+      "original_per_tick_slots": [
+        2558274,
+        2677896
+      ],
+      "union_per_tick_slots": [
+        2222141,
+        2342137
+      ]
+    }
+  ],
+  "profile_source_sha256": "28c404e7bf9c93f0798255cd078abd68c15fb80d84b302c56504569a73a65014",
+  "scope": "CPU instruction-slot comparison only, no FPS conversion. Each pair starts from the same original device Game snapshot. Full post-warm Game and both measured Game/current-fog/explored-fog/unit-visibility outputs are byte-identical. Original compiled source SHA is preserved with explicit current-source drift, never forced current."
+}

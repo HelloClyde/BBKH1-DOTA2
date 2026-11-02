@@ -1,0 +1,33 @@
+{
+  "glyphs": 676,
+  "added": [
+    21382,
+    21452,
+    21490,
+    24049
+  ],
+  "added_text": "历双史己",
+  "existing_glyph_records_unchanged": true,
+  "old_header_sha256": "fdf5222062c0837ca58971aaf9566744b3e32123105686676cd5e8a3fa95c305",
+  "header_sha256": "aee0761797ad35461e8891c04a32bcaca000eaa39e762de806e424c58300a76c",
+  "glyph_height": 14,
+  "source_sha256": {
+    "platform/render.c": "7c5c0f05d193822eb8dd19077ab3c229c77f5959c05a62e10b0b774807186052",
+    "platform/status_effects.c": "484a848d18ac465c6a03a329325153cf2b5cdb8fa56f543e85772673f07f3893",
+    "platform/extra_ability.h": "0f3e6c07e0c1c10866aaec69f42cf7ab4eab0ed023b0dea5f3fc3e010581922b",
+    "game/progression_data.h": "4bfce0d2435de756e3eacbde5ec048f91797dbc208c8cbb8f2e2b6609a5afb0a",
+    "platform/match_ui.h": "5d8e241ace05b01a3e51ea6e9c0bdb165557cc4806feb56a77cb3a0b8fdb83f0"
+  },
+  "font_files_redistributed": false,
+  "local_font_sources": [
+    {
+      "name": "msyh.ttc",
+      "sha256": "d79c55e68b1131eea0cc1c47be4f572d964f28c682e143db2ad09c1e4cb07a3f"
+    },
+    {
+      "name": "consola.ttf",
+      "sha256": "c6e6ce8119fdd47ec6a5449a08e2d2ad7f41ea03143aae193068ed9fa58eaebc"
+    }
+  ],
+  "ownership": "Generated bitmap subset from locally installed Microsoft fonts; no new font license is asserted."
+}

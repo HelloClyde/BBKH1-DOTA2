@@ -1,0 +1,279 @@
+{
+  "passed": true,
+  "source_current": true,
+  "source_sha256": {
+    "tests/resource_pack_test.c": "8b433b435d19d29b9ed2242b06b69cbdbcfcf388c940ab8a084f3f6a05707f97",
+    "tests/verify_resource_pack.py": "2f42606a5a6f558e334e7cc693e3646ab55fd2ffefcb589c526f3d11e3b0c518",
+    "platform/resource_pack.c": "8349a8c44e76bc4bc1a57eda3b93f68c94587534c0dd8576daedc50d6cf7c8a3",
+    "platform/resource_pack.h": "05a0f2ae3b1286adc8a5a8a05fe1f8491b1a0da88a7500115236757a3b74b7ea",
+    "platform/map_format.c": "6f9b2690fd8f4efd225460f71a87e2641d5565cffa12432f5094ce43c3134797",
+    "platform/map_sidecar_format.h": "97b79860077e816ee1eb423c3f8e3bc3cd690fd468b7d9dc125fe612fef71e27",
+    "platform/map_crc_table.h": "255e6461b296173918ef210157c3172ebd60e89d667f24fb18790367fcd7443d",
+    "platform/cache_memory.h": "3443a0afc2c55e440a9ab4cd6db8412ee49d6aaeb0992fe8e964095708d38777",
+    "third_party/miniz/miniz_tinfl.c": "5e104f179ea94369e2488d1a21672e1119af678e7ca8ed50ccbf20fdca66268b",
+    "third_party/miniz/miniz_tinfl.h": "efcbba3ff57fee1acae8e5429185f93956a5d9dcdbd54715300f2f82a5a6561b",
+    "third_party/miniz/miniz_freestanding.h": "5c9ab1bb2478abbbc045ca07e14dfd7fcfa84de5bdadcf14c373bb2310186404"
+  },
+  "exe_sha256": "709a6efd860869ef2fd4ee3fe7ad01d0b3f15b98c2587dc259faefd2a1dd683d",
+  "malformed_cases": [
+    "header-crc",
+    "section-crc",
+    "chunk-guide-crc",
+    "span-guide-crc",
+    "span-page-crc",
+    "chunk-page-crc",
+    "raw-chunk-crc",
+    "canonical-deflate-crc",
+    "deflate-trailing",
+    "deflate-truncated",
+    "deflate-output-overrun",
+    "unknown-codec",
+    "delta-odd-length",
+    "chunk-physical-range",
+    "span-id-range",
+    "span-noncontiguous"
+  ],
+  "full_pack_sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153",
+  "full_source_sha256": [
+    "c312840584571c0958b8409da729ea945ecbf557a55ab6030ff0d2d9cbef78dd",
+    "a2be46eb35f2a86a483d154332aeb9cf44f3a24b6427e52e7a5619df01283d30",
+    "f23c061e9735e02bd098fe49adb723c56641c7ab0cc946e97b82c44ef9e7dc28",
+    "129200c5bdfc8c0f7c75d64b34a3e025c03b4244fea75c89a80c215420248256"
+  ],
+  "tests": [
+    {
+      "args": [
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\valid.H1R",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\section0.bin",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\section1.bin",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\section2.bin",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\section3.bin"
+      ],
+      "returncode": 0,
+      "stdout": "SECTION0 exact 8768\nSECTION1 exact 128\nSECTION2 exact 240\nSECTION3 exact 8208\nPASS checks173 bytes17344 callbacks7\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "mount-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\header-crc.H1R",
+        "4",
+        "0",
+        "0",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks6 error4\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "mount-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\section-crc.H1R",
+        "4",
+        "0",
+        "0",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks6 error4\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "mount-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\chunk-guide-crc.H1R",
+        "4",
+        "0",
+        "0",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks6 error4\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "mount-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\span-guide-crc.H1R",
+        "4",
+        "0",
+        "0",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks6 error4\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "read-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\span-page-crc.H1R",
+        "4",
+        "0",
+        "0",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks16402 error4\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "read-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\chunk-page-crc.H1R",
+        "4",
+        "0",
+        "0",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks16402 error4\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "read-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\raw-chunk-crc.H1R",
+        "4",
+        "0",
+        "0",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks16402 error4\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "read-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\canonical-deflate-crc.H1R",
+        "4",
+        "0",
+        "64",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks16402 error4\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "read-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\deflate-trailing.H1R",
+        "9",
+        "0",
+        "64",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks16402 error9\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "read-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\deflate-truncated.H1R",
+        "9",
+        "0",
+        "64",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks16402 error9\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "read-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\deflate-output-overrun.H1R",
+        "9",
+        "0",
+        "64",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks16402 error9\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "read-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\unknown-codec.H1R",
+        "3",
+        "0",
+        "0",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks16402 error3\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "read-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\delta-odd-length.H1R",
+        "3",
+        "0",
+        "0",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks16402 error3\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "read-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\chunk-physical-range.H1R",
+        "3",
+        "0",
+        "0",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks16402 error3\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "read-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\span-id-range.H1R",
+        "3",
+        "0",
+        "0",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks16402 error3\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "read-failure",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-runtime-verification-2\\span-noncontiguous.H1R",
+        "3",
+        "0",
+        "0",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "PASS malformed checks16402 error3\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\repack-tile\\DOTA2.H1R",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\legacy\\SCENE.H1P",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\legacy\\SOUND.H1A",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\legacy\\VISION.H1V",
+        "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\tree-sparse\\TREE.H1T"
+      ],
+      "returncode": 0,
+      "stdout": "SECTION0 exact 406028212\nSECTION1 exact 10226944\nSECTION2 exact 139328\nSECTION3 exact 50343158\nPASS checks977231 bytes466737642 callbacks240711\n",
+      "stderr": ""
+    }
+  ],
+  "physical_h1_tested": false,
+  "scope": "Actual C H1R decoder: full stream equality, nested RAW audio and corrupt containers.\n\nHost correctness/ownership tests only. No device or FPS measurement is performed.\n"
+}

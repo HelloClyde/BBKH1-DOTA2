@@ -1,0 +1,32 @@
+{
+  "format_version": 1,
+  "source_version": "0.29",
+  "historical_bda_sha256": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d",
+  "assets": [
+    {
+      "path": "SCENE.H1P",
+      "bytes": 406028212,
+      "sha256": "c312840584571c0958b8409da729ea945ecbf557a55ab6030ff0d2d9cbef78dd"
+    },
+    {
+      "path": "SOUND.H1A",
+      "bytes": 10226944,
+      "sha256": "a2be46eb35f2a86a483d154332aeb9cf44f3a24b6427e52e7a5619df01283d30"
+    },
+    {
+      "path": "MAP12.H1C",
+      "bytes": 16593196,
+      "sha256": "bcc35594f9d48edda2befb16fdef29f220763a7c2fc96b0c11487f6d86d9c31a"
+    },
+    {
+      "path": "VISION.H1V",
+      "bytes": 139328,
+      "sha256": "f23c061e9735e02bd098fe49adb723c56641c7ab0cc946e97b82c44ef9e7dc28"
+    },
+    {
+      "path": "TREE.H1T",
+      "bytes": 17539264,
+      "sha256": "cb665855d9b4d8c20f2e0603492ed4425cb11a2c3763f51eadf30c5d9162aa80"
+    }
+  ]
+}

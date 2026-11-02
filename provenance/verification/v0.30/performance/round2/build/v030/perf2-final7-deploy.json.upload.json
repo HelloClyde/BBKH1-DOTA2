@@ -1,0 +1,40 @@
+{
+  "operation": "file_put",
+  "source": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\h1-deploy-v4vu8fff\\DOTA2.bda",
+  "target": "A:\\应用\\程序\\DOTA2.bda",
+  "target_gbk_hex": "413a5cd3a6d3c35cb3ccd0f25c444f5441322e626461",
+  "phase": "done",
+  "completed": true,
+  "size": 1080220,
+  "crc32": 1389215838,
+  "sha256": "d8d75e2c459735fad358c53c58e2d461c52fb8e348e2846b113f8fcded734d53",
+  "token": 7,
+  "received": 1080220,
+  "status": {
+    "version": 1,
+    "state": 5,
+    "token": 7,
+    "size": 1080220,
+    "received": 1080220,
+    "expected_crc": 1389215838,
+    "actual_crc": 1389215838,
+    "verify_offset": 1080220,
+    "error": 0,
+    "fs_errno": 0,
+    "flags": 9,
+    "old_size": 1079908,
+    "old_crc": 4096693281,
+    "last_activity_tick": 421091,
+    "step_count": 801,
+    "reserved": 0,
+    "state_name": "done",
+    "error_name": "ok"
+  },
+  "paths": {
+    "target": "A:\\应用\\程序\\DOTA2.bda",
+    "temporary": "A:\\应用\\程序\\H1D00000007.TMP",
+    "backup": "A:\\应用\\程序\\H1D00000007.BAK"
+  },
+  "device_crc_verified": true,
+  "elapsed_seconds": 76.35899999999674
+}

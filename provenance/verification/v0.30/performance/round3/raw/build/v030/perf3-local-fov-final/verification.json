@@ -1,0 +1,366 @@
+{
+  "passed": true,
+  "scope": "C7/local-FOV actual MIPS API comparison; instruction slots are not FPS.\n\nDefault mode relinks a diagnostic BDA reusing every C7 object except sight.o.\n--candidate-build instead loads the supplied complete BDA unchanged. Initial\nGame snapshots come from read-only H1 captures. The real tree APIs produce\ntree outcomes; the observer never patches gameplay, visibility, masks or\ncounter results. Native entry, video, audio and USB never execute.\n",
+  "comparison_mode": "supplied-complete-candidate-build",
+  "candidate_build": "build\\v030\\perf-candidate8",
+  "candidate_metadata_sha256": "68d7c197bee8a8aad8ba5690168a941636f1c84cb69243df67ff257c08a9c923",
+  "actual_mips32": true,
+  "complete_bda": true,
+  "physical_h1_tested": false,
+  "USB_opened": false,
+  "game_outcome_writes_after_initialization": 0,
+  "baseline_bda_sha256": "d8d75e2c459735fad358c53c58e2d461c52fb8e348e2846b113f8fcded734d53",
+  "candidate_bda_sha256": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244",
+  "candidate_elf_sha256": "dc6ecce5c66b0f1165ec637070a3beac35c89bb23cd6b96ae95b60cc69cd3b03",
+  "sight_source_sha256": "653e5f1ab4c0eada43e8f88f7693220081825304009738245ade7445d7e35f99",
+  "baseline_workspace_bytes": 1727724,
+  "candidate_workspace_bytes": 1727724,
+  "private_ram_margin_bytes": 22720,
+  "test_source_sha256": "21bf7eecafc238f2168ccd194748474a52cb75e49ecd9716017095998323065f",
+  "results": [
+    {
+      "snapshot_sha256": "64bbd32c537a830133f565431f9f7126ec424d80ac1050a0eabdffd32c2d3729",
+      "snapshot": "fountain-paused-game.bin",
+      "compared_files": {
+        "initial-fog.bin": true,
+        "initial-game.bin": true,
+        "local-fog.bin": true,
+        "local-game.bin": true,
+        "remote-fog.bin": true,
+        "remote-game.bin": true
+      },
+      "cuts": [
+        {
+          "label": "remote",
+          "tree_id": 6,
+          "predicted_intersecting_sources": 0,
+          "reference": {
+            "label": "remote",
+            "index": 6,
+            "xy": [
+              3856,
+              4064
+            ],
+            "instruction_slots": 8415616,
+            "function_slots": {
+              "dota_trees_cut": 45,
+              "dota_sight_invalidate": 6,
+              "dota_sight_fog_state": 46,
+              "refresh": 1313476,
+              "dota_match_is_night": 825,
+              "dota_trees_revision": 12,
+              "dota_trees_geometry_revision": 3,
+              "dota_trees_ready": 4,
+              "dota_trees_is_cut": 25356,
+              "dota_trees_position": 38016,
+              "dota_rules_unit_vision_source.part.0": 3182,
+              "dota_items_special_vision_percent": 1050,
+              "dota_roster_vision_bonus": 255,
+              "source_add": 526144,
+              "dota_roshan_region_at": 660,
+              "dota_roshan_region_at.part.0": 1561,
+              "cast": 6094157,
+              "dota_barracks_kind": 456,
+              "source_merge": 330236,
+              "team_point": 59562,
+              "source_point": 20564
+            },
+            "shadowcasts": 56,
+            "read_bytes": 0,
+            "game_sha256": "c680c4ded20d77a2e1b0a2dcbd32d5c0d7beb64e6d15592ef91248a15751cc43",
+            "fog_sha256": "b2930e1334bd3ca09619402d5e9d74bde23b48f57a200d10a62f3d219dcbb966"
+          },
+          "candidate": {
+            "label": "remote",
+            "index": 6,
+            "xy": [
+              3856,
+              4064
+            ],
+            "instruction_slots": 2536336,
+            "function_slots": {
+              "dota_trees_cut": 45,
+              "dota_sight_invalidate": 6,
+              "dota_sight_fog_state": 46,
+              "refresh": 1465202,
+              "dota_match_is_night": 825,
+              "dota_trees_revision": 12,
+              "dota_trees_geometry_revision": 3,
+              "dota_trees_ready": 4,
+              "dota_trees_is_cut": 25356,
+              "dota_trees_position": 38016,
+              "dota_rules_unit_vision_source.part.0": 3182,
+              "dota_items_special_vision_percent": 1050,
+              "dota_roster_vision_bonus": 255,
+              "source_add": 57874,
+              "dota_roshan_region_at": 660,
+              "dota_roshan_region_at.part.0": 1561,
+              "cast": 785487,
+              "dota_barracks_kind": 456,
+              "source_merge": 76170,
+              "team_point": 59562,
+              "source_point": 20564
+            },
+            "shadowcasts": 5,
+            "read_bytes": 0,
+            "game_sha256": "c680c4ded20d77a2e1b0a2dcbd32d5c0d7beb64e6d15592ef91248a15751cc43",
+            "fog_sha256": "b2930e1334bd3ca09619402d5e9d74bde23b48f57a200d10a62f3d219dcbb966"
+          },
+          "saved_shadowcasts": 51,
+          "slot_reduction_percent": 69.86155261837042
+        },
+        {
+          "label": "local",
+          "tree_id": 2078,
+          "predicted_intersecting_sources": 14,
+          "reference": {
+            "label": "local",
+            "index": 2078,
+            "xy": [
+              960,
+              3280
+            ],
+            "instruction_slots": 8405174,
+            "function_slots": {
+              "dota_trees_cut": 45,
+              "dota_sight_invalidate": 6,
+              "dota_sight_fog_state": 46,
+              "refresh": 1313220,
+              "dota_match_is_night": 825,
+              "dota_trees_revision": 12,
+              "dota_trees_geometry_revision": 3,
+              "dota_trees_ready": 4,
+              "dota_trees_is_cut": 25356,
+              "dota_trees_position": 37998,
+              "dota_rules_unit_vision_source.part.0": 3182,
+              "dota_items_special_vision_percent": 1050,
+              "dota_roster_vision_bonus": 255,
+              "source_add": 526318,
+              "dota_roshan_region_at": 660,
+              "dota_roshan_region_at.part.0": 1561,
+              "cast": 6089857,
+              "dota_barracks_kind": 456,
+              "source_merge": 324194,
+              "team_point": 59562,
+              "source_point": 20564
+            },
+            "shadowcasts": 56,
+            "read_bytes": 0,
+            "game_sha256": "77bc64f8eb5de2b66ff3767ebb6f1b8a0c3d09c4193161a811b31230fe592d9f",
+            "fog_sha256": "ec1bffba48e5deb0bb27687f254250dc00a27f724c7fe46b3cc3675bf5253edc"
+          },
+          "candidate": {
+            "label": "local",
+            "index": 2078,
+            "xy": [
+              960,
+              3280
+            ],
+            "instruction_slots": 3993578,
+            "function_slots": {
+              "dota_trees_cut": 45,
+              "dota_sight_invalidate": 6,
+              "dota_sight_fog_state": 46,
+              "refresh": 1515775,
+              "dota_match_is_night": 825,
+              "dota_trees_revision": 12,
+              "dota_trees_geometry_revision": 3,
+              "dota_trees_ready": 4,
+              "dota_trees_is_cut": 25356,
+              "dota_trees_position": 37998,
+              "dota_rules_unit_vision_source.part.0": 3182,
+              "dota_items_special_vision_percent": 1050,
+              "dota_roster_vision_bonus": 255,
+              "source_add": 140603,
+              "dota_roshan_region_at": 660,
+              "dota_roshan_region_at.part.0": 1561,
+              "cast": 1861421,
+              "dota_barracks_kind": 456,
+              "source_merge": 324194,
+              "team_point": 59562,
+              "source_point": 20564
+            },
+            "shadowcasts": 14,
+            "read_bytes": 0,
+            "game_sha256": "77bc64f8eb5de2b66ff3767ebb6f1b8a0c3d09c4193161a811b31230fe592d9f",
+            "fog_sha256": "ec1bffba48e5deb0bb27687f254250dc00a27f724c7fe46b3cc3675bf5253edc"
+          },
+          "saved_shadowcasts": 42,
+          "slot_reduction_percent": 52.48667071020778
+        }
+      ]
+    },
+    {
+      "snapshot_sha256": "260e335c3153af4df737ebc8488ce741e89891a79f875ebfbbe5600cc846055a",
+      "snapshot": "post-horn-paused-game.bin",
+      "compared_files": {
+        "initial-fog.bin": true,
+        "initial-game.bin": true,
+        "local-fog.bin": true,
+        "local-game.bin": true,
+        "remote-fog.bin": true,
+        "remote-game.bin": true
+      },
+      "cuts": [
+        {
+          "label": "remote",
+          "tree_id": 6,
+          "predicted_intersecting_sources": 0,
+          "reference": {
+            "label": "remote",
+            "index": 6,
+            "xy": [
+              3856,
+              4064
+            ],
+            "instruction_slots": 9489505,
+            "function_slots": {
+              "dota_trees_cut": 45,
+              "dota_sight_invalidate": 6,
+              "dota_sight_fog_state": 46,
+              "refresh": 1316166,
+              "dota_match_is_night": 1230,
+              "dota_trees_revision": 12,
+              "dota_trees_geometry_revision": 3,
+              "dota_trees_ready": 4,
+              "dota_trees_is_cut": 25356,
+              "dota_trees_position": 38016,
+              "dota_rules_unit_vision_source.part.0": 4893,
+              "dota_items_special_vision_percent": 1050,
+              "dota_roster_vision_bonus": 255,
+              "source_add": 781182,
+              "dota_roshan_region_at": 1002,
+              "dota_roshan_region_at.part.0": 3190,
+              "cast": 6760647,
+              "dota_barracks_kind": 672,
+              "source_merge": 406739,
+              "team_point": 110063,
+              "source_point": 38928
+            },
+            "shadowcasts": 83,
+            "read_bytes": 0,
+            "game_sha256": "8271215b7e85916047a7afb74e92d0ca3262a15d8781ff8e859b3e051f23669b",
+            "fog_sha256": "ab871d8005887585eca2380d5be0b77d07e8065fe2e3e8999b3f15dc408342a1"
+          },
+          "candidate": {
+            "label": "remote",
+            "index": 6,
+            "xy": [
+              3856,
+              4064
+            ],
+            "instruction_slots": 2534208,
+            "function_slots": {
+              "dota_trees_cut": 45,
+              "dota_sight_invalidate": 6,
+              "dota_sight_fog_state": 46,
+              "refresh": 1467978,
+              "dota_match_is_night": 1230,
+              "dota_trees_revision": 12,
+              "dota_trees_geometry_revision": 3,
+              "dota_trees_ready": 4,
+              "dota_trees_is_cut": 25356,
+              "dota_trees_position": 38016,
+              "dota_rules_unit_vision_source.part.0": 4893,
+              "dota_items_special_vision_percent": 1050,
+              "dota_roster_vision_bonus": 255,
+              "source_add": 98973,
+              "dota_roshan_region_at": 1002,
+              "dota_roshan_region_at.part.0": 3190,
+              "cast": 589813,
+              "dota_barracks_kind": 672,
+              "source_merge": 152673,
+              "team_point": 110063,
+              "source_point": 38928
+            },
+            "shadowcasts": 9,
+            "read_bytes": 0,
+            "game_sha256": "8271215b7e85916047a7afb74e92d0ca3262a15d8781ff8e859b3e051f23669b",
+            "fog_sha256": "ab871d8005887585eca2380d5be0b77d07e8065fe2e3e8999b3f15dc408342a1"
+          },
+          "saved_shadowcasts": 74,
+          "slot_reduction_percent": 73.29462390293277
+        },
+        {
+          "label": "local",
+          "tree_id": 2083,
+          "predicted_intersecting_sources": 11,
+          "reference": {
+            "label": "local",
+            "index": 2083,
+            "xy": [
+              992,
+              3232
+            ],
+            "instruction_slots": 9479416,
+            "function_slots": {
+              "dota_trees_cut": 45,
+              "dota_sight_invalidate": 6,
+              "dota_sight_fog_state": 46,
+              "refresh": 1315910,
+              "dota_match_is_night": 1230,
+              "dota_trees_revision": 12,
+              "dota_trees_geometry_revision": 3,
+              "dota_trees_ready": 4,
+              "dota_trees_is_cut": 25356,
+              "dota_trees_position": 37998,
+              "dota_rules_unit_vision_source.part.0": 4893,
+              "dota_items_special_vision_percent": 1050,
+              "dota_roster_vision_bonus": 255,
+              "source_add": 781439,
+              "dota_roshan_region_at": 1002,
+              "dota_roshan_region_at.part.0": 3190,
+              "cast": 6756617,
+              "dota_barracks_kind": 672,
+              "source_merge": 400697,
+              "team_point": 110063,
+              "source_point": 38928
+            },
+            "shadowcasts": 83,
+            "read_bytes": 0,
+            "game_sha256": "89452909bd7dc37b49e7b31e0ac8d4ae04289b88b8e65dd25b29ba49a188739c",
+            "fog_sha256": "ab871d8005887585eca2380d5be0b77d07e8065fe2e3e8999b3f15dc408342a1"
+          },
+          "candidate": {
+            "label": "local",
+            "index": 2083,
+            "xy": [
+              992,
+              3232
+            ],
+            "instruction_slots": 3665651,
+            "function_slots": {
+              "dota_trees_cut": 45,
+              "dota_sight_invalidate": 6,
+              "dota_sight_fog_state": 46,
+              "refresh": 1518960,
+              "dota_match_is_night": 1230,
+              "dota_trees_revision": 12,
+              "dota_trees_geometry_revision": 3,
+              "dota_trees_ready": 4,
+              "dota_trees_is_cut": 25356,
+              "dota_trees_position": 37998,
+              "dota_rules_unit_vision_source.part.0": 4893,
+              "dota_items_special_vision_percent": 1050,
+              "dota_roster_vision_bonus": 255,
+              "source_add": 117380,
+              "dota_roshan_region_at": 1002,
+              "dota_roshan_region_at.part.0": 3190,
+              "cast": 1403861,
+              "dota_barracks_kind": 672,
+              "source_merge": 400697,
+              "team_point": 110063,
+              "source_point": 38928
+            },
+            "shadowcasts": 11,
+            "read_bytes": 0,
+            "game_sha256": "89452909bd7dc37b49e7b31e0ac8d4ae04289b88b8e65dd25b29ba49a188739c",
+            "fog_sha256": "ab871d8005887585eca2380d5be0b77d07e8065fe2e3e8999b3f15dc408342a1"
+          },
+          "saved_shadowcasts": 72,
+          "slot_reduction_percent": 61.33041318157152
+        }
+      ]
+    }
+  ]
+}

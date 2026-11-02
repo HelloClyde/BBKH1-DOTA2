@@ -1,0 +1,1 @@
+{"passed":true,"cases":576,"pixel_words_compared":75202560,"old_queries_per_frame":5184,"new_getters_per_frame":1}

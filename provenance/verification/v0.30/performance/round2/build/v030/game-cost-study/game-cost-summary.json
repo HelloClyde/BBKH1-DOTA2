@@ -1,0 +1,217 @@
+{
+  "passed": true,
+  "physical_h1_tested": false,
+  "USB_opened": false,
+  "c3_bda_sha256": "33a650a25ef78ce16250cd3875f9be2ec6e7d831e6bd4d0ba775b5f1f83be857",
+  "direct_tick_analysis": [
+    {
+      "scenario": "fountain-paused-game-union",
+      "source_report_sha256": "517d4991bb67c923d50d4060836a8f0a7762b53cd6e5eb3ab356a4feaae5b64b",
+      "mean_slots_per_tick": 1630295.0,
+      "measured_ticks": 2,
+      "functions": [
+        {
+          "name": "dota_trees_tick",
+          "slots": 16,
+          "percent_total": 0.0004907087367623651,
+          "calls": 2
+        },
+        {
+          "name": "dota_trees_revision",
+          "slots": 552,
+          "percent_total": 0.016929451418301596,
+          "calls": 92
+        },
+        {
+          "name": "dota_trees_geometry_revision",
+          "slots": 276,
+          "percent_total": 0.008464725709150798,
+          "calls": 92
+        },
+        {
+          "name": "refresh_item_trees",
+          "slots": 21690,
+          "percent_total": 0.6652170312734812,
+          "calls": 90
+        },
+        {
+          "name": "cast",
+          "slots": 1501948,
+          "percent_total": 46.06368786017254,
+          "calls": 448
+        },
+        {
+          "name": "source_add",
+          "slots": 77420,
+          "percent_total": 2.374416900008894,
+          "calls": 112
+        },
+        {
+          "name": "source_merge",
+          "slots": 146276,
+          "percent_total": 4.486181948665732,
+          "calls": 20
+        },
+        {
+          "name": "refresh",
+          "slots": 94624,
+          "percent_total": 2.902051469212627,
+          "calls": 2
+        },
+        {
+          "name": "enemy_source",
+          "slots": 168316,
+          "percent_total": 5.16213323355589,
+          "calls": 64
+        },
+        {
+          "name": "dota_items_stats",
+          "slots": 97820,
+          "percent_total": 3.0000705393809097,
+          "calls": 60
+        },
+        {
+          "name": "dota_items_equipped_item",
+          "slots": 133566,
+          "percent_total": 4.096375195900128,
+          "calls": 4746
+        },
+        {
+          "name": "open_cell",
+          "slots": 49504,
+          "percent_total": 1.5182528315427577,
+          "calls": 1870
+        },
+        {
+          "name": "neighbor",
+          "slots": 36629,
+          "percent_total": 1.123385644929292,
+          "calls": 777
+        }
+      ],
+      "scope": "Existing exact-C3 warm2/ticks2 profile; self instruction slots, not inclusive call time or FPS."
+    },
+    {
+      "scenario": "post-horn-paused-game-union",
+      "source_report_sha256": "12fe2ef20b119469a63320adff376934c26635b704efdae27da5333d284d49b2",
+      "mean_slots_per_tick": 2282139.0,
+      "measured_ticks": 2,
+      "functions": [
+        {
+          "name": "dota_trees_tick",
+          "slots": 16,
+          "percent_total": 0.00035054832330546037,
+          "calls": 2
+        },
+        {
+          "name": "dota_trees_revision",
+          "slots": 1500,
+          "percent_total": 0.03286390530988691,
+          "calls": 250
+        },
+        {
+          "name": "dota_trees_geometry_revision",
+          "slots": 750,
+          "percent_total": 0.016431952654943453,
+          "calls": 250
+        },
+        {
+          "name": "refresh_item_trees",
+          "slots": 59768,
+          "percent_total": 1.309473261707547,
+          "calls": 248
+        },
+        {
+          "name": "cast",
+          "slots": 1630111,
+          "percent_total": 35.714542365736705,
+          "calls": 841
+        },
+        {
+          "name": "source_add",
+          "slots": 188562,
+          "percent_total": 4.131255808695263,
+          "calls": 168
+        },
+        {
+          "name": "source_merge",
+          "slots": 298731,
+          "percent_total": 6.544978198085217,
+          "calls": 76
+        },
+        {
+          "name": "refresh",
+          "slots": 98934,
+          "percent_total": 2.167571738618901,
+          "calls": 2
+        },
+        {
+          "name": "enemy_source",
+          "slots": 185962,
+          "percent_total": 4.074291706158126,
+          "calls": 64
+        },
+        {
+          "name": "dota_items_stats",
+          "slots": 121052,
+          "percent_total": 2.6521609770482866,
+          "calls": 104
+        },
+        {
+          "name": "dota_items_equipped_item",
+          "slots": 134286,
+          "percent_total": 2.9421082589623158,
+          "calls": 4770
+        },
+        {
+          "name": "open_cell",
+          "slots": 111413,
+          "percent_total": 2.4409775215269534,
+          "calls": 4205
+        },
+        {
+          "name": "neighbor",
+          "slots": 88536,
+          "percent_total": 1.939759147010765,
+          "calls": 1800
+        }
+      ],
+      "scope": "Existing exact-C3 warm2/ticks2 profile; self instruction slots, not inclusive call time or FPS."
+    }
+  ],
+  "selected_production_source_sha256": {
+    "game/sight.c": "6dcc74534507d22c0e705442add74429663364a0de3753ba35811e91e556e6bf",
+    "game/sight.h": "27f292ec3d139c077a942079052c148d5cd2d9993886c44a37bfbf52953eef8a"
+  },
+  "references": [
+    {
+      "path": "build\\v030\\game-cost-study\\shadow-trace-summary.json",
+      "sha256": "f379bd2c3fb084289cac8bf6b6960030ea5d055fa0c37a24f46e82417a890b3a"
+    },
+    {
+      "path": "build\\v030\\game-cost-study\\treebyte-summary.json",
+      "sha256": "d1eceefade7ff1884c522816d5dcd3de1f9cfb440176ebc0f76666e91239364f"
+    },
+    {
+      "path": "build\\v030\\game-cost-study\\host-reference\\host-run1\\verification.json",
+      "sha256": "729bead717b19c6f826831c34ad57af226b6702ffe9911890a2107a65c56c196"
+    },
+    {
+      "path": "build\\v030\\game-cost-study\\getter-mips-loop\\verification.json",
+      "sha256": "aacb9877118a7d3cd9e29607177bd84ed6c62fcc7a13b7436578ac05120c7f2b"
+    }
+  ],
+  "findings": [
+    "With no cut trees, dota_trees_tick takes8 MIPS instruction slots per tick and returns immediately. It is not the direct steady-state CPU bottleneck in these snapshots.",
+    "Current shadow recasts are caused by moving hero/creep cells and occasional height changes, never an accidental changing tree stamp.",
+    "A bigger shared shadow cache saves only about7% of recasts in16 measured post-horn ticks; it was not enlarged.",
+    "Selected eight immutable base planes plus byte tree plane preserve all74 host cases and two8-tick complete-BDA Game/fog/visibility traces; instruction slots drop12.30% and9.23% in these isolated diagnostic relinks, not measured physical FPS.",
+    "Any tree version change currently still invalidates all source shadow keys, potentially causing a transient burst. Localized tree-shadow invalidation is deferred; current cache rewrite does not reduce vision cadence or rules."
+  ],
+  "getter_validation": "196608 actual MIPS per-cell getter/fog comparisons completed by a scratch caller loop; no production code/Game outcome patch. Exact final production BDA should re-run tests/verify_sight_bits_mips.py once built.",
+  "discarded_or_incomplete_experiments": [
+    "raw-limit arithmetic prototype had only0.76% fountain CPU-slot benefit and was not retained.",
+    "The first per-cell Python emu_start getter test was interrupted for harness overhead, not a semantic failure; the compiled MIPS caller loop completed the same coverage plus reset."
+  ],
+  "scope": "Read-only cost audit and isolated diagnostic variants, host/actual MIPS correctness. No physical H1 timing, native rendering, audio, cache/bus or firmware scheduling claim."
+}

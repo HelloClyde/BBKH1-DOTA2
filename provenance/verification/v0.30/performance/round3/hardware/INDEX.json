@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "version": "0.30",
+  "round": 3,
+  "phase": "restored-SD-hardware",
+  "scope": "Separate append-only actual H1 follow-up. Original round3 offline/C7 historical indices remain available; acceptance does not extend to untested source or binaries.",
+  "baseline": {
+    "bda_sha256": "d8d75e2c459735fad358c53c58e2d461c52fb8e348e2846b113f8fcded734d53",
+    "elf_sha256": "e4b97fff82b55ddb488ca0f0e73b78acdce30ebae28e93ebb3f5f7f2be4e7c97",
+    "report": {
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored-final/verification.json",
+      "sha256": "594cd6b54ca1f2d2f6dd58b579d85e5c66a117c50cfdde4d6d14a3c297408007",
+      "bytes": 85793
+    },
+    "build_metadata": {
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf-candidate7/DOTA2.build.json",
+      "sha256": "1698bd71545d7a508b68a633d427cfd8be36b9e6badb2e1cc46052b4c858e86f",
+      "bytes": 22820
+    }
+  },
+  "candidate": {
+    "bda_sha256": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244",
+    "elf_sha256": "dc6ecce5c66b0f1165ec637070a3beac35c89bb23cd6b96ae95b60cc69cd3b03",
+    "bda_bytes": 1083444,
+    "report": {
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-aligned/verification.json",
+      "sha256": "d814a531a220e8c64f21694adfcbc04377d452f44936342023cddcd4a315b50f",
+      "bytes": 85684
+    },
+    "build_metadata": {
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf-candidate8/DOTA2.build.json",
+      "sha256": "68d7c197bee8a8aad8ba5690168a941636f1c84cb69243df67ff257c08a9c923",
+      "bytes": 22920
+    }
+  },
+  "candidate_installed_verified": true,
+  "physical_candidate_tested": true,
+  "normal_inputs_only": true,
+  "game_state_ram_writes": 0,
+  "deployment_receipt": {
+    "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-deploy.json",
+    "sha256": "34cdd88637f5da9031ba53297454a58515a94b9834cc6e4d9f40379ca28d98b8",
+    "bytes": 3837
+  },
+  "comparison": {
+    "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/comparison.json",
+    "sha256": "7691cbcdb3b5f7dafdf26776176be91b5fa8553e987b34cb049f2017741128f0",
+    "bytes": 313478
+  },
+  "matched_input_metadata": {
+    "driver": true,
+    "lineup": true,
+    "post_horn_option": true,
+    "profile_names": true
+  },
+  "observed_menu_frame_counters": {
+    "baseline": 319,
+    "candidate": 319,
+    "equal": true,
+    "acceptance_basis": "Actual initialized lineup must match; the observed pre-ENTER counter can differ because input is applied by a later frame."
+  },
+  "physical_cut_only_acceptance": {
+    "passed": true,
+    "evidence": {
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/verification.json",
+      "sha256": "98e7b048dc398d51644ba54e59028e00de4b61b353077aac0387b625edaf9dac",
+      "bytes": 48555
+    },
+    "natural180s_regrow_on_current_bda_tested": false,
+    "functional_test_FPS_used_for_profile_comparison": false
+  },
+  "final_readonly_device_check": {
+    "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-final-device/verification.json",
+    "sha256": "c8c8532a4c32820eefc9d2135ae5d134024f61e3d2727d1cc3327bf30c63d6eb",
+    "bytes": 3034
+  },
+  "excluded_attempts": [
+    {
+      "source_folder": "build/v030/perf3-baseline7-restored",
+      "reason": "Driver expected-lineup check rejected this attempt before gameplay comparison. Original failed report is preserved.",
+      "report": {
+        "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored/verification.json",
+        "sha256": "8d7440351b45d67ee5f72f0fb6213a3788e1ee47b6bfdc13661333499cb396da",
+        "bytes": 8928
+      },
+      "original_passed": false
+    },
+    {
+      "source_folder": "build/v030/perf3-baseline7-restored-aligned",
+      "reason": "Driver expected-lineup check rejected this attempt; no gameplay comparison was performed. Original failed report is preserved.",
+      "report": {
+        "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored-aligned/verification.json",
+        "sha256": "3be19f079c589da7a86a4a90097eb3b9b4c81edd0349b572f692524e81f8c515",
+        "bytes": 8932
+      },
+      "original_passed": false
+    },
+    {
+      "source_folder": "build/v030/perf3-candidate8-trees-cut",
+      "reason": "Harness30s startup complete-frame budget expired. Later read-only debug/screenshot showed healthy menu, zero app/resource errors and normal BACK exit; this is excluded as a harness timeout, not a game freeze.",
+      "report": {
+        "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut/verification.json",
+        "sha256": "5f66b3a0a61c763d129a87a3a46ab5c8191d60e062e9149b039b0e6a992abbe3",
+        "bytes": 10016
+      },
+      "original_passed": false
+    }
+  ],
+  "performance_acceptance_passed": true,
+  "performance_acceptance_source": "Explicit --performance-acceptance root decision; never inferred from host/MIPS evidence",
+  "full_feature_acceptance_complete": false,
+  "release_pin_created": false,
+  "github_updated": false,
+  "previous_state_manifest": {
+    "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/manifest.json",
+    "sha256": "fb76434bd6284f50f0cdbdbf09180333e570550ad723a0c31492a2201bcea662",
+    "bytes": 3886
+  },
+  "prior_round3_offline_INDEX_snapshot": {
+    "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/INDEX.json",
+    "sha256": "8ff01b2c5d6a01bb4a36c06cf0b41a3cca91e5a2149693e8b9c5329a43deba88",
+    "bytes": 6590
+  },
+  "prior_round3_offline_RAW_MANIFEST_snapshot": {
+    "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/RAW-MANIFEST.json",
+    "sha256": "c17fd9e647ccc0c7e590b688dd95f0982623c84b8240ff7a6d6f22a6d7c1cf50",
+    "bytes": 242764
+  },
+  "manifest": {
+    "path": "provenance/verification/v0.30/performance/round3/hardware/RAW-MANIFEST.json",
+    "sha256": "863e527368db5a0f9e160b7f4b5b9300800a6abc2b025830987775fc3794102e"
+  },
+  "limitations": [
+    "Only the candidate BDA/ELF hashes above are installed/tested claims.",
+    "One restored-SD run per binary is not a repeated statistical trial or an all-scenes FPS guarantee.",
+    "A baseline desktop_not_idle preflight and prior B-card stat/read failure remain distinct historical observations.",
+    "No previous round3 raw report, source_current value, offline index or documentation file is rewritten by this script."
+  ]
+}

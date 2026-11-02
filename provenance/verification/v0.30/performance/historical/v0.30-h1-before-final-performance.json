@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "version": "0.30",
+  "target": "BBK H1 / Y100 V1.41",
+  "bda_sha256": "d569b2ae381441ea5af09f61d4b956c97f5077e81a65909734a9d18b43365920",
+  "bda_bytes": 1076232,
+  "elf_sha256": "27db0d591ec0ffbfededd614137c5a9571b58620cd6b46cac9d5382b87a309df",
+  "sdk_commit": "067fe072477861dfc8949d7b1a55279fb92d2548",
+  "binary": {
+    "abi": {
+      "DotaGame": 179008,
+      "DotaUnit": 240,
+      "DotaView": 148
+    },
+    "entry": "0x83c00020",
+    "stack_bytes": 65536,
+    "application_ram_end": "0x83feeaa0",
+    "ram_limit": "0x83ff0000",
+    "ram_margin_bytes": 5472,
+    "static_bss_bytes": 3012288,
+    "payload_matches_elf": true
+  },
+  "physical_h1_game_tested": false,
+  "functional_h1_passed": null,
+  "hardware_deployment_verified": true,
+  "all_current_offline_checks_passed": true,
+  "game_state_ram_writes_to_device": 0,
+  "resource_bundle": {
+    "DOTA2.H1R": {
+      "path": "assets/runtime/DOTA2.H1R",
+      "bytes": 112861448,
+      "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153"
+    }
+  },
+  "runtime_acceptance": "Baseline launch blocked by B volume read failure; no usable gameplay/FPS sample. Debugger healthy; normal exit to idle desktop.",
+  "installation_report": {
+    "path": "provenance/verification/v0.30/features-mass-storage-install.json",
+    "sha256": "25bd1ead886b4f2fd9f3e7b4f311d797962bd75173a7282dd04c4ce62a615c77"
+  },
+  "evidence_index": {
+    "path": "provenance/verification/v0.30/INDEX.json",
+    "sha256": "d0c18a4bbd2a3546577e9bac6d62e561fed51e9d3702851370f75c225b5a9b7a"
+  },
+  "release_pin_created": false,
+  "github_updated": false,
+  "physical_h1_launch_attempted": true,
+  "startup_error": {
+    "asset": 17,
+    "debug": 37,
+    "B_volume_IO_errno": 9
+  },
+  "optimization_candidate": {
+    "bda_sha256": "f7d3250bef6706a4546e8ba7e5959d87fc69d8f8327f96a005c4cd117e6cf36b",
+    "bda_bytes": 1077124,
+    "installed": false,
+    "offline_checks_passed": true,
+    "physical_game_tested": false,
+    "evidence_index": "provenance/verification/v0.30/performance/INDEX.json",
+    "evidence_sha256": "0994ba82185cb9e92dd9a4c26d4ca550fccd693be6220230583228dbddcb546c"
+  },
+  "storage_drive_count_readonly": 1,
+  "storage_diagnosis": "B index1 is outside current firmware drive bound1. No disk registry or filesystem writes performed."
+}

@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "physical_h1_tested": false,
+  "diagnostic_only": true,
+  "profile_source_sha256": "72644b3785395e6ed393ff42e99bb9700d3066294e65b20c550a361d57edd8a9",
+  "results": [
+    {
+      "snapshot": "fountain-paused-game.bin",
+      "label": "finalclass",
+      "mean_slots": 1317504.25,
+      "base_mean_slots": 1371554.875,
+      "reduction_percent": 3.9408284703154877,
+      "workspace_bytes": 1727724,
+      "all_game_fog_visibility_byte_identical": true,
+      "compared_files": {
+        "fog-000.bin": true,
+        "fog-001.bin": true,
+        "fog-002.bin": true,
+        "fog-003.bin": true,
+        "fog-004.bin": true,
+        "fog-005.bin": true,
+        "fog-006.bin": true,
+        "fog-007.bin": true,
+        "game-000.bin": true,
+        "game-001.bin": true,
+        "game-002.bin": true,
+        "game-003.bin": true,
+        "game-004.bin": true,
+        "game-005.bin": true,
+        "game-006.bin": true,
+        "game-007.bin": true,
+        "start-game.bin": true
+      },
+      "getter_checks": 1
+    },
+    {
+      "snapshot": "post-horn-paused-game.bin",
+      "label": "finalclass",
+      "mean_slots": 2027001.0,
+      "base_mean_slots": 2095291.0,
+      "reduction_percent": 3.2592131594131795,
+      "workspace_bytes": 1727724,
+      "all_game_fog_visibility_byte_identical": true,
+      "compared_files": {
+        "fog-000.bin": true,
+        "fog-001.bin": true,
+        "fog-002.bin": true,
+        "fog-003.bin": true,
+        "fog-004.bin": true,
+        "fog-005.bin": true,
+        "fog-006.bin": true,
+        "fog-007.bin": true,
+        "game-000.bin": true,
+        "game-001.bin": true,
+        "game-002.bin": true,
+        "game-003.bin": true,
+        "game-004.bin": true,
+        "game-005.bin": true,
+        "game-006.bin": true,
+        "game-007.bin": true,
+        "start-game.bin": true
+      },
+      "getter_checks": 1
+    }
+  ],
+  "scope": "Exact diagnostic-BDA height alternatives; instruction slots are not FPS."
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "verified_files": 284,
+  "verified_raw_bytes": 18728950,
+  "all_sha256_and_sizes_equal": true,
+  "game_or_measurement_fields_rewritten": false,
+  "raw_manifest": {
+    "path": "provenance/verification/v0.30/performance/round3/RAW-MANIFEST.json",
+    "sha256": "c17fd9e647ccc0c7e590b688dd95f0982623c84b8240ff7a6d6f22a6d7c1cf50"
+  }
+}

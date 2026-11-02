@@ -1,0 +1,23 @@
+{
+  "generator_sources": {
+    "tools/repack_resources.py": "d9656946e4cc45bbc34608f3ab60e22da98f42c01f51bb4ea31f9313e48e62f1",
+    "tools/pack_tree_sparse.py": "41f49fc2173e54cb211c04fa33623e5ae8fd33173c002add057821297370b0ff",
+    "tools/resource_pack_format.md": "e8bb343bb3755d73a32f1a98f6d5ffd3773988645fb9d7d0f1363b5eae1d3db9"
+  },
+  "python_version": "3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]",
+  "zlib_build_version": "1.2.13",
+  "zlib_runtime_version": "1.2.13",
+  "commands": [
+    "python tools/pack_tree_sparse.py --input build/v030/legacy/TREE.H1T --output build/v030/tree-sparse-repro",
+    "python tools/repack_resources.py --legacy-dir build/v030/legacy --tree build/v030/tree-sparse-repro/TREE.H1T --tree-spans build/v030/tree-sparse-repro/semantic-spans.json --tree-chunking tile --output build/v030/repack-repro",
+    "python tools/repack_resources.py --verify-only build/v030/repack-repro/DOTA2.H1R --verification-output build/v030/repack-repro/independent-verification.json"
+  ],
+  "output_directory_policy": "Each output must be new; converters reject existing output directories rather than replacing evidence.",
+  "expected_final_sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153",
+  "expected_final_bytes": 112861448,
+  "expected_tree_v2_sha256": "129200c5bdfc8c0f7c75d64b34a3e025c03b4244fea75c89a80c215420248256",
+  "semantic_spans_sha256": "224fd01607d0b3a6189704e988a87d3f7ae4ef86c15aa9114f671d73ae5f4343",
+  "normal_application_build": "Consumes the tracked DOTA2.H1R directly; no legacy packs, Steam installation, NumPy or rebaking are needed for an ordinary BDA build.",
+  "offline_repack_requirements": "Legacy SCENE/SOUND/VISION and old TREE plus converter dependencies are needed for regeneration; they remain separately preserved as historical inputs. pack_tree_sparse.py uses the documented NumPy offline environment. repack_resources.py uses Python standard library only. DEFLATE producer version is recorded; the checked-in output SHA is the release identity.",
+  "historical_path_note": "Copied build manifest preserves the exact original assets/runtime input paths. Root subsequently copied those byte-identical inputs to build/v030/legacy. source-packages.json records the preserved location; no historical receipt was rewritten."
+}

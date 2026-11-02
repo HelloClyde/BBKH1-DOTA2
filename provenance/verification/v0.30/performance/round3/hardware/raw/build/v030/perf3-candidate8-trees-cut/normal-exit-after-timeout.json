@@ -1,0 +1,145 @@
+{
+  "reason": "Startup harness30-second draw timeout; healthy menu was subsequently observed. Initial ESCAPE did not exit; native menu exits with BACK.",
+  "before": {
+    "desktop": {
+      "job_id": 6,
+      "kind": 2,
+      "state": 3,
+      "error": 0,
+      "menu_idle": 0,
+      "app_index": 83,
+      "entry_count": 5,
+      "return_code": 0,
+      "state_name": "running"
+    },
+    "debug": [
+      826364996,
+      3597,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ]
+  },
+  "live_optional_cache_symbols": {
+    "sprite_row_slots": [
+      128
+    ],
+    "sprite_row_heap_bytes": [
+      220140
+    ],
+    "shadow_curve": [
+      2188151516
+    ],
+    "read_cache": [
+      2187409740
+    ]
+  },
+  "passed": true,
+  "desktop": {
+    "job_id": 6,
+    "kind": 2,
+    "state": 4,
+    "error": 0,
+    "menu_idle": 1,
+    "app_index": 83,
+    "entry_count": 5,
+    "return_code": 0,
+    "state_name": "done"
+  },
+  "status": {
+    "version": 1,
+    "state": 1,
+    "usb_configured": 1,
+    "usb_fault": 0,
+    "usb_resets": 2,
+    "commands": 9489,
+    "bad_frames": 0,
+    "tick": 33736,
+    "poll_count": 3119027,
+    "last_poll_tick": 33736,
+    "resident_base": 2186025024,
+    "resident_size": 727104,
+    "keys_low": 0,
+    "keys_high": 0,
+    "exec_state": 0,
+    "last_error": 0
+  },
+  "resources": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    5,
+    2539,
+    19723287,
+    2039,
+    8912596,
+    587,
+    8005,
+    109,
+    2386,
+    2864,
+    2535,
+    12981627,
+    1000,
+    0
+  ],
+  "cache": [
+    826495048,
+    3,
+    0,
+    14680064,
+    44278,
+    16508452,
+    262144,
+    564452,
+    112040,
+    0,
+    0,
+    1,
+    64,
+    111616,
+    804685,
+    1866988
+  ],
+  "audio": [
+    826365252,
+    0,
+    0,
+    4294967295,
+    0,
+    5772000,
+    0,
+    770,
+    3137568,
+    11481,
+    10,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+  ]
+}

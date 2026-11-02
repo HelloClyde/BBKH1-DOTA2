@@ -1,0 +1,84 @@
+{
+  "version": "0.30",
+  "candidate": "C8",
+  "bda_sha256": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244",
+  "elf_sha256": "dc6ecce5c66b0f1165ec637070a3beac35c89bb23cd6b96ae95b60cc69cd3b03",
+  "bda_bytes": 1083444,
+  "binary": {
+    "abi": {
+      "DotaGame": 179008,
+      "DotaUnit": 240,
+      "DotaView": 148
+    },
+    "entry": "0x83c00020",
+    "stack_bytes": 65536,
+    "application_ram_end": "0x83fea740",
+    "ram_limit": "0x83ff0000",
+    "ram_margin_bytes": 22720,
+    "static_bss_bytes": 2987840,
+    "payload_matches_elf": true
+  },
+  "standard_build_verified": true,
+  "listed_offline_checks_passed": true,
+  "physical_h1_game_tested": true,
+  "hardware_deployment_verified": true,
+  "performance_acceptance_passed": true,
+  "full_feature_acceptance_complete": false,
+  "resource_bundle_unchanged": true,
+  "game_state_ram_writes_to_device": 0,
+  "hardware_blocker": null,
+  "evidence": {
+    "path": "provenance/verification/v0.30/performance/round3/hardware/INDEX.json",
+    "sha256": "0cccef6406b84bc659dbd985f39c5b9cc8800a3c860536309c2eebc73acfa20d"
+  },
+  "performance_document": "docs/PERFORMANCE-v0.30-round3.md",
+  "offline_evidence": {
+    "path": "provenance/verification/v0.30/performance/round3/INDEX.json",
+    "sha256": "8ff01b2c5d6a01bb4a36c06cf0b41a3cca91e5a2149693e8b9c5329a43deba88"
+  },
+  "hardware_acceptance_scope": "C8 passed normal-input loading, 11 about-8-second matched-driver/initialized-lineup FPS windows, pause/resume, camera, audio counters and normal exit/cleanup. The final cut-only normal-input tree test passed; natural 180-second regrow was not repeated on C8. One sequential run per binary; no repeated-run variance, late team-fight, per-second minimum or full new-feature coverage claim.",
+  "installation_report": {
+    "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-deploy.json",
+    "sha256": "34cdd88637f5da9031ba53297454a58515a94b9834cc6e4d9f40379ca28d98b8",
+    "bytes": 3837
+  },
+  "physical_comparison": {
+    "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/comparison.json",
+    "sha256": "7691cbcdb3b5f7dafdf26776176be91b5fa8553e987b34cb049f2017741128f0",
+    "bytes": 313478
+  },
+  "pre_hardware_candidate_state": {
+    "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/docs/verification/v0.30-candidate8.json",
+    "sha256": "1b12ea1a3010ab05b266f6cdff856a0f9ec19d7cc19201818543f4792f5a9de0"
+  },
+  "optional_cache_runtime": {
+    "menu_cache_heap_baseline": 19555181,
+    "menu_cache_heap_candidate": 19968233,
+    "observed_heap_delta": {
+      "scene_heap_bytes": 244716,
+      "io_heap_bytes": 168336,
+      "total_heap_bytes": 413052
+    },
+    "row_slots": 128,
+    "row_heap_bytes": 220140,
+    "shadow_curve_bytes": 24576,
+    "direct_live_symbols_evidence": {
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut/normal-exit-after-timeout.json",
+      "sha256": "f665a1eea27d58a331973c5c33f2f2ea3e5bde5128c155aa9618930654c5e843"
+    },
+    "final_release_evidence": {
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-final-device/verification.json",
+      "sha256": "c8c8532a4c32820eefc9d2135ae5d134024f61e3d2727d1cc3327bf30c63d6eb",
+      "bytes": 3034
+    },
+    "release_basis": "Application total heap0/released1; independent resource/audio/tree cleanup and optional pointers0. Per-component counters can be historical."
+  },
+  "physical_cut_only_acceptance": {
+    "passed": true,
+    "evidence": {
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/verification.json",
+      "sha256": "98e7b048dc398d51644ba54e59028e00de4b61b353077aac0387b625edaf9dac"
+    },
+    "natural180s_regrow_on_current_bda_tested": false
+  }
+}

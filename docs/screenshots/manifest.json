@@ -1,11 +1,12 @@
 {
   "schema_version": 2,
-  "version": "0.29",
-  "scope": "Each image carries its own version and binary identity; host previews and historical versions are labeled.",
+  "version": "0.30",
+  "scope": "Historical physical images keep original version identities. v0.30 host images use explicit completed-match fixtures; v0.30 C8 physical images are unmodified normal-input captures from the successful bounded tree acceptance.",
   "physical_bda_by_version": {
     "0.27": "608b9fdf3c2751b0c14378663e638819a749e7603b45d231001f9b097f43184d",
     "0.28": "f25c83e1c36c430b92b17dc2bec215bddeb0179dc251368ab934ee2d6f23658b",
-    "0.29": "fe492e687875ec31168778f266d5010e4479b89a0ae901acc061b8722d95bcca"
+    "0.29": "fe492e687875ec31168778f266d5010e4479b89a0ae901acc061b8722d95bcca",
+    "0.30": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244"
   },
   "images": [
     {
@@ -118,6 +119,74 @@
       "unmodified_copy": true,
       "version": "0.29",
       "bda_sha256": "fe492e687875ec31168778f266d5010e4479b89a0ae901acc061b8722d95bcca"
+    },
+    {
+      "path": "docs/screenshots/host-v030-result.png",
+      "source": "build/v030/features-match-ui-2/result-ten-heroes.png",
+      "version": "0.30",
+      "kind": "host_actual_C_completed_match_fixture",
+      "width": 480,
+      "height": 272,
+      "sha256": "baef65336f480ff4acc5c26a531cd579e2edeb70766b68a3ed133fe15f8975de",
+      "unmodified_copy": true,
+      "source_report_sha256": "74996339aaa914343a64821d931b649e05fb315310f8cf05d191e09d7aad774d",
+      "physical_h1": false,
+      "scope": "Deterministic test records rendered by actual current C UI. These are not played H1 matches or real user history."
+    },
+    {
+      "path": "docs/screenshots/host-v030-history.png",
+      "source": "build/v030/features-match-ui-2/history-twelve-matches.png",
+      "version": "0.30",
+      "kind": "host_actual_C_completed_match_fixture",
+      "width": 480,
+      "height": 272,
+      "sha256": "6aef57895548aefc04ce056c3a8493f35bdb467f12473fa87d3e7823e255b9a8",
+      "unmodified_copy": true,
+      "source_report_sha256": "74996339aaa914343a64821d931b649e05fb315310f8cf05d191e09d7aad774d",
+      "physical_h1": false,
+      "scope": "Deterministic test records rendered by actual current C UI. These are not played H1 matches or real user history."
+    },
+    {
+      "path": "docs/screenshots/h1-v030-resources.png",
+      "source": "build/v030/perf3-candidate8-trees-cut-final/before-tree-2061.png",
+      "version": "0.30",
+      "candidate": "C8",
+      "kind": "physical_h1",
+      "physical_h1": true,
+      "width": 480,
+      "height": 272,
+      "sha256": "756470bda2fce08e2d49278e0f6fdaecb3aa53a1dfe5450f7739c150343fdc98",
+      "unmodified_copy": true,
+      "bda_sha256": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244",
+      "elf_sha256": "dc6ecce5c66b0f1165ec637070a3beac35c89bb23cd6b96ae95b60cc69cd3b03",
+      "source_report": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/verification.json",
+      "source_report_sha256": "98e7b048dc398d51644ba54e59028e00de4b61b353077aac0387b625edaf9dac",
+      "source_build_metadata": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf-candidate8/DOTA2.build.json",
+      "source_build_metadata_sha256": "68d7c197bee8a8aad8ba5690168a941636f1c84cb69243df67ff257c08a9c923",
+      "normal_inputs_only": true,
+      "game_state_ram_writes": 0,
+      "scope": "C8 unified-resource gameplay before the first normal-input tree operation; not an FPS measurement."
+    },
+    {
+      "path": "docs/screenshots/h1-v030-trees.png",
+      "source": "build/v030/perf3-candidate8-trees-cut-final/after-tree-2056.png",
+      "version": "0.30",
+      "candidate": "C8",
+      "kind": "physical_h1",
+      "physical_h1": true,
+      "width": 480,
+      "height": 272,
+      "sha256": "0e920a4d37ab8cf3a14d3a74f27747f46cfa47b3819c23a6922eb0c10f6dd2b1",
+      "unmodified_copy": true,
+      "bda_sha256": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244",
+      "elf_sha256": "dc6ecce5c66b0f1165ec637070a3beac35c89bb23cd6b96ae95b60cc69cd3b03",
+      "source_report": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/verification.json",
+      "source_report_sha256": "98e7b048dc398d51644ba54e59028e00de4b61b353077aac0387b625edaf9dac",
+      "source_build_metadata": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf-candidate8/DOTA2.build.json",
+      "source_build_metadata_sha256": "68d7c197bee8a8aad8ba5690168a941636f1c84cb69243df67ff257c08a9c923",
+      "normal_inputs_only": true,
+      "game_state_ram_writes": 0,
+      "scope": "C8 normal-input tree acceptance after eating tree2061 and cutting tree2056; natural180-second regrow was not repeated on C8."
     }
   ],
   "rights": "Screenshots contain Valve game artwork and Microsoft-derived bitmap glyphs; the project GPL grant does not relicense these elements."

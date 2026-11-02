@@ -1,0 +1,1224 @@
+{
+  "passed": true,
+  "scope": "Measured storage, not H1 FPS",
+  "before_runtime_bytes": 450526944,
+  "after_runtime_bytes": 112861448,
+  "saved_bytes": 337665496,
+  "saved_percent": 74.94901259446094,
+  "scene_frames": 44278,
+  "scene_model_ids": 151,
+  "scene_groups": 5732,
+  "exact_duplicate_frame_payload_count": 4349,
+  "exact_duplicate_frame_payload_bytes": 39935693,
+  "sprite_plane_raw_duplicate_bytes": 50670193,
+  "duplicate_counting_warning": "Full-frame duplicates are included in plane duplicates; do not add these two byte counts. Metadata/anchors remain separate.",
+  "map_cache_removed": {
+    "bytes": 16593196,
+    "canonical_tiles": 562,
+    "scene_raw_tile_bytes": 36831232,
+    "proof": "Every decoded MAP12 tile matched the exact SCENE tile CRC and bytes. Final container stores SCENE map data once and has no MAP12 stream."
+  },
+  "source_reachability": {
+    "definitely_unreferenced_physical_old_payloads": {
+      "bytes": 169144,
+      "ranges": [
+        {
+          "offset": 310968452,
+          "bytes": 169144
+        }
+      ],
+      "reason": "No current HBK12 directory/tile/water/footer range points into these old model112/clip1 payloads after refresh. All preserved in the exact archive."
+    },
+    "base_four_heroes_generic_cast_groups": {
+      "models": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "clip": 3,
+      "frames": 512,
+      "raw_payload_bytes": 4745946,
+      "exclusive_compressed_chunk_bytes": 184716,
+      "exclusive_chunks": 475,
+      "source_evidence": {
+        "platform/baked_scene.c": "consume_skill_events sets BS_CAST only hero_id>=4; update_history generic cooldown cast only pack.version<3; skill_body generic fallback only pack.version<3. Current source is HBK12."
+      },
+      "classification": "No normal HBK12 action producer for these base-four generic cast groups, but byte-preserved. Removing groups needs explicit new loader-directory contract, not an unreviewed delete."
+    },
+    "legacy_neutral_models42_43": {
+      "frames": 704,
+      "raw_payload_bytes": 4792375,
+      "classification": "Retain: unit_model retains explicit fallback when JungleDefinition is absent; no claim unreachable."
+    },
+    "all_other_frames": "Retain; source formulas/fallbacks/validation reference the 151 model IDs. An unobserved frame during a short match is not proof of unreachability."
+  },
+  "compiled_visual_patches": {
+    "visual_headers_scanned": [
+      "private/generated/dota_barracks_patch.h",
+      "private/generated/dota_rune_art.h",
+      "private/generated/dota_shard_art.h",
+      "private/generated/dota_art.h",
+      "private/generated/dota_font.h",
+      "private/generated/dota_overview.h",
+      "platform/ability_icon_mask.h"
+    ],
+    "numeric_arrays": [
+      {
+        "header": "private/generated/dota_barracks_patch.h",
+        "header_sha256": "929be671e40204c02590f333f945fd8144955095584d6653e9972e630dc45f69",
+        "name": "dota_barracks_patch_bytes",
+        "elements": 104203,
+        "bytes": 104203,
+        "sha256": "5305246293be34436ee6d00f03a744b16a0854327145123e6c723e3669d4be16",
+        "deflate_bytes": 43719
+      },
+      {
+        "header": "private/generated/dota_barracks_patch.h",
+        "header_sha256": "929be671e40204c02590f333f945fd8144955095584d6653e9972e630dc45f69",
+        "name": "dota_barracks_selection_runs",
+        "elements": 5212,
+        "bytes": 10424,
+        "sha256": "110653bb5b223e6e823f85266bd308596646ba582f564ad28d4af49a748c7071",
+        "deflate_bytes": 4086
+      },
+      {
+        "header": "private/generated/dota_barracks_patch.h",
+        "header_sha256": "929be671e40204c02590f333f945fd8144955095584d6653e9972e630dc45f69",
+        "name": "dota_barracks_bar_floor",
+        "elements": 12,
+        "bytes": 24,
+        "sha256": "81caa62053103e53c99ff3e9b2f9a6412047b18668ac243d092a184e5a1cb701",
+        "deflate_bytes": 32
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_0_0",
+        "elements": 567,
+        "bytes": 567,
+        "sha256": "744d40b833e3560d01a7d717dfcdd963c427701c4ea40d0eda30820b860aa7ae",
+        "deflate_bytes": 432
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_0_1",
+        "elements": 574,
+        "bytes": 574,
+        "sha256": "4676584687bca9aeb0df0ff3bfafd48205d260c421466c9d35c4f5e1d74fc5e9",
+        "deflate_bytes": 443
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_0_2",
+        "elements": 581,
+        "bytes": 581,
+        "sha256": "9747d1e61623fcc483a120c5c31509ba9ec70e65969aa6e7fdafc6f8a1bb7c34",
+        "deflate_bytes": 434
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_0_3",
+        "elements": 553,
+        "bytes": 553,
+        "sha256": "87ce20e515d65abfd595ca1ac4b9796e42e8be26bfb482dce7e55e4cea137ddb",
+        "deflate_bytes": 416
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_0_4",
+        "elements": 574,
+        "bytes": 574,
+        "sha256": "aeaec23c7fd7e08b0ec1765d1a47d57c2c414bacf7c6331b0533985129fd083c",
+        "deflate_bytes": 432
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_0_5",
+        "elements": 609,
+        "bytes": 609,
+        "sha256": "0569916ace66b8e960889f80f89b833d7278448bb9d5060641a1bc29f59f23f8",
+        "deflate_bytes": 442
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_0_6",
+        "elements": 609,
+        "bytes": 609,
+        "sha256": "695532b4266cd6d64e50f358779def5a452bf87179b0d83d90dd689a274123b3",
+        "deflate_bytes": 459
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_0_7",
+        "elements": 581,
+        "bytes": 581,
+        "sha256": "82f0605729d55bab7e8baf1e9f4c3801ea0340991f43778d422e1058cb302f39",
+        "deflate_bytes": 437
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_0_pixels",
+        "elements": 576,
+        "bytes": 1152,
+        "sha256": "da34765f20ed0b6b0d3dc6b1c9bcc77ce2d1990bf003ecbfa001c241b18df05f",
+        "deflate_bytes": 417
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_0_alpha",
+        "elements": 576,
+        "bytes": 576,
+        "sha256": "a240facb7a0d5897b5826bfa52dee1963929a424e1e2d78dd2f72cd5a85cbcdf",
+        "deflate_bytes": 15
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_1_0",
+        "elements": 399,
+        "bytes": 399,
+        "sha256": "fd8cd3e7b0813d1d264c7ff7e8874731ba75fde9ecfd19fcfe058e961f3bba2f",
+        "deflate_bytes": 311
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_1_1",
+        "elements": 406,
+        "bytes": 406,
+        "sha256": "d5cf8c2f16fd5271e18c5a91fc0c8a33538769c95ca399135a7b1241b9cf5f22",
+        "deflate_bytes": 320
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_1_2",
+        "elements": 350,
+        "bytes": 350,
+        "sha256": "28b8e876fd2bfbb664f6b403e96fa0301196f17df14690da2bb9218ad6c50340",
+        "deflate_bytes": 284
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_1_3",
+        "elements": 392,
+        "bytes": 392,
+        "sha256": "c3974fe371ffc77f72914b2ff9258e81b2566204b524ebb25b004ea4a3add05c",
+        "deflate_bytes": 312
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_1_4",
+        "elements": 350,
+        "bytes": 350,
+        "sha256": "bbd31c4cb6df1be210f71b52538b373c1fa3debf25bb24e4ee0ed434d0d90274",
+        "deflate_bytes": 281
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_1_5",
+        "elements": 350,
+        "bytes": 350,
+        "sha256": "bf1ae17e7b29f77dfd32e4b21ac4d910d7b183ecec927d61a34491406d8c2576",
+        "deflate_bytes": 282
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_1_6",
+        "elements": 322,
+        "bytes": 322,
+        "sha256": "bc0c77c800a06f2ca601fed441818ac67d8c593907e08fba5087a795ea41ab8f",
+        "deflate_bytes": 262
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_1_7",
+        "elements": 364,
+        "bytes": 364,
+        "sha256": "39ade51f517e10e21abcb3cff936571aa5e1d24b5651989b9c120ce5de12affd",
+        "deflate_bytes": 288
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_1_pixels",
+        "elements": 576,
+        "bytes": 1152,
+        "sha256": "08284e02ec983d108fbd092c317be4e1337521858292c4c10951889a249cf9a8",
+        "deflate_bytes": 368
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_1_alpha",
+        "elements": 576,
+        "bytes": 576,
+        "sha256": "a240facb7a0d5897b5826bfa52dee1963929a424e1e2d78dd2f72cd5a85cbcdf",
+        "deflate_bytes": 15
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_2_0",
+        "elements": 644,
+        "bytes": 644,
+        "sha256": "df1ea8029c492acc1eca60f0fd0437d416d6be101a049026c69ec31af44e2467",
+        "deflate_bytes": 438
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_2_1",
+        "elements": 679,
+        "bytes": 679,
+        "sha256": "e3927c7ac9b4dacd375ac3ec8520d25eb979bb64c60b6f196e04319a9f0a3634",
+        "deflate_bytes": 451
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_2_2",
+        "elements": 609,
+        "bytes": 609,
+        "sha256": "2440d7a174889448d6b6b6e2ecf086f2f7dddda3822a9f38da5d1ae961fd1ae8",
+        "deflate_bytes": 398
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_2_3",
+        "elements": 672,
+        "bytes": 672,
+        "sha256": "2818d459755c0a5694d1a297719c0939b85ec8fa7503f8c4c70b3bb13253f096",
+        "deflate_bytes": 446
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_2_4",
+        "elements": 672,
+        "bytes": 672,
+        "sha256": "ccc7292d2b6b79207cd1c1dd863dbf05e3872dab8e6d149cd233f5401906a3e3",
+        "deflate_bytes": 458
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_2_5",
+        "elements": 672,
+        "bytes": 672,
+        "sha256": "5a87dac5f75807f03a4f7d25e4291f3f9abb73035df0c6c2f457c3db11ebfcee",
+        "deflate_bytes": 459
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_2_6",
+        "elements": 616,
+        "bytes": 616,
+        "sha256": "a6980b8a69af3c1c0afdfd1896b2693c1f6d0ba7f5beb4b93141af3275d5f525",
+        "deflate_bytes": 429
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_2_7",
+        "elements": 651,
+        "bytes": 651,
+        "sha256": "be1c01c63378d387979116b92d31f94ad49fb512c95bcd2695ecba4bd6851eea",
+        "deflate_bytes": 437
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_2_pixels",
+        "elements": 576,
+        "bytes": 1152,
+        "sha256": "28947339ea5ae75c554a715f3e5f3ee4795796a6ad439624063ab7b1ce935588",
+        "deflate_bytes": 174
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_2_alpha",
+        "elements": 576,
+        "bytes": 576,
+        "sha256": "75a2e9015c93af66b2898f42b47cf163aa8a4dbe80456646334edbde0a5413c0",
+        "deflate_bytes": 70
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_3_0",
+        "elements": 413,
+        "bytes": 413,
+        "sha256": "14d4181f581e22e20575a8a2a88c6ca6c92f995b55bbabf5aa38d49b1a52350f",
+        "deflate_bytes": 262
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_3_1",
+        "elements": 399,
+        "bytes": 399,
+        "sha256": "71ea5d1dd487d0858200bca188064738d1a7564c9c4c9ffb979b9828e43a3d78",
+        "deflate_bytes": 251
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_3_2",
+        "elements": 434,
+        "bytes": 434,
+        "sha256": "7fb8876779a7535f75149a5c2880830cad2d7aa58d271b355b382e5f5e0326c4",
+        "deflate_bytes": 285
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_3_3",
+        "elements": 462,
+        "bytes": 462,
+        "sha256": "3e76e0530f2f90269ab5174b8823080e14087802ad1477e3f4fb2c65cce37fe7",
+        "deflate_bytes": 293
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_3_4",
+        "elements": 420,
+        "bytes": 420,
+        "sha256": "c9ae1ccf734f887a80dd49760df1b0316679a6df0e93b44e9fe11da57420fd59",
+        "deflate_bytes": 266
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_3_5",
+        "elements": 420,
+        "bytes": 420,
+        "sha256": "acb66f85a645f27b88fcd2a13b6118bb9e329e91c4c80ad71dead8575101dad2",
+        "deflate_bytes": 264
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_3_6",
+        "elements": 448,
+        "bytes": 448,
+        "sha256": "045da7f4febc6315c95561a297492b8e112ca6726ca744143a8929cc6352aa23",
+        "deflate_bytes": 282
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_3_7",
+        "elements": 448,
+        "bytes": 448,
+        "sha256": "0d875a77945d72fde0059dffc182ca5c895f272c6575588351020d042d59298e",
+        "deflate_bytes": 290
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_3_pixels",
+        "elements": 576,
+        "bytes": 1152,
+        "sha256": "fa4e8b078a59afe5f858b9cccb773128c9f845c99ca70f86b95956b66b6df40a",
+        "deflate_bytes": 339
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_3_alpha",
+        "elements": 576,
+        "bytes": 576,
+        "sha256": "a240facb7a0d5897b5826bfa52dee1963929a424e1e2d78dd2f72cd5a85cbcdf",
+        "deflate_bytes": 15
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_4_0",
+        "elements": 735,
+        "bytes": 735,
+        "sha256": "299da24f1dc200df55f5b77994619c2fb393cbe702a6bb67a413ecd74eefcfd1",
+        "deflate_bytes": 564
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_4_1",
+        "elements": 714,
+        "bytes": 714,
+        "sha256": "61ba4027cedc96f922ae2a5069d9b3efd43073b32f86a21ca91f2379a0654a6f",
+        "deflate_bytes": 566
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_4_2",
+        "elements": 679,
+        "bytes": 679,
+        "sha256": "58650406d9b9c5993bda280df59a8b3769bfd0321f7338d8071c89895d8adf2e",
+        "deflate_bytes": 554
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_4_3",
+        "elements": 672,
+        "bytes": 672,
+        "sha256": "e26654074a1edb901cdc42bc660091f7cc459422ff95fa73f8f61efdef15201e",
+        "deflate_bytes": 556
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_4_4",
+        "elements": 658,
+        "bytes": 658,
+        "sha256": "3e01a2e66d2272306efdba1acb3e607a68ab2502e18fed9b19716105179f21dc",
+        "deflate_bytes": 528
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_4_5",
+        "elements": 588,
+        "bytes": 588,
+        "sha256": "fc974ac429b24555d437365edf73afed24f6ab295f8ebb3561589e43fabb12e7",
+        "deflate_bytes": 486
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_4_6",
+        "elements": 602,
+        "bytes": 602,
+        "sha256": "0a1c1213416ab4811ca84f89bbf5d3fd33af1525102ca8c3dfa6274bacb6f6e5",
+        "deflate_bytes": 506
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_4_7",
+        "elements": 588,
+        "bytes": 588,
+        "sha256": "4316f63f14bfc98e57c9a226b74a54376d0970df0a7267afd21f36c1b8c6aff1",
+        "deflate_bytes": 485
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_4_pixels",
+        "elements": 576,
+        "bytes": 1152,
+        "sha256": "515f7051967d1b48390e150b3bbe45e2334d09de07e7aa1ef911c9ebfc846e52",
+        "deflate_bytes": 437
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_4_alpha",
+        "elements": 576,
+        "bytes": 576,
+        "sha256": "a240facb7a0d5897b5826bfa52dee1963929a424e1e2d78dd2f72cd5a85cbcdf",
+        "deflate_bytes": 15
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_5_0",
+        "elements": 994,
+        "bytes": 994,
+        "sha256": "377b51f0924c018cec3e3113e47a6cbbe9a686a374f1052458e35c1d1ecd41d6",
+        "deflate_bytes": 670
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_5_1",
+        "elements": 980,
+        "bytes": 980,
+        "sha256": "2aea696caf0baee50509d31d7a6970939d434b6481eb8c6217e25076e2ab12af",
+        "deflate_bytes": 670
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_5_2",
+        "elements": 980,
+        "bytes": 980,
+        "sha256": "fc98551c732b95ff5baab17d42fca4bb12ca038ae6ed2e43747c5c0abf3c45c2",
+        "deflate_bytes": 665
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_5_3",
+        "elements": 959,
+        "bytes": 959,
+        "sha256": "2edf4bf463433c2a1893bfcfb63b018f092a51ed5dc0c1e7ceeadae398dff262",
+        "deflate_bytes": 665
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_5_4",
+        "elements": 1029,
+        "bytes": 1029,
+        "sha256": "a33381ac4202269728c32fa703a50f5b7c8a44d25ed650ad739872aea1ec4b0d",
+        "deflate_bytes": 669
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_5_5",
+        "elements": 1001,
+        "bytes": 1001,
+        "sha256": "826ab0caeb93b242ac47a7e3a1d8558612231c545548d965263750c4901378ec",
+        "deflate_bytes": 684
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_5_6",
+        "elements": 952,
+        "bytes": 952,
+        "sha256": "ef014d6f498c785760d31a5c943c7c06f1508387b26687407f88ec2237dbaf81",
+        "deflate_bytes": 668
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_5_7",
+        "elements": 959,
+        "bytes": 959,
+        "sha256": "1dbf6c77a3dac5ac132f7770f9dc643c56723a811500611135fb4aa29048d079",
+        "deflate_bytes": 664
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_5_pixels",
+        "elements": 576,
+        "bytes": 1152,
+        "sha256": "bbcdddedad7ca3391d186142744286b946080f7bd08bbb2271a97bac58b34e72",
+        "deflate_bytes": 275
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_5_alpha",
+        "elements": 576,
+        "bytes": 576,
+        "sha256": "f2ff94cde14581cea929c8585a9daa7577e5d0481d721894b1bec926da271b55",
+        "deflate_bytes": 108
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_6_0",
+        "elements": 420,
+        "bytes": 420,
+        "sha256": "f48b7888e8ed0f84c90bc46e1e4fa1884d133ea6f305e919ad534a718ba0cb7a",
+        "deflate_bytes": 309
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_6_1",
+        "elements": 406,
+        "bytes": 406,
+        "sha256": "48e3c55b2408b481872f8a6c550465e5d9a5c3155be37bc656aa58e94e33869e",
+        "deflate_bytes": 315
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_6_2",
+        "elements": 427,
+        "bytes": 427,
+        "sha256": "66b6f308175ca4e83fbe6b6a2e80893d68dc92ce09c7be1dea3dd2368488c58e",
+        "deflate_bytes": 316
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_6_3",
+        "elements": 434,
+        "bytes": 434,
+        "sha256": "cedd23a9de9ec763c3b1617dd176a96e1d10032bfee3bea8d03ba6b71abd40d9",
+        "deflate_bytes": 338
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_6_4",
+        "elements": 434,
+        "bytes": 434,
+        "sha256": "267ae4d5001fa1607dd4d5e98c25a48bc0b8c19007c5f1e65dbeafff6574be57",
+        "deflate_bytes": 331
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_6_5",
+        "elements": 420,
+        "bytes": 420,
+        "sha256": "d84fa615f167285991d61ba5d8c8042682de67f97e2ddccb5ccbcfc76e3c0614",
+        "deflate_bytes": 324
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_6_6",
+        "elements": 441,
+        "bytes": 441,
+        "sha256": "4788d4cc92af9fc062a0974e49d62f2a0f49ccd05ce06bd14b0b5e3cf4ee1151",
+        "deflate_bytes": 336
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_6_7",
+        "elements": 462,
+        "bytes": 462,
+        "sha256": "225d46ec7fb4c46f34eebf64d0499776be618a0d057ff6db3900f192edcf82ef",
+        "deflate_bytes": 356
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_6_pixels",
+        "elements": 576,
+        "bytes": 1152,
+        "sha256": "220ba2c96b5360ec2e25ed68159996a407b1ac4b066d2eea2a14a37f72455926",
+        "deflate_bytes": 680
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_6_alpha",
+        "elements": 576,
+        "bytes": 576,
+        "sha256": "a240facb7a0d5897b5826bfa52dee1963929a424e1e2d78dd2f72cd5a85cbcdf",
+        "deflate_bytes": 15
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_7_0",
+        "elements": 420,
+        "bytes": 420,
+        "sha256": "a86200a34514af065352ad43075bc6ca446bd44617d9508e0097a7d0c84bf18b",
+        "deflate_bytes": 322
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_7_1",
+        "elements": 406,
+        "bytes": 406,
+        "sha256": "3c5fb789cbfa37190e8a916f9a614e32ace9d6f9e0172eec3794a99ccef2270b",
+        "deflate_bytes": 329
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_7_2",
+        "elements": 427,
+        "bytes": 427,
+        "sha256": "2f184377b5b03713ac2aaca1fdf041d3076c5fff09a33aa8c7857059e5263de3",
+        "deflate_bytes": 332
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_7_3",
+        "elements": 434,
+        "bytes": 434,
+        "sha256": "cf06d5bebdb0f7c787fb9a47ce0939ecf8f57146fadeb4d5c035b6613daa7f3c",
+        "deflate_bytes": 335
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_7_4",
+        "elements": 434,
+        "bytes": 434,
+        "sha256": "e53440e3b2c153fc39ef26f53beb8a4fe04eec20590383d2bd1c57b974b7bf74",
+        "deflate_bytes": 342
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_7_5",
+        "elements": 420,
+        "bytes": 420,
+        "sha256": "d5507b52695adb64d208f5918cdd0c3a0d6d45f90630025f24173a8d051fbc69",
+        "deflate_bytes": 329
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_7_6",
+        "elements": 441,
+        "bytes": 441,
+        "sha256": "d7123b0fd0c5b353da8167022b55c23ffa105420bfc393d432f9c13b1c0be5e6",
+        "deflate_bytes": 353
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_7_7",
+        "elements": 462,
+        "bytes": 462,
+        "sha256": "477c32f45c5ba508dc84ce3e9d0ebd31b325e1473a6a535698d2ff08a53404d6",
+        "deflate_bytes": 371
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_7_pixels",
+        "elements": 576,
+        "bytes": 1152,
+        "sha256": "b52d25aafbaeeea469b18bb2ae50337099dcd34ed9cb4cd17d01331680f4f484",
+        "deflate_bytes": 793
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_7_alpha",
+        "elements": 576,
+        "bytes": 576,
+        "sha256": "e4b2aec9e7241191e26a5b52eda0e0fb1003a67b6cdbfb783d359f5e09787699",
+        "deflate_bytes": 587
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_9_0",
+        "elements": 763,
+        "bytes": 763,
+        "sha256": "b4d8ff58cccee3313698c79a0eb7072ae1cbf90520dada94f3d296236e55d930",
+        "deflate_bytes": 577
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_9_1",
+        "elements": 777,
+        "bytes": 777,
+        "sha256": "afdf01802295b283b09fbbc889295c77877c7e016ca35db9d9c9dc9e16648eb2",
+        "deflate_bytes": 598
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_9_2",
+        "elements": 700,
+        "bytes": 700,
+        "sha256": "f87b3e0fb94506e2ea7d491eb01323dba2ba40445a9e822e7ef0a3834c3e1846",
+        "deflate_bytes": 514
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_9_3",
+        "elements": 700,
+        "bytes": 700,
+        "sha256": "40a1d91bfb95c50ad1e37bc425bcbf0a0ca7e659af9e3126dd0ba5576abaaff8",
+        "deflate_bytes": 501
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_9_4",
+        "elements": 784,
+        "bytes": 784,
+        "sha256": "7d51b7482675ff403c820b60e7b82478eab5a37248bb22a531281416b6249350",
+        "deflate_bytes": 545
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_9_5",
+        "elements": 742,
+        "bytes": 742,
+        "sha256": "8503ca4d16c65aa147b17cfe77ceb902fe7cbcc7a40e546db5f77b8bf7f05f35",
+        "deflate_bytes": 535
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_9_6",
+        "elements": 721,
+        "bytes": 721,
+        "sha256": "e916d307dd68402b7ec8b3626e21872d94c10a65edc980fea98631f29b0bf4b8",
+        "deflate_bytes": 551
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_frame_9_7",
+        "elements": 749,
+        "bytes": 749,
+        "sha256": "a65fe8f7f987665a67f52c5d7d76bffa0f9f5cd87a458bbc062ab9cf9b7ad277",
+        "deflate_bytes": 589
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_9_pixels",
+        "elements": 576,
+        "bytes": 1152,
+        "sha256": "c6bd5e0c27000f9ec67a2db03eaae3731c0c156c66a214976468dd22146de7ba",
+        "deflate_bytes": 516
+      },
+      {
+        "header": "private/generated/dota_rune_art.h",
+        "header_sha256": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+        "name": "rune_icon_9_alpha",
+        "elements": 576,
+        "bytes": 576,
+        "sha256": "a240facb7a0d5897b5826bfa52dee1963929a424e1e2d78dd2f72cd5a85cbcdf",
+        "deflate_bytes": 15
+      },
+      {
+        "header": "private/generated/dota_shard_art.h",
+        "header_sha256": "9d1aae47c7016eeca434da7c75b8cc1d379ba9da9ac2b2d7c172f303df8f31e9",
+        "name": "shard_art_3_pixels",
+        "elements": 576,
+        "bytes": 1152,
+        "sha256": "1d5c4520028ee33d02f9016b0c66694b70044772b77d4efd8f64e6acee8a01a2",
+        "deflate_bytes": 1003
+      },
+      {
+        "header": "private/generated/dota_shard_art.h",
+        "header_sha256": "9d1aae47c7016eeca434da7c75b8cc1d379ba9da9ac2b2d7c172f303df8f31e9",
+        "name": "shard_art_3_alpha",
+        "elements": 576,
+        "bytes": 576,
+        "sha256": "a240facb7a0d5897b5826bfa52dee1963929a424e1e2d78dd2f72cd5a85cbcdf",
+        "deflate_bytes": 15
+      },
+      {
+        "header": "private/generated/dota_shard_art.h",
+        "header_sha256": "9d1aae47c7016eeca434da7c75b8cc1d379ba9da9ac2b2d7c172f303df8f31e9",
+        "name": "shard_art_6_pixels",
+        "elements": 576,
+        "bytes": 1152,
+        "sha256": "9611a07f92119dbb1f41b7a65ec9f08bb4eed760121613b4eff069e048353153",
+        "deflate_bytes": 1109
+      },
+      {
+        "header": "private/generated/dota_shard_art.h",
+        "header_sha256": "9d1aae47c7016eeca434da7c75b8cc1d379ba9da9ac2b2d7c172f303df8f31e9",
+        "name": "shard_art_6_alpha",
+        "elements": 576,
+        "bytes": 576,
+        "sha256": "a240facb7a0d5897b5826bfa52dee1963929a424e1e2d78dd2f72cd5a85cbcdf",
+        "deflate_bytes": 15
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_hero_axe_alpha",
+        "elements": 1024,
+        "bytes": 1024,
+        "sha256": "7a5b731c065948bf22ae56ec8d42ff0304908a82011e97d111e32ef3df8f9e2a",
+        "deflate_bytes": 83
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_axe_berserkers_call_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_axe_battle_hunger_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_axe_counter_helix_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_axe_culling_blade_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_hero_lina_alpha",
+        "elements": 1024,
+        "bytes": 1024,
+        "sha256": "fa936dfad3caba22d936576f360e33885897db2185159aa43978a42b175a4c72",
+        "deflate_bytes": 95
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_lina_dragon_slave_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_lina_light_strike_array_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_lina_fiery_soul_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_lina_laguna_blade_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_hero_juggernaut_alpha",
+        "elements": 1024,
+        "bytes": 1024,
+        "sha256": "0353c397f694bd2f084467b9e4a7b078bf79ee7864c1ebf3b01ca9c33c01aa10",
+        "deflate_bytes": 145
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_juggernaut_blade_fury_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_juggernaut_healing_ward_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_juggernaut_blade_dance_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_juggernaut_omni_slash_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_hero_crystal_maiden_alpha",
+        "elements": 1024,
+        "bytes": 1024,
+        "sha256": "bbd7b47446afea34d8f6be7f6137f6b2df0e2aebc92b4e148434b839e96557cd",
+        "deflate_bytes": 89
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_crystal_maiden_crystal_nova_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_crystal_maiden_frostbite_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_crystal_maiden_brilliance_aura_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_ability_crystal_maiden_freezing_field_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "c323c96b39b5155a4788a606c6fc05571befd551e693af4ec6b7f369cc42a834",
+        "deflate_bytes": 14
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_item_boots_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "29c5c9f9239e6af8ce9548ecb0a409d3417c13ce2bf8ade370226fdb3d4ef38d",
+        "deflate_bytes": 21
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_item_blades_of_attack_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "29c5c9f9239e6af8ce9548ecb0a409d3417c13ce2bf8ade370226fdb3d4ef38d",
+        "deflate_bytes": 21
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_item_chainmail_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "29c5c9f9239e6af8ce9548ecb0a409d3417c13ce2bf8ade370226fdb3d4ef38d",
+        "deflate_bytes": 21
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_item_vitality_booster_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "29c5c9f9239e6af8ce9548ecb0a409d3417c13ce2bf8ade370226fdb3d4ef38d",
+        "deflate_bytes": 21
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_item_energy_booster_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "29c5c9f9239e6af8ce9548ecb0a409d3417c13ce2bf8ade370226fdb3d4ef38d",
+        "deflate_bytes": 21
+      },
+      {
+        "header": "private/generated/dota_art.h",
+        "header_sha256": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+        "name": "dota_art_item_flask_alpha",
+        "elements": 400,
+        "bytes": 400,
+        "sha256": "29c5c9f9239e6af8ce9548ecb0a409d3417c13ce2bf8ade370226fdb3d4ef38d",
+        "deflate_bytes": 21
+      },
+      {
+        "header": "private/generated/dota_overview.h",
+        "header_sha256": "64770f66f85beacbfbe0e23fc7d35a833388c5e3471806f50bb2563906bc8b41",
+        "name": "dota_overview",
+        "elements": 5184,
+        "bytes": 10368,
+        "sha256": "e41ac4b77c2af5fdd5f0e596a0ed77c53d319fff87a13115c9dc2e54c71095fd",
+        "deflate_bytes": 7828
+      },
+      {
+        "header": "platform/ability_icon_mask.h",
+        "header_sha256": "394001903bd7a7d4afb796359df6794e57cab9073e9c7846df1064d700b8ab2a",
+        "name": "ability_icon_angles",
+        "elements": 576,
+        "bytes": 576,
+        "sha256": "46a17724b56e4725430a98280ef82e94e74a6bba54ec37ac4eb249ca2a8c0630",
+        "deflate_bytes": 582
+      }
+    ],
+    "numeric_binary_total": 199653,
+    "independent_array_deflate_total": 94897,
+    "scope": "Read-only numeric visual arrays. Struct metadata, code and nonliteral expressions not miscounted as bytes. These are currently compiled in the BDA, not extra external packages; archive totals exclude them to avoid counting BDA data twice. Relocation is a separate reviewed change."
+  },
+  "final_streams": {
+    "SCENE.H1P": {
+      "bytes": 406028212,
+      "sha256": "c312840584571c0958b8409da729ea945ecbf557a55ab6030ff0d2d9cbef78dd",
+      "crc32": 1811273441,
+      "byte_exact": true
+    },
+    "SOUND.H1A": {
+      "bytes": 10226944,
+      "sha256": "a2be46eb35f2a86a483d154332aeb9cf44f3a24b6427e52e7a5619df01283d30",
+      "crc32": 3199678829,
+      "byte_exact": true
+    },
+    "VISION.H1V": {
+      "bytes": 139328,
+      "sha256": "f23c061e9735e02bd098fe49adb723c56641c7ab0cc946e97b82c44ef9e7dc28",
+      "crc32": 3126842772,
+      "byte_exact": true
+    },
+    "TREE.H1T": {
+      "bytes": 50343158,
+      "sha256": "129200c5bdfc8c0f7c75d64b34a3e025c03b4244fea75c89a80c215420248256",
+      "crc32": 3100251439,
+      "byte_exact": true
+    }
+  },
+  "runtime_status": "Native/H1 acceptance recorded separately by the integration owners; this receipt does not claim either."
+}

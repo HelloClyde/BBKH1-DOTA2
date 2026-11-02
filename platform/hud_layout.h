@@ -47,6 +47,10 @@
 #define DOTA_HUD_SHOP_Y 240
 #define DOTA_HUD_SHOP_W 68
 #define DOTA_HUD_SHOP_H 30
+#define DOTA_HUD_TP_X 408
+#define DOTA_HUD_TP_Y 216
+#define DOTA_HUD_TP_W 28
+#define DOTA_HUD_TP_H 22
 #define DOTA_HUD_KDA_X 0
 #define DOTA_HUD_KDA_Y 0
 #define DOTA_HUD_KDA_W 128

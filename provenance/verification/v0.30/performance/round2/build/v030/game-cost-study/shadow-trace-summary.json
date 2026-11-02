@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "source_sha256": "a98ba3e6e7543d0bf4d2b9e5207a6763bf2c3131490e88755b5859f45093abce",
+  "reports": [
+    {
+      "path": "build\\v030\\game-cost-study\\fountain-paused-game-shadow-trace.json",
+      "sha256": "9be48d32bddd3beed278951bc5d03866136b4cdcf08097300336d9dfdb73a330"
+    },
+    {
+      "path": "build\\v030\\game-cost-study\\post-horn-paused-game-shadow-trace.json",
+      "sha256": "170a78854cd4d246f39160dca84743bb3b74f87166429f7286b0d3418c4303c5"
+    }
+  ],
+  "physical_h1_tested": false
+}

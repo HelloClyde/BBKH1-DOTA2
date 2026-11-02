@@ -1,0 +1,37 @@
+{
+  "status": {
+    "version": 1,
+    "state": 1,
+    "usb_configured": 1,
+    "usb_fault": 0,
+    "usb_resets": 2,
+    "commands": 2,
+    "bad_frames": 0,
+    "tick": 2264,
+    "poll_count": 4657,
+    "last_poll_tick": 2264,
+    "resident_base": 2186122624,
+    "resident_size": 727104,
+    "keys_low": 0,
+    "keys_high": 0,
+    "exec_state": 0,
+    "last_error": 0
+  },
+  "desktop": {
+    "job_id": 0,
+    "kind": 0,
+    "state": 0,
+    "error": 0,
+    "menu_idle": 1,
+    "app_index": 0,
+    "entry_count": 0,
+    "return_code": 0,
+    "state_name": "idle"
+  },
+  "bundle": {
+    "path": "B:\\DOTA2\\DOTA2.H1R",
+    "exists": 1,
+    "size": 112861448,
+    "is_directory": 0
+  }
+}

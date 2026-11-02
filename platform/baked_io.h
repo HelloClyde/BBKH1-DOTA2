@@ -34,6 +34,10 @@ const BakedIOAuxStats *baked_io_aux_stats(void);
 /* One read-only resource file. Native H1 paths use ASCII
  * directory/file names. The host build uses -DBAKED_IO_HOST and explicit paths. */
 int baked_io_open(const char *path);
+#ifdef DOTA_RESOURCE_PACK
+/* A mounted bundle supplies the exact original HBK logical address space. */
+int baked_io_open_resource(const char *archive_path);
+#endif
 int baked_io_open_default(void); /* A:\DOTA2\SCENE.H1P, then B: */
 void baked_io_close(void);
 uint32_t baked_io_size(void);

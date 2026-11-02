@@ -1,6 +1,10 @@
 #include "baked_io.h"
 #include "cache_memory.h"
 #include <stddef.h>
+#ifdef DOTA_RESOURCE_PACK
+#include "resource_pack.h"
+static ResourceFile *resource_scene;
+#endif
 
 #ifdef BAKED_IO_HOST
 #include <stdio.h>
@@ -60,6 +64,9 @@ void baked_io_reset_stats(void){
 
 void baked_io_close(void){
     BakedFile *old=pack_file;
+#ifdef DOTA_RESOURCE_PACK
+    if(resource_scene){if(resource_close(resource_scene)!=0)(void)fail(BAKED_IO_CLOSE_FAILED);resource_scene=0;}
+#endif
     baked_io_aux_close();
     pack_file=0;pack_bytes=0;position_known=0;page_bytes=0;
     cache_memory_free(pages_allocation);pages_allocation=0;
@@ -80,17 +87,43 @@ int baked_io_open(const char *path){
     return 1;
 }
 
+#ifdef DOTA_RESOURCE_PACK
+int baked_io_open_resource(const char *path){
+    baked_io_close();last_error=BAKED_IO_OK;++io_stats.open_attempts;
+    if(path&&*path){if(!resource_mount(path))return fail(BAKED_IO_OPEN_FAILED);}
+    else if(!resource_is_mounted()&&!resource_mount_default())return fail(BAKED_IO_OPEN_FAILED);
+    resource_scene=resource_open(RESOURCE_SCENE);
+    if(!resource_scene)return fail(BAKED_IO_OPEN_FAILED);
+    pack_bytes=resource_size(resource_scene);file_position=0;position_known=1;
+    return 1;
+}
+#endif
 int baked_io_open_default(void){
+#ifdef DOTA_RESOURCE_PACK
+    return baked_io_open_resource(0);
+#else
     return baked_io_open(BAKED_IO_PATH_A) || baked_io_open(BAKED_IO_PATH_B);
+#endif
 }
 
 uint32_t baked_io_size(void){return pack_bytes;}
-int baked_io_is_open(void){return pack_file!=0;}
+int baked_io_is_open(void){
+#ifdef DOTA_RESOURCE_PACK
+    if(resource_scene)return 1;
+#endif
+    return pack_file!=0;
+}
 int baked_io_error(void){return last_error;}
 const BakedIOStats *baked_io_stats(void){return &io_stats;}
 
 unsigned baked_io_cache_bytes(void){return pages_count?pages_count*IO_PAGE_BYTES:IO_PAGE_BYTES;}
-unsigned baked_io_dynamic_storage_bytes(void){return pages_count*(IO_PAGE_BYTES+sizeof(IOPage));}
+unsigned baked_io_dynamic_storage_bytes(void){
+    unsigned bytes=pages_count*(IO_PAGE_BYTES+sizeof(IOPage));
+#ifdef DOTA_RESOURCE_PACK
+    bytes+=resource_heap_bytes();
+#endif
+    return bytes;
+}
 unsigned baked_io_reserve_cache(unsigned bytes){
     unsigned count=4u,i;unsigned char *allocation=0;
     if(bytes>=4u*IO_PAGE_BYTES){
@@ -105,6 +138,14 @@ unsigned baked_io_reserve_cache(unsigned bytes){
 }
 
 static int raw_read(uint32_t offset,unsigned char *dst,uint32_t bytes){
+#ifdef DOTA_RESOURCE_PACK
+    if(resource_scene){
+        if(!position_known||file_position!=offset)++io_stats.seeks;
+        ++io_stats.raw_reads;
+        if(!resource_read_at(resource_scene,offset,dst,bytes)){position_known=0;return fail(BAKED_IO_READ_FAILED);}
+        io_stats.bytes_read+=bytes;file_position=offset+bytes;position_known=1;return 1;
+    }
+#endif
     if(!position_known || file_position!=offset){
         ++io_stats.seeks;
         /* The H1 API returns the resulting absolute position, unlike stdio. */
@@ -125,7 +166,7 @@ static int raw_read(uint32_t offset,unsigned char *dst,uint32_t bytes){
 int baked_io_read_at(uint32_t offset,void *dst,uint32_t bytes){
     unsigned char *out=(unsigned char *)dst;
     ++io_stats.read_requests;
-    if(!pack_file)return fail(BAKED_IO_NOT_OPEN);
+    if(!baked_io_is_open())return fail(BAKED_IO_NOT_OPEN);
     if(offset>pack_bytes || bytes>pack_bytes-offset || (bytes && !dst))return fail(BAKED_IO_RANGE);
     if(!bytes){last_error=BAKED_IO_OK;return 1;}
     if(bytes>IO_METADATA_MAX){

@@ -1,0 +1,71 @@
+{
+  "passed": false,
+  "physical_h1_tested": true,
+  "normal_inputs_only": true,
+  "game_state_ram_writes": 0,
+  "bda_sha256": "d569b2ae381441ea5af09f61d4b956c97f5077e81a65909734a9d18b43365920",
+  "elf_sha256": "27db0d591ec0ffbfededd614137c5a9571b58620cd6b46cac9d5382b87a309df",
+  "driver_sha256": "346aef5922ab75c17111600bc4de000c06f2c8f913663dbfddbcf2f0f0d8cfe7",
+  "profiles": [],
+  "status_before": {
+    "version": 1,
+    "state": 1,
+    "usb_configured": 1,
+    "usb_fault": 0,
+    "usb_resets": 2,
+    "commands": 7,
+    "bad_frames": 0,
+    "tick": 7390,
+    "poll_count": 13840,
+    "last_poll_tick": 7390,
+    "resident_base": 2185888384,
+    "resident_size": 727104,
+    "keys_low": 0,
+    "keys_high": 0,
+    "exec_state": 0,
+    "last_error": 0
+  },
+  "desktop_before": {
+    "job_id": 0,
+    "kind": 0,
+    "state": 0,
+    "error": 0,
+    "menu_idle": 1,
+    "app_index": 0,
+    "entry_count": 0,
+    "return_code": 0,
+    "state_name": "idle"
+  },
+  "launch": {
+    "path": "A:\\应用\\程序\\DOTA2.bda",
+    "operation": "desktop_run",
+    "before": {
+      "job_id": 0,
+      "kind": 0,
+      "state": 0,
+      "error": 0,
+      "menu_idle": 1,
+      "app_index": 0,
+      "entry_count": 0,
+      "return_code": 0,
+      "state_name": "idle"
+    },
+    "completed": true,
+    "request_sent": true,
+    "job_id": 1,
+    "status": {
+      "job_id": 1,
+      "kind": 2,
+      "state": 3,
+      "error": 0,
+      "menu_idle": 0,
+      "app_index": 89,
+      "entry_count": 1,
+      "return_code": 0,
+      "state_name": "running"
+    },
+    "payload_started": true,
+    "elapsed_seconds": 0.25
+  },
+  "error": "three fully presented frames"
+}

@@ -30,13 +30,18 @@
 #define REACH_ENTRIES 16
 #define REACH_VALUES (MAX_RADIUS*CELL+CELL+1)
 #define REACH_WORDS ((REACH_VALUES+31)/32)
+#define OBSTACLE_PLANES 8
 typedef struct { unsigned budget,age;uint32_t valid[REACH_WORDS];uint16_t value[REACH_VALUES]; } SightReach;
 #define WATCHER_FIRST (DOTA_MAX_UNITS+2)
 #define FIELD_FIRST (WATCHER_FIRST+DOTA_WATCHERS)
 #define GEM_FIRST (FIELD_FIRST+DOTA_ROSTER_FIELDS)
 #define SOURCE_COUNT (GEM_FIRST+8)
+#define STATIC_SOURCE_COUNT (DOTA_MAX_UNITS+2)
+#define STATIC_SOURCE_WORDS ((STATIC_SOURCE_COUNT+31)/32)
 typedef struct {
     int x,y,cx,cy,radius,cell_radius,height,team,region,bonus,heading_x,heading_y,flying;
+    /* Borrowed only during this source's uninterrupted shadowcast. */
+    const unsigned char *obstacle_plane;
     int key_cx,key_cy,key_radius,key_height,key_region,key_flying;
     unsigned tree_stamp;
     int active,valid;
@@ -51,9 +56,15 @@ typedef struct {
     uint32_t mask[LOCAL_WORDS];
 } SightShared;
 volatile unsigned h1_shared_shadow_profile[5]; /* own_hits,lookups,hits,casts,evictions */
+/* Terrain is immutable until attach. Cache final 0/1/2 obstruction by source
+ * level/pit/flying. Tree revisions update only changed non-wall cells. */
+typedef struct { int height,region,flying;unsigned valid,age;unsigned char cells[GRID*GRID]; } SightObstaclePlane;
 typedef struct {
     const DotaGame *owner;
-    uint32_t current[2][GRID_WORDS],explored[2][GRID_WORDS],dynamic_trees[GRID_WORDS];
+    uint32_t current[2][GRID_WORDS],explored[2][GRID_WORDS];
+    /* Build into the inactive plane so overlapping trees remain an exact
+     * union and cached obstruction cells can compare old/new membership. */
+    unsigned char tree_cells[2][GRID*GRID];unsigned active_tree_plane;
     unsigned char regions[GRID*GRID];
     SightSource source[SOURCE_COUNT];
     unsigned short active[SOURCE_COUNT];
@@ -64,6 +75,12 @@ typedef struct {
     int slope_left[SLOPE_COUNT],slope_right[SLOPE_COUNT];
     SightReach reach[REACH_ENTRIES];unsigned reach_age;
     SightShared shared[SHARED_ENTRIES];
+    /* Exact team unions for structures/fountains. This storage is part of
+     * the caller-owned heap, never the BDA's limited private static RAM. */
+    uint32_t static_current[2][GRID_WORDS];
+    uint32_t static_members[STATIC_SOURCE_WORDS],next_static_members[STATIC_SOURCE_WORDS];
+    unsigned static_tree_stamp,static_valid,static_changed;
+    SightObstaclePlane obstacle_planes[OBSTACLE_PLANES];unsigned obstacle_age;
 } SightWork;
 static const DotaGame *cached_game;
 static int cached_tick=-1;
@@ -95,7 +112,7 @@ unsigned dota_sight_workspace_bytes(void){return (unsigned)sizeof(SightWork);}
 void dota_sight_invalidate(void){cached_game=0;cached_tick=-1;}
 void dota_sight_reset(void){
     dota_sight_invalidate();
-    if(work){int i;work->owner=0;work->trees_valid=0;zero(work->current,sizeof(work->current));zero(work->explored,sizeof(work->explored));
+    if(work){int i;for(i=0;i<OBSTACLE_PLANES;++i)work->obstacle_planes[i].valid=0;work->owner=0;work->trees_valid=0;work->static_valid=0;zero(work->current,sizeof(work->current));zero(work->explored,sizeof(work->explored));
         for(i=0;i<SOURCE_COUNT;++i)work->source[i].valid=0;}
 }
 void dota_sight_detach(void){work=0;terrain_height=0;terrain_trees=0;dota_sight_invalidate();}
@@ -143,34 +160,77 @@ int dota_rules_unit_vision_source(const DotaGame *g,int index){
 }
 static unsigned mix(unsigned hash,unsigned value){return (hash^value)*16777619u;}
 static void dynamic_trees(const DotaGame *g){
-    unsigned hash=2166136261u;int i;
+    unsigned hash=2166136261u,previous_stamp=work->tree_stamp;int i;
+    int minx=GRID,miny=GRID,maxx=-1,maxy=-1,static_affected=0;unsigned char *next;
     for(i=0;i<DOTA_ITEM_TREES;++i){const DotaItemTree *t=&g->item_world.tree[i];if(t->until>g->tick && !t->removed){hash=mix(hash,(unsigned)t->x);hash=mix(hash,(unsigned)t->y);hash=mix(hash,(unsigned)i+1u);}}
     if(work->trees_valid && work->tree_owner==g && work->static_revision==dota_trees_revision(g) && work->geometry_revision==dota_trees_geometry_revision() && work->tree_signature==hash)return;
-    work->trees_valid=1;work->tree_owner=g;work->static_revision=dota_trees_revision(g);work->geometry_revision=dota_trees_geometry_revision();
-    work->tree_signature=hash;++work->tree_stamp;zero(work->dynamic_trees,sizeof(work->dynamic_trees));
+    next=work->tree_cells[work->active_tree_plane^1u];work->trees_valid=1;work->tree_owner=g;work->static_revision=dota_trees_revision(g);work->geometry_revision=dota_trees_geometry_revision();
+    work->tree_signature=hash;++work->tree_stamp;zero(next,GRID*GRID);
     /* Re-rasterise standing IDs, rather than clearing cut circles from the
      * original union: overlapping living trees must keep their own shadow. */
     work->static_trees_ready=(unsigned)dota_trees_ready();
+    /* Before original tree geometry attaches, preserve the immutable terrain
+     * bitmap fallback; skip zero bytes instead of scanning every empty cell. */
+    if(!work->static_trees_ready && terrain_trees)for(i=0;i<GRID*GRID/8;++i){unsigned mask=terrain_trees[i],b;for(b=0;mask;++b,mask>>=1)if(mask&1u)next[i*8+b]=1;}
     if(work->static_trees_ready)for(i=0;i<DOTA_STATIC_TREE_COUNT;++i)if(!dota_trees_is_cut(g,(unsigned)i)){
         int x,y,xx,yy;dota_trees_position((unsigned)i,&x,&y);
         for(yy=y/CELL-1;yy<=y/CELL+1;++yy)for(xx=x/CELL-1;xx<=x/CELL+1;++xx){
             int dx=xx*CELL+CELL/2-x,dy=yy*CELL+CELL/2-y;
-            if((unsigned)xx<GRID && (unsigned)yy<GRID && dx*dx+dy*dy<=DOTA_TREE_RADIUS_WORLD*DOTA_TREE_RADIUS_WORLD)set(work->dynamic_trees,yy*GRID+xx);
+            if((unsigned)xx<GRID && (unsigned)yy<GRID && dx*dx+dy*dy<=DOTA_TREE_RADIUS_WORLD*DOTA_TREE_RADIUS_WORLD)next[yy*GRID+xx]=1;
         }
     }
-    for(i=0;i<DOTA_ITEM_TREES;++i){const DotaItemTree *t=&g->item_world.tree[i];if(t->until>g->tick && !t->removed && (unsigned)t->x<DOTA_WORLD && (unsigned)t->y<DOTA_WORLD)set(work->dynamic_trees,(t->y/CELL)*GRID+t->x/CELL);}
+    for(i=0;i<DOTA_ITEM_TREES;++i){const DotaItemTree *t=&g->item_world.tree[i];if(t->until>g->tick && !t->removed && (unsigned)t->x<DOTA_WORLD && (unsigned)t->y<DOTA_WORLD)next[(t->y/CELL)*GRID+t->x/CELL]=1;}
+    /* 2 belongs to immutable terrain/pit walls; trees only contribute0/1.
+     * Flying classes ignore trees. Unchanged cells need no plane writes. */
+    for(i=0;i<GRID*GRID;++i)if(next[i]!=work->tree_cells[work->active_tree_plane][i]){int p,x=i%GRID,y=i/GRID;
+        if(x<minx)minx=x;
+        if(x>maxx)maxx=x;
+        if(y<miny)miny=y;
+        if(y>maxy)maxy=y;
+        for(p=0;p<OBSTACLE_PLANES;++p){SightObstaclePlane*a=&work->obstacle_planes[p];
+            if(a->valid && !a->flying && a->cells[i]!=2)a->cells[i]=next[i];
+        }
+    }
+    work->active_tree_plane^=1u;
+    /* Shadowcasting reads only the square saved in this source's exact key.
+     * Promote unaffected masks, including flying sight, across this revision.
+     * A mask stale from an earlier change must not be promoted: that change
+     * may have affected it while its source was inactive. Shared entries keep
+     * their conservative global-version check. */
+    for(i=0;i<SOURCE_COUNT;++i){SightSource*s=&work->source[i];
+        if(s->valid && s->tree_stamp==previous_stamp &&
+           (s->key_flying || maxx<0 || maxx<s->key_cx-s->key_radius || minx>s->key_cx+s->key_radius ||
+            maxy<s->key_cy-s->key_radius || miny>s->key_cy+s->key_radius))s->tree_stamp=work->tree_stamp;
+        if(i<STATIC_SOURCE_COUNT && bit(work->static_members,i) && (!s->valid || s->tree_stamp!=work->tree_stamp))static_affected=1;
+    }
+    if(work->static_valid && work->static_tree_stamp==previous_stamp && !static_affected)work->static_tree_stamp=work->tree_stamp;
 }
+
+static const unsigned char *obstacle_plane_for(const SightSource *s){
+    SightObstaclePlane *p=0;int i,c;
+    for(i=0;i<OBSTACLE_PLANES;++i){SightObstaclePlane *a=&work->obstacle_planes[i];
+        if(a->valid && a->height==s->height && a->region==s->region && a->flying==s->flying){a->age=++work->obstacle_age;return a->cells;}
+        if(!a->valid)p=a;
+    }
+    /* Bound terrain scans to the available slots. More source classes use
+     * the original point check instead of repeatedly replacing full planes. */
+    if(!p)return 0;
+    for(c=0;c<GRID*GRID;++c)p->cells[c]=(unsigned char)(work->regions[c]!=s->region || (!s->flying && (s->height==32767 || height_level(c)>s->height))?2:s->flying?0:work->tree_cells[work->active_tree_plane][c]);
+    p->height=s->height;p->region=s->region;p->flying=s->flying;p->age=++work->obstacle_age;p->valid=1;return p->cells;
+}
+
 /* 0 clear, 1 tree (its cell may be seen), 2 higher ground/unknown/pit edge. */
 static int obstruction(const SightSource *s,int x,int y){
     int c;
     if((unsigned)x>=GRID || (unsigned)y>=GRID)return 2;
     c=y*GRID+x;
-    if(work->regions[c]!=s->region)return 2;
+    if(s->obstacle_plane)return s->obstacle_plane[c];
+    else{
+        if(work->regions[c]!=s->region)return 2;
+        if(!s->flying && (s->height==32767 || height_level(c)>s->height))return 2;
+    }
     if(s->flying)return 0;
-    if(s->height==32767)return 2;
-    if(height_level(c)>s->height)return 2;
-    if((!work->static_trees_ready && terrain_trees && ((terrain_trees[(unsigned)c>>3]>>(c&7))&1u)) || bit(work->dynamic_trees,c))return 1;
-    return 0;
+    return work->tree_cells[work->active_tree_plane][c];
 }
 static void plot(SightSource *s,int x,int y,int wall){
     int dx=x-s->cx,dy=y-s->cy;
@@ -207,7 +267,7 @@ static void shadow(SightSource *s){
         for(i=0;i<LOCAL_WORDS;++i)s->mask[i]=entry->mask[i];
     }else{
         ++h1_shared_shadow_profile[3];if(entry->valid)++h1_shared_shadow_profile[4];
-        zero(s->mask,sizeof(s->mask));set(s->mask,MAX_RADIUS*LOCAL_SIDE+MAX_RADIUS);
+        s->obstacle_plane=obstacle_plane_for(s);zero(s->mask,sizeof(s->mask));set(s->mask,MAX_RADIUS*LOCAL_SIDE+MAX_RADIUS);
         for(i=0;i<8;++i)cast(s,1,65536,0,octants[i][0],octants[i][1],octants[i][2],octants[i][3]);
         entry->cx=s->cx;entry->cy=s->cy;entry->radius=s->cell_radius;entry->height=s->height;entry->region=s->region;entry->flying=s->flying;entry->tree_stamp=work->tree_stamp;entry->valid=1;
         for(i=0;i<LOCAL_WORDS;++i)entry->mask[i]=s->mask[i];
@@ -257,7 +317,7 @@ static unsigned reach_value(SightReach *r,unsigned dy,unsigned square){
     if(bit(r->valid,(int)dy))return r->value[dy];
     value=root32(r->budget-square);r->value[dy]=(uint16_t)value;set(r->valid,(int)dy);return value;
 }
-static void merge_circle(const SightSource *s,int miny,int maxy){
+static void merge_circle(uint32_t *destination,const SightSource *s,int miny,int maxy){
     unsigned budget=s->radius>=23165?2u*4095u*4095u:(unsigned)s->radius*(unsigned)s->radius>>4;
     SightReach *cached=reach_entry(budget);int y;
     /* This is exactly the former per-cell radius test at cell centers. The
@@ -273,24 +333,52 @@ static void merge_circle(const SightSource *s,int miny,int maxy){
         right/=CELL;if(right>=GRID)right=GRID-1;
         if(left<s->cx-s->cell_radius)left=s->cx-s->cell_radius;
         if(right>s->cx+s->cell_radius)right=s->cx+s->cell_radius;
-        if(left<=right)merge_span(work->current[s->team],s->mask,y*GRID+left,(y-s->cy+MAX_RADIUS)*LOCAL_SIDE+left-s->cx+MAX_RADIUS,right-left+1);
+        if(left<=right)merge_span(destination,s->mask,y*GRID+left,(y-s->cy+MAX_RADIUS)*LOCAL_SIDE+left-s->cx+MAX_RADIUS,right-left+1);
     }
 }
-static void source_add(int index,int team,int x,int y,int radius,int bonus,int hx,int hy,int flying){
-    SightSource *s=&work->source[index];int xx,yy,minx,maxx,miny,maxy;
+static void source_add(int index,int team,int x,int y,int radius,int bonus,int hx,int hy,int flying,int stationary){
+    SightSource *s=&work->source[index];int height,region;
     if((unsigned)team>=2 || (unsigned)x>=DOTA_WORLD || (unsigned)y>=DOTA_WORLD || radius<=0)return;
+    height=height_level((y/CELL)*GRID+x/CELL);region=dota_roshan_region_at(x,y);
+    if(stationary){
+        /* Radius and exact position matter even when shadow() can reuse a
+         * cell mask. Do not replace these comparisons with a lossy hash. */
+        if(!bit(work->static_members,index) || !s->valid || s->team!=team || s->x!=x || s->y!=y || s->radius!=radius || s->bonus!=bonus || s->heading_x!=hx || s->heading_y!=hy || s->flying!=flying || s->height!=height || s->region!=region)work->static_changed=1;
+        set(work->next_static_members,index);
+    }
     s->active=1;s->team=team;s->x=x;s->y=y;s->cx=x/CELL;s->cy=y/CELL;s->radius=radius;s->bonus=bonus;s->heading_x=hx;s->heading_y=hy;s->flying=flying;
-    s->height=height_level(s->cy*GRID+s->cx);s->region=dota_roshan_region_at(x,y);
+    s->height=height;s->region=region;
     s->cell_radius=(radius+bonus+4*CELL-1)/(4*CELL)+1;if(s->cell_radius>MAX_RADIUS)s->cell_radius=MAX_RADIUS;
     shadow(s);work->active[work->active_count++]=(unsigned short)index;
-    minx=s->cx-s->cell_radius;maxx=s->cx+s->cell_radius;miny=s->cy-s->cell_radius;maxy=s->cy+s->cell_radius;
+}
+static void source_merge(uint32_t *destination,const SightSource *s){
+    int xx,yy,minx=s->cx-s->cell_radius,maxx=s->cx+s->cell_radius,miny=s->cy-s->cell_radius,maxy=s->cy+s->cell_radius;
     if(minx<0)minx=0;
     if(miny<0)miny=0;
     if(maxx>=GRID)maxx=GRID-1;
     if(maxy>=GRID)maxy=GRID-1;
-    if(!bonus)merge_circle(s,miny,maxy);
-    else for(yy=miny;yy<=maxy;++yy)for(xx=minx;xx<=maxx;++xx)if(source_point(s,xx*CELL+CELL/2,yy*CELL+CELL/2))set(work->current[team],yy*GRID+xx);
-    set(work->current[team],s->cy*GRID+s->cx);
+    if(!s->bonus)merge_circle(destination,s,miny,maxy);
+    else for(yy=miny;yy<=maxy;++yy)for(xx=minx;xx<=maxx;++xx)if(source_point(s,xx*CELL+CELL/2,yy*CELL+CELL/2))set(destination,yy*GRID+xx);
+    set(destination,s->cy*GRID+s->cx);
+}
+static void merge_sources(void){
+    int i,team;
+    for(i=0;i<STATIC_SOURCE_WORDS;++i)if(work->static_members[i]!=work->next_static_members[i])work->static_changed=1;
+    if(work->static_changed){
+        zero(work->static_current,sizeof(work->static_current));
+        for(i=0;i<work->active_count;++i){unsigned index=work->active[i];const SightSource *s=&work->source[index];
+            if(index<STATIC_SOURCE_COUNT && bit(work->next_static_members,(int)index))source_merge(work->static_current[s->team],s);
+        }
+        for(i=0;i<STATIC_SOURCE_WORDS;++i)work->static_members[i]=work->next_static_members[i];
+        work->static_tree_stamp=work->tree_stamp;work->static_valid=1;
+    }
+    for(team=0;team<2;++team)for(i=0;i<GRID_WORDS;i+=4){
+        work->current[team][i]=work->static_current[team][i];work->current[team][i+1]=work->static_current[team][i+1];
+        work->current[team][i+2]=work->static_current[team][i+2];work->current[team][i+3]=work->static_current[team][i+3];
+    }
+    for(i=0;i<work->active_count;++i){unsigned index=work->active[i];const SightSource *s=&work->source[index];
+        if(index>=STATIC_SOURCE_COUNT || !bit(work->next_static_members,(int)index))source_merge(work->current[s->team],s);
+    }
 }
 static int team_point(int team,int x,int y){
     int k,region;
@@ -304,22 +392,29 @@ static void refresh(const DotaGame *g){
     int i,team,night=dota_match_is_night(g);
     if(!work){zero(visible,sizeof(visible));cached_game=g;cached_tick=g->tick;return;}
     if(work->owner!=g){dota_sight_reset();work->owner=g;}
-    zero(work->current,sizeof(work->current));work->active_count=0;dynamic_trees(g);
+    work->active_count=0;dynamic_trees(g);
+    work->static_changed=!work->static_valid || work->static_tree_stamp!=work->tree_stamp;
+    zero(work->next_static_members,sizeof(work->next_static_members));
     for(i=0;i<SOURCE_COUNT;++i)work->source[i].active=0;
     for(i=0;i<DOTA_MAX_UNITS;++i){const DotaUnit *u=&g->units[i];int radius,bonus=0,hx=0,hy=0;
         if(!live(u) || (unsigned)u->team>=2 || !(radius=dota_rules_unit_vision_source(g,i)))continue;
         if(i<DOTA_HERO_COUNT){bonus=dota_roster_vision_bonus(g,i);hx=g->roster.hero[i].vision_dx;hy=g->roster.hero[i].vision_dy;}
-        source_add(i,u->team,u->x,u->y,radius,bonus,hx,hy,0);
+        source_add(i,u->team,u->x,u->y,radius,bonus,hx,hy,0,u->type==DOTA_TOWER || u->type==DOTA_BASE || u->type==DOTA_BUILDING);
     }
-    for(team=0;team<2;++team)source_add(DOTA_MAX_UNITS+team,team,dota_fountains[team].x,dota_fountains[team].y,unit_fountain_vision[0],0,0,0,0);
-    for(i=0;i<DOTA_WATCHERS;++i){const DotaPoint *p=&dota_objective_positions[DOTA_OBJECTIVE_WATCHER_FIRST+i];if(g->objectives.watcher_until[i]>g->tick)source_add(WATCHER_FIRST+i,g->objectives.watcher_owner[i],p->x,p->y,unit_watcher_vision[night],0,0,0,0);}
-    for(i=0;i<DOTA_ROSTER_FIELDS;++i){const DotaRosterField *f=&g->roster.field[i];if(f->until>=g->tick && f->starts_at<=g->tick && (g->roster.field_mask&(1u<<i)) && (unsigned)f->source<DOTA_MAX_UNITS)source_add(FIELD_FIRST+i,g->units[f->source].team,f->x,f->y,f->radius,0,0,0,1);}
-    for(i=0;i<8;++i){const DotaItemTrap *t=&g->item_world.trap[i];if(t->until>g->tick && t->item==DOTA_ITEM_GEM && (unsigned)t->owner<DOTA_HERO_COUNT)source_add(GEM_FIRST+i,g->units[t->owner].team,t->x,t->y,300,0,0,0,0);}
+    for(team=0;team<2;++team)source_add(DOTA_MAX_UNITS+team,team,dota_fountains[team].x,dota_fountains[team].y,unit_fountain_vision[0],0,0,0,0,1);
+    for(i=0;i<DOTA_WATCHERS;++i){const DotaPoint *p=&dota_objective_positions[DOTA_OBJECTIVE_WATCHER_FIRST+i];if(g->objectives.watcher_until[i]>g->tick)source_add(WATCHER_FIRST+i,g->objectives.watcher_owner[i],p->x,p->y,unit_watcher_vision[night],0,0,0,0,0);}
+    for(i=0;i<DOTA_ROSTER_FIELDS;++i){const DotaRosterField *f=&g->roster.field[i];if(f->until>=g->tick && f->starts_at<=g->tick && (g->roster.field_mask&(1u<<i)) && (unsigned)f->source<DOTA_MAX_UNITS)source_add(FIELD_FIRST+i,g->units[f->source].team,f->x,f->y,f->radius,0,0,0,1,0);}
+    for(i=0;i<8;++i){const DotaItemTrap *t=&g->item_world.trap[i];if(t->until>g->tick && t->item==DOTA_ITEM_GEM && (unsigned)t->owner<DOTA_HERO_COUNT)source_add(GEM_FIRST+i,g->units[t->owner].team,t->x,t->y,300,0,0,0,0,0);}
+    merge_sources();
     for(team=0;team<2;++team){for(i=0;i<GRID_WORDS;++i)work->explored[team][i]|=work->current[team][i];
         for(i=0;i<DOTA_MAX_UNITS;++i){const DotaUnit *u=&g->units[i];visible[team][i]=(unsigned char)(live(u) && (u->team==team || team_point(team,u->x,u->y)));}}
     cached_game=g;cached_tick=g->tick;
 }
 static void ensure(const DotaGame *g){if(g && !dota_sight_is_current(g))refresh(g);}
+const uint32_t *dota_sight_current_bits(const DotaGame *g,int team){
+    if(!g || !work || (unsigned)team>=2)return 0;
+    ensure(g);return work->current[team];
+}
 int dota_sight_team_position_visible(const DotaGame *g,int team,int x,int y){if(!g)return 0;ensure(g);return team_point(team,x,y);}
 int dota_sight_position_visible(const DotaGame *g,int observer,int x,int y){if(!g || (unsigned)observer>=DOTA_MAX_UNITS)return 0;return dota_sight_team_position_visible(g,g->units[observer].team,x,y);}
 int dota_sight_team_visible(const DotaGame *g,int observer,int target){

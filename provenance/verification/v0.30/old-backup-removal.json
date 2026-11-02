@@ -1,0 +1,20 @@
+{
+  "UserRequestedRemoval": true,
+  "Deleted": [
+    {
+      "FullName": "G:\\DOTA2\\backups\\v021\\SCENE.H1P",
+      "Length": 248392408
+    },
+    {
+      "FullName": "G:\\DOTA2\\backups\\v021\\SCENE.json",
+      "Length": 4415
+    }
+  ],
+  "Remaining": [
+    {
+      "Name": "DOTA2.H1R",
+      "Length": 112861448
+    }
+  ],
+  "FreeBytes": 1069416448
+}

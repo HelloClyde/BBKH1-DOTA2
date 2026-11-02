@@ -1,0 +1,42 @@
+{
+  "project": "miniz",
+  "tag": "3.1.0",
+  "source": "https://github.com/richgel999/miniz/tree/3.1.0",
+  "files": [
+    {
+      "path": "upstream/miniz_tinfl.c",
+      "url": "https://raw.githubusercontent.com/richgel999/miniz/3.1.0/miniz_tinfl.c",
+      "bytes": 40259,
+      "sha256": "ff9cc5426df23a78070b5b8fa2dcb7aea68faac466169a883b4ffb8727532350"
+    },
+    {
+      "path": "upstream/miniz_tinfl.h",
+      "url": "https://raw.githubusercontent.com/richgel999/miniz/3.1.0/miniz_tinfl.h",
+      "bytes": 8695,
+      "sha256": "da4850920fdf09f8877d9affabe1ebba1852ce4b1ebbd121f2ba7a7ea8e57e5d"
+    },
+    {
+      "path": "upstream/miniz_common.h",
+      "url": "https://raw.githubusercontent.com/richgel999/miniz/3.1.0/miniz_common.h",
+      "bytes": 2719,
+      "sha256": "6320fa10a5d21db9f78594d92745bc27593c1e6bed657104c22da0a9bd687b49"
+    },
+    {
+      "path": "upstream/miniz.h",
+      "url": "https://raw.githubusercontent.com/richgel999/miniz/3.1.0/miniz.h",
+      "bytes": 27754,
+      "sha256": "232abb0b807fd4962a8e61822459dd49baecb61d0e557f23497732978640f6a7"
+    },
+    {
+      "path": "upstream/LICENSE",
+      "url": "https://raw.githubusercontent.com/richgel999/miniz/3.1.0/LICENSE",
+      "bytes": 1184,
+      "sha256": "0115478d567121238cf6cc1c0c361926cf07a49d9e4c9e66da97fac6a01646b3"
+    }
+  ],
+  "port_changes": [
+    "tinfl.c includes only low-level tinfl.h",
+    "tinfl.h includes freestanding types instead of libc-dependent miniz_common.h",
+    "all allocation,stdio,time,archive APIs excluded; MIPS-safe byte loads"
+  ]
+}

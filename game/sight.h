@@ -22,5 +22,8 @@ int dota_sight_team_position_visible(const DotaGame *game,int team,int x,int y);
 /* O(1) after lazy tick refresh: 0 unseen, 1 explored, 2 current sight.
  * Missing workspace returns 0 rather than scanning units per fog pixel. */
 int dota_sight_fog_state(const DotaGame *game,int team,int x,int y);
+/* Borrowed read-only 256x256 row-major bitplane, valid until refresh/detach.
+ * Performs at most one shared-sight refresh; null for missing state/team. */
+const uint32_t *dota_sight_current_bits(const DotaGame *game,int team);
 int dota_rules_unit_vision_source(const DotaGame *game,int unit);
 #endif

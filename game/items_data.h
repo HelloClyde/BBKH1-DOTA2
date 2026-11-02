@@ -11,6 +11,9 @@
 #define DOTA_ITEMS_EQUIP_SLOTS 7
 #define DOTA_INVENTORY_SLOTS 9
 #define DOTA_BACKPACK_SLOTS 3
+/* Dedicated active-only TP slot. Never an equipment/stat array index. */
+#define DOTA_ITEMS_TP_SLOT 7
+#define DOTA_INVENTORY_TP_SLOT 9
 #define DOTA_ITEMS_EFFECTS 128
 #define DOTA_ITEMS_EFFECT_WORDS ((DOTA_ITEMS_EFFECTS+31)/32)
 #define DOTA_ITEMS_STOCKS 24

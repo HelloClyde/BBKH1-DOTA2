@@ -1,0 +1,23 @@
+{
+  "read_only": true,
+  "stat_drive_check_signature": [
+    1006796888,
+    2151853885,
+    8523818,
+    339738638
+  ],
+  "drive_count_address": "0x8057af3d",
+  "drive_count_signed_byte": 1,
+  "fs_errno": 9,
+  "desktop": {
+    "job_id": 1,
+    "kind": 2,
+    "state": 4,
+    "error": 0,
+    "menu_idle": 1,
+    "app_index": 89,
+    "entry_count": 1,
+    "return_code": 1,
+    "state_name": "done"
+  }
+}

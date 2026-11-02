@@ -1,0 +1,48 @@
+{
+  "identity": "H1DEBUG/1 V1.41 RESIDENT",
+  "caps": {
+    "version": 1,
+    "features": 16383,
+    "max_payload": 512,
+    "ram_start": 2147483648,
+    "ram_size": 67108864,
+    "module_abi": 1,
+    "forced_preemption": 0,
+    "tick_hz": 0
+  },
+  "status": {
+    "version": 1,
+    "state": 1,
+    "usb_configured": 1,
+    "usb_fault": 0,
+    "usb_resets": 2,
+    "commands": 3,
+    "bad_frames": 0,
+    "tick": 2139,
+    "poll_count": 6481,
+    "last_poll_tick": 2139,
+    "resident_base": 2186025024,
+    "resident_size": 727104,
+    "keys_low": 0,
+    "keys_high": 0,
+    "exec_state": 0,
+    "last_error": 0
+  },
+  "desktop": {
+    "job_id": 0,
+    "kind": 0,
+    "state": 0,
+    "error": 0,
+    "menu_idle": 1,
+    "app_index": 0,
+    "entry_count": 0,
+    "return_code": 0,
+    "state_name": "idle"
+  },
+  "resource": {
+    "path": "B:\\DOTA2\\DOTA2.H1R",
+    "exists": 1,
+    "size": 112861448,
+    "is_directory": 0
+  }
+}

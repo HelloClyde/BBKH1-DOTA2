@@ -8,6 +8,9 @@
 #ifndef DOTA_AUDIO_HOST
 #include "h1_sdk.h"
 #include "cache_memory.h"
+#ifdef DOTA_RESOURCE_PACK
+#include "resource_pack.h"
+#endif
 #endif
 #define RATE 32000u
 #define BLOCK 256u
@@ -103,6 +106,15 @@ static int position(unsigned route,Descriptor*d,unsigned*out){
   *out=((cursor-base)/2u)%(d->bytes/2u);return 1;
  }return -1;
 }
+#ifdef DOTA_RESOURCE_PACK
+static int open_file(AudioFile*f,const char*p){(void)p;f->handle=resource_open(RESOURCE_SOUND);if(!f->handle)return 0;
+ f->size=resource_size(f->handle);f->position=0;return f->size&&f->size<0x7fffffffu;}
+static void close_file(AudioFile*f){if(f->handle)(void)resource_close(f->handle);f->handle=0;f->size=f->position=0;}
+static int file_read(AudioFile*f,unsigned at,void*p,unsigned n){status.read_calls++;status.read_bytes+=n;
+ if(!f->handle||at>f->size||n>f->size-at)return 0;
+ if(!resource_read_at(f->handle,at,p,n)){f->position=NONE;return 0;}
+ f->position=at+n;return 1;}
+#else
 static int open_file(AudioFile*f,const char*p){f->handle=h1_fopen(p,"rb");if(!f->handle)return 0;
  if(h1_fseek(f->handle,0,H1_SEEK_END)<0){h1_fclose(f->handle);f->handle=0;return 0;}
  f->size=h1_ftell(f->handle);f->position=f->size;return f->size&&f->size<0x7fffffffu;}
@@ -112,6 +124,7 @@ static int file_read(AudioFile*f,unsigned at,void*p,unsigned n){status.read_call
  if(f->position!=at&&h1_fseek(f->handle,(int)at,H1_SEEK_SET)!=(int)at){f->position=NONE;return 0;}
  if(h1_fread(p,1,n,f->handle)!=n){f->position=NONE;return 0;}
  f->position=at+n;return 1;}
+#endif
 static int open_device(void){uint32_t c[9]={RATE,1,4096,0,0,0,0,0,0};return output_open(c);}
 static int start_device(void){return start();}static void stop_device(void){stop();}static void close_device(void){close_output();}
 static int resolve_services(void){

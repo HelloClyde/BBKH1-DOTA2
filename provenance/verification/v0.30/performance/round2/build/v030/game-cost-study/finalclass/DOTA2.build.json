@@ -1,0 +1,25 @@
+{
+  "diagnostic_only": true,
+  "physical_h1_tested": false,
+  "label": "finalclass",
+  "bda_sha256": "d8d75e2c459735fad358c53c58e2d461c52fb8e348e2846b113f8fcded734d53",
+  "elf_sha256": "fcdf29978bebac15e96ee3b59b44422a4a85a24e36c26999cc1d35ed443c9ca9",
+  "binary": {
+    "abi": {
+      "DotaGame": 179008,
+      "DotaUnit": 240,
+      "DotaView": 148
+    },
+    "entry": "0x83c00020",
+    "stack_bytes": 65536,
+    "application_ram_end": "0x83fefa80",
+    "ram_limit": "0x83ff0000",
+    "ram_margin_bytes": 1408,
+    "static_bss_bytes": 3012384,
+    "payload_matches_elf": true
+  },
+  "reused_objects_from_exact_build": "build/v030/perf-candidate6",
+  "reused_build_metadata_sha256": "c6a37886c9bac4157dc1a4401058f642466e2b9dea3fda7718752afbd67f630d",
+  "only_recompiled_translation_unit": "game/sight.c",
+  "variant_sha256": "cf693f6b2c925fac5f22922ef397193ddbc5f9266087e28d38fc69923ed03adc"
+}

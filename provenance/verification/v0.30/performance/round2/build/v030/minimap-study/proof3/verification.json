@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "physical_h1_tested": false,
+  "actual_source_extracted": true,
+  "provider_is_deterministic_fixture": true,
+  "scope": "Compare the exact old/new minimap background loops; host pixel proof, no FPS.",
+  "result": {
+    "passed": true,
+    "cases": 576,
+    "pixel_words_compared": 75202560,
+    "old_queries_per_frame": 5184,
+    "new_getters_per_frame": 1
+  },
+  "source_sha256": {
+    "build\\v030\\minimap-study\\render-before.c": "aa239b3d40600ca34bf60301b2971186783ddd652fd3a8db6d43318e4e41853c",
+    "platform\\render.c": "d697547cbfae38fd173147fa1d04a81b362f4bcdbb1ee032a47a04637573136d",
+    "game\\sight.h": "27f292ec3d139c077a942079052c148d5cd2d9993886c44a37bfbf52953eef8a",
+    "platform\\hud_layout.h": "f91a273a59ee2da5c2fff41357b9d8f6d858f86a0167c0c67ef910ea534b230d",
+    "platform\\vision_assets.h": "a8a1f6ebf2d4a27b5795999c9b03a245425f759c9f6ff822fd688a8653b423ad",
+    "tests\\verify_minimap_bits.py": "68b5ae6b2d887538d8377d32c01cf912895a9b80ee07c0a6e4d9850b17df0b59"
+  },
+  "source_current": true,
+  "probe_sha256": "91bc4f10d29383dc6e207965b1754c1b778661043c73e2f82823f2b85b407742",
+  "exe_sha256": "75e39309ee6261294f83332b0a2eafa5cc0d64758c51e8a2afb3145a1a6caa65",
+  "limitations": "Tests only the minimap background loops. Original core visibility and getter outcomes require the complete-BDA vision tests; no real H1 or frame-rate claim."
+}

@@ -14,8 +14,8 @@ void dota_items_init(DotaGame *game);
 void dota_items_tick(DotaGame *game);
 void dota_items_stats(DotaGame *game,int hero,DotaItemStats *stats);
 void dota_items_invalidate(DotaGame *game,int hero);
-/* UI inventory:0..5 main,6..8 backpack. This is separate from legacy item
- * use/cooldown APIs where slot6 remains the independent neutral equipment. */
+/* UI inventory:0..5 main,6..8 backpack,9 dedicated TP. Moves only0..8.
+ * Legacy active/cooldown slots:0..5 main,6 neutral,7 dedicated TP. */
 int dota_inventory_item(const DotaGame *game,int hero,int slot);
 int dota_inventory_move(DotaGame *game,int hero,int from,int to);
 int dota_inventory_cooldown(const DotaGame *game,int hero,int slot);
@@ -24,6 +24,17 @@ int dota_inventory_inactive_ticks(const DotaGame *game,int hero,int slot);
 /* Active stats/procs only; a6-second backpack return lock suppresses the
  * underlying raw inventory item. Use raw/UI getters for ownership/delivery. */
 int dota_items_equipped_item(const DotaGame *game,int hero,int legacy_slot);
+/* Active identity including dedicated TP; stats still use equipped_item. */
+int dota_items_cast_item(const DotaGame *game,int hero,int legacy_slot);
+int dota_items_self_target_valid(const DotaGame *game,int hero,int legacy_slot);
+int dota_items_use_self(DotaGame *game,int hero,int legacy_slot);
+enum {DOTA_ITEM_CAST_INVALID=0,DOTA_ITEM_CAST_READY=1,DOTA_ITEM_CAST_APPROACH=2};
+/* Pure current-resource/target preflight. range_source is Source units;0
+ * means no approach. Orders retain/recheck target generation and exact tree. */
+int dota_items_cast_query(const DotaGame *game,int hero,int legacy_slot,int x,int y,int target,int *range_source);
+/* Same96Source tree selection as the actual action. Dynamic IDs start at
+ * DOTA_STATIC_TREE_COUNT and their stamp is their planted expiry tick. */
+int dota_items_tree_target(const DotaGame *game,int x,int y,int *tx,int *ty,int *stamp);
 int dota_items_purchase_plan(const DotaGame *game,int hero,int item,DotaItemPurchasePlan *plan);
 /* Reserve limited shop stock after the caller atomically validates gold/queues.
  * This never deducts gold or moves inventory. Returns0 without mutation. */
@@ -60,6 +71,7 @@ int dota_items_is_teleport(int item);
 int dota_items_teleport_target_valid(const DotaGame *game,int hero,int item,int target);
 int dota_items_teleport_target(const DotaGame *game,int hero,int item,int x,int y,int target);
 int dota_items_teleport_cooldown(const DotaGame *game,int hero);
+int dota_items_teleport_charges(const DotaGame *game,int hero);
 /* Returns1 only for a current valid channel; all outputs are optional.
  * The destination follows a living mobile anchor. total/remaining are20Hz. */
 int dota_items_teleport_channel(const DotaGame *game,int hero,int *x,int *y,int *remaining,int *total);
@@ -100,7 +112,7 @@ int dota_items_regen_percent(const DotaGame *game,int target);
 int dota_items_timed_regen100(const DotaGame *game,int target);
 int dota_items_timed_mana_regen100(const DotaGame *game,int target);
 int dota_rules_item_raw_regen100(const DotaGame *game,int hero);
-int dota_items_mana_cost_percent(DotaGame *game,int hero);
+int dota_items_mana_cost_percent(const DotaGame *game,int hero);
 int dota_items_mana_regen_percent(DotaGame *game,int hero);
 int dota_items_health_regen_amp_percent(DotaGame *game,int hero);
 int dota_items_slow_resistance(DotaGame *game,int hero);

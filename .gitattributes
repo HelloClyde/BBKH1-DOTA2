@@ -16,7 +16,14 @@
 provenance/ward-placement/source-data/** -text
 # Verification receipts bind probe bytes, including their original line endings.
 tests/** -text
-/assets/runtime/SCENE.H1P filter=lfs diff=lfs merge=lfs -text
-/assets/runtime/SOUND.H1A filter=lfs diff=lfs merge=lfs -text
-/assets/runtime/MAP12.H1C filter=lfs diff=lfs merge=lfs -text
-/assets/runtime/TREE.H1T filter=lfs diff=lfs merge=lfs -text
+/assets/runtime/DOTA2.H1R filter=lfs diff=lfs merge=lfs -text
+third_party/miniz/upstream/** -text
+third_party/miniz/LICENSE -text
+# Preserve archived performance drivers and source fixtures exactly as measured.
+provenance/verification/v0.30/performance/** -text
+# These measured compiler inputs contain CRLF; keep their verified bytes.
+/platform/baked_scene.c -text
+/platform/baked_scene.h -text
+# Archived source and receipts bind each other's original byte hashes.
+/provenance/resource-v030/** -text
+/provenance/verification/v0.30/** -text

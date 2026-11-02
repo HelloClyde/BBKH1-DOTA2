@@ -1,0 +1,32 @@
+{
+  "desktop": {
+    "job_id": 1,
+    "kind": 2,
+    "state": 4,
+    "error": 0,
+    "menu_idle": 1,
+    "app_index": 89,
+    "entry_count": 1,
+    "return_code": 1,
+    "state_name": "done"
+  },
+  "status": {
+    "version": 1,
+    "state": 1,
+    "usb_configured": 1,
+    "usb_fault": 0,
+    "usb_resets": 3,
+    "commands": 4947,
+    "bad_frames": 0,
+    "tick": 111240,
+    "poll_count": 1574547,
+    "last_poll_tick": 111240,
+    "resident_base": 2185888384,
+    "resident_size": 727104,
+    "keys_low": 0,
+    "keys_high": 0,
+    "exec_state": 0,
+    "last_error": 0
+  },
+  "bundle_error": "H1 command 48 failed with status 4"
+}

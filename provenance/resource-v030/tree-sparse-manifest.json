@@ -1,0 +1,2564 @@
+{
+  "complete": true,
+  "format_version": 2,
+  "input_sha256": "cb665855d9b4d8c20f2e0603492ed4425cb11a2c3763f51eadf30c5d9162aa80",
+  "output_sha256": "129200c5bdfc8c0f7c75d64b34a3e025c03b4244fea75c89a80c215420248256",
+  "bytes": 50343158,
+  "canonical_tiles_byte_identical": 364,
+  "max_sparse_bytes": 437147,
+  "max_canonical_bytes": 983056,
+  "max_frames": 68,
+  "semantic_spans": 26705,
+  "generator_sha256": "41f49fc2173e54cb211c04fa33623e5ae8fd33173c002add057821297370b0ff",
+  "elapsed_seconds": 5.5,
+  "tiles": [
+    {
+      "tile": 93,
+      "frames": 4,
+      "stored_bytes": 77313,
+      "canonical_bytes": 409616,
+      "crc32": "e804449d"
+    },
+    {
+      "tile": 94,
+      "frames": 31,
+      "stored_bytes": 297075,
+      "canonical_bytes": 753680,
+      "crc32": "9c8b252c"
+    },
+    {
+      "tile": 95,
+      "frames": 27,
+      "stored_bytes": 227861,
+      "canonical_bytes": 753680,
+      "crc32": "66c0ad6b"
+    },
+    {
+      "tile": 96,
+      "frames": 22,
+      "stored_bytes": 234086,
+      "canonical_bytes": 638992,
+      "crc32": "006d239f"
+    },
+    {
+      "tile": 97,
+      "frames": 8,
+      "stored_bytes": 103467,
+      "canonical_bytes": 524304,
+      "crc32": "85c74f10"
+    },
+    {
+      "tile": 98,
+      "frames": 5,
+      "stored_bytes": 127394,
+      "canonical_bytes": 638992,
+      "crc32": "a18b2300"
+    },
+    {
+      "tile": 99,
+      "frames": 7,
+      "stored_bytes": 80991,
+      "canonical_bytes": 524304,
+      "crc32": "07d07a27"
+    },
+    {
+      "tile": 100,
+      "frames": 3,
+      "stored_bytes": 73697,
+      "canonical_bytes": 294928,
+      "crc32": "8a24a474"
+    },
+    {
+      "tile": 101,
+      "frames": 7,
+      "stored_bytes": 78891,
+      "canonical_bytes": 409616,
+      "crc32": "687bf4cd"
+    },
+    {
+      "tile": 102,
+      "frames": 6,
+      "stored_bytes": 87745,
+      "canonical_bytes": 294928,
+      "crc32": "a5e594b3"
+    },
+    {
+      "tile": 103,
+      "frames": 6,
+      "stored_bytes": 106965,
+      "canonical_bytes": 409616,
+      "crc32": "78de86bd"
+    },
+    {
+      "tile": 104,
+      "frames": 6,
+      "stored_bytes": 110225,
+      "canonical_bytes": 524304,
+      "crc32": "42f5f451"
+    },
+    {
+      "tile": 105,
+      "frames": 14,
+      "stored_bytes": 152313,
+      "canonical_bytes": 638992,
+      "crc32": "2e474027"
+    },
+    {
+      "tile": 106,
+      "frames": 13,
+      "stored_bytes": 101807,
+      "canonical_bytes": 524304,
+      "crc32": "3c3373a9"
+    },
+    {
+      "tile": 107,
+      "frames": 11,
+      "stored_bytes": 159775,
+      "canonical_bytes": 638992,
+      "crc32": "d6d3654f"
+    },
+    {
+      "tile": 108,
+      "frames": 10,
+      "stored_bytes": 128579,
+      "canonical_bytes": 524304,
+      "crc32": "bb59d5f7"
+    },
+    {
+      "tile": 109,
+      "frames": 1,
+      "stored_bytes": 65590,
+      "canonical_bytes": 180240,
+      "crc32": "3d242b61"
+    },
+    {
+      "tile": 123,
+      "frames": 12,
+      "stored_bytes": 126331,
+      "canonical_bytes": 753680,
+      "crc32": "9ceae324"
+    },
+    {
+      "tile": 124,
+      "frames": 68,
+      "stored_bytes": 437147,
+      "canonical_bytes": 868368,
+      "crc32": "05f29ede"
+    },
+    {
+      "tile": 125,
+      "frames": 27,
+      "stored_bytes": 210286,
+      "canonical_bytes": 753680,
+      "crc32": "40bf5937"
+    },
+    {
+      "tile": 126,
+      "frames": 20,
+      "stored_bytes": 133074,
+      "canonical_bytes": 524304,
+      "crc32": "106855b8"
+    },
+    {
+      "tile": 127,
+      "frames": 22,
+      "stored_bytes": 201661,
+      "canonical_bytes": 524304,
+      "crc32": "d692bbf1"
+    },
+    {
+      "tile": 128,
+      "frames": 21,
+      "stored_bytes": 206310,
+      "canonical_bytes": 638992,
+      "crc32": "e3c6c091"
+    },
+    {
+      "tile": 129,
+      "frames": 16,
+      "stored_bytes": 132910,
+      "canonical_bytes": 524304,
+      "crc32": "f848f17a"
+    },
+    {
+      "tile": 130,
+      "frames": 24,
+      "stored_bytes": 210353,
+      "canonical_bytes": 638992,
+      "crc32": "c76af2e0"
+    },
+    {
+      "tile": 131,
+      "frames": 22,
+      "stored_bytes": 213811,
+      "canonical_bytes": 638992,
+      "crc32": "0a946f28"
+    },
+    {
+      "tile": 132,
+      "frames": 5,
+      "stored_bytes": 72769,
+      "canonical_bytes": 294928,
+      "crc32": "0a8e7988"
+    },
+    {
+      "tile": 133,
+      "frames": 9,
+      "stored_bytes": 126083,
+      "canonical_bytes": 409616,
+      "crc32": "c583d778"
+    },
+    {
+      "tile": 134,
+      "frames": 7,
+      "stored_bytes": 80746,
+      "canonical_bytes": 409616,
+      "crc32": "3997c99a"
+    },
+    {
+      "tile": 135,
+      "frames": 12,
+      "stored_bytes": 139581,
+      "canonical_bytes": 524304,
+      "crc32": "b640f8d2"
+    },
+    {
+      "tile": 136,
+      "frames": 32,
+      "stored_bytes": 161691,
+      "canonical_bytes": 753680,
+      "crc32": "16a4ab4e"
+    },
+    {
+      "tile": 137,
+      "frames": 24,
+      "stored_bytes": 176333,
+      "canonical_bytes": 409616,
+      "crc32": "9e3e3e73"
+    },
+    {
+      "tile": 138,
+      "frames": 19,
+      "stored_bytes": 182288,
+      "canonical_bytes": 638992,
+      "crc32": "29aa7c09"
+    },
+    {
+      "tile": 139,
+      "frames": 22,
+      "stored_bytes": 166876,
+      "canonical_bytes": 753680,
+      "crc32": "9d80c07e"
+    },
+    {
+      "tile": 140,
+      "frames": 14,
+      "stored_bytes": 109193,
+      "canonical_bytes": 294928,
+      "crc32": "940b7cb2"
+    },
+    {
+      "tile": 141,
+      "frames": 15,
+      "stored_bytes": 91934,
+      "canonical_bytes": 409616,
+      "crc32": "dc8b8277"
+    },
+    {
+      "tile": 142,
+      "frames": 17,
+      "stored_bytes": 96796,
+      "canonical_bytes": 409616,
+      "crc32": "04574063"
+    },
+    {
+      "tile": 143,
+      "frames": 16,
+      "stored_bytes": 112350,
+      "canonical_bytes": 638992,
+      "crc32": "bf3e5d9e"
+    },
+    {
+      "tile": 153,
+      "frames": 7,
+      "stored_bytes": 70991,
+      "canonical_bytes": 524304,
+      "crc32": "3253d2d2"
+    },
+    {
+      "tile": 154,
+      "frames": 39,
+      "stored_bytes": 240378,
+      "canonical_bytes": 753680,
+      "crc32": "7ba951bc"
+    },
+    {
+      "tile": 155,
+      "frames": 17,
+      "stored_bytes": 98346,
+      "canonical_bytes": 409616,
+      "crc32": "baa9445f"
+    },
+    {
+      "tile": 156,
+      "frames": 15,
+      "stored_bytes": 120029,
+      "canonical_bytes": 409616,
+      "crc32": "39559f74"
+    },
+    {
+      "tile": 157,
+      "frames": 13,
+      "stored_bytes": 133387,
+      "canonical_bytes": 524304,
+      "crc32": "4b9431f6"
+    },
+    {
+      "tile": 158,
+      "frames": 25,
+      "stored_bytes": 151199,
+      "canonical_bytes": 524304,
+      "crc32": "72f238c2"
+    },
+    {
+      "tile": 159,
+      "frames": 26,
+      "stored_bytes": 157290,
+      "canonical_bytes": 524304,
+      "crc32": "1fc93d09"
+    },
+    {
+      "tile": 160,
+      "frames": 25,
+      "stored_bytes": 125269,
+      "canonical_bytes": 524304,
+      "crc32": "d15d1b67"
+    },
+    {
+      "tile": 161,
+      "frames": 27,
+      "stored_bytes": 129846,
+      "canonical_bytes": 638992,
+      "crc32": "5123f3ac"
+    },
+    {
+      "tile": 162,
+      "frames": 6,
+      "stored_bytes": 72490,
+      "canonical_bytes": 294928,
+      "crc32": "c2f207a7"
+    },
+    {
+      "tile": 163,
+      "frames": 14,
+      "stored_bytes": 125903,
+      "canonical_bytes": 409616,
+      "crc32": "a0d5dc01"
+    },
+    {
+      "tile": 164,
+      "frames": 13,
+      "stored_bytes": 112422,
+      "canonical_bytes": 409616,
+      "crc32": "644f8c6a"
+    },
+    {
+      "tile": 165,
+      "frames": 22,
+      "stored_bytes": 183396,
+      "canonical_bytes": 638992,
+      "crc32": "62d0a40c"
+    },
+    {
+      "tile": 166,
+      "frames": 35,
+      "stored_bytes": 189024,
+      "canonical_bytes": 638992,
+      "crc32": "c146d3f1"
+    },
+    {
+      "tile": 167,
+      "frames": 25,
+      "stored_bytes": 161499,
+      "canonical_bytes": 524304,
+      "crc32": "d4d21eef"
+    },
+    {
+      "tile": 168,
+      "frames": 22,
+      "stored_bytes": 191731,
+      "canonical_bytes": 524304,
+      "crc32": "18fdb5e9"
+    },
+    {
+      "tile": 169,
+      "frames": 23,
+      "stored_bytes": 132797,
+      "canonical_bytes": 638992,
+      "crc32": "b57f8e40"
+    },
+    {
+      "tile": 170,
+      "frames": 11,
+      "stored_bytes": 90445,
+      "canonical_bytes": 409616,
+      "crc32": "5b19c538"
+    },
+    {
+      "tile": 171,
+      "frames": 22,
+      "stored_bytes": 124046,
+      "canonical_bytes": 524304,
+      "crc32": "bff37860"
+    },
+    {
+      "tile": 172,
+      "frames": 27,
+      "stored_bytes": 149681,
+      "canonical_bytes": 638992,
+      "crc32": "81180c3d"
+    },
+    {
+      "tile": 173,
+      "frames": 23,
+      "stored_bytes": 129897,
+      "canonical_bytes": 753680,
+      "crc32": "1dd67c43"
+    },
+    {
+      "tile": 174,
+      "frames": 2,
+      "stored_bytes": 71406,
+      "canonical_bytes": 294928,
+      "crc32": "b9236efc"
+    },
+    {
+      "tile": 175,
+      "frames": 1,
+      "stored_bytes": 65590,
+      "canonical_bytes": 180240,
+      "crc32": "3f32b071"
+    },
+    {
+      "tile": 184,
+      "frames": 27,
+      "stored_bytes": 165781,
+      "canonical_bytes": 638992,
+      "crc32": "db8bc287"
+    },
+    {
+      "tile": 185,
+      "frames": 43,
+      "stored_bytes": 333792,
+      "canonical_bytes": 753680,
+      "crc32": "374b54de"
+    },
+    {
+      "tile": 186,
+      "frames": 20,
+      "stored_bytes": 151444,
+      "canonical_bytes": 638992,
+      "crc32": "79015719"
+    },
+    {
+      "tile": 187,
+      "frames": 15,
+      "stored_bytes": 128544,
+      "canonical_bytes": 753680,
+      "crc32": "d7607e54"
+    },
+    {
+      "tile": 188,
+      "frames": 27,
+      "stored_bytes": 210546,
+      "canonical_bytes": 638992,
+      "crc32": "1a732e4d"
+    },
+    {
+      "tile": 189,
+      "frames": 20,
+      "stored_bytes": 124899,
+      "canonical_bytes": 524304,
+      "crc32": "b46080e4"
+    },
+    {
+      "tile": 190,
+      "frames": 47,
+      "stored_bytes": 287866,
+      "canonical_bytes": 753680,
+      "crc32": "ce490129"
+    },
+    {
+      "tile": 191,
+      "frames": 21,
+      "stored_bytes": 106655,
+      "canonical_bytes": 638992,
+      "crc32": "8ac94a25"
+    },
+    {
+      "tile": 192,
+      "frames": 9,
+      "stored_bytes": 100538,
+      "canonical_bytes": 524304,
+      "crc32": "f7296ffc"
+    },
+    {
+      "tile": 193,
+      "frames": 15,
+      "stored_bytes": 114959,
+      "canonical_bytes": 409616,
+      "crc32": "953134d2"
+    },
+    {
+      "tile": 194,
+      "frames": 19,
+      "stored_bytes": 143243,
+      "canonical_bytes": 524304,
+      "crc32": "d83d9b63"
+    },
+    {
+      "tile": 195,
+      "frames": 24,
+      "stored_bytes": 197528,
+      "canonical_bytes": 638992,
+      "crc32": "9bc107ed"
+    },
+    {
+      "tile": 196,
+      "frames": 14,
+      "stored_bytes": 101928,
+      "canonical_bytes": 524304,
+      "crc32": "3d886809"
+    },
+    {
+      "tile": 197,
+      "frames": 20,
+      "stored_bytes": 147674,
+      "canonical_bytes": 638992,
+      "crc32": "9eced15b"
+    },
+    {
+      "tile": 198,
+      "frames": 4,
+      "stored_bytes": 68953,
+      "canonical_bytes": 294928,
+      "crc32": "cad61ace"
+    },
+    {
+      "tile": 199,
+      "frames": 7,
+      "stored_bytes": 88356,
+      "canonical_bytes": 524304,
+      "crc32": "b18dce79"
+    },
+    {
+      "tile": 200,
+      "frames": 1,
+      "stored_bytes": 69865,
+      "canonical_bytes": 180240,
+      "crc32": "17a063d4"
+    },
+    {
+      "tile": 204,
+      "frames": 10,
+      "stored_bytes": 83709,
+      "canonical_bytes": 524304,
+      "crc32": "b9cb553e"
+    },
+    {
+      "tile": 205,
+      "frames": 28,
+      "stored_bytes": 197597,
+      "canonical_bytes": 753680,
+      "crc32": "ce1006ff"
+    },
+    {
+      "tile": 214,
+      "frames": 3,
+      "stored_bytes": 65757,
+      "canonical_bytes": 180240,
+      "crc32": "68fc6532"
+    },
+    {
+      "tile": 215,
+      "frames": 14,
+      "stored_bytes": 100783,
+      "canonical_bytes": 638992,
+      "crc32": "33f21206"
+    },
+    {
+      "tile": 216,
+      "frames": 12,
+      "stored_bytes": 105676,
+      "canonical_bytes": 524304,
+      "crc32": "c64dc19f"
+    },
+    {
+      "tile": 217,
+      "frames": 29,
+      "stored_bytes": 190533,
+      "canonical_bytes": 524304,
+      "crc32": "8d066fcb"
+    },
+    {
+      "tile": 218,
+      "frames": 29,
+      "stored_bytes": 208923,
+      "canonical_bytes": 524304,
+      "crc32": "2d8907ca"
+    },
+    {
+      "tile": 219,
+      "frames": 22,
+      "stored_bytes": 175461,
+      "canonical_bytes": 638992,
+      "crc32": "3df60888"
+    },
+    {
+      "tile": 220,
+      "frames": 31,
+      "stored_bytes": 246280,
+      "canonical_bytes": 753680,
+      "crc32": "88e99be8"
+    },
+    {
+      "tile": 221,
+      "frames": 24,
+      "stored_bytes": 178133,
+      "canonical_bytes": 753680,
+      "crc32": "5edb0727"
+    },
+    {
+      "tile": 222,
+      "frames": 13,
+      "stored_bytes": 106407,
+      "canonical_bytes": 524304,
+      "crc32": "a34405e5"
+    },
+    {
+      "tile": 223,
+      "frames": 5,
+      "stored_bytes": 114474,
+      "canonical_bytes": 409616,
+      "crc32": "1b3f0281"
+    },
+    {
+      "tile": 224,
+      "frames": 11,
+      "stored_bytes": 108845,
+      "canonical_bytes": 524304,
+      "crc32": "028bc1d0"
+    },
+    {
+      "tile": 225,
+      "frames": 14,
+      "stored_bytes": 105113,
+      "canonical_bytes": 409616,
+      "crc32": "f0e28df3"
+    },
+    {
+      "tile": 226,
+      "frames": 21,
+      "stored_bytes": 124875,
+      "canonical_bytes": 524304,
+      "crc32": "f2095205"
+    },
+    {
+      "tile": 227,
+      "frames": 28,
+      "stored_bytes": 229222,
+      "canonical_bytes": 638992,
+      "crc32": "7009f3c7"
+    },
+    {
+      "tile": 228,
+      "frames": 9,
+      "stored_bytes": 86858,
+      "canonical_bytes": 409616,
+      "crc32": "dc582772"
+    },
+    {
+      "tile": 229,
+      "frames": 18,
+      "stored_bytes": 123607,
+      "canonical_bytes": 524304,
+      "crc32": "565c4dd0"
+    },
+    {
+      "tile": 230,
+      "frames": 9,
+      "stored_bytes": 110568,
+      "canonical_bytes": 524304,
+      "crc32": "efe79a7e"
+    },
+    {
+      "tile": 232,
+      "frames": 1,
+      "stored_bytes": 69185,
+      "canonical_bytes": 180240,
+      "crc32": "4a6f1a28"
+    },
+    {
+      "tile": 234,
+      "frames": 2,
+      "stored_bytes": 69186,
+      "canonical_bytes": 294928,
+      "crc32": "9708e682"
+    },
+    {
+      "tile": 235,
+      "frames": 24,
+      "stored_bytes": 151788,
+      "canonical_bytes": 524304,
+      "crc32": "1a523d61"
+    },
+    {
+      "tile": 244,
+      "frames": 12,
+      "stored_bytes": 187871,
+      "canonical_bytes": 524304,
+      "crc32": "2d21f923"
+    },
+    {
+      "tile": 245,
+      "frames": 11,
+      "stored_bytes": 123045,
+      "canonical_bytes": 409616,
+      "crc32": "a9bafd27"
+    },
+    {
+      "tile": 246,
+      "frames": 4,
+      "stored_bytes": 74733,
+      "canonical_bytes": 409616,
+      "crc32": "c5f273f0"
+    },
+    {
+      "tile": 247,
+      "frames": 9,
+      "stored_bytes": 83078,
+      "canonical_bytes": 294928,
+      "crc32": "895f1acd"
+    },
+    {
+      "tile": 248,
+      "frames": 24,
+      "stored_bytes": 190613,
+      "canonical_bytes": 409616,
+      "crc32": "d3857718"
+    },
+    {
+      "tile": 249,
+      "frames": 16,
+      "stored_bytes": 98040,
+      "canonical_bytes": 409616,
+      "crc32": "b5e814a1"
+    },
+    {
+      "tile": 250,
+      "frames": 14,
+      "stored_bytes": 101493,
+      "canonical_bytes": 524304,
+      "crc32": "cd309e12"
+    },
+    {
+      "tile": 251,
+      "frames": 25,
+      "stored_bytes": 194809,
+      "canonical_bytes": 638992,
+      "crc32": "8386a924"
+    },
+    {
+      "tile": 252,
+      "frames": 15,
+      "stored_bytes": 147034,
+      "canonical_bytes": 524304,
+      "crc32": "e0391f01"
+    },
+    {
+      "tile": 253,
+      "frames": 8,
+      "stored_bytes": 119757,
+      "canonical_bytes": 409616,
+      "crc32": "69085396"
+    },
+    {
+      "tile": 254,
+      "frames": 11,
+      "stored_bytes": 134480,
+      "canonical_bytes": 524304,
+      "crc32": "062cda16"
+    },
+    {
+      "tile": 255,
+      "frames": 14,
+      "stored_bytes": 98633,
+      "canonical_bytes": 409616,
+      "crc32": "977de093"
+    },
+    {
+      "tile": 256,
+      "frames": 8,
+      "stored_bytes": 79282,
+      "canonical_bytes": 294928,
+      "crc32": "c01f334a"
+    },
+    {
+      "tile": 257,
+      "frames": 20,
+      "stored_bytes": 181239,
+      "canonical_bytes": 638992,
+      "crc32": "4d6e721a"
+    },
+    {
+      "tile": 258,
+      "frames": 37,
+      "stored_bytes": 196516,
+      "canonical_bytes": 524304,
+      "crc32": "44290a6b"
+    },
+    {
+      "tile": 259,
+      "frames": 15,
+      "stored_bytes": 119789,
+      "canonical_bytes": 524304,
+      "crc32": "face9df1"
+    },
+    {
+      "tile": 261,
+      "frames": 4,
+      "stored_bytes": 92968,
+      "canonical_bytes": 294928,
+      "crc32": "85c6402f"
+    },
+    {
+      "tile": 262,
+      "frames": 8,
+      "stored_bytes": 89202,
+      "canonical_bytes": 294928,
+      "crc32": "fee5b24f"
+    },
+    {
+      "tile": 263,
+      "frames": 1,
+      "stored_bytes": 71795,
+      "canonical_bytes": 180240,
+      "crc32": "8d80ef35"
+    },
+    {
+      "tile": 264,
+      "frames": 24,
+      "stored_bytes": 165968,
+      "canonical_bytes": 753680,
+      "crc32": "ca3afc96"
+    },
+    {
+      "tile": 265,
+      "frames": 27,
+      "stored_bytes": 173051,
+      "canonical_bytes": 753680,
+      "crc32": "15ff3445"
+    },
+    {
+      "tile": 274,
+      "frames": 13,
+      "stored_bytes": 93952,
+      "canonical_bytes": 409616,
+      "crc32": "45322313"
+    },
+    {
+      "tile": 275,
+      "frames": 17,
+      "stored_bytes": 128601,
+      "canonical_bytes": 524304,
+      "crc32": "06b15304"
+    },
+    {
+      "tile": 276,
+      "frames": 3,
+      "stored_bytes": 69337,
+      "canonical_bytes": 294928,
+      "crc32": "1a00fcb9"
+    },
+    {
+      "tile": 277,
+      "frames": 26,
+      "stored_bytes": 203165,
+      "canonical_bytes": 753680,
+      "crc32": "dfa31ce6"
+    },
+    {
+      "tile": 278,
+      "frames": 10,
+      "stored_bytes": 103779,
+      "canonical_bytes": 409616,
+      "crc32": "d9866751"
+    },
+    {
+      "tile": 279,
+      "frames": 3,
+      "stored_bytes": 69217,
+      "canonical_bytes": 294928,
+      "crc32": "6b19a7a4"
+    },
+    {
+      "tile": 280,
+      "frames": 7,
+      "stored_bytes": 73246,
+      "canonical_bytes": 409616,
+      "crc32": "b66e3187"
+    },
+    {
+      "tile": 281,
+      "frames": 6,
+      "stored_bytes": 86845,
+      "canonical_bytes": 409616,
+      "crc32": "0f89aeb4"
+    },
+    {
+      "tile": 282,
+      "frames": 2,
+      "stored_bytes": 66176,
+      "canonical_bytes": 294928,
+      "crc32": "1d993529"
+    },
+    {
+      "tile": 283,
+      "frames": 33,
+      "stored_bytes": 213532,
+      "canonical_bytes": 638992,
+      "crc32": "7afbd95f"
+    },
+    {
+      "tile": 284,
+      "frames": 12,
+      "stored_bytes": 124851,
+      "canonical_bytes": 638992,
+      "crc32": "2883c25e"
+    },
+    {
+      "tile": 285,
+      "frames": 23,
+      "stored_bytes": 157587,
+      "canonical_bytes": 524304,
+      "crc32": "3911d35a"
+    },
+    {
+      "tile": 286,
+      "frames": 34,
+      "stored_bytes": 287798,
+      "canonical_bytes": 753680,
+      "crc32": "b749968d"
+    },
+    {
+      "tile": 287,
+      "frames": 31,
+      "stored_bytes": 217955,
+      "canonical_bytes": 524304,
+      "crc32": "9da4e565"
+    },
+    {
+      "tile": 288,
+      "frames": 28,
+      "stored_bytes": 132972,
+      "canonical_bytes": 638992,
+      "crc32": "08996e83"
+    },
+    {
+      "tile": 289,
+      "frames": 22,
+      "stored_bytes": 129246,
+      "canonical_bytes": 524304,
+      "crc32": "1cca33f7"
+    },
+    {
+      "tile": 290,
+      "frames": 23,
+      "stored_bytes": 159797,
+      "canonical_bytes": 524304,
+      "crc32": "89ad1a14"
+    },
+    {
+      "tile": 291,
+      "frames": 21,
+      "stored_bytes": 183975,
+      "canonical_bytes": 524304,
+      "crc32": "b4ca52e0"
+    },
+    {
+      "tile": 292,
+      "frames": 13,
+      "stored_bytes": 107192,
+      "canonical_bytes": 524304,
+      "crc32": "360b4c3d"
+    },
+    {
+      "tile": 293,
+      "frames": 7,
+      "stored_bytes": 113841,
+      "canonical_bytes": 409616,
+      "crc32": "7d02b061"
+    },
+    {
+      "tile": 294,
+      "frames": 23,
+      "stored_bytes": 166977,
+      "canonical_bytes": 638992,
+      "crc32": "86289731"
+    },
+    {
+      "tile": 295,
+      "frames": 28,
+      "stored_bytes": 214302,
+      "canonical_bytes": 753680,
+      "crc32": "5f7e3ef4"
+    },
+    {
+      "tile": 296,
+      "frames": 13,
+      "stored_bytes": 198507,
+      "canonical_bytes": 753680,
+      "crc32": "4ad902e5"
+    },
+    {
+      "tile": 303,
+      "frames": 4,
+      "stored_bytes": 71703,
+      "canonical_bytes": 294928,
+      "crc32": "900d833a"
+    },
+    {
+      "tile": 304,
+      "frames": 8,
+      "stored_bytes": 89722,
+      "canonical_bytes": 409616,
+      "crc32": "51aa5c53"
+    },
+    {
+      "tile": 305,
+      "frames": 19,
+      "stored_bytes": 154948,
+      "canonical_bytes": 753680,
+      "crc32": "40f34868"
+    },
+    {
+      "tile": 306,
+      "frames": 2,
+      "stored_bytes": 68181,
+      "canonical_bytes": 294928,
+      "crc32": "453f82ad"
+    },
+    {
+      "tile": 307,
+      "frames": 27,
+      "stored_bytes": 184861,
+      "canonical_bytes": 524304,
+      "crc32": "e23b2a29"
+    },
+    {
+      "tile": 308,
+      "frames": 11,
+      "stored_bytes": 95595,
+      "canonical_bytes": 524304,
+      "crc32": "71911b75"
+    },
+    {
+      "tile": 309,
+      "frames": 30,
+      "stored_bytes": 235414,
+      "canonical_bytes": 753680,
+      "crc32": "ed45650d"
+    },
+    {
+      "tile": 310,
+      "frames": 9,
+      "stored_bytes": 104383,
+      "canonical_bytes": 524304,
+      "crc32": "cb37d490"
+    },
+    {
+      "tile": 311,
+      "frames": 3,
+      "stored_bytes": 70067,
+      "canonical_bytes": 294928,
+      "crc32": "72b78c2b"
+    },
+    {
+      "tile": 312,
+      "frames": 6,
+      "stored_bytes": 90335,
+      "canonical_bytes": 294928,
+      "crc32": "3d2544aa"
+    },
+    {
+      "tile": 313,
+      "frames": 8,
+      "stored_bytes": 131547,
+      "canonical_bytes": 524304,
+      "crc32": "3649c8cc"
+    },
+    {
+      "tile": 314,
+      "frames": 16,
+      "stored_bytes": 138590,
+      "canonical_bytes": 524304,
+      "crc32": "f534014d"
+    },
+    {
+      "tile": 315,
+      "frames": 26,
+      "stored_bytes": 157085,
+      "canonical_bytes": 638992,
+      "crc32": "f3838984"
+    },
+    {
+      "tile": 316,
+      "frames": 16,
+      "stored_bytes": 110770,
+      "canonical_bytes": 524304,
+      "crc32": "3138c3ed"
+    },
+    {
+      "tile": 317,
+      "frames": 12,
+      "stored_bytes": 83451,
+      "canonical_bytes": 524304,
+      "crc32": "9f66e519"
+    },
+    {
+      "tile": 318,
+      "frames": 25,
+      "stored_bytes": 167064,
+      "canonical_bytes": 524304,
+      "crc32": "cb7405a8"
+    },
+    {
+      "tile": 319,
+      "frames": 39,
+      "stored_bytes": 256568,
+      "canonical_bytes": 983056,
+      "crc32": "05d7463b"
+    },
+    {
+      "tile": 320,
+      "frames": 14,
+      "stored_bytes": 155603,
+      "canonical_bytes": 409616,
+      "crc32": "17e0f2bd"
+    },
+    {
+      "tile": 321,
+      "frames": 27,
+      "stored_bytes": 176986,
+      "canonical_bytes": 524304,
+      "crc32": "d232c9b8"
+    },
+    {
+      "tile": 322,
+      "frames": 23,
+      "stored_bytes": 195737,
+      "canonical_bytes": 753680,
+      "crc32": "dd945eae"
+    },
+    {
+      "tile": 323,
+      "frames": 16,
+      "stored_bytes": 121125,
+      "canonical_bytes": 638992,
+      "crc32": "aeca4e42"
+    },
+    {
+      "tile": 324,
+      "frames": 25,
+      "stored_bytes": 155739,
+      "canonical_bytes": 753680,
+      "crc32": "c1b2e49b"
+    },
+    {
+      "tile": 325,
+      "frames": 48,
+      "stored_bytes": 313002,
+      "canonical_bytes": 753680,
+      "crc32": "88758a3f"
+    },
+    {
+      "tile": 326,
+      "frames": 12,
+      "stored_bytes": 165331,
+      "canonical_bytes": 638992,
+      "crc32": "ac973c07"
+    },
+    {
+      "tile": 333,
+      "frames": 3,
+      "stored_bytes": 133777,
+      "canonical_bytes": 294928,
+      "crc32": "2838188d"
+    },
+    {
+      "tile": 334,
+      "frames": 15,
+      "stored_bytes": 86864,
+      "canonical_bytes": 409616,
+      "crc32": "e7c0fbdb"
+    },
+    {
+      "tile": 335,
+      "frames": 29,
+      "stored_bytes": 170703,
+      "canonical_bytes": 638992,
+      "crc32": "2b3b2369"
+    },
+    {
+      "tile": 336,
+      "frames": 1,
+      "stored_bytes": 65605,
+      "canonical_bytes": 180240,
+      "crc32": "f307ad2b"
+    },
+    {
+      "tile": 337,
+      "frames": 22,
+      "stored_bytes": 151886,
+      "canonical_bytes": 638992,
+      "crc32": "ee92adc6"
+    },
+    {
+      "tile": 338,
+      "frames": 25,
+      "stored_bytes": 176329,
+      "canonical_bytes": 638992,
+      "crc32": "81a13539"
+    },
+    {
+      "tile": 339,
+      "frames": 7,
+      "stored_bytes": 104851,
+      "canonical_bytes": 409616,
+      "crc32": "3bed3197"
+    },
+    {
+      "tile": 340,
+      "frames": 13,
+      "stored_bytes": 134342,
+      "canonical_bytes": 524304,
+      "crc32": "3362f398"
+    },
+    {
+      "tile": 341,
+      "frames": 23,
+      "stored_bytes": 181322,
+      "canonical_bytes": 524304,
+      "crc32": "fd14aecb"
+    },
+    {
+      "tile": 342,
+      "frames": 14,
+      "stored_bytes": 91403,
+      "canonical_bytes": 409616,
+      "crc32": "de013a35"
+    },
+    {
+      "tile": 343,
+      "frames": 7,
+      "stored_bytes": 78956,
+      "canonical_bytes": 294928,
+      "crc32": "d6ea7abf"
+    },
+    {
+      "tile": 344,
+      "frames": 7,
+      "stored_bytes": 87846,
+      "canonical_bytes": 524304,
+      "crc32": "3a9e6294"
+    },
+    {
+      "tile": 346,
+      "frames": 18,
+      "stored_bytes": 113092,
+      "canonical_bytes": 524304,
+      "crc32": "315b13ff"
+    },
+    {
+      "tile": 347,
+      "frames": 45,
+      "stored_bytes": 199204,
+      "canonical_bytes": 524304,
+      "crc32": "a0616658"
+    },
+    {
+      "tile": 348,
+      "frames": 34,
+      "stored_bytes": 179733,
+      "canonical_bytes": 524304,
+      "crc32": "8d3d267c"
+    },
+    {
+      "tile": 349,
+      "frames": 20,
+      "stored_bytes": 143694,
+      "canonical_bytes": 753680,
+      "crc32": "75390787"
+    },
+    {
+      "tile": 350,
+      "frames": 13,
+      "stored_bytes": 109607,
+      "canonical_bytes": 409616,
+      "crc32": "a879f604"
+    },
+    {
+      "tile": 351,
+      "frames": 35,
+      "stored_bytes": 319469,
+      "canonical_bytes": 753680,
+      "crc32": "5ad9d1d4"
+    },
+    {
+      "tile": 352,
+      "frames": 31,
+      "stored_bytes": 200955,
+      "canonical_bytes": 753680,
+      "crc32": "21799910"
+    },
+    {
+      "tile": 353,
+      "frames": 21,
+      "stored_bytes": 144465,
+      "canonical_bytes": 524304,
+      "crc32": "1bf9982b"
+    },
+    {
+      "tile": 354,
+      "frames": 16,
+      "stored_bytes": 105015,
+      "canonical_bytes": 524304,
+      "crc32": "14a9fe03"
+    },
+    {
+      "tile": 355,
+      "frames": 49,
+      "stored_bytes": 231623,
+      "canonical_bytes": 753680,
+      "crc32": "adb786af"
+    },
+    {
+      "tile": 356,
+      "frames": 14,
+      "stored_bytes": 199038,
+      "canonical_bytes": 524304,
+      "crc32": "7e60ce27"
+    },
+    {
+      "tile": 363,
+      "frames": 2,
+      "stored_bytes": 129356,
+      "canonical_bytes": 294928,
+      "crc32": "739df4ca"
+    },
+    {
+      "tile": 364,
+      "frames": 17,
+      "stored_bytes": 162531,
+      "canonical_bytes": 524304,
+      "crc32": "bd5218f4"
+    },
+    {
+      "tile": 365,
+      "frames": 32,
+      "stored_bytes": 176276,
+      "canonical_bytes": 638992,
+      "crc32": "96e02bbe"
+    },
+    {
+      "tile": 366,
+      "frames": 9,
+      "stored_bytes": 155073,
+      "canonical_bytes": 409616,
+      "crc32": "76a5ec89"
+    },
+    {
+      "tile": 367,
+      "frames": 37,
+      "stored_bytes": 248401,
+      "canonical_bytes": 638992,
+      "crc32": "bcf321de"
+    },
+    {
+      "tile": 368,
+      "frames": 12,
+      "stored_bytes": 143326,
+      "canonical_bytes": 524304,
+      "crc32": "4185fe69"
+    },
+    {
+      "tile": 369,
+      "frames": 15,
+      "stored_bytes": 146644,
+      "canonical_bytes": 409616,
+      "crc32": "8700119a"
+    },
+    {
+      "tile": 370,
+      "frames": 12,
+      "stored_bytes": 86621,
+      "canonical_bytes": 524304,
+      "crc32": "f8d78c47"
+    },
+    {
+      "tile": 371,
+      "frames": 24,
+      "stored_bytes": 165623,
+      "canonical_bytes": 524304,
+      "crc32": "3e89454a"
+    },
+    {
+      "tile": 372,
+      "frames": 45,
+      "stored_bytes": 215629,
+      "canonical_bytes": 524304,
+      "crc32": "e7f3feec"
+    },
+    {
+      "tile": 373,
+      "frames": 4,
+      "stored_bytes": 68363,
+      "canonical_bytes": 294928,
+      "crc32": "e8f5abdc"
+    },
+    {
+      "tile": 375,
+      "frames": 5,
+      "stored_bytes": 70254,
+      "canonical_bytes": 180240,
+      "crc32": "26735aef"
+    },
+    {
+      "tile": 376,
+      "frames": 8,
+      "stored_bytes": 96577,
+      "canonical_bytes": 409616,
+      "crc32": "adf5b5ce"
+    },
+    {
+      "tile": 377,
+      "frames": 30,
+      "stored_bytes": 210484,
+      "canonical_bytes": 524304,
+      "crc32": "743d122b"
+    },
+    {
+      "tile": 378,
+      "frames": 32,
+      "stored_bytes": 238896,
+      "canonical_bytes": 868368,
+      "crc32": "14f2c642"
+    },
+    {
+      "tile": 379,
+      "frames": 13,
+      "stored_bytes": 129842,
+      "canonical_bytes": 524304,
+      "crc32": "4c12822c"
+    },
+    {
+      "tile": 380,
+      "frames": 17,
+      "stored_bytes": 124556,
+      "canonical_bytes": 638992,
+      "crc32": "d9d50393"
+    },
+    {
+      "tile": 381,
+      "frames": 30,
+      "stored_bytes": 209624,
+      "canonical_bytes": 524304,
+      "crc32": "ba6714fa"
+    },
+    {
+      "tile": 382,
+      "frames": 33,
+      "stored_bytes": 273722,
+      "canonical_bytes": 753680,
+      "crc32": "9c7ffdf7"
+    },
+    {
+      "tile": 383,
+      "frames": 12,
+      "stored_bytes": 99981,
+      "canonical_bytes": 409616,
+      "crc32": "026938b7"
+    },
+    {
+      "tile": 384,
+      "frames": 21,
+      "stored_bytes": 140615,
+      "canonical_bytes": 524304,
+      "crc32": "50f88d6b"
+    },
+    {
+      "tile": 385,
+      "frames": 52,
+      "stored_bytes": 190466,
+      "canonical_bytes": 638992,
+      "crc32": "9276bb0e"
+    },
+    {
+      "tile": 386,
+      "frames": 5,
+      "stored_bytes": 106654,
+      "canonical_bytes": 409616,
+      "crc32": "b038cfd5"
+    },
+    {
+      "tile": 393,
+      "frames": 7,
+      "stored_bytes": 142346,
+      "canonical_bytes": 524304,
+      "crc32": "dd8831b4"
+    },
+    {
+      "tile": 394,
+      "frames": 33,
+      "stored_bytes": 195127,
+      "canonical_bytes": 524304,
+      "crc32": "d6431a57"
+    },
+    {
+      "tile": 395,
+      "frames": 34,
+      "stored_bytes": 196128,
+      "canonical_bytes": 524304,
+      "crc32": "25a6ffb3"
+    },
+    {
+      "tile": 396,
+      "frames": 3,
+      "stored_bytes": 67657,
+      "canonical_bytes": 294928,
+      "crc32": "5152ece4"
+    },
+    {
+      "tile": 397,
+      "frames": 8,
+      "stored_bytes": 120737,
+      "canonical_bytes": 409616,
+      "crc32": "2011fdc4"
+    },
+    {
+      "tile": 398,
+      "frames": 19,
+      "stored_bytes": 112753,
+      "canonical_bytes": 294928,
+      "crc32": "e8eff0c0"
+    },
+    {
+      "tile": 399,
+      "frames": 10,
+      "stored_bytes": 128499,
+      "canonical_bytes": 409616,
+      "crc32": "ed8a46eb"
+    },
+    {
+      "tile": 400,
+      "frames": 28,
+      "stored_bytes": 121262,
+      "canonical_bytes": 524304,
+      "crc32": "5488ffa9"
+    },
+    {
+      "tile": 401,
+      "frames": 9,
+      "stored_bytes": 71328,
+      "canonical_bytes": 294928,
+      "crc32": "a6352bd3"
+    },
+    {
+      "tile": 402,
+      "frames": 12,
+      "stored_bytes": 97191,
+      "canonical_bytes": 409616,
+      "crc32": "af989239"
+    },
+    {
+      "tile": 403,
+      "frames": 19,
+      "stored_bytes": 134443,
+      "canonical_bytes": 524304,
+      "crc32": "392fdb68"
+    },
+    {
+      "tile": 404,
+      "frames": 20,
+      "stored_bytes": 172304,
+      "canonical_bytes": 524304,
+      "crc32": "b5efba80"
+    },
+    {
+      "tile": 405,
+      "frames": 9,
+      "stored_bytes": 77388,
+      "canonical_bytes": 294928,
+      "crc32": "25bf1a06"
+    },
+    {
+      "tile": 406,
+      "frames": 21,
+      "stored_bytes": 119555,
+      "canonical_bytes": 638992,
+      "crc32": "3a48c7d2"
+    },
+    {
+      "tile": 407,
+      "frames": 11,
+      "stored_bytes": 78435,
+      "canonical_bytes": 409616,
+      "crc32": "d42caded"
+    },
+    {
+      "tile": 408,
+      "frames": 3,
+      "stored_bytes": 66512,
+      "canonical_bytes": 409616,
+      "crc32": "2404f306"
+    },
+    {
+      "tile": 409,
+      "frames": 19,
+      "stored_bytes": 126843,
+      "canonical_bytes": 638992,
+      "crc32": "18959a64"
+    },
+    {
+      "tile": 410,
+      "frames": 11,
+      "stored_bytes": 153585,
+      "canonical_bytes": 524304,
+      "crc32": "689db4ef"
+    },
+    {
+      "tile": 411,
+      "frames": 10,
+      "stored_bytes": 142629,
+      "canonical_bytes": 409616,
+      "crc32": "b4c25c65"
+    },
+    {
+      "tile": 412,
+      "frames": 37,
+      "stored_bytes": 264856,
+      "canonical_bytes": 524304,
+      "crc32": "cf12951a"
+    },
+    {
+      "tile": 413,
+      "frames": 23,
+      "stored_bytes": 144822,
+      "canonical_bytes": 524304,
+      "crc32": "e63bbb99"
+    },
+    {
+      "tile": 414,
+      "frames": 13,
+      "stored_bytes": 105712,
+      "canonical_bytes": 638992,
+      "crc32": "b70092ef"
+    },
+    {
+      "tile": 415,
+      "frames": 24,
+      "stored_bytes": 156988,
+      "canonical_bytes": 524304,
+      "crc32": "9ba28c56"
+    },
+    {
+      "tile": 416,
+      "frames": 5,
+      "stored_bytes": 75489,
+      "canonical_bytes": 294928,
+      "crc32": "69a2d8a8"
+    },
+    {
+      "tile": 423,
+      "frames": 2,
+      "stored_bytes": 79661,
+      "canonical_bytes": 180240,
+      "crc32": "ea5f63be"
+    },
+    {
+      "tile": 424,
+      "frames": 16,
+      "stored_bytes": 90490,
+      "canonical_bytes": 409616,
+      "crc32": "38c1cd5c"
+    },
+    {
+      "tile": 425,
+      "frames": 33,
+      "stored_bytes": 196407,
+      "canonical_bytes": 753680,
+      "crc32": "7476cf5e"
+    },
+    {
+      "tile": 427,
+      "frames": 13,
+      "stored_bytes": 115812,
+      "canonical_bytes": 409616,
+      "crc32": "bd7caf7c"
+    },
+    {
+      "tile": 428,
+      "frames": 17,
+      "stored_bytes": 178326,
+      "canonical_bytes": 524304,
+      "crc32": "2040c98d"
+    },
+    {
+      "tile": 429,
+      "frames": 11,
+      "stored_bytes": 127180,
+      "canonical_bytes": 524304,
+      "crc32": "4a8207da"
+    },
+    {
+      "tile": 430,
+      "frames": 15,
+      "stored_bytes": 90509,
+      "canonical_bytes": 524304,
+      "crc32": "eb2ccd5a"
+    },
+    {
+      "tile": 431,
+      "frames": 21,
+      "stored_bytes": 118725,
+      "canonical_bytes": 524304,
+      "crc32": "8737ea2d"
+    },
+    {
+      "tile": 432,
+      "frames": 38,
+      "stored_bytes": 162572,
+      "canonical_bytes": 638992,
+      "crc32": "75d5d057"
+    },
+    {
+      "tile": 433,
+      "frames": 36,
+      "stored_bytes": 201580,
+      "canonical_bytes": 638992,
+      "crc32": "905f65cd"
+    },
+    {
+      "tile": 434,
+      "frames": 9,
+      "stored_bytes": 85198,
+      "canonical_bytes": 409616,
+      "crc32": "c48392b7"
+    },
+    {
+      "tile": 435,
+      "frames": 19,
+      "stored_bytes": 177808,
+      "canonical_bytes": 524304,
+      "crc32": "786e37c8"
+    },
+    {
+      "tile": 436,
+      "frames": 16,
+      "stored_bytes": 144880,
+      "canonical_bytes": 638992,
+      "crc32": "48e025ae"
+    },
+    {
+      "tile": 437,
+      "frames": 12,
+      "stored_bytes": 89041,
+      "canonical_bytes": 409616,
+      "crc32": "2d0bbe4f"
+    },
+    {
+      "tile": 438,
+      "frames": 5,
+      "stored_bytes": 84804,
+      "canonical_bytes": 294928,
+      "crc32": "ea0127c8"
+    },
+    {
+      "tile": 439,
+      "frames": 9,
+      "stored_bytes": 119193,
+      "canonical_bytes": 524304,
+      "crc32": "fdf4b1e8"
+    },
+    {
+      "tile": 440,
+      "frames": 3,
+      "stored_bytes": 69177,
+      "canonical_bytes": 294928,
+      "crc32": "96e467af"
+    },
+    {
+      "tile": 441,
+      "frames": 24,
+      "stored_bytes": 213248,
+      "canonical_bytes": 753680,
+      "crc32": "26ae4dc2"
+    },
+    {
+      "tile": 442,
+      "frames": 30,
+      "stored_bytes": 209729,
+      "canonical_bytes": 753680,
+      "crc32": "3811a6d2"
+    },
+    {
+      "tile": 443,
+      "frames": 5,
+      "stored_bytes": 70174,
+      "canonical_bytes": 409616,
+      "crc32": "3d4139c3"
+    },
+    {
+      "tile": 444,
+      "frames": 9,
+      "stored_bytes": 138118,
+      "canonical_bytes": 409616,
+      "crc32": "70d0b23c"
+    },
+    {
+      "tile": 445,
+      "frames": 24,
+      "stored_bytes": 199128,
+      "canonical_bytes": 524304,
+      "crc32": "c654c877"
+    },
+    {
+      "tile": 446,
+      "frames": 2,
+      "stored_bytes": 66016,
+      "canonical_bytes": 294928,
+      "crc32": "f269fec9"
+    },
+    {
+      "tile": 454,
+      "frames": 21,
+      "stored_bytes": 116785,
+      "canonical_bytes": 638992,
+      "crc32": "bb02fe55"
+    },
+    {
+      "tile": 455,
+      "frames": 38,
+      "stored_bytes": 240887,
+      "canonical_bytes": 753680,
+      "crc32": "a0628242"
+    },
+    {
+      "tile": 457,
+      "frames": 2,
+      "stored_bytes": 74581,
+      "canonical_bytes": 294928,
+      "crc32": "2e914b2a"
+    },
+    {
+      "tile": 458,
+      "frames": 2,
+      "stored_bytes": 65946,
+      "canonical_bytes": 294928,
+      "crc32": "f3a944fe"
+    },
+    {
+      "tile": 459,
+      "frames": 1,
+      "stored_bytes": 65620,
+      "canonical_bytes": 180240,
+      "crc32": "ba2ed1b6"
+    },
+    {
+      "tile": 460,
+      "frames": 18,
+      "stored_bytes": 117642,
+      "canonical_bytes": 409616,
+      "crc32": "8f587130"
+    },
+    {
+      "tile": 461,
+      "frames": 23,
+      "stored_bytes": 104932,
+      "canonical_bytes": 409616,
+      "crc32": "74ffc462"
+    },
+    {
+      "tile": 462,
+      "frames": 29,
+      "stored_bytes": 200323,
+      "canonical_bytes": 524304,
+      "crc32": "51303ead"
+    },
+    {
+      "tile": 463,
+      "frames": 11,
+      "stored_bytes": 146180,
+      "canonical_bytes": 524304,
+      "crc32": "e90ef0a1"
+    },
+    {
+      "tile": 464,
+      "frames": 6,
+      "stored_bytes": 71600,
+      "canonical_bytes": 294928,
+      "crc32": "11393443"
+    },
+    {
+      "tile": 465,
+      "frames": 5,
+      "stored_bytes": 66729,
+      "canonical_bytes": 294928,
+      "crc32": "59e91dca"
+    },
+    {
+      "tile": 466,
+      "frames": 5,
+      "stored_bytes": 112419,
+      "canonical_bytes": 409616,
+      "crc32": "b1550818"
+    },
+    {
+      "tile": 467,
+      "frames": 26,
+      "stored_bytes": 132995,
+      "canonical_bytes": 524304,
+      "crc32": "85de558d"
+    },
+    {
+      "tile": 468,
+      "frames": 49,
+      "stored_bytes": 235268,
+      "canonical_bytes": 638992,
+      "crc32": "30ffc939"
+    },
+    {
+      "tile": 469,
+      "frames": 25,
+      "stored_bytes": 168909,
+      "canonical_bytes": 524304,
+      "crc32": "16cb349f"
+    },
+    {
+      "tile": 470,
+      "frames": 6,
+      "stored_bytes": 74375,
+      "canonical_bytes": 294928,
+      "crc32": "4a4f8cc4"
+    },
+    {
+      "tile": 471,
+      "frames": 32,
+      "stored_bytes": 176676,
+      "canonical_bytes": 753680,
+      "crc32": "a160a0ce"
+    },
+    {
+      "tile": 472,
+      "frames": 28,
+      "stored_bytes": 142852,
+      "canonical_bytes": 753680,
+      "crc32": "7e19636c"
+    },
+    {
+      "tile": 473,
+      "frames": 22,
+      "stored_bytes": 133946,
+      "canonical_bytes": 524304,
+      "crc32": "af4c1ffc"
+    },
+    {
+      "tile": 474,
+      "frames": 17,
+      "stored_bytes": 95556,
+      "canonical_bytes": 409616,
+      "crc32": "49de2248"
+    },
+    {
+      "tile": 475,
+      "frames": 17,
+      "stored_bytes": 103426,
+      "canonical_bytes": 524304,
+      "crc32": "cb7e7372"
+    },
+    {
+      "tile": 476,
+      "frames": 7,
+      "stored_bytes": 124216,
+      "canonical_bytes": 524304,
+      "crc32": "48aca0e1"
+    },
+    {
+      "tile": 484,
+      "frames": 23,
+      "stored_bytes": 125877,
+      "canonical_bytes": 753680,
+      "crc32": "2398b972"
+    },
+    {
+      "tile": 485,
+      "frames": 43,
+      "stored_bytes": 195932,
+      "canonical_bytes": 638992,
+      "crc32": "33c72e06"
+    },
+    {
+      "tile": 489,
+      "frames": 6,
+      "stored_bytes": 121065,
+      "canonical_bytes": 409616,
+      "crc32": "df425a7e"
+    },
+    {
+      "tile": 490,
+      "frames": 30,
+      "stored_bytes": 183689,
+      "canonical_bytes": 524304,
+      "crc32": "0da9b3cf"
+    },
+    {
+      "tile": 491,
+      "frames": 35,
+      "stored_bytes": 130139,
+      "canonical_bytes": 524304,
+      "crc32": "fdba0e95"
+    },
+    {
+      "tile": 492,
+      "frames": 40,
+      "stored_bytes": 191159,
+      "canonical_bytes": 638992,
+      "crc32": "807ca73a"
+    },
+    {
+      "tile": 493,
+      "frames": 14,
+      "stored_bytes": 157743,
+      "canonical_bytes": 524304,
+      "crc32": "b5430126"
+    },
+    {
+      "tile": 494,
+      "frames": 20,
+      "stored_bytes": 119559,
+      "canonical_bytes": 524304,
+      "crc32": "855e8779"
+    },
+    {
+      "tile": 495,
+      "frames": 10,
+      "stored_bytes": 81094,
+      "canonical_bytes": 409616,
+      "crc32": "90e8e2b3"
+    },
+    {
+      "tile": 496,
+      "frames": 5,
+      "stored_bytes": 72469,
+      "canonical_bytes": 409616,
+      "crc32": "74424b24"
+    },
+    {
+      "tile": 497,
+      "frames": 12,
+      "stored_bytes": 114736,
+      "canonical_bytes": 524304,
+      "crc32": "5bc22aeb"
+    },
+    {
+      "tile": 498,
+      "frames": 31,
+      "stored_bytes": 192950,
+      "canonical_bytes": 524304,
+      "crc32": "a80eae2d"
+    },
+    {
+      "tile": 499,
+      "frames": 28,
+      "stored_bytes": 165547,
+      "canonical_bytes": 409616,
+      "crc32": "7be08f10"
+    },
+    {
+      "tile": 500,
+      "frames": 34,
+      "stored_bytes": 190948,
+      "canonical_bytes": 638992,
+      "crc32": "444e4852"
+    },
+    {
+      "tile": 501,
+      "frames": 25,
+      "stored_bytes": 148569,
+      "canonical_bytes": 524304,
+      "crc32": "fc8da781"
+    },
+    {
+      "tile": 502,
+      "frames": 33,
+      "stored_bytes": 183552,
+      "canonical_bytes": 638992,
+      "crc32": "dd127f40"
+    },
+    {
+      "tile": 503,
+      "frames": 10,
+      "stored_bytes": 95004,
+      "canonical_bytes": 409616,
+      "crc32": "a4bcb39c"
+    },
+    {
+      "tile": 504,
+      "frames": 28,
+      "stored_bytes": 189752,
+      "canonical_bytes": 524304,
+      "crc32": "18ddbd5a"
+    },
+    {
+      "tile": 505,
+      "frames": 15,
+      "stored_bytes": 130159,
+      "canonical_bytes": 409616,
+      "crc32": "65b77818"
+    },
+    {
+      "tile": 506,
+      "frames": 5,
+      "stored_bytes": 72974,
+      "canonical_bytes": 294928,
+      "crc32": "1c47294d"
+    },
+    {
+      "tile": 514,
+      "frames": 1,
+      "stored_bytes": 65830,
+      "canonical_bytes": 180240,
+      "crc32": "e44f1970"
+    },
+    {
+      "tile": 515,
+      "frames": 1,
+      "stored_bytes": 65860,
+      "canonical_bytes": 180240,
+      "crc32": "cfe9df77"
+    },
+    {
+      "tile": 516,
+      "frames": 7,
+      "stored_bytes": 85536,
+      "canonical_bytes": 524304,
+      "crc32": "89ca1b70"
+    },
+    {
+      "tile": 517,
+      "frames": 8,
+      "stored_bytes": 77297,
+      "canonical_bytes": 409616,
+      "crc32": "da3c65f8"
+    },
+    {
+      "tile": 519,
+      "frames": 1,
+      "stored_bytes": 66820,
+      "canonical_bytes": 180240,
+      "crc32": "444e818a"
+    },
+    {
+      "tile": 520,
+      "frames": 6,
+      "stored_bytes": 68960,
+      "canonical_bytes": 294928,
+      "crc32": "25d61f98"
+    },
+    {
+      "tile": 521,
+      "frames": 15,
+      "stored_bytes": 105814,
+      "canonical_bytes": 524304,
+      "crc32": "386757bf"
+    },
+    {
+      "tile": 522,
+      "frames": 12,
+      "stored_bytes": 87536,
+      "canonical_bytes": 409616,
+      "crc32": "fb4c07c8"
+    },
+    {
+      "tile": 523,
+      "frames": 34,
+      "stored_bytes": 134473,
+      "canonical_bytes": 409616,
+      "crc32": "54846e2b"
+    },
+    {
+      "tile": 524,
+      "frames": 18,
+      "stored_bytes": 104057,
+      "canonical_bytes": 524304,
+      "crc32": "3badb3f8"
+    },
+    {
+      "tile": 525,
+      "frames": 16,
+      "stored_bytes": 109325,
+      "canonical_bytes": 409616,
+      "crc32": "48d96104"
+    },
+    {
+      "tile": 526,
+      "frames": 9,
+      "stored_bytes": 101378,
+      "canonical_bytes": 524304,
+      "crc32": "ee5c9e09"
+    },
+    {
+      "tile": 527,
+      "frames": 9,
+      "stored_bytes": 122303,
+      "canonical_bytes": 524304,
+      "crc32": "2f84d719"
+    },
+    {
+      "tile": 528,
+      "frames": 10,
+      "stored_bytes": 77299,
+      "canonical_bytes": 294928,
+      "crc32": "00d9ecac"
+    },
+    {
+      "tile": 529,
+      "frames": 19,
+      "stored_bytes": 131443,
+      "canonical_bytes": 409616,
+      "crc32": "155afe93"
+    },
+    {
+      "tile": 530,
+      "frames": 18,
+      "stored_bytes": 132082,
+      "canonical_bytes": 524304,
+      "crc32": "233787fd"
+    },
+    {
+      "tile": 531,
+      "frames": 24,
+      "stored_bytes": 139753,
+      "canonical_bytes": 409616,
+      "crc32": "ec513796"
+    },
+    {
+      "tile": 532,
+      "frames": 23,
+      "stored_bytes": 96137,
+      "canonical_bytes": 638992,
+      "crc32": "33c98099"
+    },
+    {
+      "tile": 533,
+      "frames": 14,
+      "stored_bytes": 86723,
+      "canonical_bytes": 409616,
+      "crc32": "7e13f851"
+    },
+    {
+      "tile": 534,
+      "frames": 37,
+      "stored_bytes": 176251,
+      "canonical_bytes": 524304,
+      "crc32": "042bfa9f"
+    },
+    {
+      "tile": 535,
+      "frames": 16,
+      "stored_bytes": 117125,
+      "canonical_bytes": 409616,
+      "crc32": "cfd64729"
+    },
+    {
+      "tile": 536,
+      "frames": 5,
+      "stored_bytes": 83309,
+      "canonical_bytes": 294928,
+      "crc32": "05aaf9a1"
+    },
+    {
+      "tile": 546,
+      "frames": 21,
+      "stored_bytes": 120455,
+      "canonical_bytes": 753680,
+      "crc32": "6226d710"
+    },
+    {
+      "tile": 547,
+      "frames": 46,
+      "stored_bytes": 222440,
+      "canonical_bytes": 753680,
+      "crc32": "239bd79c"
+    },
+    {
+      "tile": 548,
+      "frames": 24,
+      "stored_bytes": 154173,
+      "canonical_bytes": 638992,
+      "crc32": "c9bea38f"
+    },
+    {
+      "tile": 549,
+      "frames": 27,
+      "stored_bytes": 124431,
+      "canonical_bytes": 524304,
+      "crc32": "6d469d74"
+    },
+    {
+      "tile": 550,
+      "frames": 24,
+      "stored_bytes": 173623,
+      "canonical_bytes": 524304,
+      "crc32": "3accceb4"
+    },
+    {
+      "tile": 551,
+      "frames": 12,
+      "stored_bytes": 123381,
+      "canonical_bytes": 409616,
+      "crc32": "db549eb8"
+    },
+    {
+      "tile": 552,
+      "frames": 13,
+      "stored_bytes": 135312,
+      "canonical_bytes": 409616,
+      "crc32": "a54e31dc"
+    },
+    {
+      "tile": 553,
+      "frames": 34,
+      "stored_bytes": 204228,
+      "canonical_bytes": 524304,
+      "crc32": "7842cc17"
+    },
+    {
+      "tile": 554,
+      "frames": 45,
+      "stored_bytes": 255674,
+      "canonical_bytes": 524304,
+      "crc32": "331f6115"
+    },
+    {
+      "tile": 555,
+      "frames": 24,
+      "stored_bytes": 171988,
+      "canonical_bytes": 638992,
+      "crc32": "ac2082c1"
+    },
+    {
+      "tile": 556,
+      "frames": 17,
+      "stored_bytes": 119251,
+      "canonical_bytes": 524304,
+      "crc32": "cc299a45"
+    },
+    {
+      "tile": 557,
+      "frames": 11,
+      "stored_bytes": 125060,
+      "canonical_bytes": 409616,
+      "crc32": "8bbaae3f"
+    },
+    {
+      "tile": 558,
+      "frames": 18,
+      "stored_bytes": 117857,
+      "canonical_bytes": 524304,
+      "crc32": "2f1cf4c0"
+    },
+    {
+      "tile": 559,
+      "frames": 19,
+      "stored_bytes": 150208,
+      "canonical_bytes": 524304,
+      "crc32": "d2cfd8e5"
+    },
+    {
+      "tile": 560,
+      "frames": 19,
+      "stored_bytes": 137303,
+      "canonical_bytes": 409616,
+      "crc32": "9f843964"
+    },
+    {
+      "tile": 561,
+      "frames": 31,
+      "stored_bytes": 169820,
+      "canonical_bytes": 524304,
+      "crc32": "59179bd5"
+    },
+    {
+      "tile": 562,
+      "frames": 38,
+      "stored_bytes": 156732,
+      "canonical_bytes": 524304,
+      "crc32": "e99640c6"
+    },
+    {
+      "tile": 563,
+      "frames": 16,
+      "stored_bytes": 102395,
+      "canonical_bytes": 524304,
+      "crc32": "1c4d6025"
+    },
+    {
+      "tile": 564,
+      "frames": 26,
+      "stored_bytes": 205145,
+      "canonical_bytes": 638992,
+      "crc32": "5deaac35"
+    },
+    {
+      "tile": 565,
+      "frames": 24,
+      "stored_bytes": 183143,
+      "canonical_bytes": 753680,
+      "crc32": "1d431e90"
+    },
+    {
+      "tile": 566,
+      "frames": 27,
+      "stored_bytes": 237081,
+      "canonical_bytes": 983056,
+      "crc32": "4ff8681e"
+    },
+    {
+      "tile": 578,
+      "frames": 2,
+      "stored_bytes": 66311,
+      "canonical_bytes": 180240,
+      "crc32": "6d2bbc91"
+    },
+    {
+      "tile": 579,
+      "frames": 3,
+      "stored_bytes": 69232,
+      "canonical_bytes": 409616,
+      "crc32": "c1b5fb53"
+    },
+    {
+      "tile": 581,
+      "frames": 7,
+      "stored_bytes": 96806,
+      "canonical_bytes": 409616,
+      "crc32": "1d665493"
+    },
+    {
+      "tile": 582,
+      "frames": 7,
+      "stored_bytes": 79026,
+      "canonical_bytes": 294928,
+      "crc32": "19dcbc53"
+    },
+    {
+      "tile": 583,
+      "frames": 8,
+      "stored_bytes": 115797,
+      "canonical_bytes": 294928,
+      "crc32": "ce846b7b"
+    },
+    {
+      "tile": 584,
+      "frames": 13,
+      "stored_bytes": 148137,
+      "canonical_bytes": 409616,
+      "crc32": "31865c59"
+    },
+    {
+      "tile": 585,
+      "frames": 13,
+      "stored_bytes": 164137,
+      "canonical_bytes": 524304,
+      "crc32": "38027b3a"
+    },
+    {
+      "tile": 586,
+      "frames": 14,
+      "stored_bytes": 160333,
+      "canonical_bytes": 524304,
+      "crc32": "3726e06b"
+    },
+    {
+      "tile": 587,
+      "frames": 7,
+      "stored_bytes": 156411,
+      "canonical_bytes": 524304,
+      "crc32": "5fa1454b"
+    },
+    {
+      "tile": 588,
+      "frames": 7,
+      "stored_bytes": 131001,
+      "canonical_bytes": 409616,
+      "crc32": "9000112e"
+    },
+    {
+      "tile": 589,
+      "frames": 7,
+      "stored_bytes": 96496,
+      "canonical_bytes": 409616,
+      "crc32": "67b47f82"
+    },
+    {
+      "tile": 590,
+      "frames": 7,
+      "stored_bytes": 125911,
+      "canonical_bytes": 409616,
+      "crc32": "4a2927b3"
+    },
+    {
+      "tile": 591,
+      "frames": 8,
+      "stored_bytes": 134652,
+      "canonical_bytes": 409616,
+      "crc32": "457cd2ce"
+    },
+    {
+      "tile": 592,
+      "frames": 9,
+      "stored_bytes": 70028,
+      "canonical_bytes": 294928,
+      "crc32": "3dad7dd9"
+    },
+    {
+      "tile": 593,
+      "frames": 8,
+      "stored_bytes": 115577,
+      "canonical_bytes": 524304,
+      "crc32": "44f10d82"
+    },
+    {
+      "tile": 594,
+      "frames": 25,
+      "stored_bytes": 235314,
+      "canonical_bytes": 638992,
+      "crc32": "2a9eec08"
+    },
+    {
+      "tile": 595,
+      "frames": 33,
+      "stored_bytes": 219387,
+      "canonical_bytes": 638992,
+      "crc32": "c658dd5a"
+    },
+    {
+      "tile": 596,
+      "frames": 17,
+      "stored_bytes": 112866,
+      "canonical_bytes": 638992,
+      "crc32": "05c71d36"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+In file included from C:\Users\ASUS\Documents\ChatGPT\bbk H1\BBKH1-DOTA2\build\v030\sprite-pipeline\hot-prototype\baked_scene.c:839:
+C:\Users\ASUS\Documents\ChatGPT\bbk H1\BBKH1-DOTA2\build\v030\sprite-pipeline\hot-prototype\compressed_cache.h: In function 'cache_dense_prepare':
+C:\Users\ASUS\Documents\ChatGPT\bbk H1\BBKH1-DOTA2\build\v030\sprite-pipeline\hot-prototype\compressed_cache.h:29:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   29 |     if(start>dense_capacity-size)start=0;end=start+size;
+      |     ^~
+C:\Users\ASUS\Documents\ChatGPT\bbk H1\BBKH1-DOTA2\build\v030\sprite-pipeline\hot-prototype\compressed_cache.h:29:42: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   29 |     if(start>dense_capacity-size)start=0;end=start+size;
+      |                                          ^~~

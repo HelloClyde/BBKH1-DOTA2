@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "version": "0.30",
+  "target": "BBK H1 / Y100 V1.41",
+  "bda_sha256": "33a650a25ef78ce16250cd3875f9be2ec6e7d831e6bd4d0ba775b5f1f83be857",
+  "bda_bytes": 1078080,
+  "elf_sha256": "06a527609df12e8ff6a7d8e5588039446b0dc04b31b4e4556a5b43df4d9ff47e",
+  "sdk_commit": "067fe072477861dfc8949d7b1a55279fb92d2548",
+  "binary": {
+    "abi": {
+      "DotaGame": 179008,
+      "DotaUnit": 240,
+      "DotaView": 148
+    },
+    "entry": "0x83c00020",
+    "stack_bytes": 65536,
+    "application_ram_end": "0x83fef230",
+    "ram_limit": "0x83ff0000",
+    "ram_margin_bytes": 3536,
+    "static_bss_bytes": 3012368,
+    "payload_matches_elf": true
+  },
+  "physical_h1_game_tested": true,
+  "functional_h1_passed": null,
+  "hardware_deployment_verified": true,
+  "all_current_offline_checks_passed": null,
+  "game_state_ram_writes_to_device": 0,
+  "resource_bundle": {
+    "DOTA2.H1R": {
+      "path": "assets/runtime/DOTA2.H1R",
+      "bytes": 112861448,
+      "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153"
+    }
+  },
+  "runtime_acceptance": "Passed normal-input loading,11 short FPS windows, pause/resume, camera, audio and normal exit/cleanup. Full feature acceptance is not claimed.",
+  "installation_report": {
+    "path": "provenance/verification/v0.30/performance/deployment/perf-union-deploy.json",
+    "sha256": "554949db9b09b4e033c736061a6152a60b3019314411ea67750c19d635abc8c9"
+  },
+  "release_pin_created": false,
+  "github_updated": false,
+  "physical_h1_launch_attempted": true,
+  "performance_acceptance_passed": true,
+  "full_feature_acceptance_complete": false,
+  "performance_evidence_index": {
+    "path": "provenance/verification/v0.30/performance/INDEX.json",
+    "sha256": "09f78726f838f7fd3e06c03f3dbb25a24313ef4506ef67da400ae92ce6b4d8f8"
+  },
+  "physical_fps": {
+    "scope": "One aligned normal-input run per binary,11 windows about8s each, natural first-wave only; no walking/team-fight/all-scenes15FPS claim.",
+    "comparison": {
+      "path": "provenance/verification/v0.30/performance/ALIGNED-COMPARISON.json",
+      "sha256": "2c86802164454af853370a798aba5c44b53a3138cfb4f693f80323dbbf8aebe7"
+    },
+    "final_active_window_fps_range": [
+      12.86213786218199,
+      20.086083213678794
+    ],
+    "final_post_horn_active_fps": [
+      15.220510261407505,
+      14.208263226753218
+    ]
+  },
+  "historical_startup_failure": {
+    "path": "provenance/verification/v0.30/performance/baseline-startup-failed.json",
+    "sha256": "80e553114af20de7f3d4ee3de2aab3cd13a7b525764a3b10616d5740df8fac40",
+    "asset_error": 17,
+    "debug_error": 37,
+    "B_volume_errno": 9,
+    "drive_count_at_failure": 1,
+    "resolved_by_full_reboot": true
+  },
+  "full_reboot_receipt": {
+    "path": "provenance/verification/v0.30/performance/storage/after-full-reboot.json",
+    "sha256": "f494e325c9ef703b1b632cc5cada4806f32a6a2f6048ef0926d51f9933670d57"
+  },
+  "offline_verification_scope": "Original broad feature checks are historical/inherited. Fresh final-BDA vision/tree MIPS, host union and exact CPU-output comparison are archived; no claim of rerunning every feature suite.",
+  "historical_feature_evidence_index": {
+    "path": "provenance/verification/v0.30/INDEX.json",
+    "sha256": "d0c18a4bbd2a3546577e9bac6d62e561fed51e9d3702851370f75c225b5a9b7a"
+  }
+}

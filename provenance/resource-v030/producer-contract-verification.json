@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "actual_core": false,
+  "actual_mips32": false,
+  "physical_h1_tested": false,
+  "scope": "Offline producer/reader binary contract probes; native runtime tested independently.",
+  "cases": 4,
+  "checks": 10504,
+  "coverage": [
+    "delta16+bounded raw DEFLATE vectors and malformed tails",
+    "261 arbitrary/cross-span SCENE virtual reads including tables, orphan gap and item/font footer",
+    "independent raw SOUND file descriptors and 512 random/interleaved reads",
+    "header, span page, chunk page and payload corruption rejected; source archive unchanged"
+  ],
+  "pack": {
+    "bytes": 112861448,
+    "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153",
+    "crc32": 2930151348
+  },
+  "tool_sha256": "d9656946e4cc45bbc34608f3ab60e22da98f42c01f51bb4ea31f9313e48e62f1",
+  "test_sha256": "7ecfedb9cd1d3a5ff791a3c4381143ac35957c26c1477c556a29e4fc24e13c07"
+}

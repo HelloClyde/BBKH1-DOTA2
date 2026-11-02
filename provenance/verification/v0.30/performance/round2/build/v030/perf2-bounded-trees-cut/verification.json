@@ -1,0 +1,1891 @@
+{
+  "passed": true,
+  "physical_H1_tested": true,
+  "USB_opened": true,
+  "normal_inputs_only": true,
+  "game_state_ram_writes": 0,
+  "bda_sha256": "b79b98ce7d6389b060cc5b586d8631178bc28bea5e886bf74e0e86762d0bd81f",
+  "elf_sha256": "4ad690a9666a2a332a8db221f7aedda52cbe21f69e9c642608a132535c7b05c6",
+  "driver_sha256": "5c325f11e3d14c63a3db9cfb11c46c488cacaa72c2184c912d225c81fc20ab8b",
+  "deployed_resource": {
+    "filename": "DOTA2.H1R",
+    "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153",
+    "bytes": 112861448,
+    "identity_basis": "Frozen build metadata and root copy/readback receipt when provided; driver does not rewrite or rehash the device file"
+  },
+  "PC_only_reference_assets": {
+    "directory": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\legacy",
+    "SCENE_sha256": "c312840584571c0958b8409da729ea945ecbf557a55ab6030ff0d2d9cbef78dd",
+    "TREE_legacy_sha256": "cb665855d9b4d8c20f2e0603492ed4425cb11a2c3763f51eadf30c5d9162aa80",
+    "purpose": "Offline crown hit-test and original navigation reference only; not deployed resource files"
+  },
+  "linked_offline_evidence": {
+    "resource_stream_equality": {
+      "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\resource-prefetch-regression\\verification.json",
+      "sha256": "b861901c2abb5216e3ef0784313842f85cc90620591f8c5b13f70642910bcf11",
+      "SCENE_stream_sha256": "c312840584571c0958b8409da729ea945ecbf557a55ab6030ff0d2d9cbef78dd",
+      "TREE_stream_sha256": "129200c5bdfc8c0f7c75d64b34a3e025c03b4244fea75c89a80c215420248256"
+    },
+    "tree_sparse_canonical_equality": {
+      "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\tree-sparse\\decoder-final\\verification.json",
+      "sha256": "0c474be7daf5e89c4d5eee1513e7e06277dd6c4cfa40476043c02606e0b276be",
+      "legacy_reference_sha256": "cb665855d9b4d8c20f2e0603492ed4425cb11a2c3763f51eadf30c5d9162aa80",
+      "sparse_transport_sha256": "129200c5bdfc8c0f7c75d64b34a3e025c03b4244fea75c89a80c215420248256",
+      "canonical_compared_bytes": 184424128
+    }
+  },
+  "layouts": {
+    "DotaItemEffect": {
+      "generation": 0,
+      "ticks": 4,
+      "interval": 6,
+      "value": 8,
+      "tag": 12,
+      "source": 14,
+      "target": 15,
+      "kind": 16,
+      "pad": 17
+    },
+    "DotaItemsState": {
+      "tracked": 0,
+      "cooldown": 140,
+      "active_ticks": 280,
+      "charges": 420,
+      "buy_age": 560,
+      "proc_wait": 700,
+      "uses": 840,
+      "toggle_bits": 910,
+      "pad": 920,
+      "hit_proc": 922,
+      "hit_pad": 932,
+      "soul_mana": 936,
+      "soul_until": 976,
+      "rapier_owner": 1016,
+      "generation": 1088,
+      "inventory_hash": 1128,
+      "permanent": 1168,
+      "cache": 1208,
+      "aura": 2208,
+      "income_fraction": 3208,
+      "regen_transfer_fraction": 3248,
+      "neutral_item": 3288,
+      "neutral": 3328,
+      "effect_active": 3980,
+      "effects": 3996,
+      "stocks": 6556,
+      "last_tick": 6844,
+      "recursion": 6848,
+      "reflection_guard": 6852,
+      "special": 6856,
+      "backpack": 12092,
+      "inactive_ticks": 12932,
+      "backpack_seen": 13052,
+      "backpack_rate_phase": 13112,
+      "backpack_grace_until": 13172
+    },
+    "DotaTreesState": {
+      "cut": 0,
+      "regrow_at": 268,
+      "cut_count": 4494,
+      "revision": 4496
+    },
+    "DotaUnit": {
+      "active": 0,
+      "type": 4,
+      "team": 8,
+      "hero_id": 12,
+      "lane": 16,
+      "tier": 20,
+      "x": 24,
+      "y": 28,
+      "hp": 32,
+      "max_hp": 36,
+      "mana": 40,
+      "max_mana": 44,
+      "damage": 48,
+      "armor": 52,
+      "range": 56,
+      "speed": 60,
+      "level": 64,
+      "xp": 68,
+      "gold": 72,
+      "inventory": 76,
+      "cooldown": 100,
+      "attack_wait": 116,
+      "respawn_ticks": 120,
+      "target": 124,
+      "waypoint": 128,
+      "move_order": 132,
+      "move_x": 136,
+      "move_y": 140,
+      "stun_ticks": 144,
+      "slow_ticks": 148,
+      "taunt_ticks": 152,
+      "taunt_source": 156,
+      "dot_ticks": 160,
+      "dot_damage": 164,
+      "dot_source": 168,
+      "buff_ticks": 172,
+      "channel_ticks": 176,
+      "heal_ticks": 180,
+      "skill_ticks": 184,
+      "skill_x": 200,
+      "skill_y": 204,
+      "kills": 208,
+      "deaths": 212,
+      "last_damage_team": 216,
+      "last_damage_source": 220,
+      "generation": 224,
+      "learned": 228,
+      "attribute_bonus_rank": 232,
+      "progression_padding": 233,
+      "talents": 234,
+      "calculated_armor100": 236
+    },
+    "DotaGame": {
+      "units": 0,
+      "effects": 61200,
+      "seed": 62064,
+      "tick": 62068,
+      "state": 62072,
+      "paused": 62076,
+      "player": 62080,
+      "selected_hero": 62084,
+      "wave": 62088,
+      "spawn_wait": 62092,
+      "kills": 62096,
+      "bases": 62104,
+      "towers": 62112,
+      "last_event": 62160,
+      "last_event_ticks": 62164,
+      "last_event_value": 62168,
+      "player_path": 62172,
+      "player_path_count": 62684,
+      "player_path_index": 62688,
+      "skill_event_serial": 62692,
+      "skill_event_count": 62696,
+      "skill_events": 62700,
+      "skill_effect_tags": 66540,
+      "projectiles": 66636,
+      "attack_event_serial": 71436,
+      "attack_event_count": 71440,
+      "attack_events": 71444,
+      "neutral_state": 75796,
+      "neutral_respawn": 75900,
+      "neutral_group": 76004,
+      "neutral_regen_fraction": 76030,
+      "summon_owner": 76224,
+      "summon_owner_generation": 76240,
+      "summon_life": 76256,
+      "unit_routes": 76272,
+      "navigation_tick": 87492,
+      "navigation_searches": 87496,
+      "navigation_nodes": 87500,
+      "player_path_complete": 87504,
+      "passive_stacks": 87508,
+      "passive_wait": 87548,
+      "passive_mana_fraction": 87588,
+      "passive_generation": 87628,
+      "passive_move_fraction": 87668,
+      "movement": 87708,
+      "tormentor": 92808,
+      "omnislash": 92840,
+      "assists": 93160,
+      "assist_tick": 93200,
+      "assist_generation": 93600,
+      "hero_dot_source_generation": 93640,
+      "bosses": 93680,
+      "objectives": 93844,
+      "couriers": 94016,
+      "turbo": 95020,
+      "extra": 95060,
+      "items": 128976,
+      "item_world": 142388,
+      "roster": 149440,
+      "progression": 170072,
+      "attack_crit_percent": 172716,
+      "culling": 172756,
+      "cast_target_plus_one": 172916,
+      "cast_target_generation": 172920,
+      "runes": 172924,
+      "trees": 173584,
+      "cast_orders": 178084,
+      "match_stats": 178804
+    },
+    "DotaView": {
+      "screen": 0,
+      "hero": 4,
+      "shop_item": 8,
+      "camera_x": 12,
+      "camera_y": 16,
+      "target_x": 20,
+      "target_y": 24,
+      "aim_skill": 28,
+      "follow": 32,
+      "frames": 36,
+      "scoreboard": 40,
+      "shop_category": 44,
+      "shop_details": 48,
+      "shop_scroll": 52,
+      "aim_item": 56,
+      "skills_return_screen": 60,
+      "skills_selected": 64,
+      "skills_details": 68,
+      "skills_scroll": 72,
+      "inventory_source": 76,
+      "inventory_hover": 80,
+      "inventory_mode": 84,
+      "drag_x": 88,
+      "drag_y": 92,
+      "ward_mode": 96,
+      "help_return_screen": 100,
+      "help_page": 104,
+      "pause_selected": 108,
+      "history": 112,
+      "result_record": 116,
+      "history_page": 120,
+      "history_selected": 124,
+      "history_mode": 128,
+      "result_selected": 132,
+      "result_detail": 136,
+      "save_error": 140,
+      "history_return_screen": 144
+    },
+    "ResourceStats": {
+      "mounted": 0,
+      "version": 4,
+      "file_bytes": 8,
+      "open_files": 12,
+      "heap_bytes": 16,
+      "last_error": 20,
+      "mount_attempts": 24,
+      "open_attempts": 28,
+      "read_requests": 32,
+      "bytes_returned": 36,
+      "physical_reads": 40,
+      "physical_bytes": 44,
+      "seeks": 48,
+      "index_hits": 52,
+      "index_misses": 56,
+      "chunk_hits": 60,
+      "chunk_misses": 64,
+      "decoded_chunks": 68,
+      "decoded_bytes": 72,
+      "service_calls": 76,
+      "errors": 80
+    },
+    "DotaCacheDebug": {
+      "magic": 0,
+      "version": 4,
+      "rgb_bytes": 8,
+      "sprite_bytes": 12,
+      "resident_frames": 16,
+      "scene_heap_bytes": 20,
+      "io_bytes": 24,
+      "io_heap_bytes": 28,
+      "rules_bytes": 32,
+      "total_heap_bytes": 36,
+      "fallback_flags": 40,
+      "released": 44,
+      "icon_slots": 48,
+      "icon_heap_bytes": 52,
+      "audio_heap_bytes": 56,
+      "vision_heap_bytes": 60
+    }
+  },
+  "sizes": {
+    "DotaItemEffect": 20,
+    "DotaItemsState": 13412,
+    "DotaTreesState": 4500,
+    "DotaUnit": 240,
+    "DotaGame": 179008,
+    "DotaView": 148,
+    "ResourceStats": 84,
+    "DotaCacheDebug": 64
+  },
+  "checks": [
+    {
+      "name": "Idle debug desktop before launch",
+      "passed": true
+    },
+    {
+      "name": "startup-main-menu resource ownership healthy",
+      "passed": true,
+      "resource_stats": {
+        "mounted": 1,
+        "version": 1,
+        "file_bytes": 112861448,
+        "open_files": 4,
+        "heap_bytes": 133204,
+        "last_error": 0,
+        "mount_attempts": 1,
+        "open_attempts": 5,
+        "read_requests": 1635,
+        "bytes_returned": 14666838,
+        "physical_reads": 1544,
+        "physical_bytes": 10006228,
+        "seeks": 947,
+        "index_hits": 6414,
+        "index_misses": 630,
+        "chunk_hits": 1556,
+        "chunk_misses": 2744,
+        "decoded_chunks": 2295,
+        "decoded_bytes": 14572290,
+        "service_calls": 50,
+        "errors": 0
+      },
+      "cache_heap": {
+        "magic": 826495048,
+        "version": 3,
+        "rgb_bytes": 0,
+        "sprite_bytes": 14680064,
+        "resident_frames": 44278,
+        "scene_heap_bytes": 16263736,
+        "io_bytes": 262144,
+        "io_heap_bytes": 396116,
+        "rules_bytes": 112040,
+        "total_heap_bytes": 19489641,
+        "fallback_flags": 0,
+        "released": 0,
+        "icon_slots": 64,
+        "icon_heap_bytes": 111616,
+        "audio_heap_bytes": 804685,
+        "vision_heap_bytes": 1801448
+      }
+    },
+    {
+      "name": "Loaded new code matches frozen BDA samples",
+      "passed": true,
+      "samples": {
+        "tree_visual_open": true,
+        "resource_mount": true,
+        "resource_read_at": true,
+        "dota_trees_cut": true,
+        "dota_extra_tick": true,
+        "h1_dota_present": true
+      }
+    },
+    {
+      "name": "Fresh Axe game",
+      "passed": true
+    },
+    {
+      "name": "fresh-game resource ownership healthy",
+      "passed": true,
+      "resource_stats": {
+        "mounted": 1,
+        "version": 1,
+        "file_bytes": 112861448,
+        "open_files": 4,
+        "heap_bytes": 133204,
+        "last_error": 0,
+        "mount_attempts": 1,
+        "open_attempts": 5,
+        "read_requests": 1681,
+        "bytes_returned": 15516749,
+        "physical_reads": 1686,
+        "physical_bytes": 10992420,
+        "seeks": 1039,
+        "index_hits": 6707,
+        "index_misses": 684,
+        "chunk_hits": 1557,
+        "chunk_misses": 2917,
+        "decoded_chunks": 2441,
+        "decoded_bytes": 15419561,
+        "service_calls": 222,
+        "errors": 0
+      },
+      "cache_heap": {
+        "magic": 826495048,
+        "version": 3,
+        "rgb_bytes": 0,
+        "sprite_bytes": 14680064,
+        "resident_frames": 44278,
+        "scene_heap_bytes": 16263736,
+        "io_bytes": 262144,
+        "io_heap_bytes": 396116,
+        "rules_bytes": 112040,
+        "total_heap_bytes": 19493864,
+        "fallback_flags": 0,
+        "released": 0,
+        "icon_slots": 64,
+        "icon_heap_bytes": 111616,
+        "audio_heap_bytes": 808908,
+        "vision_heap_bytes": 1801448
+      }
+    },
+    {
+      "name": "Six-button keyboard grid selects final bottom-left cell",
+      "passed": true
+    },
+    {
+      "name": "Help controls opened from pause",
+      "passed": true
+    },
+    {
+      "name": "Copyright/about tab active",
+      "passed": true
+    },
+    {
+      "name": "Pause/help/about/skill navigation leaves full Game unchanged",
+      "passed": true
+    },
+    {
+      "name": "Axe recommended opening selects Tango57",
+      "passed": true
+    },
+    {
+      "name": "All catalogue selects Quelling Blade17",
+      "passed": true
+    },
+    {
+      "name": "Both purchased tree items delivered",
+      "passed": true,
+      "inventory": [
+        57,
+        17,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "name": "Tree item enters point aiming",
+      "passed": true
+    },
+    {
+      "name": "Original static tree cut by normal crown touch",
+      "passed": true,
+      "tree_id": 2061,
+      "world": [
+        512,
+        3680
+      ],
+      "crown_screen": [
+        229,
+        109
+      ],
+      "cut_tick_interval": [
+        327,
+        337
+      ],
+      "regrow_deadline_mod65536": 3931
+    },
+    {
+      "name": "Tango consumes exactly one charge and starts original16s buff",
+      "passed": true,
+      "charges_before": 3,
+      "charges_after": 2,
+      "remaining_regen_ticks": [
+        314
+      ]
+    },
+    {
+      "name": "Tree item enters point aiming",
+      "passed": true
+    },
+    {
+      "name": "Original static tree cut by normal crown touch",
+      "passed": true,
+      "tree_id": 2056,
+      "world": [
+        512,
+        3712
+      ],
+      "crown_screen": [
+        237,
+        107
+      ],
+      "cut_tick_interval": [
+        762,
+        772
+      ],
+      "regrow_deadline_mod65536": 4366
+    },
+    {
+      "name": "Quelling Blade remains equipped and starts cooldown",
+      "passed": true
+    },
+    {
+      "name": "trees-cut-live tree/audio/resources healthy",
+      "passed": true
+    },
+    {
+      "name": "normal-exit resource ownership healthy",
+      "passed": true,
+      "resource_stats": {
+        "mounted": 0,
+        "version": 0,
+        "file_bytes": 0,
+        "open_files": 0,
+        "heap_bytes": 0,
+        "last_error": 0,
+        "mount_attempts": 1,
+        "open_attempts": 5,
+        "read_requests": 2371,
+        "bytes_returned": 20674387,
+        "physical_reads": 2635,
+        "physical_bytes": 16170372,
+        "seeks": 1458,
+        "index_hits": 8451,
+        "index_misses": 888,
+        "chunk_hits": 1711,
+        "chunk_misses": 3814,
+        "decoded_chunks": 3199,
+        "decoded_bytes": 19264827,
+        "service_calls": 1120,
+        "errors": 0
+      },
+      "cache_heap": {
+        "magic": 826495048,
+        "version": 3,
+        "rgb_bytes": 0,
+        "sprite_bytes": 14680064,
+        "resident_frames": 44278,
+        "scene_heap_bytes": 18342740,
+        "io_bytes": 262144,
+        "io_heap_bytes": 396116,
+        "rules_bytes": 112040,
+        "total_heap_bytes": 0,
+        "fallback_flags": 0,
+        "released": 1,
+        "icon_slots": 64,
+        "icon_heap_bytes": 111616,
+        "audio_heap_bytes": 910695,
+        "vision_heap_bytes": 1801448
+      }
+    },
+    {
+      "name": "Normal exit frees all unified resource and application heap",
+      "passed": true
+    },
+    {
+      "name": "Normal exit frees all tree allocations and closes its file",
+      "passed": true
+    },
+    {
+      "name": "Normal exit releases audio and keeps debugger healthy",
+      "passed": true
+    }
+  ],
+  "actions": [
+    {
+      "key": "ENTER",
+      "receipt": {
+        "keys_low": 16777216,
+        "keys_high": 0,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "BACK",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 256,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "DOWN",
+      "receipt": {
+        "keys_low": 67108864,
+        "keys_high": 0,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "LEFT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 128,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "LEFT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 128,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "tap": [
+        90,
+        174
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 90,
+        "y": 174,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.21799999999348074
+      }
+    },
+    {
+      "tap": [
+        230,
+        46
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 230,
+        "y": 46,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.23399999999674037
+      }
+    },
+    {
+      "tap": [
+        456,
+        12
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 456,
+        "y": 12,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.21899999998277053
+      }
+    },
+    {
+      "tap": [
+        390,
+        104
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 390,
+        "y": 104,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.20300000003771856
+      }
+    },
+    {
+      "key": "BACK",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 256,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "tap": [
+        240,
+        174
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 240,
+        "y": 174,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.23399999999674037
+      }
+    },
+    {
+      "key": "ENTER",
+      "receipt": {
+        "keys_low": 16777216,
+        "keys_high": 0,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "BACK",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 256,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "tap": [
+        90,
+        104
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 90,
+        "y": 104,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.2029999999795109
+      }
+    },
+    {
+      "key": "M",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 8,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "T",
+      "receipt": {
+        "keys_low": 16,
+        "keys_high": 0,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "ENTER",
+      "receipt": {
+        "keys_low": 16777216,
+        "keys_high": 0,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "tap": [
+        24,
+        36
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 24,
+        "y": 36,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.23399999999674037
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "RIGHT",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "ENTER",
+      "receipt": {
+        "keys_low": 16777216,
+        "keys_high": 0,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "BACK",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 256,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "key": "K",
+      "receipt": {
+        "keys_low": 2147483648,
+        "keys_high": 0,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "tap": [
+        110,
+        242
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 110,
+        "y": 242,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.2190000000409782
+      }
+    },
+    {
+      "tree_candidate": 2061,
+      "world": [
+        512,
+        3680
+      ],
+      "source_clear_path": [
+        [
+          376,
+          3720
+        ],
+        [
+          392,
+          3720
+        ],
+        [
+          408,
+          3720
+        ],
+        [
+          424,
+          3720
+        ],
+        [
+          440,
+          3720
+        ],
+        [
+          440,
+          3704
+        ],
+        [
+          440,
+          3688
+        ],
+        [
+          440,
+          3672
+        ],
+        [
+          440,
+          3656
+        ],
+        [
+          440,
+          3640
+        ],
+        [
+          456,
+          3640
+        ],
+        [
+          456,
+          3624
+        ],
+        [
+          472,
+          3624
+        ],
+        [
+          472,
+          3608
+        ],
+        [
+          488,
+          3608
+        ],
+        [
+          504,
+          3608
+        ],
+        [
+          520,
+          3608
+        ],
+        [
+          520,
+          3624
+        ],
+        [
+          520,
+          3640
+        ],
+        [
+          520,
+          3656
+        ]
+      ]
+    },
+    {
+      "tap": [
+        343,
+        102
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 343,
+        "y": 102,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.2029999999795109
+      }
+    },
+    {
+      "key": "Z",
+      "receipt": {
+        "keys_low": 32768,
+        "keys_high": 0,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "tap": [
+        229,
+        109
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 229,
+        "y": 109,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.18800000002374873
+      }
+    },
+    {
+      "tree_candidate": 2056,
+      "world": [
+        512,
+        3712
+      ],
+      "source_clear_path": [
+        [
+          520,
+          3656
+        ],
+        [
+          520,
+          3672
+        ],
+        [
+          520,
+          3688
+        ]
+      ]
+    },
+    {
+      "tap": [
+        241,
+        136
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 241,
+        "y": 136,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.18799999996554106
+      }
+    },
+    {
+      "key": "X",
+      "receipt": {
+        "keys_low": 65536,
+        "keys_high": 0,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "tap": [
+        237,
+        107
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 237,
+        "y": 107,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.2029999999795109
+      }
+    },
+    {
+      "key": "BACK",
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 256,
+        "lease_ticks": 20,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "tap": [
+        390,
+        174
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 390,
+        "y": 174,
+        "hold_seconds": 0.18,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.20300000003771856
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "build/v030/perf2-bounded-trees-cut/pause-six-buttons.png",
+      "sha256": "04738f98bc124cd126fdde3c16ddf22fa2121754991ec8dd40de35e2b2f2c4b6",
+      "receipt": {
+        "token": 25,
+        "width": 480,
+        "height": 272,
+        "stride": 1920,
+        "format": 2,
+        "total": 522240,
+        "source": 2710577152,
+        "tick": 392919,
+        "codec": "rle",
+        "transfer": {
+          "codec": "rle",
+          "decoded_bytes": 522240,
+          "encoded_bytes": 50845,
+          "requests": 103,
+          "protocol_bytes_sent": 2884,
+          "protocol_bytes_received": 54141,
+          "elapsed_seconds": 1.625,
+          "decoded_bytes_per_second": 321378.46153846156,
+          "progress_callback": false,
+          "scope": "SCREEN_READ RPCs; protocol framing included, USB packet overhead excluded"
+        },
+        "capture_elapsed_seconds": 1.6880000000237487,
+        "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\perf2-bounded-trees-cut\\pause-six-buttons.png",
+        "snapshot_sha256": "b76d1a9828bc664296602259705eff136e02ac3b7c17d37b9098bbf72716d76a",
+        "png_sha256": "04738f98bc124cd126fdde3c16ddf22fa2121754991ec8dd40de35e2b2f2c4b6"
+      }
+    },
+    {
+      "path": "build/v030/perf2-bounded-trees-cut/help-controls.png",
+      "sha256": "696be5cf9426cfb51ede0aa40703365747b7eb0767ca247f6bafee988ec34ebe",
+      "receipt": {
+        "token": 26,
+        "width": 480,
+        "height": 272,
+        "stride": 1920,
+        "format": 2,
+        "total": 522240,
+        "source": 2710577152,
+        "tick": 393081,
+        "codec": "rle",
+        "transfer": {
+          "codec": "rle",
+          "decoded_bytes": 522240,
+          "encoded_bytes": 44564,
+          "requests": 93,
+          "protocol_bytes_sent": 2604,
+          "protocol_bytes_received": 47540,
+          "elapsed_seconds": 1.75,
+          "decoded_bytes_per_second": 298422.85714285716,
+          "progress_callback": false,
+          "scope": "SCREEN_READ RPCs; protocol framing included, USB packet overhead excluded"
+        },
+        "capture_elapsed_seconds": 1.8589999999967404,
+        "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\perf2-bounded-trees-cut\\help-controls.png",
+        "snapshot_sha256": "d2b279fe0e128fff69fb2f7d4e97bf0cd8af8ed0918f9ed8bc74f6605038040f",
+        "png_sha256": "696be5cf9426cfb51ede0aa40703365747b7eb0767ca247f6bafee988ec34ebe"
+      }
+    },
+    {
+      "path": "build/v030/perf2-bounded-trees-cut/help-about.png",
+      "sha256": "765529a440b61ccf3a70b7c33914eb4b2b5563eaeb7aeaad776082b88441704f",
+      "receipt": {
+        "token": 27,
+        "width": 480,
+        "height": 272,
+        "stride": 1920,
+        "format": 2,
+        "total": 522240,
+        "source": 2710577152,
+        "tick": 393177,
+        "codec": "rle",
+        "transfer": {
+          "codec": "rle",
+          "decoded_bytes": 522240,
+          "encoded_bytes": 39290,
+          "requests": 82,
+          "protocol_bytes_sent": 2296,
+          "protocol_bytes_received": 41914,
+          "elapsed_seconds": 1.797000000020489,
+          "decoded_bytes_per_second": 290617.6961569535,
+          "progress_callback": false,
+          "scope": "SCREEN_READ RPCs; protocol framing included, USB packet overhead excluded"
+        },
+        "capture_elapsed_seconds": 1.875,
+        "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\perf2-bounded-trees-cut\\help-about.png",
+        "snapshot_sha256": "e84e76cd46184df7c94505b1cbb0db99b58e431bfa4e6645cb2fbf74d8bfe8cd",
+        "png_sha256": "765529a440b61ccf3a70b7c33914eb4b2b5563eaeb7aeaad776082b88441704f"
+      }
+    },
+    {
+      "path": "build/v030/perf2-bounded-trees-cut/before-tree-2061.png",
+      "sha256": "661f776b6478efd04e27b8f1ff98f47906accb873a719fbfbc14813102031c59",
+      "receipt": {
+        "token": 28,
+        "width": 480,
+        "height": 272,
+        "stride": 1920,
+        "format": 2,
+        "total": 522240,
+        "source": 2710577152,
+        "tick": 394183,
+        "codec": "rle",
+        "transfer": {
+          "codec": "rle",
+          "decoded_bytes": 522240,
+          "encoded_bytes": 274116,
+          "requests": 555,
+          "protocol_bytes_sent": 15540,
+          "protocol_bytes_received": 291876,
+          "elapsed_seconds": 9.35899999999674,
+          "decoded_bytes_per_second": 55800.83342239362,
+          "progress_callback": false,
+          "scope": "SCREEN_READ RPCs; protocol framing included, USB packet overhead excluded"
+        },
+        "capture_elapsed_seconds": 9.40600000001723,
+        "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\perf2-bounded-trees-cut\\before-tree-2061.png",
+        "snapshot_sha256": "12e438257a9d6bff2392b72d4f247b0c78f673d88c2eb99dedfcea91b2f140b1",
+        "png_sha256": "661f776b6478efd04e27b8f1ff98f47906accb873a719fbfbc14813102031c59"
+      }
+    },
+    {
+      "path": "build/v030/perf2-bounded-trees-cut/after-tree-2061.png",
+      "sha256": "97b6203e423f2bba17fcd79ef49c643051bdf58f97c5703ae63ed8c3862119c7",
+      "receipt": {
+        "token": 29,
+        "width": 480,
+        "height": 272,
+        "stride": 1920,
+        "format": 2,
+        "total": 522240,
+        "source": 2710577152,
+        "tick": 394592,
+        "codec": "rle",
+        "transfer": {
+          "codec": "rle",
+          "decoded_bytes": 522240,
+          "encoded_bytes": 290410,
+          "requests": 588,
+          "protocol_bytes_sent": 16464,
+          "protocol_bytes_received": 309226,
+          "elapsed_seconds": 10.09399999998277,
+          "decoded_bytes_per_second": 51737.66594025079,
+          "progress_callback": false,
+          "scope": "SCREEN_READ RPCs; protocol framing included, USB packet overhead excluded"
+        },
+        "capture_elapsed_seconds": 10.202999999979511,
+        "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\perf2-bounded-trees-cut\\after-tree-2061.png",
+        "snapshot_sha256": "865222d19f882ed30089443e696cd3d2a0e9e01d23e0a442d80fd3c4aa4c174f",
+        "png_sha256": "97b6203e423f2bba17fcd79ef49c643051bdf58f97c5703ae63ed8c3862119c7"
+      }
+    },
+    {
+      "path": "build/v030/perf2-bounded-trees-cut/before-tree-2056.png",
+      "sha256": "ac4267ed6c586cbbab743d7bc6c779758479988f88eb700eb9cf994efd5b724f",
+      "receipt": {
+        "token": 30,
+        "width": 480,
+        "height": 272,
+        "stride": 1920,
+        "format": 2,
+        "total": 522240,
+        "source": 2710577152,
+        "tick": 395041,
+        "codec": "rle",
+        "transfer": {
+          "codec": "rle",
+          "decoded_bytes": 522240,
+          "encoded_bytes": 266224,
+          "requests": 539,
+          "protocol_bytes_sent": 15092,
+          "protocol_bytes_received": 283472,
+          "elapsed_seconds": 9.687000000034459,
+          "decoded_bytes_per_second": 53911.4276863985,
+          "progress_callback": false,
+          "scope": "SCREEN_READ RPCs; protocol framing included, USB packet overhead excluded"
+        },
+        "capture_elapsed_seconds": 9.75,
+        "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\perf2-bounded-trees-cut\\before-tree-2056.png",
+        "snapshot_sha256": "ab1e50c7175d79a4e65c0495cab838e50d7cc72645c182f08434a95d4fd0ed2b",
+        "png_sha256": "ac4267ed6c586cbbab743d7bc6c779758479988f88eb700eb9cf994efd5b724f"
+      }
+    },
+    {
+      "path": "build/v030/perf2-bounded-trees-cut/after-tree-2056.png",
+      "sha256": "d322ca0608eac7298184dfba07ccc566df17655cecaf4aa1da6d3a88a092e315",
+      "receipt": {
+        "token": 31,
+        "width": 480,
+        "height": 272,
+        "stride": 1920,
+        "format": 2,
+        "total": 522240,
+        "source": 2710577152,
+        "tick": 395463,
+        "codec": "rle",
+        "transfer": {
+          "codec": "rle",
+          "decoded_bytes": 522240,
+          "encoded_bytes": 282369,
+          "requests": 572,
+          "protocol_bytes_sent": 16016,
+          "protocol_bytes_received": 300673,
+          "elapsed_seconds": 9.5,
+          "decoded_bytes_per_second": 54972.63157894737,
+          "progress_callback": false,
+          "scope": "SCREEN_READ RPCs; protocol framing included, USB packet overhead excluded"
+        },
+        "capture_elapsed_seconds": 9.578000000037719,
+        "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\perf2-bounded-trees-cut\\after-tree-2056.png",
+        "snapshot_sha256": "24149c4283dc28c9223657f3cf5a41ca20c1fbe1c20d81fc71d20ece3c6c2ab7",
+        "png_sha256": "d322ca0608eac7298184dfba07ccc566df17655cecaf4aa1da6d3a88a092e315"
+      }
+    }
+  ],
+  "regrow_samples": [],
+  "profiles": [
+    {
+      "name": "trees-cut-live",
+      "fps": 17.769002961560393,
+      "frames": 54,
+      "seconds": 3.0389999999897555,
+      "pc_timing": "Midpoints of completed-frame counter reads; earlier audio/resource/heap RPCs are inside the measured interval",
+      "tree": [
+        1,
+        1,
+        0,
+        2120200,
+        41196,
+        1014028,
+        1064976,
+        122,
+        453306,
+        236960,
+        4,
+        4,
+        328986,
+        928746,
+        0,
+        0
+      ],
+      "audio_before": [
+        826365252,
+        1,
+        0,
+        1,
+        24576,
+        2613000,
+        0,
+        388,
+        1567264,
+        5227,
+        12,
+        32,
+        0,
+        24,
+        0,
+        0,
+        15,
+        14,
+        910695,
+        844756,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0
+      ],
+      "audio_after": [
+        826365252,
+        1,
+        0,
+        1,
+        24576,
+        2712000,
+        0,
+        400,
+        1616416,
+        5423,
+        12,
+        32,
+        0,
+        25,
+        0,
+        0,
+        15,
+        14,
+        910695,
+        844756,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0
+      ],
+      "resource_stats_before": {
+        "mounted": 1,
+        "version": 1,
+        "file_bytes": 112861448,
+        "open_files": 4,
+        "heap_bytes": 133204,
+        "last_error": 0,
+        "mount_attempts": 1,
+        "open_attempts": 5,
+        "read_requests": 2338,
+        "bytes_returned": 20539219,
+        "physical_reads": 2602,
+        "physical_bytes": 16035204,
+        "seeks": 1458,
+        "index_hits": 8451,
+        "index_misses": 888,
+        "chunk_hits": 1711,
+        "chunk_misses": 3814,
+        "decoded_chunks": 3199,
+        "decoded_bytes": 19264827,
+        "service_calls": 1120,
+        "errors": 0
+      },
+      "resource_stats_after": {
+        "mounted": 1,
+        "version": 1,
+        "file_bytes": 112861448,
+        "open_files": 4,
+        "heap_bytes": 133204,
+        "last_error": 0,
+        "mount_attempts": 1,
+        "open_attempts": 5,
+        "read_requests": 2350,
+        "bytes_returned": 20588371,
+        "physical_reads": 2614,
+        "physical_bytes": 16084356,
+        "seeks": 1458,
+        "index_hits": 8451,
+        "index_misses": 888,
+        "chunk_hits": 1711,
+        "chunk_misses": 3814,
+        "decoded_chunks": 3199,
+        "decoded_bytes": 19264827,
+        "service_calls": 1120,
+        "errors": 0
+      },
+      "cache_heap_before": {
+        "magic": 826495048,
+        "version": 3,
+        "rgb_bytes": 0,
+        "sprite_bytes": 14680064,
+        "resident_frames": 44278,
+        "scene_heap_bytes": 18342740,
+        "io_bytes": 262144,
+        "io_heap_bytes": 396116,
+        "rules_bytes": 112040,
+        "total_heap_bytes": 21674655,
+        "fallback_flags": 0,
+        "released": 0,
+        "icon_slots": 64,
+        "icon_heap_bytes": 111616,
+        "audio_heap_bytes": 910695,
+        "vision_heap_bytes": 1801448
+      },
+      "cache_heap_after": {
+        "magic": 826495048,
+        "version": 3,
+        "rgb_bytes": 0,
+        "sprite_bytes": 14680064,
+        "resident_frames": 44278,
+        "scene_heap_bytes": 18342740,
+        "io_bytes": 262144,
+        "io_heap_bytes": 396116,
+        "rules_bytes": 112040,
+        "total_heap_bytes": 21674655,
+        "fallback_flags": 0,
+        "released": 0,
+        "icon_slots": 64,
+        "icon_heap_bytes": 111616,
+        "audio_heap_bytes": 910695,
+        "vision_heap_bytes": 1801448
+      }
+    }
+  ],
+  "resource_samples": [
+    {
+      "name": "startup-main-menu",
+      "resource_stats": {
+        "mounted": 1,
+        "version": 1,
+        "file_bytes": 112861448,
+        "open_files": 4,
+        "heap_bytes": 133204,
+        "last_error": 0,
+        "mount_attempts": 1,
+        "open_attempts": 5,
+        "read_requests": 1635,
+        "bytes_returned": 14666838,
+        "physical_reads": 1544,
+        "physical_bytes": 10006228,
+        "seeks": 947,
+        "index_hits": 6414,
+        "index_misses": 630,
+        "chunk_hits": 1556,
+        "chunk_misses": 2744,
+        "decoded_chunks": 2295,
+        "decoded_bytes": 14572290,
+        "service_calls": 50,
+        "errors": 0
+      },
+      "cache_heap": {
+        "magic": 826495048,
+        "version": 3,
+        "rgb_bytes": 0,
+        "sprite_bytes": 14680064,
+        "resident_frames": 44278,
+        "scene_heap_bytes": 16263736,
+        "io_bytes": 262144,
+        "io_heap_bytes": 396116,
+        "rules_bytes": 112040,
+        "total_heap_bytes": 19489641,
+        "fallback_flags": 0,
+        "released": 0,
+        "icon_slots": 64,
+        "icon_heap_bytes": 111616,
+        "audio_heap_bytes": 804685,
+        "vision_heap_bytes": 1801448
+      }
+    },
+    {
+      "name": "fresh-game",
+      "resource_stats": {
+        "mounted": 1,
+        "version": 1,
+        "file_bytes": 112861448,
+        "open_files": 4,
+        "heap_bytes": 133204,
+        "last_error": 0,
+        "mount_attempts": 1,
+        "open_attempts": 5,
+        "read_requests": 1681,
+        "bytes_returned": 15516749,
+        "physical_reads": 1686,
+        "physical_bytes": 10992420,
+        "seeks": 1039,
+        "index_hits": 6707,
+        "index_misses": 684,
+        "chunk_hits": 1557,
+        "chunk_misses": 2917,
+        "decoded_chunks": 2441,
+        "decoded_bytes": 15419561,
+        "service_calls": 222,
+        "errors": 0
+      },
+      "cache_heap": {
+        "magic": 826495048,
+        "version": 3,
+        "rgb_bytes": 0,
+        "sprite_bytes": 14680064,
+        "resident_frames": 44278,
+        "scene_heap_bytes": 16263736,
+        "io_bytes": 262144,
+        "io_heap_bytes": 396116,
+        "rules_bytes": 112040,
+        "total_heap_bytes": 19493864,
+        "fallback_flags": 0,
+        "released": 0,
+        "icon_slots": 64,
+        "icon_heap_bytes": 111616,
+        "audio_heap_bytes": 808908,
+        "vision_heap_bytes": 1801448
+      }
+    },
+    {
+      "name": "normal-exit",
+      "resource_stats": {
+        "mounted": 0,
+        "version": 0,
+        "file_bytes": 0,
+        "open_files": 0,
+        "heap_bytes": 0,
+        "last_error": 0,
+        "mount_attempts": 1,
+        "open_attempts": 5,
+        "read_requests": 2371,
+        "bytes_returned": 20674387,
+        "physical_reads": 2635,
+        "physical_bytes": 16170372,
+        "seeks": 1458,
+        "index_hits": 8451,
+        "index_misses": 888,
+        "chunk_hits": 1711,
+        "chunk_misses": 3814,
+        "decoded_chunks": 3199,
+        "decoded_bytes": 19264827,
+        "service_calls": 1120,
+        "errors": 0
+      },
+      "cache_heap": {
+        "magic": 826495048,
+        "version": 3,
+        "rgb_bytes": 0,
+        "sprite_bytes": 14680064,
+        "resident_frames": 44278,
+        "scene_heap_bytes": 18342740,
+        "io_bytes": 262144,
+        "io_heap_bytes": 396116,
+        "rules_bytes": 112040,
+        "total_heap_bytes": 0,
+        "fallback_flags": 0,
+        "released": 1,
+        "icon_slots": 64,
+        "icon_heap_bytes": 111616,
+        "audio_heap_bytes": 910695,
+        "vision_heap_bytes": 1801448
+      }
+    }
+  ],
+  "launch": {
+    "path": "A:\\应用\\程序\\DOTA2.bda",
+    "operation": "desktop_run",
+    "before": {
+      "job_id": 14,
+      "kind": 2,
+      "state": 4,
+      "error": 0,
+      "menu_idle": 1,
+      "app_index": 83,
+      "entry_count": 9,
+      "return_code": 0,
+      "state_name": "done"
+    },
+    "completed": true,
+    "request_sent": true,
+    "job_id": 15,
+    "status": {
+      "job_id": 15,
+      "kind": 2,
+      "state": 3,
+      "error": 0,
+      "menu_idle": 0,
+      "app_index": 83,
+      "entry_count": 10,
+      "return_code": 0,
+      "state_name": "running"
+    },
+    "payload_started": true,
+    "elapsed_seconds": 0.25
+  },
+  "physical_natural_regrow_tested": false,
+  "acceptance_scope": "Normal-input menu/help, purchasing/delivery, Tango and Quelling Blade cuts, live tree/audio/resource checks and normal cleanup; natural regrowth was not tested in this run.",
+  "tree_after_exit": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    122,
+    453306,
+    277756,
+    4,
+    4,
+    403904,
+    1088640,
+    1,
+    1
+  ],
+  "audio_after_exit": [
+    826365252,
+    0,
+    0,
+    4294967295,
+    0,
+    2886000,
+    0,
+    421,
+    1702432,
+    5767,
+    12,
+    33,
+    0,
+    25,
+    0,
+    0,
+    16,
+    16,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    4,
+    0,
+    0,
+    0
+  ],
+  "debug_after_exit": {
+    "version": 1,
+    "state": 1,
+    "usb_configured": 1,
+    "usb_fault": 0,
+    "usb_resets": 2,
+    "commands": 38714,
+    "bad_frames": 0,
+    "tick": 396195,
+    "poll_count": 11463640,
+    "last_poll_tick": 396195,
+    "resident_base": 2186122624,
+    "resident_size": 727104,
+    "keys_low": 0,
+    "keys_high": 0,
+    "exec_state": 5,
+    "last_error": 0
+  },
+  "cache_after_exit": {
+    "magic": 826495048,
+    "version": 3,
+    "rgb_bytes": 0,
+    "sprite_bytes": 14680064,
+    "resident_frames": 44278,
+    "scene_heap_bytes": 18342740,
+    "io_bytes": 262144,
+    "io_heap_bytes": 396116,
+    "rules_bytes": 112040,
+    "total_heap_bytes": 0,
+    "fallback_flags": 0,
+    "released": 1,
+    "icon_slots": 64,
+    "icon_heap_bytes": 111616,
+    "audio_heap_bytes": 910695,
+    "vision_heap_bytes": 1801448
+  }
+}

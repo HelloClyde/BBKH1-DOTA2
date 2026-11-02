@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "physical_h1_tested": false,
+  "diagnostic_only": true,
+  "profile_source_sha256": "ca707d47f9bd43241d5137ff5e00d8d68499f78883ca3158aa1b8b4f8bdb697f",
+  "results": [
+    {
+      "snapshot": "fountain-paused-game.bin",
+      "label": "base8treebyte",
+      "mean_slots": 1338676.0,
+      "base_mean_slots": 1526371.0,
+      "reduction_percent": 12.296813815251992,
+      "workspace_bytes": 1662184,
+      "all_game_fog_visibility_byte_identical": true,
+      "compared_files": {
+        "fog-000.bin": true,
+        "fog-001.bin": true,
+        "fog-002.bin": true,
+        "fog-003.bin": true,
+        "fog-004.bin": true,
+        "fog-005.bin": true,
+        "fog-006.bin": true,
+        "fog-007.bin": true,
+        "game-000.bin": true,
+        "game-001.bin": true,
+        "game-002.bin": true,
+        "game-003.bin": true,
+        "game-004.bin": true,
+        "game-005.bin": true,
+        "game-006.bin": true,
+        "game-007.bin": true,
+        "start-game.bin": true
+      },
+      "getter_checks": 1
+    },
+    {
+      "snapshot": "post-horn-paused-game.bin",
+      "label": "base8treebyte",
+      "mean_slots": 2055279.25,
+      "base_mean_slots": 2264268.125,
+      "reduction_percent": 9.229864285617676,
+      "workspace_bytes": 1662184,
+      "all_game_fog_visibility_byte_identical": true,
+      "compared_files": {
+        "fog-000.bin": true,
+        "fog-001.bin": true,
+        "fog-002.bin": true,
+        "fog-003.bin": true,
+        "fog-004.bin": true,
+        "fog-005.bin": true,
+        "fog-006.bin": true,
+        "fog-007.bin": true,
+        "game-000.bin": true,
+        "game-001.bin": true,
+        "game-002.bin": true,
+        "game-003.bin": true,
+        "game-004.bin": true,
+        "game-005.bin": true,
+        "game-006.bin": true,
+        "game-007.bin": true,
+        "start-game.bin": true
+      },
+      "getter_checks": 1
+    }
+  ],
+  "scope": "Exact diagnostic-BDA height alternatives; instruction slots are not FPS."
+}

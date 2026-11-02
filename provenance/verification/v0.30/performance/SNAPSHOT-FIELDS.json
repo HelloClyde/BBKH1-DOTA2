@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "readonly_analysis": true,
+  "elf_sha256": "06a527609df12e8ff6a7d8e5588039446b0dc04b31b4e4556a5b43df4d9ff47e",
+  "offsets_derived_from_elf_DWARF": {
+    "x": 24,
+    "y": 28,
+    "kills": 208,
+    "deaths": 212
+  },
+  "unit_bytes": 240,
+  "snapshots": {
+    "perf-baseline-aligned": {
+      "fountain-paused-game.bin": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 0
+      },
+      "mid-paused-game.bin": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 0
+      },
+      "post-horn-paused-game.bin": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 1
+      }
+    },
+    "perf-union-aligned": {
+      "fountain-paused-game.bin": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 0
+      },
+      "mid-paused-game.bin": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 0
+      },
+      "post-horn-paused-game.bin": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 1
+      }
+    }
+  },
+  "scope": "Pause snapshots only. Both runs have one death before the last snapshot; these samples do not prove that the hero never moved."
+}

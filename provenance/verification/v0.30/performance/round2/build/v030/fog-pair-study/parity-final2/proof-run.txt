@@ -1,0 +1,1 @@
+{"passed":true,"checks":3145728,"all_65536_colors_in_both_lanes":true,"edge_neighbors":8,"random_pairs":2097152}

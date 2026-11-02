@@ -12,6 +12,8 @@
 #include "item_world_data.h"
 #include "runes_state.h"
 #include "trees_state.h"
+#include "cast_order_state.h"
+#include "match_history_state.h"
 
 /* Standalone C99 fixed-step arena rules. No H1 API, heap, floating point or OS. */
 #define DOTA_HZ 20
@@ -250,6 +252,8 @@ typedef struct {
     int cast_target_plus_one,cast_target_generation;
     DotaRuneState runes;
     DotaTreesState trees;
+    DotaCastOrder cast_orders[DOTA_HERO_COUNT];
+    DotaMatchStats match_stats;
 } DotaGame;
 
 extern const DotaHeroDef dota_hero_defs[DOTA_HERO_TYPES];
@@ -277,6 +281,12 @@ void dota_move_to(DotaGame *game,int x,int y);
 void dota_attack_target(DotaGame *game,int unit_index);
 int dota_cast(DotaGame *game,int skill,int target_x,int target_y);
 int dota_cast_on_unit(DotaGame *game,int skill,int target,int generation);
+int dota_order_cast(DotaGame *game,int skill,int target_x,int target_y);
+int dota_order_cast_on_unit(DotaGame *game,int skill,int target,int generation);
+int dota_order_item_at(DotaGame *game,int slot,int x,int y,int target,int generation);
+int dota_order_item_tree(DotaGame *game,int slot,int tree_id);
+void dota_cast_order_cancel(DotaGame *game,int hero);
+int dota_cast_order_active(const DotaGame *game,int hero);
 int dota_rules_cast_target_matches(const DotaGame *game,int caster,int candidate);
 int dota_skill_is_passive(int hero_id,int skill);
 int dota_passive_rank(const DotaUnit *unit);

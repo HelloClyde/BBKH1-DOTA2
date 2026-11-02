@@ -1,0 +1,7 @@
+{
+  "build": "build\\v030\\perf-candidate8",
+  "metadata_sha256": "68d7c197bee8a8aad8ba5690168a941636f1c84cb69243df67ff257c08a9c923",
+  "bda_sha256": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244",
+  "elf_sha256": "dc6ecce5c66b0f1165ec637070a3beac35c89bb23cd6b96ae95b60cc69cd3b03",
+  "read_only_existing_build": true
+}

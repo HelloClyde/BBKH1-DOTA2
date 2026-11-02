@@ -8,6 +8,7 @@
 #include "progression.h"
 #include "items_internal.h"
 #include "sight.h"
+#include "match_history.h"
 
 static int cap(int x,int a,int b){return x<a?a:(x>b?b:x);}
 static int live(const DotaUnit *u){return u->active && u->hp>0;}
@@ -238,7 +239,11 @@ static void pulse_tick(DotaGame *g,int slot){
     if(g->units[caster].generation!=p->generation || age>5*DOTA_HZ){p->rank=0;return;}
     for(i=0;i<DOTA_MAX_UNITS;++i)if((p->targets[i>>5]&(1u<<(i&31))) && !(p->hit[i>>5]&(1u<<(i&31))) && within(p->x,p->y,g->units[i].x,g->units[i].y,age*value(&g->units[caster],0,"projectile_speed",400)/DOTA_HZ)){
         p->hit[i>>5]|=1u<<(i&31);if(!live(&g->units[i]) || (unsigned short)g->units[i].generation!=p->target_generation[i])continue;
-        if(g->units[i].team==g->units[caster].team)g->units[i].hp=cap(g->units[i].hp+dota_items_heal_amount(g,caster,i,value(&g->units[caster],0,"heal",extra_pulse_heal[p->rank-1])),0,g->units[i].max_hp);
+        if(g->units[i].team==g->units[caster].team){
+            int before=g->units[i].hp;
+            g->units[i].hp=cap(before+dota_items_heal_amount(g,caster,i,value(&g->units[caster],0,"heal",extra_pulse_heal[p->rank-1])),0,g->units[i].max_hp);
+            dota_match_record_heal(g,caster,i,g->units[i].hp-before);
+        }
         else dota_rules_damage(g,i,value(&g->units[caster],0,"AbilityDamage",extra_pulse_damage[p->rank-1]),caster,1);
         dota_rules_skill_event(g,caster,0,i,g->units[i].x,g->units[i].y,6,DOTA_SKILL_EVENT_STRIKE);
     }

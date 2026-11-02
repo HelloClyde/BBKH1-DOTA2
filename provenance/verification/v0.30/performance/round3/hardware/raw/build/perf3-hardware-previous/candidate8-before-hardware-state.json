@@ -1,0 +1,7 @@
+{
+  "scope": "Additional raw candidate8 doc snapshot before the physical-state pointer update; original previous manifest remains immutable",
+  "source": "docs/verification/v0.30-candidate8.json",
+  "snapshot": "build/perf3-hardware-previous/docs/verification/v0.30-candidate8.json",
+  "bytes": 1389,
+  "sha256": "1b12ea1a3010ab05b266f6cdff856a0f9ec19d7cc19201818543f4792f5a9de0"
+}

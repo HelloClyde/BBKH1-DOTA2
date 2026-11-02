@@ -1,0 +1,78 @@
+{
+  "unit_bytes": 240,
+  "offsets": {
+    "x": 24,
+    "y": 28,
+    "kills": 208,
+    "deaths": 212
+  },
+  "snapshots": [
+    {
+      "binary": "C3",
+      "name": "fountain-paused-game.bin",
+      "sha256": "0954d938df293b91d113a1fd985b1efd80337efd25312cd869ef4e5aa7dc1a7f",
+      "unit0": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 0
+      }
+    },
+    {
+      "binary": "C3",
+      "name": "mid-paused-game.bin",
+      "sha256": "b99fc50da67d70cb12303d0020881c76c8080460185ebc12c11d4ea25059d2fa",
+      "unit0": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 0
+      }
+    },
+    {
+      "binary": "C3",
+      "name": "post-horn-paused-game.bin",
+      "sha256": "dc31d17ad13ed8802f58a242902477578233050e0b515339f8c466a7b832b2f4",
+      "unit0": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 1
+      }
+    },
+    {
+      "binary": "C7",
+      "name": "fountain-paused-game.bin",
+      "sha256": "64bbd32c537a830133f565431f9f7126ec424d80ac1050a0eabdffd32c2d3729",
+      "unit0": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 0
+      }
+    },
+    {
+      "binary": "C7",
+      "name": "mid-paused-game.bin",
+      "sha256": "2fa163a752617438d5f747bdde11b8f6bf9460be42e908f69d817602e392e3e0",
+      "unit0": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 0
+      }
+    },
+    {
+      "binary": "C7",
+      "name": "post-horn-paused-game.bin",
+      "sha256": "260e335c3153af4df737ebc8488ce741e89891a79f875ebfbbe5600cc846055a",
+      "unit0": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 1
+      }
+    }
+  ],
+  "limitation": "These paused endpoint snapshots do not establish an uninterrupted player trajectory, no movement, or a walking benchmark."
+}

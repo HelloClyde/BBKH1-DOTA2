@@ -25,7 +25,7 @@ def verify_package(folder):
  require(inventory.get('release_pin')==release_pin_identity(),'Package release pin changed')
  require(inventory['version']==VERSION and inventory['bda_sha256']==reference,'Package identity differs')
  expected_files={'DOTA2.bda','DOTA2.elf','DOTA2.bin','DOTA2.map','DOTA2.build.json','DOTA2.bda.sha256','DOTA2-H1-install.zip','SHA256SUMS.txt'}
- expected_members={'应用/程序/DOTA2.bda','DOTA2/SCENE.H1P','DOTA2/SCENE.json','DOTA2/SOUND.H1A','DOTA2/MAP12.H1C','DOTA2.build.json','README.md','NOTICE.md','UPDATE-NOTES.txt','LICENSE','licenses/GPL-2.0.txt','licenses/FONT-NOTICE.md','EQUIPMENT-MECHANISM-AUDIT.json','SPECIAL-MECHANISM-AUDIT.json'}
+ expected_members={'应用/程序/DOTA2.bda','DOTA2/manifest.json','DOTA2.build.json','README.md','NOTICE.md','UPDATE-NOTES.txt','LICENSE','licenses/GPL-2.0.txt','licenses/FONT-NOTICE.md','EQUIPMENT-MECHANISM-AUDIT.json','SPECIAL-MECHANISM-AUDIT.json'}
  expected_members.update(PACKAGE_DOCS)
  expected_members.update('DOTA2/'+name for name in ASSETS)
  require(set(inventory['files'])==expected_files and set(inventory['members'])==expected_members,'Explicit package inventory differs')

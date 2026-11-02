@@ -76,16 +76,16 @@ typedef struct {
 typedef struct { DotaSkillEvent event;int valid; } SkillTrack;
 typedef struct { int active,kind,x,y,to_x,to_y,ticks,start_tick,initial_ticks; } EffectHistory;
 
-static unsigned char shadow_curve[256][96];
-static int shadow_curve_ready;
+static unsigned char (*shadow_curve)[96];
 static void initialize_shadow_curve(void){
-    unsigned a,c;if(shadow_curve_ready)return;
+    unsigned a,c;if(shadow_curve)return;
+    shadow_curve=cache_memory_alloc(256u*96u);if(!shadow_curve)return;
     for(a=0;a<256u;++a){
         for(c=0;c<32u;++c)shadow_curve[a][c]=(unsigned char)((c*(255u-a)+127u)/255u);
         for(c=0;c<64u;++c)shadow_curve[a][32u+c]=(unsigned char)((c*(255u-a)+127u)/255u);
     }
-    shadow_curve_ready=1;
 }
+static void release_shadow_curve(void){cache_memory_free(shadow_curve);shadow_curve=0;}
 static BSPackHeader pack;
 /* Full frame metadata is streamed in small blocks. Only the timing byte is
  * always resident, so animation selection never causes a file read. */
@@ -142,6 +142,7 @@ static EffectHistory effect_history[DOTA_MAX_EFFECTS];
 static BSStats stats;
 static int ready,error_code,last_tick=-1,view_region;
 static const int sine[16]={0,98,181,237,256,237,181,98,0,-98,-181,-237,-256,-237,-181,-98};
+#include "sprite_rows.h"
 
 typedef char HeaderSizeCheck[sizeof(BSPackHeader)==64?1:-1];
 typedef char FrameSizeCheck[sizeof(BSFrame)==32?1:-1];
@@ -252,7 +253,29 @@ static uint16_t mix(uint16_t fg,uint16_t bg,unsigned alpha,int additive){
     return (uint16_t)((r<<11)|(g<<5)|b);
 }
 
+#ifdef DOTA_RESOURCE_PACK
+#include "map_sidecar_format.h"
+/* The unified reader stores each map tile once. MAP12 remains a legacy host
+ * fixture only; production has no external map patch or fallback copy. */
+static unsigned char *map_sidecar_memory;
+static BSMapSidecarStats map_sidecar_stats;
+/* Barracks restoration still binds to the exact original logical map. */
+static int map_sidecar_source_matches(void){
+    return ready&&pack.version==12u&&pack.tile_size==128u&&pack.file_size==406028212u&&
+        pack.tile_columns==30u&&pack.tile_rows==22u&&
+        mapc_crc32((const unsigned char *)&pack,sizeof(pack))==0x15bf0b92u&&
+        mapc_crc32((const unsigned char *)tile_offsets,660u*4u)==0xd25bb0b8u;
+}
+static void map_sidecar_reset(void){clear_bytes(&map_sidecar_stats,sizeof(map_sidecar_stats));}
+void bs_map_sidecar_close(void){map_sidecar_reset();}
+int bs_map_sidecar_open(const char *path){(void)path;return 0;}
+int bs_map_sidecar_open_paths(const char *a,const char *b){(void)a;(void)b;return 0;}
+int bs_map_sidecar_open_default(void){return 0;}
+const BSMapSidecarStats *bs_map_sidecar_stats(void){return &map_sidecar_stats;}
+static int map_sidecar_tile(unsigned tile,unsigned char *data){(void)tile;(void)data;return 0;}
+#else
 #include "map_sidecar.h"
+#endif
 static void barracks_visual_reset(void);
 static unsigned barracks_visual_static_bytes(void);
 unsigned bs_reserve_fog_cache(unsigned bytes){
@@ -267,6 +290,7 @@ unsigned bs_reserve_fog_cache(unsigned bytes){
 static void release_cache(void){
     unsigned i;
     bs_reserve_fog_cache(0);
+    release_sprite_rows();
     map_sidecar_reset();
     barracks_visual_reset();
     cache_memory_free(resident_frames);resident_frames=0;ground_coordinates=0;
@@ -406,14 +430,14 @@ static int initialize_pack(void){
     initialize_shadow_curve();ready=1;return 1;
 }
 int bs_initialize(void){
-    release_cache();release_water();
+    release_cache();release_water();release_shadow_curve();
     if(initialize_pack())return 1;
-    release_cache();release_water();return 0;
+    release_cache();release_water();release_shadow_curve();return 0;
 }
 
 unsigned bs_reserve_cache(unsigned bytes){
     unsigned i,slots,heap_bytes;unsigned char *allocation=0;RuntimeFrame *frames;
-    if(!ready){release_cache();release_water();return 0;}
+    if(!ready){release_cache();release_water();release_shadow_curve();return 0;}
     if(!bytes){release_cache();return sprite_capacity;}
     /* Bound all arithmetic and keep every cache allocation word aligned. */
     if(bytes>64u*1024u*1024u)bytes=64u*1024u*1024u;
@@ -428,12 +452,12 @@ unsigned bs_reserve_cache(unsigned bytes){
             BSFrame disk[64];unsigned batch=pack.frame_count-i,j;
             if(batch>64u)batch=64u;
             if(!read_block(pack.frame_index_offset+i*sizeof(BSFrame),disk,batch*sizeof(BSFrame))){
-                cache_memory_free(frames);cache_memory_free(allocation);release_cache();release_water();ready=0;return 0;
+                cache_memory_free(frames);cache_memory_free(allocation);release_cache();release_water();release_shadow_curve();ready=0;return 0;
             }
             for(j=0;j<batch;++j){const BSFrame *f=&disk[j];
                 if(!frame_record_valid(f) || !frame_identity_valid(i+j,f) || f->duration_ticks!=frame_ticks[i+j]){
                     error_code=6;++stats.read_failures;
-                    cache_memory_free(frames);cache_memory_free(allocation);release_cache();release_water();ready=0;return 0;
+                    cache_memory_free(frames);cache_memory_free(allocation);release_cache();release_water();release_shadow_curve();ready=0;return 0;
                 }
                 decode_frame(&frames[i+j],f);
             }
@@ -458,9 +482,9 @@ unsigned bs_reserve_cache(unsigned bytes){
 }
 unsigned bs_sprite_cache_bytes(void){return sprite_capacity;}
 unsigned bs_resident_frame_count(void){return resident_frames?pack.frame_count:0;}
-unsigned bs_dynamic_storage_bytes(void){return sprite_heap_bytes+(resident_frames?pack.frame_count*sizeof(RuntimeFrame)+DOTA_WORLD*sizeof(uint16_t):0)+water_heap_bytes+map_sidecar_stats.heap_bytes+fog_cache_stats.heap_bytes+tree_visual_dynamic_bytes();}
-int bs_open_default(void){if(!baked_io_open_default()){ready=0;error_code=1;release_cache();release_water();return 0;}if(bs_initialize())return 1;baked_io_close();return 0;}
-void bs_close(void){ready=0;last_tick=-1;fog_game=0;fog_camera=0;fog_sprite_gate=0;release_cache();release_water();baked_io_close();}
+unsigned bs_dynamic_storage_bytes(void){return sprite_heap_bytes+sprite_row_heap_bytes+(shadow_curve?256u*96u:0)+(resident_frames?pack.frame_count*sizeof(RuntimeFrame)+DOTA_WORLD*sizeof(uint16_t):0)+water_heap_bytes+map_sidecar_stats.heap_bytes+fog_cache_stats.heap_bytes+tree_visual_dynamic_bytes();}
+int bs_open_default(void){if(!baked_io_open_default()){ready=0;error_code=1;release_cache();release_water();release_shadow_curve();return 0;}if(bs_initialize())return 1;baked_io_close();return 0;}
+void bs_close(void){ready=0;last_tick=-1;fog_game=0;fog_camera=0;fog_sprite_gate=0;release_cache();release_water();release_shadow_curve();baked_io_close();}
 int bs_ready(void){return ready;}
 int bs_last_error(void){return error_code;}
 const BSPackHeader *bs_pack_header(void){return ready?&pack:0;}
@@ -477,8 +501,8 @@ const BSWaterStats *bs_water_stats(void){return &water_stats;}
 const BSWaterHeader *bs_water_header(void){return ready && water.frame_count?&water:0;}
 const BSLightingStats *bs_lighting_stats(void){return &lighting_stats;}
 unsigned bs_static_storage_bytes(void){
-    return barracks_visual_static_bytes()+sizeof(shadow_curve)+sizeof(shadow_curve_ready)+sizeof(pack)+sizeof(frame_ticks)+sizeof(frame_metadata)+sizeof(resident_frames)+sizeof(ground_coordinates)+sizeof(metadata_cache)+sizeof(metadata_clock)+sizeof(courier_animations)+sizeof(courier_stats)+sizeof(groups)+sizeof(group_count)+sizeof(tile_offsets)+sizeof(ground)+sizeof(tile_pixels)+
-        sizeof(tile_cache)+sizeof(map_sidecar_memory)+sizeof(map_sidecar_stats)+sizeof(sprite_storage)+sizeof(sprite_cache)+sizeof(sprite_data)+sizeof(sprite_entries)+sizeof(sprite_lookup)+sizeof(sprite_allocation)+sizeof(sprite_capacity)+sizeof(sprite_slots)+sizeof(sprite_heap_bytes)+sizeof(depths)+sizeof(bounds)+sizeof(history)+sizeof(effect_history)+sizeof(stats)+
+    return barracks_visual_static_bytes()+sizeof(shadow_curve)+sizeof(pack)+sizeof(frame_ticks)+sizeof(frame_metadata)+sizeof(resident_frames)+sizeof(ground_coordinates)+sizeof(metadata_cache)+sizeof(metadata_clock)+sizeof(courier_animations)+sizeof(courier_stats)+sizeof(groups)+sizeof(group_count)+sizeof(tile_offsets)+sizeof(ground)+sizeof(tile_pixels)+
+        sizeof(tile_cache)+sizeof(map_sidecar_memory)+sizeof(map_sidecar_stats)+sizeof(sprite_storage)+sizeof(sprite_cache)+sizeof(sprite_data)+sizeof(sprite_entries)+sizeof(sprite_lookup)+sizeof(sprite_allocation)+sizeof(sprite_capacity)+sizeof(sprite_slots)+sizeof(sprite_heap_bytes)+sizeof(sprite_rows)+sizeof(sprite_row_lookup)+sizeof(sprite_row_slots)+sizeof(sprite_row_cursor)+sizeof(sprite_row_heap_bytes)+sizeof(depths)+sizeof(bounds)+sizeof(history)+sizeof(effect_history)+sizeof(stats)+
         sizeof(water)+sizeof(water_offsets)+sizeof(water_frames)+sizeof(water_heap_bytes)+sizeof(water_palette)+sizeof(water_masks)+sizeof(water_cache)+sizeof(water_stats)+sizeof(lighting_stats)+
         sizeof(skill_tracks)+sizeof(animations)+sizeof(skill_stats)+sizeof(observed_skill_serial)+
         sizeof(projectile_stats)+sizeof(observed_attack_serial)+sizeof(component_stats)+sizeof(beam_geometry)+sizeof(passive_stats)+sizeof(jungle_stats)+sizeof(shop_bounds)+sizeof(omnislash_stats)+sizeof(fog_visible)+sizeof(fog_stats)+sizeof(fog_game)+sizeof(fog_camera)+sizeof(fog_sprite_gate)+sizeof(fog_background)+sizeof(fog_background_key)+sizeof(fog_saved_key)+sizeof(fog_saved_visible)+sizeof(fog_cache_stats)+sizeof(fog_cached_dimmed)+sizeof(fog_cached_soft);
@@ -570,6 +594,12 @@ static int fog_map_depth(const DotaGame *game,int px,int py,int *last_tile,const
  * actors, shadows and effects still run normally. All world queries run each
  * frame. A stable four-frame key avoids captures during camera/vision motion. */
 typedef uint32_t FogCopyWord __attribute__((__may_alias__));
+static inline FogCopyWord fog_hidden_pair(FogCopyWord color){
+    /* The two RGB565 pixels stay independent: each half-word sum is below
+     * 65536, and both masks remove bits that could cross channel boundaries.
+     * This is exactly two scalar light=3 samples, using one aligned word. */
+    return ((color>>2)&0x39e739e7u)+((color>>3)&0x18e318e3u);
+}
 static void fog_background_copy(uint16_t *dst,const uint16_t *src){
     unsigned n=BS_WIDTH*BS_HEIGHT;
     if(!(((uintptr_t)dst|(uintptr_t)src)&3u)){
@@ -646,10 +676,15 @@ static void draw_fog(uint16_t *pixels,const DotaGame *game,const BSCamera *camer
             if(ta==768&&tb==768&&ba==768&&bb==768){
                 for(y=y0;y<y1;++y){uint16_t *row=pixels+(BS_TOP+y)*BS_WIDTH+x0;
                     if(x1-x0==FOG_STEP){
-                        row[0]=vision_assets_fog_color(row[0],3);row[1]=vision_assets_fog_color(row[1],3);
-                        row[2]=vision_assets_fog_color(row[2],3);row[3]=vision_assets_fog_color(row[3],3);
-                        row[4]=vision_assets_fog_color(row[4],3);row[5]=vision_assets_fog_color(row[5],3);
-                        row[6]=vision_assets_fog_color(row[6],3);row[7]=vision_assets_fog_color(row[7],3);
+                        if(!((uintptr_t)row&3u)){
+                            FogCopyWord *word=(FogCopyWord *)(void *)row;
+                            word[0]=fog_hidden_pair(word[0]);word[1]=fog_hidden_pair(word[1]);
+                            word[2]=fog_hidden_pair(word[2]);word[3]=fog_hidden_pair(word[3]);
+                        }else{
+                            FogCopyWord *word=(FogCopyWord *)(void *)(row+1);
+                            row[0]=vision_assets_fog_color(row[0],3);row[7]=vision_assets_fog_color(row[7],3);
+                            word[0]=fog_hidden_pair(word[0]);word[1]=fog_hidden_pair(word[1]);word[2]=fog_hidden_pair(word[2]);
+                        }
                     }else for(x=x0;x<x1;++x,++row)*row=vision_assets_fog_color(*row,3);
                 }
             }else{
@@ -963,7 +998,7 @@ static unsigned integer_sqrt(unsigned value){
 static unsigned draw_sprite_opacity(uint16_t *pixels,int frame_index,int feet_x,int feet_y,int base_depth,int scale_q8,int unit,unsigned opacity){
     const RuntimeFrame *frame;const unsigned char *data,*alpha,*relative;
     int x,y,left,top,width,height,x0,y0,x1,y1,additive,write_depth,fw,fh;unsigned drawn=0,n;
-    unsigned short source_x[BS_WIDTH];UnitBounds *selection=0;
+    unsigned short source_x[BS_WIDTH];UnitBounds *selection=0;const SpriteRows *rows;
     if(fog_sprite_gate&&fog_game&&fog_camera&&!(unit>=0&&unit<DOTA_MAX_UNITS&&fog_game->units[unit].team==fog_game->units[fog_game->player].team)){int wx,wy;
         if(!fog_world_point(fog_camera,feet_x,feet_y,base_depth,&wx,&wy)||!fog_point_visible(wx,wy)){++fog_stats.sprites_rejected;return 0;}
     }
@@ -977,6 +1012,7 @@ static unsigned draw_sprite_opacity(uint16_t *pixels,int frame_index,int feet_x,
     if(x0>=x1 || y0>=y1){++stats.culled_sprites;return 0;}
     data=get_sprite((unsigned)frame_index);if(!data)return 0;
     n=(unsigned)fw*fh;alpha=data+n*2;relative=alpha+n;
+    rows=sprite_alpha_rows((unsigned)frame_index,fw,fh,alpha);
     additive=(rf_flags(frame)&BS_ADDITIVE)!=0;write_depth=!(rf_flags(frame)&BS_NO_DEPTH_WRITE) && !additive && opacity>=128;
     if(unit>=0 && unit<DOTA_MAX_UNITS)selection=&bounds[unit];
     else if(unit==-2 || unit==-3)selection=&shop_bounds[-unit-2];
@@ -986,10 +1022,11 @@ static unsigned draw_sprite_opacity(uint16_t *pixels,int frame_index,int feet_x,
      * unchanged, while generic actor-only branches leave the inner loop. */
     if(scale_q8==256 && opacity==255u && additive && !selection){
         for(y=y0;y<y1;++y){
-            int sy=y-top;unsigned row=(unsigned)sy*fw;
+            int sy=y-top,begin=x0,end=x1;unsigned row=(unsigned)sy*fw;
             uint16_t *dst=pixels+y*BS_WIDTH,*zrow=depths+(y-BS_TOP)*BS_WIDTH;
             if(sy>=fh)continue;
-            for(x=x0;x<x1;++x){
+            if(rows){int first=left+rows->first[sy],last=left+rows->end[sy];if(begin<first)begin=first;if(end>last)end=last;}
+            for(x=begin;x<end;++x){
                 unsigned index=row+(unsigned)(x-left),a=alpha[index];int d;uint16_t color;
                 if(!a)continue;
                 d=base_depth+read_i16(relative+index*2);
@@ -1021,13 +1058,14 @@ static unsigned draw_sprite_opacity(uint16_t *pixels,int frame_index,int feet_x,
     } \
 }
     for(y=y0;y<y1;++y){
-        int sy=(y-top)*256/scale_q8;unsigned row=(unsigned)sy*fw;
+        int sy=(y-top)*256/scale_q8,begin=x0,end=x1;unsigned row=(unsigned)sy*fw;
         uint16_t *dst=pixels+y*BS_WIDTH,*zrow=depths+(y-BS_TOP)*BS_WIDTH;
         if(sy>=fh)continue;
+        if(rows){int first=left+(rows->first[sy]*scale_q8+255)/256,last=left+(rows->end[sy]*scale_q8+255)/256;if(begin<first)begin=first;if(end>last)end=last;}
         if(scale_q8==256){
-            for(x=x0;x<x1;++x){unsigned index=row+(unsigned)(x-left);SPRITE_PIXEL(read_i16(relative+index*2));}
+            for(x=begin;x<end;++x){unsigned index=row+(unsigned)(x-left);SPRITE_PIXEL(read_i16(relative+index*2));}
         }else{
-            for(x=x0;x<x1;++x){unsigned sx=source_x[x-x0],index=row+sx;
+            for(x=begin;x<end;++x){unsigned sx=source_x[x-x0],index=row+sx;
                 if(sx>=(unsigned)fw)continue;
                 SPRITE_PIXEL(read_i16(relative+index*2)*scale_q8/256);
             }
@@ -1044,12 +1082,15 @@ static unsigned draw_sprite(uint16_t *pixels,int frame_index,int feet_x,int feet
  * H1 only relocates those baked mask samples to the existing ground grid.
  * Never change depth or selection bounds: scenery and later bodies cover it. */
 static inline uint16_t mix_shadow(uint16_t bg,unsigned alpha){
-    const unsigned char *curve=shadow_curve[alpha];
+    const unsigned char *curve;
+    if(!shadow_curve){unsigned r=bg>>11,g=(bg>>5)&63u,b=bg&31u,inverse=255u-alpha;return (uint16_t)((((r*inverse+127u)/255u)<<11)|(((g*inverse+127u)/255u)<<5)|((b*inverse+127u)/255u));}
+    curve=shadow_curve[alpha];
     return (uint16_t)(((unsigned)curve[bg>>11]<<11)|((unsigned)curve[32u+((bg>>5)&63u)]<<5)|curve[bg&31u]);
 }
 static void draw_hero_shadow(uint16_t *pixels,int frame_index,const UnitHistory *h,const BSCamera *camera){
     const RuntimeFrame *f;const unsigned char *data,*mask;unsigned n,drawn=0;
     int x,y,sx,sy,left,top,w,hh,ax,ay,x0,x1,y0,y1,gx0,gy0,gx1,gy1,min_z,max_z;
+    int world_x0,world_x1,world_y0,world_y1;
     int world_x[BS_MAX_FRAME_SIDE];
     int camera_gx=global_x(camera->x),camera_gy=global_y(camera->y,camera->z),base_gy=global_y(h->y,h->z);
     unsigned size=pack.ground_grid_size;
@@ -1077,6 +1118,7 @@ static void draw_hero_shadow(uint16_t *pixels,int frame_index,const UnitHistory 
     x1=clamp(h->x+floor_div((w-ax)*256,BS_ZOOM)+2,0,DOTA_WORLD-1);
     y0=clamp(h->y+floor_div(-ay*65536,BS_PITCH*BS_ZOOM)-2,0,DOTA_WORLD-1);
     y1=clamp(h->y+floor_div((hh-ay)*65536,BS_PITCH*BS_ZOOM)+2,0,DOTA_WORLD-1);
+    world_x0=x0;world_x1=x1;world_y0=y0;world_y1=y1;
     gx0=x0*(int)(size-1)/(DOTA_WORLD-1);gx1=clamp(x1*(int)(size-1)/(DOTA_WORLD-1)+1,0,(int)size-1);
     gy0=y0*(int)(size-1)/(DOTA_WORLD-1);gy1=clamp(y1*(int)(size-1)/(DOTA_WORLD-1)+1,0,(int)size-1);
     min_z=max_z=ground[gy0*size+gx0];
@@ -1114,7 +1156,12 @@ static void draw_hero_shadow(uint16_t *pixels,int frame_index,const UnitHistory 
             wy=cached_wy;
             if((unsigned)wx>=DOTA_WORLD || (unsigned)wy>=DOTA_WORLD)continue;
             if(pack.version>=8u && dota_roshan_region_at(wx,wy)!=view_region)continue;
-            z=bs_ground_height(wx,wy)+1;
+            /* Every grid corner in the world footprint was checked above.
+             * Its bilinear surface is exactly constant when min==max. A
+             * foreground depth can reconstruct a point outside that box;
+             * keep the original sampler for those points and all slopes. */
+            z=(min_z==max_z && wx>=world_x0 && wx<=world_x1 &&
+               wy>=world_y0 && wy<=world_y1?min_z:bs_ground_height(wx,wy))+1;
             d=32768-wy-z;
             if(d<0 || d>=65535 || d>(int)depths[p]+1){++lighting_stats.shadow_depth_rejects;continue;}
             pixels[y*BS_WIDTH+x]=mix_shadow(pixels[y*BS_WIDTH+x],a);++drawn;

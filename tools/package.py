@@ -9,7 +9,7 @@ def main():
  build=local(a.build);m=verify_build(build);out=local(a.output);require(not out.exists(),'Existing package directory preserved; choose a new --output')
  reference=release_reference();require(reference is not None and reference==m['bda_sha256'],'Pin this verified release before packaging')
  pin=release_pin_identity()
- members={'应用/程序/DOTA2.bda':build/'DOTA2.bda','DOTA2/SCENE.H1P':ROOT/'assets/runtime/SCENE.H1P','DOTA2/SCENE.json':ROOT/'assets/runtime/SCENE.json','DOTA2/SOUND.H1A':ROOT/'assets/runtime/SOUND.H1A','DOTA2/MAP12.H1C':ROOT/'assets/runtime/MAP12.H1C','DOTA2.build.json':build/'DOTA2.build.json','README.md':ROOT/'README.md','NOTICE.md':ROOT/'NOTICE.md','UPDATE-NOTES.txt':ROOT/'UPDATE-NOTES.txt','licenses/GPL-2.0.txt':ROOT/'licenses/GPL-2.0.txt','EQUIPMENT-MECHANISM-AUDIT.json':ROOT/'provenance/EQUIPMENT-MECHANISM-AUDIT.json','SPECIAL-MECHANISM-AUDIT.json':ROOT/'provenance/SPECIAL-MECHANISM-AUDIT.json'}
+ members={'应用/程序/DOTA2.bda':build/'DOTA2.bda','DOTA2/manifest.json':ROOT/'assets/runtime/manifest.json','DOTA2.build.json':build/'DOTA2.build.json','README.md':ROOT/'README.md','NOTICE.md':ROOT/'NOTICE.md','UPDATE-NOTES.txt':ROOT/'UPDATE-NOTES.txt','licenses/GPL-2.0.txt':ROOT/'licenses/GPL-2.0.txt','EQUIPMENT-MECHANISM-AUDIT.json':ROOT/'provenance/EQUIPMENT-MECHANISM-AUDIT.json','SPECIAL-MECHANISM-AUDIT.json':ROOT/'provenance/SPECIAL-MECHANISM-AUDIT.json'}
  members.update({'LICENSE':ROOT/'LICENSE','licenses/FONT-NOTICE.md':ROOT/'licenses/FONT-NOTICE.md'})
  members.update({'DOTA2/'+name:ROOT/'assets/runtime'/name for name in ASSETS})
  members.update({name:ROOT/name for name in PACKAGE_DOCS})

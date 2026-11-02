@@ -1,0 +1,222 @@
+{
+  "complete": true,
+  "format": "DOTA2H1R",
+  "format_version": 1,
+  "bytes": 112861448,
+  "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153",
+  "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\repack-tile\\DOTA2.H1R",
+  "source_sha256": "d9656946e4cc45bbc34608f3ab60e22da98f42c01f51bb4ea31f9313e48e62f1",
+  "input_files": {
+    "SCENE.H1P": {
+      "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\assets\\runtime\\SCENE.H1P",
+      "bytes": 406028212,
+      "sha256": "c312840584571c0958b8409da729ea945ecbf557a55ab6030ff0d2d9cbef78dd",
+      "crc32": 1811273441
+    },
+    "SOUND.H1A": {
+      "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\assets\\runtime\\SOUND.H1A",
+      "bytes": 10226944,
+      "sha256": "a2be46eb35f2a86a483d154332aeb9cf44f3a24b6427e52e7a5619df01283d30",
+      "crc32": 3199678829
+    },
+    "VISION.H1V": {
+      "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\assets\\runtime\\VISION.H1V",
+      "bytes": 139328,
+      "sha256": "f23c061e9735e02bd098fe49adb723c56641c7ab0cc946e97b82c44ef9e7dc28",
+      "crc32": 3126842772
+    },
+    "TREE.H1T": {
+      "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\tree-sparse\\TREE.H1T",
+      "bytes": 50343158,
+      "sha256": "129200c5bdfc8c0f7c75d64b34a3e025c03b4244fea75c89a80c215420248256",
+      "crc32": 3100251439
+    }
+  },
+  "tree_semantic_spans": {
+    "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\tree-sparse\\semantic-spans.json",
+    "bytes": 3603358,
+    "sha256": "224fd01607d0b3a6189704e988a87d3f7ae4ef86c15aa9114f671d73ae5f4343",
+    "crc32": 2787057056
+  },
+  "structural_validation": {
+    "SCENE.H1P": {
+      "frames_verified": 44278,
+      "groups_verified": 5732,
+      "shadow_frames_verified": 36662,
+      "map_tiles": 562,
+      "water_masks": 160,
+      "all_virtual_bytes_preserved": true
+    },
+    "VISION.H1V": {
+      "virtual_bytes": 139328
+    },
+    "TREE.H1T": {
+      "sparse_tiles_verified": 364,
+      "sparse_frames_verified": 6403,
+      "semantic_spans_verified": 26705,
+      "chunking": "tile",
+      "canonical_tile_crc_contract": "Sparse producer independently reconstructs/compares all 364 original canonical tiles; outer container preserves this v2 stream byte-for-byte."
+    }
+  },
+  "chunks": 179920,
+  "chunk_codecs": {
+    "1": 116713,
+    "2": 38546,
+    "0": 24661
+  },
+  "max_chunk_raw": 16384,
+  "max_chunk_stored": 11699,
+  "sound_raw_contiguous": true,
+  "sound_physical_offset": 6504448,
+  "directory_bytes": 6504320,
+  "chunk_data_bytes": 96130056,
+  "category_stats": {
+    "opaque-tables-padding": {
+      "raw_referenced_bytes": 1679877,
+      "references": 27525,
+      "stored_bytes": 567216,
+      "unique_chunks": 103,
+      "dedup_raw_bytes": 55139
+    },
+    "water/palette": {
+      "raw_referenced_bytes": 1024,
+      "references": 1,
+      "stored_bytes": 378,
+      "unique_chunks": 1
+    },
+    "water/animation": {
+      "raw_referenced_bytes": 524288,
+      "references": 32,
+      "stored_bytes": 253731,
+      "unique_chunks": 32
+    },
+    "map/rgb": {
+      "raw_referenced_bytes": 18415616,
+      "references": 1124,
+      "stored_bytes": 5528522,
+      "unique_chunks": 1107,
+      "dedup_raw_bytes": 278528
+    },
+    "map/depth": {
+      "raw_referenced_bytes": 18415616,
+      "references": 1124,
+      "stored_bytes": 2454191,
+      "unique_chunks": 1106,
+      "dedup_raw_bytes": 294912
+    },
+    "sprite/rgb": {
+      "raw_referenced_bytes": 127096332,
+      "references": 44896,
+      "stored_bytes": 34236946,
+      "unique_chunks": 39998,
+      "dedup_raw_bytes": 15087646
+    },
+    "sprite/alpha": {
+      "raw_referenced_bytes": 63548166,
+      "references": 44369,
+      "stored_bytes": 9307469,
+      "unique_chunks": 38535,
+      "dedup_raw_bytes": 10052003
+    },
+    "sprite/depth": {
+      "raw_referenced_bytes": 127096332,
+      "references": 44896,
+      "stored_bytes": 16605718,
+      "unique_chunks": 38923,
+      "dedup_raw_bytes": 20359236
+    },
+    "sprite/shadow-header": {
+      "raw_referenced_bytes": 293296,
+      "references": 36662,
+      "stored_bytes": 197355,
+      "unique_chunks": 24671,
+      "dedup_raw_bytes": 95928
+    },
+    "sprite/shadow-alpha": {
+      "raw_referenced_bytes": 45645081,
+      "references": 36662,
+      "stored_bytes": 19538115,
+      "unique_chunks": 32040,
+      "dedup_raw_bytes": 5099073
+    },
+    "water/mask": {
+      "raw_referenced_bytes": 2621440,
+      "references": 160,
+      "stored_bytes": 65856,
+      "unique_chunks": 160
+    },
+    "item/catalog": {
+      "raw_referenced_bytes": 581960,
+      "references": 36,
+      "stored_bytes": 276763,
+      "unique_chunks": 36
+    },
+    "item/hero-ui": {
+      "raw_referenced_bytes": 76768,
+      "references": 5,
+      "stored_bytes": 42713,
+      "unique_chunks": 5
+    },
+    "item/font": {
+      "raw_referenced_bytes": 32416,
+      "references": 2,
+      "stored_bytes": 17903,
+      "unique_chunks": 2
+    },
+    "vision": {
+      "raw_referenced_bytes": 139328,
+      "references": 9,
+      "stored_bytes": 17629,
+      "unique_chunks": 9
+    },
+    "tree/header-and-tables": {
+      "raw_referenced_bytes": 41324,
+      "references": 3,
+      "stored_bytes": 25354,
+      "unique_chunks": 3
+    },
+    "tree/tile-contiguous": {
+      "raw_referenced_bytes": 50301834,
+      "references": 3264,
+      "stored_bytes": 6761204,
+      "unique_chunks": 3189,
+      "dedup_raw_bytes": 1228800
+    }
+  },
+  "verification": {
+    "passed": true,
+    "all_four_streams_byte_exact": true,
+    "streams": {
+      "SCENE.H1P": {
+        "bytes": 406028212,
+        "sha256": "c312840584571c0958b8409da729ea945ecbf557a55ab6030ff0d2d9cbef78dd",
+        "crc32": 1811273441,
+        "byte_exact": true
+      },
+      "SOUND.H1A": {
+        "bytes": 10226944,
+        "sha256": "a2be46eb35f2a86a483d154332aeb9cf44f3a24b6427e52e7a5619df01283d30",
+        "crc32": 3199678829,
+        "byte_exact": true
+      },
+      "VISION.H1V": {
+        "bytes": 139328,
+        "sha256": "f23c061e9735e02bd098fe49adb723c56641c7ab0cc946e97b82c44ef9e7dc28",
+        "crc32": 3126842772,
+        "byte_exact": true
+      },
+      "TREE.H1T": {
+        "bytes": 50343158,
+        "sha256": "129200c5bdfc8c0f7c75d64b34a3e025c03b4244fea75c89a80c215420248256",
+        "crc32": 3100251439,
+        "byte_exact": true
+      }
+    },
+    "sound_not_recompressed": true,
+    "no_MAP12_stream": true,
+    "physical_h1_tested": false
+  },
+  "elapsed_seconds": 63.844,
+  "physical_h1_tested": false,
+  "runtime_integration_tested": false
+}

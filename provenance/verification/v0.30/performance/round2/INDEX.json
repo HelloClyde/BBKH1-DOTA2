@@ -1,0 +1,4001 @@
+{
+  "schema_version": 1,
+  "version": "0.30",
+  "round": 2,
+  "baseline_bda_sha256": "33a650a25ef78ce16250cd3875f9be2ec6e7d831e6bd4d0ba775b5f1f83be857",
+  "candidate_bda_sha256": "d8d75e2c459735fad358c53c58e2d461c52fb8e348e2846b113f8fcded734d53",
+  "candidate_elf_sha256": "e4b97fff82b55ddb488ca0f0e73b78acdce30ebae28e93ebb3f5f7f2be4e7c97",
+  "installation_verified": true,
+  "performance_acceptance_passed": true,
+  "full_feature_acceptance_complete": false,
+  "release_pin_created": false,
+  "github_updated": false,
+  "physical_fps_samples": [
+    {
+      "name": "menu",
+      "baseline": {
+        "fps": 18.33946728218773,
+        "frames": 147,
+        "seconds": 8.015499999979511,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 132,
+          "bytes_returned": 1019420,
+          "physical_reads": 310,
+          "physical_bytes": 2217984,
+          "seeks": 221,
+          "index_hits": 877,
+          "index_misses": 131,
+          "chunk_hits": 0,
+          "chunk_misses": 504,
+          "decoded_chunks": 404,
+          "decoded_bytes": 887540,
+          "service_calls": 505,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 18.179554227329945,
+        "frames": 146,
+        "seconds": 8.03100000001723,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 132,
+          "bytes_returned": 1021501,
+          "physical_reads": 314,
+          "physical_bytes": 2252800,
+          "seeks": 224,
+          "index_hits": 865,
+          "index_misses": 135,
+          "chunk_hits": 0,
+          "chunk_misses": 500,
+          "decoded_chunks": 400,
+          "decoded_bytes": 889629,
+          "service_calls": 500,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": -0.8719612865369375
+    },
+    {
+      "name": "fresh-fountain-play",
+      "baseline": {
+        "fps": 12.86213786218199,
+        "frames": 103,
+        "seconds": 8.007999999972526,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 84,
+          "bytes_returned": 451645,
+          "physical_reads": 185,
+          "physical_bytes": 1346372,
+          "seeks": 133,
+          "index_hits": 430,
+          "index_misses": 81,
+          "chunk_hits": 1,
+          "chunk_misses": 255,
+          "decoded_chunks": 205,
+          "decoded_bytes": 331301,
+          "service_calls": 256,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 13.473894329770578,
+        "frames": 108,
+        "seconds": 8.015499999979511,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 86,
+          "bytes_returned": 461016,
+          "physical_reads": 191,
+          "physical_bytes": 1387332,
+          "seeks": 138,
+          "index_hits": 449,
+          "index_misses": 83,
+          "chunk_hits": 1,
+          "chunk_misses": 266,
+          "decoded_chunks": 213,
+          "decoded_bytes": 340656,
+          "service_calls": 266,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 4.756258050905449
+    },
+    {
+      "name": "same-fountain-paused",
+      "baseline": {
+        "fps": 18.819717081186845,
+        "frames": 151,
+        "seconds": 8.023499999952037,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 19.230769230695426,
+        "frames": 154,
+        "seconds": 8.008000000030734,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 31,
+          "bytes_returned": 126976,
+          "physical_reads": 31,
+          "physical_bytes": 126976,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 2.184156901696954
+    },
+    {
+      "name": "fountain-resumed",
+      "baseline": {
+        "fps": 17.46615931624243,
+        "frames": 140,
+        "seconds": 8.015500000037719,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 18.21470900122425,
+        "frames": 146,
+        "seconds": 8.015500000037719,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 4.285714285714293
+    },
+    {
+      "name": "mid-camera-first",
+      "baseline": {
+        "fps": 20.086083213678794,
+        "frames": 161,
+        "seconds": 8.015500000037719,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 20.086083213824658,
+        "frames": 161,
+        "seconds": 8.015499999979511,
+        "game_ticks": 166,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 7.261968804073149e-10
+    },
+    {
+      "name": "mid-camera-warm",
+      "baseline": {
+        "fps": 19.69338152813984,
+        "frames": 158,
+        "seconds": 8.022999999986496,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 47,
+          "bytes_returned": 178373,
+          "physical_reads": 46,
+          "physical_bytes": 215040,
+          "seeks": 14,
+          "index_hits": 146,
+          "index_misses": 4,
+          "chunk_hits": 0,
+          "chunk_misses": 75,
+          "decoded_chunks": 60,
+          "decoded_bytes": 47181,
+          "service_calls": 75,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 19.9800199799433,
+        "frames": 160,
+        "seconds": 8.008000000030734,
+        "game_ticks": 160,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 48,
+          "bytes_returned": 181423,
+          "physical_reads": 48,
+          "physical_bytes": 223232,
+          "seeks": 16,
+          "index_hits": 156,
+          "index_misses": 4,
+          "chunk_hits": 0,
+          "chunk_misses": 80,
+          "decoded_chunks": 64,
+          "decoded_bytes": 50223,
+          "service_calls": 80,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 1.4555065182375149
+    },
+    {
+      "name": "same-mid-paused",
+      "baseline": {
+        "fps": 20.086083213678794,
+        "frames": 161,
+        "seconds": 8.015500000037719,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 19.960079840311245,
+        "frames": 160,
+        "seconds": 8.01600000000326,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": -0.6273167945542557
+    },
+    {
+      "name": "mid-approach-play",
+      "baseline": {
+        "fps": 18.838500405375765,
+        "frames": 151,
+        "seconds": 8.015500000037719,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 69,
+          "bytes_returned": 263493,
+          "physical_reads": 88,
+          "physical_bytes": 573440,
+          "seeks": 48,
+          "index_hits": 232,
+          "index_misses": 32,
+          "chunk_hits": 0,
+          "chunk_misses": 132,
+          "decoded_chunks": 120,
+          "decoded_bytes": 128229,
+          "service_calls": 132,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 19.088016967174987,
+        "frames": 153,
+        "seconds": 8.015499999979511,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 68,
+          "bytes_returned": 255117,
+          "physical_reads": 88,
+          "physical_bytes": 565248,
+          "seeks": 48,
+          "index_hits": 233,
+          "index_misses": 31,
+          "chunk_hits": 0,
+          "chunk_misses": 132,
+          "decoded_chunks": 120,
+          "decoded_bytes": 123949,
+          "service_calls": 132,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 1.3245033119940963
+    },
+    {
+      "name": "post-horn-mid-play",
+      "baseline": {
+        "fps": 15.220510261407505,
+        "frames": 122,
+        "seconds": 8.015499999979511,
+        "game_ticks": 160,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 41,
+          "bytes_returned": 385712,
+          "physical_reads": 54,
+          "physical_bytes": 241892,
+          "seeks": 18,
+          "index_hits": 57,
+          "index_misses": 5,
+          "chunk_hits": 0,
+          "chunk_misses": 31,
+          "decoded_chunks": 31,
+          "decoded_bytes": 254640,
+          "service_calls": 31,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 16.078773526022836,
+        "frames": 129,
+        "seconds": 8.023000000044703,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 44,
+          "bytes_returned": 436237,
+          "physical_reads": 61,
+          "physical_bytes": 317668,
+          "seeks": 25,
+          "index_hits": 75,
+          "index_misses": 10,
+          "chunk_hits": 0,
+          "chunk_misses": 43,
+          "decoded_chunks": 43,
+          "decoded_bytes": 305165,
+          "service_calls": 43,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 5.638859997956236
+    },
+    {
+      "name": "post-horn-hero-play",
+      "baseline": {
+        "fps": 14.208263226753218,
+        "frames": 114,
+        "seconds": 8.023500000010245,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 36,
+          "bytes_returned": 146200,
+          "physical_reads": 33,
+          "physical_bytes": 135168,
+          "seeks": 1,
+          "index_hits": 40,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 20,
+          "decoded_chunks": 16,
+          "decoded_bytes": 15096,
+          "service_calls": 20,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 15.094810379235378,
+        "frames": 121,
+        "seconds": 8.01600000000326,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 36,
+          "bytes_returned": 146200,
+          "physical_reads": 33,
+          "physical_bytes": 135168,
+          "seeks": 1,
+          "index_hits": 40,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 20,
+          "decoded_chunks": 16,
+          "decoded_bytes": 15096,
+          "service_calls": 20,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 6.23965884030675
+    },
+    {
+      "name": "post-horn-hero-paused",
+      "baseline": {
+        "fps": 18.48267249452025,
+        "frames": 148,
+        "seconds": 8.007500000006985,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 18.819717081186845,
+        "frames": 151,
+        "seconds": 8.023499999952037,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 1.8235706268480367
+    }
+  ],
+  "files": [
+    {
+      "path": "provenance/verification/v0.30/performance/round2/append-c6-script.py",
+      "source": "build/v030/game-cost-study/append-c6-archive.py",
+      "sha256": "eb92746bd800c3fd43ee275ad34b6f292df174ac06ff893887f9638c6ecd6685",
+      "bytes": 3264,
+      "byte_identical_at_capture": true,
+      "category": "archive-script"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/append-c7-script.py",
+      "source": "build/v030/game-cost-study/append-c7-archive.py",
+      "sha256": "d4c3022a173cce68f245673fa3f3d3440bc76cf683f9793f435ba173b130bc3a",
+      "bytes": 4591,
+      "byte_identical_at_capture": true,
+      "category": "archive-script"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/append-guard-script.py",
+      "source": "build/v030/game-cost-study/append-guard-archive.py",
+      "sha256": "999435f510eccc96f229dd33ad70528d9e17b7ca2ea94aaaccd4f84af7e7f8ab",
+      "bytes": 2919,
+      "byte_identical_at_capture": true,
+      "category": "archive-script"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/archive-script.py",
+      "source": "build/v030/game-cost-study/prepare-round2-archive.py",
+      "sha256": "e46098f7a2e1fcde69916314662e84030857e97a78aeef1826d974489b1a9106",
+      "bytes": 7000,
+      "byte_identical_at_capture": true,
+      "category": "archive-script"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/baseline-c3/driver.py",
+      "source": "build/v030/perf-union-aligned/driver.py",
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "bytes": 7593,
+      "byte_identical_at_capture": true,
+      "category": "aligned-physical-baseline"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/baseline-c3/verification.json",
+      "source": "build/v030/perf-union-aligned/verification.json",
+      "sha256": "44c2e65c4f9f6811182c5984d38d16686d3fc760033c12ec337019b48faae85c",
+      "bytes": 85702,
+      "byte_identical_at_capture": true,
+      "category": "aligned-physical-baseline"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/baked-before.c",
+      "source": "build/v030/fog-pair-study/baked-before.c",
+      "sha256": "981faa446141e9844285d19fed22d0cbf5ef20b8ddd7e1719103989b32946959",
+      "bytes": 120859,
+      "byte_identical_at_capture": true,
+      "category": "fog-pair-reference"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark-v2/module.c",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark-v2/module.c",
+      "sha256": "e1d8c65e9914f061819b6b07bb9e06b8920752f35b4449d03a256b332c6abe1d",
+      "bytes": 4833,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark-v2/new-first.bin",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark-v2/new-first.bin",
+      "sha256": "bd35a854f80b72e85e152bc6d33777e93a6635c8ce2f53ff67b6f3c039f806b8",
+      "bytes": 80,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark-v2/offline-module/module.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark-v2/offline-module/module.json",
+      "sha256": "e2654ae3a8d19659a0a472b033acd8cce431d9173b8a91eceef9f03f37e0d14d",
+      "bytes": 869,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark-v2/offline-module/module.ld",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark-v2/offline-module/module.ld",
+      "sha256": "3d5bac141c97cd8f049665f1b040f7adda0d3bb4f1780c0128779432cfbf1476",
+      "bytes": 500,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark-v2/old-first.bin",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark-v2/old-first.bin",
+      "sha256": "d8e6b2543c903b63ca4f722e731858426287baf8f80c2d3d86c498f0bae34fe0",
+      "bytes": 80,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark-v2/physical-build/execution.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark-v2/physical-build/execution.json",
+      "sha256": "c3407169585970bcb8104e7567a9ae8bb040f46df2034f23b30979e83786cca8",
+      "bytes": 2281,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark-v2/physical-build/module.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark-v2/physical-build/module.json",
+      "sha256": "b849a34cd123bdf59757dcb5109912794f8daa2b896e69f893398b501a90539f",
+      "bytes": 869,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark-v2/physical-build/module.ld",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark-v2/physical-build/module.ld",
+      "sha256": "783353af701151c61a480326279d48db199025e73063db6085ef2194236a3159",
+      "bytes": 500,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark-v2/physical-new-first.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark-v2/physical-new-first.json",
+      "sha256": "8a698175a71fd8d1ff9fd8ad1909f398cf588b2b0351dc905e27d4a59a114975",
+      "bytes": 969,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark-v2/physical-old-first.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark-v2/physical-old-first.json",
+      "sha256": "15ef39c94161a0d44aee0bed3a4374d846708a2d292b9c450f0dd896cf775d61",
+      "bytes": 2296,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark-v2/preparation.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark-v2/preparation.json",
+      "sha256": "dc16a95a0d97d5b37bc121a39afa5163bc80c9ee0e30b8a613ad46534d3896df",
+      "bytes": 3178,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/half-old-first.bin",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/half-old-first.bin",
+      "sha256": "92ef51d6607660747cc92c7f788ef5c459f412f52fb4943a9fe6c40bab6fca35",
+      "bytes": 80,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/module.c",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/module.c",
+      "sha256": "a6d8f78e6d046ffe350f3e44f94a6cd88a9ff3adf4fce6809c8c037d8d1fe4e8",
+      "bytes": 4831,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/offline-module/module.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/offline-module/module.json",
+      "sha256": "e0e48e4069ce58e637d37b34f1668345b68cb2f080596444324cfc2307a5735b",
+      "bytes": 863,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/offline-module/module.ld",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/offline-module/module.ld",
+      "sha256": "3d5bac141c97cd8f049665f1b040f7adda0d3bb4f1780c0128779432cfbf1476",
+      "bytes": 500,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/old-first.bin",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/old-first.bin",
+      "sha256": "32ce28c19a9e28725b794397903db8a19ec815d70e232ec7f6e9d64534320a83",
+      "bytes": 80,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/physical-build/execution.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/physical-build/execution.json",
+      "sha256": "94c181553bae1b30df9e3c349dddcfcbf0b2f37f0d6990d134f2296c9796181a",
+      "bytes": 2269,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/physical-build/module.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/physical-build/module.json",
+      "sha256": "a0880c53746b37807a735055cabbf72685034d1d04775deee42c104790e487f9",
+      "bytes": 862,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/physical-build/module.ld",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/physical-build/module.ld",
+      "sha256": "783353af701151c61a480326279d48db199025e73063db6085ef2194236a3159",
+      "bytes": 500,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/physical-half-old-first.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/physical-half-old-first.json",
+      "sha256": "f9f72c8c437b55a5090038e4b41c38d8fe946cfb10eb440efb4231c2eee5db81",
+      "bytes": 971,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/physical-old-first.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/physical-old-first.json",
+      "sha256": "87051ebde40eabb5c94e3565ad7e50fe916aaddaf8c16dddf09af9a27b2c983b",
+      "bytes": 2284,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/physical-quarter-new-first.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/physical-quarter-new-first.json",
+      "sha256": "cefbcfa5627b5a493e21bae73eef4fa64c5fbf35e9bde96c021ff953de8a3e1a",
+      "bytes": 973,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/physical-quarter-old-first.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/physical-quarter-old-first.json",
+      "sha256": "ae0a206d55bdb75772f79a6af9a45521f711652914b627db13976109a14095d8",
+      "bytes": 973,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/preparation.json",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/preparation.json",
+      "sha256": "a18b762be3f9690fb8bee5f441285e1a71f70496991114214fa590925a79480b",
+      "bytes": 3007,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/quarter-new-first.bin",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/quarter-new-first.bin",
+      "sha256": "627ee9d98f5babc1c3531bb74b1e528a2d46a3b9801d859dbe2910c14f76c5ae",
+      "bytes": 80,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/h1-mix-benchmark/quarter-old-first.bin",
+      "source": "build/v030/fog-pair-study/h1-mix-benchmark/quarter-old-first.bin",
+      "sha256": "347d13833c6469d6f328eb52cf771f39d5b3efddaa428615fec2efaf655c5c2c",
+      "bytes": 80,
+      "byte_identical_at_capture": true,
+      "category": "excluded-slower-kernel-benchmark"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/parity-final2/after/compile.txt",
+      "source": "build/v030/fog-pair-study/parity-final2/after/compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "byte_identical_at_capture": true,
+      "category": "fog-pair-final-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/parity-final2/after/frames.csv",
+      "source": "build/v030/fog-pair-study/parity-final2/after/frames.csv",
+      "sha256": "de22b8b7369a90d5034cf769b5edac1145c759a1c41a42d701d68b4722fbe5d8",
+      "bytes": 1575,
+      "byte_identical_at_capture": true,
+      "category": "fog-pair-final-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/parity-final2/after/run.txt",
+      "source": "build/v030/fog-pair-study/parity-final2/after/run.txt",
+      "sha256": "765e8bfcfa0258d0f6f45caa959b8c07f8d8e9033c0c8fcf8280251f0e96d234",
+      "bytes": 516,
+      "byte_identical_at_capture": true,
+      "category": "fog-pair-final-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/parity-final2/before/compile.txt",
+      "source": "build/v030/fog-pair-study/parity-final2/before/compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "byte_identical_at_capture": true,
+      "category": "fog-pair-final-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/parity-final2/before/frames.csv",
+      "source": "build/v030/fog-pair-study/parity-final2/before/frames.csv",
+      "sha256": "de22b8b7369a90d5034cf769b5edac1145c759a1c41a42d701d68b4722fbe5d8",
+      "bytes": 1575,
+      "byte_identical_at_capture": true,
+      "category": "fog-pair-final-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/parity-final2/before/run.txt",
+      "source": "build/v030/fog-pair-study/parity-final2/before/run.txt",
+      "sha256": "765e8bfcfa0258d0f6f45caa959b8c07f8d8e9033c0c8fcf8280251f0e96d234",
+      "bytes": 516,
+      "byte_identical_at_capture": true,
+      "category": "fog-pair-final-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/parity-final2/pair-arithmetic.c",
+      "source": "build/v030/fog-pair-study/parity-final2/pair-arithmetic.c",
+      "sha256": "4a397be2a5bceabbf063a1b4a6a06176407a72da990ddb9cd288dc668b15b4b0",
+      "bytes": 1288,
+      "byte_identical_at_capture": true,
+      "category": "fog-pair-final-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/parity-final2/proof-compile.txt",
+      "source": "build/v030/fog-pair-study/parity-final2/proof-compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "byte_identical_at_capture": true,
+      "category": "fog-pair-final-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/parity-final2/proof-run.txt",
+      "source": "build/v030/fog-pair-study/parity-final2/proof-run.txt",
+      "sha256": "529754a6ca7a4dc6d5101cc3c3bb3860268fa96b9a1397f26427fe89d9455d39",
+      "bytes": 114,
+      "byte_identical_at_capture": true,
+      "category": "fog-pair-final-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/fog-pair-study/parity-final2/verification.json",
+      "source": "build/v030/fog-pair-study/parity-final2/verification.json",
+      "sha256": "7e68047ef1f4c078e55c0b336c0824ff906026cb65cc8233cec54e8460a6de65",
+      "bytes": 18658,
+      "byte_identical_at_capture": true,
+      "category": "fog-pair-final-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base-plane-summary.json",
+      "source": "build/v030/game-cost-study/base-plane-summary.json",
+      "sha256": "1c855df2a4f9f779953c46ee5d4ab7149686590db631347093523fb0b64227a6",
+      "bytes": 3820,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/DOTA2.build.json",
+      "source": "build/v030/game-cost-study/base/DOTA2.build.json",
+      "sha256": "08f75a7444ddb8685765d7022157b6cea92b966d6e0a7c86d3d150d1e973cc93",
+      "bytes": 1187,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/commands.json",
+      "source": "build/v030/game-cost-study/base/commands.json",
+      "sha256": "bbc2650be1390f3773cc682ccbc924cd5c15dea225d28bd033f4a76eb557c3e7",
+      "bytes": 6842,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/fog-000.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/fog-000.bin",
+      "sha256": "b2930e1334bd3ca09619402d5e9d74bde23b48f57a200d10a62f3d219dcbb966",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/fog-001.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/fog-001.bin",
+      "sha256": "32d0f90787e494e87cf4dd4f2f2880f0dedc3bab2379a07eb19d262d65461c56",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/fog-002.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/fog-002.bin",
+      "sha256": "b1c70102701ca17a5e2444c312f146957ef8141466fd3980a26462d902acce0a",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/fog-003.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/fog-003.bin",
+      "sha256": "542779278ef596b6f00d99a63c2e87dfc40dcdffcea8b686b2373c48005958db",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/fog-004.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/fog-004.bin",
+      "sha256": "c2f35191b2bf8bb2a79f1fcb7e8f4ca3edb3e2584800e7434ad4ae1175452e7d",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/fog-005.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/fog-005.bin",
+      "sha256": "34292cd1e86f4bb848c92a2461dffb5c9a8a008c9fc9ec7365a751628d2868a2",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/fog-006.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/fog-006.bin",
+      "sha256": "8fbdaf2650875161dc7401d7c52336c4845377698ed7ed00fbcaea1168300aaa",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/fog-007.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/fog-007.bin",
+      "sha256": "f3e0849476c6234ec1bc50a9b5ddb69e85e25ce17e5105b49351a2dbeca0ddf8",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/game-000.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/game-000.bin",
+      "sha256": "90bba621d11807012ee9b19784fecc95303682a94bc7c5d6d70a627302eaca43",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/game-001.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/game-001.bin",
+      "sha256": "3078cb0a62e948a63b801ea6cde47773b2f0dc7e207005298fed65a97dfe3574",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/game-002.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/game-002.bin",
+      "sha256": "10fea34233a700f2610e244ebc68b86b339a0f71f164730dc1557dddbb83c0f7",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/game-003.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/game-003.bin",
+      "sha256": "74dffe5dc8cdff48cf032cad5773276a2ddfd27c988fc716ec0e379aad21e80f",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/game-004.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/game-004.bin",
+      "sha256": "9356cbe35a919061ca225a4648eb94fdcde52b73c5d2a1a342269608de69ea2f",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/game-005.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/game-005.bin",
+      "sha256": "edbb0def7c87f7bc07c1535e40146cbe93bba8e726efb89cae3760b47c6abdf7",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/game-006.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/game-006.bin",
+      "sha256": "72925d3fac2f8ca4d87b0367d9a181e2f5f4435967b2f398071d66f878e7602a",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/game-007.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/game-007.bin",
+      "sha256": "619d7291eec44541268dab1cb3e947b60e649298acfe81cd8b54e961defe331a",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/start-game.bin",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/start-game.bin",
+      "sha256": "7d771fe69e6ed2b706dc527193ac78905a9014137f5473330568d0e32e356177",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/fountain-paused-game/verification.json",
+      "source": "build/v030/game-cost-study/base/fountain-paused-game/verification.json",
+      "sha256": "6ff0df8378168fa20301b1cee6502907c17a2f3ca7b2778d912641e7e83b4071",
+      "bytes": 67610,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/fog-000.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/fog-000.bin",
+      "sha256": "66ba141c3098f44d68659564ab645a536effacb768332f4b971e033314aa6a9a",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/fog-001.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/fog-001.bin",
+      "sha256": "1d361af9512d37382e46ff92338f217a055c0972f9d9633a55daf44da9670364",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/fog-002.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/fog-002.bin",
+      "sha256": "f1f4242565c9640eb7838b264b26a70fa788cd94a1d064b69d9ce5503570317e",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/fog-003.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/fog-003.bin",
+      "sha256": "202a6ed39407baf3cd39585f86439aa2f676b9c483178878a00af349666289c2",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/fog-004.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/fog-004.bin",
+      "sha256": "c1c89426b081c940c6a3f597792aa3363543749f305757103514109465c9b1c5",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/fog-005.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/fog-005.bin",
+      "sha256": "e21e3c45c9bc264434aa8a54b9053a4c631e9e4f3a424648b8fe2338abb6d0cc",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/fog-006.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/fog-006.bin",
+      "sha256": "91dc8fc980ba2cc99f0d97a97d61e40e5d5e2e19b1501fbd511831b2bbb97574",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/fog-007.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/fog-007.bin",
+      "sha256": "93c26c82a9689cfc03d603ab28d3416e9495f1b363f80989d8c5e84a27f8ff60",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/game-000.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/game-000.bin",
+      "sha256": "274fb1bd5fab0f21f9922dc8fc4b2de31f63a295843ef5d62b0c067e6562766e",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/game-001.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/game-001.bin",
+      "sha256": "f6f5f2be4d0a13d28a2b298eedc870786a9d0df73c323a52f53c8249fc0faa0e",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/game-002.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/game-002.bin",
+      "sha256": "c828e68867fb546e4db562400c4e390b252142f55e7006b162e72a19d8281442",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/game-003.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/game-003.bin",
+      "sha256": "c4b4ad9ac045ed5a570f95960feb44d1c9649a4509a373f9786dece45c92b4a6",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/game-004.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/game-004.bin",
+      "sha256": "031b3f43abdb067493c04eab5d057ef54afad6a87985b244d83e88d75cbdc6c0",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/game-005.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/game-005.bin",
+      "sha256": "f6d2d2c7c1c637bf3a81a084711f67b8e9dec4da177bfcfeec79408dfd13e3b8",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/game-006.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/game-006.bin",
+      "sha256": "0e8ced20f95984a9d7ab63fdb2dee755931dd0dc9b96090de41e2044b4080cb6",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/game-007.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/game-007.bin",
+      "sha256": "7e9b75036f84865200bce7a0fc5b8bc14c6165d872376eb22cae0b144e510f67",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/start-game.bin",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/start-game.bin",
+      "sha256": "6dce37c7079606cc66e89cd18c756ef9f8f5d1253d3704ebb69175b50e05eace",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/post-horn-paused-game/verification.json",
+      "source": "build/v030/game-cost-study/base/post-horn-paused-game/verification.json",
+      "sha256": "68098d5cdf6d150ed5240b2c20a857ff64d27cfd5d453141781ef8eb04354fb8",
+      "bytes": 78090,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base/sight-variant.c",
+      "source": "build/v030/game-cost-study/base/sight-variant.c",
+      "sha256": "79c31e0aaa8019a11d10b7d235e5c3a30299a9b3d7de68555a84cfffd315f25b",
+      "bytes": 23327,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/DOTA2.build.json",
+      "source": "build/v030/game-cost-study/base8treebyte/DOTA2.build.json",
+      "sha256": "49a04939fee7341a7aed6b38f07a8c854f95eaf1116f06b28b5aa3952055dc75",
+      "bytes": 1205,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/commands.json",
+      "source": "build/v030/game-cost-study/base8treebyte/commands.json",
+      "sha256": "90de7be6893f30b574bce7a58573506cfce265ff0ce97e2ef27536a760544a28",
+      "bytes": 6887,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-000.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-000.bin",
+      "sha256": "b2930e1334bd3ca09619402d5e9d74bde23b48f57a200d10a62f3d219dcbb966",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-001.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-001.bin",
+      "sha256": "32d0f90787e494e87cf4dd4f2f2880f0dedc3bab2379a07eb19d262d65461c56",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-002.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-002.bin",
+      "sha256": "b1c70102701ca17a5e2444c312f146957ef8141466fd3980a26462d902acce0a",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-003.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-003.bin",
+      "sha256": "542779278ef596b6f00d99a63c2e87dfc40dcdffcea8b686b2373c48005958db",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-004.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-004.bin",
+      "sha256": "c2f35191b2bf8bb2a79f1fcb7e8f4ca3edb3e2584800e7434ad4ae1175452e7d",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-005.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-005.bin",
+      "sha256": "34292cd1e86f4bb848c92a2461dffb5c9a8a008c9fc9ec7365a751628d2868a2",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-006.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-006.bin",
+      "sha256": "8fbdaf2650875161dc7401d7c52336c4845377698ed7ed00fbcaea1168300aaa",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-007.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/fog-007.bin",
+      "sha256": "f3e0849476c6234ec1bc50a9b5ddb69e85e25ce17e5105b49351a2dbeca0ddf8",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-000.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-000.bin",
+      "sha256": "90bba621d11807012ee9b19784fecc95303682a94bc7c5d6d70a627302eaca43",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-001.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-001.bin",
+      "sha256": "3078cb0a62e948a63b801ea6cde47773b2f0dc7e207005298fed65a97dfe3574",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-002.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-002.bin",
+      "sha256": "10fea34233a700f2610e244ebc68b86b339a0f71f164730dc1557dddbb83c0f7",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-003.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-003.bin",
+      "sha256": "74dffe5dc8cdff48cf032cad5773276a2ddfd27c988fc716ec0e379aad21e80f",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-004.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-004.bin",
+      "sha256": "9356cbe35a919061ca225a4648eb94fdcde52b73c5d2a1a342269608de69ea2f",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-005.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-005.bin",
+      "sha256": "edbb0def7c87f7bc07c1535e40146cbe93bba8e726efb89cae3760b47c6abdf7",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-006.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-006.bin",
+      "sha256": "72925d3fac2f8ca4d87b0367d9a181e2f5f4435967b2f398071d66f878e7602a",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-007.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/game-007.bin",
+      "sha256": "619d7291eec44541268dab1cb3e947b60e649298acfe81cd8b54e961defe331a",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/start-game.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/start-game.bin",
+      "sha256": "7d771fe69e6ed2b706dc527193ac78905a9014137f5473330568d0e32e356177",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/fountain-paused-game/verification.json",
+      "source": "build/v030/game-cost-study/base8treebyte/fountain-paused-game/verification.json",
+      "sha256": "e22bddc3b19115ca5916b325959f3808730d8b085ec397468836c83916b0efe3",
+      "bytes": 67617,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-000.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-000.bin",
+      "sha256": "66ba141c3098f44d68659564ab645a536effacb768332f4b971e033314aa6a9a",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-001.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-001.bin",
+      "sha256": "1d361af9512d37382e46ff92338f217a055c0972f9d9633a55daf44da9670364",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-002.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-002.bin",
+      "sha256": "f1f4242565c9640eb7838b264b26a70fa788cd94a1d064b69d9ce5503570317e",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-003.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-003.bin",
+      "sha256": "202a6ed39407baf3cd39585f86439aa2f676b9c483178878a00af349666289c2",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-004.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-004.bin",
+      "sha256": "c1c89426b081c940c6a3f597792aa3363543749f305757103514109465c9b1c5",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-005.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-005.bin",
+      "sha256": "e21e3c45c9bc264434aa8a54b9053a4c631e9e4f3a424648b8fe2338abb6d0cc",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-006.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-006.bin",
+      "sha256": "91dc8fc980ba2cc99f0d97a97d61e40e5d5e2e19b1501fbd511831b2bbb97574",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-007.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/fog-007.bin",
+      "sha256": "93c26c82a9689cfc03d603ab28d3416e9495f1b363f80989d8c5e84a27f8ff60",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-000.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-000.bin",
+      "sha256": "274fb1bd5fab0f21f9922dc8fc4b2de31f63a295843ef5d62b0c067e6562766e",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-001.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-001.bin",
+      "sha256": "f6f5f2be4d0a13d28a2b298eedc870786a9d0df73c323a52f53c8249fc0faa0e",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-002.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-002.bin",
+      "sha256": "c828e68867fb546e4db562400c4e390b252142f55e7006b162e72a19d8281442",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-003.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-003.bin",
+      "sha256": "c4b4ad9ac045ed5a570f95960feb44d1c9649a4509a373f9786dece45c92b4a6",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-004.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-004.bin",
+      "sha256": "031b3f43abdb067493c04eab5d057ef54afad6a87985b244d83e88d75cbdc6c0",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-005.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-005.bin",
+      "sha256": "f6d2d2c7c1c637bf3a81a084711f67b8e9dec4da177bfcfeec79408dfd13e3b8",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-006.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-006.bin",
+      "sha256": "0e8ced20f95984a9d7ab63fdb2dee755931dd0dc9b96090de41e2044b4080cb6",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-007.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/game-007.bin",
+      "sha256": "7e9b75036f84865200bce7a0fc5b8bc14c6165d872376eb22cae0b144e510f67",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/start-game.bin",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/start-game.bin",
+      "sha256": "6dce37c7079606cc66e89cd18c756ef9f8f5d1253d3704ebb69175b50e05eace",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/post-horn-paused-game/verification.json",
+      "source": "build/v030/game-cost-study/base8treebyte/post-horn-paused-game/verification.json",
+      "sha256": "dfbf796e837378e831d5818ea691a24dfc6bcdabebf286f27f8e87a2fdfcf204",
+      "bytes": 78112,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/base8treebyte/sight-variant.c",
+      "source": "build/v030/game-cost-study/base8treebyte/sight-variant.c",
+      "sha256": "9fc174144d9e470ebda176a6d1a0ca9d4a935db5384b6bea6c3a17e2540b5ddd",
+      "bytes": 24328,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/fog-000.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/fog-000.bin",
+      "sha256": "b2930e1334bd3ca09619402d5e9d74bde23b48f57a200d10a62f3d219dcbb966",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/fog-001.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/fog-001.bin",
+      "sha256": "32d0f90787e494e87cf4dd4f2f2880f0dedc3bab2379a07eb19d262d65461c56",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/fog-002.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/fog-002.bin",
+      "sha256": "b1c70102701ca17a5e2444c312f146957ef8141466fd3980a26462d902acce0a",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/fog-003.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/fog-003.bin",
+      "sha256": "542779278ef596b6f00d99a63c2e87dfc40dcdffcea8b686b2373c48005958db",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/fog-004.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/fog-004.bin",
+      "sha256": "c2f35191b2bf8bb2a79f1fcb7e8f4ca3edb3e2584800e7434ad4ae1175452e7d",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/fog-005.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/fog-005.bin",
+      "sha256": "34292cd1e86f4bb848c92a2461dffb5c9a8a008c9fc9ec7365a751628d2868a2",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/fog-006.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/fog-006.bin",
+      "sha256": "8fbdaf2650875161dc7401d7c52336c4845377698ed7ed00fbcaea1168300aaa",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/fog-007.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/fog-007.bin",
+      "sha256": "f3e0849476c6234ec1bc50a9b5ddb69e85e25ce17e5105b49351a2dbeca0ddf8",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/game-000.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/game-000.bin",
+      "sha256": "90bba621d11807012ee9b19784fecc95303682a94bc7c5d6d70a627302eaca43",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/game-001.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/game-001.bin",
+      "sha256": "3078cb0a62e948a63b801ea6cde47773b2f0dc7e207005298fed65a97dfe3574",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/game-002.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/game-002.bin",
+      "sha256": "10fea34233a700f2610e244ebc68b86b339a0f71f164730dc1557dddbb83c0f7",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/game-003.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/game-003.bin",
+      "sha256": "74dffe5dc8cdff48cf032cad5773276a2ddfd27c988fc716ec0e379aad21e80f",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/game-004.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/game-004.bin",
+      "sha256": "9356cbe35a919061ca225a4648eb94fdcde52b73c5d2a1a342269608de69ea2f",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/game-005.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/game-005.bin",
+      "sha256": "edbb0def7c87f7bc07c1535e40146cbe93bba8e726efb89cae3760b47c6abdf7",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/game-006.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/game-006.bin",
+      "sha256": "72925d3fac2f8ca4d87b0367d9a181e2f5f4435967b2f398071d66f878e7602a",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/game-007.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/game-007.bin",
+      "sha256": "619d7291eec44541268dab1cb3e947b60e649298acfe81cd8b54e961defe331a",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/start-game.bin",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/start-game.bin",
+      "sha256": "7d771fe69e6ed2b706dc527193ac78905a9014137f5473330568d0e32e356177",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/fountain-paused-game/verification.json",
+      "source": "build/v030/game-cost-study/baseC6/fountain-paused-game/verification.json",
+      "sha256": "920c2991b86185aeb330dd8770c2c98543072c54a76690b1111068b6ddd04f66",
+      "bytes": 67612,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-000.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-000.bin",
+      "sha256": "66ba141c3098f44d68659564ab645a536effacb768332f4b971e033314aa6a9a",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-001.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-001.bin",
+      "sha256": "1d361af9512d37382e46ff92338f217a055c0972f9d9633a55daf44da9670364",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-002.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-002.bin",
+      "sha256": "f1f4242565c9640eb7838b264b26a70fa788cd94a1d064b69d9ce5503570317e",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-003.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-003.bin",
+      "sha256": "202a6ed39407baf3cd39585f86439aa2f676b9c483178878a00af349666289c2",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-004.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-004.bin",
+      "sha256": "c1c89426b081c940c6a3f597792aa3363543749f305757103514109465c9b1c5",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-005.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-005.bin",
+      "sha256": "e21e3c45c9bc264434aa8a54b9053a4c631e9e4f3a424648b8fe2338abb6d0cc",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-006.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-006.bin",
+      "sha256": "91dc8fc980ba2cc99f0d97a97d61e40e5d5e2e19b1501fbd511831b2bbb97574",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-007.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/fog-007.bin",
+      "sha256": "93c26c82a9689cfc03d603ab28d3416e9495f1b363f80989d8c5e84a27f8ff60",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/game-000.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/game-000.bin",
+      "sha256": "274fb1bd5fab0f21f9922dc8fc4b2de31f63a295843ef5d62b0c067e6562766e",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/game-001.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/game-001.bin",
+      "sha256": "f6f5f2be4d0a13d28a2b298eedc870786a9d0df73c323a52f53c8249fc0faa0e",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/game-002.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/game-002.bin",
+      "sha256": "c828e68867fb546e4db562400c4e390b252142f55e7006b162e72a19d8281442",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/game-003.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/game-003.bin",
+      "sha256": "c4b4ad9ac045ed5a570f95960feb44d1c9649a4509a373f9786dece45c92b4a6",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/game-004.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/game-004.bin",
+      "sha256": "031b3f43abdb067493c04eab5d057ef54afad6a87985b244d83e88d75cbdc6c0",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/game-005.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/game-005.bin",
+      "sha256": "f6d2d2c7c1c637bf3a81a084711f67b8e9dec4da177bfcfeec79408dfd13e3b8",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/game-006.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/game-006.bin",
+      "sha256": "0e8ced20f95984a9d7ab63fdb2dee755931dd0dc9b96090de41e2044b4080cb6",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/game-007.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/game-007.bin",
+      "sha256": "7e9b75036f84865200bce7a0fc5b8bc14c6165d872376eb22cae0b144e510f67",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/start-game.bin",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/start-game.bin",
+      "sha256": "6dce37c7079606cc66e89cd18c756ef9f8f5d1253d3704ebb69175b50e05eace",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/baseC6/post-horn-paused-game/verification.json",
+      "source": "build/v030/game-cost-study/baseC6/post-horn-paused-game/verification.json",
+      "sha256": "bd4726cb46030e413dc04d1ce4efa0c78c922add441b20f54e252fe5e7334d6f",
+      "bytes": 78103,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/build-base-planes.py",
+      "source": "build/v030/game-cost-study/build-base-planes.py",
+      "sha256": "47327c3ce3dbb239c698e6c82e475adfe89e84d1adec5c3614ea3bbd6990959c",
+      "bytes": 2881,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/build-finalclass.py",
+      "source": "build/v030/game-cost-study/build-finalclass.py",
+      "sha256": "d445e93e59caa716adb4277a9a10ea395a1d463aa36d71f081608fc843339ef6",
+      "bytes": 4400,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/build-height-variants.py",
+      "source": "build/v030/game-cost-study/build-height-variants.py",
+      "sha256": "6e20aa9f79d4ffe83cbdf85599a666c88eea32553942b939c230eb0e8834cb4d",
+      "bytes": 4508,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/build-treebyte.py",
+      "source": "build/v030/game-cost-study/build-treebyte.py",
+      "sha256": "74a67470bf84a11ebe231644bd8b369241ac75f85b61efff6bec892609cc9bc4",
+      "bytes": 1705,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass-summary.json",
+      "source": "build/v030/game-cost-study/finalclass-summary.json",
+      "sha256": "8baa46191534b633b4d6b71a6529e231b623475e2980e8dfee0cc2360d0e7504",
+      "bytes": 2057,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/DOTA2.build.json",
+      "source": "build/v030/game-cost-study/finalclass/DOTA2.build.json",
+      "sha256": "6346dc40fcc1ad0669085ad534ae95558e01fdba8f8496ed6ecc03b832ba416a",
+      "bytes": 920,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/commands.json",
+      "source": "build/v030/game-cost-study/finalclass/commands.json",
+      "sha256": "5bcbe37284f8d70256ff505225d2b81bd27a485b09d3df114ccabaa53f791f67",
+      "bytes": 6824,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/fog-000.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/fog-000.bin",
+      "sha256": "b2930e1334bd3ca09619402d5e9d74bde23b48f57a200d10a62f3d219dcbb966",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/fog-001.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/fog-001.bin",
+      "sha256": "32d0f90787e494e87cf4dd4f2f2880f0dedc3bab2379a07eb19d262d65461c56",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/fog-002.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/fog-002.bin",
+      "sha256": "b1c70102701ca17a5e2444c312f146957ef8141466fd3980a26462d902acce0a",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/fog-003.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/fog-003.bin",
+      "sha256": "542779278ef596b6f00d99a63c2e87dfc40dcdffcea8b686b2373c48005958db",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/fog-004.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/fog-004.bin",
+      "sha256": "c2f35191b2bf8bb2a79f1fcb7e8f4ca3edb3e2584800e7434ad4ae1175452e7d",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/fog-005.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/fog-005.bin",
+      "sha256": "34292cd1e86f4bb848c92a2461dffb5c9a8a008c9fc9ec7365a751628d2868a2",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/fog-006.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/fog-006.bin",
+      "sha256": "8fbdaf2650875161dc7401d7c52336c4845377698ed7ed00fbcaea1168300aaa",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/fog-007.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/fog-007.bin",
+      "sha256": "f3e0849476c6234ec1bc50a9b5ddb69e85e25ce17e5105b49351a2dbeca0ddf8",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/game-000.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/game-000.bin",
+      "sha256": "90bba621d11807012ee9b19784fecc95303682a94bc7c5d6d70a627302eaca43",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/game-001.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/game-001.bin",
+      "sha256": "3078cb0a62e948a63b801ea6cde47773b2f0dc7e207005298fed65a97dfe3574",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/game-002.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/game-002.bin",
+      "sha256": "10fea34233a700f2610e244ebc68b86b339a0f71f164730dc1557dddbb83c0f7",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/game-003.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/game-003.bin",
+      "sha256": "74dffe5dc8cdff48cf032cad5773276a2ddfd27c988fc716ec0e379aad21e80f",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/game-004.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/game-004.bin",
+      "sha256": "9356cbe35a919061ca225a4648eb94fdcde52b73c5d2a1a342269608de69ea2f",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/game-005.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/game-005.bin",
+      "sha256": "edbb0def7c87f7bc07c1535e40146cbe93bba8e726efb89cae3760b47c6abdf7",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/game-006.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/game-006.bin",
+      "sha256": "72925d3fac2f8ca4d87b0367d9a181e2f5f4435967b2f398071d66f878e7602a",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/game-007.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/game-007.bin",
+      "sha256": "619d7291eec44541268dab1cb3e947b60e649298acfe81cd8b54e961defe331a",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/start-game.bin",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/start-game.bin",
+      "sha256": "7d771fe69e6ed2b706dc527193ac78905a9014137f5473330568d0e32e356177",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/fountain-paused-game/verification.json",
+      "source": "build/v030/game-cost-study/finalclass/fountain-paused-game/verification.json",
+      "sha256": "239f5d0ff5858ce63c39f164555652fc6df4987590b62aa2fde9ac9be15473ff",
+      "bytes": 67601,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-000.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-000.bin",
+      "sha256": "66ba141c3098f44d68659564ab645a536effacb768332f4b971e033314aa6a9a",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-001.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-001.bin",
+      "sha256": "1d361af9512d37382e46ff92338f217a055c0972f9d9633a55daf44da9670364",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-002.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-002.bin",
+      "sha256": "f1f4242565c9640eb7838b264b26a70fa788cd94a1d064b69d9ce5503570317e",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-003.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-003.bin",
+      "sha256": "202a6ed39407baf3cd39585f86439aa2f676b9c483178878a00af349666289c2",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-004.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-004.bin",
+      "sha256": "c1c89426b081c940c6a3f597792aa3363543749f305757103514109465c9b1c5",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-005.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-005.bin",
+      "sha256": "e21e3c45c9bc264434aa8a54b9053a4c631e9e4f3a424648b8fe2338abb6d0cc",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-006.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-006.bin",
+      "sha256": "91dc8fc980ba2cc99f0d97a97d61e40e5d5e2e19b1501fbd511831b2bbb97574",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-007.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/fog-007.bin",
+      "sha256": "93c26c82a9689cfc03d603ab28d3416e9495f1b363f80989d8c5e84a27f8ff60",
+      "bytes": 33278,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/game-000.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/game-000.bin",
+      "sha256": "274fb1bd5fab0f21f9922dc8fc4b2de31f63a295843ef5d62b0c067e6562766e",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/game-001.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/game-001.bin",
+      "sha256": "f6f5f2be4d0a13d28a2b298eedc870786a9d0df73c323a52f53c8249fc0faa0e",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/game-002.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/game-002.bin",
+      "sha256": "c828e68867fb546e4db562400c4e390b252142f55e7006b162e72a19d8281442",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/game-003.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/game-003.bin",
+      "sha256": "c4b4ad9ac045ed5a570f95960feb44d1c9649a4509a373f9786dece45c92b4a6",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/game-004.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/game-004.bin",
+      "sha256": "031b3f43abdb067493c04eab5d057ef54afad6a87985b244d83e88d75cbdc6c0",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/game-005.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/game-005.bin",
+      "sha256": "f6d2d2c7c1c637bf3a81a084711f67b8e9dec4da177bfcfeec79408dfd13e3b8",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/game-006.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/game-006.bin",
+      "sha256": "0e8ced20f95984a9d7ab63fdb2dee755931dd0dc9b96090de41e2044b4080cb6",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/game-007.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/game-007.bin",
+      "sha256": "7e9b75036f84865200bce7a0fc5b8bc14c6165d872376eb22cae0b144e510f67",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/start-game.bin",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/start-game.bin",
+      "sha256": "6dce37c7079606cc66e89cd18c756ef9f8f5d1253d3704ebb69175b50e05eace",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/post-horn-paused-game/verification.json",
+      "source": "build/v030/game-cost-study/finalclass/post-horn-paused-game/verification.json",
+      "sha256": "03c02a68e1d76da51f661979db8d4134c18fafe4e9e215f513256cf0dcb1af55",
+      "bytes": 78108,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/finalclass/sight-variant.c",
+      "source": "build/v030/game-cost-study/finalclass/sight-variant.c",
+      "sha256": "cf693f6b2c925fac5f22922ef397193ddbc5f9266087e28d38fc69923ed03adc",
+      "bytes": 25452,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-model"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/fountain-paused-game-shadow-trace.json",
+      "source": "build/v030/game-cost-study/fountain-paused-game-shadow-trace.json",
+      "sha256": "9be48d32bddd3beed278951bc5d03866136b4cdcf08097300336d9dfdb73a330",
+      "bytes": 967045,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/game-cost-summary.json",
+      "source": "build/v030/game-cost-study/game-cost-summary.json",
+      "sha256": "8ef10a59531d87944fd6b4905bed24c500bf2cfb9e54bb94c17e3c37655e50eb",
+      "bytes": 7752,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/getter-mips-loop/caller.bin",
+      "source": "build/v030/game-cost-study/getter-mips-loop/caller.bin",
+      "sha256": "2000351b4b6ca67d9b4357df649ada791015a20194aa5e6a84973d2368038962",
+      "bytes": 244,
+      "byte_identical_at_capture": true,
+      "category": "diagnostic-getter-mips"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/getter-mips-loop/caller.c",
+      "source": "build/v030/game-cost-study/getter-mips-loop/caller.c",
+      "sha256": "eda92184fbed6c111a0bee14f603c5e9874da7bfa5862b6ab145890eb97ee2b5",
+      "bytes": 359,
+      "byte_identical_at_capture": true,
+      "category": "diagnostic-getter-mips"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/getter-mips-loop/caller.ld",
+      "source": "build/v030/game-cost-study/getter-mips-loop/caller.ld",
+      "sha256": "cfc6450c94ac4eb089c963e22c53f2794732974d458428bc8ee6bd165e5b12dc",
+      "bytes": 198,
+      "byte_identical_at_capture": true,
+      "category": "diagnostic-getter-mips"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/getter-mips-loop/commands.json",
+      "source": "build/v030/game-cost-study/getter-mips-loop/commands.json",
+      "sha256": "4f494aceca9d8ddde8b62b870d17f489db5f9f96aaac769a13bae2744f4bee12",
+      "bytes": 2280,
+      "byte_identical_at_capture": true,
+      "category": "diagnostic-getter-mips"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/getter-mips-loop/verification.json",
+      "source": "build/v030/game-cost-study/getter-mips-loop/verification.json",
+      "sha256": "aacb9877118a7d3cd9e29607177bd84ed6c62fcc7a13b7436578ac05120c7f2b",
+      "bytes": 1547,
+      "byte_identical_at_capture": true,
+      "category": "diagnostic-getter-mips"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-bounded2/enhanced-test.c",
+      "source": "build/v030/game-cost-study/host-bounded2/enhanced-test.c",
+      "sha256": "9ebc4b01651c4f038f1ba6bc10ffb712761b01ac3d3e75c6ba896b69ca35a24e",
+      "bytes": 15120,
+      "byte_identical_at_capture": true,
+      "category": "bounded-cache-regression"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-bounded2/host-run1/compile.txt",
+      "source": "build/v030/game-cost-study/host-bounded2/host-run1/compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "byte_identical_at_capture": true,
+      "category": "bounded-cache-regression"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-bounded2/host-run1/output.txt",
+      "source": "build/v030/game-cost-study/host-bounded2/host-run1/output.txt",
+      "sha256": "734b046b34e9d148ddd217bb4f8b8fe537eda918aca324298071f6ca685a6aa2",
+      "bytes": 5036,
+      "byte_identical_at_capture": true,
+      "category": "bounded-cache-regression"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-bounded2/host-run1/verification.json",
+      "source": "build/v030/game-cost-study/host-bounded2/host-run1/verification.json",
+      "sha256": "05441e2be29791be008c621d2ab0841f9c33e7462cba695e884a8d64de067944",
+      "bytes": 9531,
+      "byte_identical_at_capture": true,
+      "category": "bounded-cache-regression"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-bounded2/new-wrapper.c",
+      "source": "build/v030/game-cost-study/host-bounded2/new-wrapper.c",
+      "sha256": "6cbc83fb595aad73d1e18c7e19cd9721474aa34c4f14fa1b430e9de2fd1ef8ce",
+      "bytes": 1698,
+      "byte_identical_at_capture": true,
+      "category": "bounded-cache-regression"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-bounded2/old-wrapper.c",
+      "source": "build/v030/game-cost-study/host-bounded2/old-wrapper.c",
+      "sha256": "cc7594d4771298768ca871a2363fbdd34c2efe6671cfe372e39c37371ce85640",
+      "bytes": 580,
+      "byte_identical_at_capture": true,
+      "category": "bounded-cache-regression"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-bounded2/sight-before.c",
+      "source": "build/v030/game-cost-study/host-bounded2/sight-before.c",
+      "sha256": "a2bdb365fc9602f22b904eed0e2611e851b1046340db7a34c04c13f7e8ac6e93",
+      "bytes": 20611,
+      "byte_identical_at_capture": true,
+      "category": "bounded-cache-regression"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-finalclass/enhanced-test.c",
+      "source": "build/v030/game-cost-study/host-finalclass/enhanced-test.c",
+      "sha256": "9cc9dbb65964443c4a0d9a90774cd4b52222e507ab32d1bccb0640378a1ca97c",
+      "bytes": 17823,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-host"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-finalclass/host-run1/compile.txt",
+      "source": "build/v030/game-cost-study/host-finalclass/host-run1/compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-host"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-finalclass/host-run1/output.txt",
+      "source": "build/v030/game-cost-study/host-finalclass/host-run1/output.txt",
+      "sha256": "08a921d7294777fdeb22d0eb9fd63842b5e8373b749b9d5fe31fde1e254f4e56",
+      "bytes": 5469,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-host"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-finalclass/host-run1/verification.json",
+      "source": "build/v030/game-cost-study/host-finalclass/host-run1/verification.json",
+      "sha256": "c76f82d1377b05a19e627fdcb4ec73a828cd30cc6aa5ce570221f2ebc9397c0a",
+      "bytes": 9516,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-host"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-finalclass/new-wrapper.c",
+      "source": "build/v030/game-cost-study/host-finalclass/new-wrapper.c",
+      "sha256": "7ae41a01103e1a08fa34d65a1e1b635cfd9fcbb9cd05821eebe410ee4f4fb689",
+      "bytes": 2074,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-host"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-finalclass/old-wrapper.c",
+      "source": "build/v030/game-cost-study/host-finalclass/old-wrapper.c",
+      "sha256": "cc7594d4771298768ca871a2363fbdd34c2efe6671cfe372e39c37371ce85640",
+      "bytes": 580,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-host"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-finalclass/sight-before.c",
+      "source": "build/v030/game-cost-study/host-finalclass/sight-before.c",
+      "sha256": "a2bdb365fc9602f22b904eed0e2611e851b1046340db7a34c04c13f7e8ac6e93",
+      "bytes": 20611,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-host"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-reference/enhanced-test.c",
+      "source": "build/v030/game-cost-study/host-reference/enhanced-test.c",
+      "sha256": "3e80d30586abc9e2046835d93214be5ab501998b2c869700ac736bc71c3f8072",
+      "bytes": 13720,
+      "byte_identical_at_capture": true,
+      "category": "host-sight-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-reference/host-run1/compile.txt",
+      "source": "build/v030/game-cost-study/host-reference/host-run1/compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "byte_identical_at_capture": true,
+      "category": "host-sight-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-reference/host-run1/output.txt",
+      "source": "build/v030/game-cost-study/host-reference/host-run1/output.txt",
+      "sha256": "db21411d3a03e5fa069068fd62a3254ab6186c25e0a466fdaa9622f9cbbf2ec4",
+      "bytes": 4086,
+      "byte_identical_at_capture": true,
+      "category": "host-sight-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-reference/host-run1/verification.json",
+      "source": "build/v030/game-cost-study/host-reference/host-run1/verification.json",
+      "sha256": "729bead717b19c6f826831c34ad57af226b6702ffe9911890a2107a65c56c196",
+      "bytes": 9535,
+      "byte_identical_at_capture": true,
+      "category": "host-sight-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-reference/new-wrapper.c",
+      "source": "build/v030/game-cost-study/host-reference/new-wrapper.c",
+      "sha256": "237d9e57c8e1a4b176365a84a5d114e725cbe014c0b959599050061ea0f8b074",
+      "bytes": 644,
+      "byte_identical_at_capture": true,
+      "category": "host-sight-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-reference/old-wrapper.c",
+      "source": "build/v030/game-cost-study/host-reference/old-wrapper.c",
+      "sha256": "8a694c9d7acd8a9592c093e3fdd61ccfde1a29839972b0c7e95ff857ef1d5a6b",
+      "bytes": 403,
+      "byte_identical_at_capture": true,
+      "category": "host-sight-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/host-reference/sight-before.c",
+      "source": "build/v030/game-cost-study/host-reference/sight-before.c",
+      "sha256": "a2bdb365fc9602f22b904eed0e2611e851b1046340db7a34c04c13f7e8ac6e93",
+      "bytes": 20611,
+      "byte_identical_at_capture": true,
+      "category": "host-sight-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/post-horn-paused-game-shadow-trace.json",
+      "source": "build/v030/game-cost-study/post-horn-paused-game-shadow-trace.json",
+      "sha256": "170a78854cd4d246f39160dca84743bb3b74f87166429f7286b0d3418c4303c5",
+      "bytes": 1751495,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/profile-base-planes.py",
+      "source": "build/v030/game-cost-study/profile-base-planes.py",
+      "sha256": "865928e9509a747a8b2e8b2ec0243afa9821d71911f2466fd18ef0cf767bab20",
+      "bytes": 373,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/profile-finalclass.py",
+      "source": "build/v030/game-cost-study/profile-finalclass.py",
+      "sha256": "72644b3785395e6ed393ff42e99bb9700d3066294e65b20c550a361d57edd8a9",
+      "bytes": 500,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/profile-height-variants.py",
+      "source": "build/v030/game-cost-study/profile-height-variants.py",
+      "sha256": "3d19d3e2cfdd26f07032b7c3789805e6d8b2ff45bee2040f1de091521add7c52",
+      "bytes": 5408,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/profile-treebyte.py",
+      "source": "build/v030/game-cost-study/profile-treebyte.py",
+      "sha256": "ca707d47f9bd43241d5137ff5e00d8d68499f78883ca3158aa1b8b4f8bdb697f",
+      "bytes": 356,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/run-host-bounded.py",
+      "source": "build/v030/game-cost-study/run-host-bounded.py",
+      "sha256": "ec2ad0ebdc51d7bef4c8870bad760fc3a9b3dd49e7c0bfd956719eb542e55050",
+      "bytes": 3621,
+      "byte_identical_at_capture": true,
+      "category": "bounded-cache-regression-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/run-host-enhanced.py",
+      "source": "build/v030/game-cost-study/run-host-enhanced.py",
+      "sha256": "0df8c5f76e086d9eef380c48e3a55f655dfdbbbf344208e8a75e2622b0aabe7b",
+      "bytes": 2540,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/run-host-finalclass.py",
+      "source": "build/v030/game-cost-study/run-host-finalclass.py",
+      "sha256": "9b09ddc1ea5e311b1c1ed1c33dfeba3d52c4f7a901543f223ed5cfe6caf4dfc6",
+      "bytes": 6259,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/shadow-trace-summary.json",
+      "source": "build/v030/game-cost-study/shadow-trace-summary.json",
+      "sha256": "f379bd2c3fb084289cac8bf6b6960030ea5d055fa0c37a24f46e82417a890b3a",
+      "bytes": 538,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/shadow-trace.py",
+      "source": "build/v030/game-cost-study/shadow-trace.py",
+      "sha256": "a98ba3e6e7543d0bf4d2b9e5207a6763bf2c3131490e88755b5859f45093abce",
+      "bytes": 6818,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/sight-base8-treebyte.c",
+      "source": "build/v030/game-cost-study/sight-base8-treebyte.c",
+      "sha256": "9fc174144d9e470ebda176a6d1a0ca9d4a935db5384b6bea6c3a17e2540b5ddd",
+      "bytes": 24328,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/sight-c3-before-height.c",
+      "source": "build/v030/game-cost-study/sight-c3-before-height.c",
+      "sha256": "79c31e0aaa8019a11d10b7d235e5c3a30299a9b3d7de68555a84cfffd315f25b",
+      "bytes": 23327,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/sight-c6-before-finalclass.c",
+      "source": "build/v030/game-cost-study/sight-c6-before-finalclass.c",
+      "sha256": "0f94bd7de992cde12058e684e1d24361398d02aa632ebf10d1ff4fb1c8ad9996",
+      "bytes": 25091,
+      "byte_identical_at_capture": true,
+      "category": "final-obstruction-class-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/summarize.py",
+      "source": "build/v030/game-cost-study/summarize.py",
+      "sha256": "0f762c8a97b2e9e7966cbe471c6089756bae7c5bcfa5b22810908ca0f06b8546",
+      "bytes": 3182,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/game-cost-study/treebyte-summary.json",
+      "source": "build/v030/game-cost-study/treebyte-summary.json",
+      "sha256": "d1eceefade7ff1884c522816d5dcd3de1f9cfb440176ebc0f76666e91239364f",
+      "bytes": 2062,
+      "byte_identical_at_capture": true,
+      "category": "isolated-cpu-study"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/minimap-study/proof3/compile.txt",
+      "source": "build/v030/minimap-study/proof3/compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "byte_identical_at_capture": true,
+      "category": "minimap-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/minimap-study/proof3/minimap-background.c",
+      "source": "build/v030/minimap-study/proof3/minimap-background.c",
+      "sha256": "91bc4f10d29383dc6e207965b1754c1b778661043c73e2f82823f2b85b407742",
+      "bytes": 4458,
+      "byte_identical_at_capture": true,
+      "category": "minimap-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/minimap-study/proof3/output.txt",
+      "source": "build/v030/minimap-study/proof3/output.txt",
+      "sha256": "95e35d75c592a0446bec7eca0dc4848c471aa88f3306983c8c2eaaa41ece7139",
+      "bytes": 116,
+      "byte_identical_at_capture": true,
+      "category": "minimap-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/minimap-study/proof3/verification.json",
+      "source": "build/v030/minimap-study/proof3/verification.json",
+      "sha256": "e8a0eebe50bee5805beb2a1b368ab3e8ebe682e29c7ec18c22fdefca695bb106",
+      "bytes": 1415,
+      "byte_identical_at_capture": true,
+      "category": "minimap-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/minimap-study/render-before.c",
+      "source": "build/v030/minimap-study/render-before.c",
+      "sha256": "aa239b3d40600ca34bf60301b2971186783ddd652fd3a8db6d43318e4e41853c",
+      "bytes": 74757,
+      "byte_identical_at_capture": true,
+      "category": "minimap-reference"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf-candidate4/DOTA2.build.json",
+      "source": "build/v030/perf-candidate4/DOTA2.build.json",
+      "sha256": "9d2a33ef4b86d88e269ec5ac132fffd7c389613e81f2d57592b8e484698e1890",
+      "bytes": 22820,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf-candidate4/commands.json",
+      "source": "build/v030/perf-candidate4/commands.json",
+      "sha256": "7b9a6eeefd96edbf420903fea4087c8246f8600b008c1d708883af59802eea17",
+      "bytes": 35976,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-aligned/driver.py",
+      "source": "build/v030/perf2-bounded-aligned/driver.py",
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "bytes": 7593,
+      "byte_identical_at_capture": true,
+      "category": "excluded-lineup-mismatch"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-aligned/verification.json",
+      "source": "build/v030/perf2-bounded-aligned/verification.json",
+      "sha256": "e03bdd93d8cb5e2b4af2b0479f524e3944be3f3a5df79a8ffdcb6da278fecc08",
+      "bytes": 8960,
+      "byte_identical_at_capture": true,
+      "category": "excluded-lineup-mismatch"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-aligned2/driver.py",
+      "source": "build/v030/perf2-bounded-aligned2/driver.py",
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "bytes": 7593,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-aligned2/fountain-paused-game.bin",
+      "source": "build/v030/perf2-bounded-aligned2/fountain-paused-game.bin",
+      "sha256": "64bbd32c537a830133f565431f9f7126ec424d80ac1050a0eabdffd32c2d3729",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-aligned2/fountain-paused.png",
+      "source": "build/v030/perf2-bounded-aligned2/fountain-paused.png",
+      "sha256": "ee95ea2473d53eaec642021e24e119f0dc7b38cbfcdf34c5d10c564a8739a8e1",
+      "bytes": 12822,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-aligned2/mid-paused-game.bin",
+      "source": "build/v030/perf2-bounded-aligned2/mid-paused-game.bin",
+      "sha256": "2fa163a752617438d5f747bdde11b8f6bf9460be42e908f69d817602e392e3e0",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-aligned2/mid-paused.png",
+      "source": "build/v030/perf2-bounded-aligned2/mid-paused.png",
+      "sha256": "a7ef4f5e7d031c37adc631371f8b92d904824cabffafb09eeabd9c8284b79ea8",
+      "bytes": 11082,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-aligned2/post-horn-paused-game.bin",
+      "source": "build/v030/perf2-bounded-aligned2/post-horn-paused-game.bin",
+      "sha256": "d08cae1127c529a97b46ed8d6804ab79ffeb0a85029cdf889eaac7c39d1169bc",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-aligned2/post-horn-paused.png",
+      "source": "build/v030/perf2-bounded-aligned2/post-horn-paused.png",
+      "sha256": "215cffd512686cd8b0595d84e872169d15a7a6b0daf4568707bdb595cc189ec3",
+      "bytes": 12977,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-aligned2/verification.json",
+      "source": "build/v030/perf2-bounded-aligned2/verification.json",
+      "sha256": "4f93d4d4a238cb0fbeeb5df6a60991a81688c0038ca4ed07942aad2227e14d93",
+      "bytes": 85762,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-sight-bits-mips/caller.bin",
+      "source": "build/v030/perf2-bounded-sight-bits-mips/caller.bin",
+      "sha256": "66678323cafd0e97df5427ef0520492f8206ab0d68db95244929396bfa4d5c72",
+      "bytes": 244,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-sight-bits-mips/caller.c",
+      "source": "build/v030/perf2-bounded-sight-bits-mips/caller.c",
+      "sha256": "eda92184fbed6c111a0bee14f603c5e9874da7bfa5862b6ab145890eb97ee2b5",
+      "bytes": 359,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-sight-bits-mips/caller.ld",
+      "source": "build/v030/perf2-bounded-sight-bits-mips/caller.ld",
+      "sha256": "cfc6450c94ac4eb089c963e22c53f2794732974d458428bc8ee6bd165e5b12dc",
+      "bytes": 198,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-sight-bits-mips/commands.json",
+      "source": "build/v030/perf2-bounded-sight-bits-mips/commands.json",
+      "sha256": "8e092fc358c3ce21714bf0d1c71cbab40698ea8da0ab45613cfaf4e404148c8c",
+      "bytes": 2252,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-sight-bits-mips/verification.json",
+      "source": "build/v030/perf2-bounded-sight-bits-mips/verification.json",
+      "sha256": "edbd928aee104607f64cd5bbc111b805a8e3b03ab673fdccdb163d1a03f06b57",
+      "bytes": 1532,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-cut/after-tree-2056.png",
+      "source": "build/v030/perf2-bounded-trees-cut/after-tree-2056.png",
+      "sha256": "d322ca0608eac7298184dfba07ccc566df17655cecaf4aa1da6d3a88a092e315",
+      "bytes": 93442,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-cut/after-tree-2061.png",
+      "source": "build/v030/perf2-bounded-trees-cut/after-tree-2061.png",
+      "sha256": "97b6203e423f2bba17fcd79ef49c643051bdf58f97c5703ae63ed8c3862119c7",
+      "bytes": 97092,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-cut/before-tree-2056.png",
+      "source": "build/v030/perf2-bounded-trees-cut/before-tree-2056.png",
+      "sha256": "ac4267ed6c586cbbab743d7bc6c779758479988f88eb700eb9cf994efd5b724f",
+      "bytes": 89088,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-cut/before-tree-2061.png",
+      "source": "build/v030/perf2-bounded-trees-cut/before-tree-2061.png",
+      "sha256": "661f776b6478efd04e27b8f1ff98f47906accb873a719fbfbc14813102031c59",
+      "bytes": 93337,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-cut/driver-executed.py",
+      "source": "build/v030/perf2-bounded-trees-cut/driver-executed.py",
+      "sha256": "5c325f11e3d14c63a3db9cfb11c46c488cacaa72c2184c912d225c81fc20ab8b",
+      "bytes": 23939,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-cut/help-about.png",
+      "source": "build/v030/perf2-bounded-trees-cut/help-about.png",
+      "sha256": "765529a440b61ccf3a70b7c33914eb4b2b5563eaeb7aeaad776082b88441704f",
+      "bytes": 8246,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-cut/help-controls.png",
+      "source": "build/v030/perf2-bounded-trees-cut/help-controls.png",
+      "sha256": "696be5cf9426cfb51ede0aa40703365747b7eb0767ca247f6bafee988ec34ebe",
+      "bytes": 9130,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-cut/pause-six-buttons.png",
+      "source": "build/v030/perf2-bounded-trees-cut/pause-six-buttons.png",
+      "sha256": "04738f98bc124cd126fdde3c16ddf22fa2121754991ec8dd40de35e2b2f2c4b6",
+      "bytes": 12982,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-cut/trees-cut-paused-game.bin",
+      "source": "build/v030/perf2-bounded-trees-cut/trees-cut-paused-game.bin",
+      "sha256": "9a6cf7247eef095e17a11e2bd674cd7e1a8db7cc9ca926ddcdf092ec96c3b320",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-cut/trees-cut-paused-view.bin",
+      "source": "build/v030/perf2-bounded-trees-cut/trees-cut-paused-view.bin",
+      "sha256": "2747df47b2687ed5e3ef636bc0ad3a212f4a38b6d4d7c0c64d3e63dc794cb4a0",
+      "bytes": 148,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-cut/verification.json",
+      "source": "build/v030/perf2-bounded-trees-cut/verification.json",
+      "sha256": "1e805fd32f704b9133baab7343d6de8402383a03828a008bf10c0724a93511e2",
+      "bytes": 48408,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-mips/host-compile.txt",
+      "source": "build/v030/perf2-bounded-trees-mips/host-compile.txt",
+      "sha256": "f716221edf75a225f34a9aa70bd7404d2ee0c18776c1858e0f4322c65fde42f3",
+      "bytes": 697,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-mips/host-layout.json",
+      "source": "build/v030/perf2-bounded-trees-mips/host-layout.json",
+      "sha256": "c526a2847022797c43a734815ff72846887ab31f7837a87ee8b62e8700e63322",
+      "bytes": 1698,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-trees-mips/verification.json",
+      "source": "build/v030/perf2-bounded-trees-mips/verification.json",
+      "sha256": "f2e44512b78a518a6e5f6eaa16c575851e0ed3a2f08971984c414b6b98dd4f96",
+      "bytes": 34699,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-vision-mips/compile.txt",
+      "source": "build/v030/perf2-bounded-vision-mips/compile.txt",
+      "sha256": "66cf971325080ba970865ef39702594fb8257b8515f4d7f4301f5672be92c3e6",
+      "bytes": 945,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-vision-mips/layout-and-host-results.json",
+      "source": "build/v030/perf2-bounded-vision-mips/layout-and-host-results.json",
+      "sha256": "82159f8cb52b09c645962540174748e0c19f2d6d25cc719128f7ca335f63df62",
+      "bytes": 2557,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-bounded-vision-mips/verification.json",
+      "source": "build/v030/perf2-bounded-vision-mips/verification.json",
+      "sha256": "b0f41a83ff4f3ebbeb2aa74e555a727c2dba7d330b2d9e815a9c4b50ddfb4033",
+      "bytes": 28793,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-aligned/driver.py",
+      "source": "build/v030/perf2-final-aligned/driver.py",
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "bytes": 7593,
+      "byte_identical_at_capture": true,
+      "category": "excluded-lineup-mismatch"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-aligned/verification.json",
+      "source": "build/v030/perf2-final-aligned/verification.json",
+      "sha256": "73427cca34147364135609b8899297bcaf6aeda5c55793dc8ff958b23a3c2c7f",
+      "bytes": 8958,
+      "byte_identical_at_capture": true,
+      "category": "excluded-lineup-mismatch"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-aligned2/driver.py",
+      "source": "build/v030/perf2-final-aligned2/driver.py",
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "bytes": 7593,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-aligned-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-aligned2/fountain-paused-game.bin",
+      "source": "build/v030/perf2-final-aligned2/fountain-paused-game.bin",
+      "sha256": "0954d938df293b91d113a1fd985b1efd80337efd25312cd869ef4e5aa7dc1a7f",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-aligned-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-aligned2/fountain-paused.png",
+      "source": "build/v030/perf2-final-aligned2/fountain-paused.png",
+      "sha256": "ee95ea2473d53eaec642021e24e119f0dc7b38cbfcdf34c5d10c564a8739a8e1",
+      "bytes": 12822,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-aligned-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-aligned2/mid-paused-game.bin",
+      "source": "build/v030/perf2-final-aligned2/mid-paused-game.bin",
+      "sha256": "f492b9ba12912ab6a2ea7745b578f5337ade64a692b1f6694eeb825f58068280",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-aligned-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-aligned2/mid-paused.png",
+      "source": "build/v030/perf2-final-aligned2/mid-paused.png",
+      "sha256": "68fe3a51821415031a25072afcd5c16b9e81dd78e3805a505dfefa9a7634dad8",
+      "bytes": 11090,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-aligned-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-aligned2/post-horn-paused-game.bin",
+      "source": "build/v030/perf2-final-aligned2/post-horn-paused-game.bin",
+      "sha256": "dcf282abe14899af2194e0a993d3c6b6a561206a3cc3dacb9c51ea412affaa36",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-aligned-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-aligned2/post-horn-paused.png",
+      "source": "build/v030/perf2-final-aligned2/post-horn-paused.png",
+      "sha256": "b779ebed243e46289b94de90a31a20779ea5f286f35f4453aead82eb95fe7199",
+      "bytes": 12962,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-aligned-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-aligned2/verification.json",
+      "source": "build/v030/perf2-final-aligned2/verification.json",
+      "sha256": "d818b72dcf89a82b16cbc3ea637d342f6d08ac85b4b1a07da660f68a5a4e1c84",
+      "bytes": 85754,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-aligned-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-deploy-tool.json",
+      "source": "build/v030/perf2-final-deploy-tool.json",
+      "sha256": "9828d0f665460d4819374039fd10b892c7813b6f904015001d316138a6a9b243",
+      "bytes": 4025,
+      "byte_identical_at_capture": true,
+      "category": "candidate5-deployment-receipt"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-deploy.json",
+      "source": "build/v030/perf2-final-deploy.json",
+      "sha256": "c75af9fc22a7b8790151d39858caf66732eefbf064edfc1f42a40899469e8a30",
+      "bytes": 3838,
+      "byte_identical_at_capture": true,
+      "category": "candidate5-deployment-receipt"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-deploy.json.upload.json",
+      "source": "build/v030/perf2-final-deploy.json.upload.json",
+      "sha256": "13a1b3c66042b4d7ffa5f060f8aa31960fee9c3bbaaed4b4db8b270f2d48e31e",
+      "bytes": 1145,
+      "byte_identical_at_capture": true,
+      "category": "candidate5-deployment-receipt"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-resource-mips/verification.json",
+      "source": "build/v030/perf2-final-resource-mips/verification.json",
+      "sha256": "927d9d14a6c8a6d300d5243b3ae87d800b85a0f442d3235d8da157f452dfc447",
+      "bytes": 27451,
+      "byte_identical_at_capture": true,
+      "category": "final-c5-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-sight-bits-mips/caller.bin",
+      "source": "build/v030/perf2-final-sight-bits-mips/caller.bin",
+      "sha256": "527d8a6164f3a579c0acc27ba01a20e8fc0a35db8a9ad71e09119389c9e283a3",
+      "bytes": 244,
+      "byte_identical_at_capture": true,
+      "category": "final-c5-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-sight-bits-mips/caller.c",
+      "source": "build/v030/perf2-final-sight-bits-mips/caller.c",
+      "sha256": "eda92184fbed6c111a0bee14f603c5e9874da7bfa5862b6ab145890eb97ee2b5",
+      "bytes": 359,
+      "byte_identical_at_capture": true,
+      "category": "final-c5-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-sight-bits-mips/caller.ld",
+      "source": "build/v030/perf2-final-sight-bits-mips/caller.ld",
+      "sha256": "cfc6450c94ac4eb089c963e22c53f2794732974d458428bc8ee6bd165e5b12dc",
+      "bytes": 198,
+      "byte_identical_at_capture": true,
+      "category": "final-c5-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-sight-bits-mips/commands.json",
+      "source": "build/v030/perf2-final-sight-bits-mips/commands.json",
+      "sha256": "3a5d5c600685dce4d83b06b877d9384fb4d7187ce62004a61abc7595834615a9",
+      "bytes": 2238,
+      "byte_identical_at_capture": true,
+      "category": "final-c5-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-sight-bits-mips/verification.json",
+      "source": "build/v030/perf2-final-sight-bits-mips/verification.json",
+      "sha256": "2174494e7c671e4493f6056021bdb2bd956189412bcd3d93d961f1e85cd7e12f",
+      "bytes": 1547,
+      "byte_identical_at_capture": true,
+      "category": "final-c5-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-trees-mips/host-compile.txt",
+      "source": "build/v030/perf2-final-trees-mips/host-compile.txt",
+      "sha256": "f716221edf75a225f34a9aa70bd7404d2ee0c18776c1858e0f4322c65fde42f3",
+      "bytes": 697,
+      "byte_identical_at_capture": true,
+      "category": "final-c5-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-trees-mips/host-layout.json",
+      "source": "build/v030/perf2-final-trees-mips/host-layout.json",
+      "sha256": "c526a2847022797c43a734815ff72846887ab31f7837a87ee8b62e8700e63322",
+      "bytes": 1698,
+      "byte_identical_at_capture": true,
+      "category": "final-c5-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-trees-mips/verification.json",
+      "source": "build/v030/perf2-final-trees-mips/verification.json",
+      "sha256": "2bae6c23c9572140cfae8ab6d49f92b608e8e4eca6f183d6de19a5ad9cbdb016",
+      "bytes": 34699,
+      "byte_identical_at_capture": true,
+      "category": "final-c5-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-vision-mips/compile.txt",
+      "source": "build/v030/perf2-final-vision-mips/compile.txt",
+      "sha256": "66cf971325080ba970865ef39702594fb8257b8515f4d7f4301f5672be92c3e6",
+      "bytes": 945,
+      "byte_identical_at_capture": true,
+      "category": "final-c5-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-vision-mips/layout-and-host-results.json",
+      "source": "build/v030/perf2-final-vision-mips/layout-and-host-results.json",
+      "sha256": "82159f8cb52b09c645962540174748e0c19f2d6d25cc719128f7ca335f63df62",
+      "bytes": 2557,
+      "byte_identical_at_capture": true,
+      "category": "final-c5-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final-vision-mips/verification.json",
+      "source": "build/v030/perf2-final-vision-mips/verification.json",
+      "sha256": "a462530c2c441e84cc864c5867ad216323adb461384b60dc83e584885f055250",
+      "bytes": 28743,
+      "byte_identical_at_capture": true,
+      "category": "final-c5-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-aligned/driver.py",
+      "source": "build/v030/perf2-final7-aligned/driver.py",
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "bytes": 7593,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-aligned/fountain-paused-game.bin",
+      "source": "build/v030/perf2-final7-aligned/fountain-paused-game.bin",
+      "sha256": "64bbd32c537a830133f565431f9f7126ec424d80ac1050a0eabdffd32c2d3729",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-aligned/fountain-paused.png",
+      "source": "build/v030/perf2-final7-aligned/fountain-paused.png",
+      "sha256": "ee95ea2473d53eaec642021e24e119f0dc7b38cbfcdf34c5d10c564a8739a8e1",
+      "bytes": 12822,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-aligned/mid-paused-game.bin",
+      "source": "build/v030/perf2-final7-aligned/mid-paused-game.bin",
+      "sha256": "2fa163a752617438d5f747bdde11b8f6bf9460be42e908f69d817602e392e3e0",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-aligned/mid-paused.png",
+      "source": "build/v030/perf2-final7-aligned/mid-paused.png",
+      "sha256": "a7ef4f5e7d031c37adc631371f8b92d904824cabffafb09eeabd9c8284b79ea8",
+      "bytes": 11082,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-aligned/post-horn-paused-game.bin",
+      "source": "build/v030/perf2-final7-aligned/post-horn-paused-game.bin",
+      "sha256": "260e335c3153af4df737ebc8488ce741e89891a79f875ebfbbe5600cc846055a",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-aligned/post-horn-paused.png",
+      "source": "build/v030/perf2-final7-aligned/post-horn-paused.png",
+      "sha256": "b779ebed243e46289b94de90a31a20779ea5f286f35f4453aead82eb95fe7199",
+      "bytes": 12962,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-aligned/verification.json",
+      "source": "build/v030/perf2-final7-aligned/verification.json",
+      "sha256": "e333700466aaacc0408658d715cb5792c653aa7c2826092d3011d9ef58b54656",
+      "bytes": 85823,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-deploy-tool.json",
+      "source": "build/v030/perf2-final7-deploy-tool.json",
+      "sha256": "5b11ba3a63b35dc2141be3be9aaeb28dc50b951e5409a9f717f0df7ee9f4f199",
+      "bytes": 4044,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-deployment"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-deploy.json",
+      "source": "build/v030/perf2-final7-deploy.json",
+      "sha256": "3c622e75948cd2b6533428b8f0a557732d4e82aa6344502fdc54b382f13018ac",
+      "bytes": 3856,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-deployment"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-deploy.json.upload.json",
+      "source": "build/v030/perf2-final7-deploy.json.upload.json",
+      "sha256": "b898ef9030ea976ebcf92383baaf6b31b3d36dae03c719b7a3d667779dac1d5f",
+      "bytes": 1145,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-deployment"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-sight-bits-mips/caller.bin",
+      "source": "build/v030/perf2-final7-sight-bits-mips/caller.bin",
+      "sha256": "ba4bdfa76626922dcaa20ada505df81fe57ab8227457485dd822e6d4acbad13e",
+      "bytes": 244,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-sight-bits-mips/caller.c",
+      "source": "build/v030/perf2-final7-sight-bits-mips/caller.c",
+      "sha256": "eda92184fbed6c111a0bee14f603c5e9874da7bfa5862b6ab145890eb97ee2b5",
+      "bytes": 359,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-sight-bits-mips/caller.ld",
+      "source": "build/v030/perf2-final7-sight-bits-mips/caller.ld",
+      "sha256": "cfc6450c94ac4eb089c963e22c53f2794732974d458428bc8ee6bd165e5b12dc",
+      "bytes": 198,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-sight-bits-mips/commands.json",
+      "source": "build/v030/perf2-final7-sight-bits-mips/commands.json",
+      "sha256": "f4783c31cc0cb198025babc725a934ed3d82046698f107ba33c0bdcee37b70dc",
+      "bytes": 2245,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-sight-bits-mips/verification.json",
+      "source": "build/v030/perf2-final7-sight-bits-mips/verification.json",
+      "sha256": "3d81e087fb9f2a841cc113242ac06f647dca0489ba186a7e59ef8a6ea70d99de",
+      "bytes": 1546,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/after-tree-2056.png",
+      "source": "build/v030/perf2-final7-trees-cut/after-tree-2056.png",
+      "sha256": "3b93d80a676160f30e0779eff4744f39e556bd6757904a14beb6cf1ebc37b32b",
+      "bytes": 93640,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/after-tree-2061.png",
+      "source": "build/v030/perf2-final7-trees-cut/after-tree-2061.png",
+      "sha256": "ef7329c1ad1a029da3b1c17d35dbb9edd4265b760f81ef0ae1b3905764cb9604",
+      "bytes": 97012,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/before-tree-2056.png",
+      "source": "build/v030/perf2-final7-trees-cut/before-tree-2056.png",
+      "sha256": "c80cf4e2e6f8b686935d2eba04d05b294f886f273b7cb0bfad5096f9218099b7",
+      "bytes": 88762,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/before-tree-2061.png",
+      "source": "build/v030/perf2-final7-trees-cut/before-tree-2061.png",
+      "sha256": "64ea21dfc5286f27ce59aa1bdad6197b435df954de589f5fd07ea0a45089677b",
+      "bytes": 93263,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/driver-executed.py",
+      "source": "build/v030/perf2-final7-trees-cut/driver-executed.py",
+      "sha256": "5c325f11e3d14c63a3db9cfb11c46c488cacaa72c2184c912d225c81fc20ab8b",
+      "bytes": 23939,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/help-about.png",
+      "source": "build/v030/perf2-final7-trees-cut/help-about.png",
+      "sha256": "765529a440b61ccf3a70b7c33914eb4b2b5563eaeb7aeaad776082b88441704f",
+      "bytes": 8246,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/help-controls.png",
+      "source": "build/v030/perf2-final7-trees-cut/help-controls.png",
+      "sha256": "696be5cf9426cfb51ede0aa40703365747b7eb0767ca247f6bafee988ec34ebe",
+      "bytes": 9130,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/pause-six-buttons.png",
+      "source": "build/v030/perf2-final7-trees-cut/pause-six-buttons.png",
+      "sha256": "04738f98bc124cd126fdde3c16ddf22fa2121754991ec8dd40de35e2b2f2c4b6",
+      "bytes": 12982,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/trees-cut-paused-game.bin",
+      "source": "build/v030/perf2-final7-trees-cut/trees-cut-paused-game.bin",
+      "sha256": "f569eadbfef56ce35dd0bf8d8a7b2c8c77a0ee47a335758e9a3b0c1016bb2138",
+      "bytes": 179008,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/trees-cut-paused-view.bin",
+      "source": "build/v030/perf2-final7-trees-cut/trees-cut-paused-view.bin",
+      "sha256": "13a5d3c546ee09ab3ae413b7cd30b841452b7d9134f51f1752b09c02b76833a6",
+      "bytes": 148,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/verification.json",
+      "source": "build/v030/perf2-final7-trees-cut/verification.json",
+      "sha256": "890d24eb12f40c68a464ed1f5c3fe286fd265192b3501ff2c5e6d027814b42a9",
+      "bytes": 48456,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-physical"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-mips/host-compile.txt",
+      "source": "build/v030/perf2-final7-trees-mips/host-compile.txt",
+      "sha256": "f716221edf75a225f34a9aa70bd7404d2ee0c18776c1858e0f4322c65fde42f3",
+      "bytes": 697,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-mips/host-layout.json",
+      "source": "build/v030/perf2-final7-trees-mips/host-layout.json",
+      "sha256": "c526a2847022797c43a734815ff72846887ab31f7837a87ee8b62e8700e63322",
+      "bytes": 1698,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-mips/verification.json",
+      "source": "build/v030/perf2-final7-trees-mips/verification.json",
+      "sha256": "09d758ba473c341f21d37937713a69da5b5404371688b15da6243011072637fe",
+      "bytes": 34699,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-vision-mips/compile.txt",
+      "source": "build/v030/perf2-final7-vision-mips/compile.txt",
+      "sha256": "66cf971325080ba970865ef39702594fb8257b8515f4d7f4301f5672be92c3e6",
+      "bytes": 945,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-vision-mips/layout-and-host-results.json",
+      "source": "build/v030/perf2-final7-vision-mips/layout-and-host-results.json",
+      "sha256": "82159f8cb52b09c645962540174748e0c19f2d6d25cc719128f7ca335f63df62",
+      "bytes": 2557,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-vision-mips/verification.json",
+      "source": "build/v030/perf2-final7-vision-mips/verification.json",
+      "sha256": "902a83fd2e16dd5a5b4dca63d8ce69926949c8c53e2c8513a7f9a990934b8b6d",
+      "bytes": 28768,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-mips-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-resource-mips/verification.json",
+      "source": "build/v030/perf2-resource-mips/verification.json",
+      "sha256": "04a5a60fd9ecabcebfbea308705cb5c1a52a1a95ce9b60190e8e9d2de7729145",
+      "bytes": 27459,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-sight-bits-mips/caller.c",
+      "source": "build/v030/perf2-sight-bits-mips/caller.c",
+      "sha256": "eda92184fbed6c111a0bee14f603c5e9874da7bfa5862b6ab145890eb97ee2b5",
+      "bytes": 359,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-sight-bits-mips/caller.ld",
+      "source": "build/v030/perf2-sight-bits-mips/caller.ld",
+      "sha256": "cfc6450c94ac4eb089c963e22c53f2794732974d458428bc8ee6bd165e5b12dc",
+      "bytes": 198,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-sight-bits-mips/commands.json",
+      "source": "build/v030/perf2-sight-bits-mips/commands.json",
+      "sha256": "24d006b5a7dda6e514a88efb63bbe233c8604d2a472c9a4411da9dee927d9f46",
+      "bytes": 2196,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-sight-bits-mips/verification.json",
+      "source": "build/v030/perf2-sight-bits-mips/verification.json",
+      "sha256": "24172ff9d8d1c77b8e5d031cd5ac14103d8ccce95e038d37e753a5efb62c878c",
+      "bytes": 1546,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-before/after-tree-2056.png",
+      "source": "build/v030/perf2-trees-before/after-tree-2056.png",
+      "sha256": "0e920a4d37ab8cf3a14d3a74f27747f46cfa47b3819c23a6922eb0c10f6dd2b1",
+      "bytes": 93625,
+      "byte_identical_at_capture": true,
+      "category": "historical-c3-physical-tree-functional"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-before/after-tree-2061.png",
+      "source": "build/v030/perf2-trees-before/after-tree-2061.png",
+      "sha256": "0a967ef65e3831a67c8baa4be389acb1edffb8d3a0010f744719b189565daebe",
+      "bytes": 97034,
+      "byte_identical_at_capture": true,
+      "category": "historical-c3-physical-tree-functional"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-before/before-tree-2056.png",
+      "source": "build/v030/perf2-trees-before/before-tree-2056.png",
+      "sha256": "e76fd5b1dde8cedc52bcdb50318dada3cd6099ad95e4629d2609da9948cbd8d8",
+      "bytes": 89217,
+      "byte_identical_at_capture": true,
+      "category": "historical-c3-physical-tree-functional"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-before/before-tree-2061.png",
+      "source": "build/v030/perf2-trees-before/before-tree-2061.png",
+      "sha256": "09f04a86fbde9838b3e304d9aeddc5256fe21ec91261b7d57e3c4a8247029926",
+      "bytes": 93035,
+      "byte_identical_at_capture": true,
+      "category": "historical-c3-physical-tree-functional"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-before/driver-executed.py",
+      "source": "build/v030/perf2-trees-before/driver-executed.py",
+      "sha256": "a2c662922888b84c2d5da24739b54cc322c197cb09f3f12b7147c6a7b4b0c6d7",
+      "bytes": 23115,
+      "byte_identical_at_capture": true,
+      "category": "historical-c3-physical-tree-functional"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-before/help-about.png",
+      "source": "build/v030/perf2-trees-before/help-about.png",
+      "sha256": "765529a440b61ccf3a70b7c33914eb4b2b5563eaeb7aeaad776082b88441704f",
+      "bytes": 8246,
+      "byte_identical_at_capture": true,
+      "category": "historical-c3-physical-tree-functional"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-before/help-controls.png",
+      "source": "build/v030/perf2-trees-before/help-controls.png",
+      "sha256": "696be5cf9426cfb51ede0aa40703365747b7eb0767ca247f6bafee988ec34ebe",
+      "bytes": 9130,
+      "byte_identical_at_capture": true,
+      "category": "historical-c3-physical-tree-functional"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-before/naturally-regrown-trees.png",
+      "source": "build/v030/perf2-trees-before/naturally-regrown-trees.png",
+      "sha256": "5fa514b3d3b1ad546d26489dfcd9f86f9a6672da5d19be880cb2ff8d0e843d3c",
+      "bytes": 94147,
+      "byte_identical_at_capture": true,
+      "category": "historical-c3-physical-tree-functional"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-before/pause-six-buttons.png",
+      "source": "build/v030/perf2-trees-before/pause-six-buttons.png",
+      "sha256": "04738f98bc124cd126fdde3c16ddf22fa2121754991ec8dd40de35e2b2f2c4b6",
+      "bytes": 12982,
+      "byte_identical_at_capture": true,
+      "category": "historical-c3-physical-tree-functional"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-before/verification.json",
+      "source": "build/v030/perf2-trees-before/verification.json",
+      "sha256": "0a882e782fa0851de08d0646b2529d329c7cfff04abd80b02eeb574e24310c57",
+      "bytes": 207071,
+      "byte_identical_at_capture": true,
+      "category": "historical-c3-physical-tree-functional"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-mips/host-compile.txt",
+      "source": "build/v030/perf2-trees-mips/host-compile.txt",
+      "sha256": "f716221edf75a225f34a9aa70bd7404d2ee0c18776c1858e0f4322c65fde42f3",
+      "bytes": 697,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-mips/host-layout.json",
+      "source": "build/v030/perf2-trees-mips/host-layout.json",
+      "sha256": "c526a2847022797c43a734815ff72846887ab31f7837a87ee8b62e8700e63322",
+      "bytes": 1698,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-trees-mips/verification.json",
+      "source": "build/v030/perf2-trees-mips/verification.json",
+      "sha256": "35041cfe2d520b6254a57ae2d3a787b1f5b43e03440c576cf0df34dc6e0d6801",
+      "bytes": 34699,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-vision-mips/compile.txt",
+      "source": "build/v030/perf2-vision-mips/compile.txt",
+      "sha256": "66cf971325080ba970865ef39702594fb8257b8515f4d7f4301f5672be92c3e6",
+      "bytes": 945,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-vision-mips/layout-and-host-results.json",
+      "source": "build/v030/perf2-vision-mips/layout-and-host-results.json",
+      "sha256": "82159f8cb52b09c645962540174748e0c19f2d6d25cc719128f7ca335f63df62",
+      "bytes": 2557,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-vision-mips/verification.json",
+      "source": "build/v030/perf2-vision-mips/verification.json",
+      "sha256": "fd318116f071a160551f8721f7567f1026de67b9714eb354e72fce60bc11a25b",
+      "bytes": 28593,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c4-correctness"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-geometry-mask/compare.py",
+      "source": "build/v030/tree-geometry-mask/compare.py",
+      "sha256": "7d693d716ee0599cc336073da45811d70fc519fd0fec4596bf87f6e43cd52d99",
+      "bytes": 3440,
+      "byte_identical_at_capture": true,
+      "category": "original-vision-tree-geometry-equivalence"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-geometry-mask/original-vision-tree-mask.bin",
+      "source": "build/v030/tree-geometry-mask/original-vision-tree-mask.bin",
+      "sha256": "29d020275061aba833d686c4a5682138d59f5711a77c632a2d6f5805eefd18bc",
+      "bytes": 8192,
+      "byte_identical_at_capture": true,
+      "category": "original-vision-tree-geometry-equivalence"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-geometry-mask/uncut-canonical-tree-mask.bin",
+      "source": "build/v030/tree-geometry-mask/uncut-canonical-tree-mask.bin",
+      "sha256": "29d020275061aba833d686c4a5682138d59f5711a77c632a2d6f5805eefd18bc",
+      "bytes": 8192,
+      "byte_identical_at_capture": true,
+      "category": "original-vision-tree-geometry-equivalence"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-geometry-mask/verification.json",
+      "source": "build/v030/tree-geometry-mask/verification.json",
+      "sha256": "a40acb7b6ebedf171213dd47d3956bc7d04fa92e36b0e5ec27ce4aabd6c3900f",
+      "bytes": 1959,
+      "byte_identical_at_capture": true,
+      "category": "original-vision-tree-geometry-equivalence"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-local-cache/canonical/compile.txt",
+      "source": "build/v030/tree-local-cache/canonical/compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "byte_identical_at_capture": true,
+      "category": "tree-cache-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-local-cache/canonical/verification.json",
+      "source": "build/v030/tree-local-cache/canonical/verification.json",
+      "sha256": "c8e65964a47df949da86e94995bcef22f33719058efbe3ae20c3282a9b3fc59d",
+      "bytes": 2908,
+      "byte_identical_at_capture": true,
+      "category": "tree-cache-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-local-cache/existing-host/compile.txt",
+      "source": "build/v030/tree-local-cache/existing-host/compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "byte_identical_at_capture": true,
+      "category": "tree-cache-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-local-cache/existing-host/verification.json",
+      "source": "build/v030/tree-local-cache/existing-host/verification.json",
+      "sha256": "eea74976dbda1cfb17be22bbf1ac9df62821ca8f4e46f35a9ef29f95d4160167",
+      "bytes": 11169,
+      "byte_identical_at_capture": true,
+      "category": "tree-cache-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-local-cache/host1/after-compile.txt",
+      "source": "build/v030/tree-local-cache/host1/after-compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "byte_identical_at_capture": true,
+      "category": "tree-cache-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-local-cache/host1/after-wrapper.c",
+      "source": "build/v030/tree-local-cache/host1/after-wrapper.c",
+      "sha256": "8e32163180bf880bf673f198ba42e04cd4c8eec553607db665d1f4106a8ef978",
+      "bytes": 206,
+      "byte_identical_at_capture": true,
+      "category": "tree-cache-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-local-cache/host1/before-compile.txt",
+      "source": "build/v030/tree-local-cache/host1/before-compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "byte_identical_at_capture": true,
+      "category": "tree-cache-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-local-cache/host1/before-wrapper.c",
+      "source": "build/v030/tree-local-cache/host1/before-wrapper.c",
+      "sha256": "16ae88a81da1be54d8f423a3fefa345122abcbe550efd65ddbb3453c342f3cfd",
+      "bytes": 232,
+      "byte_identical_at_capture": true,
+      "category": "tree-cache-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-local-cache/host1/verification.json",
+      "source": "build/v030/tree-local-cache/host1/verification.json",
+      "sha256": "5a3d5312eb16285319cf20c18b57123de48a76a195be1792988848df47f47cac",
+      "bytes": 28412,
+      "byte_identical_at_capture": true,
+      "category": "tree-cache-parity"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-local-cache/mips-object.json",
+      "source": "build/v030/tree-local-cache/mips-object.json",
+      "sha256": "97aa60f31019ca9596b85383b3ea688c963fab988517356fde936e6b82d3a79d",
+      "bytes": 744,
+      "byte_identical_at_capture": true,
+      "category": "tree-cache-object-size"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/tree-local-cache/tree-visual-before.c",
+      "source": "build/v030/tree-local-cache/tree-visual-before.c",
+      "sha256": "eacafb6ec607abdf83f3c175d0a5bd674444f2a8ad2c9979bec50f8851838173",
+      "bytes": 18854,
+      "byte_identical_at_capture": true,
+      "category": "tree-cache-reference"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/candidate5/DOTA2.build.json",
+      "source": "build/v030/perf-candidate5/DOTA2.build.json",
+      "sha256": "6a4c9968e31192980ecbe7766b3a43071b4bdf27f4bd61269c5b1276347c0374",
+      "bytes": 22820,
+      "byte_identical_at_capture": true,
+      "category": "final-candidate-build"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/candidate5/commands.json",
+      "source": "build/v030/perf-candidate5/commands.json",
+      "sha256": "f36f391133d1136ccd87bd55aae8be3b98cd84ad23018f8a3af3b1bc56e1fd53",
+      "bytes": 35976,
+      "byte_identical_at_capture": true,
+      "category": "final-candidate-build"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/candidate6/DOTA2.build.json",
+      "source": "build/v030/perf-candidate6/DOTA2.build.json",
+      "sha256": "c6a37886c9bac4157dc1a4401058f642466e2b9dea3fda7718752afbd67f630d",
+      "bytes": 22820,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-build"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/candidate6/commands.json",
+      "source": "build/v030/perf-candidate6/commands.json",
+      "sha256": "bd94f36308a073b0a0ea2c8658c6debfc25daaae993b626d0efee5944d982730",
+      "bytes": 35976,
+      "byte_identical_at_capture": true,
+      "category": "final-c6-build"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/candidate7/DOTA2.build.json",
+      "source": "build/v030/perf-candidate7/DOTA2.build.json",
+      "sha256": "1698bd71545d7a508b68a633d427cfd8be36b9e6badb2e1cc46052b4c858e86f",
+      "bytes": 22820,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-build"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/candidate7/commands.json",
+      "source": "build/v030/perf-candidate7/commands.json",
+      "sha256": "c19011bf4bdabb0ab448387907c1c089814cf3e05249d2bbe57f653ef1d86262",
+      "bytes": 35976,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-build"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/finalize-docs-script.py",
+      "source": "build/v030/game-cost-study/finalize-selected-docs.py",
+      "sha256": "d03ef615c0432966b26a6fcc747d3aa15b9b8004da4102daf0f354aefe27f937",
+      "bytes": 2452,
+      "byte_identical_at_capture": true,
+      "category": "archive-script"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/finalize-docs-template.py",
+      "source": "build/v030/game-cost-study/finalize-round2-docs.py",
+      "sha256": "994c8a71070e8c889b6f6a5ba06514e66c37fed15e1b3e9b74b5b11f8380abd4",
+      "bytes": 16960,
+      "byte_identical_at_capture": true,
+      "category": "archive-script"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/history/round1-INDEX-before.json",
+      "source": "provenance/verification/v0.30/performance/INDEX.json",
+      "sha256": "09f78726f838f7fd3e06c03f3dbb25a24313ef4506ef67da400ae92ce6b4d8f8",
+      "bytes": 52393,
+      "byte_identical_at_capture": true,
+      "category": "historical-snapshot",
+      "snapshot_before_round2_update": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/history/round1-h1-before.json",
+      "source": "docs/verification/v0.30-h1.json",
+      "sha256": "834bff0b099d603262453edc18f4e8c7e867683de6dc42632312fe8b0502a760",
+      "bytes": 3321,
+      "byte_identical_at_capture": true,
+      "category": "historical-snapshot",
+      "snapshot_before_round2_update": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/history/round1-performance-before.md",
+      "source": "docs/PERFORMANCE-v0.30.md",
+      "sha256": "da2526ff3b10bed117f8f8269a740f52d226d446e0f552620b6fd897c97a3120",
+      "bytes": 4886,
+      "byte_identical_at_capture": true,
+      "category": "historical-snapshot",
+      "snapshot_before_round2_update": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-c6/game/sight.c",
+      "source": "game/sight.c",
+      "sha256": "0f94bd7de992cde12058e684e1d24361398d02aa632ebf10d1ff4fb1c8ad9996",
+      "bytes": 25091,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-production-source",
+      "snapshot_before_final_obstruction_class_cache": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-c6/game/sight.h",
+      "source": "game/sight.h",
+      "sha256": "27f292ec3d139c077a942079052c148d5cd2d9993886c44a37bfbf52953eef8a",
+      "bytes": 1577,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-production-source",
+      "snapshot_before_final_obstruction_class_cache": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-c6/platform/baked_scene.c",
+      "source": "platform/baked_scene.c",
+      "sha256": "55df903db11160c0a6077596f02f408e8b2bbb5b58622a4af0832093d5216528",
+      "bytes": 121476,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-production-source",
+      "snapshot_before_final_obstruction_class_cache": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-c6/platform/render.c",
+      "source": "platform/render.c",
+      "sha256": "d697547cbfae38fd173147fa1d04a81b362f4bcdbb1ee032a47a04637573136d",
+      "bytes": 75198,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-production-source",
+      "snapshot_before_final_obstruction_class_cache": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-c6/platform/tree_visual.c",
+      "source": "platform/tree_visual.c",
+      "sha256": "c4a019074b9455763910a3f57907348ea6765b8b3f8242e58d7b2dcfa6840a37",
+      "bytes": 20332,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-production-source",
+      "snapshot_before_final_obstruction_class_cache": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-c6/platform/tree_visual.h",
+      "source": "platform/tree_visual.h",
+      "sha256": "98e93b5c88534f756eea41da30683c1e6a7c92e22c55cedc64013b0575f05640",
+      "bytes": 1567,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c6-production-source",
+      "snapshot_before_final_obstruction_class_cache": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-c7/game/sight.c",
+      "source": "game/sight.c",
+      "sha256": "76a2993d0421c30a5d09d90327018f417abb9a7a7832cbacc9dc95ccaec7d300",
+      "bytes": 25752,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-production-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-c7/game/sight.h",
+      "source": "game/sight.h",
+      "sha256": "27f292ec3d139c077a942079052c148d5cd2d9993886c44a37bfbf52953eef8a",
+      "bytes": 1577,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-production-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-c7/platform/baked_scene.c",
+      "source": "platform/baked_scene.c",
+      "sha256": "55df903db11160c0a6077596f02f408e8b2bbb5b58622a4af0832093d5216528",
+      "bytes": 121476,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-production-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-c7/platform/render.c",
+      "source": "platform/render.c",
+      "sha256": "d697547cbfae38fd173147fa1d04a81b362f4bcdbb1ee032a47a04637573136d",
+      "bytes": 75198,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-production-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-c7/platform/tree_visual.c",
+      "source": "platform/tree_visual.c",
+      "sha256": "c4a019074b9455763910a3f57907348ea6765b8b3f8242e58d7b2dcfa6840a37",
+      "bytes": 20332,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-production-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-c7/platform/tree_visual.h",
+      "source": "platform/tree_visual.h",
+      "sha256": "98e93b5c88534f756eea41da30683c1e6a7c92e22c55cedc64013b0575f05640",
+      "bytes": 1567,
+      "byte_identical_at_capture": true,
+      "category": "final-c7-production-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-guard/game/sight.c",
+      "source": "game/sight.c",
+      "sha256": "0f94bd7de992cde12058e684e1d24361398d02aa632ebf10d1ff4fb1c8ad9996",
+      "bytes": 25091,
+      "byte_identical_at_capture": true,
+      "category": "bounded-cache-guard"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source-guard/game/sight.h",
+      "source": "game/sight.h",
+      "sha256": "27f292ec3d139c077a942079052c148d5cd2d9993886c44a37bfbf52953eef8a",
+      "bytes": 1577,
+      "byte_identical_at_capture": true,
+      "category": "bounded-cache-guard"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source/game/sight.c",
+      "source": "game/sight.c",
+      "sha256": "6dcc74534507d22c0e705442add74429663364a0de3753ba35811e91e556e6bf",
+      "bytes": 24782,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-production-source",
+      "snapshot_before_bounded_cache_guard": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source/game/sight.h",
+      "source": "game/sight.h",
+      "sha256": "27f292ec3d139c077a942079052c148d5cd2d9993886c44a37bfbf52953eef8a",
+      "bytes": 1577,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-production-source",
+      "snapshot_before_bounded_cache_guard": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source/platform/baked_scene.c",
+      "source": "platform/baked_scene.c",
+      "sha256": "55df903db11160c0a6077596f02f408e8b2bbb5b58622a4af0832093d5216528",
+      "bytes": 121476,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-production-source",
+      "snapshot_before_bounded_cache_guard": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source/platform/render.c",
+      "source": "platform/render.c",
+      "sha256": "d697547cbfae38fd173147fa1d04a81b362f4bcdbb1ee032a47a04637573136d",
+      "bytes": 75198,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-production-source",
+      "snapshot_before_bounded_cache_guard": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source/platform/tree_visual.c",
+      "source": "platform/tree_visual.c",
+      "sha256": "c4a019074b9455763910a3f57907348ea6765b8b3f8242e58d7b2dcfa6840a37",
+      "bytes": 20332,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-production-source",
+      "snapshot_before_bounded_cache_guard": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/selected-source/platform/tree_visual.h",
+      "source": "platform/tree_visual.h",
+      "sha256": "98e93b5c88534f756eea41da30683c1e6a7c92e22c55cedc64013b0575f05640",
+      "bytes": 1567,
+      "byte_identical_at_capture": true,
+      "category": "intermediate-c5-production-source",
+      "snapshot_before_bounded_cache_guard": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/test-source/tests/resource_renderer_ui.c",
+      "source": "tests/resource_renderer_ui.c",
+      "sha256": "b10bead33d76f1d92dc56dfad52389baf38783f2ac9d457ffdd60021fb403078",
+      "bytes": 8985,
+      "byte_identical_at_capture": true,
+      "category": "test-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/test-source/tests/tree_visual_cache_test.c",
+      "source": "tests/tree_visual_cache_test.c",
+      "sha256": "746d3b549893494f5a4835419ec946e23c73070a70acb0b66705c67905ff1c28",
+      "bytes": 2052,
+      "byte_identical_at_capture": true,
+      "category": "test-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/test-source/tests/trees_mips_fixtures.c",
+      "source": "tests/trees_mips_fixtures.c",
+      "sha256": "f1d50a1d9f519a5bed526b7a77721927997f53dc00420ca014cef95d9c6b02fe",
+      "bytes": 6477,
+      "byte_identical_at_capture": true,
+      "category": "test-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/test-source/tests/verify_fog_pair.py",
+      "source": "tests/verify_fog_pair.py",
+      "sha256": "8782d3043115a96e67aa99058bc624e0a5ad8e5e88532ef586fff8e2d82a7998",
+      "bytes": 5318,
+      "byte_identical_at_capture": true,
+      "category": "test-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/test-source/tests/verify_minimap_bits.py",
+      "source": "tests/verify_minimap_bits.py",
+      "sha256": "68b5ae6b2d887538d8377d32c01cf912895a9b80ee07c0a6e4d9850b17df0b59",
+      "bytes": 4858,
+      "byte_identical_at_capture": true,
+      "category": "test-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/test-source/tests/verify_sight_bits_mips.py",
+      "source": "tests/verify_sight_bits_mips.py",
+      "sha256": "eed3764382fd83163fbe3e06141c53af40753b4e8128217039d7c6bb68ca655c",
+      "bytes": 5922,
+      "byte_identical_at_capture": true,
+      "category": "test-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/test-source/tests/verify_tree_visual_cache.py",
+      "source": "tests/verify_tree_visual_cache.py",
+      "sha256": "90d00ea46947c1c6b75e5824a46efca130ebd84b797681003d1483462a318d6f",
+      "bytes": 8663,
+      "byte_identical_at_capture": true,
+      "category": "test-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/test-source/tests/verify_trees_mips.py",
+      "source": "tests/verify_trees_mips.py",
+      "sha256": "35e553f96254e3378de79dab2e072d28cb564edac18e48015c9b8c6b08fc8a4b",
+      "bytes": 10317,
+      "byte_identical_at_capture": true,
+      "category": "test-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/test-source/tests/verify_vision_mips.py",
+      "source": "tests/verify_vision_mips.py",
+      "sha256": "9dcc00d2855bfe7bbcf3cfe5e87a301dd669ba595cacc0179aa985c018d172d0",
+      "bytes": 12431,
+      "byte_identical_at_capture": true,
+      "category": "test-source"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/test-source/tests/vision_mips_fixtures.c",
+      "source": "tests/vision_mips_fixtures.c",
+      "sha256": "123b6d054f56f87e4e932ae77c32060a8a03e3cf97044c15641b164fe4d44f0c",
+      "bytes": 12645,
+      "byte_identical_at_capture": true,
+      "category": "test-source"
+    }
+  ],
+  "derived_files": [
+    {
+      "path": "provenance/verification/v0.30/performance/round2/ALIGNED-COMPARISON.json",
+      "sha256": "e49fc577f153fa23de6232b72f10eecfb752b942d60db8c6b278582b63301c7f"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/SNAPSHOT-FIELDS.json",
+      "sha256": "8c9c3b8fc9482460e42dc77398e17b0b0130ddb4efdac9d4d8705a6106ebbd89"
+    }
+  ],
+  "scope": "Final C7 physical short-window FPS and cut-only acceptance passed. C3 full180s regrow is historical; C7 natural regrow logic is host/MIPS checked. No full feature/teamfight/per-second minimum/full97-frame C7 renderer rerun claimed.",
+  "archived_files": 419,
+  "archived_raw_bytes": 24762403,
+  "intermediate_candidate5": {
+    "bda_sha256": "b7afd86515b0206d8a4ce53217fc761cfafdbba2a4f8f9337a94db55c5c54fcb",
+    "elf_sha256": "757558cd332f739396063abbcb275684cea676666e828a35591d0240103680b8",
+    "installation_verified": true,
+    "aligned_physical_passed": true,
+    "report": "build/v030/perf2-final-aligned2/verification.json",
+    "superseded_reason": "Add bounded obstruction-cache fallback to avoid repeated full-map fills when more than eight source classes are active. C5 FPS is retained as intermediate evidence, not final C6 acceptance."
+  },
+  "candidate_role": "final-c7-bounded-cache",
+  "pending_final_candidate": null,
+  "verification_inheritance": {
+    "resource_reader": "Fresh C5 actual-MIPS resource100 checks inherited for unchanged resource source/interface; no C6 resource-MIPS rerun claimed.",
+    "fog_renderer": "C5 shader97-frame report retains original6dcc core identity. C7 shader source55df is identical; final core host105 masks/dirty-tree parity is composed evidence, not a fresh C7 full97-frame renderer execution.",
+    "physical_tree_natural_regrow": "C3 physical full180s regrow is historical; current C7 passed normal-input two-tree cut-only smoke and cleanup. No fresh C7 physical180s regrow wait claimed."
+  },
+  "intermediate_candidate6": {
+    "bda_sha256": "b79b98ce7d6389b060cc5b586d8631178bc28bea5e886bf74e0e86762d0bd81f",
+    "elf_sha256": "4ad690a9666a2a332a8db221f7aedda52cbe21f69e9c642608a132535c7b05c6",
+    "physical_fps_passed": true,
+    "physical_cut_only_passed": true,
+    "profile": "build/v030/perf2-bounded-aligned2/verification.json",
+    "cut_only": "build/v030/perf2-bounded-trees-cut/verification.json",
+    "superseded_reason": "Final0/1/2 obstruction cache removes additional ordinary per-cell loads while retaining bounded fallback and exact tree updates."
+  },
+  "prototype_cpu_payload_binding": {
+    "prototype_bda_sha256": "d8d75e2c459735fad358c53c58e2d461c52fb8e348e2846b113f8fcded734d53",
+    "standard_candidate7_bda_sha256": "d8d75e2c459735fad358c53c58e2d461c52fb8e348e2846b113f8fcded734d53",
+    "payload_bda_bytes_identical": true,
+    "prototype_elf_is_distinct_debug_build": true,
+    "scope": "Isolated C6-to-finalclass8tick CPU/Game/fog comparison executes the same final BDA payload. No fresh final-ELF CPU rerun or physical FPS conversion claimed."
+  },
+  "physical_cut_only_acceptance_passed": true,
+  "comparison": {
+    "path": "provenance/verification/v0.30/performance/round2/ALIGNED-COMPARISON.json",
+    "sha256": "e49fc577f153fa23de6232b72f10eecfb752b942d60db8c6b278582b63301c7f"
+  },
+  "observed_menu_frames": {
+    "baseline": 320,
+    "final": 320
+  },
+  "physical_profile": {
+    "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-aligned/verification.json",
+    "sha256": "e333700466aaacc0408658d715cb5792c653aa7c2826092d3011d9ef58b54656"
+  },
+  "physical_cut_only": {
+    "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/verification.json",
+    "sha256": "890d24eb12f40c68a464ed1f5c3fe286fd265192b3501ff2c5e6d027814b42a9"
+  },
+  "intermediate_candidate4": {
+    "bda_sha256": "8b511097ca21908dfc6454fe96194a15cbf96b9652a96f33e4eae4ab82e0477d",
+    "elf_sha256": "a32a6fca68b18233b922b91d55c9aa747911ca78a8499a13ac6d81b572e1fe22",
+    "selected_final": false,
+    "reason_not_selected": "Contains candidate mix-LUT path later measured slower on physical H1 and reverted; raw correctness reports do not establish speed."
+  }
+}

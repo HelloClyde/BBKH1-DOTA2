@@ -1,0 +1,18 @@
+{
+  "abi": 1,
+  "base": 2186784192,
+  "image_capacity": 65536,
+  "image_size": 1888,
+  "memory_size": 26480,
+  "entry_offset": 0,
+  "crc32": 883978488,
+  "sha256": "cfcc3f4d09d61b8f58fe176d938ecd4a1aeb2f80566603ae7b08140f9a69835f",
+  "ELF_sha256": "ab5442cc260121fd08e046b63d20eeda73efe72ce802cc85aec5bef09cc1c304",
+  "source": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\fog-pair-study\\h1-mix-benchmark\\module.c",
+  "source_sha256": "a6d8f78e6d046ffe350f3e44f94a6cd88a9ff3adf4fce6809c8c037d8d1fe4e8",
+  "ABI_sha256": "7b9d1ea308fba1bdcf95525979362fdeea5e3cdcdf7856ba692335f0fe408b64",
+  "binary": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\fog-pair-study\\h1-mix-benchmark\\physical-build\\module.bin",
+  "hardware_verified": false,
+  "sandbox": false,
+  "forced_preemption": false
+}

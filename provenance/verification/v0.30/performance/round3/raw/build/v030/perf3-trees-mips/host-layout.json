@@ -1,0 +1,140 @@
+{
+  "game_size": 179008,
+  "view_size": 160,
+  "unit_size": 240,
+  "input_size": 20,
+  "tree_size": 4500,
+  "tree_offset": 173584,
+  "tree_count": 4494,
+  "tree_revision": 4496,
+  "units": 0,
+  "charges": 129396,
+  "cooldown": 129116,
+  "effects": 132972,
+  "effect_size": 20,
+  "effect_ticks": 4,
+  "effect_tag": 12,
+  "temporary_tree_offset": 144820,
+  "tango_id": 57,
+  "target": [
+    3024,
+    3200
+  ],
+  "expected": {
+    "tango": [
+      1,
+      0,
+      1,
+      2,
+      0,
+      320,
+      1,
+      1
+    ],
+    "quelling": [
+      1,
+      0,
+      1,
+      0,
+      80,
+      0,
+      1,
+      1
+    ],
+    "battlefury": [
+      1,
+      0,
+      1,
+      0,
+      60,
+      0,
+      1,
+      1
+    ],
+    "branch": [
+      1,
+      0,
+      0,
+      2,
+      0,
+      640,
+      0,
+      0
+    ],
+    "out_of_range": [
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lina_no_mana": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lina": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      6,
+      6
+    ],
+    "regrow": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    "wrap_regrow": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    "pounce_landing": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "pounce_impact": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "all_cut": [
+      1,
+      1,
+      2113
+    ]
+  }
+}

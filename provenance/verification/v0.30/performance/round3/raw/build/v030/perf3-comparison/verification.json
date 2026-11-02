@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "scope": "Offline MIPS render work from two physical initial Game snapshots. No USB, display, audio scheduling, CPU cache or physical FPS measurement.",
+  "bda_sha256": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244",
+  "elf_sha256": "dc6ecce5c66b0f1165ec637070a3beac35c89bb23cd6b96ae95b60cc69cd3b03",
+  "binary": {
+    "abi": {
+      "DotaGame": 179008,
+      "DotaUnit": 240,
+      "DotaView": 148
+    },
+    "entry": "0x83c00020",
+    "stack_bytes": 65536,
+    "application_ram_end": "0x83fea740",
+    "ram_limit": "0x83ff0000",
+    "ram_margin_bytes": 22720,
+    "static_bss_bytes": 2987840,
+    "payload_matches_elf": true
+  },
+  "physical_candidate_tested": false,
+  "physical_candidate_installed": false,
+  "physical_fps_comparison_available": false,
+  "comparisons": [
+    {
+      "label": "fountain",
+      "baseline_report": "build/v030/sprite-pipeline/c7-profile/verification.json",
+      "baseline_report_sha256": "57414969c64aeb1f47f5dd9f24306e3f7441c975574dc275499d2e6aed01916f",
+      "candidate_report": "build/v030/perf3-render-fountain/verification.json",
+      "candidate_report_sha256": "a040184e8f7a1ec4c0d3968a27817a60e6afb0e07576498d026b985a6eea0737",
+      "baseline_render_instruction_slots": 8549152,
+      "candidate_render_instruction_slots": 8104333,
+      "render_instruction_reduction_percent": 5.203077451424422,
+      "measured_frames": 2,
+      "warm_frames": 4,
+      "normal_game_instruction_counts_equal": true,
+      "framebuffer_hashes_equal": true,
+      "cleanup_allocations": 0,
+      "cleanup_handles": 0
+    },
+    {
+      "label": "post-horn",
+      "baseline_report": "build/v030/perf3-render-posthorn-C7/verification.json",
+      "baseline_report_sha256": "36a828a57ec2bfb2ee39274714d9c61348b06cec023e6794caaa89088e4ff1fe",
+      "candidate_report": "build/v030/perf3-render-posthorn/verification.json",
+      "candidate_report_sha256": "2c21e2d8dbfdd9f1e8dc8083f46327a4793817313c6534d421259d2de79841f4",
+      "baseline_render_instruction_slots": 9294533,
+      "candidate_render_instruction_slots": 8852016,
+      "render_instruction_reduction_percent": 4.761046090212386,
+      "measured_frames": 2,
+      "warm_frames": 4,
+      "normal_game_instruction_counts_equal": true,
+      "framebuffer_hashes_equal": true,
+      "cleanup_allocations": 0,
+      "cleanup_handles": 0
+    }
+  ],
+  "retained": [
+    "optional reader index8/decoded4 cache",
+    "alpha row extents128",
+    "flat-ground shadow height reuse",
+    "local tree FOV invalidation"
+  ],
+  "rejected": [
+    "2MiB decoded sprite hot pool: small MIPS regression at warm4 and warm24"
+  ],
+  "deferred": [
+    "targeted sprite prewarm: optimistic IO replay benefit, no native startup-wait or net physical FPS proof"
+  ],
+  "IPU": "JZ4740 YUV scaling/CSC has no direct RGB565+alpha+depth sprite compositor interface; no MMIO experiment attempted",
+  "hardware_blocker": "Current native resource manager could not recognize B card; B:\\DOTA2\\DOTA2.H1R stat failed. Baseline preflight stopped before game launch because the resource manager was foreground. No zero-FPS inference.",
+  "installed_binary_remains": "C7 d8d75e2c459735fad358c53c58e2d461c52fb8e348e2846b113f8fcded734d53"
+}

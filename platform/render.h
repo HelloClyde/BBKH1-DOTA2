@@ -5,11 +5,12 @@
 #include "../game/game.h"
 #include "hud_layout.h"
 #include "status_effects.h"
+#include "../game/match_history.h"
 
 enum {
     DOTA_SCREEN_MENU=0, DOTA_SCREEN_PLAY=1, DOTA_SCREEN_PAUSE=2,
     DOTA_SCREEN_SHOP=3, DOTA_SCREEN_RESULT=4, DOTA_SCREEN_HELP=5,
-    DOTA_SCREEN_SKILLS=6
+    DOTA_SCREEN_SKILLS=6, DOTA_SCREEN_HISTORY=7
 };
 enum { DOTA_STATUS_INFO_EVENT=14 };
 
@@ -23,6 +24,10 @@ typedef struct DotaView {
     int drag_x,drag_y;
     int ward_mode; /* Append-only: 0 observer, 1 sentry while aiming a ward. */
     int help_return_screen,help_page,pause_selected;
+    const DotaMatchHistory *history;
+    const DotaMatchRecord *result_record;
+    int history_page,history_selected,history_mode;
+    int result_selected,result_detail,save_error,history_return_screen;
 } DotaView;
 
 extern uint16_t dota_pixels[480*272];

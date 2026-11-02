@@ -7,8 +7,10 @@ typedef struct {
  uint32_t read_requests,read_bytes,tile_hits,tile_misses,decoded_tiles,patched_pixels;
  uint32_t depth_queries,closes,released;
 } TreeVisualStats;
-/* TREE.H1T owns the immutable natural-tree xy provider and sparse replacement
- * pixels. No game state is stored in this module; Game copies own cut bits. */
+/* TREE owns the immutable natural-tree xy provider and replacement pixels.
+ * v1 sorted planes and v2 tile-local owner frames reconstruct the same pixels.
+ * DOTA_RESOURCE_PACK default opens the container's TREE logical stream;
+ * explicit paths retain standalone fixture support. Game owns all cut bits. */
 int tree_visual_open(const char *path);
 int tree_visual_open_default(void);
 void tree_visual_close(void);

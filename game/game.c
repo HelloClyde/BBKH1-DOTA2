@@ -23,6 +23,8 @@
 #include "runes.h"
 #include "match_time.h"
 #include "trees.h"
+#include "cast_order.h"
+#include "match_history.h"
 
 static int effective_health_regen_with_stats(const DotaGame *,int,const DotaItemStats *);
 static int mana_regen_with_stats(const DotaGame *,int,const DotaItemStats *);
@@ -627,6 +629,19 @@ static void move_step_direction(DotaGame *g,DotaUnit *u,int x,int y,int direct) 
     m->remaining_q16=0;m->x_q16=u->x*DOTA_MOVE_ONE;m->y_q16=u->y*DOTA_MOVE_ONE;
 }
 static void move_step(DotaGame *g,DotaUnit *u,int x,int y){move_step_direction(g,u,x,y,0);}
+void dota_rules_cast_order_step(DotaGame *g,int hero){
+    DotaUnit *u=&g->units[hero];DotaUnitRoute *r=&g->unit_routes[hero];int steps=0;
+    while(r->index<r->count && steps++<DOTA_ROUTE_POINTS){
+        int x,y;
+        if(r->complete && r->index+1==r->count){x=r->goal_x;y=r->goal_y;}
+        else dota_nav_cell_center(r->cells[r->index],&x,&y);
+        if(u->x==x && u->y==y){++r->index;continue;}
+        if(!dota_nav_segment(u->x,u->y,x,y)){r->count=r->index=0;return;}
+        move_step(g,u,x,y);
+        if(u->x==x && u->y==y){++r->index;if(g->movement[hero].remaining_q16>0)continue;}
+        return;
+    }
+}
 static void navigation_budget(DotaGame *g){
     if(g->navigation_tick!=g->tick){g->navigation_tick=g->tick;g->navigation_searches=g->navigation_nodes=0;}
 }
@@ -873,6 +888,7 @@ static void kill_unit(DotaGame *g,int victim,int killer,int source_team) {
     if(dota_barracks_kind(v))gold=0;
     if(v->type==DOTA_NEUTRAL){const DotaJungleDefinition *d=dota_jungle_definition(v);if(d){gold=(d->gold_min+d->gold_max)/2;xp=d->xp;}}
     {int owner=dota_item_world_owner(g,killer);if(owner>=0){killer=owner;source_team=g->units[owner].team;team=source_team;assist_team=team;assist_killer=owner;}}
+    dota_match_stats_kill(g,killer,victim);
     if((unsigned)killer<DOTA_HERO_COUNT && g->units[killer].type==DOTA_HERO){
         if(v->type==DOTA_CREEP)gold=dota_items_special_bounty_roll(g,killer,v->tier?43:34,v->tier?52:39);
         else if(v->type==DOTA_NEUTRAL){const DotaJungleDefinition *d=dota_jungle_definition(v);if(d)gold=dota_items_special_bounty_roll(g,killer,d->gold_min,d->gold_max);}
@@ -902,6 +918,7 @@ static void kill_unit(DotaGame *g,int victim,int killer,int source_team) {
         if(v->type==DOTA_TOWER && h->team==team)h->gold+=dota_turbo_gold_reward(60);
     }
     if(v->type==DOTA_HERO) {
+        dota_cast_order_cancel(g,victim);
         g->culling[victim].until=0;
         if(!reincarnate)assist_award(g,victim,assist_team,assist_killer);
         omnislash_clear(g,victim);
@@ -979,6 +996,7 @@ static void damage_snapshot_ex(DotaGame *g,int victim,int amount,int source,int 
     }
     if(v->type==DOTA_SUMMON && v->hero_id<0)amount=1;
     dealt=amount>v->hp?v->hp:amount;v->hp-=amount;
+    dota_match_stats_damage(g,source,victim,dealt);
     if(!deferred)dota_rune_on_damage(g,victim,source,dealt);
     dota_progression_on_damage(g,source,victim,raw_damage,dealt,magical);
     if(!deferred&&magical!=9)dota_items_after_damage(g,source,victim,dealt,magical);
@@ -1112,7 +1130,7 @@ static int apply_target_skill(DotaGame *g,int caster,int target,int hero,int ski
         return 240;
     }
     if(hero==DOTA_HERO_AXE){int amount=skill_value(u,3,"damage",175+100*rank);
-        if(v->type!=DOTA_TORMENTOR && v->type!=DOTA_ROSHAN && v->hp<=amount){int killed=v->type==DOTA_HERO;v->hp=0;kill_unit(g,target,caster,u->team);if(killed && u->hero_id==DOTA_HERO_AXE){u->cooldown[3]=0;culling_bonus(g,caster);}}
+        if(v->type!=DOTA_TORMENTOR && v->type!=DOTA_ROSHAN && v->hp<=amount){int killed=v->type==DOTA_HERO;dota_match_stats_damage(g,caster,target,v->hp);v->hp=0;kill_unit(g,target,caster,u->team);if(killed && u->hero_id==DOTA_HERO_AXE){u->cooldown[3]=0;culling_bonus(g,caster);}}
         else damage(g,target,amount,caster,2);
         skill_effect(g,caster,skill,DOTA_FX_LINE,u->x,u->y,v->x,v->y,25,16);return 16;
     }
@@ -1213,7 +1231,7 @@ static int cast_for_impl(DotaGame *g,int caster,int skill,int x,int y) {
             }
             else {
                 DotaUnit *v=&g->units[target];int amount=skill_value(u,3,"damage",175+100*rank);
-                if(v->type!=DOTA_TORMENTOR && v->type!=DOTA_ROSHAN && v->hp<=amount) {int hero_kill=v->type==DOTA_HERO;v->hp=0;kill_unit(g,target,caster,u->team);if(hero_kill){u->cooldown[3]=0;culling_bonus(g,caster);}}
+                if(v->type!=DOTA_TORMENTOR && v->type!=DOTA_ROSHAN && v->hp<=amount) {int hero_kill=v->type==DOTA_HERO;dota_match_stats_damage(g,caster,target,v->hp);v->hp=0;kill_unit(g,target,caster,u->team);if(hero_kill){u->cooldown[3]=0;culling_bonus(g,caster);}}
                 else damage(g,target,amount,caster,2);
                 skill_effect(g,caster,skill,DOTA_FX_LINE,u->x,u->y,v->x,v->y,25,16);
             }break;
@@ -1265,8 +1283,18 @@ int dota_cast(DotaGame *g,int skill,int x,int y) {
 }
 int dota_rules_cast_target_matches(const DotaGame *g,int caster,int candidate){
     if(!g || (unsigned)candidate>=DOTA_MAX_UNITS)return 0;
+    if((unsigned)caster<DOTA_HERO_COUNT && g->cast_orders[caster].executing && g->cast_orders[caster].target_kind==DOTA_CAST_UNIT)
+        return g->cast_orders[caster].target==candidate && g->cast_orders[caster].target_generation==g->units[candidate].generation;
     return caster!=g->player || !g->cast_target_plus_one ||
         (g->cast_target_plus_one==candidate+1 && g->units[candidate].generation==g->cast_target_generation);
+}
+int dota_rules_order_cast(DotaGame *g,int hero,int skill,int x,int y){
+    int result;
+    if(!g || (unsigned)hero>=DOTA_HERO_COUNT || (unsigned)skill>4u)return 0;
+    if(hero==g->player){dota_objective_cancel(g);dota_rune_cancel(g);}
+    dota_items_cancel_teleport(g,hero);sync_navigation(g);
+    if(skill==4){result=dota_roster_is_hero(&g->units[hero])?dota_roster_cast_extra(g,hero,x,y):dota_extra_cast_shard(g,hero,x,y);if(result)dota_sight_invalidate();return result;}
+    return cast_for(g,hero,skill,x,y);
 }
 int dota_cast_on_unit(DotaGame *g,int skill,int target,int generation){
     int result,old_target,old_generation;DotaUnit *u;
@@ -1320,6 +1348,7 @@ int dota_hero_has_scepter(const DotaGame *g,int index){return dota_items_has_upg
 
 void dota_move_to(DotaGame *g,int x,int y) {
     DotaUnit *u=&g->units[g->player];
+    dota_cast_order_cancel(g,g->player);
     if(!g->paused&&g->state==DOTA_PLAYING)dota_roster_try_leave(g,g->player);
     if(g->paused || g->state!=DOTA_PLAYING || !alive(u) || u->taunt_ticks || (dota_unit_invulnerable(g,g->player) && !dota_items_wind_move_source(g,g->player)))return;
     sync_navigation(g);dota_items_cancel_teleport(g,g->player);dota_objective_cancel(g);dota_rune_cancel(g);omnislash_cancel_cast(g,g->player);dota_roster_cancel_cast(g,g->player);
@@ -1329,6 +1358,7 @@ void dota_move_to(DotaGame *g,int x,int y) {
 }
 void dota_attack_target(DotaGame *g,int index) {
     DotaUnit *u=&g->units[g->player];
+    dota_cast_order_cancel(g,g->player);
     if(g->paused || g->state!=DOTA_PLAYING || !alive(u) || !targetable(g,index) || !dota_unit_visible(g,g->player,index) || g->units[index].team==u->team || dota_unit_invulnerable(g,g->player))return;
     sync_navigation(g);dota_items_cancel_teleport(g,g->player);dota_objective_cancel(g);dota_rune_cancel(g);omnislash_cancel_cast(g,g->player);dota_roster_cancel_cast(g,g->player);
     u->target=index;u->move_order=0;
@@ -1876,8 +1906,9 @@ static void summon_update(DotaGame *g,int index) {
     {int age=g->tick-w->respawn_ticks,pct100=dota_progression_value100(hero,1,"healing_ward_heal_amount",(1+clamp(w->tier,1,4))*100)+(dota_hero_has_shard(g,owner)?150:0);
      for(i=0;i<DOTA_HERO_COUNT;++i)if(alive(&g->units[i]) && g->units[i].team==w->team
         && source_range(dist2(w->x,w->y,g->units[i].x,g->units[i].y),dota_rules_aoe_radius(g,owner,400))){
-         int amount=(int)((long long)g->units[i].max_hp*pct100*age/(10000*DOTA_HZ))-(int)((long long)g->units[i].max_hp*pct100*(age-1)/(10000*DOTA_HZ));
+         int before=g->units[i].hp,amount=(int)((long long)g->units[i].max_hp*pct100*age/(10000*DOTA_HZ))-(int)((long long)g->units[i].max_hp*pct100*(age-1)/(10000*DOTA_HZ));
          g->units[i].hp=clamp(g->units[i].hp+amount,0,g->units[i].max_hp);
+         dota_match_record_heal(g,owner,i,g->units[i].hp-before);
      }
      if(g->tick%10==0)skill_effect(g,owner,1,DOTA_FX_HEAL,w->x,w->y,w->x,w->y,100,9);
     }
@@ -2035,7 +2066,8 @@ static void player(DotaGame *g,const DotaInput *input) {
     if(dota_rune_player(g,input))return;
     if(input) {
         if(input->actions&DOTA_INPUT_STOP){u->move_order=0;u->target=-1;target=-1;g->player_path_count=g->player_path_index=0;}
-        for(i=0;i<4;++i)if(input->actions&(DOTA_INPUT_Q<<i))dota_cast(g,i,input->target_x,input->target_y);
+        for(i=0;i<4;++i)if(input->actions&(DOTA_INPUT_Q<<i))dota_order_cast(g,i,input->target_x,input->target_y);
+        if(dota_cast_order_tick(g,g->player))return;
         if(roster_busy(g,g->player))return;
         if(input->actions&DOTA_INPUT_FLASK) {
             for(i=0;i<DOTA_ITEM_SLOTS;++i)if(dota_items_equipped_item(g,g->player,i)==DOTA_FLASK){dota_use_item(g,i);break;}
@@ -2179,13 +2211,14 @@ void dota_tick(DotaGame *g,const DotaInput *input) {
     if(!g->paused && g->state==DOTA_PLAYING)dota_barracks_commit_tower_deaths(g);
     sync_navigation(g);
     if(g->paused || g->state!=DOTA_PLAYING)return;
+    if(input && (input->move_x || input->move_y || (input->actions&(DOTA_INPUT_STOP|DOTA_INPUT_ATTACK|DOTA_INPUT_Q|DOTA_INPUT_W|DOTA_INPUT_E|DOTA_INPUT_R|DOTA_INPUT_FLASK))))dota_cast_order_cancel(g,g->player);
     ++g->tick;
     dota_progression_tick(g);
     for(i=0;i<DOTA_HERO_COUNT;++i){
         DotaUnit *u=&g->units[i];assist_sync(g,i);passive_sync(g,i);
         if(u->active && u->type==DOTA_HERO)u->gold+=dota_turbo_passive_gold_at_tick(dota_match_game_ticks(g));
         if(g->omnislash[i].phase && !dota_omnislash_phase(g,i))omnislash_clear(g,i);
-        if(!alive(u) || u->type!=DOTA_HERO)continue;
+        if(!alive(u) || u->type!=DOTA_HERO){dota_cast_order_cancel(g,i);continue;}
         if(g->passive_wait[i])--g->passive_wait[i];
         if(u->hero_id!=DOTA_HERO_CRYSTAL_MAIDEN && dota_skill_is_passive(u->hero_id,2) && u->skill_ticks[2])--u->skill_ticks[2];
         if(u->hero_id==DOTA_HERO_LINA && !u->skill_ticks[2])g->passive_stacks[i]=0;
@@ -2205,6 +2238,7 @@ void dota_tick(DotaGame *g,const DotaInput *input) {
         statuses(g,i);
         if(g->state!=DOTA_PLAYING)break;
         if(!alive(&g->units[i]))continue;
+        if(i<DOTA_HERO_COUNT && dota_cast_order_tick(g,i))continue;
         if(dota_roster_stun(g,i) || dota_roster_moving(g,i)){if(i<DOTA_HERO_COUNT)dota_roster_cancel_cast(g,i);continue;}
         if(i<DOTA_HERO_COUNT && g->units[i].type==DOTA_HERO){
             if(i==g->player && input && dota_omnislash_phase(g,i)==DOTA_OMNISLASH_CASTING

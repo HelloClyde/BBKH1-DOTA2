@@ -1,0 +1,734 @@
+{
+  "schema_version": 1,
+  "version": "0.30",
+  "round": 3,
+  "phase": "restored-SD-hardware",
+  "scope": "Append separate restored-SD hardware evidence without editing old archives/docs.\n\nDefault only plans. --execute copies selected original bytes beneath round3/\nhardware and writes its own RAW-MANIFEST/INDEX. Existing bytes are immutable;\nthe earlier offline round3 INDEX and historical C7 acceptance stay untouched.\nOnly completed actual-binary reports and CRC-verified deployment can establish\nthe narrow installed/tested fields. Performance acceptance is a root decision.\n",
+  "executed": true,
+  "files": [
+    {
+      "source": "build/perf3-hardware-previous/candidate8-before-hardware-state.json",
+      "bytes": 382,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/candidate8-before-hardware-state.json",
+      "sha256": "a8866d189a2fb471aba5b426d6b52012dc0e3169c3fe4f6dd2846f2ab4a35107",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/docs/IPU-v0.30.md",
+      "bytes": 1634,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/docs/IPU-v0.30.md",
+      "sha256": "05fc5bd67e7958ab9c33994d57cdaa9452e1f531585335f0a1671412a1ca1f02",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/docs/PERFORMANCE-v0.30-round3.md",
+      "bytes": 5158,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/docs/PERFORMANCE-v0.30-round3.md",
+      "sha256": "c2fc940b5117e93ab3fe98eb9b3f8906918e1eaca514cd6636f3fb74f3dd2da5",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/docs/PERFORMANCE-v0.30.md",
+      "bytes": 9828,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/docs/PERFORMANCE-v0.30.md",
+      "sha256": "530a31e0d612a242d2d14126040b26dca41d32dfaa38f756ddb2dec7fae2bbb8",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/docs/verification/v0.30-candidate8.json",
+      "bytes": 1389,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/docs/verification/v0.30-candidate8.json",
+      "sha256": "1b12ea1a3010ab05b266f6cdff856a0f9ec19d7cc19201818543f4792f5a9de0",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/docs/verification/v0.30-h1.json",
+      "bytes": 4848,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/docs/verification/v0.30-h1.json",
+      "sha256": "c2a84ad7d1dbd180920ee2fe1f62585babd2950853b18791e83d1dc8aaee856f",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/manifest.json",
+      "bytes": 3886,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/manifest.json",
+      "sha256": "fb76434bd6284f50f0cdbdbf09180333e570550ad723a0c31492a2201bcea662",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/INDEX.json",
+      "bytes": 54459,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/provenance/verification/v0.30/performance/INDEX.json",
+      "sha256": "d6fff0c2259f9e32d341487ba917d045fcede708fe07edaab09c2449f489d45f",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/round2/INDEX.json",
+      "bytes": 190096,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/provenance/verification/v0.30/performance/round2/INDEX.json",
+      "sha256": "2e1dc13e8038e22f346659268289c7c7cbcb7a1c7b57304811a298014f2dd171",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/ARCHIVE-VERIFICATION.json",
+      "bytes": 366,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/ARCHIVE-VERIFICATION.json",
+      "sha256": "2b881b00f644fa89853f6bbaad8d299b3580135a76200e942df897b2a6c29ffc",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/COMPARISON.json",
+      "bytes": 3307,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/COMPARISON.json",
+      "sha256": "80fae88b174f4429a3700e19edd1b16ef2b18baf51410196343a2d46f1cf01cc",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/FINALIZE-EVIDENCE.py",
+      "bytes": 6473,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/FINALIZE-EVIDENCE.py",
+      "sha256": "5112ffc49d96d3a75e64f8fed107ccf94ec890d983911dd5069e4b9bb176168c",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/INDEX.json",
+      "bytes": 6590,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/INDEX.json",
+      "sha256": "8ff01b2c5d6a01bb4a36c06cf0b41a3cca91e5a2149693e8b9c5329a43deba88",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/RAW-MANIFEST.json",
+      "bytes": 242764,
+      "category": "pre-hardware-docs-and-offline-index-snapshot",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/RAW-MANIFEST.json",
+      "sha256": "c17fd9e647ccc0c7e590b688dd95f0982623c84b8240ff7a6d6f22a6d7c1cf50",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf-candidate7/DOTA2.build.json",
+      "bytes": 22820,
+      "category": "historical-C7-build-metadata",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf-candidate7/DOTA2.build.json",
+      "sha256": "1698bd71545d7a508b68a633d427cfd8be36b9e6badb2e1cc46052b4c858e86f",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf-candidate7/commands.json",
+      "bytes": 35976,
+      "category": "historical-C7-build-metadata",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf-candidate7/commands.json",
+      "sha256": "c19011bf4bdabb0ab448387907c1c089814cf3e05249d2bbe57f653ef1d86262",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf-candidate8/DOTA2.build.json",
+      "bytes": 22920,
+      "category": "actually-tested-candidate-build-metadata",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf-candidate8/DOTA2.build.json",
+      "sha256": "68d7c197bee8a8aad8ba5690168a941636f1c84cb69243df67ff257c08a9c923",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf-candidate8/commands.json",
+      "bytes": 35976,
+      "category": "actually-tested-candidate-build-metadata",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf-candidate8/commands.json",
+      "sha256": "c9a74acc6162dd4b024d6229e68cc05b9b9f7b003aeb617935f4f08cfd804fbb",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-baseline7-restored-aligned/driver.py",
+      "bytes": 7593,
+      "category": "excluded-harness-or-lineup-attempt",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored-aligned/driver.py",
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-baseline7-restored-aligned/verification.json",
+      "bytes": 8932,
+      "category": "excluded-harness-or-lineup-attempt",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored-aligned/verification.json",
+      "sha256": "3be19f079c589da7a86a4a90097eb3b9b4c81edd0349b572f692524e81f8c515",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-baseline7-restored-final/driver.py",
+      "bytes": 7593,
+      "category": "restored-SD-C7-baseline",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored-final/driver.py",
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-baseline7-restored-final/fountain-paused-game.bin",
+      "bytes": 179008,
+      "category": "restored-SD-C7-baseline",
+      "selection_reason": "small-Game-or-fog-snapshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored-final/fountain-paused-game.bin",
+      "sha256": "e9e427e42174837ab66a194c88625ddaf4ae9c29230ad452fa0a4655c90b4d58",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-baseline7-restored-final/fountain-paused.png",
+      "bytes": 12798,
+      "category": "restored-SD-C7-baseline",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored-final/fountain-paused.png",
+      "sha256": "69f581b8abc5bbd65613a655ee2eefefe4b37e52335f9cbdb19b904957e1de71",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-baseline7-restored-final/mid-paused-game.bin",
+      "bytes": 179008,
+      "category": "restored-SD-C7-baseline",
+      "selection_reason": "small-Game-or-fog-snapshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored-final/mid-paused-game.bin",
+      "sha256": "b92a5db6fe189bbe311f605f9242a34109e0944f1b93a3248f0e11f2699acbf5",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-baseline7-restored-final/mid-paused.png",
+      "bytes": 11093,
+      "category": "restored-SD-C7-baseline",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored-final/mid-paused.png",
+      "sha256": "3b18bb1ce8d594b2be793fa9fc3d5741e97125107f0b2a3fa0bc2c3c1f806d2b",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-baseline7-restored-final/post-horn-paused-game.bin",
+      "bytes": 179008,
+      "category": "restored-SD-C7-baseline",
+      "selection_reason": "small-Game-or-fog-snapshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored-final/post-horn-paused-game.bin",
+      "sha256": "fe03925ecc687011473ebfe2f6bafc77d4b3aead8192769c71c5536ceedd7201",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-baseline7-restored-final/post-horn-paused.png",
+      "bytes": 12965,
+      "category": "restored-SD-C7-baseline",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored-final/post-horn-paused.png",
+      "sha256": "4e86fd8fe5160fd1011423c45f2d2a49c8783823c54cb550ee8a5a075ed84c29",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-baseline7-restored-final/verification.json",
+      "bytes": 85793,
+      "category": "restored-SD-C7-baseline",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored-final/verification.json",
+      "sha256": "594cd6b54ca1f2d2f6dd58b579d85e5c66a117c50cfdde4d6d14a3c297408007",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-baseline7-restored/driver.py",
+      "bytes": 7593,
+      "category": "excluded-harness-or-lineup-attempt",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored/driver.py",
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-baseline7-restored/verification.json",
+      "bytes": 8928,
+      "category": "excluded-harness-or-lineup-attempt",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-baseline7-restored/verification.json",
+      "sha256": "8d7440351b45d67ee5f72f0fb6213a3788e1ee47b6bfdc13661333499cb396da",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-aligned/driver.py",
+      "bytes": 7593,
+      "category": "actual-candidate-H1-profile",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-aligned/driver.py",
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-aligned/fountain-paused-game.bin",
+      "bytes": 179008,
+      "category": "actual-candidate-H1-profile",
+      "selection_reason": "small-Game-or-fog-snapshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-aligned/fountain-paused-game.bin",
+      "sha256": "30cf3924585dcc7ae6677c4d91e873b949d0583fc4416dd0ac982478d8703d4e",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-aligned/fountain-paused.png",
+      "bytes": 12805,
+      "category": "actual-candidate-H1-profile",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-aligned/fountain-paused.png",
+      "sha256": "9fc7586f44a56b0b9064b002d50a0f80c1a2ea6857b9aba12b8d96d5de83dc0b",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-aligned/mid-paused-game.bin",
+      "bytes": 179008,
+      "category": "actual-candidate-H1-profile",
+      "selection_reason": "small-Game-or-fog-snapshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-aligned/mid-paused-game.bin",
+      "sha256": "653b620d43a06715152d99f3ea4f2dccab3ddd423ac1e8aca3ad967167ce183b",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-aligned/mid-paused.png",
+      "bytes": 11101,
+      "category": "actual-candidate-H1-profile",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-aligned/mid-paused.png",
+      "sha256": "d556c8d23a43861e1d51d380f14948acf6cbb60c1bc99a9233e4252eb40212a1",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-aligned/post-horn-paused-game.bin",
+      "bytes": 179008,
+      "category": "actual-candidate-H1-profile",
+      "selection_reason": "small-Game-or-fog-snapshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-aligned/post-horn-paused-game.bin",
+      "sha256": "554d386325d17dc75a35ce824e6a827dc92d9223e0eca3e2e3d5a129684f8e18",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-aligned/post-horn-paused.png",
+      "bytes": 12974,
+      "category": "actual-candidate-H1-profile",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-aligned/post-horn-paused.png",
+      "sha256": "52131c7bb04cc0ca5417ae4d078416af6ea84a911f7a7b3e426ca09c71c71a13",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-aligned/verification.json",
+      "bytes": 85684,
+      "category": "actual-candidate-H1-profile",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-aligned/verification.json",
+      "sha256": "d814a531a220e8c64f21694adfcbc04377d452f44936342023cddcd4a315b50f",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-deploy-tool.json",
+      "bytes": 4029,
+      "category": "additional-raw-receipt",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-deploy-tool.json",
+      "sha256": "5b85f1f6c547a56b7d4dc60f9b432a15de947deb0190ce094a6b78f8f7a5dd2a",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-deploy.json",
+      "bytes": 3837,
+      "category": "device-CRC-verified-candidate-deployment",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-deploy.json",
+      "sha256": "34cdd88637f5da9031ba53297454a58515a94b9834cc6e4d9f40379ca28d98b8",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-deploy.json.upload.json",
+      "bytes": 1144,
+      "category": "additional-raw-receipt",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-deploy.json.upload.json",
+      "sha256": "686b3aa3ea644c24e565907a557ba0f214ee438eae6f6003c629142a2dabae9e",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut-final/after-tree-2056.png",
+      "bytes": 93625,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/after-tree-2056.png",
+      "sha256": "0e920a4d37ab8cf3a14d3a74f27747f46cfa47b3819c23a6922eb0c10f6dd2b1",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut-final/after-tree-2061.png",
+      "bytes": 97182,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/after-tree-2061.png",
+      "sha256": "72de73092958a785cd99f6ba7b08da74b55a7c0f214dc048ec715366561d2081",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut-final/before-tree-2056.png",
+      "bytes": 89044,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/before-tree-2056.png",
+      "sha256": "fd7dd903d23fb666a77de4dd93707cd318974ba83760cebd1a5a9aeae488ed9b",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut-final/before-tree-2061.png",
+      "bytes": 92534,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/before-tree-2061.png",
+      "sha256": "756470bda2fce08e2d49278e0f6fdaecb3aa53a1dfe5450f7739c150343fdc98",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut-final/driver-executed.py",
+      "bytes": 24359,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/driver-executed.py",
+      "sha256": "7cca317a2c7625de32776ab5ba0b11bc8c3818a2c9a525d12f0facc0ced56a57",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut-final/help-about.png",
+      "bytes": 8246,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/help-about.png",
+      "sha256": "765529a440b61ccf3a70b7c33914eb4b2b5563eaeb7aeaad776082b88441704f",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut-final/help-controls.png",
+      "bytes": 9130,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/help-controls.png",
+      "sha256": "696be5cf9426cfb51ede0aa40703365747b7eb0767ca247f6bafee988ec34ebe",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut-final/pause-six-buttons.png",
+      "bytes": 13023,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/pause-six-buttons.png",
+      "sha256": "f9e3ff9af3cf5111de1e3813c562303a0a825cd3ef0b86c0d92fb20655b77335",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut-final/trees-cut-paused-game.bin",
+      "bytes": 179008,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "small-Game-or-fog-snapshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/trees-cut-paused-game.bin",
+      "sha256": "6573d402bb9c48267e6ed54b7d2256b58e4b28b302c0f0f086a70657de3e0f09",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut-final/trees-cut-paused-view.bin",
+      "bytes": 148,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "exact-DotaView148-snapshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/trees-cut-paused-view.bin",
+      "sha256": "a12c229063fb8f70d501f81a44ee9f0576b280932fda9929d1737171a378bdc3",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut-final/verification.json",
+      "bytes": 48555,
+      "category": "completed-candidate-cut-only-check",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut-final/verification.json",
+      "sha256": "98e7b048dc398d51644ba54e59028e00de4b61b353077aac0387b625edaf9dac",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut/driver-executed.py",
+      "bytes": 23939,
+      "category": "excluded-harness-or-lineup-attempt",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut/driver-executed.py",
+      "sha256": "5c325f11e3d14c63a3db9cfb11c46c488cacaa72c2184c912d225c81fc20ab8b",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut/normal-exit-after-timeout.json",
+      "bytes": 2132,
+      "category": "excluded-harness-or-lineup-attempt",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut/normal-exit-after-timeout.json",
+      "sha256": "f665a1eea27d58a331973c5c33f2f2ea3e5bde5128c155aa9618930654c5e843",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut/recover_startup_timeout.py",
+      "bytes": 1618,
+      "category": "excluded-harness-or-lineup-attempt",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut/recover_startup_timeout.py",
+      "sha256": "a42b86d96cbeabe5c3ac6cf191ac95f811f797d6d1f3c8f308550af653fd9931",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut/timeout-observation.json",
+      "bytes": 1186,
+      "category": "excluded-harness-or-lineup-attempt",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut/timeout-observation.json",
+      "sha256": "7e4b09405d2e7218ed21195981b48e3af177444d8f37099cd3d6ab18e574991a",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut/timeout-screen.png",
+      "bytes": 19336,
+      "category": "excluded-harness-or-lineup-attempt",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut/timeout-screen.png",
+      "sha256": "b63822eb2e8537293e8a87818022b16c9e715e0bc833bbeb5a10844f94724711",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-candidate8-trees-cut/verification.json",
+      "bytes": 10016,
+      "category": "excluded-harness-or-lineup-attempt",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-candidate8-trees-cut/verification.json",
+      "sha256": "5f66b3a0a61c763d129a87a3a46ab5c8191d60e062e9149b039b0e6a992abbe3",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-final-device/desktop.png",
+      "bytes": 74439,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-device-screenshot",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-final-device/desktop.png",
+      "sha256": "8eade86ac4a2cbdbd88fe9d9280cf2a8487a8f318bdab47a7031b2caeca838a3",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-final-device/verification.json",
+      "bytes": 3034,
+      "category": "completed-readonly-device-cleanup-check",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-final-device/verification.json",
+      "sha256": "c8c8532a4c32820eefc9d2135ae5d134024f61e3d2727d1cc3327bf30c63d6eb",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-hardware-followup/archive_hardware.py",
+      "bytes": 15716,
+      "category": "archive-comparison-or-audit-driver",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/archive_hardware.py",
+      "sha256": "cf9ee196507acfbdca8faa86089f85f080d377a7c31737e7f4d754e750838fe9",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-hardware-followup/compare_profiles.py",
+      "bytes": 16042,
+      "category": "archive-comparison-or-audit-driver",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/compare_profiles.py",
+      "sha256": "03082f0ce97bf2f0986f5729de66b7b9a9b8c864eadba6779c14842cadec3be8",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-hardware-followup/comparison-script-tests/synthetic-input/driver.py",
+      "bytes": 7593,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/comparison-script-tests/synthetic-input/driver.py",
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-hardware-followup/comparison-script-tests/synthetic-input/verification.json",
+      "bytes": 42258,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/comparison-script-tests/synthetic-input/verification.json",
+      "sha256": "72461e0b987f9b957e16fe854e7094b6250cd7cbd6085fb375226dee1b631cb4",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-hardware-followup/comparison-script-tests/verification.json",
+      "bytes": 5042,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/comparison-script-tests/verification.json",
+      "sha256": "f7c74ac9baf516d38ae3bf5d9ccbd41b479df6750cabdef9bd1bc43dafd8f28a",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-hardware-followup/comparison.json",
+      "bytes": 313478,
+      "category": "root-comparison",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/comparison.json",
+      "sha256": "7691cbcdb3b5f7dafdf26776176be91b5fa8553e987b34cb049f2017741128f0",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-hardware-followup/prepare_state_update.py",
+      "bytes": 18134,
+      "category": "archive-comparison-or-audit-driver",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/prepare_state_update.py",
+      "sha256": "61780d2012c01cbc60dc1fc0b4d1db450954bd704e5cc645c30aae34fd91f842",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-hardware-followup/preserve_previous.py",
+      "bytes": 1950,
+      "category": "archive-comparison-or-audit-driver",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/preserve_previous.py",
+      "sha256": "e59a240c47ee04fb5900ef9da4674b7163a6cc167f935dabf8c6740b8a6042fe",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-hardware-followup/run_hardware_archive.py",
+      "bytes": 2140,
+      "category": "archive-comparison-or-audit-driver",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/run_hardware_archive.py",
+      "sha256": "a3ae3f992d5c426fe909e3d703a0f12d778a6151e6f41f801f42898d91ac06e8",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-hardware-followup/source-audit.json",
+      "bytes": 52705,
+      "category": "archive-comparison-or-audit-driver",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/source-audit.json",
+      "sha256": "48be49d1f357072e35046c10e2b787cccdcfe8e1a04a586cfe23c523cc7dd1d6",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-hardware-followup/test_compare_profiles.py",
+      "bytes": 3226,
+      "category": "archive-comparison-or-audit-driver",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-hardware-followup/test_compare_profiles.py",
+      "sha256": "3bb743983714a6b4b4dbf49ff09d69459c41ceca3a978b4b63921ec592593767",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "build/v030/perf3-restored-device/initial.json",
+      "bytes": 979,
+      "category": "additional-raw-observation-or-supporting-check",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/build/v030/perf3-restored-device/initial.json",
+      "sha256": "d2952407b524aabfd1c1a645a81b63e35c05e15a6f637c2bc1414caff608f8c8",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "tests/physical_trees_h1.py",
+      "bytes": 24359,
+      "category": "current-tree-test-source",
+      "selection_reason": "raw-report-driver-or-metadata",
+      "path": "provenance/verification/v0.30/performance/round3/hardware/raw/tests/physical_trees_h1.py",
+      "sha256": "7cca317a2c7625de32776ab5ba0b11bc8c3818a2c9a525d12f0facc0ced56a57",
+      "byte_identical_at_capture": true
+    }
+  ],
+  "archived_files": 73,
+  "archived_raw_bytes": 3319551,
+  "excluded_files": [
+    {
+      "source": "build/v030/perf-candidate7/DOTA2.bda",
+      "bytes": 1080220,
+      "category": "historical-C7-build-metadata",
+      "selection_reason": "compiled-binary-object-or-library",
+      "exclusion_reason": "compiled-binary-object-or-library"
+    },
+    {
+      "source": "build/v030/perf-candidate7/DOTA2.elf",
+      "bytes": 3952604,
+      "category": "historical-C7-build-metadata",
+      "selection_reason": "compiled-binary-object-or-library",
+      "exclusion_reason": "compiled-binary-object-or-library"
+    },
+    {
+      "source": "build/v030/perf-candidate8/DOTA2.bda",
+      "bytes": 1083444,
+      "category": "actually-tested-candidate-build-metadata",
+      "selection_reason": "compiled-binary-object-or-library",
+      "exclusion_reason": "compiled-binary-object-or-library"
+    },
+    {
+      "source": "build/v030/perf-candidate8/DOTA2.elf",
+      "bytes": 3970488,
+      "category": "actually-tested-candidate-build-metadata",
+      "selection_reason": "compiled-binary-object-or-library",
+      "exclusion_reason": "compiled-binary-object-or-library"
+    }
+  ],
+  "exclusion_policy": {
+    "compiled": [
+      ".a",
+      ".bda",
+      ".dll",
+      ".elf",
+      ".exe",
+      ".lib",
+      ".o",
+      ".obj",
+      ".pdb",
+      ".pyc",
+      ".so"
+    ],
+    "assets": [
+      ".h1a",
+      ".h1c",
+      ".h1p",
+      ".h1r",
+      ".h1t",
+      ".h1v",
+      ".mp3",
+      ".pgm",
+      ".ppm",
+      ".raw",
+      ".wav"
+    ],
+    "arbitrary_binary_outputs": true,
+    "maximum_Game_or_fog_snapshot_bytes": 262144,
+    "allowed_DotaView_snapshot_bytes": 148,
+    "view_snapshot_name_requires": "view",
+    "maximum_PNG_bytes": 1048576
+  },
+  "old_offline_archive_or_docs_modified": false,
+  "raw_report_outcome_fields_rewritten": false
+}

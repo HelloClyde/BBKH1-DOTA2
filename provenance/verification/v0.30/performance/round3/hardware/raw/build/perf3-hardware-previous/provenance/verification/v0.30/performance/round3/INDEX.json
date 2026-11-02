@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "version": "0.30",
+  "round": 3,
+  "scope": "Offline candidate only. Preserves rejected experiments and current physical SD-card blocker. No new H1 FPS or deployment claim.",
+  "candidate_bda_sha256": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244",
+  "candidate_elf_sha256": "dc6ecce5c66b0f1165ec637070a3beac35c89bb23cd6b96ae95b60cc69cd3b03",
+  "candidate_bytes": 1083444,
+  "binary": {
+    "abi": {
+      "DotaGame": 179008,
+      "DotaUnit": 240,
+      "DotaView": 148
+    },
+    "entry": "0x83c00020",
+    "stack_bytes": 65536,
+    "application_ram_end": "0x83fea740",
+    "ram_limit": "0x83ff0000",
+    "ram_margin_bytes": 22720,
+    "static_bss_bytes": 2987840,
+    "payload_matches_elf": true
+  },
+  "candidate_installed": false,
+  "physical_candidate_tested": false,
+  "performance_acceptance_passed": null,
+  "full_feature_acceptance_complete": false,
+  "release_pin_created": false,
+  "github_updated": false,
+  "raw_manifest": {
+    "path": "provenance/verification/v0.30/performance/round3/RAW-MANIFEST.json",
+    "sha256": "c17fd9e647ccc0c7e590b688dd95f0982623c84b8240ff7a6d6f22a6d7c1cf50"
+  },
+  "archive_verification": {
+    "path": "provenance/verification/v0.30/performance/round3/ARCHIVE-VERIFICATION.json",
+    "sha256": "2b881b00f644fa89853f6bbaad8d299b3580135a76200e942df897b2a6c29ffc"
+  },
+  "derived_evidence_driver": {
+    "path": "provenance/verification/v0.30/performance/round3/FINALIZE-EVIDENCE.py",
+    "sha256": "5112ffc49d96d3a75e64f8fed107ccf94ec890d983911dd5069e4b9bb176168c"
+  },
+  "offline_comparison": {
+    "path": "provenance/verification/v0.30/performance/round3/COMPARISON.json",
+    "sha256": "80fae88b174f4429a3700e19edd1b16ef2b18baf51410196343a2d46f1cf01cc"
+  },
+  "final_build": {
+    "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf-candidate8/DOTA2.build.json",
+    "sha256": "68d7c197bee8a8aad8ba5690168a941636f1c84cb69243df67ff257c08a9c923"
+  },
+  "final_mips_checks": {
+    "resources": {
+      "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf3-resource-mips/verification.json",
+      "sha256": "290452134be0e522c0ed8b7f0d73a3d6eb8e433a3010210a7a3529bd51458250"
+    },
+    "vision": {
+      "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf3-vision-mips-executed/verification.json",
+      "sha256": "2d6eba69475d482bfe09495bd21c6a0c3bf6953e859f123283b9533ea799eb02"
+    },
+    "trees": {
+      "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf3-trees-mips/verification.json",
+      "sha256": "154ab2ed66395302aa5264e17e0ae84df6e577547de2b0b3dcdf05ef3d66f686"
+    },
+    "sight_bitplanes": {
+      "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf3-sight-bits-mips/verification.json",
+      "sha256": "81cced4d08cb2ddf3795c901b877d0bd860ee164bf43600cc73e9fd725d599b7"
+    },
+    "local_tree_FOV": {
+      "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf3-local-fov-final/verification.json",
+      "sha256": "45a78b28e0d1804575f7febd6805f25f21595b598456b457899de409a1022630"
+    },
+    "fountain_render": {
+      "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf3-render-fountain/verification.json",
+      "sha256": "a040184e8f7a1ec4c0d3968a27817a60e6afb0e07576498d026b985a6eea0737"
+    },
+    "posthorn_render": {
+      "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf3-render-posthorn/verification.json",
+      "sha256": "2c21e2d8dbfdd9f1e8dc8083f46327a4793817313c6534d421259d2de79841f4"
+    }
+  },
+  "sprite_study": {
+    "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/sprite-pipeline/study-summary.json",
+    "sha256": "26a9607764f4b59ed56fcff31b72125a7eb83eb5ed52116d61f1d4621ec6663a"
+  },
+  "independent_source_review": {
+    "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf3-archive/independent-review.json",
+    "sha256": "61092538fb28480bb6287930bb5f3751941137f293456e92fec89399fe701d26"
+  },
+  "reader_replay": {
+    "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/startup-io-study/selected-replay/verification.json",
+    "sha256": "356adf441d39665603ce29cf7e5e263850190daef83f7ae212293df5e1a86b74"
+  },
+  "reader_all_streams": {
+    "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/startup-io-study/reader-selected-tests/verification.json",
+    "sha256": "bd7009383973c36fc9271f48d13aded6b1a5869dc8054e7868b1876e43a4c755"
+  },
+  "targeted_prewarm": {
+    "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/startup-io-study/prewarm-trial2/verification.json",
+    "sha256": "80914e82caff012b059ff96da24b36f3b374915506156d74e0e9188c7efbc493"
+  },
+  "IPU_assessment": {
+    "path": "provenance/verification/v0.30/performance/round3/raw/docs/IPU-v0.30.md",
+    "sha256": "05fc5bd67e7958ab9c33994d57cdaa9452e1f531585335f0a1671412a1ca1f02"
+  },
+  "hardware_observations": {
+    "initial": {
+      "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf3-device/initial.json",
+      "sha256": "84228446af054f5a067f6a3e7b3de48b2a24dac1e15e104399df15d49cbce6d7"
+    },
+    "resource_manager_error": {
+      "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf3-device/initial-screen.png",
+      "sha256": "df7780ddbb4475f526839fd7c4dce60be1138828514981838df569d91062e554"
+    },
+    "native_desktop_and_B_stat": {
+      "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf3-device/ready.json",
+      "sha256": "877037302661f7c5f66e2a36d122f9be58d34ad11cb6a8265a3b0ac9533a85fe"
+    },
+    "baseline_preflight": {
+      "path": "provenance/verification/v0.30/performance/round3/raw/build/v030/perf3-baseline7/verification.json",
+      "sha256": "2c4186ad01f50267033b6a744fafea6a09d813c943c42d0e3afc1228e1cd4061"
+    },
+    "note": "Baseline preflight failed because native resource manager was foreground. B card error separately observed via screenshot and stat. No game launch, no zero-FPS inference. Await user physical SD/reboot step."
+  },
+  "installed_binary_unchanged": "C7 d8d75e2c459735fad358c53c58e2d461c52fb8e348e2846b113f8fcded734d53",
+  "current_physical_acceptance": {
+    "path": "provenance/verification/v0.30/performance/round2/INDEX.json",
+    "sha256": "2e1dc13e8038e22f346659268289c7c7cbcb7a1c7b57304811a298014f2dd171"
+  }
+}

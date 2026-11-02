@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "source_current": true,
+  "source_sha256": {
+    "tests/tree_sparse_test.c": "9f9a91f88803c28d8874200f84f0641723d62dbfda42b22a5863c798efadd824",
+    "platform/tree_visual.c": "c4a019074b9455763910a3f57907348ea6765b8b3f8242e58d7b2dcfa6840a37",
+    "platform/tree_visual.h": "98e93b5c88534f756eea41da30683c1e6a7c92e22c55cedc64013b0575f05640",
+    "platform/map_codec.c": "78a56c875363f70d0b646727f5a49eb0c0a0c4be82790479655ec9f87f1824b9",
+    "platform/map_format.c": "6f9b2690fd8f4efd225460f71a87e2641d5565cffa12432f5094ce43c3134797",
+    "game/trees.c": "ecde00b888b6bdc370fec7252f3b8515cd3d1032b8b83c47ca949239dd7d23ba",
+    "tools/pack_tree_sparse.py": "41f49fc2173e54cb211c04fa33623e5ae8fd33173c002add057821297370b0ff",
+    "tests/verify_tree_sparse.py": "0f73aef3004ebf84eb655767b480962ba56a67b1ba2f78babde5e65766c0a518"
+  },
+  "legacy_sha256": "cb665855d9b4d8c20f2e0603492ed4425cb11a2c3763f51eadf30c5d9162aa80",
+  "sparse_sha256": "129200c5bdfc8c0f7c75d64b34a3e025c03b4244fea75c89a80c215420248256",
+  "all_directory_entries": 660,
+  "nonempty_tiles": 364,
+  "byte_exact_canonical_comparison_bytes": 184424128,
+  "legacy_memory": {
+    "scratch_bytes": 1193899,
+    "extra_bytes": 210843,
+    "total_heap": 2249123
+  },
+  "sparse_memory": {
+    "scratch_bytes": 1064976,
+    "extra_bytes": 81920,
+    "total_heap": 2120200
+  },
+  "malformed_tiles_rejected": [
+    "reserved-frame",
+    "width-out-of-tile",
+    "duplicate-owner",
+    "zero-layer-count",
+    "too-many-layers",
+    "truncated-last-frame",
+    "base-crc",
+    "invalid-active-depth"
+  ],
+  "host_actual_decoder_timings": {
+    "legacy": [
+      {
+        "tile": 319,
+        "median_ms": 2.9540400001375624
+      },
+      {
+        "tile": 346,
+        "median_ms": 1.5254866681061685
+      },
+      {
+        "tile": 347,
+        "median_ms": 1.7217800001769017
+      },
+      {
+        "tile": 376,
+        "median_ms": 1.1537233348159739
+      },
+      {
+        "tile": 377,
+        "median_ms": 1.6527733319283773
+      },
+      {
+        "tile": 566,
+        "median_ms": 2.9471799983487776
+      }
+    ],
+    "sparse": [
+      {
+        "tile": 319,
+        "median_ms": 2.1650933330723396
+      },
+      {
+        "tile": 346,
+        "median_ms": 1.0278066678438336
+      },
+      {
+        "tile": 347,
+        "median_ms": 1.1562466660204032
+      },
+      {
+        "tile": 376,
+        "median_ms": 0.7944233327483138
+      },
+      {
+        "tile": 377,
+        "median_ms": 1.1140166665427387
+      },
+      {
+        "tile": 566,
+        "median_ms": 2.0913266673839344
+      }
+    ]
+  },
+  "timing_scope": "Actual C load_tile, warm host standalone file IO, reconstruction/inverse transform and canonical CRC; median 3x30. Excludes outer H1R decoding and is not H1 FPS.",
+  "physical_h1_tested": false
+}

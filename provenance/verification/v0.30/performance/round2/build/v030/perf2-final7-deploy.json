@@ -1,0 +1,150 @@
+{
+  "operation": "deploy",
+  "source": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\perf-candidate7\\DOTA2.bda",
+  "target": "A:\\应用\\程序\\DOTA2.bda",
+  "bda": {
+    "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\perf-candidate7\\DOTA2.bda",
+    "size": 1080220,
+    "title": "DOTA2",
+    "description": "H1 Native BDA SDK",
+    "category": 71,
+    "version": 16777474,
+    "file_size_minus_4": 1080216,
+    "payload_offset": 30812,
+    "resource_offset": 136,
+    "resource_sizes": [
+      6088,
+      9760,
+      5892,
+      8936
+    ],
+    "resources": [
+      {
+        "index": 0,
+        "start": 136,
+        "end": 6224,
+        "size": 6088,
+        "width": 45,
+        "height": 45,
+        "bits": 24,
+        "planes": 1,
+        "draw_width": 45,
+        "draw_height": 45
+      },
+      {
+        "index": 1,
+        "start": 6224,
+        "end": 15984,
+        "size": 9760,
+        "width": 57,
+        "height": 57,
+        "bits": 24,
+        "planes": 1,
+        "draw_width": 57,
+        "draw_height": 57
+      },
+      {
+        "index": 2,
+        "start": 15984,
+        "end": 21876,
+        "size": 5892,
+        "width": 49,
+        "height": 60,
+        "bits": 16,
+        "planes": 1,
+        "draw_width": 49,
+        "draw_height": 60
+      },
+      {
+        "index": 3,
+        "start": 21876,
+        "end": 30812,
+        "size": 8936,
+        "width": 49,
+        "height": 60,
+        "bits": 16,
+        "planes": 1,
+        "draw_width": 49,
+        "draw_height": 60
+      }
+    ],
+    "checksum": 4345,
+    "expected_checksum": 4345,
+    "checksum_ok": true,
+    "errors": [],
+    "warnings": [],
+    "ok": true
+  },
+  "completed": true,
+  "upload": {
+    "operation": "file_put",
+    "source": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\h1-deploy-v4vu8fff\\DOTA2.bda",
+    "target": "A:\\应用\\程序\\DOTA2.bda",
+    "target_gbk_hex": "413a5cd3a6d3c35cb3ccd0f25c444f5441322e626461",
+    "phase": "done",
+    "completed": true,
+    "size": 1080220,
+    "crc32": 1389215838,
+    "sha256": "d8d75e2c459735fad358c53c58e2d461c52fb8e348e2846b113f8fcded734d53",
+    "token": 7,
+    "received": 1080220,
+    "status": {
+      "version": 1,
+      "state": 5,
+      "token": 7,
+      "size": 1080220,
+      "received": 1080220,
+      "expected_crc": 1389215838,
+      "actual_crc": 1389215838,
+      "verify_offset": 1080220,
+      "error": 0,
+      "fs_errno": 0,
+      "flags": 9,
+      "old_size": 1079908,
+      "old_crc": 4096693281,
+      "last_activity_tick": 421091,
+      "step_count": 801,
+      "reserved": 0,
+      "state_name": "done",
+      "error_name": "ok"
+    },
+    "paths": {
+      "target": "A:\\应用\\程序\\DOTA2.bda",
+      "temporary": "A:\\应用\\程序\\H1D00000007.TMP",
+      "backup": "A:\\应用\\程序\\H1D00000007.BAK"
+    },
+    "device_crc_verified": true,
+    "elapsed_seconds": 76.35899999999674,
+    "original_source": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\perf-candidate7\\DOTA2.bda"
+  },
+  "refresh": {
+    "operation": "desktop_refresh",
+    "before": {
+      "job_id": 15,
+      "kind": 2,
+      "state": 4,
+      "error": 0,
+      "menu_idle": 1,
+      "app_index": 83,
+      "entry_count": 10,
+      "return_code": 0,
+      "state_name": "done"
+    },
+    "completed": true,
+    "request_sent": true,
+    "job_id": 16,
+    "status": {
+      "job_id": 16,
+      "kind": 1,
+      "state": 4,
+      "error": 0,
+      "menu_idle": 1,
+      "app_index": 4294967295,
+      "entry_count": 10,
+      "return_code": 0,
+      "state_name": "done"
+    },
+    "payload_started": false,
+    "elapsed_seconds": 0.1720000000204891
+  }
+}

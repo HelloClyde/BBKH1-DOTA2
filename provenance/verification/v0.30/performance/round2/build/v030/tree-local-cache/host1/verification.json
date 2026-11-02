@@ -1,0 +1,946 @@
+{
+  "passed": true,
+  "scope": "Old/new actual tree compositor parity and local cache invalidation. No H1/FPS claim.",
+  "source_current": true,
+  "source_sha256": {
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\tree-local-cache\\tree-visual-before.c": "eacafb6ec607abdf83f3c175d0a5bd674444f2a8ad2c9979bec50f8851838173",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\platform\\tree_visual.c": "c4a019074b9455763910a3f57907348ea6765b8b3f8242e58d7b2dcfa6840a37",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\tests\\verify_tree_visual_cache.py": "90d00ea46947c1c6b75e5824a46efca130ebd84b797681003d1483462a318d6f",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\tests\\tree_visual_cache_test.c": "746d3b549893494f5a4835419ec946e23c73070a70acb0b66705c67905ff1c28",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\game\\trees.c": "ecde00b888b6bdc370fec7252f3b8515cd3d1032b8b83c47ca949239dd7d23ba",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\platform\\map_codec.c": "78a56c875363f70d0b646727f5a49eb0c0a0c4be82790479655ec9f87f1824b9",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\platform\\map_format.c": "6f9b2690fd8f4efd225460f71a87e2641d5565cffa12432f5094ce43c3134797"
+  },
+  "checks": 36,
+  "byte_equal_color_depth_pick_outputs": 2097472,
+  "runs": {
+    "before": {
+      "trace": [
+        {
+          "name": "zero-cut-fast-path",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 0,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 41196,
+            "metadata_bytes": 41196,
+            "cache_bytes": 0,
+            "scratch_bytes": 0,
+            "read_requests": 2,
+            "read_bytes": 41324,
+            "tile_hits": 0,
+            "tile_misses": 0,
+            "decoded_tiles": 0,
+            "patched_pixels": 0,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "same-tile-picks",
+          "delta": {
+            "read_requests": 192,
+            "read_bytes": 12058880
+          }
+        },
+        {
+          "name": "remote-first-cut",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 0,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 194,
+            "read_bytes": 12100204,
+            "tile_hits": 0,
+            "tile_misses": 0,
+            "decoded_tiles": 0,
+            "patched_pixels": 0,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "local-tile0-cut",
+          "delta": {
+            "read_requests": 12,
+            "read_bytes": 753680,
+            "tile_hits": 0,
+            "tile_misses": 1,
+            "decoded_tiles": 1
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 206,
+            "read_bytes": 12853884,
+            "tile_hits": 0,
+            "tile_misses": 1,
+            "decoded_tiles": 1,
+            "patched_pixels": 15671,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "same-state-warm",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 1,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 206,
+            "read_bytes": 12853884,
+            "tile_hits": 1,
+            "tile_misses": 1,
+            "decoded_tiles": 1,
+            "patched_pixels": 31342,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "local-tile1-cut",
+          "delta": {
+            "read_requests": 24,
+            "read_bytes": 1507360,
+            "tile_hits": 0,
+            "tile_misses": 2,
+            "decoded_tiles": 2
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 230,
+            "read_bytes": 14361244,
+            "tile_hits": 1,
+            "tile_misses": 3,
+            "decoded_tiles": 3,
+            "patched_pixels": 62684,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "remote-cut-both-visible-tiles-warm",
+          "delta": {
+            "read_requests": 24,
+            "read_bytes": 1507360,
+            "tile_hits": 0,
+            "tile_misses": 2,
+            "decoded_tiles": 2
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 254,
+            "read_bytes": 15868604,
+            "tile_hits": 1,
+            "tile_misses": 5,
+            "decoded_tiles": 5,
+            "patched_pixels": 94026,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "cross-tile-cut",
+          "delta": {
+            "read_requests": 24,
+            "read_bytes": 1507360,
+            "tile_hits": 0,
+            "tile_misses": 2,
+            "decoded_tiles": 2
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 278,
+            "read_bytes": 17375964,
+            "tile_hits": 1,
+            "tile_misses": 7,
+            "decoded_tiles": 7,
+            "patched_pixels": 125368,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "remote-regrow",
+          "delta": {
+            "read_requests": 24,
+            "read_bytes": 1507360,
+            "tile_hits": 0,
+            "tile_misses": 2,
+            "decoded_tiles": 2
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 302,
+            "read_bytes": 18883324,
+            "tile_hits": 1,
+            "tile_misses": 9,
+            "decoded_tiles": 9,
+            "patched_pixels": 156710,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "tile0-regrow",
+          "delta": {
+            "read_requests": 24,
+            "read_bytes": 1507360,
+            "tile_hits": 0,
+            "tile_misses": 2,
+            "decoded_tiles": 2
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 326,
+            "read_bytes": 20390684,
+            "tile_hits": 1,
+            "tile_misses": 11,
+            "decoded_tiles": 11,
+            "patched_pixels": 172381,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "tile1-regrow",
+          "delta": {
+            "read_requests": 24,
+            "read_bytes": 1507360,
+            "tile_hits": 0,
+            "tile_misses": 2,
+            "decoded_tiles": 2
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 350,
+            "read_bytes": 21898044,
+            "tile_hits": 1,
+            "tile_misses": 13,
+            "decoded_tiles": 13,
+            "patched_pixels": 172381,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "remote-second-regrow",
+          "delta": {
+            "read_requests": 24,
+            "read_bytes": 1507360,
+            "tile_hits": 0,
+            "tile_misses": 2,
+            "decoded_tiles": 2
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 374,
+            "read_bytes": 23405404,
+            "tile_hits": 1,
+            "tile_misses": 15,
+            "decoded_tiles": 15,
+            "patched_pixels": 172381,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "all-uncut-regrow",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 0,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 374,
+            "read_bytes": 23405404,
+            "tile_hits": 1,
+            "tile_misses": 15,
+            "decoded_tiles": 15,
+            "patched_pixels": 172381,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "cut-before-owner-switch",
+          "delta": {
+            "read_requests": 12,
+            "read_bytes": 753680,
+            "tile_hits": 0,
+            "tile_misses": 1,
+            "decoded_tiles": 1
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 770,
+            "read_bytes": 48276844,
+            "tile_hits": 1,
+            "tile_misses": 16,
+            "decoded_tiles": 16,
+            "patched_pixels": 188052,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "new-owner-same-cut-bits",
+          "delta": {
+            "read_requests": 12,
+            "read_bytes": 753680,
+            "tile_hits": 0,
+            "tile_misses": 1,
+            "decoded_tiles": 1
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 782,
+            "read_bytes": 49030524,
+            "tile_hits": 1,
+            "tile_misses": 17,
+            "decoded_tiles": 17,
+            "patched_pixels": 203723,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "same-address-new-game",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 0,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 782,
+            "read_bytes": 49030524,
+            "tile_hits": 1,
+            "tile_misses": 17,
+            "decoded_tiles": 17,
+            "patched_pixels": 203723,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "resource-reopen-different-pixels",
+          "delta": {
+            "read_requests": 12,
+            "read_bytes": 753680,
+            "tile_hits": 0,
+            "tile_misses": 1,
+            "decoded_tiles": 1
+          },
+          "stats": {
+            "open_attempts": 2,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808636,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1013760,
+            "scratch_bytes": 753680,
+            "read_requests": 796,
+            "read_bytes": 49825528,
+            "tile_hits": 1,
+            "tile_misses": 18,
+            "decoded_tiles": 18,
+            "patched_pixels": 219394,
+            "depth_queries": 0,
+            "closes": 1,
+            "released": 0
+          }
+        }
+      ],
+      "dll_sha256": "667f9407402b5f92e1f96656e77f43cbb11c0a4567e9b05d60f4a1d8de3b1551",
+      "output_sha256": "919a9537e979ce7f041978ed16a1fbaacfea1ba5cdd1a3c736d4301835289099",
+      "peak_heap": 1808636,
+      "cleanup_heap": 0
+    },
+    "after": {
+      "trace": [
+        {
+          "name": "zero-cut-fast-path",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 0,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 41196,
+            "metadata_bytes": 41196,
+            "cache_bytes": 0,
+            "scratch_bytes": 0,
+            "read_requests": 2,
+            "read_bytes": 41324,
+            "tile_hits": 0,
+            "tile_misses": 0,
+            "decoded_tiles": 0,
+            "patched_pixels": 0,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "same-tile-picks",
+          "delta": {
+            "read_requests": 12,
+            "read_bytes": 753680
+          }
+        },
+        {
+          "name": "remote-first-cut",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 0,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 14,
+            "read_bytes": 795004,
+            "tile_hits": 0,
+            "tile_misses": 0,
+            "decoded_tiles": 0,
+            "patched_pixels": 0,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "local-tile0-cut",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 0,
+            "tile_misses": 1,
+            "decoded_tiles": 1
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 14,
+            "read_bytes": 795004,
+            "tile_hits": 0,
+            "tile_misses": 1,
+            "decoded_tiles": 1,
+            "patched_pixels": 15671,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "same-state-warm",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 1,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 14,
+            "read_bytes": 795004,
+            "tile_hits": 1,
+            "tile_misses": 1,
+            "decoded_tiles": 1,
+            "patched_pixels": 31342,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "local-tile1-cut",
+          "delta": {
+            "read_requests": 12,
+            "read_bytes": 753680,
+            "tile_hits": 1,
+            "tile_misses": 1,
+            "decoded_tiles": 1
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 26,
+            "read_bytes": 1548684,
+            "tile_hits": 2,
+            "tile_misses": 2,
+            "decoded_tiles": 2,
+            "patched_pixels": 62684,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "remote-cut-both-visible-tiles-warm",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 2,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 26,
+            "read_bytes": 1548684,
+            "tile_hits": 4,
+            "tile_misses": 2,
+            "decoded_tiles": 2,
+            "patched_pixels": 94026,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "cross-tile-cut",
+          "delta": {
+            "read_requests": 24,
+            "read_bytes": 1507360,
+            "tile_hits": 0,
+            "tile_misses": 2,
+            "decoded_tiles": 2
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 50,
+            "read_bytes": 3056044,
+            "tile_hits": 4,
+            "tile_misses": 4,
+            "decoded_tiles": 4,
+            "patched_pixels": 125368,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "remote-regrow",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 2,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 50,
+            "read_bytes": 3056044,
+            "tile_hits": 6,
+            "tile_misses": 4,
+            "decoded_tiles": 4,
+            "patched_pixels": 156710,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "tile0-regrow",
+          "delta": {
+            "read_requests": 12,
+            "read_bytes": 753680,
+            "tile_hits": 1,
+            "tile_misses": 1,
+            "decoded_tiles": 1
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 62,
+            "read_bytes": 3809724,
+            "tile_hits": 7,
+            "tile_misses": 5,
+            "decoded_tiles": 5,
+            "patched_pixels": 172381,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "tile1-regrow",
+          "delta": {
+            "read_requests": 12,
+            "read_bytes": 753680,
+            "tile_hits": 1,
+            "tile_misses": 1,
+            "decoded_tiles": 1
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 74,
+            "read_bytes": 4563404,
+            "tile_hits": 8,
+            "tile_misses": 6,
+            "decoded_tiles": 6,
+            "patched_pixels": 172381,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "remote-second-regrow",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 2,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 74,
+            "read_bytes": 4563404,
+            "tile_hits": 10,
+            "tile_misses": 6,
+            "decoded_tiles": 6,
+            "patched_pixels": 172381,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "all-uncut-regrow",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 0,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 74,
+            "read_bytes": 4563404,
+            "tile_hits": 10,
+            "tile_misses": 6,
+            "decoded_tiles": 6,
+            "patched_pixels": 172381,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "cut-before-owner-switch",
+          "delta": {
+            "read_requests": 12,
+            "read_bytes": 753680,
+            "tile_hits": 0,
+            "tile_misses": 1,
+            "decoded_tiles": 1
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 110,
+            "read_bytes": 6824444,
+            "tile_hits": 10,
+            "tile_misses": 7,
+            "decoded_tiles": 7,
+            "patched_pixels": 188052,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "new-owner-same-cut-bits",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 0,
+            "tile_misses": 1,
+            "decoded_tiles": 1
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 110,
+            "read_bytes": 6824444,
+            "tile_hits": 10,
+            "tile_misses": 8,
+            "decoded_tiles": 8,
+            "patched_pixels": 203723,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "same-address-new-game",
+          "delta": {
+            "read_requests": 0,
+            "read_bytes": 0,
+            "tile_hits": 0,
+            "tile_misses": 0,
+            "decoded_tiles": 0
+          },
+          "stats": {
+            "open_attempts": 1,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 110,
+            "read_bytes": 6824444,
+            "tile_hits": 10,
+            "tile_misses": 8,
+            "decoded_tiles": 8,
+            "patched_pixels": 203723,
+            "depth_queries": 0,
+            "closes": 0,
+            "released": 0
+          }
+        },
+        {
+          "name": "resource-reopen-different-pixels",
+          "delta": {
+            "read_requests": 12,
+            "read_bytes": 753680,
+            "tile_hits": 0,
+            "tile_misses": 1,
+            "decoded_tiles": 1
+          },
+          "stats": {
+            "open_attempts": 2,
+            "ready": 1,
+            "error": 0,
+            "heap_bytes": 1808904,
+            "metadata_bytes": 41196,
+            "cache_bytes": 1014028,
+            "scratch_bytes": 753680,
+            "read_requests": 124,
+            "read_bytes": 7619448,
+            "tile_hits": 10,
+            "tile_misses": 9,
+            "decoded_tiles": 9,
+            "patched_pixels": 219394,
+            "depth_queries": 0,
+            "closes": 1,
+            "released": 0
+          }
+        }
+      ],
+      "dll_sha256": "96476320850672d1e5b83c7ef727c5f00a162686da12460b5747f32c5aedd15b",
+      "output_sha256": "919a9537e979ce7f041978ed16a1fbaacfea1ba5cdd1a3c736d4301835289099",
+      "peak_heap": 1808904,
+      "cleanup_heap": 0
+    }
+  },
+  "physical_h1_tested": false,
+  "actual_mips32": false
+}

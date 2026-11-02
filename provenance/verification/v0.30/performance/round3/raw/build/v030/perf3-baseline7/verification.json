@@ -1,0 +1,41 @@
+{
+  "passed": false,
+  "physical_h1_tested": true,
+  "normal_inputs_only": true,
+  "game_state_ram_writes": 0,
+  "bda_sha256": "d8d75e2c459735fad358c53c58e2d461c52fb8e348e2846b113f8fcded734d53",
+  "elf_sha256": "e4b97fff82b55ddb488ca0f0e73b78acdce30ebae28e93ebb3f5f7f2be4e7c97",
+  "driver_sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+  "post_horn_requested": true,
+  "profiles": [],
+  "status_before": {
+    "version": 1,
+    "state": 1,
+    "usb_configured": 1,
+    "usb_fault": 0,
+    "usb_resets": 2,
+    "commands": 49784,
+    "bad_frames": 0,
+    "tick": 681314,
+    "poll_count": 14775138,
+    "last_poll_tick": 681314,
+    "resident_base": 2186122624,
+    "resident_size": 727104,
+    "keys_low": 0,
+    "keys_high": 0,
+    "exec_state": 0,
+    "last_error": 0
+  },
+  "desktop_before": {
+    "job_id": 18,
+    "kind": 2,
+    "state": 4,
+    "error": 0,
+    "menu_idle": 0,
+    "app_index": 83,
+    "entry_count": 12,
+    "return_code": 0,
+    "state_name": "done"
+  },
+  "error": ""
+}

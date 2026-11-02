@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "version": "0.30",
+  "target": "BBK H1 / Y100 V1.41",
+  "bda_sha256": "d8d75e2c459735fad358c53c58e2d461c52fb8e348e2846b113f8fcded734d53",
+  "bda_bytes": 1080220,
+  "elf_sha256": "e4b97fff82b55ddb488ca0f0e73b78acdce30ebae28e93ebb3f5f7f2be4e7c97",
+  "sdk_commit": "067fe072477861dfc8949d7b1a55279fb92d2548",
+  "binary": {
+    "abi": {
+      "DotaGame": 179008,
+      "DotaUnit": 240,
+      "DotaView": 148
+    },
+    "entry": "0x83c00020",
+    "stack_bytes": 65536,
+    "application_ram_end": "0x83fefa80",
+    "ram_limit": "0x83ff0000",
+    "ram_margin_bytes": 1408,
+    "static_bss_bytes": 3012384,
+    "payload_matches_elf": true
+  },
+  "physical_h1_game_tested": true,
+  "functional_h1_passed": null,
+  "hardware_deployment_verified": true,
+  "all_current_offline_checks_passed": null,
+  "game_state_ram_writes_to_device": 0,
+  "resource_bundle": {
+    "DOTA2.H1R": {
+      "path": "assets/runtime/DOTA2.H1R",
+      "bytes": 112861448,
+      "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153"
+    }
+  },
+  "runtime_acceptance": "Final C7 passed normal-input loading,11 about8s matched-lineup FPS windows,pause/resume,camera,audio,normal exit/cleanup and two normal tree cuts. C3 physical180s regrow is historical. Full new-feature coverage is not claimed.",
+  "installation_report": {
+    "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-deploy-tool.json",
+    "sha256": "5b11ba3a63b35dc2141be3be9aaeb28dc50b951e5409a9f717f0df7ee9f4f199"
+  },
+  "release_pin_created": false,
+  "github_updated": false,
+  "physical_h1_launch_attempted": true,
+  "performance_acceptance_passed": true,
+  "full_feature_acceptance_complete": false,
+  "performance_evidence_index": {
+    "path": "provenance/verification/v0.30/performance/round2/INDEX.json",
+    "sha256": "2e1dc13e8038e22f346659268289c7c7cbcb7a1c7b57304811a298014f2dd171"
+  },
+  "physical_fps": {
+    "scope": "One matched-lineup normal-input run per binary, same driver/window sequence, about8s per window. Observed menu frame may differ due asynchronous key dispatch. No forced identical AI/tick replay, later team fight or per-second minimum claim.",
+    "comparison": {
+      "path": "provenance/verification/v0.30/performance/round2/ALIGNED-COMPARISON.json",
+      "sha256": "e49fc577f153fa23de6232b72f10eecfb752b942d60db8c6b278582b63301c7f"
+    },
+    "observed_menu_frames": {
+      "baseline": 320,
+      "final": 320
+    },
+    "final_active_window_fps_range": [
+      13.473894329770578,
+      20.086083213824658
+    ],
+    "final_post_horn_active_fps": [
+      16.078773526022836,
+      15.094810379235378
+    ]
+  },
+  "historical_startup_failure": {
+    "path": "provenance/verification/v0.30/performance/baseline-startup-failed.json",
+    "sha256": "80e553114af20de7f3d4ee3de2aab3cd13a7b525764a3b10616d5740df8fac40",
+    "asset_error": 17,
+    "debug_error": 37,
+    "B_volume_errno": 9,
+    "drive_count_at_failure": 1,
+    "resolved_by_full_reboot": true
+  },
+  "full_reboot_receipt": {
+    "path": "provenance/verification/v0.30/performance/storage/after-full-reboot.json",
+    "sha256": "f494e325c9ef703b1b632cc5cada4806f32a6a2f6048ef0926d51f9933670d57"
+  },
+  "offline_verification_scope": "Fresh C7 exact-BDA vision54,trees2161,getter196608 checks; bounded-cache host105 cases. Resource100 checks inherited from unchanged C5 reader source/interface. C5 shader97-frame proof plus unchanged shader source and C7 guard mask parity are composed evidence, not a fresh C7 complete97-frame run.",
+  "historical_feature_evidence_index": {
+    "path": "provenance/verification/v0.30/INDEX.json",
+    "sha256": "d0c18a4bbd2a3546577e9bac6d62e561fed51e9d3702851370f75c225b5a9b7a"
+  },
+  "current_performance_changes_offline_checks_passed": true,
+  "physical_cut_only_acceptance": {
+    "passed": true,
+    "evidence": {
+      "path": "provenance/verification/v0.30/performance/round2/build/v030/perf2-final7-trees-cut/verification.json",
+      "sha256": "890d24eb12f40c68a464ed1f5c3fe286fd265192b3501ff2c5e6d027814b42a9"
+    },
+    "natural180s_regrow_on_current_bda_tested": false
+  }
+}

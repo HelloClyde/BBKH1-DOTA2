@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "scope": "Preserve pre-hardware docs/offline evidence as raw bytes under build only.",
+  "docs_or_provenance_modified": false,
+  "files": [
+    {
+      "source": "provenance/verification/v0.30/performance/round3/RAW-MANIFEST.json",
+      "snapshot": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/RAW-MANIFEST.json",
+      "bytes": 242764,
+      "sha256": "c17fd9e647ccc0c7e590b688dd95f0982623c84b8240ff7a6d6f22a6d7c1cf50",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "provenance/verification/v0.30/performance/round3/INDEX.json",
+      "snapshot": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/INDEX.json",
+      "bytes": 6590,
+      "sha256": "8ff01b2c5d6a01bb4a36c06cf0b41a3cca91e5a2149693e8b9c5329a43deba88",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "provenance/verification/v0.30/performance/round3/COMPARISON.json",
+      "snapshot": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/COMPARISON.json",
+      "bytes": 3307,
+      "sha256": "80fae88b174f4429a3700e19edd1b16ef2b18baf51410196343a2d46f1cf01cc",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "provenance/verification/v0.30/performance/round3/ARCHIVE-VERIFICATION.json",
+      "snapshot": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/ARCHIVE-VERIFICATION.json",
+      "bytes": 366,
+      "sha256": "2b881b00f644fa89853f6bbaad8d299b3580135a76200e942df897b2a6c29ffc",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "provenance/verification/v0.30/performance/round3/FINALIZE-EVIDENCE.py",
+      "snapshot": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/round3/FINALIZE-EVIDENCE.py",
+      "bytes": 6473,
+      "sha256": "5112ffc49d96d3a75e64f8fed107ccf94ec890d983911dd5069e4b9bb176168c",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "provenance/verification/v0.30/performance/INDEX.json",
+      "snapshot": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/INDEX.json",
+      "bytes": 54459,
+      "sha256": "d6fff0c2259f9e32d341487ba917d045fcede708fe07edaab09c2449f489d45f",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "provenance/verification/v0.30/performance/round2/INDEX.json",
+      "snapshot": "build/perf3-hardware-previous/provenance/verification/v0.30/performance/round2/INDEX.json",
+      "bytes": 190096,
+      "sha256": "2e1dc13e8038e22f346659268289c7c7cbcb7a1c7b57304811a298014f2dd171",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "docs/verification/v0.30-h1.json",
+      "snapshot": "build/perf3-hardware-previous/docs/verification/v0.30-h1.json",
+      "bytes": 4848,
+      "sha256": "c2a84ad7d1dbd180920ee2fe1f62585babd2950853b18791e83d1dc8aaee856f",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "docs/PERFORMANCE-v0.30.md",
+      "snapshot": "build/perf3-hardware-previous/docs/PERFORMANCE-v0.30.md",
+      "bytes": 9828,
+      "sha256": "530a31e0d612a242d2d14126040b26dca41d32dfaa38f756ddb2dec7fae2bbb8",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "docs/PERFORMANCE-v0.30-round3.md",
+      "snapshot": "build/perf3-hardware-previous/docs/PERFORMANCE-v0.30-round3.md",
+      "bytes": 5158,
+      "sha256": "c2fc940b5117e93ab3fe98eb9b3f8906918e1eaca514cd6636f3fb74f3dd2da5",
+      "byte_identical_at_capture": true
+    },
+    {
+      "source": "docs/IPU-v0.30.md",
+      "snapshot": "build/perf3-hardware-previous/docs/IPU-v0.30.md",
+      "bytes": 1634,
+      "sha256": "05fc5bd67e7958ab9c33994d57cdaa9452e1f531585335f0a1671412a1ca1f02",
+      "byte_identical_at_capture": true
+    }
+  ]
+}

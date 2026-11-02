@@ -1,0 +1,9 @@
+In file included from C:\Users\ASUS\Documents\ChatGPT\bbk H1\BBKH1-DOTA2\platform\baked_scene.c:839:
+C:\Users\ASUS\Documents\ChatGPT\bbk H1\BBKH1-DOTA2\platform\compressed_cache.h: In function 'cache_dense_prepare':
+C:\Users\ASUS\Documents\ChatGPT\bbk H1\BBKH1-DOTA2\platform\compressed_cache.h:29:5: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+   29 |     if(start>dense_capacity-size)start=0;end=start+size;
+      |     ^~
+C:\Users\ASUS\Documents\ChatGPT\bbk H1\BBKH1-DOTA2\platform\compressed_cache.h:29:42: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   29 |     if(start>dense_capacity-size)start=0;end=start+size;
+      |                                          ^~~
+cc1.exe: all warnings being treated as errors

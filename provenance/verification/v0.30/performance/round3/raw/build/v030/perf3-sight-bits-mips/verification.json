@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "actual_complete_bda": true,
+  "actual_mips32": true,
+  "physical_h1_tested": false,
+  "USB_opened": false,
+  "entry_executed": false,
+  "bda_sha256": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244",
+  "elf_sha256": "dc6ecce5c66b0f1165ec637070a3beac35c89bb23cd6b96ae95b60cc69cd3b03",
+  "build_metadata_sha256": "68d7c197bee8a8aad8ba5690168a941636f1c84cb69243df67ff257c08a9c923",
+  "snapshot_sha256": "638dd8a039cc510c615c1e25f59e92cadb25469c94aa054912aadce46404944a",
+  "test_source_sha256": "eed3764382fd83163fbe3e06141c53af40753b4e8128217039d7c6bb68ca655c",
+  "scratch_caller": {
+    "address": "0x81510000",
+    "bytes": 244,
+    "source_sha256": "eda92184fbed6c111a0bee14f603c5e9874da7bfa5862b6ab145890eb97ee2b5",
+    "code_sha256": "d39bb0239d037e895230179b265ceab426281c5184c6fb2038860b08fcf96f06",
+    "scope": "Only ABI caller loop in separate modeled scratch RAM; production BDA code and gameplay outcomes are never patched."
+  },
+  "checks": [
+    "missing-workspace-null",
+    "null-and-invalid-team-null",
+    "both-teams-all-65536-cells-current-bit-equals-fog-state2",
+    "borrowed-plane-address-and-game-unchanged",
+    "reset-and-refresh-query-equivalence",
+    "detach-null",
+    "cleanup-zero-allocations-handles"
+  ],
+  "workspace_bytes": 1727724,
+  "all_cell_checks": 196608,
+  "cleanup": {
+    "allocations": 0,
+    "handles": 0
+  },
+  "outcome_game_ram_writes_after_setup": 0,
+  "modeled_api_calls": 24,
+  "elapsed_seconds": 1.1410000000032596
+}

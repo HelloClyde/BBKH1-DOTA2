@@ -125,28 +125,32 @@ static int bag_fit(Bag *b,int n){
 static int receive_item(DotaGame*g,int h,int id,int age,int binding,int mode){
     Bag b[10];DotaItemRecord r;int s;
     if(!valid(g,h)||!dota_items_read(id,&r))return 0;
+    if(!dota_items_can_receive(g,h,id))return 0;
+    if(id==DOTA_ITEM_TPSCROLL){int n=imax(1,r.initial_charges);DotaTeleportState*t=&g->item_world.teleport;sync(g,h);if(n>65535-t->charges[h])return 0;t->buy_age[h]=(uint16_t)(t->charges[h]?imax(t->buy_age[h],imin(201,age)):imin(201,age));t->charges[h]=(uint16_t)(t->charges[h]+n);return 1;}
     if(id==DOTA_ITEM_AGHANIMS_SHARD||id==DOTA_ITEM_AGHANIMS_SHARD_ROSHAN||id==DOTA_ITEM_ULTIMATE_SCEPTER_2||id==DOTA_ITEM_ULTIMATE_SCEPTER_ROSHAN){unsigned bit=(id==DOTA_ITEM_AGHANIMS_SHARD||id==DOTA_ITEM_AGHANIMS_SHARD_ROSHAN)?4u:2u;if((g->items.permanent[h]&bit)||(bit==4u&&(g->tormentor.shard_mask&(1u<<h))))return 0;g->items.permanent[h]|=bit;dota_rules_item_recalc(g,h);return 1;}
     bag_read(g,h,b);
     if(r.flags&ITEM_F_STACKABLE)for(s=0;s<9;s++)if(can_stack(&b[s],id,r.initial_charges?r.initial_charges:1)){b[s].charge+=r.initial_charges?r.initial_charges:1;b[s].age=imax(b[s].age,age);if(dota_items_lotus_value(id))combine(b,9);bag_write(g,h,b);return 1;}
     bag_new(&b[9],id,age,binding,mode);combine(b,10);if(!bag_fit(b,10))return 0;bag_write(g,h,b);return 1;
 }
 int dota_items_receive_batch(DotaGame*g,int h,const int16_t*incoming,const uint16_t*age,int count){
-    Bag b[15];DotaItemRecord r;int i,j,n=9;unsigned upgrades;
+    Bag b[15];DotaItemRecord r;int i,j,n=9,tp,tp_age;unsigned upgrades;
     if(!valid(g,h)||!incoming||count<1||count>6)return 0;
-    bag_read(g,h,b);upgrades=g->items.permanent[h];
+    if(!dota_items_can_receive_batch(g,h,incoming,count))return 0;
+    bag_read(g,h,b);upgrades=g->items.permanent[h];tp=g->item_world.teleport.charges[h];tp_age=g->item_world.teleport.buy_age[h];
     for(i=0;i<count;i++){
         int id=incoming[i],stacked=0;if(id<0)continue;if(!dota_items_read(id,&r))return 0;
+        if(id==DOTA_ITEM_TPSCROLL){int add=imax(1,r.initial_charges),a=age?imin(201,age[i]):201;if(add>65535-tp)return 0;tp_age=tp?imax(tp_age,a):a;tp+=add;continue;}
         if(id==DOTA_ITEM_AGHANIMS_SHARD||id==DOTA_ITEM_AGHANIMS_SHARD_ROSHAN||id==DOTA_ITEM_ULTIMATE_SCEPTER_2||id==DOTA_ITEM_ULTIMATE_SCEPTER_ROSHAN){unsigned bit=(id==DOTA_ITEM_AGHANIMS_SHARD||id==DOTA_ITEM_AGHANIMS_SHARD_ROSHAN)?4u:2u;if((upgrades&bit)||(bit==4u&&(g->tormentor.shard_mask&(1u<<h))))return 0;upgrades|=bit;continue;}
         if(r.flags&ITEM_F_STACKABLE)for(j=0;j<n;j++)if(can_stack(&b[j],id,r.initial_charges?r.initial_charges:1)){b[j].charge+=r.initial_charges?r.initial_charges:1;b[j].age=imax(b[j].age,age?age[i]:201);stacked=1;break;}
         if(!stacked)bag_new(&b[n++],id,age?age[i]:201,h,0);
     }
-    combine(b,n);if(!bag_fit(b,n))return 0;g->items.permanent[h]=upgrades;bag_write(g,h,b);return 1;
+    combine(b,n);if(!bag_fit(b,n))return 0;g->items.permanent[h]=upgrades;g->item_world.teleport.charges[h]=(uint16_t)tp;g->item_world.teleport.buy_age[h]=(uint16_t)tp_age;bag_write(g,h,b);return 1;
 }
 int dota_items_can_receive_batch(const DotaGame*g,int h,const int16_t*incoming,int count){
-    Bag b[15];DotaItemRecord r;int i,j,n=9;unsigned upgrades;
+    Bag b[15];DotaItemRecord r;int i,j,n=9,tp;unsigned upgrades;
     if(!valid(g,h)||!incoming||count<1||count>6)return 0;
     /* A pure capacity query never syncs or mutates inventory. */
-    zero(b,sizeof(b));for(i=0;i<9;i++){
+    tp=dota_items_teleport_charges(g,h);zero(b,sizeof(b));for(i=0;i<9;i++){
         b[i].id=dota_inventory_item(g,h,i);
         if(dota_items_lotus_value(b[i].id)){
             if(i<6&&g->items.tracked[h][i]!=b[i].id){if(!dota_items_read(b[i].id,&r))return 0;b[i].charge=r.initial_charges;}
@@ -155,6 +159,7 @@ int dota_items_can_receive_batch(const DotaGame*g,int h,const int16_t*incoming,i
     }upgrades=g->items.permanent[h];
     for(i=0;i<count;i++){
         int id=incoming[i],stacked=0;if(id<0)continue;if(!dota_items_read(id,&r))return 0;
+        if(id==DOTA_ITEM_TPSCROLL){int add=imax(1,r.initial_charges);if(add>65535-tp)return 0;tp+=add;continue;}
         if(id==DOTA_ITEM_AGHANIMS_SHARD||id==DOTA_ITEM_AGHANIMS_SHARD_ROSHAN||id==DOTA_ITEM_ULTIMATE_SCEPTER_2||id==DOTA_ITEM_ULTIMATE_SCEPTER_ROSHAN){unsigned bit=(id==DOTA_ITEM_AGHANIMS_SHARD||id==DOTA_ITEM_AGHANIMS_SHARD_ROSHAN)?4u:2u;if((upgrades&bit)||(bit==4u&&(g->tormentor.shard_mask&(1u<<h))))return 0;upgrades|=bit;continue;}
         if(r.flags&ITEM_F_STACKABLE)for(j=0;j<n;j++)if(can_stack(&b[j],id,r.initial_charges?r.initial_charges:1)){if(dota_items_lotus_value(id))b[j].charge+=r.initial_charges?r.initial_charges:1;stacked=1;break;}
         if(!stacked)bag_new(&b[n++],id,201,h,0);
@@ -163,7 +168,9 @@ int dota_items_can_receive_batch(const DotaGame*g,int h,const int16_t*incoming,i
 }
 int dota_items_auto_combine(DotaGame*g,int h){Bag b[9];int changed;if(!valid(g,h))return 0;bag_read(g,h,b);changed=combine(b,9);if(changed&&bag_fit(b,9))bag_write(g,h,b);else changed=0;return changed;}
 int dota_items_sell(DotaGame*g,int h,int slot){
-    Bag b[9];DotaItemRecord r;int price;if(!valid(g,h)||(unsigned)slot>=9u)return 0;bag_read(g,h,b);
+    Bag b[9];DotaItemRecord r;int price;if(!valid(g,h)||(unsigned)slot>DOTA_INVENTORY_TP_SLOT)return 0;
+    if(slot==DOTA_INVENTORY_TP_SLOT){DotaTeleportState*t=&g->item_world.teleport;sync(g,h);if(!t->charges[h]||!dota_items_read(DOTA_ITEM_TPSCROLL,&r)||!(r.flags&ITEM_F_SELLABLE))return 0;price=t->buy_age[h]<=200?r.cost:r.cost/2;price=price*t->charges[h]/imax(1,r.initial_charges);g->units[h].gold+=price;t->charges[h]=t->buy_age[h]=0;return price?price:1;}
+    bag_read(g,h,b);
     if(b[slot].id<0||!dota_items_read(b[slot].id,&r)||!(r.flags&ITEM_F_SELLABLE))return 0;
     price=b[slot].age<=200?r.cost:r.cost/2;if((r.flags&ITEM_F_STACKABLE)&&r.initial_charges)price=price*b[slot].charge/r.initial_charges;
     g->units[h].gold+=price;bag_new(&b[slot],-1,0,-2,0);bag_write(g,h,b);return price?price:1;
@@ -182,16 +189,17 @@ int dota_items_disassemble(DotaGame*g,int h,int slot){
     }
     return 0;
 }
-int dota_inventory_item(const DotaGame*g,int h,int slot){if(!g||(unsigned)h>=10u||(unsigned)slot>=9u)return -1;return slot<6?g->units[h].inventory[slot]:g->items.backpack[h][slot-6].item;}
+int dota_inventory_item(const DotaGame*g,int h,int slot){int id;if(!g||(unsigned)h>=10u||(unsigned)slot>DOTA_INVENTORY_TP_SLOT)return -1;if(slot==DOTA_INVENTORY_TP_SLOT)return dota_items_teleport_charges(g,h)?DOTA_ITEM_TPSCROLL:-1;id=slot<6?g->units[h].inventory[slot]:g->items.backpack[h][slot-6].item;return id==DOTA_ITEM_TPSCROLL?-1:id;}
 int dota_inventory_inactive_ticks(const DotaGame*g,int h,int slot){return g&&(unsigned)h<10u&&(unsigned)slot<6u?g->items.inactive_ticks[h][slot]:0;}
 int dota_inventory_cooldown(const DotaGame*g,int h,int slot){
-    const DotaBackpackItem *p;int wait;if(!g||(unsigned)h>=10u||(unsigned)slot>=9u)return 0;
+    const DotaBackpackItem *p;int wait;if(!g||(unsigned)h>=10u||(unsigned)slot>DOTA_INVENTORY_TP_SLOT)return 0;
+    if(slot==DOTA_INVENTORY_TP_SLOT)return dota_items_teleport_cooldown(g,h);
     if(slot<6)return imax(dota_items_cooldown(g,h,slot),g->items.inactive_ticks[h][slot]);
     p=&g->items.backpack[h][slot-6];wait=imax(imax(imax(p->cooldown,p->item==DOTA_ITEM_HAND_OF_MIDAS&&p->charges?p->cooldown:p->proc_wait),dota_items_special_cooldown(g,h,p->item)),p->item==DOTA_ITEM_TPSCROLL?dota_items_teleport_cooldown(g,h):0);
     return dota_items_lotus_value(p->item)?imax(wait,g->objectives.lotus_cooldown[h]):wait;
 }
 int dota_inventory_charges(const DotaGame*g,int h,int slot){
-    const DotaBackpackItem *p;int n;if(!g||(unsigned)h>=10u||(unsigned)slot>=9u)return 0;if(slot<6)return dota_items_charges(g,h,slot);
+    const DotaBackpackItem *p;int n;if(!g||(unsigned)h>=10u||(unsigned)slot>DOTA_INVENTORY_TP_SLOT)return 0;if(slot==DOTA_INVENTORY_TP_SLOT)return dota_items_teleport_charges(g,h);if(slot<6)return dota_items_charges(g,h,slot);
     p=&g->items.backpack[h][slot-6];if(p->item==DOTA_ITEM_CONSECRATED_WRAPS)return p->wrap_charges;n=p->charges;return p->item==DOTA_ITEM_WARD_DISPENSER?(n&255)+(n>>8):n;
 }
 static int inventory_near_shop(const DotaGame *g,int h){

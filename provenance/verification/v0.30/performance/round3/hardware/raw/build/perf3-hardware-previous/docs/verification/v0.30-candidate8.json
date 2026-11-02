@@ -1,0 +1,35 @@
+{
+  "version": "0.30",
+  "candidate": "C8",
+  "bda_sha256": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244",
+  "elf_sha256": "dc6ecce5c66b0f1165ec637070a3beac35c89bb23cd6b96ae95b60cc69cd3b03",
+  "bda_bytes": 1083444,
+  "binary": {
+    "abi": {
+      "DotaGame": 179008,
+      "DotaUnit": 240,
+      "DotaView": 148
+    },
+    "entry": "0x83c00020",
+    "stack_bytes": 65536,
+    "application_ram_end": "0x83fea740",
+    "ram_limit": "0x83ff0000",
+    "ram_margin_bytes": 22720,
+    "static_bss_bytes": 2987840,
+    "payload_matches_elf": true
+  },
+  "standard_build_verified": true,
+  "listed_offline_checks_passed": true,
+  "physical_h1_game_tested": false,
+  "hardware_deployment_verified": false,
+  "performance_acceptance_passed": null,
+  "full_feature_acceptance_complete": false,
+  "resource_bundle_unchanged": true,
+  "game_state_ram_writes_to_device": 0,
+  "hardware_blocker": "Baseline preflight failed because native resource manager was foreground. B card error separately observed via screenshot and stat. No game launch, no zero-FPS inference. Await user physical SD/reboot step.",
+  "evidence": {
+    "path": "provenance/verification/v0.30/performance/round3/INDEX.json",
+    "sha256": "8ff01b2c5d6a01bb4a36c06cf0b41a3cca91e5a2149693e8b9c5329a43deba88"
+  },
+  "performance_document": "docs/PERFORMANCE-v0.30-round3.md"
+}

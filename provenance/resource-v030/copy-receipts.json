@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "copied_path": "provenance/resource-v030/build-manifest.json",
+      "source_path": "build/v030/repack-tile/manifest.json",
+      "bytes": 6670,
+      "sha256": "0a075731be131beddbb612555e275854247270d2ef1001f6cedd73dcf73c3d63",
+      "raw_bytes_preserved": true
+    },
+    {
+      "copied_path": "provenance/resource-v030/tree-sparse-manifest.json",
+      "source_path": "build/v030/tree-sparse/manifest.json",
+      "bytes": 54201,
+      "sha256": "c0b45471c3a00b91e518afa0cc80e8a31e44799cc5e2a872827585ee4fb8c2e0",
+      "raw_bytes_preserved": true
+    },
+    {
+      "copied_path": "provenance/resource-v030/legacy-runtime-manifest.json",
+      "source_path": "build/v030/legacy/manifest.json",
+      "bytes": 906,
+      "sha256": "eb08db4ae87a0761b382e8d6a588f646d6affc333504b563ee02ce88826a6198",
+      "raw_bytes_preserved": true
+    },
+    {
+      "copied_path": "provenance/resource-v030/producer-contract-verification.json",
+      "source_path": "build/v030/resource-audit/contract-verification.json",
+      "bytes": 910,
+      "sha256": "16bce0ca46d28ec5c49b26ea567fea1e7a7707d8a40ca8a4ead5b342423199aa",
+      "raw_bytes_preserved": true
+    }
+  ],
+  "binary_resources_copied_to_provenance": false,
+  "source_script_sha256": "9aff109c4a1158fa514cda373616f285f5249173eb4de8566947c2b2d17cb5f4"
+}

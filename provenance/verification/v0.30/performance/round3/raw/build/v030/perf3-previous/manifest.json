@@ -1,0 +1,25 @@
+{
+  "baseline": "C7",
+  "files": [
+    {
+      "path": "docs/PERFORMANCE-v0.30.md",
+      "sha256": "0d319df21f637c8127547146bc914add61e7d24f3938603da5bef6f0009da799",
+      "bytes": 9650
+    },
+    {
+      "path": "docs/verification/v0.30-h1.json",
+      "sha256": "15e53f3ad34fbf0a6141fc7350b2a966b3772b896a4cdd1274a8ab6e29054637",
+      "bytes": 4129
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/INDEX.json",
+      "sha256": "865c71912a4d19f31857c2ab6530e3f6f96f66aba373afad8bb2c1eaa4bc261b",
+      "bytes": 52841
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/round2/INDEX.json",
+      "sha256": "2e1dc13e8038e22f346659268289c7c7cbcb7a1c7b57304811a298014f2dd171",
+      "bytes": 190096
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "passed": true,
+  "source_current": true,
+  "production_source_modified": false,
+  "USB_opened": false,
+  "physical_h1_tested": false,
+  "scope": "Read-only source audit and actual host runtime IO counters, never H1 FPS.\nBaseline and an isolated build-only rounded-padding-read variant execute the\nsame exact-map/sprite read plans and compare every returned byte to SCENE.\nNo production files, package bytes or USB are modified.\n",
+  "source_sha256": "8349a8c44e76bc4bc1a57eda3b93f68c94587534c0dd8576daedc50d6cf7c8a3",
+  "pack_sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153",
+  "scene_sha256": "c312840584571c0958b8409da729ea945ecbf557a55ab6030ff0d2d9cbef78dd",
+  "plans": {
+    "0": 562,
+    "1": 1280,
+    "2": 624
+  },
+  "results": {
+    "baseline": [
+      {
+        "group": 0,
+        "requests": 562,
+        "canonical_bytes": 36831232,
+        "seeks": 1740,
+        "physical_reads": 2259,
+        "physical_bytes": 8102744,
+        "index_misses": 11,
+        "chunk_hits": 0,
+        "chunk_misses": 2248,
+        "decoded_bytes": 36831232,
+        "plan_name": "all562-map-tiles-cold-once"
+      },
+      {
+        "group": 1,
+        "requests": 1280,
+        "canonical_bytes": 8658119,
+        "seeks": 4380,
+        "physical_reads": 6488,
+        "physical_bytes": 3545747,
+        "index_misses": 88,
+        "chunk_hits": 0,
+        "chunk_misses": 6400,
+        "decoded_bytes": 8647879,
+        "plan_name": "all10-hero-idle-frames-cold-once"
+      },
+      {
+        "group": 2,
+        "requests": 624,
+        "canonical_bytes": 10720630,
+        "seeks": 1722,
+        "physical_reads": 2026,
+        "physical_bytes": 1625491,
+        "index_misses": 6,
+        "chunk_hits": 0,
+        "chunk_misses": 2020,
+        "decoded_bytes": 10720630,
+        "plan_name": "radiant-fountain-frames-individual-reads"
+      }
+    ],
+    "rounded-read": [
+      {
+        "group": 0,
+        "requests": 562,
+        "canonical_bytes": 36831232,
+        "seeks": 81,
+        "physical_reads": 2259,
+        "physical_bytes": 8106244,
+        "index_misses": 11,
+        "chunk_hits": 0,
+        "chunk_misses": 2248,
+        "decoded_bytes": 36831232,
+        "plan_name": "all562-map-tiles-cold-once"
+      },
+      {
+        "group": 1,
+        "requests": 1280,
+        "canonical_bytes": 8658119,
+        "seeks": 794,
+        "physical_reads": 6488,
+        "physical_bytes": 3553460,
+        "index_misses": 88,
+        "chunk_hits": 0,
+        "chunk_misses": 6400,
+        "decoded_bytes": 8647879,
+        "plan_name": "all10-hero-idle-frames-cold-once"
+      },
+      {
+        "group": 2,
+        "requests": 624,
+        "canonical_bytes": 10720630,
+        "seeks": 574,
+        "physical_reads": 2026,
+        "physical_bytes": 1628656,
+        "index_misses": 6,
+        "chunk_hits": 0,
+        "chunk_misses": 2020,
+        "decoded_bytes": 10720630,
+        "plan_name": "radiant-fountain-frames-individual-reads"
+      }
+    ]
+  },
+  "limitations": "The plans deliberately read cold payloads once, without the renderer tile/sprite cache. Counts apply only when those higher caches miss. The rounded build-only variant consumes at most3 existing pad bytes; actual H1 latency/throughput was not measured."
+}

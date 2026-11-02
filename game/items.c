@@ -15,6 +15,8 @@
 #include "teleport_rules.h"
 #include "runes.h"
 #include "sight.h"
+#include "trees.h"
+#include "match_history.h"
 #define ITEM_RAW(g,h,s) (*((s)<6?&(g)->units[h].inventory[s]:&(g)->items.neutral_item[h]))
 #define ITEM(g,h,s) dota_items_equipped_item(g,h,s)
 /* Bounded integer rules. Provider failure rejects purchases/casts, never creates
@@ -85,6 +87,36 @@ static int item_slot(const DotaGame*g,int h,int id){
 static int has(const DotaGame*g,int h,int id){
     return valid(g,h)&&item_slot(g,h,id)>=0;
 }
+static int legacy_tp_charge(const DotaGame*g,int h,int s){
+    DotaItemRecord r;
+    if(s<7){if(ITEM_RAW(g,h,s)!=DOTA_ITEM_TPSCROLL)return 0;if(g->items.tracked[h][s]==DOTA_ITEM_TPSCROLL)return g->items.charges[h][s];}
+    else return g->items.backpack[h][s-7].item==DOTA_ITEM_TPSCROLL?g->items.backpack[h][s-7].charges:0;
+    return dota_items_read(DOTA_ITEM_TPSCROLL,&r)?imax(1,r.initial_charges):0;
+}
+int dota_items_teleport_charges(const DotaGame*g,int h){
+    int s,n;if(!g||(unsigned)h>=10u)return 0;n=g->item_world.teleport.charges[h];
+    for(s=0;s<10;s++)n+=legacy_tp_charge(g,h,s);
+    return imin(65535,n);
+}
+int dota_items_cast_item(const DotaGame*g,int h,int s){
+    if(!g||(unsigned)h>=10u)return -1;
+    if(s==DOTA_ITEMS_TP_SLOT)return dota_items_teleport_charges(g,h)?DOTA_ITEM_TPSCROLL:-1;
+    return dota_items_equipped_item(g,h,s);
+}
+/* Migrate old main/backpack stacks on the next item sync, preserving the
+ * single scroll cooldown and refund age. New deliveries never enter a bag. */
+static void migrate_tp(DotaGame*g,int h){
+    DotaTeleportState*t=&g->item_world.teleport;int s;
+    for(s=0;s<10;s++){
+        int id=s<7?ITEM_RAW(g,h,s):g->items.backpack[h][s-7].item,age,cd,n;
+        if(id!=DOTA_ITEM_TPSCROLL)continue;
+        n=legacy_tp_charge(g,h,s);age=s<7?g->items.buy_age[h][s]:g->items.backpack[h][s-7].buy_age;cd=s<7?g->items.cooldown[h][s]:g->items.backpack[h][s-7].cooldown;
+        if(n){t->buy_age[h]=(uint16_t)(t->charges[h]?imax(t->buy_age[h],age):age);t->charges[h]=(uint16_t)imin(65535,t->charges[h]+n);}
+        if(cd)t->ready_tick[h]=imax(t->ready_tick[h],g->tick+cd);
+        if(s<7){ITEM_RAW(g,h,s)=-1;g->items.tracked[h][s]=-1;g->items.charges[h][s]=g->items.cooldown[h][s]=g->items.active_ticks[h][s]=0;g->items.inventory_hash[h]=0;}
+        else {DotaBackpackItem*p=&g->items.backpack[h][s-7];zero(p,sizeof(*p));p->item=-1;p->rapier_owner=-2;}
+    }
+}
 static void sync(DotaGame*g,int h){
     int s,id;
     DotaItemRecord r;
@@ -111,6 +143,7 @@ static void sync(DotaGame*g,int h){
             st->inventory_hash[h]=0;
         }
     }
+    migrate_tp(g,h);
 }
 void dota_items_init(DotaGame*g){
     int h,s;
@@ -258,9 +291,12 @@ int dota_items_heal_amount_with_stats(DotaGame*g,int source,int h,int amount,con
 }
 int dota_items_heal_amount(DotaGame*g,int source,int h,int amount){return dota_items_heal_amount_with_stats(g,source,h,amount,0);}
 static void heal(DotaGame*g,int source,int h,int hp,int mp){
+    int before;
     if(!live(g,h))return;
+    before=g->units[h].hp;
     if(hp>0)hp=dota_items_heal_amount(g,source,h,hp);
     g->units[h].hp=imin(g->units[h].max_hp,g->units[h].hp+hp);
+    dota_match_record_heal(g,source,h,g->units[h].hp-before);
     if(mp>0&&h<10)dota_extra_mana_restore(g,h,mp);else g->units[h].mana=imin(g->units[h].max_mana,g->units[h].mana+mp);
     if(hp>0)dota_rules_item_effect(g,DOTA_FX_HEAL,g->units[source].team,g->units[h].x,g->units[h].y,g->units[h].x,g->units[h].y,12,8);
 }
@@ -453,7 +489,7 @@ void dota_items_on_target_spell(DotaGame*g,int h,int target){
     for(s=0;s<DOTA_ITEMS_EQUIP_SLOTS;s++)if(ITEM(g,h,s)==DOTA_ITEM_PHYLACTERY||ITEM(g,h,s)==DOTA_ITEM_ANGELS_DEMISE)g->items.proc_wait[h][s]=r.cooldown_ticks;
     dota_rules_item_damage(g,h,target,bonus,1);
 }
-int dota_items_mana_cost_percent(DotaGame*g,int h){
+int dota_items_mana_cost_percent(const DotaGame*g,int h){
     int s,pct=0;
     for(s=0;s<DOTA_ITEMS_EQUIP_SLOTS;s++){
         int id=ITEM(g,h,s);
@@ -463,7 +499,7 @@ int dota_items_mana_cost_percent(DotaGame*g,int h){
             for(k=0;k<4;k++)if(g->units[h].cooldown[k]&&!dota_skill_is_passive(g->units[h].hero_id,k))pct+=7;
         }
     }
-    {int enchant=g->items.neutral.enchantment[h];if(enchant>=0)pct+=hpar(g,h,enchant,IP_MANACOST_REDUCTION,hpar(g,h,enchant,IP_MANA_REDUCTION_PCT,0));}
+    {int enchant=g->items.neutral.enchantment[h];if(enchant>=0)pct+=hpar((DotaGame*)g,h,enchant,IP_MANACOST_REDUCTION,hpar((DotaGame*)g,h,enchant,IP_MANA_REDUCTION_PCT,0));}
     return imax(10,100-pct)*dota_rune_mana_percent(g,h)/100;
 }
 int dota_items_mana_regen_percent(DotaGame*g,int h){int s,pct=0;if(!valid(g,h))return 100;for(s=0;s<DOTA_ITEMS_EQUIP_SLOTS;s++){int id=ITEM(g,h,s);if(id>=0)pct=imax(pct,hpar(g,h,id,IP_MANA_REGEN_MULTIPLIER,0));}return 100+pct;}
@@ -536,7 +572,7 @@ int dota_items_purchase_plan(const DotaGame*g,int h,int id,DotaItemPurchasePlan*
     for(i=0;i<9;i++)p.owned[p.n++]=dota_inventory_item(g,h,i);
     for(i=0;i<DOTA_COURIER_SLOTS;i++)p.owned[p.n++]=g->couriers.hero[h].cargo[i];
     for(i=0;i<DOTA_COURIER_STASH_SLOTS;i++)p.owned[p.n++]=g->couriers.hero[h].stash[i];
-    for(i=9;i<p.n;i++)if(p.owned[i]==id)return 1;
+    for(i=9;i<p.n;i++)if(p.owned[i]==id&&id!=DOTA_ITEM_TPSCROLL)return 1;
     /* already coming, no duplicate charge */
     if(!plan_need(&p,id,0,0))return 0;
     for(i=0;i<plan->count;i++){
@@ -583,10 +619,12 @@ int dota_items_purchase_commit(DotaGame*g,int h,const DotaItemPurchasePlan*p){
 int dota_items_lotus_value(int id){return id==DOTA_ITEM_FAMANGO?1:(id==DOTA_ITEM_GREAT_FAMANGO?3:(id==DOTA_ITEM_GREATER_FAMANGO?6:0));}
 #include "inventory_impl.h"
 int dota_items_cooldown(const DotaGame*g,int h,int s){
+    if(g&&(unsigned)h<10u&&s==DOTA_ITEMS_TP_SLOT)return dota_items_teleport_cooldown(g,h);
     int id,wait;if(h<0||h>=10||s<0||s>=DOTA_ITEMS_EQUIP_SLOTS)return 0;id=ITEM_RAW(g,h,s);wait=imax(g->items.cooldown[h][s],dota_items_special_cooldown(g,h,id));if(dota_items_lotus_value(id))wait=imax(wait,g->objectives.lotus_cooldown[h]);if(id==DOTA_ITEM_TPSCROLL)wait=imax(wait,dota_items_teleport_cooldown(g,h));if(id==DOTA_ITEM_HELM_OF_THE_DOMINATOR||id==DOTA_ITEM_HELM_OF_THE_OVERLORD)wait=imax(wait,dota_item_world_dominate_cooldown(g,h));if(id!=DOTA_ITEM_HAND_OF_MIDAS||!g->items.charges[h][s])wait=imax(wait,g->items.proc_wait[h][s]);return wait;
 }
 int dota_items_charges(const DotaGame*g,int h,int s){
     int n;
+    if(g&&(unsigned)h<10u&&s==DOTA_ITEMS_TP_SLOT)return dota_items_teleport_charges(g,h);
     if(h<0||h>=10||s<0||s>=DOTA_ITEMS_EQUIP_SLOTS)return 0;
     n=dota_items_special_charges(g,h,ITEM_RAW(g,h,s),s);
     if(n>=0)return n;
@@ -911,6 +949,7 @@ static int move_distance(DotaGame*g,int h,int t,int amount,int toward){
     return dota_rules_item_move(g,t,g->units[t].x+(toward?-1:1)*dx*(amount/4)/n,g->units[t].y+(toward?-1:1)*dy*(amount/4)/n,0);
 }
 static void consume(DotaGame*g,int h,int s,const DotaItemRecord*r){
+    if(s==DOTA_ITEMS_TP_SLOT){if(!(has(g,h,DOTA_ITEM_TRAVEL_BOOTS)||has(g,h,DOTA_ITEM_TRAVEL_BOOTS_2))&&g->item_world.teleport.charges[h])g->item_world.teleport.charges[h]--;return;}
     if(ITEM(g,h,s)==DOTA_ITEM_TPSCROLL&&(has(g,h,DOTA_ITEM_TRAVEL_BOOTS)||has(g,h,DOTA_ITEM_TRAVEL_BOOTS_2)))return;
     if(r->flags&ITEM_F_CONSUMABLE){
         if(g->items.charges[h][s]>0)g->items.charges[h][s]--;
@@ -1307,16 +1346,19 @@ static int resolve_item_effect(DotaGame*g,int h,int s,int id,const DotaItemRecor
     }
  return success;
 }
+#include "items_cast_impl.h"
 int dota_items_use(DotaGame*g,int h,int s,int x,int y,int target){
     DotaItemRecord r;
     DotaUnit*u,*v;
     int id,t=target,i,success=0,enemy=0,cost,action,blocked;
-    if(!g||g->paused||g->state!=DOTA_PLAYING||!valid(g,h)||!live(g,h)||s<0||s>=DOTA_ITEMS_EQUIP_SLOTS)return 0;
+    if(!g||g->paused||g->state!=DOTA_PLAYING||!valid(g,h)||!live(g,h)||s<0||s>DOTA_ITEMS_TP_SLOT)return 0;
+    if(s<DOTA_ITEMS_EQUIP_SLOTS&&ITEM_RAW(g,h,s)==DOTA_ITEM_TPSCROLL)s=DOTA_ITEMS_TP_SLOT;
     sync(g,h);
     u=&g->units[h];
-    id=ITEM(g,h,s);
-    if(id<0||!dota_items_read(id,&r)||!r.action||g->items.cooldown[h][s]||u->stun_ticks>0||dota_roster_stun(g,h)||dota_items_invulnerable(g,h))return 0;
+    id=dota_items_cast_item(g,h,s);
+    if(id<0||!dota_items_read(id,&r)||!r.action||(s<DOTA_ITEMS_EQUIP_SLOTS&&g->items.cooldown[h][s])||u->stun_ticks>0||dota_roster_stun(g,h)||dota_items_invulnerable(g,h))return 0;
     action=r.action;
+    if(dota_items_cast_query(g,h,s,x,y,target,0)!=DOTA_ITEM_CAST_READY)return 0;
     if(action==ITEM_ACTION_TELEPORT&&dota_items_teleport_cooldown(g,h))return 0;
     if(dota_items_lotus_value(id)&&g->objectives.lotus_cooldown[h])return 0;
     if(action==ITEM_ACTION_DOMINATE&&dota_item_world_dominate_cooldown(g,h)>0)return 0;
@@ -1327,7 +1369,7 @@ int dota_items_use(DotaGame*g,int h,int s,int x,int y,int target){
     v=&g->units[t];
     enemy=v->team!=u->team;
     if(enemy&&!(r.flags&ITEM_F_POINT)&&!dota_unit_visible(g,h,t))return 0;
-    if((r.flags&ITEM_F_ENEMY)&&!(r.flags&ITEM_F_FRIENDLY)&&!enemy&&!(r.flags&ITEM_F_POINT))return 0;
+    if((r.flags&ITEM_F_ENEMY)&&!(r.flags&ITEM_F_FRIENDLY)&&!enemy&&!(r.flags&ITEM_F_POINT)&&!(t==h&&dota_items_self_target_valid(g,h,s)))return 0;
     if((r.flags&ITEM_F_FRIENDLY)&&!(r.flags&ITEM_F_ENEMY)&&enemy)return 0;
     if(target>=0&&target<DOTA_MAX_UNITS&&live(g,target)&&r.cast_range){int cast_range=enemy?hpar(g,h,id,IP_CAST_RANGE_ENEMY,hpar(g,h,id,IP_ENEMY_CAST_RANGE,r.cast_range)):r.cast_range;if(!within(u,v,cast_range+dota_items_range_bonus(g,h,0)))return 0;}
     if((r.flags&ITEM_F_POINT)&&r.cast_range){
@@ -1350,9 +1392,9 @@ int dota_items_use(DotaGame*g,int h,int s,int x,int y,int target){
         int cd=r.cooldown_ticks*(100-dota_items_cooldown_percent(g,h))/100;
         if(id==DOTA_ITEM_HOLY_LOCKET)cd=hticks(g,h,id,IP_USE_COOLDOWN,260)*(100-dota_items_cooldown_percent(g,h))/100;
         if(action==ITEM_ACTION_TELEPORT){int boot=has(g,h,DOTA_ITEM_TRAVEL_BOOTS_2)?DOTA_ITEM_TRAVEL_BOOTS_2:(has(g,h,DOTA_ITEM_TRAVEL_BOOTS)?DOTA_ITEM_TRAVEL_BOOTS:-1);if(boot>=0)cd=hticks(g,h,boot,IP_TP_COOLDOWN,800)*(100-dota_items_cooldown_percent(g,h))/100;cd/=2;g->item_world.teleport.ready_tick[h]=g->tick+cd;}
-        g->items.cooldown[h][s]=(uint16_t)cd;
+        if(s<DOTA_ITEMS_EQUIP_SLOTS)g->items.cooldown[h][s]=(uint16_t)cd;
         if(dota_items_lotus_value(id))g->objectives.lotus_cooldown[h]=(uint16_t)cd;
-        if(r.shared_cooldown||action==ITEM_ACTION_REFRESH)for(i=0;i<DOTA_ITEMS_EQUIP_SLOTS+3;i++){
+        if(s<DOTA_ITEMS_EQUIP_SLOTS&&(r.shared_cooldown||action==ITEM_ACTION_REFRESH))for(i=0;i<DOTA_ITEMS_EQUIP_SLOTS+3;i++){
             DotaItemRecord other;
             int other_id=i<7?ITEM_RAW(g,h,i):g->items.backpack[h][i-7].item;
             if(i!=s&&other_id>=0&&dota_items_read(other_id,&other)&&((r.shared_cooldown&&other.shared_cooldown==r.shared_cooldown)||(action==ITEM_ACTION_REFRESH&&other.action==ITEM_ACTION_REFRESH))){
@@ -1415,6 +1457,7 @@ void dota_items_tick(DotaGame*g){
     for(h=0;h<DOTA_HERO_COUNT;h++)if(valid(g,h)){
         if(g->items.soul_until[h]<=g->tick||!live(g,h)){g->items.soul_mana[h]=0;g->items.soul_until[h]=0;}
         sync(g,h);inventory_changed|=inventory_backpack_tick(g,h);
+        if(g->item_world.teleport.charges[h]&&g->item_world.teleport.buy_age[h]<201)g->item_world.teleport.buy_age[h]++;
         for(s=0;s<DOTA_ITEMS_EQUIP_SLOTS;s++){
             if(g->items.cooldown[h][s])g->items.cooldown[h][s]=(uint16_t)imax(0,g->items.cooldown[h][s]-1-dota_items_special_water_cooldown_step(g,h,ITEM(g,h,s),s));
             if(g->items.active_ticks[h][s]){g->items.active_ticks[h][s]--;if(!g->items.active_ticks[h][s]&&ITEM(g,h,s)==DOTA_ITEM_SPIDER_LEGS)dota_rules_item_finish_free_path(g,h);}

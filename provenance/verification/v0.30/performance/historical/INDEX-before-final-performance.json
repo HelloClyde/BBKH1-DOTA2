@@ -1,0 +1,94 @@
+{
+  "version": "0.30",
+  "baseline_installed_bda_sha256": "d569b2ae381441ea5af09f61d4b956c97f5077e81a65909734a9d18b43365920",
+  "optimization_candidate_bda_sha256": "f7d3250bef6706a4546e8ba7e5959d87fc69d8f8327f96a005c4cd117e6cf36b",
+  "optimization_installed": false,
+  "physical_fps_samples": [],
+  "hardware_state": "Read-only firmware signature verified. Current signed drive-count byte is1: only drive A index0 is accepted, B index1 is rejected before resource bytes. Native settings/version checked and returned to idle desktop; debugger remains healthy. No valid FPS sample; physical reboot/SD registration recovery required.",
+  "files": [
+    {
+      "path": "provenance/verification/v0.30/performance/baseline-startup-failed.json",
+      "source": "build/v030/perf-baseline/verification.json",
+      "sha256": "80e553114af20de7f3d4ee3de2aab3cd13a7b525764a3b10616d5740df8fac40",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/device-inspection.json",
+      "source": "build/v030/perf-inspect/inspection.json",
+      "sha256": "f22af49ff24155d74ae4917e8dcb5a2221d8860933dae9b11d6394ea541d87bb",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/device-storage-recheck.json",
+      "source": "build/v030/perf-inspect/recheck.json",
+      "sha256": "bee77590f3a100bf6a981a006f8e30a881011c109ae950800c1e71d9355bf35f",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/device-usb-clock.json",
+      "source": "build/v030/perf-inspect/usb-clock-diagnostics.json",
+      "sha256": "3669352d40bc868ebef44e720ff19df9acb59cc5b9d027506fc23fc06e414194",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/read-plan-padding.json",
+      "source": "build/v030/perf-readonly/resource-io/measurement.json",
+      "sha256": "fb5e4f3582f5ae974143c9e756613239f4c83e6d40d3fb9a3f938d878eb90274",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/read-plan-prefetch.json",
+      "source": "build/v030/perf-readonly/resource-prefetch/skip-full16k/measurement.json",
+      "sha256": "f03444901592ed0c49c7d5ec8b286ffa3cbe31e4fa81381af0b2e3edc39cb5c9",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/full-resource-regression.json",
+      "source": "build/v030/resource-prefetch-regression/verification.json",
+      "sha256": "b861901c2abb5216e3ef0784313842f85cc90620591f8c5b13f70642910bcf11",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/resource-mips.json",
+      "source": "build/v030/perf-prefetch-resource-mips/verification.json",
+      "sha256": "dcabc9ebc8464984863bd756596d91ab17fea87b6446ef023bf3beedadfa464b",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/item-input-mips.json",
+      "source": "build/v030/perf-prefetch-item-mips/verification.json",
+      "sha256": "8b3cec38c8cbb47d2307267f7d6059ebff9344f8056e9b37bf3408b348a7b66d",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/renderer-pixel-regression.json",
+      "source": "build/v030/perf-prefetch-renderer-regression/verification.json",
+      "sha256": "15858283d429d7f53ab7f808a975d488a67fede9db827d434f533b15cd97529b",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/tp-render-regression.json",
+      "source": "build/v030/perf-tp-render-regression-2/verification.json",
+      "sha256": "7c7de7fec02aeb824556fd96b4cb86ca6170c22152e38af4d7f9e8516fbe8c17",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/candidate-build.json",
+      "source": "build/v030/perf-candidate2/DOTA2.build.json",
+      "sha256": "d25ccd532a42db398abe47f42c315290744f3877df477583f9788d68bd0ef3d1",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/resource-error.png",
+      "source": "build/v030/perf-inspect/current.png",
+      "sha256": "fe5c323faf2512d064a5507652a8b5ec5be87ccccf0956a8e04ebb9c9f4ca3b6",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/drive-registry-readonly.json",
+      "source": "build/v030/perf-inspect/drive-registry-readonly.json",
+      "sha256": "141181672cbeea52137f7b9b3e90df944406addec2c53b7027f13511d6ea85b4",
+      "byte_identical": true
+    }
+  ]
+}

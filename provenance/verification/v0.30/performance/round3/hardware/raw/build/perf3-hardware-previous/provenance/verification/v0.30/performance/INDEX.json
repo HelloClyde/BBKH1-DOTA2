@@ -1,0 +1,1375 @@
+{
+  "schema_version": 2,
+  "version": "0.30",
+  "baseline_installed_bda_sha256": "d569b2ae381441ea5af09f61d4b956c97f5077e81a65909734a9d18b43365920",
+  "optimization_candidate_bda_sha256": "33a650a25ef78ce16250cd3875f9be2ec6e7d831e6bd4d0ba775b5f1f83be857",
+  "optimization_installed": true,
+  "performance_acceptance_passed": true,
+  "full_feature_acceptance_complete": false,
+  "release_pin_created": false,
+  "github_updated": false,
+  "hardware_state": "Full reboot restored B filesystem recognition; exact final candidate was CRC-verified installed, measured using normal inputs, and exited to healthy idle with owned resources released.",
+  "physical_fps_samples": [
+    {
+      "name": "menu",
+      "baseline": {
+        "fps": 18.48151848144755,
+        "frames": 148,
+        "seconds": 8.008000000030734,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 131,
+          "bytes_returned": 1013658,
+          "physical_reads": 661,
+          "physical_bytes": 1849663,
+          "seeks": 478,
+          "index_hits": 869,
+          "index_misses": 129,
+          "chunk_hits": 0,
+          "chunk_misses": 499,
+          "decoded_chunks": 400,
+          "decoded_bytes": 881786,
+          "service_calls": 500,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 18.33946728218773,
+        "frames": 147,
+        "seconds": 8.015499999979511,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 132,
+          "bytes_returned": 1019420,
+          "physical_reads": 310,
+          "physical_bytes": 2217984,
+          "seeks": 221,
+          "index_hits": 877,
+          "index_misses": 131,
+          "chunk_hits": 0,
+          "chunk_misses": 504,
+          "decoded_chunks": 404,
+          "decoded_bytes": 887540,
+          "service_calls": 505,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": -0.7686121646466315
+    },
+    {
+      "name": "fresh-fountain-play",
+      "baseline": {
+        "fps": 11.851297405184802,
+        "frames": 95,
+        "seconds": 8.01600000000326,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 86,
+          "bytes_returned": 464317,
+          "physical_reads": 385,
+          "physical_bytes": 1262527,
+          "seeks": 270,
+          "index_hits": 434,
+          "index_misses": 91,
+          "chunk_hits": 1,
+          "chunk_misses": 262,
+          "decoded_chunks": 210,
+          "decoded_bytes": 340157,
+          "service_calls": 263,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 12.86213786218199,
+        "frames": 103,
+        "seconds": 8.007999999972526,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 84,
+          "bytes_returned": 451645,
+          "physical_reads": 185,
+          "physical_bytes": 1346372,
+          "seeks": 133,
+          "index_hits": 430,
+          "index_misses": 81,
+          "chunk_hits": 1,
+          "chunk_misses": 255,
+          "decoded_chunks": 205,
+          "decoded_bytes": 331301,
+          "service_calls": 256,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 8.52936537188711
+    },
+    {
+      "name": "same-fountain-paused",
+      "baseline": {
+        "fps": 18.83732534929374,
+        "frames": 151,
+        "seconds": 8.01600000000326,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 18.819717081186845,
+        "frames": 151,
+        "seconds": 8.023499999952037,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": -0.09347541532775949
+    },
+    {
+      "name": "fountain-resumed",
+      "baseline": {
+        "fps": 16.84131736526261,
+        "frames": 135,
+        "seconds": 8.01600000000326,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 17.46615931624243,
+        "frames": 140,
+        "seconds": 8.015500000037719,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 3.7101726511527877
+    },
+    {
+      "name": "mid-camera-first",
+      "baseline": {
+        "fps": 19.710578842307353,
+        "frames": 158,
+        "seconds": 8.01600000000326,
+        "game_ticks": 167,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 20.086083213678794,
+        "frames": 161,
+        "seconds": 8.015500000037719,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 1.905090532224496
+    },
+    {
+      "name": "mid-camera-warm",
+      "baseline": {
+        "fps": 19.231970028081882,
+        "frames": 154,
+        "seconds": 8.007500000006985,
+        "game_ticks": 160,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 48,
+          "bytes_returned": 181423,
+          "physical_reads": 116,
+          "physical_bytes": 192817,
+          "seeks": 65,
+          "index_hits": 156,
+          "index_misses": 4,
+          "chunk_hits": 0,
+          "chunk_misses": 80,
+          "decoded_chunks": 64,
+          "decoded_bytes": 50223,
+          "service_calls": 80,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 19.69338152813984,
+        "frames": 158,
+        "seconds": 8.022999999986496,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 47,
+          "bytes_returned": 178373,
+          "physical_reads": 46,
+          "physical_bytes": 215040,
+          "seeks": 14,
+          "index_hits": 146,
+          "index_misses": 4,
+          "chunk_hits": 0,
+          "chunk_misses": 75,
+          "decoded_chunks": 60,
+          "decoded_bytes": 47181,
+          "service_calls": 75,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 2.399189991374895
+    },
+    {
+      "name": "same-mid-paused",
+      "baseline": {
+        "fps": 20.066055960735643,
+        "frames": 161,
+        "seconds": 8.023499999952037,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 20.086083213678794,
+        "frames": 161,
+        "seconds": 8.015500000037719,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 0.0998066235952999
+    },
+    {
+      "name": "mid-approach-play",
+      "baseline": {
+        "fps": 17.80489323293367,
+        "frames": 143,
+        "seconds": 8.03149999998277,
+        "game_ticks": 160,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 67,
+          "bytes_returned": 251522,
+          "physical_reads": 192,
+          "physical_bytes": 496669,
+          "seeks": 131,
+          "index_hits": 227,
+          "index_misses": 31,
+          "chunk_hits": 0,
+          "chunk_misses": 129,
+          "decoded_chunks": 117,
+          "decoded_bytes": 120354,
+          "service_calls": 129,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 18.838500405375765,
+        "frames": 151,
+        "seconds": 8.015500000037719,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 69,
+          "bytes_returned": 263493,
+          "physical_reads": 88,
+          "physical_bytes": 573440,
+          "seeks": 48,
+          "index_hits": 232,
+          "index_misses": 32,
+          "chunk_hits": 0,
+          "chunk_misses": 132,
+          "decoded_chunks": 120,
+          "decoded_bytes": 128229,
+          "service_calls": 132,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 5.805186017797825
+    },
+    {
+      "name": "post-horn-mid-play",
+      "baseline": {
+        "fps": 14.110889110937523,
+        "frames": 113,
+        "seconds": 8.007999999972526,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 43,
+          "bytes_returned": 434802,
+          "physical_reads": 78,
+          "physical_bytes": 243596,
+          "seeks": 41,
+          "index_hits": 71,
+          "index_misses": 7,
+          "chunk_hits": 0,
+          "chunk_misses": 39,
+          "decoded_chunks": 39,
+          "decoded_bytes": 303730,
+          "service_calls": 39,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 15.220510261407505,
+        "frames": 122,
+        "seconds": 8.015499999979511,
+        "game_ticks": 160,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 41,
+          "bytes_returned": 385712,
+          "physical_reads": 54,
+          "physical_bytes": 241892,
+          "seeks": 18,
+          "index_hits": 57,
+          "index_misses": 5,
+          "chunk_hits": 0,
+          "chunk_misses": 31,
+          "decoded_chunks": 31,
+          "decoded_bytes": 254640,
+          "service_calls": 31,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 7.8635806840116285
+    },
+    {
+      "name": "post-horn-hero-play",
+      "baseline": {
+        "fps": 13.473894329770578,
+        "frames": 108,
+        "seconds": 8.015499999979511,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 36,
+          "bytes_returned": 146295,
+          "physical_reads": 52,
+          "physical_bytes": 136519,
+          "seeks": 12,
+          "index_hits": 40,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 20,
+          "decoded_chunks": 16,
+          "decoded_bytes": 15191,
+          "service_calls": 20,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 14.208263226753218,
+        "frames": 114,
+        "seconds": 8.023500000010245,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 36,
+          "bytes_returned": 146200,
+          "physical_reads": 33,
+          "physical_bytes": 135168,
+          "seeks": 1,
+          "index_hits": 40,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 20,
+          "decoded_chunks": 16,
+          "decoded_bytes": 15096,
+          "service_calls": 20,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 5.4503091608789855
+    },
+    {
+      "name": "post-horn-hero-paused",
+      "baseline": {
+        "fps": 18.588983843850148,
+        "frames": 149,
+        "seconds": 8.015499999979511,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 18.48267249452025,
+        "frames": 148,
+        "seconds": 8.007500000006985,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": -0.5719051144641663
+    }
+  ],
+  "comparison": {
+    "path": "provenance/verification/v0.30/performance/ALIGNED-COMPARISON.json",
+    "sha256": "2c86802164454af853370a798aba5c44b53a3138cfb4f693f80323dbbf8aebe7"
+  },
+  "historical_observations": [
+    "baseline-startup-failed.json retains SD-registration startup failure, not0FPS.",
+    "historical/baseline-rebooted versus historical/io-only-rebooted have different lineups and are not causal FPS evidence."
+  ],
+  "files": [
+    {
+      "path": "provenance/verification/v0.30/performance/baseline-startup-failed.json",
+      "source": "build/v030/perf-baseline/verification.json",
+      "sha256": "80e553114af20de7f3d4ee3de2aab3cd13a7b525764a3b10616d5740df8fac40",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/device-inspection.json",
+      "source": "build/v030/perf-inspect/inspection.json",
+      "sha256": "f22af49ff24155d74ae4917e8dcb5a2221d8860933dae9b11d6394ea541d87bb",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/device-storage-recheck.json",
+      "source": "build/v030/perf-inspect/recheck.json",
+      "sha256": "bee77590f3a100bf6a981a006f8e30a881011c109ae950800c1e71d9355bf35f",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/device-usb-clock.json",
+      "source": "build/v030/perf-inspect/usb-clock-diagnostics.json",
+      "sha256": "3669352d40bc868ebef44e720ff19df9acb59cc5b9d027506fc23fc06e414194",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/read-plan-padding.json",
+      "source": "build/v030/perf-readonly/resource-io/measurement.json",
+      "sha256": "fb5e4f3582f5ae974143c9e756613239f4c83e6d40d3fb9a3f938d878eb90274",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/read-plan-prefetch.json",
+      "source": "build/v030/perf-readonly/resource-prefetch/skip-full16k/measurement.json",
+      "sha256": "f03444901592ed0c49c7d5ec8b286ffa3cbe31e4fa81381af0b2e3edc39cb5c9",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/full-resource-regression.json",
+      "source": "build/v030/resource-prefetch-regression/verification.json",
+      "sha256": "b861901c2abb5216e3ef0784313842f85cc90620591f8c5b13f70642910bcf11",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/resource-mips.json",
+      "source": "build/v030/perf-prefetch-resource-mips/verification.json",
+      "sha256": "dcabc9ebc8464984863bd756596d91ab17fea87b6446ef023bf3beedadfa464b",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/item-input-mips.json",
+      "source": "build/v030/perf-prefetch-item-mips/verification.json",
+      "sha256": "8b3cec38c8cbb47d2307267f7d6059ebff9344f8056e9b37bf3408b348a7b66d",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/renderer-pixel-regression.json",
+      "source": "build/v030/perf-prefetch-renderer-regression/verification.json",
+      "sha256": "15858283d429d7f53ab7f808a975d488a67fede9db827d434f533b15cd97529b",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/tp-render-regression.json",
+      "source": "build/v030/perf-tp-render-regression-2/verification.json",
+      "sha256": "7c7de7fec02aeb824556fd96b4cb86ca6170c22152e38af4d7f9e8516fbe8c17",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/candidate-build.json",
+      "source": "build/v030/perf-candidate2/DOTA2.build.json",
+      "sha256": "d25ccd532a42db398abe47f42c315290744f3877df477583f9788d68bd0ef3d1",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/resource-error.png",
+      "source": "build/v030/perf-inspect/current.png",
+      "sha256": "fe5c323faf2512d064a5507652a8b5ec5be87ccccf0956a8e04ebb9c9f4ca3b6",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/drive-registry-readonly.json",
+      "source": "build/v030/perf-inspect/drive-registry-readonly.json",
+      "sha256": "141181672cbeea52137f7b9b3e90df944406addec2c53b7027f13511d6ea85b4",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/historical/INDEX-before-final-performance.json",
+      "source": "provenance/verification/v0.30/performance/INDEX.json",
+      "bytes": 4572,
+      "sha256": "0994ba82185cb9e92dd9a4c26d4ca550fccd693be6220230583228dbddcb546c",
+      "byte_identical": true,
+      "source_snapshot_before_update": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/historical/v0.30-h1-before-final-performance.json",
+      "source": "docs/verification/v0.30-h1.json",
+      "bytes": 2331,
+      "sha256": "a858c9b4c413ddbc0eb68ee9c171af9145063bc20c56f9542ce44ea08a9fe179",
+      "byte_identical": true,
+      "source_snapshot_before_update": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/baseline/driver.py",
+      "source": "build/v030/perf-baseline-aligned/driver.py",
+      "bytes": 7593,
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/baseline/fountain-paused-game.bin",
+      "source": "build/v030/perf-baseline-aligned/fountain-paused-game.bin",
+      "bytes": 179008,
+      "sha256": "64bbd32c537a830133f565431f9f7126ec424d80ac1050a0eabdffd32c2d3729",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/baseline/fountain-paused.png",
+      "source": "build/v030/perf-baseline-aligned/fountain-paused.png",
+      "bytes": 12822,
+      "sha256": "ee95ea2473d53eaec642021e24e119f0dc7b38cbfcdf34c5d10c564a8739a8e1",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/baseline/mid-paused-game.bin",
+      "source": "build/v030/perf-baseline-aligned/mid-paused-game.bin",
+      "bytes": 179008,
+      "sha256": "deefd3baafa23973d0e5b6c2c0965985ff262e9efb1bdc508a5d2db644885756",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/baseline/mid-paused.png",
+      "source": "build/v030/perf-baseline-aligned/mid-paused.png",
+      "bytes": 11099,
+      "sha256": "f5fb7e5cd1eb9ec8b7e7c66e0c3ce9c6f4214dc6ea9252d8860b1eb303d4850c",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/baseline/post-horn-paused-game.bin",
+      "source": "build/v030/perf-baseline-aligned/post-horn-paused-game.bin",
+      "bytes": 179008,
+      "sha256": "638dd8a039cc510c615c1e25f59e92cadb25469c94aa054912aadce46404944a",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/baseline/post-horn-paused.png",
+      "source": "build/v030/perf-baseline-aligned/post-horn-paused.png",
+      "bytes": 12974,
+      "sha256": "d92e3146fa9b33b5cfd507484460715a440fa97ebad777918a089dc44f4cb27c",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/baseline/verification.json",
+      "source": "build/v030/perf-baseline-aligned/verification.json",
+      "bytes": 85802,
+      "sha256": "9c1e9c2e02a103005e2842ae9004c716f94fb008365c45806b392713ccb0687f",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/final/driver.py",
+      "source": "build/v030/perf-union-aligned/driver.py",
+      "bytes": 7593,
+      "sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/final/fountain-paused-game.bin",
+      "source": "build/v030/perf-union-aligned/fountain-paused-game.bin",
+      "bytes": 179008,
+      "sha256": "0954d938df293b91d113a1fd985b1efd80337efd25312cd869ef4e5aa7dc1a7f",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/final/fountain-paused.png",
+      "source": "build/v030/perf-union-aligned/fountain-paused.png",
+      "bytes": 12822,
+      "sha256": "ee95ea2473d53eaec642021e24e119f0dc7b38cbfcdf34c5d10c564a8739a8e1",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/final/mid-paused-game.bin",
+      "source": "build/v030/perf-union-aligned/mid-paused-game.bin",
+      "bytes": 179008,
+      "sha256": "b99fc50da67d70cb12303d0020881c76c8080460185ebc12c11d4ea25059d2fa",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/final/mid-paused.png",
+      "source": "build/v030/perf-union-aligned/mid-paused.png",
+      "bytes": 11105,
+      "sha256": "c795e48888c978d57642bc756a4bd00361a07e5c6854a939c77cb6f3c27fca27",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/final/post-horn-paused-game.bin",
+      "source": "build/v030/perf-union-aligned/post-horn-paused-game.bin",
+      "bytes": 179008,
+      "sha256": "dc31d17ad13ed8802f58a242902477578233050e0b515339f8c466a7b832b2f4",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/final/post-horn-paused.png",
+      "source": "build/v030/perf-union-aligned/post-horn-paused.png",
+      "bytes": 12962,
+      "sha256": "b779ebed243e46289b94de90a31a20779ea5f286f35f4453aead82eb95fe7199",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/aligned/final/verification.json",
+      "source": "build/v030/perf-union-aligned/verification.json",
+      "bytes": 85702,
+      "sha256": "44c2e65c4f9f6811182c5984d38d16686d3fc760033c12ec337019b48faae85c",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/historical/baseline-rebooted/fountain-paused-game.bin",
+      "source": "build/v030/perf-baseline-rebooted/fountain-paused-game.bin",
+      "bytes": 179008,
+      "sha256": "64bbd32c537a830133f565431f9f7126ec424d80ac1050a0eabdffd32c2d3729",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/historical/baseline-rebooted/fountain-paused.png",
+      "source": "build/v030/perf-baseline-rebooted/fountain-paused.png",
+      "bytes": 12822,
+      "sha256": "ee95ea2473d53eaec642021e24e119f0dc7b38cbfcdf34c5d10c564a8739a8e1",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/historical/baseline-rebooted/mid-paused-game.bin",
+      "source": "build/v030/perf-baseline-rebooted/mid-paused-game.bin",
+      "bytes": 179008,
+      "sha256": "2fa163a752617438d5f747bdde11b8f6bf9460be42e908f69d817602e392e3e0",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/historical/baseline-rebooted/mid-paused.png",
+      "source": "build/v030/perf-baseline-rebooted/mid-paused.png",
+      "bytes": 11082,
+      "sha256": "a7ef4f5e7d031c37adc631371f8b92d904824cabffafb09eeabd9c8284b79ea8",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/historical/baseline-rebooted/verification.json",
+      "source": "build/v030/perf-baseline-rebooted/verification.json",
+      "bytes": 56298,
+      "sha256": "a0e07738c15396bbfeff19bbeab07d12b3f3105a1c1e0f4e11b81b3b7723aaf4",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/historical/io-only-rebooted/fountain-paused-game.bin",
+      "source": "build/v030/perf-optimized-rebooted/fountain-paused-game.bin",
+      "bytes": 179008,
+      "sha256": "91ff4a216ab9a02981ac221203ed7c12ecc39464a986d4c96e67512fa23a21be",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/historical/io-only-rebooted/fountain-paused.png",
+      "source": "build/v030/perf-optimized-rebooted/fountain-paused.png",
+      "bytes": 12778,
+      "sha256": "0a3563fffc75fb7ba62275fcd062a31435a361d1eed4fb6a8a84e7c10a501fd9",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/historical/io-only-rebooted/mid-paused-game.bin",
+      "source": "build/v030/perf-optimized-rebooted/mid-paused-game.bin",
+      "bytes": 179008,
+      "sha256": "dd79004f9afd8a68a2f820ad56f4b77c99da67f18eeda6b3d86a3b379b63e198",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/historical/io-only-rebooted/mid-paused.png",
+      "source": "build/v030/perf-optimized-rebooted/mid-paused.png",
+      "bytes": 11091,
+      "sha256": "72d1347288694741a6f35fb9412ffa673f147baca7ecea51bcdb1d8e0ccd5350",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/historical/io-only-rebooted/verification.json",
+      "source": "build/v030/perf-optimized-rebooted/verification.json",
+      "bytes": 56379,
+      "sha256": "10c5ddada899d93277931e8c4524455afd8a2cde0dde5abeed0f6fd49396bc6d",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-original/end-game.bin",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-original/end-game.bin",
+      "bytes": 179008,
+      "sha256": "3078cb0a62e948a63b801ea6cde47773b2f0dc7e207005298fed65a97dfe3574",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-original/fog-000.bin",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-original/fog-000.bin",
+      "bytes": 33278,
+      "sha256": "b2930e1334bd3ca09619402d5e9d74bde23b48f57a200d10a62f3d219dcbb966",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-original/fog-001.bin",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-original/fog-001.bin",
+      "bytes": 33278,
+      "sha256": "32d0f90787e494e87cf4dd4f2f2880f0dedc3bab2379a07eb19d262d65461c56",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-original/game-000.bin",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-original/game-000.bin",
+      "bytes": 179008,
+      "sha256": "90bba621d11807012ee9b19784fecc95303682a94bc7c5d6d70a627302eaca43",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-original/game-001.bin",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-original/game-001.bin",
+      "bytes": 179008,
+      "sha256": "3078cb0a62e948a63b801ea6cde47773b2f0dc7e207005298fed65a97dfe3574",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-original/start-game.bin",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-original/start-game.bin",
+      "bytes": 179008,
+      "sha256": "7d771fe69e6ed2b706dc527193ac78905a9014137f5473330568d0e32e356177",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-original/verification.json",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-original/verification.json",
+      "bytes": 70917,
+      "sha256": "56b85ec719ab18e24742115dfbecf9713777b5a00e4b846e5758482cb16d9f07",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-union/end-game.bin",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-union/end-game.bin",
+      "bytes": 179008,
+      "sha256": "3078cb0a62e948a63b801ea6cde47773b2f0dc7e207005298fed65a97dfe3574",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-union/fog-000.bin",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-union/fog-000.bin",
+      "bytes": 33278,
+      "sha256": "b2930e1334bd3ca09619402d5e9d74bde23b48f57a200d10a62f3d219dcbb966",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-union/fog-001.bin",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-union/fog-001.bin",
+      "bytes": 33278,
+      "sha256": "32d0f90787e494e87cf4dd4f2f2880f0dedc3bab2379a07eb19d262d65461c56",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-union/game-000.bin",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-union/game-000.bin",
+      "bytes": 179008,
+      "sha256": "90bba621d11807012ee9b19784fecc95303682a94bc7c5d6d70a627302eaca43",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-union/game-001.bin",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-union/game-001.bin",
+      "bytes": 179008,
+      "sha256": "3078cb0a62e948a63b801ea6cde47773b2f0dc7e207005298fed65a97dfe3574",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-union/start-game.bin",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-union/start-game.bin",
+      "bytes": 179008,
+      "sha256": "7d771fe69e6ed2b706dc527193ac78905a9014137f5473330568d0e32e356177",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/fountain-paused-game-union/verification.json",
+      "source": "build/v030/perf-union-cpu/fountain-paused-game-union/verification.json",
+      "bytes": 70486,
+      "sha256": "517d4991bb67c923d50d4060836a8f0a7762b53cd6e5eb3ab356a4feaae5b64b",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-original/end-game.bin",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-original/end-game.bin",
+      "bytes": 179008,
+      "sha256": "f6f5f2be4d0a13d28a2b298eedc870786a9d0df73c323a52f53c8249fc0faa0e",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-original/fog-000.bin",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-original/fog-000.bin",
+      "bytes": 33278,
+      "sha256": "66ba141c3098f44d68659564ab645a536effacb768332f4b971e033314aa6a9a",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-original/fog-001.bin",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-original/fog-001.bin",
+      "bytes": 33278,
+      "sha256": "1d361af9512d37382e46ff92338f217a055c0972f9d9633a55daf44da9670364",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-original/game-000.bin",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-original/game-000.bin",
+      "bytes": 179008,
+      "sha256": "274fb1bd5fab0f21f9922dc8fc4b2de31f63a295843ef5d62b0c067e6562766e",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-original/game-001.bin",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-original/game-001.bin",
+      "bytes": 179008,
+      "sha256": "f6f5f2be4d0a13d28a2b298eedc870786a9d0df73c323a52f53c8249fc0faa0e",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-original/start-game.bin",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-original/start-game.bin",
+      "bytes": 179008,
+      "sha256": "6dce37c7079606cc66e89cd18c756ef9f8f5d1253d3704ebb69175b50e05eace",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-original/verification.json",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-original/verification.json",
+      "bytes": 77022,
+      "sha256": "bd01eecccf4acb85a41a15e1b28643379ba99c8a5f13e42299cf10fb1fb44b81",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-union/end-game.bin",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-union/end-game.bin",
+      "bytes": 179008,
+      "sha256": "f6f5f2be4d0a13d28a2b298eedc870786a9d0df73c323a52f53c8249fc0faa0e",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-union/fog-000.bin",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-union/fog-000.bin",
+      "bytes": 33278,
+      "sha256": "66ba141c3098f44d68659564ab645a536effacb768332f4b971e033314aa6a9a",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-union/fog-001.bin",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-union/fog-001.bin",
+      "bytes": 33278,
+      "sha256": "1d361af9512d37382e46ff92338f217a055c0972f9d9633a55daf44da9670364",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-union/game-000.bin",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-union/game-000.bin",
+      "bytes": 179008,
+      "sha256": "274fb1bd5fab0f21f9922dc8fc4b2de31f63a295843ef5d62b0c067e6562766e",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-union/game-001.bin",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-union/game-001.bin",
+      "bytes": 179008,
+      "sha256": "f6f5f2be4d0a13d28a2b298eedc870786a9d0df73c323a52f53c8249fc0faa0e",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-union/start-game.bin",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-union/start-game.bin",
+      "bytes": 179008,
+      "sha256": "6dce37c7079606cc66e89cd18c756ef9f8f5d1253d3704ebb69175b50e05eace",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/post-horn-paused-game-union/verification.json",
+      "source": "build/v030/perf-union-cpu/post-horn-paused-game-union/verification.json",
+      "bytes": 76595,
+      "sha256": "12fe2ef20b119469a63320adff376934c26635b704efdae27da5333d284d49b2",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/profile.py",
+      "source": "build/v030/perf-union-cpu/profile.py",
+      "bytes": 8485,
+      "sha256": "28c404e7bf9c93f0798255cd078abd68c15fb80d84b302c56504569a73a65014",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/cpu-union/verification.json",
+      "source": "build/v030/perf-union-cpu/verification.json",
+      "bytes": 3271,
+      "sha256": "e7acff40f99beb259c2ba3b2459b59f5c898d6df63707235afc6ee682e2c63cf",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/storage/after-full-reboot.json",
+      "source": "build/v030/perf-inspect/after-full-reboot.json",
+      "bytes": 719,
+      "sha256": "f494e325c9ef703b1b632cc5cada4806f32a6a2f6048ef0926d51f9933670d57",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/storage/retry-after-user.json",
+      "source": "build/v030/perf-inspect/retry-after-user.json",
+      "bytes": 661,
+      "sha256": "3c469229d39c3042ad16707ac3a52ebacf88af69ab90d02766a6dbca788aa78e",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/storage/retry-system-check.json",
+      "source": "build/v030/perf-inspect/retry-system-check.json",
+      "bytes": 664,
+      "sha256": "c415bbd087997fe47ba532f08d30e65a104bcef5667a7573827ec4c1109297a6",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/deployment/perf-union-deploy.json",
+      "source": "build/v030/perf-union-deploy.json",
+      "bytes": 3837,
+      "sha256": "554949db9b09b4e033c736061a6152a60b3019314411ea67750c19d635abc8c9",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/deployment/perf-union-deploy.json.upload.json",
+      "source": "build/v030/perf-union-deploy.json.upload.json",
+      "bytes": 1144,
+      "sha256": "01e6bf2f7d34d2acb23816047924bca82ba02b350f26308e07b4393a1b5a4957",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/deployment/perf-union-deploy-tool.json",
+      "source": "build/v030/perf-union-deploy-tool.json",
+      "bytes": 4023,
+      "sha256": "64e74b45d89b3eac996dcaea96df1a6f13ccafc863b65cea73f518c69ba90b92",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/deployment/perf-baseline-aligned-deploy.json",
+      "source": "build/v030/perf-baseline-aligned-deploy.json",
+      "bytes": 3848,
+      "sha256": "daa61326ddd29c882016f6fd2034df2308dbdbd68c0f599ada3618fba476fcd8",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/deployment/perf-baseline-aligned-deploy.json.upload.json",
+      "source": "build/v030/perf-baseline-aligned-deploy.json.upload.json",
+      "bytes": 1143,
+      "sha256": "fe98bcbacb6c961ac36276bb4c41716bb175cb0746a7bdb3fb2f38351f3e7214",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/build/baseline-DOTA2.build.json",
+      "source": "build/v030/features-candidate2/DOTA2.build.json",
+      "bytes": 22820,
+      "sha256": "5ddd784a31846e3d0d59cbc6e3a0d8d65896d8facf2454dd8e2083eb9808f742",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/build/io-only-DOTA2.build.json",
+      "source": "build/v030/perf-candidate2/DOTA2.build.json",
+      "bytes": 22820,
+      "sha256": "d25ccd532a42db398abe47f42c315290744f3877df477583f9788d68bd0ef3d1",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/build/final-DOTA2.build.json",
+      "source": "build/v030/perf-candidate3/DOTA2.build.json",
+      "bytes": 22820,
+      "sha256": "93f57a19cb8b6f5df4f196a9ec8030a28ae8e08ffde123897fc77e5db3ef2d97",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/build/final-commands.json",
+      "source": "build/v030/perf-candidate3/commands.json",
+      "bytes": 35976,
+      "sha256": "090bf42340b35132892aeb08d191b60400b9c537c208f8adbd5a43afabc3b21a",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/checks/vision-mips/verification.json",
+      "source": "build/v030/perf-union-vision-mips2/verification.json",
+      "bytes": 28743,
+      "sha256": "509f29dca5f9c41b5c49b785e259e06e0fd5cefb0b13bbe420121328c85f93c1",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/checks/vision-mips/layout-and-host-results.json",
+      "source": "build/v030/perf-union-vision-mips2/layout-and-host-results.json",
+      "bytes": 2557,
+      "sha256": "82159f8cb52b09c645962540174748e0c19f2d6d25cc719128f7ca335f63df62",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/checks/vision-mips/compile.txt",
+      "source": "build/v030/perf-union-vision-mips2/compile.txt",
+      "bytes": 945,
+      "sha256": "66cf971325080ba970865ef39702594fb8257b8515f4d7f4301f5672be92c3e6",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/checks/trees-mips/verification.json",
+      "source": "build/v030/perf-union-trees-mips2/verification.json",
+      "bytes": 34699,
+      "sha256": "eda5028ec444fd604c2571d9b7b409c4a91302336f95a18a0c278f92b0e8d4e8",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/checks/trees-mips/host-layout.json",
+      "source": "build/v030/perf-union-trees-mips2/host-layout.json",
+      "bytes": 1698,
+      "sha256": "c526a2847022797c43a734815ff72846887ab31f7837a87ee8b62e8700e63322",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/checks/trees-mips/host-compile.txt",
+      "source": "build/v030/perf-union-trees-mips2/host-compile.txt",
+      "bytes": 697,
+      "sha256": "f716221edf75a225f34a9aa70bd7404d2ee0c18776c1858e0f4322c65fde42f3",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/checks/host-union/verification.json",
+      "source": "build/v030/static-sight-study/host-run3/verification.json",
+      "bytes": 9467,
+      "sha256": "cefa0a033a8c8fdf672f9757cf5c3812d4ffdf5640a2ba3eb9c095b9c8a5d5c9",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/checks/host-union/compile.txt",
+      "source": "build/v030/static-sight-study/host-run3/compile.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/checks/host-union/output.txt",
+      "source": "build/v030/static-sight-study/host-run3/output.txt",
+      "bytes": 2524,
+      "sha256": "f96ddf630577be9c7b2e53942b43db320f5e6bdd1d01153a02bee358857f7d19",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/build/v030/static-sight-study/sight-before.c",
+      "source": "build/v030/static-sight-study/sight-before.c",
+      "bytes": 20611,
+      "sha256": "a2bdb365fc9602f22b904eed0e2611e851b1046340db7a34c04c13f7e8ac6e93",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/build/v030/static-sight-study/old-wrapper.c",
+      "source": "build/v030/static-sight-study/old-wrapper.c",
+      "bytes": 403,
+      "sha256": "8a694c9d7acd8a9592c093e3fdd61ccfde1a29839972b0c7e95ff857ef1d5a6b",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/build/v030/static-sight-study/new-wrapper.c",
+      "source": "build/v030/static-sight-study/new-wrapper.c",
+      "bytes": 602,
+      "sha256": "f3906d2c31bb7d766637e248d6d69fc735651daaa5394835487fa13216cf09f5",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/build/v030/static-sight-study/run-host.py",
+      "source": "build/v030/static-sight-study/run-host.py",
+      "bytes": 3585,
+      "sha256": "b31e89165dcfeabf9f63a3f0dd905dfe77ebc6fa4df7f6be760a6c141a540cb1",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/build/v030/perf-baseline-source/render.c",
+      "source": "build/v030/perf-baseline-source/render.c",
+      "bytes": 74851,
+      "sha256": "7c5c0f05d193822eb8dd19077ab3c229c77f5959c05a62e10b0b774807186052",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/build/v030/perf-baseline-source/resource_pack.c",
+      "source": "build/v030/perf-baseline-source/resource_pack.c",
+      "bytes": 20541,
+      "sha256": "8349a8c44e76bc4bc1a57eda3b93f68c94587534c0dd8576daedc50d6cf7c8a3",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/tests/static_sight_union_test.c",
+      "source": "tests/static_sight_union_test.c",
+      "bytes": 11926,
+      "sha256": "c58b495f65310413a62f28526e404c7f65fe72961545cf32660e8a2785be0e5f",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/tests/verify_vision_mips.py",
+      "source": "tests/verify_vision_mips.py",
+      "bytes": 12431,
+      "sha256": "9dcc00d2855bfe7bbcf3cfe5e87a301dd669ba595cacc0179aa985c018d172d0",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/tests/vision_mips_fixtures.c",
+      "source": "tests/vision_mips_fixtures.c",
+      "bytes": 12645,
+      "sha256": "123b6d054f56f87e4e932ae77c32060a8a03e3cf97044c15641b164fe4d44f0c",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/tests/verify_trees_mips.py",
+      "source": "tests/verify_trees_mips.py",
+      "bytes": 10317,
+      "sha256": "35e553f96254e3378de79dab2e072d28cb564edac18e48015c9b8c6b08fc8a4b",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/tests/trees_mips_fixtures.c",
+      "source": "tests/trees_mips_fixtures.c",
+      "bytes": 6477,
+      "sha256": "f1d50a1d9f519a5bed526b7a77721927997f53dc00420ca014cef95d9c6b02fe",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/tests/mips_core_model.py",
+      "source": "tests/mips_core_model.py",
+      "bytes": 6397,
+      "sha256": "483e06020612116a1716d77db5dd0c6f69ed2184e9d914cb0d01f61e2a14a03c",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/tests/profile_actual_vision.py",
+      "source": "tests/profile_actual_vision.py",
+      "bytes": 6580,
+      "sha256": "71495d358139f2c8dfe679edb3d24ced3e1ca6eab5d2b536113ec3bbe479150d",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/tools/requirements-test.txt",
+      "source": "tools/requirements-test.txt",
+      "bytes": 142,
+      "sha256": "da963cfa159c924c55cd8ea5ea52cd6734e40b453695fa8eb98ed4812beb48c0",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/provenance/vision/trees.json",
+      "source": "provenance/vision/trees.json",
+      "bytes": 142397,
+      "sha256": "84b943d874a6f95370fb60286ce96b58512fe81e7216772b0c407356f0f005cc",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/game/sight.c",
+      "source": "game/sight.c",
+      "bytes": 23164,
+      "sha256": "e09bb597db90ac2366feacae31ca070f28f0a9fd86bf8bdbe18fa8065e031b35",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/platform/render.c",
+      "source": "platform/render.c",
+      "bytes": 74757,
+      "sha256": "aa239b3d40600ca34bf60301b2971186783ddd652fd3a8db6d43318e4e41853c",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/platform/resource_pack.c",
+      "source": "platform/resource_pack.c",
+      "bytes": 23287,
+      "sha256": "7185c93a1018bb0c4d021d21bf42faa0fe9336657f498348da3a7ca1c6597243",
+      "byte_identical": true
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/inputs/archive_final_performance.py",
+      "source": "build/v030/archive_final_performance.py",
+      "bytes": 18284,
+      "sha256": "f2a61f13948eafafa141ae926f55baf7d2403c00bb409ed7733e3690a505a855",
+      "byte_identical": true
+    }
+  ],
+  "derived_files": [
+    {
+      "path": "provenance/verification/v0.30/performance/ALIGNED-COMPARISON.json",
+      "sha256": "2c86802164454af853370a798aba5c44b53a3138cfb4f693f80323dbbf8aebe7"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/README.md",
+      "sha256": "0cf79acee24dabe3a229c2cc3314b8bd08c4cb74e8ca3d3c86fb8caf856b4ebd"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/SNAPSHOT-FIELDS.json",
+      "sha256": "a23e0bbee8257563b232f08bcb5f0e72efdb8d3d2b05930a919080d75219b661"
+    },
+    {
+      "path": "provenance/verification/v0.30/performance/ARCHIVE-VERIFICATION.json",
+      "sha256": "964187db6ed01383236afc4b06a9054e912d438620ccfd0de3914c404b75d17b"
+    }
+  ],
+  "round": 1,
+  "scope": "Round1 D569/C3 acceptance fields and raw receipts retained below. Round2 is the latest installed C7 physical acceptance. Round3 is an offline C8 candidate awaiting B-card recovery, not a new physical FPS result.",
+  "latest_round": 3,
+  "latest_candidate_bda_sha256": "782aa7e90327e82204cb913fc3440e5789f0924301cbb07105defd6116350244",
+  "latest_evidence_index": {
+    "path": "provenance/verification/v0.30/performance/round3/INDEX.json",
+    "sha256": "8ff01b2c5d6a01bb4a36c06cf0b41a3cca91e5a2149693e8b9c5329a43deba88"
+  },
+  "latest_candidate_installed": false,
+  "latest_candidate_physical_performance_accepted": false,
+  "latest_physical_acceptance_round": 2
+}

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "actual_mips32": false,
+  "physical_h1_tested": false,
+  "compile_only": true,
+  "compiler_flags": "production O32 MIPS32 -O2 freestanding flags plus -Werror",
+  "source_sha256": "c4a019074b9455763910a3f57907348ea6765b8b3f8242e58d7b2dcfa6840a37",
+  "objects": {
+    "before": {
+      "text": 9707,
+      "data": 0,
+      "bss": 580,
+      "sha256": "e03759b0586f2ba52700a79d62c3c29489262b61fd3035daf92615479f58e7af"
+    },
+    "after": {
+      "text": 10455,
+      "data": 4,
+      "bss": 596,
+      "sha256": "ed1a05db1028ffbbe87439e2a05a9284b3aa6a755dc2bd02bb851100bb434ba5"
+    }
+  },
+  "private_section_increase_bytes": 768,
+  "patch_heap_increase_bytes": 268,
+  "cache_stats_abi_bytes": 64
+}

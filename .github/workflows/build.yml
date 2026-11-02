@@ -42,7 +42,20 @@ jobs:
         run: |
           python tools/verify.py --build build/native
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Select development or pinned release delivery
+        id: delivery
+        shell: pwsh
+        run: |
+          $deliveryVersion = (Get-Content -LiteralPath VERSION -Raw).Trim()
+          $deliveryPin = Join-Path provenance/releases ("v" + $deliveryVersion + ".json")
+          $deliveryPinned = Test-Path -LiteralPath $deliveryPin -PathType Leaf
+          if ($env:GITHUB_REF_TYPE -eq 'tag' -and -not $deliveryPinned) {
+            throw "A version tag requires a verified release pin."
+          }
+          $deliveryValue = if ($deliveryPinned) { 'true' } else { 'false' }
+          Add-Content -LiteralPath $env:GITHUB_OUTPUT -Value "pinned=$deliveryValue"
       - name: Package and verify explicit delivery members
+        if: steps.delivery.outputs.pinned == 'true'
         shell: pwsh
         run: |
           python tools/package.py --build build/native --output dist
@@ -50,9 +63,24 @@ jobs:
           python tools/verify.py --package dist
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@v7
+        if: steps.delivery.outputs.pinned == 'true'
         with:
           name: DOTA2-H1-${{ github.sha }}
           path: dist/
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
+      - uses: actions/upload-artifact@v7
+        if: steps.delivery.outputs.pinned != 'true'
+        with:
+          name: DOTA2-H1-${{ github.sha }}
+          path: |
+            build/native/DOTA2.bda
+            build/native/DOTA2.build.json
+            build/native/DOTA2.bda.sha256
+            assets/runtime/DOTA2.H1R
+            docs/CONTROLS.md
+            README.md
           if-no-files-found: error
           retention-days: 14
           compression-level: 0

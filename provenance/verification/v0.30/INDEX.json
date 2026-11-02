@@ -1,0 +1,177 @@
+{
+  "version": "0.30",
+  "bda_sha256": "d569b2ae381441ea5af09f61d4b956c97f5077e81a65909734a9d18b43365920",
+  "elf_sha256": "27db0d591ec0ffbfededd614137c5a9571b58620cd6b46cac9d5382b87a309df",
+  "physical_game_runtime_tested": false,
+  "files": [
+    {
+      "path": "provenance/verification/v0.30/resource-full-streams.json",
+      "source": "build/v030/resource-runtime-verification-2/verification.json",
+      "sha256": "742a8907a79e37d91c4acbdae17017bdc31612b452c28a89c35ee3cebdb2d26b",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": "Actual C H1R decoder: full stream equality, nested RAW audio and corrupt containers.\n\nHost correctness/ownership tests only. No device or FPS measurement is performed.\n"
+    },
+    {
+      "path": "provenance/verification/v0.30/sparse-tree-canonical.json",
+      "source": "build/v030/tree-sparse/decoder-final/verification.json",
+      "sha256": "0c474be7daf5e89c4d5eee1513e7e06277dd6c4cfa40476043c02606e0b276be",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": null
+    },
+    {
+      "path": "provenance/verification/v0.30/renderer-equivalence.json",
+      "source": "build/v030/features-resource-renderer-2/verification.json",
+      "sha256": "ee535ea3d8c9b17a8efaad7a0ebf2512f01ca69eacda9653a619be008fb4284a",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": "One actual renderer binary: old files versus unified H1R, original vision and tree state."
+    },
+    {
+      "path": "provenance/verification/v0.30/resource-mips.json",
+      "source": "build/v030/features-resource-mips/verification.json",
+      "sha256": "1ee351fc7a0dd95212463280d59b986749bfdf27cce9a3f2410fbbf9a5fcc637",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": "Bounded execution of the complete candidate BDA's MIPS resource/tree APIs.\n\nThe H1 filesystem/heap are modeled by CoreMachine. The actual compiled MIPS\nDEFLATE, delta inverse, resource cursors, sparse tree decoder, crown picker and\ncut compositor execute unchanged. No application entry, device or FPS claim.\n"
+    },
+    {
+      "path": "provenance/verification/v0.30/item-input-mips.json",
+      "source": "build/v030/features-item-input-mips/verification.json",
+      "sha256": "e3222c42dc57e717b76a6878de5083e79d2db741d1df7299282d4d0921d24808",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": "Bounded complete-BDA MIPS native item-input acceptance, with modeled IO.\n\nRuns unchanged use_inventory, confirm_item and pump code from the actual ELF.\nThe full process_ui chain is optional when that static function is retained.\nOnly initial native UI/input fixtures and expected GUI\ntimer/key-event callbacks are supplied; all Game changes come from real APIs.\nDoes not execute entry, display conversion, audio device IO or USB, and does\nnot measure physical FPS. The timer callback returns controlled milliseconds.\n"
+    },
+    {
+      "path": "provenance/verification/v0.30/cast-order-host.json",
+      "source": "build/v031/cast-order-run8/verification.json",
+      "sha256": "53f8fad322a55cff42d35dfdf595f197092f92f171a783b99ddde98869bf1a7c",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [
+        "game/match_history.c"
+      ],
+      "scope": "Actual C spell/item orders on compiled Source navigation and bounded real LOS fixtures. Host only."
+    },
+    {
+      "path": "provenance/verification/v0.30/tp-slot-host.json",
+      "source": "build/next/tp-slot-test-7/verification.json",
+      "sha256": "3edf1e5f19e91223d94f01cb491b1db5adf52859d616b811d8de24efda48954c",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [
+        "game/cast_order.c",
+        "game/match_history.c",
+        "tests/verify_tp_slot.py"
+      ],
+      "scope": "Actual game/Steam item provider TP slot, courier, channel and self-target tests. Host only."
+    },
+    {
+      "path": "provenance/verification/v0.30/match-history-host.json",
+      "source": "build/tests/match-history/run-3/verification.json",
+      "sha256": "6a4203411ade3290378d3693abda130515e8d50fbec32c04e0036f5312a92960",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": "Actual match_history+match_storage C with explicit item/owner capture fixtures and injectable host file services; not the complete gameplay, renderer, firmware or device."
+    },
+    {
+      "path": "provenance/verification/v0.30/match-storage-mips.json",
+      "source": "build/v030/features-match-storage-mips-final/verification.json",
+      "sha256": "5720e4bc7b1207b894fb95ad9a39ac89d52abc37592fbc7af07d987073b571f8",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": "Execute the exact BDA's match persistence on a modeled writable H1 filesystem.\n\nNo application entry, LCD/audio, physical USB or device filesystem is accessed.\nCompleted games are explicit initial fixtures; this is not a played victory.\n"
+    },
+    {
+      "path": "provenance/verification/v0.30/match-ui-host.json",
+      "source": "build/v030/features-match-ui-2/verification.json",
+      "sha256": "74996339aaa914343a64821d931b649e05fb315310f8cf05d191e09d7aad774d",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": "Actual C result/history renderer and native keyboard/touch; local fixtures only."
+    },
+    {
+      "path": "provenance/verification/v0.30/physical-tree-offline-layout.json",
+      "source": "build/v030/features-physical-tree-offline/verification.json",
+      "sha256": "959716dd4f2b6762b3711b32c178b9c745e84d93959ee95c4d950c4f337385be",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": null
+    },
+    {
+      "path": "provenance/verification/v0.30/mass-storage-install.json",
+      "source": "build/v030/device/mass-storage-install.json",
+      "sha256": "9aec40ebbf5ab9e8ae3a8d12b975b268e4186c63e21933933aa1533581f8259c",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": null
+    },
+    {
+      "path": "provenance/verification/v0.30/features-mass-storage-install.json",
+      "source": "build/v030/device/features-mass-storage-install.json",
+      "sha256": "25bd1ead886b4f2fd9f3e7b4f311d797962bd75173a7282dd04c4ce62a615c77",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": null
+    },
+    {
+      "path": "provenance/verification/v0.30/old-assets-removal.json",
+      "source": "build/v030/device/old-assets-removal.json",
+      "sha256": "4a6733443b1472d0b96d7addb1569e0eb0a28c4fdae9bb3cb86861ebc5e5ab1e",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": null
+    },
+    {
+      "path": "provenance/verification/v0.30/old-backup-removal.json",
+      "source": "build/v030/device/old-backup-removal.json",
+      "sha256": "a1f300512624ef6a49f8025d131958ae9078f193b58bc93a0ce064fa7ddc34f9",
+      "copy_byte_identical": true,
+      "passed_when_run": null,
+      "current_source_mismatches": [],
+      "scope": null
+    },
+    {
+      "path": "provenance/verification/v0.30/candidate-build.json",
+      "source": "build/v030/features-candidate2/DOTA2.build.json",
+      "sha256": "5ddd784a31846e3d0d59cbc6e3a0d8d65896d8facf2454dd8e2083eb9808f742",
+      "copy_byte_identical": true,
+      "passed_when_run": null,
+      "current_source_mismatches": [],
+      "scope": "Recompiled current sources, BDA envelope and actual ELF payload/ABI/RAM. Release SHA is checked when pinned. No emulator, firmware or device was executed by this tool."
+    },
+    {
+      "path": "provenance/verification/v0.30/cast-order-host-final.json",
+      "source": "build/v030/features-cast-order-final/verification.json",
+      "sha256": "f03226b3bc8ce3a2623b6b33732ac37f520b40e7c4590cd46127f4b0157e0454",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": "Final existing host test rebound to final current sources."
+    },
+    {
+      "path": "provenance/verification/v0.30/tp-slot-host-final.json",
+      "source": "build/v030/features-tp-slot-host-final/verification.json",
+      "sha256": "1c23da4997432ae9d408129a7f618a99368a0ed25ce2a909c6d0511a52435903",
+      "copy_byte_identical": true,
+      "passed_when_run": true,
+      "current_source_mismatches": [],
+      "scope": "Final existing host test rebound to final current sources."
+    }
+  ],
+  "scope": "Unmodified reports. Earlier module-host reports retain their own build-time identity; mismatches above are disclosed. Exact candidate MIPS and current renderer/UI reports are separate. Mass-storage installation is not a game execution test."
+}

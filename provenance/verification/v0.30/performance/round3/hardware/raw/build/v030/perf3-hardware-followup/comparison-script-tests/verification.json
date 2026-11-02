@@ -1,0 +1,171 @@
+{
+  "passed": true,
+  "fixture_only": true,
+  "physical_h1_tested": false,
+  "USB_opened": false,
+  "comparison_script_sha256": "03082f0ce97bf2f0986f5729de66b7b9a9b8c864eadba6779c14842cadec3be8",
+  "test_script_sha256": "3bb743983714a6b4b4dbf49ff09d69459c41ceca3a978b4b63921ec592593767",
+  "original_report_sha256": "e333700466aaacc0408658d715cb5792c653aa7c2826092d3011d9ef58b54656",
+  "cases": [
+    {
+      "name": "matching-observations-fixture",
+      "passed": true,
+      "acceptance": {
+        "comparison_valid": true,
+        "baseline_health": true,
+        "candidate_health": true,
+        "all_live_windows_at_requested_min_fps": null,
+        "requested_min_fps": null,
+        "performance_gain_required": null
+      },
+      "unknowns": []
+    },
+    {
+      "name": "benign-observed-menu-counter-difference",
+      "passed": true,
+      "acceptance": {
+        "comparison_valid": true,
+        "baseline_health": true,
+        "candidate_health": true,
+        "all_live_windows_at_requested_min_fps": null,
+        "requested_min_fps": null,
+        "performance_gain_required": null
+      },
+      "unknowns": []
+    },
+    {
+      "name": "mismatched-lineup",
+      "passed": true,
+      "acceptance": {
+        "comparison_valid": false,
+        "baseline_health": true,
+        "candidate_health": true,
+        "all_live_windows_at_requested_min_fps": null,
+        "requested_min_fps": null,
+        "performance_gain_required": null
+      },
+      "unknowns": []
+    },
+    {
+      "name": "mismatched-driver",
+      "passed": true,
+      "acceptance": {
+        "comparison_valid": false,
+        "baseline_health": true,
+        "candidate_health": true,
+        "all_live_windows_at_requested_min_fps": null,
+        "requested_min_fps": null,
+        "performance_gain_required": null
+      },
+      "unknowns": []
+    },
+    {
+      "name": "mismatched-window-order",
+      "passed": true,
+      "acceptance": {
+        "comparison_valid": false,
+        "baseline_health": true,
+        "candidate_health": true,
+        "all_live_windows_at_requested_min_fps": null,
+        "requested_min_fps": null,
+        "performance_gain_required": null
+      },
+      "unknowns": []
+    },
+    {
+      "name": "forged-resource-delta",
+      "passed": true,
+      "acceptance": {
+        "comparison_valid": false,
+        "baseline_health": true,
+        "candidate_health": true,
+        "all_live_windows_at_requested_min_fps": null,
+        "requested_min_fps": null,
+        "performance_gain_required": null
+      },
+      "unknowns": []
+    },
+    {
+      "name": "wrong-fps-arithmetic",
+      "passed": true,
+      "acceptance": {
+        "comparison_valid": false,
+        "baseline_health": true,
+        "candidate_health": true,
+        "all_live_windows_at_requested_min_fps": null,
+        "requested_min_fps": null,
+        "performance_gain_required": null
+      },
+      "unknowns": []
+    },
+    {
+      "name": "audio-stopped",
+      "passed": true,
+      "acceptance": {
+        "comparison_valid": true,
+        "baseline_health": true,
+        "candidate_health": false,
+        "all_live_windows_at_requested_min_fps": null,
+        "requested_min_fps": null,
+        "performance_gain_required": null
+      },
+      "unknowns": []
+    },
+    {
+      "name": "resource-cleanup-leak",
+      "passed": true,
+      "acceptance": {
+        "comparison_valid": true,
+        "baseline_health": true,
+        "candidate_health": false,
+        "all_live_windows_at_requested_min_fps": null,
+        "requested_min_fps": null,
+        "performance_gain_required": null
+      },
+      "unknowns": []
+    },
+    {
+      "name": "missing-audio-remains-unknown",
+      "passed": true,
+      "acceptance": {
+        "comparison_valid": false,
+        "baseline_health": true,
+        "candidate_health": null,
+        "all_live_windows_at_requested_min_fps": null,
+        "requested_min_fps": null,
+        "performance_gain_required": null
+      },
+      "unknowns": [
+        "candidate fresh-fountain-play after audio unavailable"
+      ]
+    },
+    {
+      "name": "missing-cleanup-remains-unknown",
+      "passed": true,
+      "acceptance": {
+        "comparison_valid": true,
+        "baseline_health": true,
+        "candidate_health": null,
+        "all_live_windows_at_requested_min_fps": null,
+        "requested_min_fps": null,
+        "performance_gain_required": null
+      },
+      "unknowns": [
+        "candidate after_exit missing"
+      ]
+    },
+    {
+      "name": "explicit-unmet-fps-threshold",
+      "passed": true,
+      "acceptance": {
+        "comparison_valid": true,
+        "baseline_health": true,
+        "candidate_health": true,
+        "all_live_windows_at_requested_min_fps": false,
+        "requested_min_fps": 999,
+        "performance_gain_required": null
+      },
+      "unknowns": []
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "source_current": true,
+  "source_sha256": {
+    "platform\\resource_pack.c": "1f6055feaed69e98be1a0dbfb1ce70c59dde1e0104e7b93312d63edfa52e8aac",
+    "platform\\resource_pack.h": "68338a7cc10ffdab1a48a5a94dc3a621aef0d683d568a63c5914b101e0301459",
+    "tests\\replay_resource_cache_plan.c": "f7a6505d13328d941c57cdf7c76b839ce32a0868c4c33f3a1f127c100f314637",
+    "tests\\verify_resource_read_cache_plan.py": "cd271375d4c3fa91c2c30caa5a85207f0b2dba2cfd3957d00641860cf7be552d"
+  },
+  "physical_h1_tested": false,
+  "USB_opened": false,
+  "full_returned_byte_equivalence": true,
+  "stats_equal_fixed_i8_c4": true,
+  "plan_sha256": "0ea971efbd300c14014d22fd73b76b4ac198683e7d9d87f4bc5947c52c4c525d",
+  "matrix_sha256": "29656c3504117d012e5e92bfa32b5a9e8dc33cc9c9a43700f0b549d1e4e5ce15",
+  "pack_sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153",
+  "results": [
+    {
+      "phase": 0,
+      "requests": 1569,
+      "canonical_bytes": 14389770,
+      "seeks": 300,
+      "physical_reads": 845,
+      "physical_bytes": 3358076,
+      "index_hits": 6101,
+      "index_misses": 13,
+      "chunk_hits": 2386,
+      "chunk_misses": 1864,
+      "decoded_chunks": 1735,
+      "decoded_bytes": 10787278,
+      "heap_bytes": 301648
+    },
+    {
+      "phase": 1,
+      "requests": 130,
+      "canonical_bytes": 1206023,
+      "seeks": 209,
+      "physical_reads": 282,
+      "physical_bytes": 1845248,
+      "index_hits": 1204,
+      "index_misses": 96,
+      "chunk_hits": 0,
+      "chunk_misses": 650,
+      "decoded_chunks": 520,
+      "decoded_bytes": 1204983,
+      "heap_bytes": 301648
+    },
+    {
+      "phase": 2,
+      "requests": 90,
+      "canonical_bytes": 1092759,
+      "seeks": 117,
+      "physical_reads": 178,
+      "physical_bytes": 937484,
+      "index_hits": 822,
+      "index_misses": 26,
+      "chunk_hits": 2,
+      "chunk_misses": 423,
+      "decoded_chunks": 347,
+      "decoded_bytes": 1126711,
+      "heap_bytes": 301648
+    }
+  ],
+  "limitations": "No physical H1 timing or streaming audio is simulated. Canonical bytes and reader counters only; optional heap descriptors add a small amount beyond fixed-slot matrix."
+}

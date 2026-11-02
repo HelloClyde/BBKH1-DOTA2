@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "verified_raw_files": 73,
+  "verified_raw_bytes": 3319551,
+  "historical_round3_offline_evidence_unchanged": true,
+  "installed_C8_metadata_and_current_pointers_consistent": true,
+  "compiled_inputs_unchanged": true,
+  "full_feature_acceptance_complete": false
+}

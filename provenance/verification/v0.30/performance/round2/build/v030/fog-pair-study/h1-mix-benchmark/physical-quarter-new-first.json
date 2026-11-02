@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "result": {
+    "state": 5,
+    "image_size": 1888,
+    "memory_size": 26480,
+    "entry_offset": 0,
+    "upload_crc": 883978488,
+    "written": 1888,
+    "runs": 4,
+    "flags": 0,
+    "start_tick": 315840,
+    "end_tick": 315873,
+    "budget_ticks": 160,
+    "opcode": 1,
+    "arg_size": 4,
+    "output_size": 80,
+    "return_value": 0,
+    "flag_names": [],
+    "elapsed_ticks": 33,
+    "tick_units": "raw uncalibrated device ticks",
+    "host_elapsed_seconds": 0.8743316000327468,
+    "host_elapsed_includes_usb_and_polling": true,
+    "execution_returned": true,
+    "output_sha256": "627ee9d98f5babc1c3531bb74b1e528a2d46a3b9801d859dbe2910c14f76c5ae"
+  },
+  "output": {
+    "bytes": 80,
+    "sha256": "627ee9d98f5babc1c3531bb74b1e528a2d46a3b9801d859dbe2910c14f76c5ae",
+    "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\fog-pair-study\\h1-mix-benchmark\\quarter-new-first.bin"
+  }
+}

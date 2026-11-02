@@ -1,0 +1,71 @@
+{
+  "format": "DOTA2H1R",
+  "version": 1,
+  "file_bytes": 112861448,
+  "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153",
+  "header_crc32": "c8b81655",
+  "section_table_crc32": "98a88eaa",
+  "unique_chunks": 179920,
+  "chunk_directory_pages": 352,
+  "max_canonical_chunk_bytes": 16384,
+  "chunk_record_bytes": 20,
+  "span_record_bytes": 12,
+  "guide_entry_bytes": 24,
+  "guides_and_pages": "RAW, page CRC checked; no whole-directory heap requirement",
+  "streams": [
+    {
+      "id": 0,
+      "name": "SCENE.H1P",
+      "raw_contiguous": false,
+      "logical_bytes": 406028212,
+      "logical_crc32": "6bf5d6e1",
+      "logical_sha256": "c312840584571c0958b8409da729ea945ecbf557a55ab6030ff0d2d9cbef78dd",
+      "span_count": 237494,
+      "span_pages": 232,
+      "raw_physical_offset": 0,
+      "raw_stored_bytes": 0
+    },
+    {
+      "id": 1,
+      "name": "SOUND.H1A",
+      "raw_contiguous": true,
+      "logical_bytes": 10226944,
+      "logical_crc32": "beb7396d",
+      "logical_sha256": "a2be46eb35f2a86a483d154332aeb9cf44f3a24b6427e52e7a5619df01283d30",
+      "span_count": 0,
+      "span_pages": 0,
+      "raw_physical_offset": 6504448,
+      "raw_stored_bytes": 10226944
+    },
+    {
+      "id": 2,
+      "name": "VISION.H1V",
+      "raw_contiguous": false,
+      "logical_bytes": 139328,
+      "logical_crc32": "ba5fd594",
+      "logical_sha256": "f23c061e9735e02bd098fe49adb723c56641c7ab0cc946e97b82c44ef9e7dc28",
+      "span_count": 9,
+      "span_pages": 1,
+      "raw_physical_offset": 0,
+      "raw_stored_bytes": 0
+    },
+    {
+      "id": 3,
+      "name": "TREE.H1T",
+      "raw_contiguous": false,
+      "logical_bytes": 50343158,
+      "logical_crc32": "b8ca152f",
+      "logical_sha256": "129200c5bdfc8c0f7c75d64b34a3e025c03b4244fea75c89a80c215420248256",
+      "span_count": 3267,
+      "span_pages": 4,
+      "raw_physical_offset": 0,
+      "raw_stored_bytes": 0
+    }
+  ],
+  "codecs": {
+    "1": 116713,
+    "2": 38546,
+    "0": 24661
+  },
+  "specification": "tools/resource_pack_format.md"
+}

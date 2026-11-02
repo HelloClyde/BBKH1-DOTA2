@@ -6,15 +6,18 @@
 | --- | --- |
 | H1 SDK | `sdk/` 固定提交 `067fe072477861dfc8949d7b1a55279fb92d2548`，上游 [MrDefinition1999/bbk-h1-bda-sdk](https://github.com/MrDefinition1999/bbk-h1-bda-sdk)；保持 Apache-2.0，见 SDK 自身 LICENSE / NOTICE |
 | 精确 RGB565 MXU 内核 | `platform/dota_mxu_exact.h` 基于原工作区 `h1-arcade/src/mxu.S` 的 GPL-2.0-or-later 叶函数，增加与应用原转色一致的位复制；保留原来源和许可注释。指令编码参考 Ingenic XBurst MXU ISA 手册 |
+| 资源解码器 miniz | [richgel999/miniz 3.1.0](https://github.com/richgel999/miniz/tree/3.1.0) 的低层tinfl，保持MIT许可；原文件身份与H1无标准库适配说明见 `third_party/miniz/UPSTREAM.json`，完整许可见 [third_party/miniz/LICENSE](third_party/miniz/LICENSE)。原版权包括RAD Game Tools、Valve Software、Rich Geldreich及Tenacious Software LLC；此代码许可不授权Valve游戏素材 |
 | Dota 2 图像、地图、模型、动画、音乐、音效及转换结果 | Valve Corporation；本机 Steam 安装及早期官方 CDN。包括运行包、嵌入图标与展示截图中的游戏内容；不适用本项目 GPL，也不因转换而成为本项目原创素材 |
 | 位图字形 | Microsoft YaHei 6.31（Microsoft / 北京北大方正电子）和 Consolas 7.00（Microsoft）生成的子集；原 TTF/TTC 未复制，**项目未另获或确立位图子集再分发授权**，不标为 OFL；详见 [licenses/FONT-NOTICE.md](licenses/FONT-NOTICE.md) |
 | 历史导出工具 | Source 2 Viewer / ValveResourceFormat 20.1，MIT；工具许可不延伸到 Valve 游戏资产，普通 BDA 构建不运行该工具 |
 
-Steam 来源包括 `pak01_dir.vpk`、`maps/dota.vpk` 及原编译材质/音频条目。运行资源 `SCENE.H1P`、`SOUND.H1A`、`MAP12.H1C` 通过 Git LFS 保存，其文件身份见 `assets/runtime/manifest.json`。素材包包含 Valve 派生素材，其中 `SCENE.H1P` 还包含 Microsoft 字体生成的装备字形。
+Steam来源包括 `pak01_dir.vpk`、`maps/dota.vpk` 及原编译材质/音频条目。v0.30运行资源为Git LFS保存的单个 `DOTA2.H1R`（112,861,448字节），文件与四个逻辑流身份见 `assets/runtime/manifest.json`。SCENE、SOUND、VISION及TREE内容保留各自原始来源，其中SCENE逻辑流仍包含Microsoft字体生成的装备字形。无损重包、去重与移除重复MAP12副本不改变任何第三方权属。
 
-v0.28 的 `VISION.H1V` 从原地图高度与树木记录派生；禁插眼区域另从同地图五个 `trigger_no_wards` 的原 PHYS 凸包派生为二维放置数据。这些小型派生数据和来源快照也保留 Valve 权属，项目 GPL 不对其重新授权。具体来源、投影与引擎近似边界见 [assets/NOTICE.md](assets/NOTICE.md)。
+v0.28引入、现位于统一包内的VISION逻辑流从原地图高度与树木记录派生；禁插眼区域另从同地图五个 `trigger_no_wards` 的原PHYS凸包派生为二维放置数据。这些小型派生数据和来源快照也保留Valve权属，项目GPL不对其重新授权。具体来源、投影与引擎近似边界见 [assets/NOTICE.md](assets/NOTICE.md)。
 
-v0.29的 `TREE.H1T` 由同一原地图的树体、树桩模型与无树背景离线渲染，保留原素材权属。作者HelloClyde负责本项目的独立H1适配与自有代码；此署名不表示拥有Dota 2原地图、模型、动画、声音或其他Valve内容。
+v0.29的树体、树桩与无树背景由同一原地图素材离线渲染；v0.30将树层无损改为稀疏表示并收入TREE逻辑流，保留原素材权属。作者HelloClyde负责本项目的独立H1适配与自有代码；此署名不表示拥有Dota 2原地图、模型、动画、声音或其他Valve内容。
+
+v0.30的施法订单、物品输入、十人结算和存档为本项目独立C实现。MVP采用明示的本地贡献公式，不是Valve的评分算法或服务。新增历史界面复用原英雄/装备图标；本轮只追加4个位图字形，原672条记录不变，现676字形的来源见 `docs/provenance/fonts-v0.30.json`。新增界面和记录功能不改变上述素材或字形的权属。
 
 背景音乐与音效经解码、转换采样和分块；模型、贴图、动画与地图经离线预渲染。这些处理不改变原素材的权属，不表示本项目已获得 Valve 的独立再授权，也不表示完整 Source 2 引擎已移植。
 

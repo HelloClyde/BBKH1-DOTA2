@@ -1,0 +1,32 @@
+{
+  "ready": true,
+  "scope": "Offline container producer/source receipts only; native and H1 acceptance separate",
+  "format_version": 1,
+  "original_audit_head": "76d16e7ebf9a146c2add0401b892352b295517f1",
+  "physical_h1_tested": false,
+  "native_runtime_tested": false,
+  "final_pack": {
+    "path": "build/v030/repack-tile/DOTA2.H1R",
+    "bytes": 112861448,
+    "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153"
+  },
+  "files": {
+    "provenance/resource-v030/build-manifest.json": "0a075731be131beddbb612555e275854247270d2ef1001f6cedd73dcf73c3d63",
+    "provenance/resource-v030/copy-receipts.json": "241510425e4a687f8b8c57f156fe3fca136da29ba9327700d9343ed90a8a4299",
+    "provenance/resource-v030/deduplication.json": "ead714493f0e620ad4ad104de50a95338a170eb36dd811ac25642fe2fd6c0d24",
+    "provenance/resource-v030/index-summary.json": "fbf88a393c354dcecc24f1851f9d9cea85c15be9e14616dfef832b204de12bef",
+    "provenance/resource-v030/legacy-runtime-manifest.json": "eb08db4ae87a0761b382e8d6a588f646d6affc333504b563ee02ce88826a6198",
+    "provenance/resource-v030/producer-contract-verification.json": "16bce0ca46d28ec5c49b26ea567fea1e7a7707d8a40ca8a4ead5b342423199aa",
+    "provenance/resource-v030/README.md": "73c03502c58fec693c70b4d1b4c1fe15bb0268cd1814f3b6c4689075f97c4d3d",
+    "provenance/resource-v030/reproduction.json": "514b3878b9a2810df7cd3b853962175ebe90a6f07b77afad813fab9add541588",
+    "provenance/resource-v030/scene-v029.json": "21ab9fb21b0ea0c95e90c87f5c039cd87f6e324de6e298225555726d2488f76c",
+    "provenance/resource-v030/source-packages.json": "eb1a58b027cffe4226ad5cae495aacd0d65c7a2006e2f6101814acbc1f02a886",
+    "provenance/resource-v030/tree-sparse-manifest.json": "c0b45471c3a00b91e518afa0cc80e8a31e44799cc5e2a872827585ee4fb8c2e0",
+    "docs/RESOURCE-REPACK-v0.30.md": "aed92228e331baae77827a31df7c5b571190bb156b666d88efaf8c655c6442cd"
+  },
+  "producer_sources": {
+    "tools/repack_resources.py": "d9656946e4cc45bbc34608f3ab60e22da98f42c01f51bb4ea31f9313e48e62f1",
+    "tools/pack_tree_sparse.py": "41f49fc2173e54cb211c04fa33623e5ae8fd33173c002add057821297370b0ff",
+    "tools/resource_pack_format.md": "e8bb343bb3755d73a32f1a98f6d5ffd3773988645fb9d7d0f1363b5eae1d3db9"
+  }
+}

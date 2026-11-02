@@ -129,6 +129,8 @@ int bs_initialize(void);
  * directory. Zero releases optional allocations and returns to static caches.
  * Calls invalidate cached pixels, never change baked pixels/animation timing. */
 unsigned bs_reserve_cache(unsigned sprite_bytes);
+/* Optional working sets; call after mandatory app allocations. Zero releases. */
+unsigned bs_reserve_sprite_row_cache(unsigned slots);
 /* Optional startup-only warmup. Returns the complete fountain frame count,
  * or0 without claiming a warm cache when storage/slots/directory are missing,
  * the cache is already populated, or the payload is not one aligned run.

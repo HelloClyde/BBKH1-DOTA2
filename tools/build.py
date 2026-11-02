@@ -10,7 +10,7 @@ def main():
  require(not out.exists(),'Choose a new output directory; existing build is preserved')
  cc=find_tool(a.toolchain,'gcc');objcopy=find_tool(a.toolchain,'objcopy');compiler=run([cc,'--version']).splitlines()[0]
  require('15.2.0' in compiler,'Exact-reference builds require GNU MIPS GCC15.2.0')
- flags=['-DDOTA_BAKED','-EL','-march=mips32','-mabi=32','-msoft-float','-mno-abicalls','-G0','-fno-pic','-O2','-g','-std=c99','-ffreestanding','-fno-builtin','-fno-stack-protector','-ffunction-sections','-fdata-sections','-Wall','-Wextra',f'-ffile-prefix-map={ROOT}=bbk-h1/h1-dota2',f'-fdebug-prefix-map={ROOT}=bbk-h1/h1-dota2']
+ flags=['-DDOTA_BAKED','-DDOTA_RESOURCE_PACK','-EL','-march=mips32','-mabi=32','-msoft-float','-mno-abicalls','-G0','-fno-pic','-O2','-g','-std=c99','-ffreestanding','-fno-builtin','-fno-stack-protector','-ffunction-sections','-fdata-sections','-Wall','-Wextra',f'-ffile-prefix-map={ROOT}=bbk-h1/h1-dota2',f'-fdebug-prefix-map={ROOT}=bbk-h1/h1-dota2']
  for folder in (ROOT/'game',ROOT/'platform',ROOT/'private/generated',SDK/'sdk/include'):flags+=['-I',str(folder)]
  out.mkdir(parents=True);commands=[]
  def compile_one(source):

@@ -4,6 +4,10 @@
 #include "map_sidecar_format.h"
 #include "sight.h"
 #include <stddef.h>
+#ifdef DOTA_RESOURCE_PACK
+#include "resource_pack.h"
+static ResourceFile *vision_resource;
+#endif
 #ifdef BAKED_IO_HOST
 #include <stdio.h>
 typedef FILE VisionFile;
@@ -32,6 +36,9 @@ static void *vision_memory;
 static DotaVisionAssetStats vision_stats;
 const DotaVisionAssetStats *vision_assets_stats(void){return &vision_stats;}
 void vision_assets_close(void){
+#ifdef DOTA_RESOURCE_PACK
+    if(vision_resource){(void)resource_close(vision_resource);vision_resource=0;++vision_stats.closes;}
+#endif
     dota_sight_detach();cache_memory_free(vision_memory);vision_memory=0;
     vision_stats.ready=0;vision_stats.heap_bytes=0;vision_stats.released=1;
 }
@@ -45,7 +52,11 @@ static int vision_fail(unsigned reason){
 }
 static int vision_read(VisionFile *file,unsigned char *out,unsigned bytes){
     while(bytes){unsigned want=bytes>65536u?65536u:bytes,got;++vision_stats.read_requests;
-        got=vread(file,out,want);if(!got||got>want)return 0;
+#ifdef DOTA_RESOURCE_PACK
+        if(vision_resource)got=resource_read(vision_resource,out,want);else
+#endif
+        got=vread(file,out,want);
+        if(!got||got>want)return 0;
         vision_stats.bytes_read+=got;out+=got;bytes-=got;
     }return 1;
 }
@@ -53,10 +64,19 @@ int vision_assets_open(const char *path){
     static const uint32_t fields[16]={0x31563148u,1u,64u,4096u,256u,16u,64u,131072u,131136u,8192u,139264u,VISION_EXPECTED_PAYLOAD_CRC32,4u,VISION_EXPECTED_TREE_RECORDS,VISION_EXPECTED_UNKNOWN_HEIGHT_CELLS,0u};
     VisionFile *file;unsigned char header[VISION_HEADER_BYTES],*payload;unsigned i,workspace,reason=VISION_OK,unknown=0;int bytes;
     vision_assets_close();++vision_stats.open_attempts;vision_stats.last_reason=VISION_OK;vision_stats.payload_crc32=0;vision_stats.released=0;
-    file=path&&*path?vopen(path):0;if(!file)return vision_fail(VISION_MISSING);
-    bytes=vsize(file);
+    file=path&&*path?vopen(path):0;
+#ifdef DOTA_RESOURCE_PACK
+    if(!path||!*path){vision_resource=resource_open(RESOURCE_VISION);if(!vision_resource)return vision_fail(VISION_MISSING);bytes=(int)resource_size(vision_resource);}
+    else
+#endif
+    {if(!file)return vision_fail(VISION_MISSING);bytes=vsize(file);}
     if(bytes!=(int)(VISION_HEADER_BYTES+VISION_PAYLOAD_BYTES)){reason=bytes<0?VISION_IO:VISION_HEADER;goto done;}
-    if(!vrewind(file)||!vision_read(file,header,sizeof(header))){reason=VISION_IO;goto done;}
+#ifdef DOTA_RESOURCE_PACK
+    if(vision_resource){if(resource_seek(vision_resource,0,0)!=0){reason=VISION_IO;goto done;}}
+    else
+#endif
+    if(!vrewind(file)){reason=VISION_IO;goto done;}
+    if(!vision_read(file,header,sizeof(header))){reason=VISION_IO;goto done;}
     for(i=0;i<16u;++i)if(mapc_get32(header+i*4u)!=fields[i]){reason=VISION_HEADER;goto done;}
     workspace=dota_sight_workspace_bytes();
     if(!workspace||workspace>2u*1024u*1024u){reason=VISION_MEMORY;goto done;}
@@ -74,8 +94,19 @@ int vision_assets_open(const char *path){
     if(unknown!=VISION_EXPECTED_UNKNOWN_HEIGHT_CELLS){reason=VISION_HEADER;goto done;}
     if(!dota_sight_attach((const int16_t *)payload,payload+VISION_HEIGHT_BYTES,payload+VISION_PAYLOAD_BYTES,workspace)){reason=VISION_ATTACH;goto done;}
 done:
-    ++vision_stats.closes;if(vclose(file)!=0)reason=VISION_IO;
+    ++vision_stats.closes;
+#ifdef DOTA_RESOURCE_PACK
+    if(vision_resource){if(resource_close(vision_resource)!=0)reason=VISION_IO;vision_resource=0;}
+    else
+#endif
+    if(vclose(file)!=0)reason=VISION_IO;
     if(reason!=VISION_OK)return vision_fail(reason);
     vision_stats.ready=1;vision_stats.released=0;return 1;
 }
-int vision_assets_open_default(void){return vision_assets_open("B:\\DOTA2\\VISION.H1V")||vision_assets_open("A:\\DOTA2\\VISION.H1V");}
+int vision_assets_open_default(void){
+#ifdef DOTA_RESOURCE_PACK
+    return vision_assets_open(0);
+#else
+    return vision_assets_open("B:\\DOTA2\\VISION.H1V")||vision_assets_open("A:\\DOTA2\\VISION.H1V");
+#endif
+}

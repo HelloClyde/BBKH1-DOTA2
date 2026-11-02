@@ -1,0 +1,647 @@
+{
+  "schema_version": 1,
+  "version": "0.30",
+  "performance_acceptance_passed": true,
+  "baseline": {
+    "path": "provenance/verification/v0.30/performance/aligned/baseline/verification.json",
+    "sha256": "9c1e9c2e02a103005e2842ae9004c716f94fb008365c45806b392713ccb0687f"
+  },
+  "final": {
+    "path": "provenance/verification/v0.30/performance/aligned/final/verification.json",
+    "sha256": "44c2e65c4f9f6811182c5984d38d16686d3fc760033c12ec337019b48faae85c"
+  },
+  "driver_sha256": "b63ad9d1c2756b7371bc076f9a430dc07cd48ea067ecdd8844d35f7a5caaf950",
+  "menu_frame": 320,
+  "lineup_hero_ids": [
+    0,
+    3,
+    6,
+    8,
+    4,
+    1,
+    2,
+    7,
+    5,
+    9
+  ],
+  "profiles": [
+    {
+      "name": "menu",
+      "baseline": {
+        "fps": 18.48151848144755,
+        "frames": 148,
+        "seconds": 8.008000000030734,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 131,
+          "bytes_returned": 1013658,
+          "physical_reads": 661,
+          "physical_bytes": 1849663,
+          "seeks": 478,
+          "index_hits": 869,
+          "index_misses": 129,
+          "chunk_hits": 0,
+          "chunk_misses": 499,
+          "decoded_chunks": 400,
+          "decoded_bytes": 881786,
+          "service_calls": 500,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 18.33946728218773,
+        "frames": 147,
+        "seconds": 8.015499999979511,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 132,
+          "bytes_returned": 1019420,
+          "physical_reads": 310,
+          "physical_bytes": 2217984,
+          "seeks": 221,
+          "index_hits": 877,
+          "index_misses": 131,
+          "chunk_hits": 0,
+          "chunk_misses": 504,
+          "decoded_chunks": 404,
+          "decoded_bytes": 887540,
+          "service_calls": 505,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": -0.7686121646466315
+    },
+    {
+      "name": "fresh-fountain-play",
+      "baseline": {
+        "fps": 11.851297405184802,
+        "frames": 95,
+        "seconds": 8.01600000000326,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 86,
+          "bytes_returned": 464317,
+          "physical_reads": 385,
+          "physical_bytes": 1262527,
+          "seeks": 270,
+          "index_hits": 434,
+          "index_misses": 91,
+          "chunk_hits": 1,
+          "chunk_misses": 262,
+          "decoded_chunks": 210,
+          "decoded_bytes": 340157,
+          "service_calls": 263,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 12.86213786218199,
+        "frames": 103,
+        "seconds": 8.007999999972526,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 84,
+          "bytes_returned": 451645,
+          "physical_reads": 185,
+          "physical_bytes": 1346372,
+          "seeks": 133,
+          "index_hits": 430,
+          "index_misses": 81,
+          "chunk_hits": 1,
+          "chunk_misses": 255,
+          "decoded_chunks": 205,
+          "decoded_bytes": 331301,
+          "service_calls": 256,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 8.52936537188711
+    },
+    {
+      "name": "same-fountain-paused",
+      "baseline": {
+        "fps": 18.83732534929374,
+        "frames": 151,
+        "seconds": 8.01600000000326,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 18.819717081186845,
+        "frames": 151,
+        "seconds": 8.023499999952037,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": -0.09347541532775949
+    },
+    {
+      "name": "fountain-resumed",
+      "baseline": {
+        "fps": 16.84131736526261,
+        "frames": 135,
+        "seconds": 8.01600000000326,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 17.46615931624243,
+        "frames": 140,
+        "seconds": 8.015500000037719,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 3.7101726511527877
+    },
+    {
+      "name": "mid-camera-first",
+      "baseline": {
+        "fps": 19.710578842307353,
+        "frames": 158,
+        "seconds": 8.01600000000326,
+        "game_ticks": 167,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 20.086083213678794,
+        "frames": 161,
+        "seconds": 8.015500000037719,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 1.905090532224496
+    },
+    {
+      "name": "mid-camera-warm",
+      "baseline": {
+        "fps": 19.231970028081882,
+        "frames": 154,
+        "seconds": 8.007500000006985,
+        "game_ticks": 160,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 48,
+          "bytes_returned": 181423,
+          "physical_reads": 116,
+          "physical_bytes": 192817,
+          "seeks": 65,
+          "index_hits": 156,
+          "index_misses": 4,
+          "chunk_hits": 0,
+          "chunk_misses": 80,
+          "decoded_chunks": 64,
+          "decoded_bytes": 50223,
+          "service_calls": 80,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 19.69338152813984,
+        "frames": 158,
+        "seconds": 8.022999999986496,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 47,
+          "bytes_returned": 178373,
+          "physical_reads": 46,
+          "physical_bytes": 215040,
+          "seeks": 14,
+          "index_hits": 146,
+          "index_misses": 4,
+          "chunk_hits": 0,
+          "chunk_misses": 75,
+          "decoded_chunks": 60,
+          "decoded_bytes": 47181,
+          "service_calls": 75,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 2.399189991374895
+    },
+    {
+      "name": "same-mid-paused",
+      "baseline": {
+        "fps": 20.066055960735643,
+        "frames": 161,
+        "seconds": 8.023499999952037,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 20.086083213678794,
+        "frames": 161,
+        "seconds": 8.015500000037719,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 0.0998066235952999
+    },
+    {
+      "name": "mid-approach-play",
+      "baseline": {
+        "fps": 17.80489323293367,
+        "frames": 143,
+        "seconds": 8.03149999998277,
+        "game_ticks": 160,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 67,
+          "bytes_returned": 251522,
+          "physical_reads": 192,
+          "physical_bytes": 496669,
+          "seeks": 131,
+          "index_hits": 227,
+          "index_misses": 31,
+          "chunk_hits": 0,
+          "chunk_misses": 129,
+          "decoded_chunks": 117,
+          "decoded_bytes": 120354,
+          "service_calls": 129,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 18.838500405375765,
+        "frames": 151,
+        "seconds": 8.015500000037719,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 69,
+          "bytes_returned": 263493,
+          "physical_reads": 88,
+          "physical_bytes": 573440,
+          "seeks": 48,
+          "index_hits": 232,
+          "index_misses": 32,
+          "chunk_hits": 0,
+          "chunk_misses": 132,
+          "decoded_chunks": 120,
+          "decoded_bytes": 128229,
+          "service_calls": 132,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 5.805186017797825
+    },
+    {
+      "name": "post-horn-mid-play",
+      "baseline": {
+        "fps": 14.110889110937523,
+        "frames": 113,
+        "seconds": 8.007999999972526,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 43,
+          "bytes_returned": 434802,
+          "physical_reads": 78,
+          "physical_bytes": 243596,
+          "seeks": 41,
+          "index_hits": 71,
+          "index_misses": 7,
+          "chunk_hits": 0,
+          "chunk_misses": 39,
+          "decoded_chunks": 39,
+          "decoded_bytes": 303730,
+          "service_calls": 39,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 15.220510261407505,
+        "frames": 122,
+        "seconds": 8.015499999979511,
+        "game_ticks": 160,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 41,
+          "bytes_returned": 385712,
+          "physical_reads": 54,
+          "physical_bytes": 241892,
+          "seeks": 18,
+          "index_hits": 57,
+          "index_misses": 5,
+          "chunk_hits": 0,
+          "chunk_misses": 31,
+          "decoded_chunks": 31,
+          "decoded_bytes": 254640,
+          "service_calls": 31,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 7.8635806840116285
+    },
+    {
+      "name": "post-horn-hero-play",
+      "baseline": {
+        "fps": 13.473894329770578,
+        "frames": 108,
+        "seconds": 8.015499999979511,
+        "game_ticks": 162,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 36,
+          "bytes_returned": 146295,
+          "physical_reads": 52,
+          "physical_bytes": 136519,
+          "seeks": 12,
+          "index_hits": 40,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 20,
+          "decoded_chunks": 16,
+          "decoded_bytes": 15191,
+          "service_calls": 20,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 14.208263226753218,
+        "frames": 114,
+        "seconds": 8.023500000010245,
+        "game_ticks": 161,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 36,
+          "bytes_returned": 146200,
+          "physical_reads": 33,
+          "physical_bytes": 135168,
+          "seeks": 1,
+          "index_hits": 40,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 20,
+          "decoded_chunks": 16,
+          "decoded_bytes": 15096,
+          "service_calls": 20,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": 5.4503091608789855
+    },
+    {
+      "name": "post-horn-hero-paused",
+      "baseline": {
+        "fps": 18.588983843850148,
+        "frames": 149,
+        "seconds": 8.015499999979511,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "final": {
+        "fps": 18.48267249452025,
+        "frames": 148,
+        "seconds": 8.007500000006985,
+        "game_ticks": 0,
+        "resource_delta": {
+          "mount_attempts": 0,
+          "open_attempts": 0,
+          "read_requests": 32,
+          "bytes_returned": 131072,
+          "physical_reads": 32,
+          "physical_bytes": 131072,
+          "seeks": 0,
+          "index_hits": 0,
+          "index_misses": 0,
+          "chunk_hits": 0,
+          "chunk_misses": 0,
+          "decoded_chunks": 0,
+          "decoded_bytes": 0,
+          "service_calls": 0,
+          "errors": 0
+        }
+      },
+      "observed_fps_change_percent": -0.5719051144641663
+    }
+  ],
+  "hero_snapshot_positions": {
+    "perf-baseline-aligned": {
+      "fountain-paused-game.bin": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 0
+      },
+      "mid-paused-game.bin": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 0
+      },
+      "post-horn-paused-game.bin": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 1
+      }
+    },
+    "perf-union-aligned": {
+      "fountain-paused-game.bin": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 0
+      },
+      "mid-paused-game.bin": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 0
+      },
+      "post-horn-paused-game.bin": {
+        "x": 373,
+        "y": 3723,
+        "kills": 0,
+        "deaths": 1
+      }
+    }
+  },
+  "audio_errors_underruns_restarts": 0,
+  "resource_errors": 0,
+  "normal_exit_and_cleanup_passed": true,
+  "game_state_ram_writes": 0,
+  "limitations": [
+    "One normal-input run per binary, not repeated statistical trials.",
+    "Equal driver/menu frame/lineup; AI and elapsed ticks are not RAM-forced identical.",
+    "mid-approach is only a fixed-coordinate click, without a continuous position trace; it is not an independent walking benchmark.",
+    "Pause snapshots show fountain coordinates(373,3723), and the last snapshot shows one death in both runs; movement between snapshots is not excluded.",
+    "Post-horn hero window is reported as the sampled fountain camera view.",
+    "Mid-camera is a camera view, not hero walking or a team-fight benchmark.",
+    "Natural first-wave windows only; no late-game or all-scenes >=15FPS claim.",
+    "Resource counters bracket wider sample RPCs than exact FPS counter-read timing.",
+    "Scene render counters reset per frame and are not cumulative I/O deltas.",
+    "RAW sound streaming is included in resource physical-read counters."
+  ],
+  "cpu_slot_comparison": {
+    "path": "provenance/verification/v0.30/performance/cpu-union/verification.json",
+    "sha256": "e7acff40f99beb259c2ba3b2459b59f5c898d6df63707235afc6ee682e2c63cf",
+    "physical_fps": false,
+    "warm_ticks": 2,
+    "measured_ticks": 2,
+    "byte_identical_game_fog_unit_visibility": true,
+    "fountain_reduction_percent": 16.71960145024705,
+    "post_horn_reduction_percent": 12.831745340582907
+  }
+}

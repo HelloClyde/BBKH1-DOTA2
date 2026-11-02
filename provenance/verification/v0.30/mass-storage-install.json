@@ -1,0 +1,23 @@
+{
+  "start_utc": "2026-11-01T08:33:35Z",
+  "transport": "Windows USB mass storage; full SHA256 readback",
+  "old_assets_preserved": true,
+  "files": [
+    {
+      "source": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\assets\\runtime\\DOTA2.H1R",
+      "device_path": "G:\\DOTA2\\DOTA2.H1R",
+      "bytes": 112861448,
+      "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153",
+      "elapsed_seconds": 36.65599999995902
+    },
+    {
+      "source": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v030\\candidate2\\DOTA2.bda",
+      "device_path": "F:\\应用\\程序\\DOTA2.bda",
+      "bytes": 1037600,
+      "sha256": "d852a00c242cc616fe624e06426e182aee2d4d1f3d4ee3950f13790d4a691c8a",
+      "elapsed_seconds": 0.4220000000204891
+    }
+  ],
+  "passed": true,
+  "end_utc": "2026-11-01T08:34:12Z"
+}
