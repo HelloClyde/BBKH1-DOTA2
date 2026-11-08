@@ -3,6 +3,7 @@
 #include "game.h"
 #include "items.h"
 #include "extra_ability.h"
+#include "cast_order.h"
 
 enum { DOTA_INPUT_TARGET_NONE=0,DOTA_INPUT_TARGET_POINT=1,
        DOTA_INPUT_TARGET_ENEMY=2,DOTA_INPUT_TARGET_ANY=3 };
@@ -10,23 +11,7 @@ enum { DOTA_INPUT_TARGET_NONE=0,DOTA_INPUT_TARGET_POINT=1,
 /* Unit-target and point-target inputs deliberately stay separate. Point spells
  * use the clicked terrain position and never magnetize to a nearby enemy. */
 static inline int dota_input_skill_target_kind(const DotaGame *g,int skill){
-    const DotaUnit *u=&g->units[g->player];int h=u->hero_id;
-    if(skill==4){
-        if(!extra_available(g,g->player))return DOTA_INPUT_TARGET_NONE;
-        if(h==DOTA_HERO_NECROPHOS)return DOTA_INPUT_TARGET_ANY;
-        if(h==DOTA_HERO_TIDEHUNTER)return DOTA_INPUT_TARGET_ENEMY;
-        return extra_range(g,g->player)?DOTA_INPUT_TARGET_POINT:DOTA_INPUT_TARGET_NONE;
-    }
-    if((unsigned)skill>=4u||dota_skill_is_passive(h,skill))return DOTA_INPUT_TARGET_NONE;
-    if(h==DOTA_HERO_PUDGE&&skill==3&&dota_hero_has_shard(g,g->player))return DOTA_INPUT_TARGET_ANY;
-    if((h==DOTA_HERO_AXE&&(skill==1||skill==3)) ||
-       (h==DOTA_HERO_LINA&&skill==3) || (h==DOTA_HERO_JUGGERNAUT&&skill==3) ||
-       (h==DOTA_HERO_CRYSTAL_MAIDEN&&skill==1) || (h==DOTA_HERO_SLARK&&skill==2) ||
-       (h==DOTA_HERO_NECROPHOS&&skill==3) || (h==DOTA_HERO_PUDGE&&skill==3) ||
-       (h==DOTA_HERO_SNIPER&&skill==3) || (h==DOTA_HERO_SVEN&&skill==0) ||
-       (h==DOTA_HERO_TIDEHUNTER&&skill==0&&!dota_hero_has_scepter(g,g->player)))return DOTA_INPUT_TARGET_ENEMY;
-    if((h==DOTA_HERO_JUGGERNAUT&&skill==1)||(h==DOTA_HERO_SLARK&&skill==1))return DOTA_INPUT_TARGET_POINT;
-    return dota_skill_cast_range_source(g,g->player,skill)?DOTA_INPUT_TARGET_POINT:DOTA_INPUT_TARGET_NONE;
+    return g?dota_cast_order_skill_kind(g,g->player,skill):DOTA_INPUT_TARGET_NONE;
 }
 static inline int dota_input_skill_unit_valid(const DotaGame *g,int skill,int target){
     const DotaUnit *u;int kind=dota_input_skill_target_kind(g,skill);

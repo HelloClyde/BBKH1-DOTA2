@@ -13,6 +13,8 @@ typedef struct {
  * explicit paths retain standalone fixture support. Game owns all cut bits. */
 int tree_visual_open(const char *path);
 int tree_visual_open_default(void);
+/* Reserve the bounded cut/pick workspace before optional sprite caches. */
+int tree_visual_reserve_work(void);
 void tree_visual_close(void);
 unsigned tree_visual_dynamic_bytes(void);
 int tree_visual_ready(void);

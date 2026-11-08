@@ -297,6 +297,9 @@ int dota_omnislash_phase(const DotaGame *game,int unit_index);
 int dota_unit_invulnerable(const DotaGame *game,int unit_index);
 int dota_skill_mana_cost(const DotaGame *game,int unit_index,int skill);
 int dota_skill_cast_range_source(const DotaGame *game,int unit_index,int skill);
+/* Last movement/attack/targeted cast heading, retained while standing still. */
+void dota_hero_facing(const DotaGame *game,int hero,int *dx,int *dy);
+void dota_hero_face(DotaGame *game,int hero,int x,int y);
 int dota_skill_effect_radius_source(const DotaGame *game,int unit_index,int skill);
 int dota_skill_cooldown_ticks(const DotaGame *game,int unit_index,int skill);
 int dota_effective_armor(const DotaGame *game,int unit_index);

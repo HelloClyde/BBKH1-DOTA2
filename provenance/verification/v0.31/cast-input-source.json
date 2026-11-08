@@ -1,0 +1,1229 @@
+{
+  "passed": true,
+  "scope": "Audit implemented cast inputs against CRC-verified installed Valve KV.\n\nRead-only Steam data; no Dota or H1 execution. Runtime behavior is covered by\ncast_order_test.c and verify_item_input_mips.py, not by this metadata audit.\n",
+  "physical_h1_tested": false,
+  "source_identity": [
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "scripts/npc/heroes/npc_dota_hero_axe.txt",
+      "crc32": "f3327808",
+      "archive_index": 662,
+      "offset": 3183904,
+      "length": 20492,
+      "preload_bytes": 0,
+      "resource_bytes": 20492,
+      "sha256": "c91a8721a951d45c5c010769f68a650474d512819bae6a191306b652c71b999f",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "scripts/npc/heroes/npc_dota_hero_lina.txt",
+      "crc32": "dccc656f",
+      "archive_index": 662,
+      "offset": 4332752,
+      "length": 25255,
+      "preload_bytes": 0,
+      "resource_bytes": 25255,
+      "sha256": "f360660bedce58d9561e0bd92422b1ecef48ba9b9a5c152793f3670b9430c504",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "scripts/npc/heroes/npc_dota_hero_juggernaut.txt",
+      "crc32": "8b659d8d",
+      "archive_index": 662,
+      "offset": 4101552,
+      "length": 31136,
+      "preload_bytes": 0,
+      "resource_bytes": 31136,
+      "sha256": "00260da4289144a9cda71ff0fceffddde5df7d2f86c9edb063fbd5dbafc02469",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "scripts/npc/heroes/npc_dota_hero_crystal_maiden.txt",
+      "crc32": "5cfa340c",
+      "archive_index": 662,
+      "offset": 3499776,
+      "length": 25890,
+      "preload_bytes": 0,
+      "resource_bytes": 25890,
+      "sha256": "829bf43fd2414b591765c3dfb97876936a3b9701f57474535c2e699668474cdb",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "scripts/npc/heroes/npc_dota_hero_slark.txt",
+      "crc32": "ad6a9f91",
+      "archive_index": 662,
+      "offset": 5375584,
+      "length": 18345,
+      "preload_bytes": 0,
+      "resource_bytes": 18345,
+      "sha256": "c3bf34ff95deb386eaa918b14920ecd76b5a2a6060d7c07868ac39b8047cc752",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "scripts/npc/heroes/npc_dota_hero_necrolyte.txt",
+      "crc32": "0ab8df25",
+      "archive_index": 662,
+      "offset": 4700400,
+      "length": 21146,
+      "preload_bytes": 0,
+      "resource_bytes": 21146,
+      "sha256": "bf947f0cd4fbf34360751a57ba0196dcb5ac22ece9e52456822d55c41111854c",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "scripts/npc/heroes/npc_dota_hero_pudge.txt",
+      "crc32": "7882bb85",
+      "archive_index": 662,
+      "offset": 5019008,
+      "length": 22847,
+      "preload_bytes": 0,
+      "resource_bytes": 22847,
+      "sha256": "02699def2c099461c04e39030a0188d29e6bfc63224c695fe41144a3442801f5",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "scripts/npc/heroes/npc_dota_hero_sniper.txt",
+      "crc32": "73b34430",
+      "archive_index": 662,
+      "offset": 5417792,
+      "length": 21319,
+      "preload_bytes": 0,
+      "resource_bytes": 21319,
+      "sha256": "ffa8d1a8132d40f3c48e4a0ff093ee3973dc5b627a9bd370e7273b53afe900db",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "scripts/npc/heroes/npc_dota_hero_sven.txt",
+      "crc32": "5c8368f8",
+      "archive_index": 662,
+      "offset": 5497600,
+      "length": 18915,
+      "preload_bytes": 0,
+      "resource_bytes": 18915,
+      "sha256": "2e82f619775e4b747282ec4150126e56dfbbf898687869c012c2c93c0dac527c",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "scripts/npc/heroes/npc_dota_hero_tidehunter.txt",
+      "crc32": "c5de8172",
+      "archive_index": 662,
+      "offset": 5594880,
+      "length": 24589,
+      "preload_bytes": 0,
+      "resource_bytes": 24589,
+      "sha256": "6f9cbbaabdd03bcdb954cbfea073482cd87bf25a73cb55fbcfbc5793e5ceae90",
+      "crc32_verified": true
+    },
+    {
+      "vpk": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk",
+      "vpk_version": 2,
+      "vpk_tree_sha256": "a597ed7cd514c4283ac0b610898c4e51e19eb7bc04daf3564db0b9d875af0eed",
+      "path": "scripts/npc/items.txt",
+      "crc32": "6fc4c77c",
+      "archive_index": 671,
+      "offset": 36679776,
+      "length": 666552,
+      "preload_bytes": 0,
+      "resource_bytes": 666552,
+      "sha256": "04c432155f6c89c7277a76c8cfb72ff96a6b0d908969a03efc15f41ac1694d6e",
+      "crc32_verified": true
+    }
+  ],
+  "source_parser_sha256": "9bd50ea1785943d891b4676c276648c869226df57daba3721dacfd863a9908c2",
+  "cast_order_sha256": "71412baad4d7b71f9c291804fea4e793409cdf33b81851379cbd907d9299e797",
+  "regular_skills": [
+    {
+      "hero": 0,
+      "slot": 0,
+      "name": "axe_berserkers_call",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+    },
+    {
+      "hero": 0,
+      "slot": 1,
+      "name": "axe_battle_hunger",
+      "kind": 2,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    },
+    {
+      "hero": 0,
+      "slot": 2,
+      "name": "axe_counter_helix",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    },
+    {
+      "hero": 0,
+      "slot": 3,
+      "name": "axe_culling_blade",
+      "kind": 2,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    },
+    {
+      "hero": 1,
+      "slot": 0,
+      "name": "lina_dragon_slave",
+      "kind": 1,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+    },
+    {
+      "hero": 1,
+      "slot": 1,
+      "name": "lina_light_strike_array",
+      "kind": 1,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+    },
+    {
+      "hero": 1,
+      "slot": 2,
+      "name": "lina_fiery_soul",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    },
+    {
+      "hero": 1,
+      "slot": 3,
+      "name": "lina_laguna_blade",
+      "kind": 2,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    },
+    {
+      "hero": 2,
+      "slot": 0,
+      "name": "juggernaut_blade_fury",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+    },
+    {
+      "hero": 2,
+      "slot": 1,
+      "name": "juggernaut_healing_ward",
+      "kind": 1,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+    },
+    {
+      "hero": 2,
+      "slot": 2,
+      "name": "juggernaut_blade_dance",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    },
+    {
+      "hero": 2,
+      "slot": 3,
+      "name": "juggernaut_omni_slash",
+      "kind": 2,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+    },
+    {
+      "hero": 3,
+      "slot": 0,
+      "name": "crystal_maiden_crystal_nova",
+      "kind": 1,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+    },
+    {
+      "hero": 3,
+      "slot": 1,
+      "name": "crystal_maiden_frostbite",
+      "kind": 2,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    },
+    {
+      "hero": 3,
+      "slot": 2,
+      "name": "crystal_maiden_brilliance_aura",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    },
+    {
+      "hero": 3,
+      "slot": 3,
+      "name": "crystal_maiden_freezing_field",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+    },
+    {
+      "hero": 4,
+      "slot": 0,
+      "name": "slark_dark_pact",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    },
+    {
+      "hero": 4,
+      "slot": 1,
+      "name": "slark_pounce",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+    },
+    {
+      "hero": 4,
+      "slot": 2,
+      "name": "slark_saltwater_shiv",
+      "kind": 2,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+    },
+    {
+      "hero": 4,
+      "slot": 3,
+      "name": "slark_shadow_dance",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    },
+    {
+      "hero": 5,
+      "slot": 0,
+      "name": "necrolyte_death_pulse",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    },
+    {
+      "hero": 5,
+      "slot": 1,
+      "name": "necrolyte_ghost_shroud",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    },
+    {
+      "hero": 5,
+      "slot": 2,
+      "name": "necrolyte_heartstopper_aura",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+    },
+    {
+      "hero": 5,
+      "slot": 3,
+      "name": "necrolyte_reapers_scythe",
+      "kind": 2,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    },
+    {
+      "hero": 6,
+      "slot": 0,
+      "name": "pudge_meat_hook",
+      "kind": 1,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    },
+    {
+      "hero": 6,
+      "slot": 1,
+      "name": "pudge_rot",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    },
+    {
+      "hero": 6,
+      "slot": 2,
+      "name": "pudge_flesh_heap",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    },
+    {
+      "hero": 6,
+      "slot": 3,
+      "name": "pudge_dismember",
+      "kind": 2,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    },
+    {
+      "hero": 7,
+      "slot": 0,
+      "name": "sniper_shrapnel",
+      "kind": 1,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    },
+    {
+      "hero": 7,
+      "slot": 1,
+      "name": "sniper_headshot",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    },
+    {
+      "hero": 7,
+      "slot": 2,
+      "name": "sniper_take_aim",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    },
+    {
+      "hero": 7,
+      "slot": 3,
+      "name": "sniper_assassinate",
+      "kind": 2,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+    },
+    {
+      "hero": 8,
+      "slot": 0,
+      "name": "sven_storm_bolt",
+      "kind": 2,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    },
+    {
+      "hero": 8,
+      "slot": 1,
+      "name": "sven_great_cleave",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    },
+    {
+      "hero": 8,
+      "slot": 2,
+      "name": "sven_warcry",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    },
+    {
+      "hero": 8,
+      "slot": 3,
+      "name": "sven_gods_strength",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    },
+    {
+      "hero": 9,
+      "slot": 0,
+      "name": "tidehunter_gush",
+      "kind": 2,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    },
+    {
+      "hero": 9,
+      "slot": 1,
+      "name": "tidehunter_kraken_shell",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    },
+    {
+      "hero": 9,
+      "slot": 2,
+      "name": "tidehunter_anchor_smash",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    },
+    {
+      "hero": 9,
+      "slot": 3,
+      "name": "tidehunter_ravage",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    }
+  ],
+  "acquired_skills": [
+    {
+      "hero": 3,
+      "name": "crystal_maiden_crystal_clone",
+      "kind": 1,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    },
+    {
+      "hero": 4,
+      "name": "slark_depth_shroud",
+      "kind": 1,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+    },
+    {
+      "hero": 5,
+      "name": "necrolyte_death_seeker",
+      "kind": 3,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+    },
+    {
+      "hero": 6,
+      "name": "pudge_eject",
+      "kind": 0,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+    },
+    {
+      "hero": 7,
+      "name": "sniper_concussive_grenade",
+      "kind": 1,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+    },
+    {
+      "hero": 9,
+      "name": "tidehunter_dead_in_the_water",
+      "kind": 2,
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    }
+  ],
+  "mode_note": "Sven Scepter toggles his existing Storm Hammer; Tide Scepter changes Gush to point input. Pudge Shard additionally permits friendly Dismember.",
+  "catalogue_items": 407,
+  "active_items": 115,
+  "checked_items": [
+    {
+      "id": 5,
+      "name": "item_flask",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 6,
+      "name": "item_blink",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT",
+      "team": ""
+    },
+    {
+      "id": 7,
+      "name": "item_overwhelming_blink",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT",
+      "team": ""
+    },
+    {
+      "id": 8,
+      "name": "item_swift_blink",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT",
+      "team": ""
+    },
+    {
+      "id": 9,
+      "name": "item_arcane_blink",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT",
+      "team": ""
+    },
+    {
+      "id": 17,
+      "name": "item_quelling_blade",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+    },
+    {
+      "id": 18,
+      "name": "item_faerie_fire",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 22,
+      "name": "item_moon_shard",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 26,
+      "name": "item_branches",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT",
+      "team": ""
+    },
+    {
+      "id": 43,
+      "name": "item_gem",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE",
+      "team": ""
+    },
+    {
+      "id": 47,
+      "name": "item_magic_stick",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 48,
+      "name": "item_magic_wand",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 49,
+      "name": "item_ghost",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
+      "team": ""
+    },
+    {
+      "id": 50,
+      "name": "item_clarity",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 51,
+      "name": "item_enchanted_mango",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 52,
+      "name": "item_blood_grenade",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 53,
+      "name": "item_dust",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 54,
+      "name": "item_bottle",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 55,
+      "name": "item_ward_observer",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 56,
+      "name": "item_ward_sentry",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 57,
+      "name": "item_tango",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE",
+      "team": "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+    },
+    {
+      "id": 58,
+      "name": "item_tpscroll",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 61,
+      "name": "item_phase_boots",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+      "team": ""
+    },
+    {
+      "id": 75,
+      "name": "item_power_treads",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 78,
+      "name": "item_hand_of_midas",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 85,
+      "name": "item_mekansm",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 89,
+      "name": "item_holy_locket",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 90,
+      "name": "item_pipe",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 91,
+      "name": "item_urn_of_shadows",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES",
+      "team": "DOTA_UNIT_TARGET_TEAM_BOTH"
+    },
+    {
+      "id": 93,
+      "name": "item_sheepstick",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 94,
+      "name": "item_orchid",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 95,
+      "name": "item_bloodthorn",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 97,
+      "name": "item_cyclone",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+    },
+    {
+      "id": 98,
+      "name": "item_wind_waker",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+    },
+    {
+      "id": 100,
+      "name": "item_force_staff",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": "DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+    },
+    {
+      "id": 101,
+      "name": "item_hurricane_pike",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": "DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+    },
+    {
+      "id": 102,
+      "name": "item_dagon",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 103,
+      "name": "item_dagon_2",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 104,
+      "name": "item_dagon_3",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 105,
+      "name": "item_dagon_4",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 106,
+      "name": "item_dagon_5",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 110,
+      "name": "item_refresher",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+      "team": ""
+    },
+    {
+      "id": 113,
+      "name": "item_black_king_bar",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 114,
+      "name": "item_shivas_guard",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+      "team": ""
+    },
+    {
+      "id": 115,
+      "name": "item_bloodstone",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
+      "team": ""
+    },
+    {
+      "id": 116,
+      "name": "item_sphere",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 117,
+      "name": "item_lotus_orb",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 118,
+      "name": "item_meteor_hammer",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED",
+      "team": ""
+    },
+    {
+      "id": 119,
+      "name": "item_nullifier",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 122,
+      "name": "item_spirit_vessel",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES",
+      "team": "DOTA_UNIT_TARGET_TEAM_BOTH"
+    },
+    {
+      "id": 123,
+      "name": "item_essence_distiller",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES",
+      "team": "DOTA_UNIT_TARGET_TEAM_BOTH"
+    },
+    {
+      "id": 125,
+      "name": "item_crimson_guard",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 126,
+      "name": "item_blade_mail",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+      "team": ""
+    },
+    {
+      "id": 129,
+      "name": "item_crellas_crozier",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
+      "team": ""
+    },
+    {
+      "id": 130,
+      "name": "item_rapier",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_TOGGLE",
+      "team": ""
+    },
+    {
+      "id": 132,
+      "name": "item_radiance",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE",
+      "team": ""
+    },
+    {
+      "id": 136,
+      "name": "item_bfury",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+    },
+    {
+      "id": 137,
+      "name": "item_manta",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": ""
+    },
+    {
+      "id": 140,
+      "name": "item_armlet",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+      "team": ""
+    },
+    {
+      "id": 141,
+      "name": "item_invis_sword",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+      "team": ""
+    },
+    {
+      "id": 142,
+      "name": "item_silver_edge",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+      "team": ""
+    },
+    {
+      "id": 146,
+      "name": "item_satanic",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 147,
+      "name": "item_mjollnir",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 150,
+      "name": "item_helm_of_the_dominator",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 151,
+      "name": "item_helm_of_the_overlord",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 153,
+      "name": "item_gungir",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 156,
+      "name": "item_mask_of_madness",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+      "team": ""
+    },
+    {
+      "id": 157,
+      "name": "item_diffusal_blade",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 158,
+      "name": "item_disperser",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE",
+      "team": "DOTA_UNIT_TARGET_TEAM_BOTH"
+    },
+    {
+      "id": 159,
+      "name": "item_ethereal_blade",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 160,
+      "name": "item_soul_ring",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
+      "team": ""
+    },
+    {
+      "id": 161,
+      "name": "item_arcane_boots",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 169,
+      "name": "item_ancient_janggo",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+      "team": ""
+    },
+    {
+      "id": 170,
+      "name": "item_boots_of_bearing",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+      "team": ""
+    },
+    {
+      "id": 171,
+      "name": "item_solar_crest",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 172,
+      "name": "item_pavise",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 173,
+      "name": "item_smoke_of_deceit",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": ""
+    },
+    {
+      "id": 174,
+      "name": "item_veil_of_discord",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+      "team": ""
+    },
+    {
+      "id": 177,
+      "name": "item_guardian_greaves",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 178,
+      "name": "item_rod_of_atos",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 179,
+      "name": "item_abyssal_blade",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 180,
+      "name": "item_heavens_halberd",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 182,
+      "name": "item_shadow_amulet",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 183,
+      "name": "item_glimmer_cape",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 184,
+      "name": "item_harpoon",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+    },
+    {
+      "id": 306,
+      "name": "item_kobold_cup",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 308,
+      "name": "item_polliwog_charm",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 312,
+      "name": "item_ash_legion_shield",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 313,
+      "name": "item_dagger_of_ristul",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 314,
+      "name": "item_stonefeather_satchel",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 317,
+      "name": "item_essence_ring",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 318,
+      "name": "item_mana_draught",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 321,
+      "name": "item_pogo_stick",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES",
+      "team": ""
+    },
+    {
+      "id": 323,
+      "name": "item_crippling_crossbow",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    },
+    {
+      "id": 324,
+      "name": "item_medallion_of_courage",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_BOTH"
+    },
+    {
+      "id": 325,
+      "name": "item_seeds_of_serenity",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE",
+      "team": ""
+    },
+    {
+      "id": 328,
+      "name": "item_jidi_pollen_bag",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 329,
+      "name": "item_psychic_headband",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+      "team": "DOTA_UNIT_TARGET_TEAM_BOTH"
+    },
+    {
+      "id": 337,
+      "name": "item_idol_of_screeauk",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 338,
+      "name": "item_flayers_bota",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 339,
+      "name": "item_metamorphic_mandible",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 345,
+      "name": "item_fallen_sky",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES",
+      "team": ""
+    },
+    {
+      "id": 346,
+      "name": "item_demonicon",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 347,
+      "name": "item_minotaur_horn",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 348,
+      "name": "item_spider_legs",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 349,
+      "name": "item_riftshadow_prism",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 353,
+      "name": "item_heavy_blade",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE",
+      "team": "DOTA_UNIT_TARGET_TEAM_BOTH"
+    },
+    {
+      "id": 399,
+      "name": "item_cheese",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 400,
+      "name": "item_refresher_shard",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 401,
+      "name": "item_ultimate_scepter_roshan",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 402,
+      "name": "item_aghanims_shard_roshan",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
+      "team": ""
+    },
+    {
+      "id": 403,
+      "name": "item_famango",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 404,
+      "name": "item_great_famango",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 405,
+      "name": "item_greater_famango",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    },
+    {
+      "id": 406,
+      "name": "item_ward_dispenser",
+      "behavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE",
+      "team": "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    }
+  ],
+  "no_target_team_flags": [
+    {
+      "id": 18,
+      "name": "item_faerie_fire",
+      "default": "immediate-self",
+      "optional_ally": false,
+      "previously_forced_self": false
+    },
+    {
+      "id": 51,
+      "name": "item_enchanted_mango",
+      "default": "immediate-self",
+      "optional_ally": true,
+      "previously_forced_self": false
+    },
+    {
+      "id": 54,
+      "name": "item_bottle",
+      "default": "immediate-self",
+      "optional_ally": true,
+      "previously_forced_self": false
+    },
+    {
+      "id": 318,
+      "name": "item_mana_draught",
+      "default": "immediate-self",
+      "optional_ally": true,
+      "previously_forced_self": false
+    },
+    {
+      "id": 403,
+      "name": "item_famango",
+      "default": "immediate-self",
+      "optional_ally": true,
+      "previously_forced_self": true
+    },
+    {
+      "id": 404,
+      "name": "item_great_famango",
+      "default": "immediate-self",
+      "optional_ally": true,
+      "previously_forced_self": true
+    },
+    {
+      "id": 405,
+      "name": "item_greater_famango",
+      "default": "immediate-self",
+      "optional_ally": true,
+      "previously_forced_self": true
+    }
+  ]
+}

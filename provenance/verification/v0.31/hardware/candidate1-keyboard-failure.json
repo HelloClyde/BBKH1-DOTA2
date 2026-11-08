@@ -1,0 +1,398 @@
+{
+  "passed": false,
+  "scope": "Opt-in physical H1 Pounce acceptance using normal inputs and read-only RAM.\n\nRun after deploying the specified BDA and observing its menu. Never patches\nGame, grants levels/items, fast-forwards time or invokes game code via EXEC.\n",
+  "physical_h1_tested": true,
+  "game_state_ram_writes": 0,
+  "bda_sha256": "326e5b68b0315a41b99185ab93cf21e2a03a013a4e5348e168b6a4a3280644d6",
+  "elf_sha256": "7b3f95695804b6ecd1ce9109a531b87226fc8ef13600a3fe1c81bb445db7c6cc",
+  "driver_sha256": "67d1a1bb8169615cbd87343199ae83cee822f5215534acfe7a768409896ac63b",
+  "checks": [
+    {
+      "check": "Loaded code dota_extra_cast",
+      "passed": true
+    },
+    {
+      "check": "Loaded code dota_cast_order_skill_kind",
+      "passed": true
+    },
+    {
+      "check": "Loaded code dota_hero_facing",
+      "passed": true
+    },
+    {
+      "check": "Loaded code use_inventory",
+      "passed": true
+    },
+    {
+      "check": "Slark selected",
+      "passed": true
+    },
+    {
+      "check": "Normal Shift W learns Pounce",
+      "passed": true
+    },
+    {
+      "check": "Normal movement faces east",
+      "passed": true
+    },
+    {
+      "check": "keyboard Pounce immediately casts east",
+      "passed": true,
+      "start": [
+        403,
+        3723
+      ],
+      "end": [
+        578,
+        3723
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "keys": [
+        "RIGHT"
+      ],
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "RIGHT"
+      ],
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "RIGHT"
+      ],
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "RIGHT"
+      ],
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "ENTER"
+      ],
+      "receipt": {
+        "keys_low": 16777216,
+        "keys_high": 0,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "SHIFT",
+        "W"
+      ],
+      "receipt": {
+        "keys_low": 2,
+        "keys_high": 512,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "RIGHT"
+      ],
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "K"
+      ],
+      "receipt": {
+        "keys_low": 2147483648,
+        "keys_high": 0,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "W"
+      ],
+      "receipt": {
+        "keys_low": 2,
+        "keys_high": 0,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "ESCAPE"
+      ],
+      "receipt": {
+        "keys_low": 8388608,
+        "keys_high": 0,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "build/v031/h1-pounce2/keyboard-before.png",
+      "sha256": "7e0ba261a155c838edc9fae91fd6b74dceb963319a4694daf8871611137c1cb3",
+      "receipt": {
+        "token": 99,
+        "width": 480,
+        "height": 272,
+        "stride": 1920,
+        "format": 2,
+        "total": 522240,
+        "source": 2710577152,
+        "tick": 3222034,
+        "codec": "rle",
+        "transfer": {
+          "codec": "rle",
+          "decoded_bytes": 522240,
+          "encoded_bytes": 276604,
+          "requests": 560,
+          "protocol_bytes_sent": 15680,
+          "protocol_bytes_received": 294524,
+          "elapsed_seconds": 10.0,
+          "decoded_bytes_per_second": 52224.0,
+          "progress_callback": false,
+          "scope": "SCREEN_READ RPCs; protocol framing included, USB packet overhead excluded"
+        },
+        "capture_elapsed_seconds": 10.045999999972992,
+        "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v031\\h1-pounce2\\keyboard-before.png",
+        "snapshot_sha256": "e92da2607e0166f55a1e4e85408d19da3bfafca24d6edeff1ec5802ba47b8867",
+        "png_sha256": "7e0ba261a155c838edc9fae91fd6b74dceb963319a4694daf8871611137c1cb3"
+      }
+    },
+    {
+      "path": "build/v031/h1-pounce2/keyboard-after.png",
+      "sha256": "4327cb1c8a0d94b487333fa89c163e3d12eb1168ffb2c068a23f41337faefc72",
+      "receipt": {
+        "token": 100,
+        "width": 480,
+        "height": 272,
+        "stride": 1920,
+        "format": 2,
+        "total": 522240,
+        "source": 2710577152,
+        "tick": 3222465,
+        "codec": "rle",
+        "transfer": {
+          "codec": "rle",
+          "decoded_bytes": 522240,
+          "encoded_bytes": 274998,
+          "requests": 557,
+          "protocol_bytes_sent": 15596,
+          "protocol_bytes_received": 292822,
+          "elapsed_seconds": 8.46799999999348,
+          "decoded_bytes_per_second": 61672.177609872706,
+          "progress_callback": false,
+          "scope": "SCREEN_READ RPCs; protocol framing included, USB packet overhead excluded"
+        },
+        "capture_elapsed_seconds": 8.577999999979511,
+        "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v031\\h1-pounce2\\keyboard-after.png",
+        "snapshot_sha256": "4f36df46edcb40722693d7025f248c69569d30eb074d10619396623355493427",
+        "png_sha256": "4327cb1c8a0d94b487333fa89c163e3d12eb1168ffb2c068a23f41337faefc72"
+      }
+    }
+  ],
+  "cases": [
+    {
+      "mode": "keyboard",
+      "passed": true,
+      "before": {
+        "active": 1,
+        "type": 1,
+        "team": 0,
+        "hero_id": 4,
+        "lane": 1,
+        "tier": 0,
+        "x": 403,
+        "y": 3723,
+        "hp": 560,
+        "max_hp": 560,
+        "mana": 267,
+        "max_mana": 267,
+        "damage": 61,
+        "armor": 3,
+        "range": 150,
+        "speed": 300,
+        "level": 1,
+        "xp": 0,
+        "gold": 600,
+        "inventory": -1,
+        "cooldown": 0,
+        "attack_wait": 0,
+        "respawn_ticks": 0,
+        "target": -1,
+        "waypoint": 0,
+        "move_order": 0,
+        "move_x": 0,
+        "move_y": 0,
+        "stun_ticks": 0,
+        "slow_ticks": 0,
+        "taunt_ticks": 0,
+        "taunt_source": -1,
+        "dot_ticks": 0,
+        "dot_damage": 0,
+        "dot_source": -1,
+        "buff_ticks": 0,
+        "channel_ticks": 0,
+        "heal_ticks": 0,
+        "skill_ticks": 0,
+        "skill_x": 0,
+        "skill_y": 0,
+        "kills": 0,
+        "deaths": 0,
+        "last_damage_team": 0,
+        "last_damage_source": 0,
+        "generation": 1,
+        "calculated_armor100": 350
+      },
+      "after": {
+        "active": 1,
+        "type": 1,
+        "team": 0,
+        "hero_id": 4,
+        "lane": 1,
+        "tier": 0,
+        "x": 519,
+        "y": 3723,
+        "hp": 560,
+        "max_hp": 560,
+        "mana": 220,
+        "max_mana": 267,
+        "damage": 61,
+        "armor": 3,
+        "range": 150,
+        "speed": 300,
+        "level": 1,
+        "xp": 0,
+        "gold": 600,
+        "inventory": -1,
+        "cooldown": 0,
+        "attack_wait": 0,
+        "respawn_ticks": 0,
+        "target": -1,
+        "waypoint": 0,
+        "move_order": 0,
+        "move_x": 0,
+        "move_y": 0,
+        "stun_ticks": 0,
+        "slow_ticks": 0,
+        "taunt_ticks": 0,
+        "taunt_source": -1,
+        "dot_ticks": 0,
+        "dot_damage": 0,
+        "dot_source": -1,
+        "buff_ticks": 0,
+        "channel_ticks": 0,
+        "heal_ticks": 0,
+        "skill_ticks": 0,
+        "skill_x": 0,
+        "skill_y": 0,
+        "kills": 0,
+        "deaths": 0,
+        "last_damage_team": 0,
+        "last_damage_source": 0,
+        "generation": 1,
+        "calculated_armor100": 350
+      },
+      "leap": {
+        "generation": 1,
+        "pact_at": 0,
+        "pact_pulse": 0,
+        "pact_rank": 0,
+        "leap_at": 262,
+        "leap_x": 403,
+        "leap_y": 3723,
+        "leap_to_x": 578,
+        "leap_to_y": 3723,
+        "leap_rank": 1,
+        "leap_duration": 15,
+        "shadow_until": 0,
+        "unseen_since": 1,
+        "neutral_until": 0,
+        "ghost_until": 0,
+        "scythe_at": 0,
+        "scythe_target": 0,
+        "scythe_generation": 0,
+        "scythe_rank": 0,
+        "scythe_cast_at": 0,
+        "scythe_duration": 0,
+        "permanent_agi": 0,
+        "scythe_kills": 0,
+        "essence_gain": 0,
+        "essence_loss": 0,
+        "sadist_stacks": 0,
+        "hp_fraction": 0,
+        "mana_fraction": 0,
+        "shiv_target": 0,
+        "shiv_generation": 0,
+        "shiv_until": 0,
+        "shiv_rank": 0,
+        "pounce_upgrade": 0,
+        "pounce_charges": 0,
+        "pounce_restore_at": 0,
+        "shard_cooldown": 0,
+        "shroud_until": 0,
+        "shroud_x": 0,
+        "shroud_y": 0,
+        "shroud_rank": 0,
+        "shroud_radius": 0,
+        "seeker_at": 0,
+        "seeker_duration": 0,
+        "seeker_x": 0,
+        "seeker_y": 0,
+        "seeker_to_x": 0,
+        "seeker_to_y": 0,
+        "leash_until": 0,
+        "leash_x": 0,
+        "leash_y": 0,
+        "leash_source": 0,
+        "leash_generation": 0
+      }
+    }
+  ],
+  "debug_identity": "H1DEBUG/1 V1.41 RESIDENT",
+  "error": "Two completed frames after input"
+}

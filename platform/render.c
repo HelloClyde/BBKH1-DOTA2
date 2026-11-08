@@ -1034,7 +1034,7 @@ static void help(const DotaView *v){
         box(24,184,432,1,EDGE);
         text(24,192,"点小地图切视野；点英雄状态回中。",DIM);
         text(24,212,"长按装备换位；眼同键切换；卷轴点友方建筑。",DIM);
-        text(24,232,"双击物品对自己用；G独立卷轴，双击回泉。",DIM);
+        text(24,232,"双击自用；SHIFT+物品给队友；G双击回泉。",DIM);
     }
     text(16,258,"左右 / A D 切页；BACK / ESC 返回",GOLD);
 }

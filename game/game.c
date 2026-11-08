@@ -400,6 +400,7 @@ int dota_rules_attack_critical(DotaGame *g,int source,int target){
     g->attack_crit_percent[source]=own;other=dota_progression_attack_critical(g,source,target);return own>other?own:other;
 }
 static DotaSkillEvent *skill_event(DotaGame *g,int kind,int caster,int skill,int target,int x,int y,int step) {
+    if(kind==DOTA_SKILL_EVENT_CAST&&dota_cast_order_skill_kind(g,caster,skill)!=DOTA_CAST_TARGET_NONE)dota_hero_face(g,caster,x,y);
     const DotaUnit *u=&g->units[caster];DotaSkillEvent *e;
     unsigned serial=++g->skill_event_serial;
     if(g->skill_event_count<DOTA_MAX_SKILL_EVENTS)++g->skill_event_count;
@@ -448,6 +449,7 @@ static int attack_style_for(const DotaGame *g,int index){
 }
 
 static void attack_event(DotaGame *g,int kind,const DotaProjectile *p,int duration) {
+    if(kind==DOTA_ATTACK_EVENT_START)dota_hero_face(g,p->source,p->target_x,p->target_y);
     unsigned serial=++g->attack_event_serial;DotaAttackEvent *e=&g->attack_events[serial%DOTA_MAX_ATTACK_EVENTS];
     if(g->attack_event_count<DOTA_MAX_ATTACK_EVENTS)++g->attack_event_count;
     e->serial=serial;e->kind=kind;e->style=p->style;e->source=p->source;
@@ -2288,6 +2290,7 @@ void dota_rules_set_position(DotaGame *g,int hero,int x,int y){
     DotaUnit *u=&g->units[hero];DotaMovementState *m=&g->movement[hero];
     dota_sight_invalidate();
     u->x=clamp(x,0,DOTA_WORLD-1);u->y=clamp(y,0,DOTA_WORLD-1);m->x_q16=u->x*DOTA_MOVE_ONE;m->y_q16=u->y*DOTA_MOVE_ONE;m->generation=u->generation;m->tick=g->tick;m->remaining_q16=0;
+    if((unsigned)hero<DOTA_HERO_COUNT){g->roster.hero[hero].seen_x=(int16_t)u->x;g->roster.hero[hero].seen_y=(int16_t)u->y;}
     g->unit_routes[hero].count=g->unit_routes[hero].index=0;
     if(hero==g->player)g->player_path_count=g->player_path_index=0;
 }

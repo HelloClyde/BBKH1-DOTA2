@@ -264,6 +264,8 @@ int dota_extra_cast(DotaGame *g,int caster,int skill,int x,int y){
         if(!within(u->x,u->y,g->units[target].x,g->units[target].y,dota_skill_cast_range_source(g,caster,skill)+24)){event(g,caster,15,skill);return 0;}
     }
     if(u->hero_id==4 && skill==1 && ((s->leash_until>g->tick && !dota_items_debuff_immune(g,caster)) || s->leap_at || dota_items_rooted(g,caster))){event(g,caster,4,skill);return 0;}
+    /* Pounce never turns towards a cursor or an automatically chosen enemy. */
+    if(u->hero_id==DOTA_HERO_SLARK&&skill==1){int dx,dy;dota_hero_facing(g,caster,&dx,&dy);x=u->x+dx;y=u->y+dy;}
     g->item_world.last_mana_spent[caster]=dota_extra_mana(u,skill)*dota_items_mana_cost_percent(g,caster)/100;
     dota_items_spend_mana(g,caster,g->item_world.last_mana_spent[caster]);u->cooldown[skill]=dota_skill_cooldown_ticks(g,caster,skill);dota_items_on_cast(g,caster);
     if(u->hero_id==4 && skill==1 && s->pounce_upgrade){if(s->pounce_charges>0)--s->pounce_charges;if(!s->pounce_restore_at)s->pounce_restore_at=g->tick+pounce_recharge(g,caster);u->cooldown[1]=s->pounce_charges?0:cap(s->pounce_restore_at-g->tick,1,240);}

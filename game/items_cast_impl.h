@@ -68,7 +68,7 @@ int dota_items_cast_query(const DotaGame*g,int h,int s,int x,int y,int target,in
         if(r.action==ITEM_ACTION_WARD){int kind=target==DOTA_WARD_TARGET_SENTRY?1:(id==DOTA_ITEM_WARD_SENTRY);if(id==DOTA_ITEM_WARD_DISPENSER&&target!=DOTA_WARD_TARGET_SENTRY)kind=!dota_items_ward_available(g,h,s,0);if(!dota_items_ward_available(g,h,s,kind)||!dota_item_world_ward_placeable(g,h,x,y))return DOTA_ITEM_CAST_INVALID;}
         if(r.action==ITEM_ACTION_BLINK)return DOTA_ITEM_CAST_READY;
         range=r.cast_range?r.cast_range+cast_range_bonus(g,h):0;
-    }else if(!(r.flags&ITEM_F_NO_TARGET)){
+    }else if(target>=0||!(r.flags&ITEM_F_NO_TARGET)){
         if(t>=0&&!live(g,t))return DOTA_ITEM_CAST_INVALID;
         if(t<0){if(!dota_items_self_target_valid(g,h,s))return DOTA_ITEM_CAST_INVALID;t=h;}
         v=&g->units[t];enemy=v->team!=u->team;

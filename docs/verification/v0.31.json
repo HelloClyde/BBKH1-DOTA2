@@ -1,0 +1,111 @@
+{
+  "version": "0.31",
+  "channel": "development",
+  "bda_sha256": "30eb5ad74e67e80b861a04588d450b4576a6ce17f1661aaa8bb560e174a4da73",
+  "bda_bytes": 1081124,
+  "elf_sha256": "25d33315cb612b4fe789986dd39dab6a53ead8b5b5398719a049d7c1b9c53027",
+  "runtime_assets": {
+    "DOTA2.H1R": {
+      "path": "assets/runtime/DOTA2.H1R",
+      "bytes": 112861448,
+      "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153"
+    }
+  },
+  "changes": [
+    "Slark Pounce casts immediately along retained hero facing, independent of cursor coordinates.",
+    "Native skill targeting and approach orders share one explicit cast-input classification.",
+    "NO_TARGET item behavior takes precedence over team filters; optional ally use is available with Shift plus item key.",
+    "Preallocate the tree reconstruction workspace before optional asset caches to prevent first-Pounce landing from exhausting the allocator."
+  ],
+  "game_abi_bytes": {
+    "DotaGame": 179008,
+    "DotaUnit": 240,
+    "DotaView": 148
+  },
+  "checks": {
+    "cast-order-host.json": {
+      "path": "provenance/verification/v0.31/cast-order-host.json",
+      "sha256": "be347a53ba0f4e5f54d03977f28cb90a99b8f48471521d8dbe1d82cdd3a287e5",
+      "passed": true
+    },
+    "item-input-mips.json": {
+      "path": "provenance/verification/v0.31/item-input-mips.json",
+      "sha256": "ab3dc89ccbbf95354bb70c317903840f8e1840d678e5581e8da6bd58cbeea09a",
+      "passed": true,
+      "scope": "Retained earlier candidate1 input results; final candidate2 is separately verified."
+    },
+    "cast-input-source.json": {
+      "path": "provenance/verification/v0.31/cast-input-source.json",
+      "sha256": "4655fb39b379bcb721a966eda850dc46b1c337a890d69356fa680e255d0b9361",
+      "passed": true
+    },
+    "item-input-mips-candidate2.json": {
+      "path": "provenance/verification/v0.31/item-input-mips-candidate2.json",
+      "sha256": "c9d69a3437f0c7011b94677ed07cd42501e887d3b02e2313fc93b0448628e7b8",
+      "passed": true
+    },
+    "tree-workspace.json": {
+      "path": "provenance/verification/v0.31/tree-workspace.json",
+      "sha256": "faaaa1789f2543767ee3807cdc1f33c8ea56597d8b47b9bd9d1a02a508f3218a",
+      "passed": true
+    },
+    "tree-parity.json": {
+      "path": "provenance/verification/v0.31/tree-parity.json",
+      "sha256": "b6e87db5be0fd11febe9365d5f2604fe00bdbfe30f98712833cae612f366fc62",
+      "passed": true
+    }
+  },
+  "physical_h1_tested": true,
+  "device_update": {
+    "completed": true,
+    "device_crc_verified": true,
+    "path": "A:\\应用\\程序\\DOTA2.bda",
+    "sha256": "30eb5ad74e67e80b861a04588d450b4576a6ce17f1661aaa8bb560e174a4da73",
+    "receipt": "provenance/verification/v0.31/hardware/candidate2-deploy.json"
+  },
+  "release_pin_created": false,
+  "harness_notes": [
+    "Initial native-input fixtures used incorrect lotus IDs, then incorrectly assumed lotus combinations and reusable Mana Draught charges; corrected harness inputs/assertions passed on the same unchanged candidate.",
+    "Initial hardware driver import path was corrected before it sent any input. Legacy cache-parity script was given an explicit equal-read-work mode for this allocation-only change; exact pixel/depth/pick outputs and per-step work counts match."
+  ],
+  "hardware_followup": "Completed; actual complete candidate2 BDA verified by upload CRC, loaded-code checks and normal physical inputs.",
+  "physical_scope": "Normal Shift+W learning, movement/stop, W Pounce and icon Pounce, landing tree reconstruction, resource/audio health, one8-second post-landing FPS sample and clean desktop return. No full roster/item or late-game hardware acceptance.",
+  "desktop_after": {
+    "job_id": 52,
+    "kind": 2,
+    "state": 4,
+    "error": 0,
+    "menu_idle": 1,
+    "app_index": 83,
+    "entry_count": 30,
+    "return_code": 0,
+    "state_name": "done"
+  },
+  "debug_left_running": true,
+  "hardware_index": {
+    "path": "provenance/verification/v0.31/hardware/INDEX.json",
+    "sha256": "78c2c9e82e63050fa687ce02a34e4ad478f9607fcb6e649fade0ecdf2b046a83"
+  },
+  "post_pounce_fps_sample": {
+    "frames": 153,
+    "seconds": 8.015499999979511,
+    "fps": 19.088016967174987,
+    "scope": "Single eight-second Slark post-landing scene; no baseline or all-scene FPS claim"
+  },
+  "allocation_fix": {
+    "cause": "Candidate1 first Pounce landing cuts trees, then lazy tree workspace allocation fails with TV_MEMORY4. Native error36 is observed in both keyboard and icon runs.",
+    "change": "Reserve tree patch/scratch work before optional sprite caches; allocate sprite cache after scene/vision/tree/audio/history resources. Atomic allocation failure cleanup.",
+    "tree_patch_bytes": 1014028,
+    "tree_scratch_bytes": 1064976,
+    "sprite_bytes": 14680064,
+    "resource_errors": 0,
+    "tree_error": 0,
+    "audio_error": 0,
+    "audio_underruns": 0
+  },
+  "compiled_sources_current": true,
+  "build_identity": {
+    "path": "provenance/verification/v0.31/candidate2-build.json",
+    "sha256": "801f8088cf8e338550640a881011077369a032940237435d4aae376bd6815b4a"
+  }
+}

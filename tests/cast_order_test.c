@@ -9,6 +9,7 @@
 #include "../game/extra_heroes.h"
 #include "../platform/baked_io.h"
 #include "../platform/item_assets.h"
+#include "../platform/target_input.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -40,4 +41,26 @@ static void windup_and_range_boundary(void){int n,mana,range;setup(DOTA_HERO_SVE
  setup(DOTA_HERO_AXE);range=dota_skill_cast_range_source(&g,0,1);target(sx+range/4,sy);CHECK(dota_order_cast_on_unit(&g,1,1,7)==1&&g.units[0].x==sx&&g.units[0].y==sy);cases++;
  setup(DOTA_HERO_AXE);target(sx+range/4+1,sy);CHECK(dota_order_cast_on_unit(&g,1,1,7)==2&&!g.units[0].cooldown[1]);CHECK(finish(20)<20&&g.units[0].cooldown[1]>0);cases++;
  setup(DOTA_HERO_AXE);target(tx,ty);CHECK(dota_order_cast_on_unit(&g,1,1,7)==2);dota_set_paused(&g,1);mana=g.tick;{DotaInput in={0};dota_tick(&g,&in);}CHECK(g.tick==mana&&dota_cast_order_active(&g,0)&&g.units[0].x==sx);dota_set_paused(&g,0);dota_restart(&g);CHECK(!dota_cast_order_active(&g,0));cases++;}
-int main(int argc,char**argv){void *work;CHECK(argc==3);CHECK(baked_io_open(argv[1])&&item_assets_open());work=malloc(dota_sight_workspace_bytes());CHECK(work&&dota_sight_attach(heights,tree_mask,work,dota_sight_workspace_bytes()));trace=fopen(argv[2],"w");CHECK(trace);fprintf(trace,"tick,x,y,order,mana,skill_w_cd,path_queries\n");find_corridor();unit_walk_and_cost();moving_locked_target();cancellation();waits_and_limits();real_navigation();tree_items();targeted_items_and_identity();actual_tick_and_point();windup_and_range_boundary();fclose(trace);dota_sight_detach();free(work);dota_trees_detach();item_assets_close();baked_io_close();printf("RESULT {\"passed\":true,\"checks\":%d,\"cases\":%d,\"game_bytes\":%u,\"order_bytes_per_hero\":%u,\"actual_navigation\":true,\"physical_h1_tested\":false}\n",checks,cases,(unsigned)sizeof(g),(unsigned)sizeof(DotaCastOrder));return 0;}
+/* Expected normal inputs from the installed Valve AbilityBehavior records.
+ * Cover unlearned skills too: learning/range upgrades must not change input. */
+static void target_kind_matrix(void){
+ static const unsigned char expected[10][4]={{0,2,0,2},{1,1,0,2},{0,1,0,2},{1,2,0,0},{0,0,2,0},{0,0,0,2},{1,0,0,2},{1,0,0,2},{2,0,0,0},{2,0,0,0}};
+ int h,s,learned;for(h=0;h<10;h++){setup(h);for(learned=0;learned<2;learned++)for(s=0;s<4;s++){g.units[0].learned[s]=(unsigned char)learned;CHECK(dota_cast_order_skill_kind(&g,0,s)==expected[h][s]);CHECK(dota_input_skill_target_kind(&g,s)==expected[h][s]);}cases++;}
+ setup(DOTA_HERO_TIDEHUNTER);CHECK(dota_items_receive(&g,0,DOTA_ITEM_ULTIMATE_SCEPTER,201));CHECK(dota_input_skill_target_kind(&g,0)==DOTA_INPUT_TARGET_POINT);cases++;
+ setup(DOTA_HERO_PUDGE);CHECK(dota_items_receive(&g,0,DOTA_ITEM_AGHANIMS_SHARD,201));CHECK(dota_input_skill_target_kind(&g,3)==DOTA_INPUT_TARGET_ANY);cases++;
+ setup(DOTA_HERO_SLARK);CHECK(dota_items_receive(&g,0,DOTA_ITEM_ULTIMATE_SCEPTER,201));CHECK(dota_input_skill_target_kind(&g,1)==DOTA_INPUT_TARGET_NONE);CHECK(dota_items_receive(&g,0,DOTA_ITEM_AGHANIMS_SHARD,201));CHECK(dota_input_skill_target_kind(&g,4)==DOTA_INPUT_TARGET_POINT);cases++;
+ setup(DOTA_HERO_CRYSTAL_MAIDEN);CHECK(dota_items_receive(&g,0,DOTA_ITEM_AGHANIMS_SHARD,201));CHECK(dota_input_skill_target_kind(&g,4)==DOTA_INPUT_TARGET_POINT);cases++;
+}
+static void pounce_facing(void){
+ static const signed char dx[8]={1,1,0,-1,-1,-1,0,1},dy[8]={0,1,1,1,0,-1,-1,-1};int i,cost,mana,ox,oy;DotaInput in={0};
+ for(i=0;i<8;i++){setup(DOTA_HERO_SLARK);target(sx-dx[i]*50,sy-dy[i]*50);dota_hero_face(&g,0,sx+dx[i]*100,sy+dy[i]*100);cost=dota_skill_mana_cost(&g,0,1);mana=g.units[0].mana;
+  CHECK(dota_order_cast(&g,1,sx-dx[i]*1000,sy-dy[i]*1000)==DOTA_ORDER_EXECUTED);CHECK(!dota_cast_order_active(&g,0));CHECK(g.extra.hero[0].leap_at==g.tick+1);CHECK(g.units[0].mana==mana-cost&&g.units[0].cooldown[1]>0);
+  ox=g.extra.hero[0].leap_to_x-sx;oy=g.extra.hero[0].leap_to_y-sy;CHECK(ox*dx[i]>=0&&oy*dy[i]>=0);CHECK((!dx[i]&&!ox)||(dx[i]&&ox));CHECK((!dy[i]&&!oy)||(dy[i]&&oy));CHECK(g.units[0].x==sx&&g.units[0].y==sy);cases++;
+ }
+ setup(DOTA_HERO_SLARK);in.move_x=1;dota_tick(&g,&in);CHECK(g.units[0].x>sx&&g.units[0].y==sy);in.move_x=0;in.actions=DOTA_INPUT_STOP;dota_tick(&g,&in);ox=g.units[0].x;CHECK(dota_cast(&g,1,0,sy));CHECK(g.extra.hero[0].leap_to_x>ox&&g.extra.hero[0].leap_to_y==sy);cases++;
+ setup(DOTA_HERO_SLARK);target(sx,sy-16);g.units[0].attack_wait=0;dota_rules_attack_once(&g,0,1);CHECK(g.attack_event_count>0);CHECK(dota_cast(&g,1,4000,4000));CHECK(g.extra.hero[0].leap_to_x==sx&&g.extra.hero[0].leap_to_y<sy);cases++;
+ setup(DOTA_HERO_SLARK);g.extra.hero[0].leash_until=g.tick+20;mana=g.units[0].mana;CHECK(!dota_order_cast(&g,1,tx,ty));CHECK(!g.extra.hero[0].leap_at&&g.units[0].mana==mana&&!g.units[0].cooldown[1]);cases++;
+ setup(DOTA_HERO_SLARK);CHECK(dota_items_receive(&g,0,DOTA_ITEM_ULTIMATE_SCEPTER,201));dota_hero_face(&g,0,sx+100,sy);CHECK(dota_order_cast(&g,1,0,0)==1&&g.extra.hero[0].pounce_charges==1);CHECK(g.extra.hero[0].leap_to_x==sx+225);cases++;
+}
+static void optional_ally_item(void){int charges;setup(DOTA_HERO_AXE);target(tx,ty);g.units[1].team=0;g.units[1].mana=0;CHECK(dota_items_receive(&g,0,DOTA_ITEM_ENCHANTED_MANGO,201));charges=dota_items_charges(&g,0,0);CHECK(dota_order_item_at(&g,0,tx,ty,1,7)==DOTA_ORDER_QUEUED);CHECK(dota_items_charges(&g,0,0)==charges&&g.units[1].mana==0);CHECK(finish(200)<200&&g.units[1].mana>0);CHECK(dota_items_charges(&g,0,0)==charges-1);cases++;}
+int main(int argc,char**argv){void *work;CHECK(argc==3);CHECK(baked_io_open(argv[1])&&item_assets_open());work=malloc(dota_sight_workspace_bytes());CHECK(work&&dota_sight_attach(heights,tree_mask,work,dota_sight_workspace_bytes()));trace=fopen(argv[2],"w");CHECK(trace);fprintf(trace,"tick,x,y,order,mana,skill_w_cd,path_queries\n");find_corridor();unit_walk_and_cost();moving_locked_target();cancellation();waits_and_limits();real_navigation();tree_items();targeted_items_and_identity();actual_tick_and_point();windup_and_range_boundary();target_kind_matrix();pounce_facing();optional_ally_item();fclose(trace);dota_sight_detach();free(work);dota_trees_detach();item_assets_close();baked_io_close();printf("RESULT {\"passed\":true,\"checks\":%d,\"cases\":%d,\"game_bytes\":%u,\"order_bytes_per_hero\":%u,\"actual_navigation\":true,\"physical_h1_tested\":false}\n",checks,cases,(unsigned)sizeof(g),(unsigned)sizeof(DotaCastOrder));return 0;}

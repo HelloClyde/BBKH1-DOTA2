@@ -1,0 +1,66 @@
+{
+  "bda_sha256": "30eb5ad74e67e80b861a04588d450b4576a6ce17f1661aaa8bb560e174a4da73",
+  "scope": "Frozen copies of actual H1 input/deploy evidence, plus retained failed candidate1 allocation diagnostics. No RAM/game-state patches.",
+  "files": {
+    "provenance/verification/v0.31/item-input-mips-candidate2.json": {
+      "bytes": 97049,
+      "sha256": "c9d69a3437f0c7011b94677ed07cd42501e887d3b02e2313fc93b0448628e7b8"
+    },
+    "provenance/verification/v0.31/tree-workspace.json": {
+      "bytes": 11892,
+      "sha256": "faaaa1789f2543767ee3807cdc1f33c8ea56597d8b47b9bd9d1a02a508f3218a"
+    },
+    "provenance/verification/v0.31/tree-parity.json": {
+      "bytes": 28316,
+      "sha256": "b6e87db5be0fd11febe9365d5f2604fe00bdbfe30f98712833cae612f366fc62"
+    },
+    "provenance/verification/v0.31/hardware/candidate2-deploy.json": {
+      "bytes": 4540,
+      "sha256": "f57def2cfa3afbbc660e3f8e2acd795976b370885d2a93d1803b53e0aeca89a2"
+    },
+    "provenance/verification/v0.31/hardware/candidate1-keyboard-failure.json": {
+      "bytes": 10348,
+      "sha256": "5047e41b9b2b116e0774e60540be833910c2698ec4ca78180a980c4f5aa9fd72"
+    },
+    "provenance/verification/v0.31/hardware/candidate1-touch-failure.json": {
+      "bytes": 12561,
+      "sha256": "3d5c401666b0cfb0542fbfe89eb6ed6f30bcaa22c8ab1a576b82f943d71a3296"
+    },
+    "provenance/verification/v0.31/hardware/candidate1-exit-diagnostics.json": {
+      "bytes": 1039,
+      "sha256": "2a2e3c49fc164bf714fe0d7c4e04feeddb41feefd2ba278c634ab2e305d7a921"
+    },
+    "provenance/verification/v0.31/hardware/candidate1-keyboard-driver.py": {
+      "bytes": 7560,
+      "sha256": "67d1a1bb8169615cbd87343199ae83cee822f5215534acfe7a768409896ac63b"
+    },
+    "provenance/verification/v0.31/hardware/candidate1-touch-driver.py": {
+      "bytes": 8180,
+      "sha256": "64154c49cad0c26481ba8572e08ed3e9daad0bbda6143244f6063ea3ea249d98"
+    },
+    "provenance/verification/v0.31/hardware/candidate2/driver-executed.py": {
+      "bytes": 9762,
+      "sha256": "f29b9dd5bddf27b6de7453d0afc55f43b8c3afe593d7fca916ebe8558b9e1087"
+    },
+    "provenance/verification/v0.31/hardware/candidate2/keyboard-after.png": {
+      "bytes": 91295,
+      "sha256": "d8b55115a34e109c5d4e702dc07096e3f5ba8124b7af4d0a026ed08e8aaf85e2"
+    },
+    "provenance/verification/v0.31/hardware/candidate2/keyboard-before.png": {
+      "bytes": 94853,
+      "sha256": "67aea85666af34140879264f05a8ae30e61d4f6bf6276da0c49939f54a8459c0"
+    },
+    "provenance/verification/v0.31/hardware/candidate2/touch-after.png": {
+      "bytes": 94321,
+      "sha256": "6441a8f311d9e66c64710e136bde0e2ae52dba8ea7357d9677cb21deb01f545d"
+    },
+    "provenance/verification/v0.31/hardware/candidate2/touch-before.png": {
+      "bytes": 94526,
+      "sha256": "036cb0bbad9823e96d4da8030f3c4d2ef989891aee8b9e2207077346ce7a643f"
+    },
+    "provenance/verification/v0.31/hardware/candidate2/verification.json": {
+      "bytes": 21842,
+      "sha256": "600fb35c3faad16ea0c0a2d68a43484a042f49d2c2a462bab32223c462a6bcb2"
+    }
+  }
+}

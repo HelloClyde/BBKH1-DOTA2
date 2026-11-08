@@ -46,7 +46,7 @@ def main():
  r=subprocess.run(cmd,cwd=ROOT,env=env,capture_output=True,text=True);(out/'compile.txt').write_text(r.stdout+r.stderr);assert not r.returncode,r.stdout+r.stderr
  for codec in (0,1):
   path=out/f'codec{codec}.H1T';path.write_bytes(pack(codec))
-  for mode in (0,2):
+  for mode in (0,2,3,4,5):
    r=subprocess.run([str(exe),str(path),str(mode)],cwd=ROOT,capture_output=True,text=True);results.append(dict(codec=codec,mode=mode,passed=not r.returncode,output=r.stdout+r.stderr));assert not r.returncode,results[-1]
   corrupt=bytearray(path.read_bytes());corrupt[128]^=1;bad=out/f'bad{codec}.H1T';bad.write_bytes(corrupt)
   r=subprocess.run([str(exe),str(bad),'1'],capture_output=True,text=True);results.append(dict(codec=codec,mode='tables-crc',passed=not r.returncode,output=r.stdout+r.stderr));assert not r.returncode,results[-1]

@@ -60,6 +60,21 @@ const DotaRosterBase *dota_roster_base(int hero){return (unsigned)(hero-6)<4u?&r
 int dota_roster_is_hero(const DotaUnit*u){return u&&u->type==DOTA_HERO&&(unsigned)(u->hero_id-6)<4u;}
 int dota_roster_passive(int hero,int skill){return (hero==7 || hero==8)&&skill==1;}
 void dota_roster_init(DotaGame*g){int i;clear(&g->roster,sizeof(g->roster));g->roster.last_tick=-1;for(i=0;i<10;i++)sync_hero(g,i);}
+void dota_hero_facing(const DotaGame*g,int h,int*dx,int*dy){
+ const DotaUnit*u=&g->units[h];const DotaRosterHero*s=&g->roster.hero[h];
+ *dx=dota_fountains[!u->team].x-u->x;*dy=dota_fountains[!u->team].y-u->y;
+ if(s->generation==u->generation){
+  if(u->x!=s->seen_x||u->y!=s->seen_y){*dx=u->x-s->seen_x;*dy=u->y-s->seen_y;}
+  else if(s->vision_dx||s->vision_dy){*dx=s->vision_dx;*dy=s->vision_dy;}
+ }
+ if(!*dx&&!*dy)*dy=u->team?1:-1;
+}
+void dota_hero_face(DotaGame*g,int h,int x,int y){
+ DotaRosterHero*s;DotaUnit*u;if((unsigned)h>=DOTA_HERO_COUNT)return;u=&g->units[h];if(u->type!=DOTA_HERO)return;
+ sync_hero(g,h);s=&g->roster.hero[h];
+ if(x!=u->x||y!=u->y){s->vision_dx=(int16_t)(x-u->x);s->vision_dy=(int16_t)(y-u->y);}
+ s->seen_x=(int16_t)u->x;s->seen_y=(int16_t)u->y;
+}
 int dota_roster_mana(const DotaUnit*u,int skill){return dota_roster_is_hero(u)&&(unsigned)skill<4&&rank(u,skill)>0?value(u,skill,"AbilityManaCost",roster_mana[u->hero_id-6][skill][rank(u,skill)-1]):0;}
 int dota_roster_cooldown(const DotaGame*g,int h,int skill){const DotaUnit*u;int cd;if(!g||(unsigned)h>=10u)return 0;u=&g->units[h];if(!dota_roster_is_hero(u)||(unsigned)skill>=4||!rank(u,skill))return 0;cd=ticks(u,skill,"AbilityCooldown",roster_cd[u->hero_id-6][skill][rank(u,skill)-1]);if(u->hero_id==9&&skill==0&&dota_hero_has_scepter(g,h))cd=140;return cd*(100-dota_items_cooldown_percent((DotaGame*)g,h))/100;}
 int dota_roster_range(const DotaGame*g,int h,int skill){const DotaUnit*u;int range=0;if(!g||(unsigned)h>=10u)return 0;u=&g->units[h];if(!dota_roster_is_hero(u)||(unsigned)skill>=4)return 0;if(u->hero_id==6)range=skill==0?1300:skill==3?200:0;else if(u->hero_id==7)range=skill==0?1800:skill==3?3000:0;else if(u->hero_id==8)range=skill==0?(dota_hero_has_scepter(g,h)?750:600):0;else range=skill==0?(dota_hero_has_scepter(g,h)?2200:700):0;if(range&&!((u->hero_id==8||u->hero_id==9)&&skill==0&&dota_hero_has_scepter(g,h)))range=value(u,skill,"AbilityCastRange",range);return range?range+dota_items_range_bonus((DotaGame*)g,h,0):0;}
@@ -359,10 +374,14 @@ void dota_roster_tick(DotaGame*g){
     int i;if(!g||g->roster.last_tick==g->tick)return;g->roster.last_tick=g->tick;
     /* Sync every hero before any cross-actor write, including cold first-tick
      * projectile contacts and simultaneous respawns at higher actor indices. */
-    for(i=0;i<10;i++)sync_hero(g,i);
+    for(i=0;i<10;i++){
+        DotaUnit*u=&g->units[i];DotaRosterHero*s=&g->roster.hero[i];sync_hero(g,i);
+        if(u->active&&u->hp>0&&u->type==DOTA_HERO&&(u->x!=s->seen_x||u->y!=s->seen_y)){
+            s->vision_dx=(int16_t)(u->x-s->seen_x);s->vision_dy=(int16_t)(u->y-s->seen_y);s->seen_x=(int16_t)u->x;s->seen_y=(int16_t)u->y;
+        }
+    }
     target_tick(g);
     for(i=0;i<10;i++)if(hero_index(g,i)){DotaRosterHero*s=&g->roster.hero[i];DotaUnit*u=&g->units[i];
-        if(u->x!=s->seen_x||u->y!=s->seen_y){s->vision_dx=(int16_t)(u->x-s->seen_x);s->vision_dy=(int16_t)(u->y-s->seen_y);s->seen_x=(int16_t)u->x;s->seen_y=(int16_t)u->y;}
         if((s->aim_until>0&&g->tick>=s->aim_until)||(s->gods_until>0&&g->tick>=s->gods_until)){if(g->tick>=s->aim_until)s->aim_until=0;if(g->tick>=s->gods_until)s->gods_until=0;dota_rules_item_recalc(g,i);}
         if(u->hero_id==7){while(s->shrapnel_restore_at>0&&g->tick>=s->shrapnel_restore_at){if(s->shrapnel_charges<3)s->shrapnel_charges++;s->shrapnel_restore_at=s->shrapnel_charges<3?s->shrapnel_restore_at+max_i(1,ticks(u,0,"AbilityChargeRestoreTime",700)*(100-dota_items_cooldown_percent(g,i))/100):0;}if(!s->shrapnel_charges)u->cooldown[0]=max_i(1,s->shrapnel_restore_at-g->tick);else u->cooldown[0]=0;}
         if(u->hero_id==9&&u->level>s->level_seen){int fish=u->level/2-s->level_seen/2;s->level_seen=(uint8_t)u->level;if(fish){s->fish_count=(uint16_t)min_i(32767,s->fish_count+fish);dota_rules_item_recalc(g,i);}}

@@ -27,3 +27,4 @@ provenance/verification/v0.30/performance/** -text
 # Archived source and receipts bind each other's original byte hashes.
 /provenance/resource-v030/** -text
 /provenance/verification/v0.30/** -text
+/provenance/verification/v0.31/** -text

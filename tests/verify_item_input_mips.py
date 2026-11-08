@@ -31,7 +31,7 @@ def main():
  compiled={n:h for n,h in meta['source_sha256'].items()if Path(n).suffix.lower()in ['.c','.h','.s','.ld']};assert all(sha(ROOT/n)==h for n,h in compiled.items()),'Candidate compiled sources are stale'
  noncompiled_changes=[n for n,h in meta['source_sha256'].items()if n not in compiled and(not(ROOT/n).is_file()or sha(ROOT/n)!=h)]
  inputs=[Path(__file__).resolve(),ROOT/'tests/mips_core_model.py',ROOT/'sdk/sdk/include/h1_input.h'];test_sources={str(p):sha(p)for p in inputs};constants={m[1]:int(m[2])for m in re.finditer(r'^#define\s+(H1_KEY_\w+)\s+(\d+)',inputs[-1].read_text(),re.M)}
- with elf.open('rb')as stream:layouts,sizes=layouts_of(ELFFile(stream),{'DotaGame','DotaUnit','DotaView','DotaItemWorldState','DotaItemChannel'})
+ with elf.open('rb')as stream:layouts,sizes=layouts_of(ELFFile(stream),{'DotaGame','DotaUnit','DotaView','DotaItemWorldState','DotaItemChannel','DotaExtraHero','DotaExtraHeroesState'})
  sys.path.insert(0,str(ROOT/'tests'));from mips_core_model import CoreMachine
  m=CoreMachine(bda,elf,{'DOTA2.H1R':a.bundle});required=['dota_game','view','use_inventory','confirm_item','pump','held','pressed','item_tap','resource_status'];assert all(n in m.symbols for n in required),[n for n in required if n not in m.symbols];has_process_ui='process_ui'in m.symbols
  gp=m.symbols['dota_game'];vp=m.symbols['view'];up=gp+layouts['DotaGame']['units'];calls=[];checks=0;cases=[];native_ms=1000;events=collections.deque();event_receipts=[];fixture_writes=[];start=time.monotonic()
@@ -57,10 +57,10 @@ def main():
   event=events.popleft()if events else(-1,-1);m.word(code,event[0]);m.word(value,event[1]);return 0
  for address,offset,callback in [(0x800011e0,0x71c,timer),(0x80001200,0x750,fetch)]:
   check(address not in m.callbacks,'Unused modeled callback slot');m.callbacks[address]=callback;m.write(address,struct.pack('<II',0x03e00008,0));m.word(0x80002000+offset,address)
- def setup():
+ def setup(hero=0):
   nonlocal native_ms
-  call('dota_init',gp,0,73);native_ms=1000;events.clear();data=bytearray(sizes['DotaView'])
-  for n,v in dict(screen=1,hero=0,aim_item=-1,aim_skill=-1,follow=1,camera_x=ufield('x'),camera_y=ufield('y'),target_x=ufield('x'),target_y=ufield('y'),inventory_source=-1,inventory_hover=-1).items():struct.pack_into('<i',data,layouts['DotaView'][n],v)
+  call('dota_init',gp,hero,73);native_ms=1000;events.clear();data=bytearray(sizes['DotaView'])
+  for n,v in dict(screen=1,hero=hero,aim_item=-1,aim_skill=-1,follow=1,camera_x=ufield('x'),camera_y=ufield('y'),target_x=ufield('x'),target_y=ufield('y'),inventory_source=-1,inventory_hover=-1).items():struct.pack_into('<i',data,layouts['DotaView'][n],v)
   fixture('view',bytes(data))
   for name in ['held','pressed','item_tap','inventory_gesture','inventory_action','battlefield_gesture','battlefield_action']:
    if name in m.symbols:fixture(name,bytes(m.symbol_sizes[name]))
@@ -97,6 +97,13 @@ def main():
    event(9,gkey,now);check(game()==before and m.read(m.symbols['item_tap'],m.symbol_sizes['item_tap'])==tap_state,'Held G after cast never reactivates')
    if has_process_ui:check(m.read(m.symbols['pressed']+gkey,1)==b'\0','process_ui clears edge latch')
   keys_after=m.integer(m.symbols['h1_dota_debug']+20);check(keys_after-keys_before==2,'Only two real key-down edges reach native counter');cases.append(dict(case='actual-pump-held-G-edge-filter',passed=True,modeled_key_down_messages=9,actual_new_edges=keys_after-keys_before,process_ui_executed=has_process_ui,direct_native_activations_without_process_ui=0 if has_process_ui else 2));print('CASE held edge',flush=True)
+  for label,item in [('faerie-fire',18),('mango',51),('bottle',54),('lotus',403),('great-lotus',404),('greater-lotus',405),('mana-draught',318)]:
+   setup();receive(item);slot=next(s for s in range(7)if call('dota_items_cast_item',gp,0,s)==item);charges=call('dota_items_charges',gp,0,slot);activation(slot,1000);check(view('aim_item')==-1,label+' first activation does not aim');check(call('dota_items_cooldown',gp,0,slot)>0 if item==318 else call('dota_items_charges',gp,0,slot)==charges-1,label+' applies cooldown or consumes one charge immediately');after=game();activation(slot,1400);check(game()==after,label+' second tap cannot consume twice');cases.append(dict(case=label+'-native-no-target-first-tap',passed=True));print('CASE '+label+' immediate',flush=True)
+  setup();receive(51);fixture('held',bytes([1 if i==constants['H1_KEY_SHIFT'] else 0 for i in range(m.symbol_sizes['held'])]));before=game();activation(0,1000);check(view('aim_item')==0 and game()==before,'Shift mango keeps explicit ally aiming without consumption');cases.append(dict(case='optional-mango-native-shift-target',passed=True))
+  setup(4);check(call('dota_progression_learn',gp,0,1)==1,'Learn Pounce with actual available level1 skill point');input_at=0x81502000
+  # Scratch is a modeled external input struct, never a Game/Unit write.
+  m.write(input_at,struct.pack('<4iI',1,0,0,0,0));old_x=ufield('x');call('dota_tick',gp,input_at);check(ufield('x')>old_x,'Actual Slark right movement establishes east facing');m.write(input_at,struct.pack('<4iI',0,0,0,0,64));call('dota_tick',gp,input_at);old_x,old_y=ufield('x'),ufield('y');call('begin_skill',1);check(view('aim_skill')==-1 and m.integer(m.symbols['pending_actions'])==4,'Native Pounce activation immediately queues W without aiming');m.write(input_at,struct.pack('<4iI',0,0,0,4095,m.integer(m.symbols['pending_actions'])));call('dota_tick',gp,input_at);extra_hero=gp+layouts['DotaGame']['extra']+layouts['DotaExtraHeroesState']['hero']
+  check(field(extra_hero,'DotaExtraHero','leap_at')>0 and field(extra_hero,'DotaExtraHero','leap_to_x')>old_x and field(extra_hero,'DotaExtraHero','leap_to_y')==old_y,'Actual MIPS Pounce ignores opposite cursor and jumps east');cases.append(dict(case='slark-native-pounce-no-target-current-facing',passed=True));print('CASE Slark Pounce',flush=True)
   report['resource_before_close']=resources();check(report['resource_before_close']['mounted']==1 and report['resource_before_close']['last_error']==0,'Actual resources healthy throughout controller tests');call('item_assets_close');call('bs_close');check(call('resource_unmount')==1,'Unmount controller resources');report['resource_after_close']=resources();check(not m.handles and not m.allocations and report['resource_after_close']['heap_bytes']==0 and report['resource_after_close']['open_files']==0,'All modeled file handles and heap released');check(all(sha(ROOT/n)==h for n,h in compiled.items()),'Candidate compiled sources unchanged');check(all(sha(Path(n))==h for n,h in test_sources.items()),'Test inputs unchanged');check(sha(bda)==meta['bda_sha256']and sha(elf)==meta['elf_sha256']and sha(a.bundle)==bundle_sha,'Frozen BDA/ELF/bundle unchanged');report.update(passed=True,checks=checks,compiled_source_current=True,source_current=True,elapsed_seconds=time.monotonic()-start,modeled_physical_bytes_read=m.bytes_read,all_build_inputs_current=not noncompiled_changes);save();print(json.dumps(dict(passed=True,checks=checks,cases=len(cases),actual_mips32=True,physical_h1_tested=False,report=str(out/'verification.json'))))
  except Exception as e:report.update(error=str(e),checks=checks);save('failure.json');(out/'failure.txt').write_text(traceback.format_exc());raise
  finally:m.dispose()

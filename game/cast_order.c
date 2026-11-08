@@ -27,12 +27,18 @@ static int tree_visible(const DotaGame*g,int h,int x,int y){
 }
 static int extra_available(const DotaGame*g,int h){int id=g->units[h].hero_id;return id==DOTA_HERO_PUDGE?dota_roster_swallowed(g,h)>=0:id==DOTA_HERO_SVEN?dota_hero_has_scepter(g,h):(id==3||id==4||id==5||id==7||id==9)&&dota_hero_has_shard(g,h);}
 int dota_cast_order_skill_kind(const DotaGame*g,int h,int skill){
+ /* Cast range is not an input type: Pounce has a travel distance but no
+  * cursor. Keep this shared by native input and approach/cast orders. */
+ static const unsigned char kinds[DOTA_HERO_TYPES][4]={
+  {0,2,0,2},{1,1,0,2},{0,1,0,2},{1,2,0,0},{0,0,2,0},
+  {0,0,0,2},{1,0,0,2},{1,0,0,2},{2,0,0,0},{2,0,0,0}
+ };
  int id;if(!g||(unsigned)h>=DOTA_HERO_COUNT||(unsigned)skill>4u)return DOTA_CAST_TARGET_NONE;id=g->units[h].hero_id;
  if(skill==4){if(!extra_available(g,h))return DOTA_CAST_TARGET_NONE;if(id==DOTA_HERO_NECROPHOS)return DOTA_CAST_TARGET_ANY;if(id==DOTA_HERO_TIDEHUNTER)return DOTA_CAST_TARGET_ENEMY;return (dota_roster_is_hero(&g->units[h])?dota_roster_extra_range(g,h):dota_extra_shard_range(g,h))?DOTA_CAST_TARGET_POINT:DOTA_CAST_TARGET_NONE;}
- if(dota_skill_is_passive(id,skill))return DOTA_CAST_TARGET_NONE;
+ if((unsigned)id>=DOTA_HERO_TYPES)return DOTA_CAST_TARGET_NONE;
  if(id==DOTA_HERO_PUDGE&&skill==3&&dota_hero_has_shard(g,h))return DOTA_CAST_TARGET_ANY;
- if((id==DOTA_HERO_AXE&&(skill==1||skill==3))||(id==DOTA_HERO_LINA&&skill==3)||(id==DOTA_HERO_JUGGERNAUT&&skill==3)||(id==DOTA_HERO_CRYSTAL_MAIDEN&&skill==1)||(id==DOTA_HERO_SLARK&&skill==2)||(id==DOTA_HERO_NECROPHOS&&skill==3)||(id==DOTA_HERO_PUDGE&&skill==3)||(id==DOTA_HERO_SNIPER&&skill==3)||(id==DOTA_HERO_SVEN&&skill==0)||(id==DOTA_HERO_TIDEHUNTER&&skill==0&&!dota_hero_has_scepter(g,h)))return DOTA_CAST_TARGET_ENEMY;
- return ((id==DOTA_HERO_JUGGERNAUT&&skill==1)||(id==DOTA_HERO_SLARK&&skill==1)||dota_skill_cast_range_source(g,h,skill))?DOTA_CAST_TARGET_POINT:DOTA_CAST_TARGET_NONE;
+ if(id==DOTA_HERO_TIDEHUNTER&&skill==0&&dota_hero_has_scepter(g,h))return DOTA_CAST_TARGET_POINT;
+ return kinds[id][skill];
 }
 static int skill_unit_valid(const DotaGame*g,int h,int skill,int target,int generation){
  const DotaUnit*u,*v;int kind=dota_cast_order_skill_kind(g,h,skill);
@@ -55,7 +61,7 @@ static int skill_range(const DotaGame*g,int h,int skill,int target){
  if(target>=0&&(dota_roster_is_hero(&g->units[h])||id==DOTA_HERO_SLARK||id==DOTA_HERO_NECROPHOS))range+=24;
  return range;
 }
-static int directional(const DotaGame*g,int h,int skill){int id=g->units[h].hero_id;return (id==DOTA_HERO_SLARK&&skill==1)||(id==DOTA_HERO_PUDGE&&skill==0)||(id==DOTA_HERO_TIDEHUNTER&&skill==0&&dota_hero_has_scepter(g,h))||(id==DOTA_HERO_CRYSTAL_MAIDEN&&skill==4);}
+static int directional(const DotaGame*g,int h,int skill){int id=g->units[h].hero_id;return (id==DOTA_HERO_PUDGE&&skill==0)||(id==DOTA_HERO_TIDEHUNTER&&skill==0&&dota_hero_has_scepter(g,h))||(id==DOTA_HERO_CRYSTAL_MAIDEN&&skill==4);}
 static int skill_resources(const DotaGame*g,int h,int skill){
  const DotaUnit*u=&g->units[h];int cost;
  if(skill<4){if(!dota_progression_rank(u,skill)||dota_skill_is_passive(u->hero_id,skill)||u->cooldown[skill])return 0;cost=dota_skill_mana_cost(g,h,skill);
@@ -134,7 +140,7 @@ int dota_order_item_at(DotaGame*g,int slot,int x,int y,int target,int generation
   o.kind=DOTA_CAST_ORDER_ITEM;o.action=slot;o.item_id=item;o.target_kind=DOTA_CAST_TREE;o.target=tree;o.target_generation=stamp;o.x=tx;o.y=ty;return issue(g,h,o);}
  o.kind=DOTA_CAST_ORDER_ITEM;o.action=slot;o.item_id=item;o.target_kind=target>=0?DOTA_CAST_UNIT:DOTA_CAST_POINT;o.target=target;o.target_generation=generation;o.x=x;o.y=y;
  /* Preserve existing no-target, TP, blink and self-use semantics. */
- if(target==h||r.action==ITEM_ACTION_TELEPORT||r.action==ITEM_ACTION_BLINK||(r.flags&ITEM_F_NO_TARGET))return dota_items_use(g,h,slot,x,y,target)?1:0;
+ if(target==h||r.action==ITEM_ACTION_TELEPORT||r.action==ITEM_ACTION_BLINK||((r.flags&ITEM_F_NO_TARGET)&&target<0))return dota_items_use(g,h,slot,x,y,target)?1:0;
  return issue(g,h,o);
 }
 

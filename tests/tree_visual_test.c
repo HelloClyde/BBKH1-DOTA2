@@ -15,6 +15,8 @@ int main(int argc,char **argv){
  CHECK(argc>1&&g&&rgb&&depth);
  if(mode==1){CHECK(!tree_visual_open(argv[1]));CHECK(tree_visual_error()!=0);CHECK(!live);goto done;}
  CHECK(tree_visual_open(argv[1]));CHECK(tree_visual_ready());CHECK(dota_trees_ready());CHECK(live==41196);
+ if(mode==3){unsigned reserved;reads=tree_visual_stats()->read_requests;CHECK(tree_visual_reserve_work());reserved=live;CHECK(tree_visual_reserve_work()&&live==reserved);CHECK(reads==tree_visual_stats()->read_requests);fail_at=allocations+1;}
+ if(mode==4||mode==5){fail_at=allocations+(mode==4?1:2);CHECK(!tree_visual_reserve_work());CHECK(tree_visual_error()!=0&&live==41196);goto close;}
  for(i=0;i<16384;++i){rgb[i]=0x1234;depth[i]=500;}
  rgb[0]=0x07e0;depth[0]=100;rgb[1]=0xffff;depth[1]=80;rgb[2]=0x001f;depth[2]=50;
  reads=tree_visual_stats()->read_requests;tree_visual_apply(rgb,depth,g,-512,-512,128,128);CHECK(reads==tree_visual_stats()->read_requests);CHECK(rgb[0]==0x07e0);

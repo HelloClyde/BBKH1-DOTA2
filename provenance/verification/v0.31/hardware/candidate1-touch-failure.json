@@ -1,0 +1,503 @@
+{
+  "passed": false,
+  "scope": "Opt-in physical H1 Pounce acceptance using normal inputs and read-only RAM.\n\nRun after deploying the specified BDA and observing its menu. Never patches\nGame, grants levels/items, fast-forwards time or invokes game code via EXEC.\n",
+  "physical_h1_tested": true,
+  "game_state_ram_writes": 0,
+  "bda_sha256": "326e5b68b0315a41b99185ab93cf21e2a03a013a4e5348e168b6a4a3280644d6",
+  "elf_sha256": "7b3f95695804b6ecd1ce9109a531b87226fc8ef13600a3fe1c81bb445db7c6cc",
+  "driver_sha256": "64154c49cad0c26481ba8572e08ed3e9daad0bbda6143244f6063ea3ea249d98",
+  "checks": [
+    {
+      "check": "Loaded code dota_extra_cast",
+      "passed": true
+    },
+    {
+      "check": "Loaded code dota_cast_order_skill_kind",
+      "passed": true
+    },
+    {
+      "check": "Loaded code dota_hero_facing",
+      "passed": true
+    },
+    {
+      "check": "Loaded code use_inventory",
+      "passed": true
+    },
+    {
+      "check": "Slark selected",
+      "passed": true
+    },
+    {
+      "check": "Normal Shift W learns Pounce",
+      "passed": true
+    },
+    {
+      "check": "Normal movement faces east",
+      "passed": true
+    },
+    {
+      "check": "touch Pounce immediately casts east",
+      "passed": true,
+      "start": [
+        403,
+        3723
+      ],
+      "end": [
+        578,
+        3723
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "keys": [
+        "RIGHT"
+      ],
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "RIGHT"
+      ],
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "RIGHT"
+      ],
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "RIGHT"
+      ],
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "ENTER"
+      ],
+      "receipt": {
+        "keys_low": 16777216,
+        "keys_high": 0,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "SHIFT",
+        "W"
+      ],
+      "receipt": {
+        "keys_low": 2,
+        "keys_high": 512,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "RIGHT"
+      ],
+      "receipt": {
+        "keys_low": 0,
+        "keys_high": 4,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "keys": [
+        "K"
+      ],
+      "receipt": {
+        "keys_low": 2147483648,
+        "keys_high": 0,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    },
+    {
+      "tap": [
+        244,
+        216
+      ],
+      "receipt": {
+        "gesture": "tap",
+        "x": 244,
+        "y": 216,
+        "hold_seconds": 0.15,
+        "lease_ticks": 80,
+        "release_acknowledged": true,
+        "host_elapsed_seconds": 0.1869999999180436
+      }
+    },
+    {
+      "keys": [
+        "ESCAPE"
+      ],
+      "receipt": {
+        "keys_low": 8388608,
+        "keys_high": 0,
+        "lease_ticks": 80,
+        "automatic_release": true,
+        "units": "raw device ticks"
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "build/v031/h1-pounce3/touch-before.png",
+      "sha256": "ccae0f0b3c57eaa838784c6305da4433e73b0fcfe5c03cc87945c149863af1b4",
+      "receipt": {
+        "token": 102,
+        "width": 480,
+        "height": 272,
+        "stride": 1920,
+        "format": 2,
+        "total": 522240,
+        "source": 2710577152,
+        "tick": 3233003,
+        "codec": "rle",
+        "transfer": {
+          "codec": "rle",
+          "decoded_bytes": 522240,
+          "encoded_bytes": 276984,
+          "requests": 561,
+          "protocol_bytes_sent": 15708,
+          "protocol_bytes_received": 294936,
+          "elapsed_seconds": 9.172000000020489,
+          "decoded_bytes_per_second": 56938.50850401585,
+          "progress_callback": false,
+          "scope": "SCREEN_READ RPCs; protocol framing included, USB packet overhead excluded"
+        },
+        "capture_elapsed_seconds": 9.265999999945052,
+        "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v031\\h1-pounce3\\touch-before.png",
+        "snapshot_sha256": "63933dad9e061c72a2caf0c843963d5f972fc37ba10291ece3e8418a9ba4b858",
+        "png_sha256": "ccae0f0b3c57eaa838784c6305da4433e73b0fcfe5c03cc87945c149863af1b4"
+      }
+    },
+    {
+      "path": "build/v031/h1-pounce3/touch-after.png",
+      "sha256": "d714d0c1a6ff9c10f44e286a97526492458e3d02d39e39024fa0d2626b5da8e2",
+      "receipt": {
+        "token": 103,
+        "width": 480,
+        "height": 272,
+        "stride": 1920,
+        "format": 2,
+        "total": 522240,
+        "source": 2710577152,
+        "tick": 3233388,
+        "codec": "rle",
+        "transfer": {
+          "codec": "rle",
+          "decoded_bytes": 522240,
+          "encoded_bytes": 276574,
+          "requests": 560,
+          "protocol_bytes_sent": 15680,
+          "protocol_bytes_received": 294494,
+          "elapsed_seconds": 8.704000000027008,
+          "decoded_bytes_per_second": 59999.99999981382,
+          "progress_callback": false,
+          "scope": "SCREEN_READ RPCs; protocol framing included, USB packet overhead excluded"
+        },
+        "capture_elapsed_seconds": 8.797000000020489,
+        "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v031\\h1-pounce3\\touch-after.png",
+        "snapshot_sha256": "30c4b67d7b91c9ffb8ff5931cf84bb55e8adbdb95fe2d551ffa04166a328a669",
+        "png_sha256": "d714d0c1a6ff9c10f44e286a97526492458e3d02d39e39024fa0d2626b5da8e2"
+      }
+    },
+    {
+      "path": "build/v031/h1-pounce3/failure.png",
+      "sha256": "4e0a68534216e1ab890e29fdc97c02f062058e686e3a07b394c921bcc84901c4",
+      "receipt": {
+        "token": 104,
+        "width": 480,
+        "height": 272,
+        "stride": 1920,
+        "format": 2,
+        "total": 522240,
+        "source": 2710577152,
+        "tick": 3233761,
+        "codec": "rle",
+        "transfer": {
+          "codec": "rle",
+          "decoded_bytes": 522240,
+          "encoded_bytes": 164518,
+          "requests": 334,
+          "protocol_bytes_sent": 9352,
+          "protocol_bytes_received": 175206,
+          "elapsed_seconds": 6.217999999993481,
+          "decoded_bytes_per_second": 83988.42071414403,
+          "progress_callback": false,
+          "scope": "SCREEN_READ RPCs; protocol framing included, USB packet overhead excluded"
+        },
+        "capture_elapsed_seconds": 6.280999999959022,
+        "output": "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\build\\v031\\h1-pounce3\\failure.png",
+        "snapshot_sha256": "70ae0db9612a075002b9952733f34e0bcc293da1d0e03511e3cff3d6a3e21415",
+        "png_sha256": "4e0a68534216e1ab890e29fdc97c02f062058e686e3a07b394c921bcc84901c4"
+      }
+    }
+  ],
+  "cases": [
+    {
+      "mode": "touch",
+      "passed": true,
+      "before": {
+        "active": 1,
+        "type": 1,
+        "team": 0,
+        "hero_id": 4,
+        "lane": 1,
+        "tier": 0,
+        "x": 403,
+        "y": 3723,
+        "hp": 560,
+        "max_hp": 560,
+        "mana": 267,
+        "max_mana": 267,
+        "damage": 61,
+        "armor": 3,
+        "range": 150,
+        "speed": 300,
+        "level": 1,
+        "xp": 0,
+        "gold": 600,
+        "inventory": -1,
+        "cooldown": 0,
+        "attack_wait": 0,
+        "respawn_ticks": 0,
+        "target": -1,
+        "waypoint": 0,
+        "move_order": 0,
+        "move_x": 0,
+        "move_y": 0,
+        "stun_ticks": 0,
+        "slow_ticks": 0,
+        "taunt_ticks": 0,
+        "taunt_source": -1,
+        "dot_ticks": 0,
+        "dot_damage": 0,
+        "dot_source": -1,
+        "buff_ticks": 0,
+        "channel_ticks": 0,
+        "heal_ticks": 0,
+        "skill_ticks": 0,
+        "skill_x": 0,
+        "skill_y": 0,
+        "kills": 0,
+        "deaths": 0,
+        "last_damage_team": 0,
+        "last_damage_source": 0,
+        "generation": 1,
+        "calculated_armor100": 350
+      },
+      "after": {
+        "active": 1,
+        "type": 1,
+        "team": 0,
+        "hero_id": 4,
+        "lane": 1,
+        "tier": 0,
+        "x": 438,
+        "y": 3723,
+        "hp": 560,
+        "max_hp": 560,
+        "mana": 204,
+        "max_mana": 267,
+        "damage": 61,
+        "armor": 3,
+        "range": 150,
+        "speed": 300,
+        "level": 1,
+        "xp": 0,
+        "gold": 600,
+        "inventory": -1,
+        "cooldown": 0,
+        "attack_wait": 0,
+        "respawn_ticks": 0,
+        "target": -1,
+        "waypoint": 0,
+        "move_order": 0,
+        "move_x": 0,
+        "move_y": 0,
+        "stun_ticks": 0,
+        "slow_ticks": 0,
+        "taunt_ticks": 0,
+        "taunt_source": -1,
+        "dot_ticks": 0,
+        "dot_damage": 0,
+        "dot_source": -1,
+        "buff_ticks": 0,
+        "channel_ticks": 0,
+        "heal_ticks": 0,
+        "skill_ticks": 0,
+        "skill_x": 0,
+        "skill_y": 0,
+        "kills": 0,
+        "deaths": 0,
+        "last_damage_team": 0,
+        "last_damage_source": 0,
+        "generation": 1,
+        "calculated_armor100": 350
+      },
+      "leap": {
+        "generation": 1,
+        "pact_at": 0,
+        "pact_pulse": 0,
+        "pact_rank": 0,
+        "leap_at": 245,
+        "leap_x": 403,
+        "leap_y": 3723,
+        "leap_to_x": 578,
+        "leap_to_y": 3723,
+        "leap_rank": 1,
+        "leap_duration": 15,
+        "shadow_until": 0,
+        "unseen_since": 1,
+        "neutral_until": 0,
+        "ghost_until": 0,
+        "scythe_at": 0,
+        "scythe_target": 0,
+        "scythe_generation": 0,
+        "scythe_rank": 0,
+        "scythe_cast_at": 0,
+        "scythe_duration": 0,
+        "permanent_agi": 0,
+        "scythe_kills": 0,
+        "essence_gain": 0,
+        "essence_loss": 0,
+        "sadist_stacks": 0,
+        "hp_fraction": 0,
+        "mana_fraction": 0,
+        "shiv_target": 0,
+        "shiv_generation": 0,
+        "shiv_until": 0,
+        "shiv_rank": 0,
+        "pounce_upgrade": 0,
+        "pounce_charges": 0,
+        "pounce_restore_at": 0,
+        "shard_cooldown": 0,
+        "shroud_until": 0,
+        "shroud_x": 0,
+        "shroud_y": 0,
+        "shroud_rank": 0,
+        "shroud_radius": 0,
+        "seeker_at": 0,
+        "seeker_duration": 0,
+        "seeker_x": 0,
+        "seeker_y": 0,
+        "seeker_to_x": 0,
+        "seeker_to_y": 0,
+        "leash_until": 0,
+        "leash_x": 0,
+        "leash_y": 0,
+        "leash_source": 0,
+        "leash_generation": 0
+      }
+    }
+  ],
+  "debug_identity": "H1DEBUG/1 V1.41 RESIDENT",
+  "error": "Game runtime error 36",
+  "failure_diagnostics": {
+    "h1_dota_debug": [
+      826364996,
+      202,
+      1,
+      4,
+      0,
+      10,
+      259,
+      36
+    ],
+    "resource_status": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      5,
+      1961,
+      18665921,
+      1574,
+      7210772,
+      660,
+      7801,
+      152,
+      2393,
+      2780,
+      2504,
+      14321429,
+      916,
+      0
+    ],
+    "tree_stats": [
+      1,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      2,
+      41324,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "h1_dota_cache": [
+      826495048,
+      3,
+      0,
+      14680064,
+      44278,
+      17522480,
+      262144,
+      564452,
+      112040,
+      0,
+      0,
+      1,
+      64,
+      111616,
+      2030693,
+      1866988
+    ]
+  }
+}

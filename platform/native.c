@@ -341,7 +341,9 @@ static void use_inventory(int slot){
         r.action==ITEM_ACTION_SOUL||r.action==ITEM_ACTION_CYCLONE||
         (r.action==ITEM_ACTION_FORCE&&!(r.flags&ITEM_F_NO_TARGET))||
         item==DOTA_ITEM_DISPERSER||item==DOTA_ITEM_MEDALLION_OF_COURAGE;
-    if(item==DOTA_ITEM_FAMANGO||item==DOTA_ITEM_GREAT_FAMANGO||item==DOTA_ITEM_GREATER_FAMANGO)targeted=0;
+    /* NO_TARGET wins over team filters used by optional ally-target items.
+     * Shift retains their explicit friendly-target mode. */
+    if((r.flags&ITEM_F_NO_TARGET)&&!(r.flags&ITEM_F_POINT))targeted=key(H1_KEY_SHIFT)&&(r.flags&ITEM_F_FRIENDLY)&&item!=DOTA_ITEM_FAERIE_FIRE;
     dota_cast_order_cancel(&dota_game,dota_game.player);
     if(second&&r.action!=ITEM_ACTION_WARD){
         if(!targeted)return;
@@ -356,10 +358,9 @@ static void use_inventory(int slot){
         if(!dota_items_ward_available(&dota_game,dota_game.player,slot,mode))return;
         view.ward_mode=mode;view.aim_item=slot;view.aim_skill=-1;target_controls_frame=1;if(!was_aiming)target_cursor_begin();return;
     }
-    if(item==DOTA_ITEM_FAMANGO||item==DOTA_ITEM_GREAT_FAMANGO||item==DOTA_ITEM_GREATER_FAMANGO){dota_use_item(&dota_game,slot);return;}
     if(targeted){
         view.aim_item=slot;view.aim_skill=-1;target_controls_frame=1;target_cursor_begin();
-    }else dota_use_item(&dota_game,slot);
+    }else{view.aim_item=view.aim_skill=-1;pending_actions=0;dota_use_item(&dota_game,slot);}
 }
 static int aimed_item(DotaItemRecord *r){
     int item=dota_items_cast_item(&dota_game,dota_game.player,view.aim_item);
@@ -805,44 +806,15 @@ int h1_app_main(void) {
     else if(bs_pack_header()->version!=BS_VERSION)asset_error=13;
     else if(!item_assets_open())asset_error=14;
     else {
-        unsigned sprite;
         baked_io_reserve_cache(256u*1024u);
         item_assets_reserve_rules_cache(64u*1024u);
         item_assets_reserve_icon_cache(64);
-        sprite=bs_reserve_cache(14u*1024u*1024u);
-        if(sprite<12u*1024u*1024u && bs_ready()){
-            /* Retry the established budget without retaining the first
-             * attempt's directory allocation alongside the second one. */
-            (void)bs_reserve_cache(0);
-            sprite=bs_reserve_cache(12u*1024u*1024u);
-        }
-        if(!sprite || !bs_ready())asset_error=bs_last_error()?bs_last_error():14;
-        else {
-            /* Preload only the initial Radiant fountain.
-             * No pinning, extra heap or phase changes. A skipped low-memory
-             * warmup retains the ordinary renderer; real I/O errors surface. */
 #ifndef DOTA_RESOURCE_PACK
-            (void)bs_map_sidecar_open_default();
+        (void)bs_map_sidecar_open_default();
 #endif
-            if(!vision_assets_open_default()){asset_error=15;goto assets_done;}
-            if(!tree_visual_open_default()){asset_error=16;goto assets_done;}
-            (void)bs_prewarm_fountain(0,prewarm_cancel_poll);
-            if(closing)goto finish;
-            if(bs_last_error())asset_error=bs_last_error();
-            h1_dota_cache.magic=0x31435048u;h1_dota_cache.version=3;
-            h1_dota_cache.rgb_bytes=rgb565_table?65536u*sizeof(uint32_t):0;
-            h1_dota_cache.sprite_bytes=bs_sprite_cache_bytes();
-            h1_dota_cache.resident_frames=bs_resident_frame_count();
-            h1_dota_cache.scene_heap_bytes=bs_dynamic_storage_bytes();
-            h1_dota_cache.io_bytes=baked_io_cache_bytes();
-            h1_dota_cache.io_heap_bytes=baked_io_dynamic_storage_bytes();
-            h1_dota_cache.rules_bytes=item_assets_rules_cache_bytes();
-            h1_dota_cache.icon_slots=item_assets_icon_cache_slots();h1_dota_cache.icon_heap_bytes=item_assets_icon_cache_bytes();
-            h1_dota_cache.vision_heap_bytes=vision_assets_stats()->heap_bytes;
-            h1_dota_cache.total_heap_bytes=h1_dota_cache.rgb_bytes+h1_dota_cache.scene_heap_bytes+h1_dota_cache.io_heap_bytes+h1_dota_cache.rules_bytes+h1_dota_cache.icon_heap_bytes+h1_dota_cache.vision_heap_bytes;
-            h1_dota_cache.fallback_flags=(!rgb565_table&&!mxu_ready?1u:0u)|(sprite<12u*1024u*1024u?2u:0u)|(!bs_resident_frame_count()?4u:0u)|(baked_io_cache_bytes()<256u*1024u?8u:0u)|(!item_assets_rules_cache_bytes()?16u:0u)|(h1_dota_cache.icon_slots<64?32u:0u)|(!vision_assets_stats()->ready?64u:0u);
-            shop_catalog_reset();shop_catalog_bind(&dota_game);
-        }
+        if(!vision_assets_open_default()){asset_error=15;goto assets_done;}
+        if(!tree_visual_open_default()||!tree_visual_reserve_work()){asset_error=16;goto assets_done;}
+        shop_catalog_reset();shop_catalog_bind(&dota_game);
     }
 assets_done:
     if(asset_error){
@@ -861,6 +833,32 @@ assets_done:
     (void)match_storage_open();view.history=match_storage_history();view.save_error=match_storage_error();
 #ifdef DOTA_BAKED
     /* Mandatory scene, vision, tree, audio and history allocations have priority. */
+    {
+        unsigned sprite=bs_reserve_cache(14u*1024u*1024u);
+        int cache_error;
+        if(sprite<12u*1024u*1024u&&bs_ready()){
+            (void)bs_reserve_cache(0);
+            sprite=bs_reserve_cache(12u*1024u*1024u);
+        }
+        cache_error=!sprite||!bs_ready()?(bs_last_error()?bs_last_error():14):0;
+        if(!cache_error){
+            (void)bs_prewarm_fountain(0,prewarm_cancel_poll);
+            if(closing)goto finish;
+            cache_error=bs_last_error();
+        }
+        if(cache_error){h1_dota_debug.error=20u+(unsigned)cache_error;resource_error_wait(cache_error);goto finish;}
+        h1_dota_cache.magic=0x31435048u;h1_dota_cache.version=3;
+        h1_dota_cache.rgb_bytes=rgb565_table?65536u*sizeof(uint32_t):0;
+        h1_dota_cache.sprite_bytes=bs_sprite_cache_bytes();
+        h1_dota_cache.resident_frames=bs_resident_frame_count();
+        h1_dota_cache.scene_heap_bytes=bs_dynamic_storage_bytes();
+        h1_dota_cache.io_bytes=baked_io_cache_bytes();h1_dota_cache.io_heap_bytes=baked_io_dynamic_storage_bytes();
+        h1_dota_cache.rules_bytes=item_assets_rules_cache_bytes()+match_storage_heap_bytes();
+        h1_dota_cache.icon_slots=item_assets_icon_cache_slots();h1_dota_cache.icon_heap_bytes=item_assets_icon_cache_bytes();
+        h1_dota_cache.vision_heap_bytes=vision_assets_stats()->heap_bytes;
+        h1_dota_cache.total_heap_bytes=h1_dota_cache.rgb_bytes+h1_dota_cache.scene_heap_bytes+h1_dota_cache.io_heap_bytes+h1_dota_cache.rules_bytes+h1_dota_cache.icon_heap_bytes+h1_dota_cache.vision_heap_bytes+h1_dota_cache.audio_heap_bytes;
+        h1_dota_cache.fallback_flags=(!rgb565_table&&!mxu_ready?1u:0u)|(sprite<12u*1024u*1024u?2u:0u)|(!bs_resident_frame_count()?4u:0u)|(baked_io_cache_bytes()<256u*1024u?8u:0u)|(!item_assets_rules_cache_bytes()?16u:0u)|(h1_dota_cache.icon_slots<64?32u:0u)|(!vision_assets_stats()->ready?64u:0u);
+    }
     (void)bs_reserve_sprite_row_cache(128);
 #endif
     last=frame_clock_ms()-50;

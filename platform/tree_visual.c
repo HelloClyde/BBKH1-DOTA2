@@ -159,20 +159,24 @@ static void affected_tiles(const DotaGame *g,unsigned revision){
  }
  patch_owner=g;patch_epoch=resource_epoch;
 }
-static int prepare(const DotaGame *g,int query){
- unsigned i,bytes;static unsigned affected_serial;
- if(!g||(!g->trees.cut_count&&!query)||!tree_visual_ready())return 0;
- if(!patch_memory){
-  bytes=TV_SLOTS*TV_PATCH_BYTES+DOTA_STATIC_TREE_WORDS*4u;patch_memory=cache_memory_alloc(bytes);
-  if(!patch_memory)return fail(TV_MEMORY);
-  cut_snapshot=(uint32_t *)(void *)((unsigned char *)patch_memory+TV_SLOTS*TV_PATCH_BYTES);
-  tree_stats.cache_bytes=bytes;tree_stats.heap_bytes+=bytes;
-   scratch=cache_memory_alloc(max_decoded+scratch_extra);if(!scratch)return fail(TV_MEMORY);
-   tree_stats.scratch_bytes=max_decoded+scratch_extra;tree_stats.heap_bytes+=tree_stats.scratch_bytes;
-  for(i=0;i<TV_SLOTS;++i){unsigned char *base=(unsigned char *)patch_memory+i*TV_PATCH_BYTES;
+int tree_visual_reserve_work(void){
+ unsigned i,bytes=TV_SLOTS*TV_PATCH_BYTES+DOTA_STATIC_TREE_WORDS*4u;uint16_t *patch;unsigned char *work;
+ if(!tree_visual_ready())return 0;
+ if(patch_memory)return 1;
+ patch=cache_memory_alloc(bytes);if(!patch)return fail(TV_MEMORY);
+ work=cache_memory_alloc(max_decoded+scratch_extra);if(!work){cache_memory_free(patch);return fail(TV_MEMORY);}
+ patch_memory=patch;scratch=work;
+ cut_snapshot=(uint32_t *)(void *)((unsigned char *)patch_memory+TV_SLOTS*TV_PATCH_BYTES);
+ tree_stats.cache_bytes=bytes;tree_stats.scratch_bytes=max_decoded+scratch_extra;tree_stats.heap_bytes+=bytes+tree_stats.scratch_bytes;
+ for(i=0;i<TV_SLOTS;++i){unsigned char *base=(unsigned char *)patch_memory+i*TV_PATCH_BYTES;
    patches[i].color=(uint16_t *)(void *)base;patches[i].depth=patches[i].color+TV_PIXELS;
    patches[i].mask=(uint32_t *)(void *)(base+TV_PIXELS*4u);patches[i].tile=0xffffffffu;}
- }
+ return 1;
+}
+static int prepare(const DotaGame *g,int query){
+ unsigned i;static unsigned affected_serial;
+ if(!g||(!g->trees.cut_count&&!query)||!tree_visual_ready())return 0;
+ if(!tree_visual_reserve_work())return 0;
  i=tree_visual_revision(g);if(affected_serial!=i||patch_owner!=g||patch_epoch!=resource_epoch){affected_tiles(g,i);affected_serial=i;}
  return 1;
 }
