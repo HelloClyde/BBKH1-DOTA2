@@ -1,6 +1,6 @@
 {
   "version": "0.31",
-  "channel": "development",
+  "channel": "development-prerelease",
   "bda_sha256": "30eb5ad74e67e80b861a04588d450b4576a6ce17f1661aaa8bb560e174a4da73",
   "bda_bytes": 1081124,
   "elf_sha256": "25d33315cb612b4fe789986dd39dab6a53ead8b5b5398719a049d7c1b9c53027",
@@ -63,7 +63,7 @@
     "sha256": "30eb5ad74e67e80b861a04588d450b4576a6ce17f1661aaa8bb560e174a4da73",
     "receipt": "provenance/verification/v0.31/hardware/candidate2-deploy.json"
   },
-  "release_pin_created": false,
+  "release_pin_created": true,
   "harness_notes": [
     "Initial native-input fixtures used incorrect lotus IDs, then incorrectly assumed lotus combinations and reusable Mana Draught charges; corrected harness inputs/assertions passed on the same unchanged candidate.",
     "Initial hardware driver import path was corrected before it sent any input. Legacy cache-parity script was given an explicit equal-read-work mode for this allocation-only change; exact pixel/depth/pick outputs and per-step work counts match."
@@ -107,5 +107,6 @@
   "build_identity": {
     "path": "provenance/verification/v0.31/candidate2-build.json",
     "sha256": "801f8088cf8e338550640a881011077369a032940237435d4aae376bd6815b4a"
-  }
+  },
+  "release_identity": "provenance/releases/v0.31.json"
 }

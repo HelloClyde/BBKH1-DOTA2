@@ -29,8 +29,11 @@ def main():
     p.add_argument('--output',type=Path,required=True)
     a=p.parse_args();out=a.output.resolve()
     assert out.is_relative_to(ROOT/'build') and not out.exists();out.mkdir(parents=True)
-    pin=json.loads((ROOT/'provenance/releases/v0.30.json').read_bytes())
     inventory=json.loads((a.package/'PACKAGE.json').read_bytes())
+    version=(ROOT/'VERSION').read_text().strip()
+    assert inventory['version']==version
+    pin=json.loads((ROOT/'provenance/releases'/('v'+version+'.json')).read_bytes())
+    assert pin['version']==version
     archive=a.package/'DOTA2-H1-install.zip'
     assert sha(archive)==inventory['files'][archive.name]
     with zipfile.ZipFile(archive)as z:
@@ -40,7 +43,7 @@ def main():
             with z.open(name)as source,dest.open('wb')as target:shutil.copyfileobj(source,target)
             assert sha(dest)==inventory['members'][name]
     bda=out/'extracted/应用/程序/DOTA2.bda';bundle=out/'extracted/DOTA2/DOTA2.H1R'
-    assert sha(bda)==pin['bda_sha256'] and bundle.stat().st_size==112861448
+    assert sha(bda)==pin['bda_sha256'] and bundle.stat().st_size==pin['runtime_assets']['DOTA2.H1R']['bytes']
     assert sha(bundle)==pin['runtime_assets']['DOTA2.H1R']['sha256']
     results=[];expected=None
     for drive in ['A','B']:

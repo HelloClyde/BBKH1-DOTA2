@@ -1,0 +1,28 @@
+{
+  "format_version": 1,
+  "version": "0.31",
+  "bda_sha256": "30eb5ad74e67e80b861a04588d450b4576a6ce17f1661aaa8bb560e174a4da73",
+  "bda_bytes": 1081124,
+  "sdk_commit": "067fe072477861dfc8949d7b1a55279fb92d2548",
+  "prerelease": true,
+  "physical_h1_tested": true,
+  "performance_acceptance_passed": false,
+  "full_feature_acceptance_complete": false,
+  "tested_elf_sha256": "25d33315cb612b4fe789986dd39dab6a53ead8b5b5398719a049d7c1b9c53027",
+  "tested_build_metadata": {
+    "path": "provenance/verification/v0.31/candidate2-build.json",
+    "sha256": "801f8088cf8e338550640a881011077369a032940237435d4aae376bd6815b4a"
+  },
+  "hardware_evidence": {
+    "path": "provenance/verification/v0.31/hardware/INDEX.json",
+    "sha256": "78c2c9e82e63050fa687ce02a34e4ad478f9607fcb6e649fade0ecdf2b046a83"
+  },
+  "runtime_assets": {
+    "DOTA2.H1R": {
+      "path": "assets/runtime/DOTA2.H1R",
+      "bytes": 112861448,
+      "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153"
+    }
+  },
+  "scope": "Exact candidate2 BDA tested on physical H1: keyboard/icon Pounce, landing tree reconstruction, resource/audio health and normal cleanup. One eight-second post-landing sample is recorded; full performance/feature acceptance is not claimed. Complete ZIP includes program and unified runtime assets."
+}

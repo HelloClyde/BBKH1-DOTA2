@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "scope": "Check extracted release layout and exact MIPS A/B resource lookup.\n\nFilesystem/heap callbacks are modeled. No H1 device or application entry runs.\n",
+  "physical_h1_tested": false,
+  "actual_mips32": true,
+  "install_zip_sha256": "70c4f64911865586e47367da0eba35dc322913ce268e7c5c0883fae0e0fb4388",
+  "bda_sha256": "30eb5ad74e67e80b861a04588d450b4576a6ce17f1661aaa8bb560e174a4da73",
+  "resource_sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153",
+  "script_sha256": "101bb9345157813b324b8e50dc07618e531e304ce6e1de18a7ae2cb1ca3c207a",
+  "model_sha256": "483e06020612116a1716d77db5dd0c6f69ed2184e9d914cb0d01f61e2a14a03c",
+  "extracted_root_layout_valid": true,
+  "existing_saves_included": false,
+  "results": [
+    {
+      "drive": "A",
+      "passed": true,
+      "open_attempts": [
+        "B:\\DOTA2\\DOTA2.H1R",
+        "A:\\DOTA2\\DOTA2.H1R",
+        "A:\\DOTA2\\DOTA2.H1R"
+      ],
+      "successful_opens": [
+        "A:\\DOTA2\\DOTA2.H1R",
+        "A:\\DOTA2\\DOTA2.H1R"
+      ],
+      "first64_sha256": "ff16cab0ebee1a1bda061b62fd77e082cb4dfcbce9678c1e4ea143e3e7327677",
+      "allocations_after_close": 0,
+      "handles_after_close": 0
+    },
+    {
+      "drive": "B",
+      "passed": true,
+      "open_attempts": [
+        "B:\\DOTA2\\DOTA2.H1R",
+        "B:\\DOTA2\\DOTA2.H1R"
+      ],
+      "successful_opens": [
+        "B:\\DOTA2\\DOTA2.H1R",
+        "B:\\DOTA2\\DOTA2.H1R"
+      ],
+      "first64_sha256": "ff16cab0ebee1a1bda061b62fd77e082cb4dfcbce9678c1e4ea143e3e7327677",
+      "allocations_after_close": 0,
+      "handles_after_close": 0
+    }
+  ],
+  "artifact_scope": "Local prepublication package check. The ZIP checksum identifies the local artifact, not the later CI Release ZIP.",
+  "published_asset_verified": false
+}

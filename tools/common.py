@@ -11,6 +11,7 @@ if not re.fullmatch(r'\d+\.\d+(?:\.\d+)?',VERSION):raise ValueError('VERSION mus
 BUILD_DATE='2026-11-01 00:00:00';ENTRY=0x83c00020;RAM_LIMIT=0x83ff0000
 PLATFORM_SOURCES=('entry.S','native.c','render.c','status_effects.c','baked_scene.c','baked_io.c','item_assets.c','shop_catalog.c','dota_audio.c','map_codec.c','map_format.c','vision_assets.c','tree_visual.c','resource_pack.c','match_storage.c')
 PACKAGE_DOCS=('assets/NOTICE.md','docs/BUILDING.md','docs/CONTROLS.md','docs/RESOURCE-REPACK-v0.30.md','docs/MATCH-HISTORY.md','docs/provenance/fonts.json','docs/provenance/fonts-v0.29.json','docs/provenance/fonts-v0.30.json','docs/verification/v0.30-h1.json','docs/screenshots/h1-v030-resources.png','docs/screenshots/h1-v030-trees.png','docs/screenshots/host-v030-result.png','docs/screenshots/host-v030-history.png','docs/screenshots/manifest.json','sdk/LICENSE','sdk/NOTICE','third_party/miniz/LICENSE')
+PACKAGE_DOCS+=(f'docs/verification/v{VERSION}.json',)
 ASSETS={
  'DOTA2.H1R':(112861448,'00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153')}
 
