@@ -9,6 +9,11 @@ int dota_extra_range(const DotaUnit *u,int skill);
 int dota_extra_radius(const DotaUnit *u,int skill);
 int dota_extra_effect_radius(const DotaGame *g,int caster,int skill);
 int dota_extra_cast(DotaGame *g,int caster,int skill,int x,int y);
+int dota_skill_autocast_supported(const DotaGame *g,int hero,int skill);
+int dota_skill_autocast_enabled(const DotaGame *g,int hero,int skill);
+int dota_skill_autocast_toggle(DotaGame *g,int hero,int skill);
+/* Called only when a real basic attack reaches its release/impact phase. */
+int dota_extra_autocast_attack(DotaGame *g,int source,int target);
 int dota_extra_cast_shard(DotaGame *g,int caster,int x,int y);
 int dota_extra_shard_mana(const DotaGame *g,int caster);
 int dota_extra_shard_range(const DotaGame *g,int caster);

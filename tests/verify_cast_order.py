@@ -10,7 +10,7 @@ def main():
   r=subprocess.run(list(map(str,cmd)),cwd=ROOT,env=env,capture_output=True,text=True);logs.append(r.stdout+r.stderr);assert not r.returncode,r.stdout+r.stderr;return r.stdout
  def compile_one(s):
   o=out/'objects'/(s.stem+'.o');run([cc,'-std=c99','-O2','-Wall','-Wextra','-Werror','-DBAKED_IO_HOST','-Igame','-Iplatform','-c',s,'-o',o]);return o
- inputs.extend(ROOT/'platform'/name for name in ['target_input.h','extra_ability.h']);before=identity()
+ inputs.extend(ROOT/'platform'/name for name in ['target_input.h','extra_ability.h','ability_icon_state.h']);before=identity()
  with ThreadPoolExecutor(max_workers=4)as pool:objects=list(pool.map(compile_one,sources))
  exe=out/'cast-order.exe';run([cc,*objects,'-o',exe]);(out/'compile.txt').write_text(''.join(logs));text=run([exe,a.scene.resolve(),out/'trace.csv']);(out/'output.txt').write_text(text);report=json.loads(re.search(r'^RESULT (.*)$',text,re.M)[1]);report.update(source_current=before==identity(),source_sha256=before,binary_sha256=sha(exe),scene_sha256=sha(a.scene),USB_opened=False,scope=__doc__);(out/'verification.json').write_text(json.dumps(report,indent=2)+'\n');assert report['passed'];print(text);print(out/'verification.json')
 if __name__=='__main__':main()

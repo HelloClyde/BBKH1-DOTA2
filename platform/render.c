@@ -226,13 +226,13 @@ static void tiny_number(int x,int y,int value,uint16_t color){
     for(i=0;i<n;++i)tiny_digit(x+i*6,y,digits[n-i-1],color);
 }
 static void tiny_char(int x,int y,char code,uint16_t color){
-    static const char keys[]="QWERZXCVBNUITY+-/.%";
+    static const char keys[]="QWERZXCVBNUITY+-/.%A";
     static const unsigned char rows[][7]={
         {14,17,17,17,21,18,13},{17,17,17,21,21,21,10},{31,16,16,30,16,16,31},{30,17,17,30,20,18,17},
         {31,1,2,4,8,16,31},{17,17,10,4,10,17,17},{14,17,16,16,16,17,14},{17,17,17,17,17,10,4},
         {30,17,17,30,17,17,30},{17,25,21,19,17,17,17},{17,17,17,17,17,17,14},{14,4,4,4,4,4,14},
         {31,4,4,4,4,4,4},{17,17,10,4,4,4,4},{0,4,4,31,4,4,0},{0,0,0,31,0,0,0},
-        {1,1,2,4,8,16,16},{0,0,0,0,0,12,12},{25,26,2,4,8,11,19}};
+        {1,1,2,4,8,16,16},{0,0,0,0,0,12,12},{25,26,2,4,8,11,19},{14,17,17,31,17,17,17}};
     int i,r,c;if(code>='0'&&code<='9'){tiny_digit(x,y,code-'0',color);return;}
     for(i=0;keys[i]&&keys[i]!=code;++i){}if(!keys[i])return;
     for(r=0;r<7;++r)for(c=0;c<5;++c)if(rows[i][r]&(16u>>c))pixel(x+c,y+r,color);
@@ -605,6 +605,7 @@ static void hud(const DotaGame *g,const DotaView *v){
         const DotaArt *icon=ability_art(hero,i);
         box(x+1,201,w-2,37,RGB(29,44,42));frame(x+1,201,w-2,37,omni?RGB(120,205,240):v->aim_skill==i||up?GOLD:state.missing_mana?RGB(77,145,235):ward>=0||state.toggled?GREEN:EDGE);
         ability_icon(ix,204,icon);ability_icon_overlay(ix,204,24,&state);
+        if(dota_skill_autocast_enabled(g,g->player,i)){frame(ix-1,203,26,26,GREEN);tiny_char(x+w-7,203,'A',GREEN);}
         if(!passive&&rank&&state.cooldown>0){int seconds=(state.cooldown+DOTA_HZ-1)/DOTA_HZ,w=number_width(seconds);
             number(ix+1+(24-w)/2,215,seconds,RGB(0,0,0));number(ix+(24-w)/2,214,seconds,INK);}
         if(state.charges>=0)tiny_number(x+w-12,204,state.charges,state.charges?INK:RED);
@@ -1033,8 +1034,8 @@ static void help(const DotaView *v){
         text(24,160,"SHIFT+QWER 技能加点",INK);text(254,160,"ENTER施放 / ESC取消",INK);
         box(24,184,432,1,EDGE);
         text(24,192,"点小地图切视野；点英雄状态回中。",DIM);
-        text(24,212,"长按装备换位；眼同键切换；卷轴点友方建筑。",DIM);
-        text(24,232,"双击自用；SHIFT+物品给队友；G双击回泉。",DIM);
+        text(24,212,"长按装备换位；SHIFT+物品给队友；眼同键切换。",DIM);
+        text(24,232,"斯拉克E双击自动；物品双击自用；G双击回泉。",DIM);
     }
     text(16,258,"左右 / A D 切页；BACK / ESC 返回",GOLD);
 }

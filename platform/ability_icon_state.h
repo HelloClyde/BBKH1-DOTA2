@@ -36,6 +36,7 @@ static DotaAbilityIconState ability_icon_state(const DotaGame *g,int h,int skill
             s.control=1;s.cooldown=s.total_cooldown=s.mana_cost=0;
         }
         if(u->hero_id==DOTA_HERO_PUDGE && skill==1)s.toggled=g->roster.hero[h].rot_on;
+        if(dota_skill_autocast_enabled(g,h,skill))s.toggled=1;
         if(u->hero_id==DOTA_HERO_SNIPER && skill==0){
             s.charges=g->roster.hero[h].shrapnel_charges;
             s.total_cooldown=dota_progression_value100(u,0,"AbilityChargeRestoreTime",3500)/5;

@@ -24,6 +24,12 @@ static int duration(DotaGame *g,int target,int ticks){return (ticks*(100-dota_it
 static void clear(void *p,unsigned n){unsigned char *b=p;while(n--)*b++=0;}
 static void event(DotaGame *g,int caster,int code,int value){if(caster==g->player){g->last_event=code;g->last_event_value=value;g->last_event_ticks=40;}}
 int dota_extra_is_hero(const DotaUnit *u){return u && u->type==DOTA_HERO && (u->hero_id==4 || u->hero_id==5);}
+int dota_skill_autocast_supported(const DotaGame*g,int h,int skill){return g&&(unsigned)h<DOTA_HERO_COUNT&&g->units[h].type==DOTA_HERO&&g->units[h].hero_id==DOTA_HERO_SLARK&&skill==2;}
+int dota_skill_autocast_enabled(const DotaGame*g,int h,int skill){return dota_skill_autocast_supported(g,h,skill)&&(g->units[h].autocast_mask&(1u<<skill))!=0;}
+int dota_skill_autocast_toggle(DotaGame*g,int h,int skill){
+ if(!dota_skill_autocast_supported(g,h,skill)||g->state!=DOTA_PLAYING||g->paused)return 0;
+ g->units[h].autocast_mask^=(unsigned char)(1u<<skill);return 1;
+}
 int dota_extra_mana(const DotaUnit *u,int s){return dota_extra_is_hero(u) && (unsigned)s<4&&rank(u,s)>0?value(u,s,"AbilityManaCost",extra_mana[u->hero_id-4][s][rank(u,s)-1]):0;}
 int dota_extra_cooldown(const DotaUnit *u,int s){return dota_extra_is_hero(u) && (unsigned)s<4&&rank(u,s)>0?ticks(u,s,"AbilityCooldown",extra_cd[u->hero_id-4][s][rank(u,s)-1]):0;}
 static int pounce_recharge(DotaGame *g,int i){return cap(240*(100-dota_items_cooldown_percent(g,i))/100,1,240);}
@@ -248,6 +254,25 @@ static void pulse_tick(DotaGame *g,int slot){
         dota_rules_skill_event(g,caster,0,i,g->units[i].x,g->units[i].y,6,DOTA_SKILL_EVENT_STRIKE);
     }
 }
+static void extra_pay(DotaGame*g,int caster,int skill){
+ g->item_world.last_mana_spent[caster]=dota_extra_mana(&g->units[caster],skill)*dota_items_mana_cost_percent(g,caster)/100;
+ dota_items_spend_mana(g,caster,g->item_world.last_mana_spent[caster]);
+ g->units[caster].cooldown[skill]=dota_skill_cooldown_ticks(g,caster,skill);dota_items_on_cast(g,caster);
+}
+static void shiv_arm(DotaGame*g,int caster,int target,int r){
+ DotaExtraHero*s=&g->extra.hero[caster];s->shiv_target=target;s->shiv_generation=g->units[target].generation;s->shiv_until=g->tick+60;s->shiv_rank=r;
+}
+int dota_extra_autocast_attack(DotaGame*g,int caster,int target){
+ DotaUnit*u;DotaExtraHero*s;int r;
+ if(!dota_skill_autocast_enabled(g,caster,2)||!hero_index(g,target)||g->paused||g->state!=DOTA_PLAYING||g->items.reflection_guard)return 0;
+ u=&g->units[caster];s=&g->extra.hero[caster];r=rank(u,2);
+ if(!r||!live(u)||!live(&g->units[target])||g->units[target].team==u->team||u->cooldown[2]||s->shiv_until>g->tick||u->stun_ticks||u->taunt_ticks||u->channel_ticks||dota_roster_stun(g,caster)||dota_items_silenced(g,caster)||dota_extra_moving(g,caster)||dota_unit_invulnerable(g,target)||dota_extra_physical_immune(g,target)||!dota_unit_visible(g,caster,target))return 0;
+ if(!within(u->x,u->y,g->units[target].x,g->units[target].y,dota_skill_cast_range_source(g,caster,2)+24)||dota_items_available_mana(g,caster)<dota_extra_mana(u,2)*dota_items_mana_cost_percent(g,caster)/100)return 0;
+ extra_pay(g,caster,2);
+ dota_rules_skill_event(g,caster,2,target,g->units[target].x,g->units[target].y,20,DOTA_SKILL_EVENT_CAST);
+ if(!dota_bosses_spell_block(g,target)&&!dota_items_blocks_spell(g,caster,target))shiv_arm(g,caster,target,r);
+ return 1;
+}
 int dota_extra_cast(DotaGame *g,int caster,int skill,int x,int y){
     if(!g||(unsigned)caster>=10u)return 0;
     DotaUnit *u=&g->units[caster];DotaExtraHero *s=&g->extra.hero[caster];int r=rank(u,skill),target=-1,i,d,best=0x7fffffff;
@@ -266,8 +291,7 @@ int dota_extra_cast(DotaGame *g,int caster,int skill,int x,int y){
     if(u->hero_id==4 && skill==1 && ((s->leash_until>g->tick && !dota_items_debuff_immune(g,caster)) || s->leap_at || dota_items_rooted(g,caster))){event(g,caster,4,skill);return 0;}
     /* Pounce never turns towards a cursor or an automatically chosen enemy. */
     if(u->hero_id==DOTA_HERO_SLARK&&skill==1){int dx,dy;dota_hero_facing(g,caster,&dx,&dy);x=u->x+dx;y=u->y+dy;}
-    g->item_world.last_mana_spent[caster]=dota_extra_mana(u,skill)*dota_items_mana_cost_percent(g,caster)/100;
-    dota_items_spend_mana(g,caster,g->item_world.last_mana_spent[caster]);u->cooldown[skill]=dota_skill_cooldown_ticks(g,caster,skill);dota_items_on_cast(g,caster);
+    extra_pay(g,caster,skill);
     if(u->hero_id==4 && skill==1 && s->pounce_upgrade){if(s->pounce_charges>0)--s->pounce_charges;if(!s->pounce_restore_at)s->pounce_restore_at=g->tick+pounce_recharge(g,caster);u->cooldown[1]=s->pounce_charges?0:cap(s->pounce_restore_at-g->tick,1,240);}
     dota_rules_skill_event(g,caster,skill,target,x,y,skill==3?(u->hero_id==4?ticks(u,3,"duration",extra_shadow_life[r-1]):39):20,DOTA_SKILL_EVENT_CAST);
     if(target>=0 && (dota_bosses_spell_block(g,target) || dota_items_blocks_spell(g,caster,target)))return 1;
@@ -276,7 +300,7 @@ int dota_extra_cast(DotaGame *g,int caster,int skill,int x,int y){
         s->pact_at=g->tick+ticks(u,0,"delay",30);s->pact_pulse=0;s->pact_rank=r;u->skill_ticks[0]=50;break;
     case 1:{int dx=x-u->x,dy=y-u->y,length=isqrt(dx*dx+dy*dy);if(!length){dx=0;dy=u->team?1:-1;length=1;}
         int distance=s->pounce_upgrade?225:175;s->leap_duration=s->pounce_upgrade?20:15;s->leap_at=g->tick+1;s->leap_x=u->x;s->leap_y=u->y;s->leap_to_x=cap(u->x+dx*distance/length,0,DOTA_WORLD-1);s->leap_to_y=cap(u->y+dy*distance/length,0,DOTA_WORLD-1);s->leap_rank=r;u->skill_ticks[1]=s->leap_duration;u->move_order=0;break;}
-    case 2:s->shiv_target=target;s->shiv_generation=g->units[target].generation;s->shiv_until=g->tick+60;s->shiv_rank=r;u->target=target;dota_rules_attack_once(g,caster,target);break;
+    case 2:shiv_arm(g,caster,target,r);u->target=target;dota_rules_attack_once(g,caster,target);break;
     case 3:s->shadow_until=g->tick+ticks(u,3,"duration",extra_shadow_life[r-1]);u->skill_ticks[3]=ticks(u,3,"duration",extra_shadow_life[r-1]);break;
     }}else switch(skill){
     case 0:pulse_begin(g,caster,r);u->skill_ticks[0]=25;break;

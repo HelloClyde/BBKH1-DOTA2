@@ -1,0 +1,67 @@
+{
+  "version": "0.32",
+  "channel": "development",
+  "bda_sha256": "3c8abf0b35fdc3686d62174f5a31fb92016fc6483924a850319856056a92a6f1",
+  "bda_bytes": 1083236,
+  "elf_sha256": "28a053007b5eb6383e04d9e9d4bb578459e6e2523f298c35d101e4205a6fb4cf",
+  "sdk_commit": "067fe072477861dfc8949d7b1a55279fb92d2548",
+  "runtime_assets": {
+    "DOTA2.H1R": {
+      "path": "assets/runtime/DOTA2.H1R",
+      "bytes": 112861448,
+      "sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153"
+    }
+  },
+  "game_abi_bytes": {
+    "DotaGame": 179008,
+    "DotaUnit": 240,
+    "DotaView": 148
+  },
+  "build_identity": {
+    "path": "provenance/verification/v0.32/candidate2-build.json",
+    "sha256": "a98228f9aa22619faef4391844894f642ea962b07f51ce741d3517c3e202a263"
+  },
+  "controls": "Double-tap E or its icon within450ms to toggle Saltwater Shiv autocast. Single tap keeps explicit target selection. Green outline and A mark enabled mode. Default off; retained through respawn, cleared on a new match.",
+  "behavior": "Only a committed ordinary attack on a valid enemy hero can spend mana/start cooldown. Cancelled windups spend nothing; unavailable autocast falls back to ordinary attacks without failure notifications. Manual preparation is not charged twice; an automatic miss cannot arm a later attack.",
+  "checks": {
+    "cast-orders.json": {
+      "path": "provenance/verification/v0.32/cast-orders.json",
+      "sha256": "c28143ce71359e26ad2b04d137eb66cff3ff982b87955df348e0f1bd702a668a",
+      "passed": true
+    },
+    "native-input.json": {
+      "path": "provenance/verification/v0.32/native-input.json",
+      "sha256": "66759f3de9639142c2502ab016a18e42122da9ab9cda6f9853db7dd8a7c5fcfa",
+      "passed": true
+    },
+    "autocast-ui.json": {
+      "path": "provenance/verification/v0.32/autocast-ui.json",
+      "sha256": "d190da9d4b1f59d3cef900881fe12dae353d919660f3178cc86e6d6a2a03fcca",
+      "passed": true
+    }
+  },
+  "host_cases": 68,
+  "MIPS_cases": 20,
+  "screenshots": {
+    "on": {
+      "path": "docs/screenshots/host-v032-autocast-on.png",
+      "sha256": "d98e6321a5f78ab2b03b2264a5196b4850a1a59a819f9cb20f8562e2fb984eee",
+      "environment": "Actual native input and renderer on host; SDK timer/key/audio services modeled. Not a physical H1 screenshot."
+    },
+    "off": {
+      "path": "docs/screenshots/host-v032-autocast-off.png",
+      "sha256": "5d81973a20fe852e1ca80d4f610059af648b3acaee341fe93ba8805f44bc24a4",
+      "environment": "Actual native input and renderer on host; SDK timer/key/audio services modeled. Not a physical H1 screenshot."
+    }
+  },
+  "physical_h1_tested": false,
+  "device_update": {
+    "completed": false,
+    "reason": "No H1Debug USB device detected; user reconnect request pending."
+  },
+  "release_pin_created": false,
+  "harness_notes": [
+    "Initial host compile needed the existing damage API declaration. Enemy fixture AI taunted the caster; the isolated ordinary-attack fixture now uses an unlearned zero-mana target. Actual MIPS combat attaches the original vision provider and uses real position/status APIs rather than direct Game writes."
+  ],
+  "scope": "Host actual rules/native UI/renderer, complete-BDA MIPS input and one real basic-attack autocast path; physical device and FPS not tested."
+}

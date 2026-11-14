@@ -112,7 +112,8 @@ typedef struct {
     int generation; /* increments on slot reuse; renderer may ignore */
     /* Actual learned ranks are independent of hero level. Kept at the end
      * so every preceding unit field retains its established offset. */
-    unsigned char learned[DOTA_SKILLS],attribute_bonus_rank,progression_padding;
+    /* Autocast uses the former padding byte: bit N controls skill N. */
+    unsigned char learned[DOTA_SKILLS],attribute_bonus_rank,autocast_mask;
     unsigned short talents;
     int calculated_armor100; /* fractional ordinary armor, refreshed with stats */
 } DotaUnit;

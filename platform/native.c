@@ -58,7 +58,7 @@ static volatile uint32_t *lcd;
 static int opened,closing,timer_started,touch_down,touch_x,touch_y;
 static int touch_pending;
 static int minimap_drag,shop_return_screen=DOTA_SCREEN_PLAY;
-static DotaItemTap item_tap;
+static DotaItemTap item_tap,skill_tap;
 static DotaInventoryGesture inventory_gesture;
 static DotaInventoryGestureAction inventory_action;
 static DotaBattlefieldGesture battlefield_gesture;
@@ -240,6 +240,7 @@ static void screen(int value) {
     if(value==DOTA_SCREEN_PAUSE&&view.screen==DOTA_SCREEN_PLAY)view.pause_selected=0;
     view.screen=value;
     dota_item_tap_clear(&item_tap);
+    dota_item_tap_clear(&skill_tap);
     /* Shop browsing and transactions pause simulation; delivery resumes later. */
     dota_set_paused(&dota_game,value==DOTA_SCREEN_SKILLS?view.skills_return_screen==DOTA_SCREEN_PAUSE:value!=DOTA_SCREEN_PLAY);
     if(value!=DOTA_SCREEN_PLAY){view.aim_skill=-1;view.aim_item=-1;view.scoreboard=0;}
@@ -297,6 +298,16 @@ static void begin_skill(int skill){
     int kind=dota_input_skill_target_kind(&dota_game,skill);
     if((unsigned)skill<4u&&dota_skill_is_passive(dota_game.selected_hero,skill))return;
     if(skill==4&&!extra_available(&dota_game,dota_game.player))return;
+    if(dota_skill_autocast_supported(&dota_game,dota_game.player,skill)){
+        DotaUnit*u=&dota_game.units[dota_game.player];
+        if(view.aim_skill!=skill)dota_item_tap_clear(&skill_tap);
+        if(dota_item_tap(&skill_tap,skill,u->hero_id,u->generation,frame_clock_ms())){
+            if(dota_skill_autocast_toggle(&dota_game,dota_game.player,skill)){
+                view.aim_skill=view.aim_item=-1;pending_actions&=~(DOTA_INPUT_Q<<skill);dota_audio_ui(DOTA_AUDIO_CONFIRM);
+            }
+            return;
+        }
+    }else dota_item_tap_clear(&skill_tap);
     dota_item_tap_clear(&item_tap);dota_cast_order_cancel(&dota_game,dota_game.player);
     view.aim_item=-1;
     if(kind==DOTA_INPUT_TARGET_NONE){
@@ -611,7 +622,7 @@ static void process_ui(void) {
             battlefield_touch_update();
             inventory_touch_update();
             if(inventory_controls(enter,escape)){memset(pressed,0,sizeof pressed);touch_pending=0;return;}
-            for(i=0;i<4;++i)if(pressed[skill_keys[i]]&&key(H1_KEY_SHIFT))progression_apply(i);
+            for(i=0;i<4;++i)if(pressed[skill_keys[i]]&&key(H1_KEY_SHIFT)){dota_item_tap_clear(&skill_tap);progression_apply(i);}
             else if(pressed[skill_keys[i]] && !dota_skill_is_passive(dota_game.selected_hero,i)){
                 begin_skill(i);
             }

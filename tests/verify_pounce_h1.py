@@ -58,7 +58,7 @@ def main():
         def named(base, typename):
             data = c.read_memory(base, sizes[typename])
             return {n: struct.unpack_from('<i', data, off)[0] for n, off in layouts[typename].items()
-                    if n not in ('learned', 'attribute_bonus_rank', 'progression_padding', 'talents') and off + 4 <= len(data)}
+                    if n not in ('learned', 'attribute_bonus_rank', 'autocast_mask', 'talents') and off + 4 <= len(data)}
 
         def view():
             return named(vp, 'DotaView')

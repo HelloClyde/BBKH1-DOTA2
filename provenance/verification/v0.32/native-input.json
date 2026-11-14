@@ -1,0 +1,4209 @@
+{
+  "passed": true,
+  "actual_complete_bda": true,
+  "actual_mips32": true,
+  "physical_h1_tested": false,
+  "USB_opened": false,
+  "entry_executed": false,
+  "video_present_executed": false,
+  "audio_device_opened": false,
+  "game_state_ram_writes_by_test": 0,
+  "optional_chain": {
+    "process_ui_symbol_retained": false,
+    "executed": false,
+    "note": "If optimized into entry, entry and guessed inline regions are not run; pump edge counts and direct bounded native activations are tested separately."
+  },
+  "scope": "Bounded complete-BDA MIPS native item-input acceptance, with modeled IO.\n\nRuns unchanged use_inventory, confirm_item and pump code from the actual ELF.\nThe full process_ui chain is optional when that static function is retained.\nOnly initial native UI/input fixtures and expected GUI\ntimer/key-event callbacks are supplied; all Game changes come from real APIs.\nDoes not execute entry, display conversion, audio device IO or USB, and does\nnot measure physical FPS. The timer callback returns controlled milliseconds.\n",
+  "bda_sha256": "3c8abf0b35fdc3686d62174f5a31fb92016fc6483924a850319856056a92a6f1",
+  "elf_sha256": "28a053007b5eb6383e04d9e9d4bb578459e6e2523f298c35d101e4205a6fb4cf",
+  "metadata_sha256": "a98228f9aa22619faef4391844894f642ea962b07f51ce741d3517c3e202a263",
+  "bundle_sha256": "00ecddaf28bb3716cf9042115498b81e2b01363e66baa3e03b03b914be466153",
+  "compiled_source_sha256": {
+    "game/backpack_data.h": "85878466f4596526fa78b63101e4ee4a781ae5c13a9b17c4e2f234f3af53f51a",
+    "game/barracks.c": "81b6489d8103dd6b1e3760c307faa20258886fdc1159b57d0d00b6ba695fc269",
+    "game/barracks.h": "b123d4d8dd0c6bc2e3ac2870b3750d368649bbe66bc1e4058a110ab2b52e3043",
+    "game/bosses.c": "1403417454e121e46f904dbc6705e89acc36aecd625407516c7ca99a9fa6d126",
+    "game/bosses.h": "fcff4c71580688be92e640c73c9b381580f8e6a063f5fb4afd12d440498f3507",
+    "game/cast_order.c": "71412baad4d7b71f9c291804fea4e793409cdf33b81851379cbd907d9299e797",
+    "game/cast_order.h": "f02e209262cbcd4cd6face825c8e9ce099026328edb4cdbdb44e866e87632062",
+    "game/cast_order_state.h": "3222b460e5e03f5891ad50dc2ec5f53afef816cdd135d56e3e534bd970de53d6",
+    "game/courier.c": "6c25c9d33b6181813e972ce0864ebd7d74d1adc6d093ba5230f4b5b21445e31b",
+    "game/courier.h": "281bbdf4d213b229450a970fdc5810ec3974b000215512be8562111a7d1497a2",
+    "game/courier_data.h": "44f9f7b4646e9411b02fa2d3f1f8e4092447aac54e5fc0889383d6e7f99c8094",
+    "game/extra_heroes.c": "690a6bccb1228559b0cd8b18e2902f42d27a45aa9925116f0f00f2ccb3105802",
+    "game/extra_heroes.h": "715d3ecbd2a094e54d1ded3c37ea05a33eeb1248e2359627c1ce30545d308c2a",
+    "game/extra_heroes_data.h": "500d3f538ab5b66e9c0904dbd1926d922a2c3656bec88728943e83b3d14c8629",
+    "game/extra_heroes_state.h": "7db28c6e0783a0a73eddf45eaeda99f7da52f4fde577a27c2b1d944723e632f7",
+    "game/game.c": "15974f31d51c4048b09423fcdb4ae0d720bbde47ea1cac93e2ff663c74ed1123",
+    "game/game.h": "7f388e860754203b6966c3ccc08074b6d376bc78a4bbaffbb63ee05fb5002240",
+    "game/highground_data.h": "ad11ca28b27eee96473f2ea8aded42d4f1ae196463829ee6ce44f527c9a8bf49",
+    "game/inventory_impl.h": "e132482a29b6d635c22a7a77368190927b718b4d99905feeda066624dc765538",
+    "game/item_npc_data.h": "a2126f4d9ae22b871c7976f64614cce4f9d878fa773dfa1935a4846bf5cb96b1",
+    "game/item_world.c": "6e4f8fed1482ba78da5f17616e5d898c55b9ae3287e87a5ac5d06ffcc7d64d69",
+    "game/item_world.h": "88b71071298aec66c14fcc486c152411c50673ac06ce1f3e044a986385be5402",
+    "game/item_world_data.h": "7bf90ce56c91879be8de63ab627939a2a87559ef0079e4e418b145c2e9595367",
+    "game/items.c": "edb6444ae65a2ad4002cd75a51157bad8d54b1930cdaddc8613fd5670f46169d",
+    "game/items.h": "294ac43614195b7d8ed42d7d3d33e5a39de54c752481a937389061c3a05e70c5",
+    "game/items_actions.h": "c5eb91133b64bbaed99301292b7c245a599ecf540feda8787190a21c87a05f98",
+    "game/items_cast_impl.h": "084734bbcfbc1c84b16c0336189308ef68c236f4253c8d99cde28c0a0e2a6e8a",
+    "game/items_data.h": "6f3a1e46a81d094b1119166c98a9e8ae4e830e67e5098b02f41479325f107c7d",
+    "game/items_ids.h": "89871e93086601984f208a53f8bc653b769d6770e877b42ebc04e2b0f8fe6608",
+    "game/items_internal.h": "bc60c03a1f0b6b5de6b3405fdcfe7952997143b14883ba2b8b567239eb6474f3",
+    "game/items_params.h": "e376a8728f0cd591abc679bee5b352b7223e785cc65ee03a90fd512f64a1463f",
+    "game/items_special.c": "f35c9e307f78272564395da02c2edd3540dbf7a4bbff0a578336448d0939b85f",
+    "game/items_special.h": "f5c2df7933cdb8d8613f59a4385b23de4689de849926e536d5db0f6e2425038c",
+    "game/items_special_state.h": "c0d21baef94ee4f3fb292a402f24005c9cc4e10e9e9157b194cc4464abf16264",
+    "game/items_special_values.h": "404d9e83378264421df7c33ea05223b89ca5a74c6c7501ded93ce5efeca4e45b",
+    "game/jungle.h": "5a4e227df22d95c9654529dae92407c20bd5df58dc47a9116ced68fa0734a2ab",
+    "game/jungle_data.h": "9a0f3bcd6d408ac3d77f5ac5a0444dd96a026d87a16b2afb99238784d24bed0b",
+    "game/jungle_npc_data.h": "55e5edaa5aea02702d80846592c0d0fd5f270305dc05da39c94544e1a10b8dde",
+    "game/lane_creep_data.h": "566b61d49ba53f0a6fa14f32f810ce34d54d6b55abe0cd62fe951440dadab99f",
+    "game/match_history.c": "7bb21a30251d5c3bfd5c27adbd8fbada2186809f720ba3c68bd35c0b2b85e53a",
+    "game/match_history.h": "21ed63160fda20fe1bd880ae63a2e917f0ee67423f67a7fd06f023641e895185",
+    "game/match_history_state.h": "750c4d7f82ae2a43c4c9b65fdcd683dba800c2b50a1f032acf358756dfbf29f6",
+    "game/match_time.c": "fff6da358adc64763197200d65752eb770b1328a3a24e67a34a6e58f99a51655",
+    "game/match_time.h": "d1f74c363873c82c439776f14d034177d1fabf59c55323d60fb176cba7fd5a66",
+    "game/navigation.c": "c5edcf32428f02f3faae6d6fa478d778ce1de5494e4c965c412f08cec3937d1a",
+    "game/navigation.h": "38865d13a170a3b401d19f3353e1aee29978b60b6f11efe7c3a5d3af3a91962e",
+    "game/neutral.c": "a4787010cab576c6eb6fc908b349af33223a05134182cb90c19db2d19001b340",
+    "game/neutral.h": "7856c23295d1be520e2e17cd90057602c7ea6b3651ff553d154176f139691f9c",
+    "game/neutral_catalog.h": "e8736f1b4bc743bb6e72988aa0222667ad6ad458372e0b0dd00dd4a3099a8d1a",
+    "game/neutral_state.h": "d5f040ad9a01880698bc3065ac814242faa49dbcaeb1ce1992cc241b54b2c6e7",
+    "game/objective_data.h": "bdd2836b16d91aa89d4bd008fb1dbd58702fe0e875b0a5986174b83f6983e9f3",
+    "game/objectives.c": "2da784544f304aae6e7a56e6dc3ab51ccfe019e065d914b272e0f278198af295",
+    "game/objectives.h": "27f0ce4bce312bb5c126b7f99c88da5baeebe5fc3f1bdcb0cf4132ceea1f04c1",
+    "game/progression.c": "8161f414ef045ceb81f19a9be1620bf99be8308cdd7314a6a1140bca24b87ad1",
+    "game/progression.h": "88e77238dec5d06d8a7b2fb0873255b9094902f027f79c44284181ec68ec73a0",
+    "game/progression_data.h": "4bfce0d2435de756e3eacbde5ec048f91797dbc208c8cbb8f2e2b6609a5afb0a",
+    "game/progression_state.h": "79d8f74dd75fe42c8fa188370f3da3c33cc59f933a01be1eb4966be11996f53a",
+    "game/roshan_data.h": "3ef30beb6fd64ca634a40f55db1ca6e925398e688e4ad24ad329c63c2432e2fe",
+    "game/roster_heroes.c": "b31e77226158b04715fe5acb4d02a30919cf281b94288b84ef9482d2dec2dff1",
+    "game/roster_heroes.h": "3fed72686779b1a2fb6f729c56cc8d9e31b1f813ad67fdbca05e6e29d6bd1b12",
+    "game/roster_heroes_data.h": "2103e670adf1139c0c9697d39c44f36fb929299e497bbd5839f1c97654328c5f",
+    "game/roster_heroes_state.h": "3d0db6f83775e97a7431bda4e185c8846c60176786843de4c866ab9d0a157913",
+    "game/runes.c": "23dc48c32d2ef1500460e74d55c319c7a41e55e5c082a55b21d66f2753961fbb",
+    "game/runes.h": "b244a8422dbd1036ec3d5592c494c25798ab8308c055fbb79293a6b6685a33f4",
+    "game/runes_state.h": "9e0c70840a8937007115bd3db8742c4daa3b2627827a9c55aa08d2a34450a66e",
+    "game/sight.c": "653e5f1ab4c0eada43e8f88f7693220081825304009738245ade7445d7e35f99",
+    "game/sight.h": "27f292ec3d139c077a942079052c148d5cd2d9993886c44a37bfbf52953eef8a",
+    "game/teleport_rules.h": "33565e4a12b869c490b195917c2c691860fcc5afb149ac3bc9207419f834fc12",
+    "game/teleport_state.h": "33d22700e5a3327a0e9ecf91f0f41f6513893e45ef545a4f8da03b7b6d07e7f5",
+    "game/trees.c": "ecde00b888b6bdc370fec7252f3b8515cd3d1032b8b83c47ca949239dd7d23ba",
+    "game/trees.h": "0ebbd7d4cbf9721856199358c44f3d4c7741597a1c72b226a31c0b0d4072e79c",
+    "game/trees_state.h": "e0284c41b560b4a4f8653326af934d291c4ed960e430d36cdf763784b13de5f8",
+    "game/turbo.c": "6feb5e382011dae4c24f790108dad6d43965d43c9376cf9291363c8a99ba9930",
+    "game/turbo.h": "22ebd573156ac7326621a8573c608391aefa6cc110e68901f46b0e3340edad5b",
+    "game/turbo_data.h": "dbd583a93a74b3a78863b81a0cb3003452d647f2a7e73d61a7bb86b5e96c502f",
+    "game/unit_limits.h": "8cd28bcc1070a7f63589ebc76129b604348b425e6ddef443ead7c4ae1eb64db8",
+    "game/unit_vision_data.h": "d55521cd55152d0a2c740adf18bf92c18daf3a26f83287128fded7395e8d8cda",
+    "game/vision.c": "c6d06f695e051121f4910cfae41ee112fcfc77e6b599db0e6f14e99ecb73e83b",
+    "game/vision.h": "b642b8b1f25d9a469026a82a4434ae9c4b911b6c053772355c8962ca50e37ddf",
+    "game/ward_placement_data.h": "2bc4f1646ab2e3ba8e08ecd068531de50e3771f410f5e60a31cb2418b8bda462",
+    "game/water.c": "b33d6cf686efb260a464a45de79796e14dcb7dd922ccd5cf19188ef3f717d9c1",
+    "game/water.h": "c9e9669c919de5ae76970889c6f7bf911dc018ac4d391372396b138bd7c52967",
+    "game/water_world_data.h": "87628b295b79ae5f72f7314fc6c5b28e3201d769dcce2eb68061c17f92b3244c",
+    "platform/ability_icon_mask.h": "394001903bd7a7d4afb796359df6794e57cab9073e9c7846df1064d700b8ab2a",
+    "platform/ability_icon_overlay.h": "17d97c31bce4ba7c236b57af6f07e7fc2aa0e3a5a5bcd6c991c0d734e1d51fe3",
+    "platform/ability_icon_state.h": "981c25d53431662a3fe45e25d307ddafd4cb8f03eb14f21fdc14729b2674a977",
+    "platform/art_types.h": "0bf9816017bee28d97599c23ad4ae07fbb8c5e6ea4998abe8b87d5c0cee57338",
+    "platform/audio_music_windows.h": "17c5bcdef2e8866abab6f00baa3fc69225ea19e54cd5a1eb482096b741bf0d46",
+    "platform/baked_aux_io.h": "8c6f01fd556419088ad5656c7e942358d8f4a15bc443d4285d444847e45f9f59",
+    "platform/baked_io.c": "bf5b29f0c5290a0e84dba8bca8b56a030b360a5f88a66761f146111afe0839e2",
+    "platform/baked_io.h": "bb9ac649c4011ebf43fd3e340c19c443a26fd8cdf9e7bd297967159574a92ed2",
+    "platform/baked_scene.c": "974c2a18bb04e861f5608b14c5deb0ea16daa00aa1d19bf080af022f370c8c14",
+    "platform/baked_scene.h": "5aa1aac3f7cde2b4bdd32c3d95352fb188849f923ea6d350a3edd7c333d10a9f",
+    "platform/barracks_baked.h": "aad9c5d3eb93cf88ed6bc1773bac2cdae861ea680e5181eefb5c4881afa22e2a",
+    "platform/barracks_patch.h": "3bcf8cb2f546a28bdcdded90593cf2006050ecff9d2b7900d4231980d9b02a12",
+    "platform/battlefield_gesture.h": "219159bdcb0cf95d4a5a0fc5718c29013d8ed1c9f399e4b98b147d3ea0fc2cd9",
+    "platform/cache_memory.h": "3443a0afc2c55e440a9ab4cd6db8412ee49d6aaeb0992fe8e964095708d38777",
+    "platform/cache_rle.h": "0a30b792de9327244af6de9cf5bd7e73b9663f0a8712f8decb2d364f5a52b75b",
+    "platform/compressed_cache.h": "f2f111a8ef5e52e9c724e22831b4bf815c842ee6aa7ba81b2442df44c65f5f8c",
+    "platform/dota_audio.c": "b9e481fd1dec8a4367caea51bb355d08c5ff85b0465fc60f6fc3812ee39aeb3f",
+    "platform/dota_audio.h": "2b4b05d25eed2b42a7f3c7ba97fa1390fc21bdc81c194b98019e1ab36c1dc987",
+    "platform/dota_mxu_exact.h": "7e8cac575adf9c0e72dd53b1867751cf0df826dcf1ed674d76d1da8265f789f7",
+    "platform/entry.S": "972db15f5837854b46726026ac475777277a62a1ba054650b48612706fc7fa94",
+    "platform/extra_ability.h": "0f3e6c07e0c1c10866aaec69f42cf7ab4eab0ed023b0dea5f3fc3e010581922b",
+    "platform/fountain_baked.h": "441ac968e435d4c20f2e12cb433f1200938626c01a2d5bc3d1456e9f5349c33e",
+    "platform/h1.ld": "90b453b0aa64b0145aed2ad9407f414b4eab61ac1fb5e15f0993e7a8952577d6",
+    "platform/hud_layout.h": "f91a273a59ee2da5c2fff41357b9d8f6d858f86a0167c0c67ef910ea534b230d",
+    "platform/inventory_gesture.h": "3a81ed28762c30c5b80529c0f6489a4d45901d2071c6e0cb819ae43cc992a952",
+    "platform/item_assets.c": "9967243d5a47d83cf2aaab449bb2852a25b64e05e3e9183dab48c4cc91695fa7",
+    "platform/item_assets.h": "968d73e12bc872a7407dacc7a5a11587641c1c5e5a30bbcc7660dece59654e56",
+    "platform/item_tap.h": "b739e9b8dab1c00b2e7f924a3695770464d64126f07885d4a06c71e05f8053c2",
+    "platform/map_codec.c": "78a56c875363f70d0b646727f5a49eb0c0a0c4be82790479655ec9f87f1824b9",
+    "platform/map_codec.h": "4741607d7b898876bb8f38d7e76241b3fd5027c9a0731aca183f6c5754823bf9",
+    "platform/map_crc_table.h": "255e6461b296173918ef210157c3172ebd60e89d667f24fb18790367fcd7443d",
+    "platform/map_format.c": "6f9b2690fd8f4efd225460f71a87e2641d5565cffa12432f5094ce43c3134797",
+    "platform/map_sidecar.h": "f75c397abcfa78e19507d6814c93a949f56a1007b998b3310f934c2dcf37ed9c",
+    "platform/map_sidecar_format.h": "97b79860077e816ee1eb423c3f8e3bc3cd690fd468b7d9dc125fe612fef71e27",
+    "platform/map_sidecar_identity.h": "58fae496c5891fd406092a52d609d1327a7d67f854f70e0933d73c6c1dd9e78b",
+    "platform/match_storage.c": "3e85936f4d6ce4b88407d1225a7b638c3d5ad3188fb7e9428fd6691d2b6096f8",
+    "platform/match_storage.h": "a6a50ed7032839903f647e9d8c0dfb1be3e939d0c89a4c881094540301695d4f",
+    "platform/match_ui.h": "5d8e241ace05b01a3e51ea6e9c0bdb165557cc4806feb56a77cb3a0b8fdb83f0",
+    "platform/native.c": "33cd37fd1a991af1738cdd700be765021fc6608bf7069cd7e4c5d23b3b68a725",
+    "platform/render.c": "f4138978f7ba04065bedd707addee287ad769d03db61b36482891d347c0a1312",
+    "platform/render.h": "8ed297289a79ce820e32a7e6d9c1f9a23c9c61a8aa209cc75dc23957e327f75e",
+    "platform/resource_pack.c": "1f6055feaed69e98be1a0dbfb1ce70c59dde1e0104e7b93312d63edfa52e8aac",
+    "platform/resource_pack.h": "68338a7cc10ffdab1a48a5a94dc3a621aef0d683d568a63c5914b101e0301459",
+    "platform/roster_baked.h": "5f92369655e9f589bf6620bfb285c41c8da2f3c9f13ac6c8320b81ce23fb083b",
+    "platform/shadow_cull_data.h": "b5a3f252d287174eb4463e1d8671e6f8008de2dfec73650aa99e5c7d006f11be",
+    "platform/shop_catalog.c": "83f4c2d7ee2f11e7bf9e4a288a29da0418dbb45f30bc97f4265fedbcf5e19774",
+    "platform/shop_catalog.h": "a501f7dc35bbae825cb2c446b463cd2121d4f099194f7dfc0156f33b2fe88bb3",
+    "platform/sprite_rows.h": "3352abb5549b974d5b0928b5c52edf711731e8bac96d52e572fe465defb28ae4",
+    "platform/status_effects.c": "484a848d18ac465c6a03a329325153cf2b5cdb8fa56f543e85772673f07f3893",
+    "platform/status_effects.h": "ade3b7276ca692f71b5d79cfaee05f551ccef2e8d5cc0d696fe7e51d9ddbdc49",
+    "platform/target_input.h": "c1ac08ad6109c6cefe1b4a9ea080ad44459e4b4f896b13ef1e85842c171c1911",
+    "platform/tree_visual.c": "ad9a018f86bcb259427efe3e7827ce62fbb68a4e451e3b2ccad56858475117d9",
+    "platform/tree_visual.h": "a2bc64b212271619ffd9c47fab031e43860c1a7fc09413640241174e3aba37dd",
+    "platform/vision_asset_identity.h": "f05bfac959bcfbfc86a4a233dab94518140b6620671b4d841b2b2f5dfbf85947",
+    "platform/vision_assets.c": "14e37d083029d40db8353affd5bf2622892e116ba5f461c409fc648568bcc2e8",
+    "platform/vision_assets.h": "a8a1f6ebf2d4a27b5795999c9b03a245425f759c9f6ff822fd688a8653b423ad",
+    "private/audio/assets/audio_data.h": "3ddbf417bc8309db4419a967da1506810014db0aa64917c806ab32391abe9f32",
+    "private/generated/dota_art.h": "9459631740fa290f957cc5ed10db5d8e85dfb017c140a7dc7e5d3598c2f663e5",
+    "private/generated/dota_barracks_data.h": "96fc0395dd5f10372c16a4be4f9bcc07bd098fd165bffd667826c348f0ce2bee",
+    "private/generated/dota_barracks_nav.h": "c4fedcb61e1c2cbf766df228155328ca2f452773a8af039e71070b77a51ad671",
+    "private/generated/dota_barracks_patch.h": "929be671e40204c02590f333f945fd8144955095584d6653e9972e630dc45f69",
+    "private/generated/dota_font.h": "aee0761797ad35461e8891c04a32bcaca000eaa39e762de806e424c58300a76c",
+    "private/generated/dota_map_fixtures.h": "47136623325b50daef8c3e862f87e3fc394071e1a3cddd7b640322b21f77c245",
+    "private/generated/dota_nav.h": "88682b9e38747d9458aee3a8f822f5e8421ba335f4f49296e6d1002f7281c455",
+    "private/generated/dota_overview.h": "64770f66f85beacbfbe0e23fc7d35a833388c5e3471806f50bb2563906bc8b41",
+    "private/generated/dota_roshan_vision.h": "3c2da5975fed9eb4645f08690d7316cde174c4e953aae5e49f54f115c21ca366",
+    "private/generated/dota_rune_art.h": "5f12bf401e9886618b185907ecda32393d5f3d0a05d02ddd3a2072de8d3c0b13",
+    "private/generated/dota_runes_data.h": "2a6f9d6309f4ad63ecf643f9a29704dd6ac494b1ff30e3c89c540258b53facbd",
+    "private/generated/dota_shard_art.h": "9d1aae47c7016eeca434da7c75b8cc1d379ba9da9ac2b2d7c172f303df8f31e9",
+    "private/generated/dota_tree_nav.h": "f39c5bf79f483e83d43c32c6681f265fb2bef5f3cee83e0f8a3cfc967eaf3d83",
+    "sdk/sdk/include/h1_dialogs.h": "cb8af68fd9aba7fdeebfd63e37dfc644b56e3d473ee456e667515381c7eed0c5",
+    "sdk/sdk/include/h1_filesystem.h": "939c31edfbf3461d3f8fe02073e8071317265f689445d26530e208b8811f33e2",
+    "sdk/sdk/include/h1_graphics.h": "a14b9ad45611b675505d73bb023e33ac84d514a33f983d5d46a567301b3f4658",
+    "sdk/sdk/include/h1_input.h": "0f3b1bb1c88cf09023bce74e9e078854902a5c17573a9acb256e757dc700f7c7",
+    "sdk/sdk/include/h1_memory.h": "c0447b7e56ad8e20bee1be12df5254d87cc9ef6274a8570143f65c9b46a8664e",
+    "sdk/sdk/include/h1_runtime.h": "d96b1502d3a7cefc397d9a19d977e55342d116a9ca3aea54d8bdfef302fcb97b",
+    "sdk/sdk/include/h1_sdk.h": "3b31976112928af5bb5a4309db69883561a624e19441dd920d30f360147fc582",
+    "sdk/sdk/include/h1_time.h": "20be366ac00d66451c1bba34ef1ee47e8377002c4354bf613cd88d3b75570a43",
+    "sdk/sdk/include/h1_types.h": "cc65fa4bcf0137d0a7b61d293651a0a4d998d3b1a3370ccc8e036141e5574d1c",
+    "third_party/miniz/miniz_freestanding.h": "5c9ab1bb2478abbbc045ca07e14dfd7fcfa84de5bdadcf14c373bb2310186404",
+    "third_party/miniz/miniz_tinfl.c": "5e104f179ea94369e2488d1a21672e1119af678e7ca8ed50ccbf20fdca66268b",
+    "third_party/miniz/miniz_tinfl.h": "efcbba3ff57fee1acae8e5429185f93956a5d9dcdbd54715300f2f82a5a6561b"
+  },
+  "test_source_sha256": {
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\tests\\verify_item_input_mips.py": "23b874aed5bb7395b1070cb034989fed8fed7140aeb4995ac44028767fa1fca9",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\tests\\mips_core_model.py": "483e06020612116a1716d77db5dd0c6f69ed2184e9d914cb0d01f61e2a14a03c",
+    "C:\\Users\\ASUS\\Documents\\ChatGPT\\bbk H1\\BBKH1-DOTA2\\sdk\\sdk\\include\\h1_input.h": "0f3b1bb1c88cf09023bce74e9e078854902a5c17573a9acb256e757dc700f7c7"
+  },
+  "noncompiled_build_inputs_changed": [],
+  "layouts": {
+    "DotaExtraHero": {
+      "generation": 0,
+      "pact_at": 4,
+      "pact_pulse": 8,
+      "pact_rank": 12,
+      "leap_at": 16,
+      "leap_x": 20,
+      "leap_y": 24,
+      "leap_to_x": 28,
+      "leap_to_y": 32,
+      "leap_rank": 36,
+      "leap_duration": 40,
+      "shadow_until": 44,
+      "unseen_since": 48,
+      "neutral_until": 52,
+      "ghost_until": 56,
+      "scythe_at": 60,
+      "scythe_target": 64,
+      "scythe_generation": 68,
+      "scythe_rank": 72,
+      "scythe_cast_at": 76,
+      "scythe_duration": 80,
+      "permanent_agi": 84,
+      "scythe_kills": 88,
+      "essence_gain": 92,
+      "essence_loss": 96,
+      "sadist_stacks": 100,
+      "hp_fraction": 104,
+      "mana_fraction": 108,
+      "shiv_target": 112,
+      "shiv_generation": 116,
+      "shiv_until": 120,
+      "shiv_rank": 124,
+      "pounce_upgrade": 128,
+      "pounce_charges": 132,
+      "pounce_restore_at": 136,
+      "shard_cooldown": 140,
+      "shroud_until": 144,
+      "shroud_x": 148,
+      "shroud_y": 152,
+      "shroud_rank": 156,
+      "shroud_radius": 160,
+      "seeker_at": 164,
+      "seeker_duration": 168,
+      "seeker_x": 172,
+      "seeker_y": 176,
+      "seeker_to_x": 180,
+      "seeker_to_y": 184,
+      "leash_until": 188,
+      "leash_x": 192,
+      "leash_y": 196,
+      "leash_source": 200,
+      "leash_generation": 204
+    },
+    "DotaExtraHeroesState": {
+      "hero": 0,
+      "stacks": 2080,
+      "shivs": 8224,
+      "pulse": 8736,
+      "heart_fraction": 32576,
+      "pact_saved": 33596,
+      "scythe_saved": 33716
+    },
+    "DotaItemChannel": {
+      "until": 0,
+      "generation": 4,
+      "item": 8,
+      "x": 12,
+      "y": 16,
+      "origin_x": 20,
+      "origin_y": 24,
+      "kind": 28,
+      "target": 32,
+      "target_generation": 36,
+      "started_tick": 40
+    },
+    "DotaItemWorldState": {
+      "unit": 0,
+      "tree": 2432,
+      "hp_fraction": 3072,
+      "mana_fraction": 3112,
+      "last_tick": 3152,
+      "last_mana_spent": 3156,
+      "channel": 3196,
+      "teleport": 3636,
+      "trap": 4196,
+      "drop": 4388,
+      "npc_effect": 4836,
+      "native_mask": 5476,
+      "dominate_lock": 5480,
+      "aura_hp_generation": 5520,
+      "npc_hp_fraction": 6030,
+      "aura_hp_bonus": 6540
+    },
+    "DotaUnit": {
+      "active": 0,
+      "type": 4,
+      "team": 8,
+      "hero_id": 12,
+      "lane": 16,
+      "tier": 20,
+      "x": 24,
+      "y": 28,
+      "hp": 32,
+      "max_hp": 36,
+      "mana": 40,
+      "max_mana": 44,
+      "damage": 48,
+      "armor": 52,
+      "range": 56,
+      "speed": 60,
+      "level": 64,
+      "xp": 68,
+      "gold": 72,
+      "inventory": 76,
+      "cooldown": 100,
+      "attack_wait": 116,
+      "respawn_ticks": 120,
+      "target": 124,
+      "waypoint": 128,
+      "move_order": 132,
+      "move_x": 136,
+      "move_y": 140,
+      "stun_ticks": 144,
+      "slow_ticks": 148,
+      "taunt_ticks": 152,
+      "taunt_source": 156,
+      "dot_ticks": 160,
+      "dot_damage": 164,
+      "dot_source": 168,
+      "buff_ticks": 172,
+      "channel_ticks": 176,
+      "heal_ticks": 180,
+      "skill_ticks": 184,
+      "skill_x": 200,
+      "skill_y": 204,
+      "kills": 208,
+      "deaths": 212,
+      "last_damage_team": 216,
+      "last_damage_source": 220,
+      "generation": 224,
+      "learned": 228,
+      "attribute_bonus_rank": 232,
+      "autocast_mask": 233,
+      "talents": 234,
+      "calculated_armor100": 236
+    },
+    "DotaGame": {
+      "units": 0,
+      "effects": 61200,
+      "seed": 62064,
+      "tick": 62068,
+      "state": 62072,
+      "paused": 62076,
+      "player": 62080,
+      "selected_hero": 62084,
+      "wave": 62088,
+      "spawn_wait": 62092,
+      "kills": 62096,
+      "bases": 62104,
+      "towers": 62112,
+      "last_event": 62160,
+      "last_event_ticks": 62164,
+      "last_event_value": 62168,
+      "player_path": 62172,
+      "player_path_count": 62684,
+      "player_path_index": 62688,
+      "skill_event_serial": 62692,
+      "skill_event_count": 62696,
+      "skill_events": 62700,
+      "skill_effect_tags": 66540,
+      "projectiles": 66636,
+      "attack_event_serial": 71436,
+      "attack_event_count": 71440,
+      "attack_events": 71444,
+      "neutral_state": 75796,
+      "neutral_respawn": 75900,
+      "neutral_group": 76004,
+      "neutral_regen_fraction": 76030,
+      "summon_owner": 76224,
+      "summon_owner_generation": 76240,
+      "summon_life": 76256,
+      "unit_routes": 76272,
+      "navigation_tick": 87492,
+      "navigation_searches": 87496,
+      "navigation_nodes": 87500,
+      "player_path_complete": 87504,
+      "passive_stacks": 87508,
+      "passive_wait": 87548,
+      "passive_mana_fraction": 87588,
+      "passive_generation": 87628,
+      "passive_move_fraction": 87668,
+      "movement": 87708,
+      "tormentor": 92808,
+      "omnislash": 92840,
+      "assists": 93160,
+      "assist_tick": 93200,
+      "assist_generation": 93600,
+      "hero_dot_source_generation": 93640,
+      "bosses": 93680,
+      "objectives": 93844,
+      "couriers": 94016,
+      "turbo": 95020,
+      "extra": 95060,
+      "items": 128976,
+      "item_world": 142388,
+      "roster": 149440,
+      "progression": 170072,
+      "attack_crit_percent": 172716,
+      "culling": 172756,
+      "cast_target_plus_one": 172916,
+      "cast_target_generation": 172920,
+      "runes": 172924,
+      "trees": 173584,
+      "cast_orders": 178084,
+      "match_stats": 178804
+    },
+    "DotaView": {
+      "screen": 0,
+      "hero": 4,
+      "shop_item": 8,
+      "camera_x": 12,
+      "camera_y": 16,
+      "target_x": 20,
+      "target_y": 24,
+      "aim_skill": 28,
+      "follow": 32,
+      "frames": 36,
+      "scoreboard": 40,
+      "shop_category": 44,
+      "shop_details": 48,
+      "shop_scroll": 52,
+      "aim_item": 56,
+      "skills_return_screen": 60,
+      "skills_selected": 64,
+      "skills_details": 68,
+      "skills_scroll": 72,
+      "inventory_source": 76,
+      "inventory_hover": 80,
+      "inventory_mode": 84,
+      "drag_x": 88,
+      "drag_y": 92,
+      "ward_mode": 96,
+      "help_return_screen": 100,
+      "help_page": 104,
+      "pause_selected": 108,
+      "history": 112,
+      "result_record": 116,
+      "history_page": 120,
+      "history_selected": 124,
+      "history_mode": 128,
+      "result_selected": 132,
+      "result_detail": 136,
+      "save_error": 140,
+      "history_return_screen": 144
+    }
+  },
+  "sizes": {
+    "DotaExtraHero": 208,
+    "DotaExtraHeroesState": 33916,
+    "DotaItemChannel": 44,
+    "DotaItemWorldState": 7052,
+    "DotaUnit": 240,
+    "DotaGame": 179008,
+    "DotaView": 148
+  },
+  "cases": [
+    {
+      "case": "salve-native-double-tap",
+      "passed": true,
+      "first_activation_game_unchanged": true,
+      "second_interval_ms": 400
+    },
+    {
+      "case": "lotus-orb-native-double-tap",
+      "passed": true,
+      "first_activation_game_unchanged": true,
+      "second_interval_ms": 400
+    },
+    {
+      "case": "force-staff-native-double-tap",
+      "passed": true,
+      "first_activation_game_unchanged": true,
+      "second_interval_ms": 400
+    },
+    {
+      "case": "euls-native-double-tap",
+      "passed": true,
+      "first_activation_game_unchanged": true,
+      "second_interval_ms": 400
+    },
+    {
+      "case": "tp7-native-double-tap-own-fountain",
+      "passed": true,
+      "team": 0,
+      "channel_target": 255,
+      "expected_fountain_target": 255,
+      "remaining_charges": 1
+    },
+    {
+      "case": "native-confirm-item-explicit-self",
+      "passed": true
+    },
+    {
+      "case": "enemy-only-native-double-tap-refused",
+      "passed": true
+    },
+    {
+      "case": "main-backpack-neutral-tp-mapping",
+      "passed": true,
+      "backpack0": 31,
+      "neutral": -1,
+      "TP_legacy_slot": 7,
+      "TP_UI_slot": 9,
+      "nonempty_neutral_also_covered_by_host_tp_slot_test": true
+    },
+    {
+      "case": "actual-pump-held-G-edge-filter",
+      "passed": true,
+      "modeled_key_down_messages": 9,
+      "actual_new_edges": 2,
+      "process_ui_executed": false,
+      "direct_native_activations_without_process_ui": 2
+    },
+    {
+      "case": "faerie-fire-native-no-target-first-tap",
+      "passed": true
+    },
+    {
+      "case": "mango-native-no-target-first-tap",
+      "passed": true
+    },
+    {
+      "case": "bottle-native-no-target-first-tap",
+      "passed": true
+    },
+    {
+      "case": "lotus-native-no-target-first-tap",
+      "passed": true
+    },
+    {
+      "case": "great-lotus-native-no-target-first-tap",
+      "passed": true
+    },
+    {
+      "case": "greater-lotus-native-no-target-first-tap",
+      "passed": true
+    },
+    {
+      "case": "mana-draught-native-no-target-first-tap",
+      "passed": true
+    },
+    {
+      "case": "optional-mango-native-shift-target",
+      "passed": true
+    },
+    {
+      "case": "slark-native-pounce-no-target-current-facing",
+      "passed": true
+    },
+    {
+      "case": "slark-native-E-double-tap-autocast-toggle",
+      "passed": true
+    },
+    {
+      "case": "slark-autocast-actual-basic-attack-MIPS",
+      "passed": true
+    }
+  ],
+  "API_calls": [
+    {
+      "api": "resource_mount",
+      "args": [
+        2169503744
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "bs_open_default",
+      "args": [],
+      "seconds": 0.922
+    },
+    {
+      "api": "item_assets_open",
+      "args": [],
+      "seconds": 0.047
+    },
+    {
+      "api": "item_assets_reserve_rules_cache",
+      "args": [
+        65536
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        5,
+        201
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_inventory_item",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_cooldown",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        117,
+        201
+      ],
+      "seconds": 0.0
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_inventory_item",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_cooldown",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        100,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_inventory_item",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_cooldown",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        97,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_inventory_item",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_cooldown",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.0
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        58,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        58,
+        201
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        7
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        7
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_teleport_charges",
+      "args": [
+        2211451164,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_teleport_channel",
+      "args": [
+        2211451164,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        7
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_teleport_charges",
+      "args": [
+        2211451164,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        5,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        5,
+        201
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "confirm_item",
+      "args": [
+        373,
+        3723,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        102,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        31,
+        201
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        31,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        31,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        31,
+        201
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        31,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        31,
+        201
+      ],
+      "seconds": 0.0
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        31,
+        201
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        58,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        58,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_inventory_item",
+      "args": [
+        2211451164,
+        0,
+        6
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_cast_item",
+      "args": [
+        2211451164,
+        0,
+        6
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_cast_item",
+      "args": [
+        2211451164,
+        0,
+        7
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_inventory_item",
+      "args": [
+        2211451164,
+        0,
+        9
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        6
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        58,
+        201
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        58,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "pump",
+      "args": [],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        7
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_teleport_charges",
+      "args": [
+        2211451164,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "pump",
+      "args": [],
+      "seconds": 0.015
+    },
+    {
+      "api": "pump",
+      "args": [],
+      "seconds": 0.016
+    },
+    {
+      "api": "pump",
+      "args": [],
+      "seconds": 0.016
+    },
+    {
+      "api": "pump",
+      "args": [],
+      "seconds": 0.015
+    },
+    {
+      "api": "pump",
+      "args": [],
+      "seconds": 0.016
+    },
+    {
+      "api": "pump",
+      "args": [],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        7
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_teleport_charges",
+      "args": [
+        2211451164,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "pump",
+      "args": [],
+      "seconds": 0.015
+    },
+    {
+      "api": "pump",
+      "args": [],
+      "seconds": 0.016
+    },
+    {
+      "api": "pump",
+      "args": [],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        18,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_cast_item",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        51,
+        201
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_cast_item",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.032
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        54,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_cast_item",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.0
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.032
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        403,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_cast_item",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        404,
+        201
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_cast_item",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        405,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_cast_item",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        318,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_cast_item",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_charges",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_cooldown",
+      "args": [
+        2211451164,
+        0,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        0,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_receive",
+      "args": [
+        2211451164,
+        0,
+        51,
+        201
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "use_inventory",
+      "args": [
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        4,
+        73
+      ],
+      "seconds": 0.032
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_progression_learn",
+      "args": [
+        2211451164,
+        0,
+        1
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.062
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.047
+    },
+    {
+      "api": "begin_skill",
+      "args": [
+        1
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        4,
+        73
+      ],
+      "seconds": 0.032
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_progression_learn",
+      "args": [
+        2211451164,
+        0,
+        2
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "begin_skill",
+      "args": [
+        2
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_skill_autocast_enabled",
+      "args": [
+        2211451164,
+        0,
+        2
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "begin_skill",
+      "args": [
+        2
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_skill_autocast_enabled",
+      "args": [
+        2211451164,
+        0,
+        2
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "begin_skill",
+      "args": [
+        2
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_skill_autocast_enabled",
+      "args": [
+        2211451164,
+        0,
+        2
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "begin_skill",
+      "args": [
+        2
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_skill_autocast_enabled",
+      "args": [
+        2211451164,
+        0,
+        2
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "begin_skill",
+      "args": [
+        2
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "begin_skill",
+      "args": [
+        2
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_skill_autocast_enabled",
+      "args": [
+        2211451164,
+        0,
+        2
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_init",
+      "args": [
+        2211451164,
+        4,
+        73
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_audio_clock_ms",
+      "args": [
+        2169507840
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_progression_learn",
+      "args": [
+        2211451164,
+        0,
+        2
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_skill_autocast_toggle",
+      "args": [
+        2211451164,
+        0,
+        2
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "vision_assets_open_default",
+      "args": [],
+      "seconds": 0.172
+    },
+    {
+      "api": "dota_rules_set_position",
+      "args": [
+        2211451164,
+        0,
+        2048,
+        2048
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_rules_set_position",
+      "args": [
+        2211451164,
+        5,
+        2052,
+        2048
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_apply_effect",
+      "args": [
+        2211451164,
+        0,
+        5,
+        4,
+        100,
+        1,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "dota_items_apply_effect",
+      "args": [
+        2211451164,
+        0,
+        5,
+        5,
+        100,
+        1,
+        0
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_unit_visible",
+      "args": [
+        2211451164,
+        0,
+        5
+      ],
+      "seconds": 0.157
+    },
+    {
+      "api": "dota_rules_attack_once",
+      "args": [
+        2211451164,
+        0,
+        5
+      ],
+      "seconds": 0.015
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.047
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.032
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.032
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.046
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.032
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_tick",
+      "args": [
+        2211451164,
+        2169511936
+      ],
+      "seconds": 0.031
+    },
+    {
+      "api": "dota_extra_move_percent",
+      "args": [
+        2211451164,
+        0
+      ],
+      "seconds": 0.016
+    },
+    {
+      "api": "vision_assets_close",
+      "args": [],
+      "seconds": 0.016
+    },
+    {
+      "api": "item_assets_close",
+      "args": [],
+      "seconds": 0.015
+    },
+    {
+      "api": "bs_close",
+      "args": [],
+      "seconds": 0.0
+    },
+    {
+      "api": "resource_unmount",
+      "args": [],
+      "seconds": 0.016
+    }
+  ],
+  "fixture_writes": [
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "view",
+      "bytes": 148,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "held",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pressed",
+      "bytes": 45,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "item_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "skill_tap",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "inventory_action",
+      "bytes": 12,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_gesture",
+      "bytes": 36,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "battlefield_action",
+      "bytes": 20,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "game_clock",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_native_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_audio_previous",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_ready",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "clock_has_audio",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_pending",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "touch_down",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "minimap_drag",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "pending_actions",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    },
+    {
+      "symbol": "target_controls_frame",
+      "bytes": 4,
+      "scope": "Initial native UI/input fixture only; outside DotaGame"
+    }
+  ],
+  "modeled_key_events": [
+    {
+      "code": 9,
+      "key": 12,
+      "native_ms": 1000
+    },
+    {
+      "code": 9,
+      "key": 12,
+      "native_ms": 1050
+    },
+    {
+      "code": 9,
+      "key": 12,
+      "native_ms": 1100
+    },
+    {
+      "code": 9,
+      "key": 12,
+      "native_ms": 1150
+    },
+    {
+      "code": 9,
+      "key": 12,
+      "native_ms": 1200
+    },
+    {
+      "code": 10,
+      "key": 12,
+      "native_ms": 1250
+    },
+    {
+      "code": 9,
+      "key": 12,
+      "native_ms": 1400
+    },
+    {
+      "code": 9,
+      "key": 12,
+      "native_ms": 1450
+    },
+    {
+      "code": 9,
+      "key": 12,
+      "native_ms": 1500
+    },
+    {
+      "code": 9,
+      "key": 12,
+      "native_ms": 1550
+    }
+  ],
+  "resource_before_close": {
+    "mounted": 1,
+    "version": 1,
+    "file_bytes": 112861448,
+    "open_files": 1,
+    "heap_bytes": 133120,
+    "last_error": 0,
+    "mount_attempts": 1,
+    "open_attempts": 2,
+    "read_requests": 711,
+    "bytes_returned": 2209786,
+    "physical_reads": 153,
+    "physical_bytes": 934404,
+    "seeks": 19,
+    "index_hits": 986,
+    "index_misses": 5,
+    "chunk_hits": 701,
+    "chunk_misses": 145,
+    "decoded_chunks": 145,
+    "decoded_bytes": 2320964,
+    "service_calls": 0,
+    "errors": 0
+  },
+  "resource_after_close": {
+    "mounted": 0,
+    "version": 0,
+    "file_bytes": 0,
+    "open_files": 0,
+    "heap_bytes": 0,
+    "last_error": 0,
+    "mount_attempts": 1,
+    "open_attempts": 2,
+    "read_requests": 711,
+    "bytes_returned": 2209786,
+    "physical_reads": 153,
+    "physical_bytes": 934404,
+    "seeks": 19,
+    "index_hits": 986,
+    "index_misses": 5,
+    "chunk_hits": 701,
+    "chunk_misses": 145,
+    "decoded_chunks": 145,
+    "decoded_bytes": 2320964,
+    "service_calls": 0,
+    "errors": 0
+  },
+  "checks": 935,
+  "compiled_source_current": true,
+  "source_current": true,
+  "elapsed_seconds": 5.015999999828637,
+  "modeled_physical_bytes_read": 934404,
+  "all_build_inputs_current": true
+}

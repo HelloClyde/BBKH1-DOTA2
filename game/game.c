@@ -1555,11 +1555,13 @@ static void cancel_projectile(DotaGame *g,DotaProjectile *p) {
 }
 
 static void attack_impact(DotaGame *g,DotaProjectile *p){
-    int source=p->source,amount=p->damage,before,dealt,raw,blade_crit=100;
+    int source=p->source,amount=p->damage,before,dealt,raw,blade_crit=100,autocast=0;
     if((unsigned)p->target>=DOTA_MAX_UNITS)return;
     if((unsigned)source>=DOTA_MAX_UNITS || g->units[source].generation!=p->source_generation)source=-1;
+    /* Slark is melee: cancelled windups never reach this commit point. */
+    if(source>=0)autocast=dota_extra_autocast_attack(g,source,p->target);
     if(source>=0)amount=dota_items_attack_damage(g,source,p->target,amount);
-    if(amount<=0)return;
+    if(amount<=0)goto finished;
     if((unsigned)source<DOTA_HERO_COUNT)blade_crit=g->attack_crit_percent[source];
     if(source>=0)amount=dota_roster_attack_damage(g,source,p->target,amount);
     raw=amount;amount-=dota_items_attack_block(g,source,p->target);if(amount<0)amount=0;
@@ -1570,6 +1572,9 @@ static void attack_impact(DotaGame *g,DotaProjectile *p){
     if((unsigned)source<DOTA_HERO_COUNT&&g->units[source].hero_id==DOTA_HERO_JUGGERNAUT&&blade_crit>100&&dealt>0&&!g->items.reflection_guard){int heal=dealt*skill_value(&g->units[source],2,"blade_dance_lifesteal",0)/100;if(heal>0)dota_items_restore(g,source,source,heal,0);}
     if(source>=0&&!g->items.reflection_guard)dota_roster_attack_hit(g,source,p->target,raw,dealt);
     if(!g->items.reflection_guard)received_attack(g,p->target,source,p->team);
+finished:
+    /* A missed/blocked autocast must not arm a later, unrelated attack. */
+    if(autocast)g->extra.hero[source].shiv_until=0;
 }
 static void projectiles(DotaGame *g) {
     int i;

@@ -2,7 +2,7 @@
 
 仓库面向 H1 / Y100 V1.41 的 MIPS little-endian 原生 BDA，固定画面 480×272。应用在 H1 上运行自己的 C 游戏逻辑与预烘图像合成，不执行 Android APK、Unity 或 Source 2。
 
-当前 v0.31 的发布身份固定于 `provenance/releases/v0.31.json`，限定真机验收见 [v0.31 记录](verification/v0.31.json)。沿用 v0.30 的统一资源，下文 v0.30 数值和 C8 记录仅说明该资源及其历史验证。
+当前开发版为 v0.32，海浪短刀自动施放的离线验证见 [v0.32 记录](verification/v0.32.json)，真机待连接。最近发布的 v0.31 身份固定于 `provenance/releases/v0.31.json`；两版沿用 v0.30 的统一资源，下文 v0.30 数值和 C8 记录仅说明该资源及其历史验证。
 
 ## 获取完整输入
 
